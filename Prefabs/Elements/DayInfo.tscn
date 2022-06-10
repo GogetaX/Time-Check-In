@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Prefabs/Elements/DayInfo.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_top = 10
+border_width_bottom = 10
+
+[node name="DayInfo" type="Panel"]
+margin_right = 720.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 200 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoInfo" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NoInfo"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.5
+margin_top = -24.0
+margin_right = 264.5
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Corrently No Info for this day."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckInData" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorkingHours" type="Label" parent="CheckInData"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.5
+margin_top = -56.0
+margin_right = 264.5
+margin_bottom = -8.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "10:15 -> 10:16"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowLongWorked" type="Label" parent="CheckInData"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.5
+margin_top = -8.0
+margin_right = 264.5
+margin_bottom = 40.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "01 Seconds Worked"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowMuchEarned" type="Label" parent="CheckInData"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.5
+margin_top = 40.0
+margin_right = 264.5
+margin_bottom = 88.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Earned ILS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

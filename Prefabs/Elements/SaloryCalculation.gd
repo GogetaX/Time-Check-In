@@ -1,0 +1,44 @@
+extends Panel
+
+
+
+func _ready():
+	InitAllCurrencyButtons()
+	SyncFromSave()
+	
+func InitAllCurrencyButtons():
+	for x in $Currency.get_children():
+		x.connect("index_pressed",self,"SelectCurrency",[x])
+		
+func SelectCurrency(Index,MenuItem):
+	var Icon = MenuItem.get_item_icon(Index)
+	var Sufix = MenuItem.get_item_text(Index)
+	$CurrentCurrencyIcon.texture = Icon
+	
+	GlobalSave.AddVarsToSettings("SaloryCalculation","icon",Icon.resource_path)
+	GlobalSave.AddVarsToSettings("SaloryCalculation","sufix",Sufix)
+	
+func _on_CheckBox_OnToggle():
+	DisableEnable(!$Activate.is_Pressed)
+	GlobalSave.AddVarsToSettings("SaloryCalculation","enabled",$Activate.is_Pressed)
+		
+func DisableEnable(SetAsDisable):
+	$ValueBox.Disable(SetAsDisable)
+	$Currency.disabled = SetAsDisable
+	
+	
+
+func _on_ValueBox_UpdatedVar(NewVar):
+	GlobalSave.AddVarsToSettings("SaloryCalculation","salory",NewVar)
+
+func SyncFromSave():
+	var S = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
+	if S.has("enabled"):
+		if S["enabled"]:
+			$Activate.AnimToggle()
+		DisableEnable(!S["enabled"])
+	if S.has("salory"):
+		$ValueBox.InisialValue = S["salory"]
+	if S.has("icon"):
+		$CurrentCurrencyIcon.texture = load(S["icon"])
+
