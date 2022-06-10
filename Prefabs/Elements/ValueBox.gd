@@ -11,6 +11,7 @@ var is_Disabled = false
 
 func _ready():
 	$LineEdit.visible = false
+# warning-ignore:return_value_discarded
 	$VirtualKeyboardTimer.connect("timeout",self,"CheckIfVirtualKeyboard")
 
 func SetMinMax(new):

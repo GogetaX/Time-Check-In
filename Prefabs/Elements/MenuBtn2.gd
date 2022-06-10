@@ -6,6 +6,7 @@ export (String) var BtnGroup = "" setget SetBtngroup
 signal BtnPressed()
 
 func _ready():
+# warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"GroupPressed")
 	SyncPressed()
 	
