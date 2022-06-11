@@ -9,6 +9,9 @@ func _ready():
 	var Date = OS.get_datetime()
 	CurMonth = Date["month"]
 	CurYear = Date["year"]
+	GlobalTime.CurSelectedDate["day"] = Date["day"]
+	GlobalTime.CurSelectedDate["month"] = CurMonth
+	GlobalTime.CurSelectedDate["year"] = CurYear
 	GlobalTime.TempCurMonth = CurMonth
 	GlobalTime.TempCurYear = CurYear
 	DisplayMonth(CurMonth,CurYear)
@@ -62,6 +65,7 @@ func MonthPressed(BtnNode):
 	
 func GetDataFromFile():
 	var DataFromFile = GlobalSave.LoadSpecificFile(CurMonth,CurYear)
+	#GlobalSave.AddMySavesPath({"year":CurYear,"month":CurMonth,"day":})
 	
 	#Sync if has Info
 	if DataFromFile != null:

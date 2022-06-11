@@ -18,6 +18,5 @@ func SetDisabled(Disable):
 	is_Disabled = Disable
 	
 	
-	
 func FinishedTween(T):
 	T.queue_free()

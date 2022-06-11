@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Prefabs/Elements/CurTime.gd" type="Script" id=4]
 [ext_resource path="res://Prefabs/Elements/CheckinControl.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/Elements/TotalCurMonth.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Icons/to-do-list.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Icons/settings.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Icons/sales.png" type="Texture" id=9]
@@ -24,6 +25,7 @@
 [ext_resource path="res://Prefabs/Elements/CategoryPanel.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Prefabs/Elements/SaloryCalculation.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Prefabs/Elements/MenuBtn2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Prefabs/Elements/TotalItem.tscn" type="PackedScene" id=26]
 
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
@@ -312,7 +314,7 @@ size_flags_vertical = 3
 anchor_right = 0.0
 margin_right = 720.0
 margin_bottom = 40.0
-CategoryText = "Auto Salory Calculation"
+CategoryText = "Auto Salary Calculation"
 
 [node name="SaloryCalculation" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 24 )]
 anchor_right = 0.0
@@ -328,19 +330,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TotalsScreen"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -356.0
-margin_top = 113.0
-margin_right = 517.0
-margin_bottom = 231.0
-rect_rotation = -44.9999
-custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
-custom_fonts/font = ExtResource( 2 )
-text = "Under Construction"
+[node name="TopMenu" type="Panel" parent="TotalsScreen"]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 180 )
+custom_styles/panel = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurMonth" type="Label" parent="TotalsScreen/TopMenu"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -48.0
+custom_fonts/font = ExtResource( 3 )
+text = "This month [June - 2022]"
+align = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextMonth" parent="TotalsScreen/TopMenu/CurMonth" instance=ExtResource( 14 )]
+material = ExtResource( 13 )
+
+[node name="PrevMonth" parent="TotalsScreen/TopMenu/CurMonth" instance=ExtResource( 14 )]
+material = ExtResource( 13 )
+anchor_left = 0.0
+anchor_right = 0.0
+margin_left = 0.0
+margin_right = 50.0
+icon = ExtResource( 17 )
+
+[node name="Scroll" type="ScrollContainer" parent="TotalsScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 184.0
+margin_bottom = -97.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="TotalsScreen/Scroll"]
+margin_right = 720.0
+margin_bottom = 999.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TotalItem" parent="TotalsScreen/Scroll/VBox" instance=ExtResource( 26 )]
 
 [node name="BottomUI" type="Panel" parent="."]
 anchor_top = 1.0

@@ -6,6 +6,8 @@ var CalDay = preload("res://Prefabs/Elements/CalDay.tscn")
 var CurDateInfo = {}
 
 func _ready():
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("UpdateSpecificDayInfo",self,"ShowInfoOnDay")
 	SyncMonth()
 
 	
@@ -38,6 +40,7 @@ func InitDays():
 		var Day = CalDay.instance()
 		add_child(Day)
 		Day.name = "CurDay"+String(x)
+		
 		#Day.name = "CurDay"+String(x)
 		if x < CurDateInfo["start_from"]:
 			Day.text = String(x)
@@ -50,3 +53,9 @@ func InitDays():
 			if CurDate["day"] == x-CurDateInfo["start_from"]+1:
 				
 				Day.Select(true)
+				
+		#Select Current Day
+		if CurDate["year"] == MonthSelector.CurYear:
+			if CurDate["month"] == MonthSelector.CurMonth:
+				if x-CurDateInfo["start_from"]+1 == CurDate["day"]:
+					Day.SelectTodaysDay()

@@ -7,14 +7,7 @@ func _ready():
 	LoadSettings()
 
 func AddCheckIn(CheckInDate):
-	if !MySaves.has(CheckInDate["year"]):
-		MySaves[CheckInDate["year"]] = {}
-		
-	if !MySaves[CheckInDate["year"]].has(CheckInDate["month"]):
-		MySaves[CheckInDate["year"]][CheckInDate["month"]] = {}
-		
-	if !MySaves[CheckInDate["year"]][CheckInDate["month"]].has(CheckInDate["day"]):
-		MySaves[CheckInDate["year"]][CheckInDate["month"]][CheckInDate["day"]] = {}
+	AddMySavesPath(CheckInDate)
 	var C = FindEmptyCheckIn(MySaves[CheckInDate["year"]][CheckInDate["month"]][CheckInDate["day"]])
 	MySaves[CheckInDate["year"]][CheckInDate["month"]][CheckInDate["day"]]["check_in"+String(C)] = CheckInDate
 	SaveToFile()
@@ -33,18 +26,36 @@ func FindLastCheckIn(data):
 	return last
 	
 func AddCheckOut(CheckOutDate):
-	if !MySaves.has(CheckOutDate["year"]):
-		MySaves[CheckOutDate["year"]] = {}
-		
-	if !MySaves[CheckOutDate["year"]].has(CheckOutDate["month"]):
-		MySaves[CheckOutDate["year"]][CheckOutDate["month"]] = {}
-		
-	if !MySaves[CheckOutDate["year"]][CheckOutDate["month"]].has(CheckOutDate["day"]):
-		MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]] = {}
+	AddMySavesPath(CheckOutDate)
 	var L = FindLastCheckIn(MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])
 	MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]]["check_out"+String(L)] = CheckOutDate
 	SaveToFile()
 	
+func AddDayOff(DayOffDay):
+	AddMySavesPath(DayOffDay)
+	MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]]["report"] = "Day Off"
+	SaveToFile()
+	GlobalTime.emit_signal("UpdateSpecificDayInfo",DayOffDay["day"],MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]])
+
+	
+func AddHoliday(DayOffDay):
+	AddMySavesPath(DayOffDay)
+	MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]]["report"] = "Holiday"
+	SaveToFile()
+	GlobalTime.emit_signal("UpdateSpecificDayInfo",DayOffDay["day"],MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]])
+
+func AddMySavesPath(Date):
+	
+	if !MySaves.has(Date["year"]):
+		MySaves[Date["year"]] = {}
+		
+	if !MySaves[Date["year"]].has(Date["month"]):
+		MySaves[Date["year"]][Date["month"]] = {}
+		
+	if !MySaves[Date["year"]][Date["month"]].has(Date["day"]):
+		MySaves[Date["year"]][Date["month"]][Date["day"]] = {}
+
+
 func SaveToFile():
 	for year in MySaves:
 		for month in MySaves[year]:
@@ -61,6 +72,12 @@ func LoadSpecificFile(Month,Year):
 		Res = F.get_var()
 	
 	F.close()
+	
+	if Res != null:
+		for x in Res:
+			var DateToAdd = {"year":Year,"month":Month,"day":x}
+			AddMySavesPath(DateToAdd)
+			MySaves[Year][Month][x] = Res[x]
 	return Res
 
 func SaveSettings():
@@ -74,6 +91,7 @@ func AddVarsToSettings(Category,Key,Value):
 		MySettings[Category] = {}
 	MySettings[Category][Key] = Value
 	SaveSettings()
+	
 	
 func LoadSettings():
 	var F = File.new()

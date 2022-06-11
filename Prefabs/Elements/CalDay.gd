@@ -8,6 +8,7 @@ var CurDayInfo = {}
 
 func _ready():
 	Select(false)
+	$CurrentDay.visible = false
 	mouse_filter = Control.MOUSE_FILTER_PASS
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("SelectDay",self,"AnimateSelectedDay")
@@ -32,7 +33,9 @@ func DaySelect(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			GlobalTime.SelectCurDate(self,CurDayInfo)
-
+func SelectTodaysDay():
+	$CurrentDay.visible = true
+	
 func AnimateSelectedDay(DayNode):
 	if is_Selected && DayNode != self:
 		AnimateSelected(false)

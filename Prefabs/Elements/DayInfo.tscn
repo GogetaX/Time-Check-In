@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/DayInfo.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/Elements/OptionBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Icons/day.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Icons/holidays.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Icons/hard-work.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -33,9 +37,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -264.5
-margin_top = -24.0
+margin_top = -48.0
 margin_right = 264.5
-margin_bottom = 24.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Corrently No Info for this day."
@@ -43,7 +46,113 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Report" parent="NoInfo" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 21.0
+margin_right = 134.5
+margin_bottom = 75.0
+text = "Report.."
+items = [ "Day Off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work Day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+
+[node name="DayOffReport" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DayOffReport"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -48.0
+margin_right = 130.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Day Off!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Report" parent="DayOffReport" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 21.0
+margin_right = 134.5
+margin_bottom = 75.0
+focus_mode = 2
+text = "Change..."
+items = [ "Day Off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work Day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+
+[node name="Icon" type="TextureRect" parent="DayOffReport"]
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 180.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 200, 0 )
+expand = true
+stretch_mode = 6
+
+[node name="HolidayReport" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HolidayReport"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -48.0
+margin_right = 130.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Holiday!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Report" parent="HolidayReport" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 21.0
+margin_right = 134.5
+margin_bottom = 75.0
+focus_mode = 2
+text = "Change..."
+items = [ "Day Off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work Day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+
+[node name="Icon" type="TextureRect" parent="HolidayReport"]
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 180.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 200, 0 )
+expand = true
+stretch_mode = 6
+
 [node name="CheckInData" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {

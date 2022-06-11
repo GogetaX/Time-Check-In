@@ -23,6 +23,10 @@ signal TimeModeChangedTo(TimeMode)
 # warning-ignore:unused_signal
 signal SelectDay(DayNode)
 signal BtnGroupPressed(BtnNode,GroupName)
+# warning-ignore:unused_signal
+signal UpdateDayInfo()
+# warning-ignore:unused_signal
+signal UpdateSpecificDayInfo(DayNumber,DayInfoData)
 
 
 func _ready():
@@ -101,6 +105,15 @@ func timeout():
 	OldTime = OS.get_datetime()
 	emit_signal("InitSecond")
 	
+func AddRetroTimeChange(ToTimeMode,CurInfo):
+	CurTimeMode = ToTimeMode
+	match CurTimeMode:
+		TIME_CHECKED_IN:
+			HasCheckin.append(CurInfo)
+		TIME_PAUSED:
+			HasCheckOut.append(CurInfo)
+	emit_signal("TimeModeChangedTo",ToTimeMode)
+	
 func ChangeTimeModes(ToTimeMode):
 	CurTimeMode = ToTimeMode
 	#ToMode
@@ -114,18 +127,30 @@ func ChangeTimeModes(ToTimeMode):
 			
 	emit_signal("TimeModeChangedTo",ToTimeMode)
 	
+	
 func GetAllCheckInAndOuts(Info):
 	var Res = ""
 	var Times = 1
+	var TotChecks = 0
+	var SelectedDay = {}
 	for x in Info:
 		if "check_in" in x:
+			TotChecks += 1
+			SelectedDay = Info[x]
 			if Times == 1:
 				Res = Res + String(Info[x]["hour"])+":"+String(Info[x]["minute"])
-			else:
+			elif Times == 2:
 				Res = Res+", " + String(Info[x]["hour"])+":"+String(Info[x]["minute"])
+			else:
+				Res = String(Times) +" Checkins, "+String(Info[x]["hour"])+":"+String(Info[x]["minute"])
 		if "check_out" in x:
+			TotChecks -= 1
 			Res = Res +" - "+String(Info[x]["hour"])+":"+String(Info[x]["minute"])
 			Times+= 1
+	var CurDay = OS.get_datetime()
+	if TotChecks == 1:
+		if SelectedDay["day"] == CurDay["day"] && SelectedDay["month"] == CurDay["month"] && SelectedDay["year"] == CurDay["year"]:
+			Res = Res +" - On Going.."
 	return Res
 	
 func CalcHowLongWorked(Info):
@@ -162,13 +187,14 @@ func CalcAllTimePassed():
 			Seconds += (HasCheckOut[x]["hour"]-HasCheckin[x]["hour"])*3600
 			Seconds += (HasCheckOut[x]["day"]-HasCheckin[x]["day"])*86400
 			
-	return GlobalTime.CalcTimePassed(GlobalTime.GetLastCheckIn(),OS.get_datetime(),Seconds)
+	return CalcTimePassed(GlobalTime.GetLastCheckIn(),OS.get_datetime(),Seconds)
 	
 func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
-	var SecondsPassed = ToTime["second"]-FromTime["second"]
-	SecondsPassed += ToTime["minute"]*60-FromTime["minute"]*60
-	SecondsPassed += PlusSeconds
-	var Date = SecondsToDate(SecondsPassed)
+	var FromSeconds = DateToSeconds(FromTime)
+	var ToSeconds = DateToSeconds(ToTime)
+	
+	var SecondsPassed = ToSeconds - FromSeconds
+	var Date = SecondsToDate(SecondsPassed+PlusSeconds)
 	
 	var Res = ""
 	if Date["day"]>0:
@@ -176,8 +202,12 @@ func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
 	if Date["hour"]>0:
 		Res += String(Date["hour"])+":"
 		
+	var Min = String(Date["minute"])
+	if Min.length() == 1:
+		Min = "0"+Min
+		
 	if Date["minute"]>0:
-		Res += String(Date["minute"])+":"
+		Res += Min+":"
 	
 	var Sec = String(Date["second"])
 	if Sec.length() == 1:
