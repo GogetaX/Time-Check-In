@@ -19,7 +19,6 @@ keep_pressed_outside = true
 text = "Currency"
 expand_icon = true
 items = [ "ILS", ExtResource( 2 ), 0, false, false, 0, 0, null, "", false ]
-switch_on_hover = true
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
