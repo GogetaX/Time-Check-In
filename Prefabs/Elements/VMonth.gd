@@ -21,7 +21,7 @@ func InitWeekDays():
 	for x in get_children():
 		if "WeekDay" in x.name:
 			Day += 1
-			x.text = GlobalTime.WeekDayToDayName(Day)
+			x.text = GlobalTime.WeekDayToDayName(Day-1)
 			
 func ShowInfoOnDay(Day,InfoData):
 	for x in get_children():

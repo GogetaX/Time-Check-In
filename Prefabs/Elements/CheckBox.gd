@@ -22,7 +22,6 @@ func _gui_input(event):
 			AnimToggle()
 
 func AnimToggle():
-	
 	var T = Tween.new()
 	add_child(T)
 	T.connect("tween_all_completed",self,"FinishAnim",[T])

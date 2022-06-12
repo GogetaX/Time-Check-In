@@ -12,6 +12,7 @@ func _ready():
 	
 func SetInfo(Info):
 	CurInfo = Info
+	$OnGoingTimer.stop()
 	RemoveAllExcept("NoInfo")
 	if CurInfo.has("report"):
 		match CurInfo.report:
@@ -26,10 +27,11 @@ func SetInfo(Info):
 				
 func RemoveAllExcept(ControlName):
 	for x in get_children():
-		if x.name == ControlName:
-			x.visible = true
-		else:
-			x.visible = false
+		if x is Control:
+			if x.name == ControlName:
+				x.visible = true
+			else:
+				x.visible = false
 			
 func InitDayOff(_Info):
 	RemoveAllExcept("DayOffReport")
@@ -50,13 +52,15 @@ func InfoForCheckInData(Info):
 		if SalorySettings.has("enabled"):
 			$CheckInData/HowMuchEarned.visible = SalorySettings["enabled"]
 			var Salary = 1
-			if SalorySettings.has("salory"):
-				Salary = SalorySettings["salory"]
-			$CheckInData/HowMuchEarned.text = "Earned "+String(GlobalTime.DateToSeconds(D)/3600.0*Salary)
+			if SalorySettings.has("salary"):
+				Salary = SalorySettings["salary"]
 			
+			$CheckInData/HowMuchEarned.text = "Earned "+GlobalTime.FloatToString(GlobalTime.DateToSeconds(D)/3600.0*Salary,2)
+			if GlobalTime.CheckIfOnGoing(Info):
+				$OnGoingTimer.start(1)
+				
 			if SalorySettings.has("sufix"):
 				$CheckInData/HowMuchEarned.text = $CheckInData/HowMuchEarned.text+" "+SalorySettings["sufix"]
-
 
 func UpdateDayInfo():
 	if CurInfo.empty():
@@ -107,3 +111,8 @@ func SelectReport(Index,Btn):
 		_:
 			print(txt, " not added yet.")
 	GlobalTime.emit_signal("UpdateDayInfo")
+
+
+func _on_OnGoingTimer_timeout():
+	print('timer?')
+	UpdateDayInfo()

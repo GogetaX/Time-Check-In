@@ -152,22 +152,56 @@ func GetAllCheckInAndOuts(Info):
 		if SelectedDay["day"] == CurDay["day"] && SelectedDay["month"] == CurDay["month"] && SelectedDay["year"] == CurDay["year"]:
 			Res = Res +" - On Going.."
 	return Res
+
+func CheckIfOnGoing(Info):
+	var TotChecks = 0
+	for x in Info:
+		if "check_in" in x:
+			TotChecks += 1
+		if "check_out" in x:
+			TotChecks -= 1
+	if TotChecks>0:
+		return true
+	return false
 	
 func CalcHowLongWorked(Info):
 	var SecondsWorked = 0
 	var TotSeconds = 0
 	var Num = 1
+	var LastCheckIn = {}
 	while Info.has("check_in"+String(Num)):
 		SecondsWorked += Info["check_in"+String(Num)]["hour"]*3600+Info["check_in"+String(Num)]["minute"]*60+Info["check_in"+String(Num)]["second"]
-		
+		LastCheckIn = Info["check_in"+String(Num)]
 		if Info.has("check_out"+String(Num)):
 			SecondsWorked = (Info["check_out"+String(Num)]["hour"]*3600+Info["check_out"+String(Num)]["minute"]*60+Info["check_out"+String(Num)]["second"])-SecondsWorked
 			TotSeconds += SecondsWorked
 			SecondsWorked = 0
 		Num += 1
-	var Date = SecondsToDate(TotSeconds)
+	var CurDate = OS.get_datetime()
+	var AddInSeconds = 0
+	if CurDate["year"] == LastCheckIn["year"] && CurDate["month"] == LastCheckIn["month"] && CurDate["day"] == LastCheckIn["day"]:
+		AddInSeconds = (CurDate["hour"] - LastCheckIn["hour"])*3600
+		AddInSeconds += (CurDate["minute"] - LastCheckIn["minute"])*60
+		AddInSeconds += (CurDate["second"] - LastCheckIn["second"])
+	var Date = SecondsToDate(TotSeconds+AddInSeconds)
 	return Date
 	
+
+func FloatToString(FloatNum,Nums):
+	var s = String(FloatNum)
+	if !"." in s:
+		return s
+	var ret = ""
+	var HadDot = 0
+	for x in range(s.length()):
+		ret = ret + s[x]
+		if Nums == HadDot:
+			return ret
+		if HadDot > 0:
+			HadDot += 1
+		if s[x] == ".":
+			HadDot = 1
+	return ret
 	
 func ShowTime():
 	var Min = String(OldTime["minute"])
@@ -265,19 +299,19 @@ func DateToSeconds(Date):
 	
 func WeekDayToDayName(DayNum):
 	match DayNum:
-		1:
+		0:
 			return "Sun"
-		2:
+		1:
 			return "Mon"
-		3:
+		2:
 			return "Tu"
-		4:
+		3:
 			return "We"
-		5:
+		4:
 			return "Th"
-		6:
+		5:
 			return "Fr"
-		7:
+		6:
 			return "Sa"
 func GetMonthName(MonthNum):
 	match MonthNum:

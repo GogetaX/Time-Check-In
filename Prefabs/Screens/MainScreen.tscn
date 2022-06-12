@@ -109,7 +109,6 @@ __meta__ = {
 [node name="CheckinControl" parent="TimeScreen" instance=ExtResource( 5 )]
 
 [node name="CalendarScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -280,6 +279,7 @@ margin_top = 52.0
 margin_bottom = 252.0
 
 [node name="SettingsScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {

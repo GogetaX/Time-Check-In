@@ -20,6 +20,7 @@ func SetMinMax(new):
 func SetInisialValue(new):
 	InisialValue = new
 	text = String(InisialValue)
+	if Engine.editor_hint: return
 	emit_signal("UpdatedVar",InisialValue)
 
 func Disable(setDisabled):
@@ -57,15 +58,19 @@ func _on_DownBtn_pressed():
 	SetInisialValue(val)
 
 func CheckIfVirtualKeyboard():
-	if OS.get_virtual_keyboard_height() <= 0:
-		$LineEdit.visible = false
-		var Val = float($LineEdit.text)
-		if Val != 0:
-			SetInisialValue(Val)
-			
-		self_modulate = Color(1,1,1,1)
-		
-		$VirtualKeyboardTimer.stop()
+	match OS.get_name():
+		"Android","Windows":
+			if OS.get_virtual_keyboard_height() <= 0:
+				$LineEdit.visible = false
+				var Val = float($LineEdit.text)
+				if Val != 0:
+					SetInisialValue(Val)
+					
+				self_modulate = Color(1,1,1,1)
+				
+				$VirtualKeyboardTimer.stop()
+		"iOS":
+			print(OS.get_virtual_keyboard_height())
 	
 func _on_UpBtn_pressed():
 	var val = InisialValue
