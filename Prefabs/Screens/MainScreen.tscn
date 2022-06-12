@@ -111,6 +111,9 @@ __meta__ = {
 [node name="CalendarScreen" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TopMenu" type="Panel" parent="CalendarScreen"]
 anchor_right = 1.0

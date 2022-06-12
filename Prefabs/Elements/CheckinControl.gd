@@ -14,15 +14,16 @@ func InitCurrentStatus():
 	var CurDay = GlobalSave.LoadSpecificFile(CurDate["month"],CurDate["year"])
 	var TotChecks = 0
 	var CurCheck = 1
-	for x in CurDay:
-		if x == CurDate["day"]:
-			while CurDay[x].has("check_in"+String(CurCheck)):
-				TotChecks += 1
-				GlobalTime.AddRetroTimeChange(GlobalTime.TIME_CHECKED_IN,CurDay[x]["check_in"+String(CurCheck)])
-				if CurDay[x].has("check_out"+String(CurCheck)):
-					GlobalTime.AddRetroTimeChange(GlobalTime.TIME_PAUSED,CurDay[x]["check_out"+String(CurCheck)])
-					TotChecks -= 1
-				CurCheck += 1
+	if CurDay != null:
+		for x in CurDay:
+			if x == CurDate["day"]:
+				while CurDay[x].has("check_in"+String(CurCheck)):
+					TotChecks += 1
+					GlobalTime.AddRetroTimeChange(GlobalTime.TIME_CHECKED_IN,CurDay[x]["check_in"+String(CurCheck)])
+					if CurDay[x].has("check_out"+String(CurCheck)):
+						GlobalTime.AddRetroTimeChange(GlobalTime.TIME_PAUSED,CurDay[x]["check_out"+String(CurCheck)])
+						TotChecks -= 1
+					CurCheck += 1
 				
 	if TotChecks >= 1:
 		TimeModeChangedTo(GlobalTime.TIME_CHECKED_IN)
