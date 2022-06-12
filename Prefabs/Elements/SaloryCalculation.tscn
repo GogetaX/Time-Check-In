@@ -31,6 +31,7 @@ margin_bottom = 27.0
 [node name="Currency" parent="." instance=ExtResource( 6 )]
 margin_left = 472.0
 margin_right = 701.0
+switch_on_hover = false
 
 [node name="CurrentCurrencyIcon" type="TextureRect" parent="."]
 margin_left = 424.0

@@ -7,6 +7,4 @@ func _ready():
 	#set_focus_mode(Control.FOCUS_NONE)
 	
 func AboutToShow():
-	for a in get_children():
-		a.grab_focus()
-		return
+	grab_click_focus()
