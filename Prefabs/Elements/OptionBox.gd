@@ -7,5 +7,4 @@ func _ready():
 	
 func about_to_show():
 	for a in get_children():
-		a.popup_exclusive = true
-		a.hide_on_state_item_selection = true
+		a.submenu_popup_delay = 0
