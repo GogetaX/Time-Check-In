@@ -8,6 +8,7 @@ signal UpdatedVar(NewVar)
 
 
 var is_Disabled = false
+var CanCloseKeyboard = false
 
 func _ready():
 	$LineEdit.visible = false
@@ -47,6 +48,7 @@ func _gui_input(event):
 				$LineEdit.select_all()
 				match OS.get_name():
 					"iOS","Android":
+						CanCloseKeyboard = false
 						OS.show_virtual_keyboard("")
 						$VirtualKeyboardTimer.start()
 
@@ -58,19 +60,18 @@ func _on_DownBtn_pressed():
 	SetInisialValue(val)
 
 func CheckIfVirtualKeyboard():
-	match OS.get_name():
-		"Android","Windows":
-			if OS.get_virtual_keyboard_height() <= 0:
-				$LineEdit.visible = false
-				var Val = float($LineEdit.text)
-				if Val != 0:
-					SetInisialValue(Val)
-					
-				self_modulate = Color(1,1,1,1)
-				
-				$VirtualKeyboardTimer.stop()
-		"iOS":
-			print(OS.get_virtual_keyboard_height())
+	if OS.get_virtual_keyboard_height()>0:
+		CanCloseKeyboard = true
+		
+	if OS.get_virtual_keyboard_height() <= 0 && CanCloseKeyboard:
+		$LineEdit.visible = false
+		var Val = float($LineEdit.text)
+		if Val != 0:
+			SetInisialValue(Val)
+			
+		self_modulate = Color(1,1,1,1)
+		
+		$VirtualKeyboardTimer.stop()
 	
 func _on_UpBtn_pressed():
 	var val = InisialValue
