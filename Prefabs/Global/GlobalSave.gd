@@ -44,6 +44,13 @@ func AddHoliday(DayOffDay):
 	SaveToFile()
 	GlobalTime.emit_signal("UpdateSpecificDayInfo",DayOffDay["day"],MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]])
 
+func RemoveReport(Date):
+	AddMySavesPath(Date)
+	if MySaves[Date["year"]][Date["month"]][Date["day"]].has("report"):
+		MySaves[Date["year"]][Date["month"]][Date["day"]].erase("report")
+	SaveToFile()
+	GlobalTime.emit_signal("UpdateSpecificDayInfo",Date["day"],MySaves[Date["year"]][Date["month"]][Date["day"]])
+
 func AddMySavesPath(Date):
 	
 	if !MySaves.has(Date["year"]):

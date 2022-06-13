@@ -108,11 +108,13 @@ func SelectReport(Index,Btn):
 		"Holiday":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.AddHoliday(Date)
+		"Work Day":
+			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
+			GlobalSave.RemoveReport(Date)
 		_:
 			print(txt, " not added yet.")
 	GlobalTime.emit_signal("UpdateDayInfo")
 
 
 func _on_OnGoingTimer_timeout():
-	print('timer?')
 	UpdateDayInfo()

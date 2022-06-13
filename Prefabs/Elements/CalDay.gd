@@ -17,10 +17,16 @@ func _ready():
 	
 func AddInfo(DayInfo):
 	var UpdateInfo = false
-	if !DayInfo.empty() && CurDayInfo.empty() && is_Selected:
+	
+	if is_Selected:
 		UpdateInfo = true
+		
 	CurDayInfo = DayInfo
-	add_color_override("font_color",InfoColor)
+	if !DayInfo.empty():
+		add_color_override("font_color",InfoColor)
+	else:
+		add_color_override("font_color",NormalColor)
+		
 	if UpdateInfo:
 		GlobalTime.SelectCurDate(self,CurDayInfo)
 	

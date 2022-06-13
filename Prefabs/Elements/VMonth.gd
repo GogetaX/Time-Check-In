@@ -28,7 +28,6 @@ func ShowInfoOnDay(Day,InfoData):
 		if int(x.text) == Day:
 			x.AddInfo(InfoData) 
 	
-	
 func InitDays():
 	#Free old
 	for x in get_children():

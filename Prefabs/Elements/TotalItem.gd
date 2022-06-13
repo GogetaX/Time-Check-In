@@ -7,6 +7,9 @@ func _ready():
 
 func ShowItem(Delay,Info):
 	$Timer.start(Delay)
+	if Info.empty():
+		$Title.text = ""
+		$Desc.text = ""
 	if Info.has("title"):
 		$Title.text = Info["title"]
 	if Info.has("desc"):

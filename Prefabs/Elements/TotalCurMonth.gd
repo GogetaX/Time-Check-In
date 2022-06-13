@@ -7,6 +7,8 @@ onready var VBox = get_parent().get_parent().get_node("Scroll/VBox")
 var CurSelectedMonth = {}
 
 func _ready():
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("BtnGroupPressed",self,"GroupPressed")
 	CurSelectedMonth = OS.get_datetime()
 	InitMonthButtons()
 	SyncButtons(CurSelectedMonth)
@@ -78,17 +80,101 @@ func SyncCurrentMonth(Date):
 	DisplayMonth(Date)
 	DisplayElements(Date)
 	
-func DisplayElements(Date):
+func DisplayElements(_Date):
 	#Remove Old Elements
 	for x in VBox.get_children():
 		x.queue_free()
 	
-	var MonthInfo = GlobalSave.LoadSpecificFile(Date["month"],Date["year"])
-	for x in range(10):
-		var Period = TotalItemInstance.instance()
-		VBox.add_child(Period)
-		var D = {"title":"Under","desc":"Construction!"}
-		Period.ShowItem(0.1+(x*0.1),D)
+	var Itm = null
+	var Info = {}
+	var Delay = 0.1
+	
+	#Period
+	Itm = TotalItemInstance.instance()
+	VBox.add_child(Itm)
+	var minmax = GlobalTime.GetDateInfo(CurSelectedMonth["month"],CurSelectedMonth["year"])["tot_days"]
+	Info = {"title":"Period","desc":GlobalTime.GetMonthName(CurSelectedMonth["month"])[1]+", "+String(minmax)+" days"} 
+	Itm.ShowItem(Delay,Info)
+	Delay += 0.1
+	
+	#Tot Worked Days
+	var DaysInMonth = GlobalSave.LoadSpecificFile(CurSelectedMonth["month"],CurSelectedMonth["year"])
+	var TotDays = 0
+	Itm = TotalItemInstance.instance()
+	VBox.add_child(Itm)
+	if DaysInMonth != null:
+		for x in DaysInMonth:
+			if DaysInMonth[x].has("check_in1"):
+				TotDays += 1
+	Info = {"title":"Days worked","desc":String(TotDays)+" days"} 
+	Itm.ShowItem(Delay,Info)
+	Delay += 0.1
+	
+	#Tot Worked Hours
+	Itm = TotalItemInstance.instance()
+	VBox.add_child(Itm)
+	var SecondsWorked = 0
+	if DaysInMonth != null:
+		
+		for x in DaysInMonth:
+			SecondsWorked += GlobalTime.CalcBetweenCheckinsTOSeconds(DaysInMonth[x])
+	var is_On_Going = ""
+	var CurMonth = OS.get_datetime()
+	if CurMonth["month"] == CurSelectedMonth["month"] && CurMonth["year"] == CurSelectedMonth["year"]:
+		if GlobalTime.CurTimeMode == GlobalTime.TIME_CHECKED_IN:
+			is_On_Going = " + Check-in"
+	Info = {"title":"Hours worked","desc":String(SecondsWorked/3600)+" hours"+is_On_Going} 
+	Itm.ShowItem(Delay,Info)
+	Delay += 0.1
+	
+	#Tot Earned Money
+	var Settings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
+	if Settings != null:
+		if Settings.has("enabled"):
+			if Settings["enabled"]:
+				Itm = TotalItemInstance.instance()
+				VBox.add_child(Itm)
+				var Sufix = ""
+				if Settings.has("sufix"):
+					Sufix = " "+Settings["sufix"]
+				Itm.ShowItem(Delay,{"title":"Earned","desc":String(SecondsWorked/3600.0*Settings["salary"])+Sufix+is_On_Going})
+				Delay += 0.1
+	#Seperator
+	Itm = TotalItemInstance.instance()
+	VBox.add_child(Itm)
+	Itm.ShowItem(Delay,{})
+	Delay += 0.1
+	
+	#Reporting Days off
+	TotDays = 0
+	Itm = TotalItemInstance.instance()
+	VBox.add_child(Itm)
+	if DaysInMonth != null:
+		for x in DaysInMonth:
+			if DaysInMonth[x].has("report"):
+				if DaysInMonth[x]["report"] == "Day Off":
+					TotDays += 1
+	Info = {"title":"Days off","desc":String(TotDays)+" days"} 
+	Itm.ShowItem(Delay,Info)
+	Delay += 0.1
+	
+	#Reporting Holidays
+	TotDays = 0
+	Itm = TotalItemInstance.instance()
+	VBox.add_child(Itm)
+	if DaysInMonth != null:
+		for x in DaysInMonth:
+			if DaysInMonth[x].has("report"):
+				if DaysInMonth[x]["report"] == "Holiday":
+					TotDays += 1
+	Info = {"title":"Holidays","desc":String(TotDays)+" days"} 
+	Itm.ShowItem(Delay,Info)
+	Delay += 0.1
+
+func GroupPressed(BtnNode,_GroupName):
+	if BtnNode.name != "Totals": return
+	SyncCurrentMonth(CurSelectedMonth)
+		
 	
 func DisplayMonth(Date):
 	var CurDay = OS.get_datetime()

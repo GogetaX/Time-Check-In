@@ -164,6 +164,19 @@ func CheckIfOnGoing(Info):
 		return true
 	return false
 	
+func CalcBetweenCheckinsTOSeconds(Info):
+	var Num = 1
+	var SecondsWorked = 0
+	var TotSeconds = 0
+	while Info.has("check_in"+String(Num)):
+		SecondsWorked += Info["check_in"+String(Num)]["hour"]*3600+Info["check_in"+String(Num)]["minute"]*60+Info["check_in"+String(Num)]["second"]
+		if Info.has("check_out"+String(Num)):
+			SecondsWorked = (Info["check_out"+String(Num)]["hour"]*3600+Info["check_out"+String(Num)]["minute"]*60+Info["check_out"+String(Num)]["second"])-SecondsWorked
+			TotSeconds += SecondsWorked
+			SecondsWorked = 0
+		Num += 1
+	return TotSeconds
+	
 func CalcHowLongWorked(Info):
 	var SecondsWorked = 0
 	var TotSeconds = 0
@@ -296,7 +309,8 @@ func DateToSeconds(Date):
 	if Date.has("second"):
 		Res += Date["second"]
 	return Res
-	
+
+
 func WeekDayToDayName(DayNum):
 	match DayNum:
 		0:
@@ -313,6 +327,7 @@ func WeekDayToDayName(DayNum):
 			return "Fr"
 		6:
 			return "Sa"
+			
 func GetMonthName(MonthNum):
 	match MonthNum:
 		1:
