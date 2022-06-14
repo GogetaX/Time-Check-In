@@ -2,19 +2,13 @@
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/TotalItem.gd" type="Script" id=2]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-draw_center = false
-border_width_bottom = 10
-border_color = Color( 0.737255, 0.878431, 0.992157, 1 )
-border_blend = true
+[ext_resource path="res://Prefabs/Styles/Panel/TotalItem.tres" type="StyleBox" id=3]
 
 [node name="TotalItem" type="Panel"]
 margin_right = 720.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 0, 70 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

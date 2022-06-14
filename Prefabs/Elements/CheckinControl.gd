@@ -36,25 +36,19 @@ func InitCurrentStatus():
 func TimeModeChangedTo(ToMode):
 	match ToMode:
 		GlobalTime.TIME_IDLE:
-			$ResumeBtn.visible = false
-			$PauseBtn.visible = false
-			$CheckOutBtn.visible = false
-			$CheckinBtn.visible = true
+			$StartStopBtn.ForceToggle(false)
 			$CheckedInText.text = ""
 			$PassedTime.text = ""
 		GlobalTime.TIME_CHECKED_IN:
-			$ResumeBtn.visible = false
 			$CheckedInText.text = "Check In ("+ GlobalTime.ShowTime()+")"
-			$CheckinBtn.visible = false
-			$CheckOutBtn.visible = true
-			$PauseBtn.visible = true
-			AnimateCheckIn()
+			$StartStopBtn.ForceToggle(true)
 			InitSecond()
 		GlobalTime.TIME_PAUSED:
-			$ResumeBtn.visible = true
-			$PauseBtn.visible = false
-			$CheckOutBtn.visible = false
-			$CheckedInText.text = "Auto Check-out end of the day"
+			$StartStopBtn.ForceToggle(false)
+			var StartedWorking = GlobalTime.GetLastCheckIn()
+			var EndedWorking = GlobalTime.GetLastCheckOut()
+			#var EndedWorking = GlobalTime.
+			$CheckedInText.text = "Checked out (" +String(StartedWorking["hour"])+":"+String(StartedWorking["minute"])+ " -> " +String(EndedWorking["hour"])+":"+String(EndedWorking["minute"])+")"
 			
 	
 
@@ -62,11 +56,6 @@ func _on_CheckinBtn_pressed():
 	GlobalTime.ChangeTimeModes(GlobalTime.TIME_CHECKED_IN)
 	
 
-func AnimateCheckIn():
-	$CheckedInText.text = "Check In ("+ GlobalTime.ShowTime()+")"
-	$CheckinBtn.visible = false
-	$CheckOutBtn.visible = true
-	$PauseBtn.visible = true
 	
 func InitSecond():
 	if GlobalTime.CurTimeMode != GlobalTime.TIME_CHECKED_IN: return
@@ -84,3 +73,10 @@ func _on_ResumeBtn_pressed():
 
 func _on_CheckOutBtn_pressed():
 	GlobalTime.ChangeTimeModes(GlobalTime.TIME_PAUSED)
+
+
+func _on_StartStopBtn_Toggled():
+	if $StartStopBtn.is_Toggled:
+		GlobalTime.ChangeTimeModes(GlobalTime.TIME_CHECKED_IN)
+	else:
+		GlobalTime.ChangeTimeModes(GlobalTime.TIME_PAUSED)

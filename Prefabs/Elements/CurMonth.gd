@@ -6,6 +6,8 @@ var CurMonth = 0
 var CurYear = 0
 
 func _ready():
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("ReloadCurrentDate",self,"ReloadCurrentDate")
 	var Date = OS.get_datetime()
 	CurMonth = Date["month"]
 	CurYear = Date["year"]
@@ -18,6 +20,9 @@ func _ready():
 	InitButtons()
 	SyncDateButtons()
 
+func ReloadCurrentDate():
+	GetDataFromFile()
+	
 func DisplayMonth(MonthNum,Year):
 	text = GlobalTime.GetMonthName(MonthNum)[1]+" "+String(Year)
 	

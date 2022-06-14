@@ -85,6 +85,25 @@ func LoadSpecificFile(Month,Year):
 			var DateToAdd = {"year":Year,"month":Month,"day":x}
 			AddMySavesPath(DateToAdd)
 			MySaves[Year][Month][x] = Res[x]
+	
+	#Find if there are dates checked_out in last days and do checkout on 00:00
+	var CurDate = OS.get_datetime()
+	if Res != null:
+		for x in Res:
+			
+			if CurDate["year"] > Year || CurDate["month"] > Month || CurDate["day"] > x:
+				var CheckIns = 0
+# warning-ignore:unused_variable
+				var LastCheckIn = 0
+				for Day in Res[x]:
+					if "check_in" in Day:
+						CheckIns += 1
+						LastCheckIn = int(Day.replace("check_in",""))
+					if "check_out" in Day:
+						CheckIns -=1
+				if CheckIns > 0:
+					var NewCheckOut = {"year":Year,"month":Month,"day":x,"hour":24,"minute":0,"second":0}
+					AddCheckOut(NewCheckOut)
 	return Res
 
 func SaveSettings():

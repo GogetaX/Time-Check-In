@@ -12,4 +12,4 @@ func ChangedStatus(Status):
 		GlobalTime.TIME_CHECKED_IN:
 			text = "Checked In"
 		GlobalTime.TIME_PAUSED:
-			text = "Paused or Checked Out"
+			text = "Checked Out"

@@ -48,6 +48,10 @@ func InfoForCheckInData(Info):
 	$CheckInData/HowLongWorked.text = ShowHowLongWorked(D)
 	var SalorySettings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	$CheckInData/HowMuchEarned.visible = false
+	if GlobalTime.CheckIfOnGoing(Info):
+		$CheckInData/EditWorkdays.visible = false
+	else:
+		$CheckInData/EditWorkdays.visible = true
 	if SalorySettings != null:
 		if SalorySettings.has("enabled"):
 			$CheckInData/HowMuchEarned.visible = SalorySettings["enabled"]
@@ -87,7 +91,10 @@ func ShowHowLongWorked(Date):
 	if Date["hour"]+Date["minute"] == 0:
 		Res += String(Date["second"]) + " "+LastWord
 	else:
-		Res += String(Date["hour"])+":"+String(Date["minute"])+" "+LastWord
+		var Min = String(Date["minute"])
+		if Min.length() == 1:
+			Min = "0"+Min
+		Res += String(Date["hour"])+":"+Min+" "+LastWord
 		
 	return Res
  
@@ -111,6 +118,10 @@ func SelectReport(Index,Btn):
 		"Work Day":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.RemoveReport(Date)
+		"Edit working hours":
+			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
+			GlobalTime.HourSelectorUI.SyncDate(Date)
+			GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
 		_:
 			print(txt, " not added yet.")
 	GlobalTime.emit_signal("UpdateDayInfo")

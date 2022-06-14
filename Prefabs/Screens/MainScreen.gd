@@ -3,6 +3,8 @@ extends Control
 var CurNode = null
 
 func _ready():
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
 	ShowOnly("TimeScreen")
 	
 func ShowOnly(WindowName):
@@ -32,8 +34,6 @@ func AnimateWindow(WindowNode,In):
 	
 func FinishTween(T):
 	T.queue_free()
-
-
 
 func _on_CheckIn_BtnPressed():
 	ShowOnly("TimeScreen")

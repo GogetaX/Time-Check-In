@@ -16,7 +16,7 @@ var DateDB = {}
 var CurSelectedDate = {"day": 0,"month":0,"year":0}
 var TempCurMonth = 0
 var TempCurYear = 0
-
+var HourSelectorUI = null
 
 signal InitSecond()
 signal TimeModeChangedTo(TimeMode)
@@ -27,6 +27,10 @@ signal BtnGroupPressed(BtnNode,GroupName)
 signal UpdateDayInfo()
 # warning-ignore:unused_signal
 signal UpdateSpecificDayInfo(DayNumber,DayInfoData)
+# warning-ignore:unused_signal
+signal ShowOnlyScreen(ScreenName)
+# warning-ignore:unused_signal
+signal ReloadCurrentDate()
 
 
 func _ready():
@@ -66,6 +70,12 @@ func HasNextMonth(Month,Year):
 	if !DateDB[Year].has(Month):
 		return null
 	return DateDB[Year][Month]
+	
+func DisplayFullDate(Date):
+	var DayName = String(Date["day"])
+	var MonthName = GetMonthName(Date["month"])[1]
+	var YearName = String(Date["year"])
+	return DayName+", "+MonthName+" "+YearName
 	
 func HasNextYear(Month,Year):
 	Year += 1
@@ -192,10 +202,11 @@ func CalcHowLongWorked(Info):
 		Num += 1
 	var CurDate = OS.get_datetime()
 	var AddInSeconds = 0
-	if CurDate["year"] == LastCheckIn["year"] && CurDate["month"] == LastCheckIn["month"] && CurDate["day"] == LastCheckIn["day"]:
-		AddInSeconds = (CurDate["hour"] - LastCheckIn["hour"])*3600
-		AddInSeconds += (CurDate["minute"] - LastCheckIn["minute"])*60
-		AddInSeconds += (CurDate["second"] - LastCheckIn["second"])
+	if LastCheckIn.has("year"):
+		if CurDate["year"] == LastCheckIn["year"] && CurDate["month"] == LastCheckIn["month"] && CurDate["day"] == LastCheckIn["day"]:
+			AddInSeconds = (CurDate["hour"] - LastCheckIn["hour"])*3600
+			AddInSeconds += (CurDate["minute"] - LastCheckIn["minute"])*60
+			AddInSeconds += (CurDate["second"] - LastCheckIn["second"])
 	var Date = SecondsToDate(TotSeconds+AddInSeconds)
 	return Date
 	
@@ -224,6 +235,8 @@ func ShowTime():
 	
 func GetLastCheckIn():
 	return GlobalTime.HasCheckin[GlobalTime.HasCheckin.size()-1]
+func GetLastCheckOut():
+	return GlobalTime.HasCheckOut[GlobalTime.HasCheckOut.size()-1]
 	
 func CalcAllTimePassed():
 	var Seconds = 0
