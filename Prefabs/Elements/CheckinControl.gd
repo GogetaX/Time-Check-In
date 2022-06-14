@@ -48,7 +48,13 @@ func TimeModeChangedTo(ToMode):
 			var StartedWorking = GlobalTime.GetLastCheckIn()
 			var EndedWorking = GlobalTime.GetLastCheckOut()
 			#var EndedWorking = GlobalTime.
-			$CheckedInText.text = "Checked out (" +String(StartedWorking["hour"])+":"+String(StartedWorking["minute"])+ " -> " +String(EndedWorking["hour"])+":"+String(EndedWorking["minute"])+")"
+			var In_Min = String(StartedWorking["minute"])
+			var Out_Min = String(EndedWorking["minute"])
+			if In_Min.length()==1:
+				In_Min = "0"+In_Min
+			if Out_Min.length() == 1:
+				Out_Min = "0"+Out_Min
+			$CheckedInText.text = "Checked out (" +String(StartedWorking["hour"])+":"+In_Min+ " -> " +String(EndedWorking["hour"])+":"+Out_Min+")"
 			
 	
 

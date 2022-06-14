@@ -112,6 +112,7 @@ func SaveSettings():
 	F.store_var(MySettings)
 	F.close()
 	
+	
 func AddVarsToSettings(Category,Key,Value):
 	if !MySettings.has(Category):
 		MySettings[Category] = {}
@@ -126,6 +127,8 @@ func LoadSettings():
 	F.open("user://Settings.ini",File.READ)
 	MySettings = F.get_var()
 	F.close()
+	print("Load")
+	print(MySettings)
 	
 func GetValueFromSettings(Category,Key):
 	if !MySettings.has(Category):

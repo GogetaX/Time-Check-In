@@ -3,6 +3,7 @@ extends Panel
 
 
 func _ready():
+	#GlobalSave.AddVarsToSettings("SaloryCalculation","salary",$ValueBox.InisialValue)
 	InitAllCurrencyButtons()
 	SyncFromSave()
 	
@@ -22,6 +23,7 @@ func SelectCurrency(Index,MenuItem):
 func _on_CheckBox_OnToggle():
 	DisableEnable(!$Activate.is_Pressed)
 	GlobalSave.AddVarsToSettings("SaloryCalculation","enabled",$Activate.is_Pressed)
+	GlobalSave.AddVarsToSettings("SaloryCalculation","salary",$ValueBox.InisialValue)
 	GlobalTime.emit_signal("UpdateDayInfo")
 		
 func DisableEnable(SetAsDisable):
@@ -38,12 +40,12 @@ func SyncFromSave():
 	var S = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	if S == null:
 		return
+
+	if S.has("salary"):
+		$ValueBox.SetInisialValue(S["salary"])
+	if S.has("icon"):
+		$CurrentCurrencyIcon.texture = load(S["icon"])
 	if S.has("enabled"):
 		if S["enabled"]:
 			$Activate.AnimToggle()
 		DisableEnable(!S["enabled"])
-	if S.has("salary"):
-		$ValueBox.InisialValue = S["salary"]
-	if S.has("icon"):
-		$CurrentCurrencyIcon.texture = load(S["icon"])
-

@@ -1,7 +1,6 @@
-tool
 extends Label
 
-export (float) var InisialValue = 35.5 setget SetInisialValue
+export (float) var InisialValue = 35.5
 export (Vector2) var MinMax = Vector2(30.0,300.0) setget SetMinMax
 
 signal UpdatedVar(NewVar)
@@ -51,7 +50,7 @@ func _gui_input(event):
 						CanCloseKeyboard = false
 						OS.show_virtual_keyboard("")
 						$VirtualKeyboardTimer.start()
-
+						
 func _on_DownBtn_pressed():
 	var val = InisialValue
 	val -= 0.5
@@ -60,6 +59,16 @@ func _on_DownBtn_pressed():
 	SetInisialValue(val)
 
 func CheckIfVirtualKeyboard():
+	if OS.get_name() == "Windows":
+		CanCloseKeyboard = true
+		var Val = float($LineEdit.text)
+		if Val != 0:
+			SetInisialValue(Val)
+		self_modulate = Color(1,1,1,1)
+		$LineEdit.visible = false
+		$VirtualKeyboardTimer.stop()
+		return
+		
 	if OS.get_virtual_keyboard_height()>0:
 		CanCloseKeyboard = true
 		

@@ -212,11 +212,17 @@ __meta__ = {
 
 [node name="EditWorkdays" parent="CheckInData" instance=ExtResource( 3 )]
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-margin_left = -112.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 54.0
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -62.0
+margin_right = -16.0
+margin_bottom = -8.0
+custom_colors/font_color_focus = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_colors/font_color_hover = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_colors/font_color_pressed = Color( 0.498039, 0.768627, 0.992157, 1 )
 text = "..."
 align = 2
 items = [ "Edit working hours", null, 0, false, false, 0, 0, null, "", false ]

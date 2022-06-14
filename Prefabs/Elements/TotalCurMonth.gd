@@ -137,7 +137,7 @@ func DisplayElements(_Date):
 				var Sufix = ""
 				if Settings.has("sufix"):
 					Sufix = " "+Settings["sufix"]
-				Itm.ShowItem(Delay,{"title":"Earned","desc":String(SecondsWorked/3600.0*Settings["salary"])+Sufix+is_On_Going})
+				Itm.ShowItem(Delay,{"title":"Earned","desc":GlobalTime.FloatToString(SecondsWorked/3600.0*Settings["salary"],2)+Sufix+is_On_Going})
 				Delay += 0.1
 	#Seperator
 	Itm = TotalItemInstance.instance()

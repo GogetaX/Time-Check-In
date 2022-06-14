@@ -46,6 +46,7 @@ anchor_bottom = 1.0
 custom_styles/panel = ExtResource( 1 )
 
 [node name="TimeScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -143,6 +144,11 @@ __meta__ = {
 
 [node name="NextMonth" parent="CalendarScreen/TopMenu/CurMonth" instance=ExtResource( 14 )]
 material = ExtResource( 13 )
+margin_left = -58.0
+margin_top = -35.0
+margin_right = 2.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 60, 60 )
 focus_mode = 0
 
 [node name="NextYear" parent="CalendarScreen/TopMenu/CurMonth" instance=ExtResource( 14 )]
@@ -156,8 +162,11 @@ icon = ExtResource( 15 )
 material = ExtResource( 13 )
 anchor_left = 0.0
 anchor_right = 0.0
-margin_left = 0.0
-margin_right = 50.0
+margin_left = 8.0
+margin_top = -35.0
+margin_right = 68.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 60, 60 )
 icon = ExtResource( 17 )
 
 [node name="PrevYear" parent="CalendarScreen/TopMenu/CurMonth" instance=ExtResource( 14 )]
@@ -364,13 +373,25 @@ __meta__ = {
 
 [node name="NextMonth" parent="TotalsScreen/TopMenu/CurMonth" instance=ExtResource( 14 )]
 material = ExtResource( 13 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -68.0
+margin_right = -8.0
+margin_bottom = -8.0
+rect_min_size = Vector2( 60, 60 )
 
 [node name="PrevMonth" parent="TotalsScreen/TopMenu/CurMonth" instance=ExtResource( 14 )]
 material = ExtResource( 13 )
 anchor_left = 0.0
+anchor_top = 1.0
 anchor_right = 0.0
-margin_left = 0.0
-margin_right = 50.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -68.0
+margin_right = 68.0
+margin_bottom = -8.0
+rect_min_size = Vector2( 60, 60 )
 icon = ExtResource( 17 )
 
 [node name="Scroll" type="ScrollContainer" parent="TotalsScreen"]
@@ -435,7 +456,6 @@ texture = ExtResource( 8 )
 BtnGroup = "Menu"
 
 [node name="HourEditorScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 30 )

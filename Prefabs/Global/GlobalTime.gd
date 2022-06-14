@@ -246,7 +246,7 @@ func CalcAllTimePassed():
 			Seconds += (HasCheckOut[x]["minute"]-HasCheckin[x]["minute"])*60
 			Seconds += (HasCheckOut[x]["hour"]-HasCheckin[x]["hour"])*3600
 			Seconds += (HasCheckOut[x]["day"]-HasCheckin[x]["day"])*86400
-			
+	
 	return CalcTimePassed(GlobalTime.GetLastCheckIn(),OS.get_datetime(),Seconds)
 	
 func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
@@ -273,6 +273,8 @@ func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
 	if Sec.length() == 1:
 		Sec = "0"+Sec
 	Res += Sec
+	if Date["minute"] == 0 && Date["hour"] == 0:
+		Res += " Seconds"
 	return Res
 	
 func SecondsToDate(Seconds):
