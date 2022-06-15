@@ -106,7 +106,10 @@ func DisplayElements(_Date):
 		for x in DaysInMonth:
 			if DaysInMonth[x].has("check_in1"):
 				TotDays += 1
-	Info = {"title":"Days worked","desc":String(TotDays)+" days"} 
+	var DaysWorkedSufix = "days"
+	if TotDays == 1:
+		DaysWorkedSufix = "day"
+	Info = {"title":"Days worked","desc":String(TotDays)+" "+DaysWorkedSufix} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 	
@@ -154,7 +157,10 @@ func DisplayElements(_Date):
 			if DaysInMonth[x].has("report"):
 				if DaysInMonth[x]["report"] == "Day Off":
 					TotDays += 1
-	Info = {"title":"Days off","desc":String(TotDays)+" days"} 
+	var DaysOffSufix = "days"
+	if TotDays == 1:
+		DaysOffSufix = "day"
+	Info = {"title":"Days off","desc":String(TotDays)+" "+DaysOffSufix} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 	
@@ -167,7 +173,10 @@ func DisplayElements(_Date):
 			if DaysInMonth[x].has("report"):
 				if DaysInMonth[x]["report"] == "Holiday":
 					TotDays += 1
-	Info = {"title":"Holidays","desc":String(TotDays)+" days"} 
+	var Sufix = "days"
+	if TotDays == 1:
+		Sufix = "day"
+	Info = {"title":"Holidays","desc":String(TotDays)+" "+Sufix} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 

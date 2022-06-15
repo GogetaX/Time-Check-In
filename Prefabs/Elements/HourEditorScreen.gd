@@ -7,6 +7,8 @@ func _ready():
 	GlobalTime.HourSelectorUI = self
 
 func SyncDate(EditingDate):
+	$TopMenu/Accept.focus_mode = Control.FOCUS_NONE
+	$TopMenu/Decline.focus_mode = Control.FOCUS_NONE
 	for x in $VBoxContainer.get_children():
 		x.queue_free()
 	

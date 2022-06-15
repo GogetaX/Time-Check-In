@@ -247,7 +247,33 @@ func CalcAllTimePassed():
 			Seconds += (HasCheckOut[x]["hour"]-HasCheckin[x]["hour"])*3600
 			Seconds += (HasCheckOut[x]["day"]-HasCheckin[x]["day"])*86400
 	
-	return CalcTimePassed(GlobalTime.GetLastCheckIn(),OS.get_datetime(),Seconds)
+	var CurTime = OS.get_datetime()
+	if CurTimeMode == TIME_PAUSED:
+		CurTime = GetLastCheckOut()
+	return CalcTimePassed(GetLastCheckIn(),CurTime,Seconds)
+	
+func TimeToString(Seconds):
+	var Date = SecondsToDate(Seconds)
+	
+	if Date["day"]>0:
+		return String(Date["day"])+" days and "+String(Date["hour"])+" hours."
+	if Date["hour"]>0:
+		return String(Date["hour"])+" hours and "+String(Date["minute"])+" minutes."
+	if Date["minute"]>0:
+		return String(Date["minute"])+" hours and "+String(Date["second"])+" seconds."
+	return String(Date["second"])+" seconds."
+	
+	
+func CalcAllCheckInsAndOutsToSeconds():
+	var Seconds = 0
+	if HasCheckOut != []:
+		for x in range(HasCheckOut.size()):
+			Seconds += HasCheckOut[x]["second"]-HasCheckin[x]["second"]
+			Seconds += (HasCheckOut[x]["minute"]-HasCheckin[x]["minute"])*60
+			Seconds += (HasCheckOut[x]["hour"]-HasCheckin[x]["hour"])*3600
+			Seconds += (HasCheckOut[x]["day"]-HasCheckin[x]["day"])*86400
+	
+	return Seconds
 	
 func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
 	var FromSeconds = DateToSeconds(FromTime)

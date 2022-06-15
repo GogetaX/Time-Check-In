@@ -47,6 +47,8 @@ func TimeModeChangedTo(ToMode):
 			$StartStopBtn.ForceToggle(false)
 			var StartedWorking = GlobalTime.GetLastCheckIn()
 			var EndedWorking = GlobalTime.GetLastCheckOut()
+			var PassedTime = GlobalTime.CalcAllCheckInsAndOutsToSeconds()
+			$PassedTime.text = "Worked today "+GlobalTime.TimeToString(PassedTime)
 			#var EndedWorking = GlobalTime.
 			var In_Min = String(StartedWorking["minute"])
 			var Out_Min = String(EndedWorking["minute"])
