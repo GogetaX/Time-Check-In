@@ -44,6 +44,7 @@ func InitHoliday(_Info):
 func InfoForCheckInData(Info):
 	RemoveAllExcept("CheckInData")
 	$CheckInData/WorkingHours.text = GlobalTime.GetAllCheckInAndOuts(Info)
+	print(Info)
 	var D = GlobalTime.CalcHowLongWorked(Info)
 	$CheckInData/HowLongWorked.text = ShowHowLongWorked(D)
 	var SalorySettings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")

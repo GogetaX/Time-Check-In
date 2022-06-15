@@ -202,7 +202,7 @@ func CalcHowLongWorked(Info):
 		Num += 1
 	var CurDate = OS.get_datetime()
 	var AddInSeconds = 0
-	if LastCheckIn.has("year"):
+	if LastCheckIn.has("year") && CurTimeMode == TIME_CHECKED_IN:
 		if CurDate["year"] == LastCheckIn["year"] && CurDate["month"] == LastCheckIn["month"] && CurDate["day"] == LastCheckIn["day"]:
 			AddInSeconds = (CurDate["hour"] - LastCheckIn["hour"])*3600
 			AddInSeconds += (CurDate["minute"] - LastCheckIn["minute"])*60
