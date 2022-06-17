@@ -119,6 +119,21 @@ func SelectReport(Index,Btn):
 		"Work Day":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.RemoveReport(Date)
+			var CheckInDate = Date.duplicate()
+			
+			CheckInDate["hour"] = 0
+			CheckInDate["minute"] = 0
+			CheckInDate["second"] = 0
+			var CheckOutDate = CheckInDate.duplicate()
+			GlobalSave.AddCheckIn(CheckInDate)
+			var S = GlobalSave.GetValueFromSettingCategory("WorkingHours")
+			if S == null:
+				CheckOutDate["hour"] += 8
+			else:
+				print(S["hours"])
+				CheckOutDate["hour"] += S["hours"]
+			GlobalSave.AddCheckOut(CheckOutDate)
+			GlobalTime.emit_signal("UpdateSpecificDayInfo",CheckOutDate["day"],GlobalSave.MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])
 		"Edit working hours":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalTime.HourSelectorUI.SyncDate(Date)

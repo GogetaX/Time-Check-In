@@ -137,7 +137,12 @@ func ChangeTimeModes(ToTimeMode):
 			
 	emit_signal("TimeModeChangedTo",ToTimeMode)
 	
-	
+
+func TimeTo2DigitStr(Time):
+	var t = String(Time)
+	if t.length() == 1:
+		t = "0"+t
+	return t
 func GetAllCheckInAndOuts(Info):
 	var Res = ""
 	var Times = 1
@@ -148,14 +153,14 @@ func GetAllCheckInAndOuts(Info):
 			TotChecks += 1
 			SelectedDay = Info[x]
 			if Times == 1:
-				Res = Res + String(Info[x]["hour"])+":"+String(Info[x]["minute"])
+				Res = Res + TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
 			elif Times == 2:
-				Res = Res+", " + String(Info[x]["hour"])+":"+String(Info[x]["minute"])
+				Res = Res+", " + TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
 			else:
-				Res = String(Times) +" Checkins, "+String(Info[x]["hour"])+":"+String(Info[x]["minute"])
+				Res = String(Times) +" Checkins, "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
 		if "check_out" in x:
 			TotChecks -= 1
-			Res = Res +" - "+String(Info[x]["hour"])+":"+String(Info[x]["minute"])
+			Res = Res +" - "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
 			Times+= 1
 	var CurDay = OS.get_datetime()
 	if TotChecks == 1:

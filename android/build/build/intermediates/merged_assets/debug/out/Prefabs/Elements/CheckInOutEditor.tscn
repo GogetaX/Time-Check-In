@@ -1,0 +1,227 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Prefabs/Styles/Panel/TotalItem.tres" type="StyleBox" id=3]
+[ext_resource path="res://Prefabs/Elements/CheckInOutEditor.gd" type="Script" id=4]
+[ext_resource path="res://Prefabs/Elements/InteractiveButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Icons/check-mark.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="CheckInOutEditor" type="Panel"]
+margin_right = 720.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckInNum" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = -59.0
+margin_right = 138.0
+margin_bottom = 59.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "01"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckInName" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 136.0
+margin_top = -59.0
+margin_right = 338.0
+margin_bottom = -11.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Check In"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckOutName" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 136.0
+margin_top = -3.0
+margin_right = 339.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Check Out"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckInHourEdit" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 393.0
+margin_top = -59.0
+margin_right = 495.0
+margin_bottom = -11.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckInHourEditor" type="LineEdit" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 375.0
+margin_top = -59.0
+margin_right = 495.0
+margin_bottom = -11.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "12"
+align = 2
+max_length = 2
+placeholder_text = "12"
+
+[node name="CheckOutHourEditor" type="LineEdit" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 375.0
+margin_top = -3.0
+margin_right = 495.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "12"
+align = 2
+max_length = 2
+placeholder_text = "12"
+
+[node name="CheckInMinuteEditor" type="LineEdit" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 524.0
+margin_top = -59.0
+margin_right = 644.0
+margin_bottom = -11.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "12"
+max_length = 2
+placeholder_text = "12"
+
+[node name="CheckOutMinuteEditor" type="LineEdit" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 524.0
+margin_top = -3.0
+margin_right = 644.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "12"
+max_length = 2
+placeholder_text = "12"
+
+[node name="CheckOutHourEdit" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 397.0
+margin_top = -3.0
+margin_right = 495.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckInMinuteEdit" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 524.0
+margin_top = -59.0
+margin_right = 626.0
+margin_bottom = -11.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "12"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckOutMinuteEdit" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 524.0
+margin_top = -3.0
+margin_right = 621.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "12"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dots1" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 505.0
+margin_top = -59.0
+margin_right = 516.0
+margin_bottom = -11.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = ":"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dots2" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 505.0
+margin_top = -3.0
+margin_right = 516.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = ":"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractiveButton" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1, 0.619608, 0.14902, 0.984314 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = -40.0
+margin_right = -24.0
+margin_bottom = 40.0
+icon = ExtResource( 6 )
+
+[node name="DelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="InteractiveButton" to="." method="_on_InteractiveButton_pressed"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_DelayTimer_timeout"]

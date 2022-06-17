@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Prefabs/Styles/Panel/SettingPanel.tres" type="StyleBox" id=1]
+[ext_resource path="res://Prefabs/Elements/WorkingHours.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/Elements/ValueBox.tscn" type="PackedScene" id=3]
+
+[node name="WorkingHours" type="Panel"]
+margin_top = 292.0
+margin_right = 720.0
+margin_bottom = 392.0
+rect_min_size = Vector2( 0, 100 )
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ValueBox" parent="." instance=ExtResource( 3 )]
+margin_left = 479.0
+margin_top = 16.0
+margin_right = 559.0
+margin_bottom = 70.0
+text = "30"
+InisialValue = 30.0
+MinMax = Vector2( 1, 24 )
+HasArrows = false
+FrontText = "Targeted working hours"
+
+[connection signal="UpdatedVar" from="ValueBox" to="." method="_on_ValueBox_UpdatedVar"]

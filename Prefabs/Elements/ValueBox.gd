@@ -1,7 +1,11 @@
+tool
 extends Label
 
-export (float) var InisialValue = 35.5
+export (float) var InisialValue = 35.5 setget SetInisialValue
 export (Vector2) var MinMax = Vector2(30.0,300.0) setget SetMinMax
+export (bool) var HasArrows = true setget SetHasArrows
+export (String) var FrontText = "Salary" setget SetFrontText
+
 
 signal UpdatedVar(NewVar)
 
@@ -13,12 +17,26 @@ func _ready():
 	$LineEdit.visible = false
 # warning-ignore:return_value_discarded
 	$VirtualKeyboardTimer.connect("timeout",self,"CheckIfVirtualKeyboard")
-
+	
+		
+func SetFrontText(new):
+	FrontText = new
+	$Label.text = FrontText
+	
+func SetHasArrows(new):
+	HasArrows = new
+	$UpBtn.visible = HasArrows
+	$DownBtn.visible = HasArrows
+	
 func SetMinMax(new):
 	MinMax = new
 	
 func SetInisialValue(new):
 	InisialValue = new
+	if InisialValue > MinMax.y:
+		InisialValue = MinMax.y 
+	elif InisialValue < MinMax.x:
+		InisialValue = MinMax.x
 	text = String(InisialValue)
 	if Engine.editor_hint: return
 	emit_signal("UpdatedVar",InisialValue)
