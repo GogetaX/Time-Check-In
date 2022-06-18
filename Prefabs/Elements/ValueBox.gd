@@ -2,7 +2,7 @@ tool
 extends Label
 
 export (float) var InisialValue = 35.5 setget SetInisialValue
-export (Vector2) var MinMax = Vector2(30.0,300.0) setget SetMinMax
+export (Vector2) var MinMax = Vector2(0,300.0) setget SetMinMax
 export (bool) var HasArrows = true setget SetHasArrows
 export (String) var FrontText = "Salary" setget SetFrontText
 

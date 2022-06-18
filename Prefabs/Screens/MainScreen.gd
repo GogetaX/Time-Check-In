@@ -8,7 +8,6 @@ func _ready():
 	ShowOnly("TimeScreen")
 	
 func ShowOnly(WindowName):
-	
 	for x in get_children():
 		if "Screen" in x.name:
 			if WindowName == x.name:

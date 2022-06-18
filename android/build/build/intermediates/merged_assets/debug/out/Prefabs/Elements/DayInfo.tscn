@@ -24,7 +24,6 @@ __meta__ = {
 }
 
 [node name="NoInfo" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -41,7 +40,8 @@ margin_top = -48.0
 margin_right = 264.5
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Corrently No Info for this day."
+text = "Currently No Info for this day."
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,7 +56,7 @@ margin_top = 21.0
 margin_right = 134.5
 margin_bottom = 75.0
 text = "Report.."
-items = [ "Day Off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work Day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+items = [ "Day off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
 
 [node name="DayOffReport" type="Control" parent="."]
 visible = false
@@ -93,7 +93,7 @@ margin_right = 134.5
 margin_bottom = 75.0
 focus_mode = 2
 text = "Change..."
-items = [ "Day Off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work Day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+items = [ "Day off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
 
 [node name="Icon" type="TextureRect" parent="DayOffReport"]
 anchor_bottom = 1.0
@@ -140,7 +140,7 @@ margin_right = 134.5
 margin_bottom = 75.0
 focus_mode = 2
 text = "Change..."
-items = [ "Day Off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work Day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+items = [ "Day off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
 
 [node name="Icon" type="TextureRect" parent="HolidayReport"]
 anchor_bottom = 1.0
@@ -153,6 +153,7 @@ expand = true
 stretch_mode = 6
 
 [node name="CheckInData" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {

@@ -10,10 +10,16 @@ func ShowItem(Delay,Info):
 	if Info.empty():
 		$Title.text = ""
 		$Desc.text = ""
-	if Info.has("title"):
-		$Title.text = Info["title"]
-	if Info.has("desc"):
-		$Desc.text = Info["desc"]
+	if TranslationServer.get_locale() == "he":
+		if Info.has("title"):
+			$Desc.text = TranslationServer.translate(Info["title"])
+		if Info.has("desc"):
+			$Title.text = Info["desc"]
+	else:
+		if Info.has("title"):
+			$Title.text = TranslationServer.translate(Info["title"])
+		if Info.has("desc"):
+			$Desc.text = Info["desc"]
 
 func DelayStart():
 	var T = Tween.new()

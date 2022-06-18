@@ -1,7 +1,9 @@
 extends Label
 
 var NormalColor = Color("2699fb")
-var InfoColor = Color("3cc464")
+var InfoColor = Color.purple
+var DayOffColor = Color.darkgreen
+var HolidayColor = Color.chartreuse
 
 var is_Selected = false
 var CurDayInfo = {}
@@ -23,7 +25,20 @@ func AddInfo(DayInfo):
 		
 	CurDayInfo = DayInfo
 	if !DayInfo.empty():
-		add_color_override("font_color",InfoColor)
+		if DayInfo.has("check_in1"):
+			add_color_override("font_color",InfoColor)
+		elif DayInfo.has("report"):
+			match DayInfo["report"]:
+				"Day Off":
+					add_color_override("font_color",DayOffColor)
+				"Holiday":
+					add_color_override("font_color",HolidayColor)
+				_:
+					print("Report Uknown: ")
+					print(DayInfo)
+		else:
+			print("Week day uknown!")
+			print(DayInfo)
 	else:
 		add_color_override("font_color",NormalColor)
 		
@@ -39,6 +54,7 @@ func DaySelect(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			GlobalTime.SelectCurDate(self,CurDayInfo)
+			
 func SelectTodaysDay():
 	$CurrentDay.visible = true
 	

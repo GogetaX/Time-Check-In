@@ -157,7 +157,7 @@ func GetAllCheckInAndOuts(Info):
 			elif Times == 2:
 				Res = Res+", " + TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
 			else:
-				Res = String(Times) +" Checkins, "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
+				Res = String(Times) +" "+TranslationServer.translate("Checkins")+", "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
 		if "check_out" in x:
 			TotChecks -= 1
 			Res = Res +" - "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
@@ -165,7 +165,7 @@ func GetAllCheckInAndOuts(Info):
 	var CurDay = OS.get_datetime()
 	if TotChecks == 1:
 		if SelectedDay["day"] == CurDay["day"] && SelectedDay["month"] == CurDay["month"] && SelectedDay["year"] == CurDay["year"]:
-			Res = Res +" - On Going.."
+			Res = Res +" - "+TranslationServer.translate("On_Going")
 	return Res
 
 func CheckIfOnGoing(Info):
@@ -261,12 +261,15 @@ func TimeToString(Seconds):
 	var Date = SecondsToDate(Seconds)
 	
 	if Date["day"]>0:
-		return String(Date["day"])+" days and "+String(Date["hour"])+" hours."
+		var res = TranslationServer.translate("days_and_hours").format([String(Date["day"]),String(Date["hour"])])
+		return res
 	if Date["hour"]>0:
-		return String(Date["hour"])+" hours and "+String(Date["minute"])+" minutes."
+		var res = TranslationServer.translate("hours_and_minutes").format([String(Date["hour"]),String(Date["minute"])])
+		return res
 	if Date["minute"]>0:
-		return String(Date["minute"])+" hours and "+String(Date["second"])+" seconds."
-	return String(Date["second"])+" seconds."
+		var res = TranslationServer.translate("minutes_and_seconds").format([String(Date["minute"]),String(Date["second"])])
+		return res
+	return TranslationServer.translate("second_info") % String(Date["second"])
 	
 	
 func CalcAllCheckInsAndOutsToSeconds():
@@ -305,7 +308,7 @@ func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
 		Sec = "0"+Sec
 	Res += Sec
 	if Date["minute"] == 0 && Date["hour"] == 0:
-		Res += " Seconds"
+		Res += " "+TranslationServer.translate("seconds")
 	return Res
 	
 func SecondsToDate(Seconds):
@@ -336,7 +339,7 @@ func SecondsToDate(Seconds):
 	return Date
 	
 func ShowDate():
-	return WeekDayToDayName(OldTime["weekday"])+", "+GetMonthName(OldTime["month"])[0]+" "+String(OldTime["day"])+", "+String(OldTime["year"])
+	return WeekDayToDayName(OldTime["weekday"])[1]+", "+GetMonthName(OldTime["month"])[0]+" "+String(OldTime["day"])+", "+String(OldTime["year"])
 	
 func ShowSeconds():
 	var Sec = String(OldTime["second"])
@@ -360,44 +363,44 @@ func DateToSeconds(Date):
 func WeekDayToDayName(DayNum):
 	match DayNum:
 		0:
-			return "Sun"
+			return [TranslationServer.translate("Sun"),TranslationServer.translate("Sunday")]
 		1:
-			return "Mon"
+			return [TranslationServer.translate("Mon"),TranslationServer.translate("Monday")]
 		2:
-			return "Tu"
+			return [TranslationServer.translate("Tu"),TranslationServer.translate("Tuesday")]
 		3:
-			return "We"
+			return [TranslationServer.translate("We"),TranslationServer.translate("Wednesday")]
 		4:
-			return "Th"
+			return [TranslationServer.translate("Th"),TranslationServer.translate("Thursday")]
 		5:
-			return "Fr"
+			return [TranslationServer.translate("Fr"),TranslationServer.translate("Friday")]
 		6:
-			return "Sa"
+			return [TranslationServer.translate("Sa"),TranslationServer.translate("Saturday")]
 			
 func GetMonthName(MonthNum):
 	match MonthNum:
 		1:
-			return ["Jan","January"]
+			return [TranslationServer.translate("Jan"),TranslationServer.translate("January")]
 		2:
-			return ["Feb","February"]
+			return [TranslationServer.translate("Feb"),TranslationServer.translate("February")]
 		3:
-			return ["Mar","March"]
+			return [TranslationServer.translate("Mar"),TranslationServer.translate("March")]
 		4:
-			return ["Apr","April"]
+			return [TranslationServer.translate("Apr"),TranslationServer.translate("April")]
 		5:
-			return ["May","May"]
+			return [TranslationServer.translate("May"),TranslationServer.translate("May")]
 		6:
-			return ["Jun","June"]
+			return [TranslationServer.translate("Jun"),TranslationServer.translate("June")]
 		7:
-			return ["Jul","July"]
+			return [TranslationServer.translate("Jul"),TranslationServer.translate("July")]
 		
 		8:
-			return ["Aug","August"]
+			return [TranslationServer.translate("Aug"),TranslationServer.translate("August")]
 		9:
-			return ["Sept","September"]
+			return [TranslationServer.translate("Sept"),TranslationServer.translate("September")]
 		10:
-			return ["Oct","October"]
+			return [TranslationServer.translate("Oct"),TranslationServer.translate("October")]
 		11:
-			return ["Nov","November"]
+			return [TranslationServer.translate("Nov"),TranslationServer.translate("November")]
 		12:
-			return ["Dec","December"]
+			return [TranslationServer.translate("Dec"),TranslationServer.translate("December")]

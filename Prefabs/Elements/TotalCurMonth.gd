@@ -93,7 +93,8 @@ func DisplayElements(_Date):
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
 	var minmax = GlobalTime.GetDateInfo(CurSelectedMonth["month"],CurSelectedMonth["year"])["tot_days"]
-	Info = {"title":"Period","desc":GlobalTime.GetMonthName(CurSelectedMonth["month"])[1]+", "+String(minmax)+" days"} 
+	
+	Info = {"title":"total_period","desc":String(minmax)+" "+TranslationServer.translate("days")} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 	
@@ -106,10 +107,10 @@ func DisplayElements(_Date):
 		for x in DaysInMonth:
 			if DaysInMonth[x].has("check_in1"):
 				TotDays += 1
-	var DaysWorkedSufix = "days"
+	var DaysWorkedSufix = TranslationServer.translate("days")
 	if TotDays == 1:
-		DaysWorkedSufix = "day"
-	Info = {"title":"Days worked","desc":String(TotDays)+" "+DaysWorkedSufix} 
+		DaysWorkedSufix = TranslationServer.translate("day")
+	Info = {"title":"total_worked_days","desc":String(TotDays)+" "+DaysWorkedSufix} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 	
@@ -121,12 +122,13 @@ func DisplayElements(_Date):
 		
 		for x in DaysInMonth:
 			SecondsWorked += GlobalTime.CalcBetweenCheckinsTOSeconds(DaysInMonth[x])
-	var is_On_Going = ""
 	var CurMonth = OS.get_datetime()
+	var dec = ""
+	dec = TranslationServer.translate("total_hours_info").format([GlobalTime.FloatToString(SecondsWorked/3600,1)])
 	if CurMonth["month"] == CurSelectedMonth["month"] && CurMonth["year"] == CurSelectedMonth["year"]:
 		if GlobalTime.CurTimeMode == GlobalTime.TIME_CHECKED_IN:
-			is_On_Going = " + Check-in"
-	Info = {"title":"Hours worked","desc":String(SecondsWorked/3600)+" hours"+is_On_Going} 
+			dec = TranslationServer.translate("total_hours_and_going").format([GlobalTime.FloatToString(SecondsWorked/3600,1)])
+	Info = {"title":"total_hours_worked","desc":dec} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 	
@@ -139,8 +141,8 @@ func DisplayElements(_Date):
 				VBox.add_child(Itm)
 				var Sufix = ""
 				if Settings.has("sufix"):
-					Sufix = " "+Settings["sufix"]
-				Itm.ShowItem(Delay,{"title":"Earned","desc":GlobalTime.FloatToString(SecondsWorked/3600.0*Settings["salary"],2)+Sufix+is_On_Going})
+					Sufix = " "+TranslationServer.translate(Settings["sufix"])
+				Itm.ShowItem(Delay,{"title":"total_earned","desc":GlobalTime.FloatToString(SecondsWorked/3600.0*Settings["salary"],2)+Sufix})
 				Delay += 0.1
 	#Seperator
 	Itm = TotalItemInstance.instance()
@@ -157,10 +159,10 @@ func DisplayElements(_Date):
 			if DaysInMonth[x].has("report"):
 				if DaysInMonth[x]["report"] == "Day Off":
 					TotDays += 1
-	var DaysOffSufix = "days"
+	var DaysOffSufix = TranslationServer.translate("days")
 	if TotDays == 1:
-		DaysOffSufix = "day"
-	Info = {"title":"Days off","desc":String(TotDays)+" "+DaysOffSufix} 
+		DaysOffSufix = TranslationServer.translate("day")
+	Info = {"title":"total_days_off","desc":String(TotDays)+" "+DaysOffSufix} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 	
@@ -173,10 +175,10 @@ func DisplayElements(_Date):
 			if DaysInMonth[x].has("report"):
 				if DaysInMonth[x]["report"] == "Holiday":
 					TotDays += 1
-	var Sufix = "days"
+	var Sufix = TranslationServer.translate("days")
 	if TotDays == 1:
-		Sufix = "day"
-	Info = {"title":"Holidays","desc":String(TotDays)+" "+Sufix} 
+		Sufix = TranslationServer.translate("day")
+	Info = {"title":"total_holidays","desc":String(TotDays)+" "+Sufix} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 
@@ -189,10 +191,10 @@ func DisplayMonth(Date):
 	var CurDay = OS.get_datetime()
 	var MonthIndicator = ""
 	if Date["month"] == CurDay["month"] && Date["year"] == CurDay["year"]:
-		MonthIndicator = "This month, "
+		MonthIndicator = TranslationServer.translate("This month")
 	elif Date["month"]+1 == CurDay["month"] && Date["year"] == CurDay["year"]:
-		MonthIndicator = "Last month, "
+		MonthIndicator = TranslationServer.translate("Last month")
 	elif Date["month"]-1 == CurDay["month"] && Date["year"] == CurDay["year"]:
-		MonthIndicator = "Next month, "
-	
-	text = MonthIndicator + GlobalTime.GetMonthName(Date["month"])[1]+" - "+String(Date["year"])
+		MonthIndicator = TranslationServer.translate("Next month")
+	text = TranslationServer.translate("total_title").format([MonthIndicator,GlobalTime.GetMonthName(Date["month"])[1],String(Date["year"])])
+	#text = MonthIndicator + GlobalTime.GetMonthName(Date["month"])[1]+" - "+String(Date["year"])

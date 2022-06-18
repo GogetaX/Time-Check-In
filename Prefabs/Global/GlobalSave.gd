@@ -1,10 +1,19 @@
 extends Node
 
+# warning-ignore:unused_signal
+signal UpdateLanguange()
+
 var MySaves = {}
 var MySettings = {}
 
 func _ready():
 	LoadSettings()
+# warning-ignore:return_value_discarded
+	connect("UpdateLanguange",self,"ClearAllData")
+	
+func ClearAllData():
+	GlobalTime.HasCheckin = []
+	GlobalTime.HasCheckOut = []
 
 func AddCheckIn(CheckInDate):
 	AddMySavesPath(CheckInDate)
@@ -127,9 +136,22 @@ func LoadSettings():
 	F.open("user://Settings.ini",File.READ)
 	MySettings = F.get_var()
 	F.close()
-	print("Load")
-	print(MySettings)
+	var Lang = GetValueFromSettingCategory("Languange")
+	if Lang != null:
+		if Lang.has("lang"):
+			#print(Lang["lang"])
+			TranslationServer.set_locale(LanguangeToLetters(Lang["lang"]))
 	
+func LanguangeToLetters(Lang):
+	match Lang:
+		"English":
+			return "en"
+		"Hebrew":
+			return "he"
+		"Russian":
+			return "ru"
+		_:
+			print("Languange ",Lang," not supported yet.")
 func GetValueFromSettings(Category,Key):
 	if !MySettings.has(Category):
 		return null

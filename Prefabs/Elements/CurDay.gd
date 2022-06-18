@@ -7,28 +7,28 @@ func _ready():
 	var CurDate = OS.get_datetime()
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("SelectDay",self,"SelectedDay")
-	text = "Today "+String(CurDate["day"])+" "+GlobalTime.GetMonthName(CurDate["month"])[0]+" "+String(CurDate["year"])
+	text = TranslationServer.translate("Today")+" "+String(CurDate["day"])+" "+GlobalTime.GetMonthName(CurDate["month"])[0]+" "+String(CurDate["year"])
 	
 func SelectedDay(_DayNode):
 	var DayDescription = ""
 	var CurDate = OS.get_datetime()
 	if CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"] && CurDate["day"] == GlobalTime.CurSelectedDate["day"]:
-		DayDescription = "Today "
+		DayDescription = TranslationServer.translate("Today")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"] && CurDate["day"] == GlobalTime.CurSelectedDate["day"]-1:
-		DayDescription = "Tomorrow "
+		DayDescription = TranslationServer.translate("Tomorrow")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"] && CurDate["day"] == GlobalTime.CurSelectedDate["day"]+1:
-		DayDescription = "Yesterday "
+		DayDescription = TranslationServer.translate("Yesterday")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]:
-		DayDescription = "This month "
+		DayDescription = TranslationServer.translate("This month ")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]-1:
-		DayDescription = "Next month "
+		DayDescription = TranslationServer.translate("Next month")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]+1:
-		DayDescription = "Last month "
+		DayDescription = TranslationServer.translate("Last month")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"]:
-		DayDescription = "This year"
+		DayDescription = TranslationServer.translate("This year")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"]-1:
-		DayDescription = "Next year"
+		DayDescription = TranslationServer.translate("Next year")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"]+1:
-		DayDescription = "Last year"
+		DayDescription = TranslationServer.translate("Last year")+" "
 	
 	text = DayDescription+String(GlobalTime.CurSelectedDate["day"])+" "+GlobalTime.GetMonthName(GlobalTime.CurSelectedDate["month"])[0]+" "+String(GlobalTime.CurSelectedDate["year"])

@@ -5,11 +5,12 @@ func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("TimeModeChangedTo",self,"ChangedStatus")
 	
+	
 func ChangedStatus(Status):
 	match Status:
 		GlobalTime.TIME_IDLE:
-			text = "Idle"
+			text = TranslationServer.translate("Idle")
 		GlobalTime.TIME_CHECKED_IN:
-			text = "Checked In"
+			text = TranslationServer.translate("Checked_In")
 		GlobalTime.TIME_PAUSED:
-			text = "Checked Out"
+			text = TranslationServer.translate("Checked_Out")

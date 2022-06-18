@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sergiok.TimeCheckIn"
+    package="org.godotengine.timecheckin"
     android:installLocation="auto"
-    android:versionCode="1"
+    android:versionCode="2"
     android:versionName="0.1" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-sdk
         android:minSdkVersion="19"
@@ -31,7 +31,7 @@
         android:name=".GodotInstrumentation"
         android:icon="@mipmap/icon"
         android:label="@string/godot_project_name_string"
-        android:targetPackage="com.sergiok.TimeCheckIn" />
+        android:targetPackage="org.godotengine.timecheckin" />
 
     <application
         android:allowBackup="true"

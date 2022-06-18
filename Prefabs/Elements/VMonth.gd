@@ -21,7 +21,7 @@ func InitWeekDays():
 	for x in get_children():
 		if "WeekDay" in x.name:
 			Day += 1
-			x.text = GlobalTime.WeekDayToDayName(Day-1)
+			x.text = GlobalTime.WeekDayToDayName(Day-1)[0]
 			
 func ShowInfoOnDay(Day,InfoData):
 	for x in get_children():
@@ -35,7 +35,7 @@ func InitDays():
 			x.queue_free()
 	
 	var CurDate = OS.get_datetime()
-	for x in range(1,CurDateInfo["tot_days"]+1+CurDateInfo["start_from"],1):
+	for x in range(1,CurDateInfo["tot_days"]+CurDateInfo["start_from"],1):
 		var Day = CalDay.instance()
 		add_child(Day)
 		Day.name = "CurDay"+String(x)

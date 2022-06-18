@@ -26,9 +26,9 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Sergio\.gradl
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\Sergio\.gradle\caches\transforms-3\a014d411094aa2ba92d687f5c6fff184\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Sergio\.gradle\caches\transforms-3\614d0f46931fd8cb0dfae9cbf1055ba0\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Sergio\.gradle\caches\transforms-3\780b23ac0107a53910baedbe87dfe02e\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:2:1-38:12
 	package
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:4:5-29
 		INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml
@@ -96,7 +96,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Se
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:68-95
 		REJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:68-95
 	tools:replace
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:22:9-123
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:28:9-123
 	android:isGame
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:96-117
 		REJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:96-117
@@ -107,7 +107,7 @@ meta-data#xr_mode_metadata_name
 ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:42:9-44:54
 REJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:42:9-44:54
 	tools:node
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:26:20-39
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:32:20-39
 	android:value
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:44:13-51
 	android:name
@@ -116,7 +116,7 @@ meta-data#xr_hand_tracking_metadata_name
 ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:49:9-51:62
 REJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:49:9-51:62
 	tools:node
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:27:20-39
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:33:20-39
 	android:value
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:51:13-60
 	android:name
@@ -150,14 +150,14 @@ MERGED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidMa
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:56:13-55
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:56:13-55
 	tools:replace
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:28:58-126
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:34:58-126
 	android:name
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:54:13-37
 meta-data#com.oculus.vr.focusaware
 ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:65:13-87
 REJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:65:13-87
 	tools:node
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:29:24-43
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:35:24-43
 	android:value
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:65:64-84
 	android:name
@@ -228,19 +228,45 @@ ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\releas
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:10:19-51
 	android:required
 		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:10:52-75
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:11:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:12:22-73
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:13:5-67
+	android:name
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:13:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:14:5-107
+	android:maxSdkVersion
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:14:78-104
+	android:name
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:14:22-77
+uses-permission#android.permission.READ_USER_DICTIONARY
+ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:15:22-76
+uses-permission#android.permission.WRITE_USER_DICTIONARY
+ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:16:5-80
+	android:name
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:16:22-77
 instrumentation
-ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:11:5-16:60
+ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:17:5-22:63
 REJECTED from [godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:10:5-14:57
 	tools:node
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:12:9-29
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:18:9-29
 	android:label
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:15:9-58
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:21:9-58
 	android:icon
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:14:9-36
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:20:9-36
 	android:targetPackage
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:16:9-57
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:22:9-60
 	android:name
-		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:13:9-45
+		ADDED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:19:9-45
 meta-data#org.godotengine.library.version
 ADDED from [godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:19:9-21:44
 	android:value

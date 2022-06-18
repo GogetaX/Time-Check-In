@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/CategoryPanel.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -8,7 +8,7 @@ bg_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 
 [node name="CategoryPanel" type="Panel"]
 anchor_right = 1.0
-rect_min_size = Vector2( 100, 40 )
+rect_min_size = Vector2( 100, 60 )
 size_flags_horizontal = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )

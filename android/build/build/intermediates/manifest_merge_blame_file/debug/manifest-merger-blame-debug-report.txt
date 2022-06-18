@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.sergiok.TimeCheckIn"
+3    package="org.godotengine.timecheckin"
 4    android:installLocation="auto"
-5    android:versionCode="1"
+5    android:versionCode="2"
 6    android:versionName="0.1" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
 7    <uses-sdk
 8        android:minSdkVersion="19"
@@ -49,15 +49,15 @@
 28-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\debug\AndroidManifest.xml:16:22-77
 29
 30    <instrumentation
-30-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\debug\AndroidManifest.xml:17:5-22:59
+30-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\debug\AndroidManifest.xml:17:5-22:63
 31        android:name=".GodotInstrumentation"
 31-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\debug\AndroidManifest.xml:19:9-45
 32        android:icon="@mipmap/icon"
 32-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\debug\AndroidManifest.xml:20:9-36
 33        android:label="@string/godot_project_name_string"
 33-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\debug\AndroidManifest.xml:21:9-58
-34        android:targetPackage="com.sergiok.TimeCheckIn" />
-34-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\debug\AndroidManifest.xml:22:9-56
+34        android:targetPackage="org.godotengine.timecheckin" />
+34-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\debug\AndroidManifest.xml:22:9-60
 35
 36    <application
 36-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:5-81:19

@@ -44,9 +44,8 @@ func InitHoliday(_Info):
 func InfoForCheckInData(Info):
 	RemoveAllExcept("CheckInData")
 	$CheckInData/WorkingHours.text = GlobalTime.GetAllCheckInAndOuts(Info)
-	print(Info)
 	var D = GlobalTime.CalcHowLongWorked(Info)
-	$CheckInData/HowLongWorked.text = ShowHowLongWorked(D)
+	$CheckInData/HowLongWorked.text = TranslationServer.translate("Working Time").format(ShowHowLongWorked(D))
 	var SalorySettings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	$CheckInData/HowMuchEarned.visible = false
 	if GlobalTime.CheckIfOnGoing(Info):
@@ -59,13 +58,15 @@ func InfoForCheckInData(Info):
 			var Salary = 1
 			if SalorySettings.has("salary"):
 				Salary = SalorySettings["salary"]
-			
-			$CheckInData/HowMuchEarned.text = "Earned "+GlobalTime.FloatToString(GlobalTime.DateToSeconds(D)/3600.0*Salary,2)
+			var sufix = ""
+			if SalorySettings.has("sufix"):
+				sufix = TranslationServer.translate(SalorySettings["sufix"])
+				
+			$CheckInData/HowMuchEarned.text = TranslationServer.translate("Earned").format([GlobalTime.FloatToString(GlobalTime.DateToSeconds(D)/3600.0*Salary,2),sufix])
 			if GlobalTime.CheckIfOnGoing(Info):
 				$OnGoingTimer.start(1)
 				
-			if SalorySettings.has("sufix"):
-				$CheckInData/HowMuchEarned.text = $CheckInData/HowMuchEarned.text+" "+SalorySettings["sufix"]
+
 
 func UpdateDayInfo():
 	if CurInfo.empty():
@@ -78,45 +79,46 @@ func ShowHowLongWorked(Date):
 	if Seconds == 0:
 		return ""
 	if Seconds == 1:
-		LastWord = "Second"
+		LastWord = TranslationServer.translate("Second")
 	elif Seconds < 60:
-		LastWord = "Seconds"
+		LastWord = TranslationServer.translate("Seconds")
 	elif Seconds == 60:
-		LastWord = "Minute"
+		LastWord = TranslationServer.translate("Minute")
 	elif Seconds <3600:
-		LastWord = "Minutes"
+		LastWord = TranslationServer.translate("Minutes")
 	elif Seconds == 3600:
-		LastWord = "Hour"
+		LastWord = TranslationServer.translate("Hour")
 	
-	var Res = "Working Time "
+	var Res = ""
 	if Date["hour"]+Date["minute"] == 0:
 		Res += String(Date["second"]) + " "+LastWord
 	else:
 		var Min = String(Date["minute"])
 		if Min.length() == 1:
 			Min = "0"+Min
-		Res += String(Date["hour"])+":"+Min+" "+LastWord
+		Res += String(Date["hour"])+":"+Min+" "
 		
-	return Res
+	return [Res,LastWord]
  
 func InitItemsInReport():
 	for a in get_children():
 		for b in a.get_children():
 			if b is MenuButton:
 				for c in b.get_children():
+					#c.set_item_metadata(c.get_current_index(),c.get_item_text())
 					c.connect("index_pressed",self,"SelectReport",[c])
 		
 func SelectReport(Index,Btn):
-	var txt = Btn.get_item_text(Index)
+	var txt = Btn.get_item_metadata(Index)
 	var Date = {}
 	match txt:
-		"Day Off":
+		"Day off":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.AddDayOff(Date)
 		"Holiday":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.AddHoliday(Date)
-		"Work Day":
+		"Work day":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.RemoveReport(Date)
 			var CheckInDate = Date.duplicate()
@@ -130,7 +132,6 @@ func SelectReport(Index,Btn):
 			if S == null:
 				CheckOutDate["hour"] += 8
 			else:
-				print(S["hours"])
 				CheckOutDate["hour"] += S["hours"]
 			GlobalSave.AddCheckOut(CheckOutDate)
 			GlobalTime.emit_signal("UpdateSpecificDayInfo",CheckOutDate["day"],GlobalSave.MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])
