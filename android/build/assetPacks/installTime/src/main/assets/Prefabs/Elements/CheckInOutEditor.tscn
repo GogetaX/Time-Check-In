@@ -43,7 +43,7 @@ margin_right = 338.0
 margin_bottom = -11.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Check In"
+text = "check_in"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -58,7 +58,7 @@ margin_right = 339.0
 margin_bottom = 45.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Check Out"
+text = "Checked_Out"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false

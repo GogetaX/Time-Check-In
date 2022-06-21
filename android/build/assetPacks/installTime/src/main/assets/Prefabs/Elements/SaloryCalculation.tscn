@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Prefabs/Elements/CheckBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Elements/SaloryCalculation.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Prefabs/Elements/ValueBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size30Bold.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Prefabs/Elements/OptionBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Flags/israel.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Flags/united-states.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Flags/russia.png" type="Texture" id=9]
 
 [node name="SaloryCalculation" type="Panel"]
 anchor_right = 1.0
@@ -31,12 +34,14 @@ margin_left = -168.0
 margin_top = -27.0
 margin_right = -88.0
 margin_bottom = 27.0
+MinMax = Vector2( 0, 999 )
 
 [node name="Currency" parent="." instance=ExtResource( 6 )]
 margin_left = 472.0
 margin_top = 67.0
 margin_right = 701.0
 margin_bottom = 128.0
+items = [ "ILS", ExtResource( 7 ), 0, false, false, 0, 0, null, "", false, "USD", ExtResource( 8 ), 0, false, false, 1, 0, null, "", false, "Ruble", ExtResource( 9 ), 0, false, false, 2, 0, null, "", false ]
 
 [node name="CurrentCurrencyIcon" type="TextureRect" parent="."]
 margin_left = 408.0

@@ -22,8 +22,9 @@ func AddInfo(DayInfo):
 	
 	if is_Selected:
 		UpdateInfo = true
-		
 	CurDayInfo = DayInfo
+	print("Label: ",text)
+	print("Info: ",DayInfo)
 	if !DayInfo.empty():
 		if DayInfo.has("check_in1"):
 			add_color_override("font_color",InfoColor)
@@ -37,7 +38,7 @@ func AddInfo(DayInfo):
 					print("Report Uknown: ")
 					print(DayInfo)
 		else:
-			print("Week day uknown!")
+			print("Week day unknown!")
 			print(DayInfo)
 	else:
 		add_color_override("font_color",NormalColor)

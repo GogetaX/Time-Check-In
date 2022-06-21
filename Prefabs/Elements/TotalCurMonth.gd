@@ -142,6 +142,7 @@ func DisplayElements(_Date):
 				var Sufix = ""
 				if Settings.has("sufix"):
 					Sufix = " "+TranslationServer.translate(Settings["sufix"])
+				
 				Itm.ShowItem(Delay,{"title":"total_earned","desc":GlobalTime.FloatToString(SecondsWorked/3600.0*Settings["salary"],2)+Sufix})
 				Delay += 0.1
 	#Seperator
