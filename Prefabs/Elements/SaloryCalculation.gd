@@ -23,11 +23,13 @@ func SelectCurrency(Index,MenuItem):
 func _on_CheckBox_OnToggle():
 	DisableEnable(!$Activate.is_Pressed)
 	GlobalSave.AddVarsToSettings("SaloryCalculation","enabled",$Activate.is_Pressed)
-	GlobalSave.AddVarsToSettings("SaloryCalculation","salary",$ValueBox.InisialValue)
+	GlobalSave.AddVarsToSettings("SaloryCalculation","salary",$SalaryBox.InisialValue)
+	GlobalSave.AddVarsToSettings("SaloryCalculation","travel",$TravelBox.InisialValue)
 	GlobalTime.emit_signal("UpdateDayInfo")
 		
 func DisableEnable(SetAsDisable):
-	$ValueBox.Disable(SetAsDisable)
+	$SalaryBox.Disable(SetAsDisable)
+	$TravelBox.Disable(SetAsDisable)
 	$Currency.disabled = SetAsDisable
 	
 	
@@ -35,6 +37,9 @@ func DisableEnable(SetAsDisable):
 func _on_ValueBox_UpdatedVar(NewVar):
 	GlobalSave.AddVarsToSettings("SaloryCalculation","salary",NewVar)
 	GlobalTime.emit_signal("UpdateDayInfo")
+	
+func _on_TravelBox_UpdatedVar(NewVar):
+	GlobalSave.AddVarsToSettings("SaloryCalculation","travel",NewVar)
 
 func SyncFromSave():
 	var S = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
@@ -42,10 +47,15 @@ func SyncFromSave():
 		return
 
 	if S.has("salary"):
-		$ValueBox.SetInisialValue(S["salary"])
+		$SalaryBox.SetInisialValue(S["salary"])
+	if S.has("travel"):
+		$TravelBox.SetInisialValue(S["travel"])
 	if S.has("icon"):
 		$CurrentCurrencyIcon.texture = load(S["icon"])
 	if S.has("enabled"):
 		if S["enabled"]:
 			$Activate.AnimToggle()
 		DisableEnable(!S["enabled"])
+
+
+

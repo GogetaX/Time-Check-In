@@ -16,10 +16,14 @@ __meta__ = {
 }
 
 [node name="ValueBox" parent="." instance=ExtResource( 3 )]
-margin_left = 543.0
-margin_top = 16.0
-margin_right = 623.0
-margin_bottom = 71.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 183.0
+margin_top = -34.0
+margin_right = 263.0
+margin_bottom = 21.0
 text = "8"
 InisialValue = 8.0
 MinMax = Vector2( 1, 24 )

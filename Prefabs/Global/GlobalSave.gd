@@ -128,6 +128,11 @@ func AddVarsToSettings(Category,Key,Value):
 	MySettings[Category][Key] = Value
 	SaveSettings()
 	
+func RemoveSettingByCategory(Category):
+	if MySettings.has(Category):
+		MySettings.erase(Category)
+	SaveSettings()
+	
 	
 func LoadSettings():
 	var F = File.new()

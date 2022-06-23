@@ -359,7 +359,71 @@ func DateToSeconds(Date):
 		Res += Date["second"]
 	return Res
 
-
+func IsraelIncomeCalcFromSalary(GrossSalary):
+	#GrossSalary =  13480+4137.3
+	var Credit = 2.25
+	var CreditAmount = 223
+	var TaxMore = 50.0
+	var AvarageSalary = 6331
+	var TaxInfo = [[6450, 10.0],[9240, 14.0],[14840, 20.0],[20620, 31.0], [42910,35.0], [55270,47.0]]
+	
+	var S = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	if S.has("credit"):
+		Credit = S["credit"]
+		
+	
+	#Tax should be 2295.95
+	#TaxInfo
+	
+	
+	#Gross, Income tax, Social security, Health tax, Net
+	var Rest = {"Gross": GrossSalary}
+	var NetList = []
+	if GrossSalary <= TaxInfo[0][0]:
+		Rest["Income-tax"] = (GrossSalary * TaxInfo[0][1]) / 100.0
+	else:
+		var LastValue = 0
+		for Tax in TaxInfo:
+			if GrossSalary >= Tax[0]:
+				var T = ((Tax[0]-LastValue) * Tax[1]) / 100.0
+				NetList.append(T)
+				LastValue = Tax[0]
+			else:
+				var T = ((GrossSalary - LastValue) * Tax[1]) / 100.0
+				NetList.append(T)
+				break
+		if GrossSalary > TaxInfo[TaxInfo.size()-1][0]:
+			var T = ((GrossSalary - LastValue) * TaxMore) / 100.0
+			NetList.append(T)
+		var Tax = 0
+		
+		for x in NetList:
+			Tax += x
+		Rest["Income-tax"] = Tax
+	
+	if Rest["Income-tax"] > (Credit * CreditAmount):
+		Rest["Income-tax"] -= (Credit * CreditAmount)
+	
+	#Calc Health Tax Security
+	Rest["Social-security"] = 0
+	Rest["Health-tax"] = 0
+	
+	if GrossSalary <= AvarageSalary:
+		Rest["Health-tax"] = (GrossSalary) * 3.1 / 100
+	else:
+		Rest["Health-tax"] = (AvarageSalary) * 3.1 / 100
+		Rest["Health-tax"] += (GrossSalary - AvarageSalary) * 5 / 100
+		
+	if GrossSalary <= AvarageSalary:
+		Rest["Social-security"] = (GrossSalary) * 0.4 / 100
+	else:
+		Rest["Social-security"] = (AvarageSalary) * 0.4 / 100
+		Rest["Social-security"] += (GrossSalary - AvarageSalary) * 7 / 100
+	Rest["Net"] = GrossSalary - Rest["Social-security"] - Rest["Health-tax"]-Rest["Income-tax"]
+	
+	return Rest
+	
+	
 func WeekDayToDayName(DayNum):
 	match DayNum:
 		0:

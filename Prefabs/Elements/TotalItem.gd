@@ -6,10 +6,13 @@ func _ready():
 	$Timer.connect("timeout",self,"DelayStart")
 
 func ShowItem(Delay,Info):
+	$Title.set_message_translation(false)
+	$Desc.set_message_translation(false)
 	$Timer.start(Delay)
 	if Info.empty():
 		$Title.text = ""
 		$Desc.text = ""
+		
 	if TranslationServer.get_locale() == "he":
 		if Info.has("title"):
 			$Desc.text = TranslationServer.translate(Info["title"])

@@ -30,14 +30,12 @@ func InitWeekDays():
 			x.text = GlobalTime.WeekDayToDayName(Day-1)[0]
 			
 func ShowInfoOnDay(Day,InfoData):
-	print("Info")
 	for x in get_children():
 		if String(Day) == x.text:
 			x.AddInfo(InfoData) 
 	
 func InitDays():
 	#Free old
-	print("Init")
 	for x in get_children():
 		if "EmptyDay" in x.name:
 			x.queue_free()

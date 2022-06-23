@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Prefabs/Elements/LanguangeControl.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=34]
 [ext_resource path="res://Prefabs/Elements/CalendarSettings.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Prefabs/Elements/SmartDeductionSalary.tscn" type="PackedScene" id=36]
 
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
@@ -376,6 +377,16 @@ margin_bottom = 664.0
 CategoryText = "Calendar Settings"
 
 [node name="CalendarSettings" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 35 )]
+
+[node name="CategoryPanel5" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
+anchor_right = 0.0
+margin_top = 772.0
+margin_right = 720.0
+margin_bottom = 832.0
+CategoryText = "Smart deduction from salary"
+
+[node name="SmartDeductionSalary" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 36 )]
+margin_bottom = 996.0
 
 [node name="TotalsScreen" type="Control" parent="."]
 visible = false

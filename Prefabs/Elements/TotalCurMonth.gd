@@ -131,7 +131,8 @@ func DisplayElements(_Date):
 	Info = {"title":"total_hours_worked","desc":dec} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
-	
+	var Gross = 0
+	var Sufix = ""
 	#Tot Earned Money
 	var Settings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	if Settings != null:
@@ -139,17 +140,71 @@ func DisplayElements(_Date):
 			if Settings["enabled"]:
 				Itm = TotalItemInstance.instance()
 				VBox.add_child(Itm)
-				var Sufix = ""
 				if Settings.has("sufix"):
 					Sufix = " "+TranslationServer.translate(Settings["sufix"])
-				
-				Itm.ShowItem(Delay,{"title":"total_earned","desc":GlobalTime.FloatToString(SecondsWorked/3600.0*Settings["salary"],2)+Sufix})
+				var TravelAmount = 0
+				if Settings.has("travel"):
+					TravelAmount = Settings["travel"]
+				Gross = SecondsWorked/3600.0*Settings["salary"]+TravelAmount
+				Itm.ShowItem(Delay,{"title":"total_earned","desc":GlobalTime.FloatToString(Gross,2)+Sufix})
 				Delay += 0.1
 	#Seperator
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
 	Itm.ShowItem(Delay,{})
 	Delay += 0.1
+	
+	#Deduction
+	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	if Deduction != null:
+		if Deduction.has("country"):
+			if Deduction["country"] == "Israel":
+				#Israel
+				Itm = TotalItemInstance.instance()
+				VBox.add_child(Itm)
+				Itm.ShowItem(Delay,{"title":"Israel Deduction","desc":""})
+				Delay += 0.1
+				
+				var Rest = GlobalTime.IsraelIncomeCalcFromSalary(Gross)
+				for x in Rest:
+					Itm = TotalItemInstance.instance()
+					VBox.add_child(Itm)
+					Itm.ShowItem(Delay,{"title":x,"desc":String(Rest[x])+Sufix})
+					Delay += 0.1
+				Itm = TotalItemInstance.instance()
+				VBox.add_child(Itm)
+				Itm.ShowItem(Delay,{})
+				Delay += 0.1
+				
+#				Itm = TotalItemInstance.instance()
+#				VBox.add_child(Itm)
+#				Itm.ShowItem(Delay,{"title":"Gross","desc":String(Gross)+Sufix})
+#				Delay += 0.1
+#
+#				Itm = TotalItemInstance.instance()
+#				VBox.add_child(Itm)
+#				Itm.ShowItem(Delay,{"title":"Income tax","desc":String(Gross)+Sufix})
+#				Delay += 0.1
+#
+#				Itm = TotalItemInstance.instance()
+#				VBox.add_child(Itm)
+#				Itm.ShowItem(Delay,{"title":"Social security","desc":String(Gross)+Sufix})
+#				Delay += 0.1
+#
+#				Itm = TotalItemInstance.instance()
+#				VBox.add_child(Itm)
+#				Itm.ShowItem(Delay,{"title":"Health tax","desc":String(Gross)+Sufix})
+#				Delay += 0.1
+#
+#				Itm = TotalItemInstance.instance()
+#				VBox.add_child(Itm)
+#				Itm.ShowItem(Delay,{"title":"Net","desc":String(Gross)+Sufix})
+#				Delay += 0.1
+#
+#				Itm = TotalItemInstance.instance()
+#				VBox.add_child(Itm)
+#				Itm.ShowItem(Delay,{})
+#				Delay += 0.1
 	
 	#Reporting Days off
 	TotDays = 0
@@ -176,10 +231,10 @@ func DisplayElements(_Date):
 			if DaysInMonth[x].has("report"):
 				if DaysInMonth[x]["report"] == "Holiday":
 					TotDays += 1
-	var Sufix = TranslationServer.translate("days")
+	var DaySufix = TranslationServer.translate("days")
 	if TotDays == 1:
-		Sufix = TranslationServer.translate("day")
-	Info = {"title":"total_holidays","desc":String(TotDays)+" "+Sufix} 
+		DaySufix = TranslationServer.translate("day")
+	Info = {"title":"total_holidays","desc":String(TotDays)+" "+DaySufix} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 
