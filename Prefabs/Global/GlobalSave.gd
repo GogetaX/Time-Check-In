@@ -2,6 +2,7 @@ extends Node
 
 # warning-ignore:unused_signal
 signal UpdateLanguange()
+signal UpdateToday()
 
 var MySaves = {}
 var MySettings = {}
@@ -45,14 +46,20 @@ func AddDayOff(DayOffDay):
 	MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]]["report"] = "Day Off"
 	SaveToFile()
 	GlobalTime.emit_signal("UpdateSpecificDayInfo",DayOffDay["day"],MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]])
-
+	
+	var CurDate = OS.get_datetime()
+	if DayOffDay["day"] == CurDate["day"] && DayOffDay["month"] == CurDate["month"] && DayOffDay["year"] == CurDate["year"]:
+		emit_signal("UpdateToday")
 	
 func AddHoliday(DayOffDay):
 	AddMySavesPath(DayOffDay)
 	MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]]["report"] = "Holiday"
 	SaveToFile()
 	GlobalTime.emit_signal("UpdateSpecificDayInfo",DayOffDay["day"],MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]])
-
+	var CurDate = OS.get_datetime()
+	if DayOffDay["day"] == CurDate["day"] && DayOffDay["month"] == CurDate["month"] && DayOffDay["year"] == CurDate["year"]:
+		emit_signal("UpdateToday")
+	
 func RemoveReport(Date):
 	AddMySavesPath(Date)
 	if MySaves[Date["year"]][Date["month"]][Date["day"]].has("report"):
@@ -60,6 +67,56 @@ func RemoveReport(Date):
 	SaveToFile()
 	GlobalTime.emit_signal("UpdateSpecificDayInfo",Date["day"],MySaves[Date["year"]][Date["month"]][Date["day"]])
 
+func HasTodayReport():
+	var CurDate = OS.get_datetime()
+	if !MySaves.has(CurDate["year"]):
+		return null
+	if !MySaves[CurDate["year"]].has(CurDate["month"]):
+		return null
+	if !MySaves[CurDate["year"]][CurDate["month"]].has(CurDate["day"]):
+		return null
+	if !MySaves[CurDate["year"]][CurDate["month"]][CurDate["day"]].has("report"):
+		return null
+	return MySaves[CurDate["year"]][CurDate["month"]][CurDate["day"]]["report"]
+
+func RemoveCheckInOut(CheckInNum,Date):
+
+	var CurYear = GlobalTime.CurSelectedDate["year"]
+	var CurMonth = GlobalTime.CurSelectedDate["month"]
+	if MySaves[CurYear][CurMonth].has(Date["day"]):
+		if  MySaves[CurYear][CurMonth][Date["day"]].has("check_in"+String(CheckInNum)):
+			 MySaves[CurYear][CurMonth][Date["day"]].erase("check_in"+String(CheckInNum))
+		if MySaves[CurYear][CurMonth][Date["day"]].has("check_out"+String(CheckInNum)):
+			MySaves[CurYear][CurMonth][Date["day"]].erase("check_out"+String(CheckInNum))
+		else:
+			print("Error, Checking not existing ",Date," checkinnum ",CheckInNum)
+	else:
+		print("Error, No date found to remove ",Date)
+
+	MySaves[CurYear][CurMonth][Date["day"]] = ReformatCheckins(MySaves[CurYear][CurMonth][Date["day"]])
+	SaveToFile()
+	
+func ReportToImage(ReportText):
+	match ReportText:
+		"Day Off":
+			return load("res://Assets/Icons/day.png")
+		"Holiday":
+			return load("res://Assets/Icons/holidays.png")
+		_:
+			return null
+			
+func ReformatCheckins(CheckInData):
+	var Num = 0
+	var Res = {}
+	for x in CheckInData:
+		if "check_in" in x:
+			Num += 1
+			var CurCheckIn = int(x.replace("check_in",""))
+			Res["check_in"+String(Num)] = CheckInData[x]
+			if CheckInData.has("check_out"+String(CurCheckIn)):
+				Res["check_out"+String(Num)] = CheckInData["check_out"+String(CurCheckIn)]
+	return Res
+	
 func AddMySavesPath(Date):
 	
 	if !MySaves.has(Date["year"]):
@@ -80,6 +137,7 @@ func SaveToFile():
 			F.store_var(MySaves[year][month])
 			F.close()
 
+			
 func LoadSpecificFile(Month,Year):
 	var Res = null
 	var F = File.new()

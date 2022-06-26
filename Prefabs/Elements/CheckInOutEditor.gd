@@ -4,6 +4,7 @@ var CurEditor = null
 var CurLabelEdit = null
 var CurCheckInInfo = {}
 var CurCheckOutInfo = {}
+var CurCheckinNum = 0
 
 func _ready():
 	modulate = Color(1,1,1,0)
@@ -23,6 +24,7 @@ func ShowDate(Delay,_Day,Info,Checks):
 	CurCheckInInfo = Info["check_in"+String(Checks)]
 	CurCheckOutInfo = Info["check_out"+String(Checks)]
 	$DelayTimer.start(Delay)
+	CurCheckinNum = Checks
 	var CheckStr = String(Checks)
 	if CheckStr.length() == 1:
 		CheckStr = "0"+CheckStr
@@ -69,15 +71,7 @@ func SelectHour(event,itmNode):
 			CurLabelEdit = itmNode
 
 
-func _on_InteractiveButton_pressed():
-	if CurEditor.text.is_valid_integer():
-		if "Hour" in CurEditor.name:
-			if int(CurEditor.text) <= 24 && int(CurEditor.text)>=0:
-				CurLabelEdit.text = CurEditor.text
-		elif "Minute" in CurEditor.name:
-			if int(CurEditor.text) <= 60 && int(CurEditor.text)>=0:
-				CurLabelEdit.text = CurEditor.text
-	HideAllEdits()
+
 
 func GetEditedInfo():
 	var CheckInNum = int($CheckInNum.text)
@@ -109,3 +103,28 @@ func _on_DelayTimer_timeout():
 	
 func FinishTween(T):
 	T.queue_free()
+
+func _on_InteractiveButton_pressed():
+	if CurEditor.text.is_valid_integer():
+		if "Hour" in CurEditor.name:
+			if int(CurEditor.text) <= 24 && int(CurEditor.text)>=0:
+				CurLabelEdit.text = CurEditor.text
+		elif "Minute" in CurEditor.name:
+			if int(CurEditor.text) <= 60 && int(CurEditor.text)>=0:
+				CurLabelEdit.text = CurEditor.text
+	HideAllEdits()
+
+func _on_RemoveButton_pressed():
+	var T = Tween.new()
+	add_child(T)
+	T.connect("tween_all_completed",self,"FinishTweenAndClose",[T])
+	T.interpolate_property(self,"modulate",modulate,Color(1,1,1,0),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+	T.start()
+	
+func FinishTweenAndClose(T):
+	T.queue_free()
+	GlobalSave.RemoveCheckInOut(CurCheckinNum,CurCheckInInfo)
+	var Date= {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
+	GlobalTime.HourSelectorUI.SyncDate(Date)
+	GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
+	GlobalTime.emit_signal("UpdateDayInfo")

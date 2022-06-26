@@ -3,6 +3,7 @@ extends Button
 var is_Toggled = false
 var BGColor = Color("7FC4FD")
 var OrangeColor = Color("fbff9e26")
+var DontFlip = false
 
 signal Toggled()
 
@@ -19,6 +20,9 @@ func ForceToggle(is_Pressed):
 	BtnPressed(true)
 	
 func BtnPressed(skip_toggle = false):
+	if DontFlip:
+		DontFlip = false
+		return
 	if !skip_toggle: is_Toggled = !is_Toggled
 	var T = Tween.new()
 	add_child(T)

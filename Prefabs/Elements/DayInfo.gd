@@ -77,7 +77,7 @@ func ShowHowLongWorked(Date):
 	var LastWord = ""
 	var Seconds = Date["hour"]*3600+Date["minute"]*60+Date["second"]
 	if Seconds == 0:
-		return ""
+		return ["0",TranslationServer.translate("Seconds")]
 	if Seconds < 60:
 		LastWord = TranslationServer.translate("Seconds")
 	elif Seconds <3600:

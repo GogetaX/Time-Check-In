@@ -17,6 +17,7 @@ var CurSelectedDate = {"day": 0,"month":0,"year":0}
 var TempCurMonth = 0
 var TempCurYear = 0
 var HourSelectorUI = null
+var PopupModulateUI = null
 
 signal InitSecond()
 signal TimeModeChangedTo(TimeMode)
@@ -240,6 +241,7 @@ func ShowTime():
 	
 func GetLastCheckIn():
 	return GlobalTime.HasCheckin[GlobalTime.HasCheckin.size()-1]
+	
 func GetLastCheckOut():
 	return GlobalTime.HasCheckOut[GlobalTime.HasCheckOut.size()-1]
 	
@@ -308,7 +310,7 @@ func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
 		Sec = "0"+Sec
 	Res += Sec
 	if Date["minute"] == 0 && Date["hour"] == 0:
-		Res += " "+TranslationServer.translate("seconds")
+		Res += " "+TranslationServer.translate("Seconds")
 	return Res
 	
 func SecondsToDate(Seconds):

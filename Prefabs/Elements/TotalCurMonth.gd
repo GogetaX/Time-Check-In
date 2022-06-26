@@ -169,7 +169,7 @@ func DisplayElements(_Date):
 				for x in Rest:
 					Itm = TotalItemInstance.instance()
 					VBox.add_child(Itm)
-					Itm.ShowItem(Delay,{"title":x,"desc":String(Rest[x])+Sufix})
+					Itm.ShowItem(Delay,{"title":x,"desc":GlobalTime.FloatToString(Rest[x],2)+Sufix})
 					Delay += 0.1
 				Itm = TotalItemInstance.instance()
 				VBox.add_child(Itm)

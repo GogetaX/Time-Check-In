@@ -10,8 +10,6 @@ func _ready():
 	connect("pressed",self,"BtnPressed")
 	NewCustomColor = modulate
 	
-
-
 func BtnPressed():
 	var T = Tween.new()
 	add_child(T)
