@@ -28,6 +28,6 @@ text = "8"
 InisialValue = 8.0
 MinMax = Vector2( 1, 24 )
 HasArrows = false
-FrontText = "Targeted working hours"
+FrontText = "Working hours"
 
 [connection signal="UpdatedVar" from="ValueBox" to="." method="_on_ValueBox_UpdatedVar"]

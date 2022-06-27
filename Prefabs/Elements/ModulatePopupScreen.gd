@@ -27,7 +27,6 @@ func ShowModulate(Data):
 	T.start()
 	
 func InitWindowFromData(Data):
-	print(Data)
 	# {"type": "YesNo","title":"","desc":TranslationServer.translate("Are you sure you want to skip a") % TranslationServer.translate(TodayReport)}
 	for x in get_children():
 		if "Panel" in x.name:

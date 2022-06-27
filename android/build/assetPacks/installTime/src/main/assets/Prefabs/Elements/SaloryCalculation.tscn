@@ -49,7 +49,7 @@ text = "300"
 InisialValue = 300.0
 MinMax = Vector2( 0, 9999 )
 HasArrows = false
-FrontText = "Travel /m"
+FrontText = "Bonus /m"
 
 [node name="Currency" parent="." instance=ExtResource( 6 )]
 anchor_left = 0.5
