@@ -80,8 +80,7 @@ func CheckIfVirtualKeyboard():
 	if OS.get_name() == "Windows":
 		CanCloseKeyboard = true
 		var Val = float($LineEdit.text)
-		if Val != 0:
-			SetInisialValue(Val)
+		SetInisialValue(Val)
 		self_modulate = Color(1,1,1,1)
 		$LineEdit.visible = false
 		$VirtualKeyboardTimer.stop()
@@ -93,8 +92,7 @@ func CheckIfVirtualKeyboard():
 	if OS.get_virtual_keyboard_height() <= 0 && CanCloseKeyboard:
 		$LineEdit.visible = false
 		var Val = float($LineEdit.text)
-		if Val != 0:
-			SetInisialValue(Val)
+		SetInisialValue(Val)
 			
 		self_modulate = Color(1,1,1,1)
 		

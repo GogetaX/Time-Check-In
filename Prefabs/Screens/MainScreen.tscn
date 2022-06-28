@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
@@ -38,6 +38,45 @@
 [ext_resource path="res://Prefabs/Elements/SmartDeductionSalary.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Prefabs/Elements/ModulatePopupScreen.gd" type="Script" id=37]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=38]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.14902, 0.6, 0.984314, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.737255, 0.878431, 0.992157, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.737255, 0.878431, 0.992157, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id=6]
+VScrollBar/styles/grabber = SubResource( 4 )
+VScrollBar/styles/grabber_highlight = SubResource( 5 )
+VScrollBar/styles/grabber_pressed = SubResource( 7 )
+VScrollBar/styles/scroll = SubResource( 8 )
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -331,6 +370,7 @@ margin_top = 59.0
 margin_bottom = 259.0
 
 [node name="SettingsScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -351,6 +391,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 100.0
 margin_bottom = -92.0
+scroll_vertical_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -371,53 +412,56 @@ CategoryText = "Auto Salary Calculation"
 anchor_right = 0.0
 margin_top = 64.0
 margin_right = 720.0
-margin_bottom = 264.0
+margin_bottom = 244.0
 
 [node name="CategoryPanel2" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
 anchor_right = 0.0
-margin_top = 268.0
+margin_top = 248.0
 margin_right = 720.0
-margin_bottom = 328.0
+margin_bottom = 308.0
 CategoryText = "Daily working hours"
 
 [node name="WorkingHours" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 32 )]
-margin_top = 332.0
-margin_bottom = 432.0
+margin_top = 312.0
+margin_bottom = 392.0
 
 [node name="CategoryPanel3" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
 anchor_right = 0.0
-margin_top = 436.0
+margin_top = 396.0
 margin_right = 720.0
-margin_bottom = 496.0
+margin_bottom = 456.0
 CategoryText = "App Language"
 
 [node name="LanguangeControl" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 33 )]
-margin_top = 500.0
-margin_bottom = 600.0
+margin_top = 460.0
+margin_bottom = 560.0
 
 [node name="CategoryPanel4" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
 anchor_right = 0.0
-margin_top = 604.0
+margin_top = 564.0
 margin_right = 720.0
-margin_bottom = 664.0
+margin_bottom = 624.0
 CategoryText = "Calendar Settings"
 
 [node name="CalendarSettings" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 35 )]
+margin_top = 628.0
+margin_bottom = 728.0
 
 [node name="CategoryPanel5" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
 anchor_right = 0.0
-margin_top = 772.0
+margin_top = 732.0
 margin_right = 720.0
-margin_bottom = 832.0
+margin_bottom = 792.0
 CategoryText = "Smart deduction from salary"
 
 [node name="SmartDeductionSalary" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 36 )]
-margin_bottom = 996.0
+margin_top = 796.0
+margin_bottom = 1076.0
 
 [node name="TotalsScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -472,6 +516,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 184.0
 margin_bottom = -97.0
+theme = SubResource( 6 )
+scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

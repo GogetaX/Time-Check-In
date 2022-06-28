@@ -12,8 +12,10 @@ signal OnToggle()
 
 func _ready():
 	StartPos = $BG/Toggle.rect_position
-	ColorStyle = $BG.get_stylebox("panel")
+	ColorStyle = $BG.get_stylebox("panel").duplicate()
+	$BG.add_stylebox_override("panel",ColorStyle)
 	ColorStyle.set_bg_color(BASE_COLOR)
+	
 
 
 func _gui_input(event):

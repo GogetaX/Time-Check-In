@@ -118,16 +118,22 @@ func DisplayElements(_Date):
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
 	var SecondsWorked = 0
+	var SecondsFor125 = 0
+	var SecondsFor150 = 0
 	if DaysInMonth != null:
 		
 		for x in DaysInMonth:
-			SecondsWorked += GlobalTime.CalcBetweenCheckinsTOSeconds(DaysInMonth[x])
+			var SecondsThisDay = GlobalTime.CalcBetweenCheckinsTOSeconds(DaysInMonth[x])
+			var Tot = GlobalTime.GetHowManySecondsOnNosafot(SecondsThisDay)
+			SecondsWorked += Tot[0]
+			SecondsFor125 += Tot[1]
+			SecondsFor150 += Tot[2]
 	var CurMonth = OS.get_datetime()
 	var dec = ""
-	dec = TranslationServer.translate("total_hours_info").format([GlobalTime.FloatToString(SecondsWorked/3600,1)])
+	dec = TranslationServer.translate("total_hours_info").format([GlobalTime.FloatToString((SecondsWorked+SecondsFor125+SecondsFor150)/3600,1)])
 	if CurMonth["month"] == CurSelectedMonth["month"] && CurMonth["year"] == CurSelectedMonth["year"]:
 		if GlobalTime.CurTimeMode == GlobalTime.TIME_CHECKED_IN:
-			dec = TranslationServer.translate("total_hours_and_going").format([GlobalTime.FloatToString(SecondsWorked/3600,1)])
+			dec = TranslationServer.translate("total_hours_and_going").format([GlobalTime.FloatToString((SecondsWorked+SecondsFor125+SecondsFor150)/3600,1)])
 	Info = {"title":"total_hours_worked","desc":dec} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
@@ -143,9 +149,9 @@ func DisplayElements(_Date):
 				if Settings.has("sufix"):
 					Sufix = " "+TranslationServer.translate(Settings["sufix"])
 				var TravelAmount = 0
-				if Settings.has("travel"):
-					TravelAmount = Settings["travel"]
-				Gross = SecondsWorked/3600.0*Settings["salary"]+TravelAmount
+				if Settings.has("bonus"):
+					TravelAmount = Settings["bonus"]
+				Gross = ((SecondsWorked+SecondsFor125+SecondsFor150)/3600)*Settings["salary"]+TravelAmount
 				Itm.ShowItem(Delay,{"title":"total_earned","desc":GlobalTime.FloatToString(Gross,2)+Sufix})
 				Delay += 0.1
 	#Seperator
@@ -165,11 +171,16 @@ func DisplayElements(_Date):
 				Itm.ShowItem(Delay,{"title":"Israel Deduction","desc":""})
 				Delay += 0.1
 				
-				var Rest = GlobalTime.IsraelIncomeCalcFromSalary(Gross)
+				var Rest = GlobalTime.IsraelIncomeCalcFromSalary(SecondsWorked,SecondsFor125,SecondsFor150)
 				for x in Rest:
 					Itm = TotalItemInstance.instance()
 					VBox.add_child(Itm)
-					Itm.ShowItem(Delay,{"title":x,"desc":GlobalTime.FloatToString(Rest[x],2)+Sufix})
+					var i = String(Rest[x])
+					if i.is_valid_integer():
+						i = String(i)
+					elif i.is_valid_float():
+						i = GlobalTime.FloatToString(i,2)
+					Itm.ShowItem(Delay,{"title":x,"desc":i})
 					Delay += 0.1
 				Itm = TotalItemInstance.instance()
 				VBox.add_child(Itm)

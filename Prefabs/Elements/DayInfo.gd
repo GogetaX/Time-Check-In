@@ -41,6 +41,8 @@ func InitHoliday(_Info):
 	RemoveAllExcept("HolidayReport")
 	$HolidayReport/Icon.texture = load("res://Assets/Icons/holidays.png")
 	
+
+
 func InfoForCheckInData(Info):
 	RemoveAllExcept("CheckInData")
 	$CheckInData/WorkingHours.text = GlobalTime.GetAllCheckInAndOuts(Info)
@@ -55,14 +57,17 @@ func InfoForCheckInData(Info):
 	if SalorySettings != null:
 		if SalorySettings.has("enabled"):
 			$CheckInData/HowMuchEarned.visible = SalorySettings["enabled"]
-			var Salary = 1
-			if SalorySettings.has("salary"):
-				Salary = SalorySettings["salary"]
 			var sufix = ""
 			if SalorySettings.has("sufix"):
 				sufix = TranslationServer.translate(SalorySettings["sufix"])
-				
-			$CheckInData/HowMuchEarned.text = TranslationServer.translate("Earned").format([GlobalTime.FloatToString(GlobalTime.DateToSeconds(D)/3600.0*Salary,2),sufix])
+			var WithNosafot = GlobalTime.GetHowManySecondsOnNosafot(GlobalTime.DateToSeconds(D))
+			var has_nosafot_rate = ""
+			if WithNosafot[2] > 0:
+				has_nosafot_rate = "rate 150%"
+			elif WithNosafot[1] > 0:
+				has_nosafot_rate = "rate 125%"
+			print(WithNosafot)
+			$CheckInData/HowMuchEarned.text = TranslationServer.translate("Earned").format([GlobalTime.FloatToString(((WithNosafot[0]/3600.0*SalorySettings["salary"])+(WithNosafot[1]/3600.0*SalorySettings["salary"])*1.25+(WithNosafot[2]/3600.0*SalorySettings["salary"])*1.5),2),sufix,TranslationServer.translate(has_nosafot_rate)])
 			if GlobalTime.CheckIfOnGoing(Info):
 				$OnGoingTimer.start(1)
 				

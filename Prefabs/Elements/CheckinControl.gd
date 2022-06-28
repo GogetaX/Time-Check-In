@@ -76,7 +76,7 @@ func TimeModeChangedTo(ToMode):
 			var StartedWorking = GlobalTime.GetLastCheckIn()
 			var EndedWorking = GlobalTime.GetLastCheckOut()
 			var PassedTime = GlobalTime.CalcAllCheckInsAndOutsToSeconds()
-			$PassedTime.text = TranslationServer.translate("worked_today_info") % [GlobalTime.TimeToString(PassedTime)]
+			$PassedTime.text = TranslationServer.translate("worked_today_info").format([GlobalTime.TimeToString(PassedTime)])
 			#var EndedWorking = GlobalTime.
 			var In_Min = String(StartedWorking["minute"])
 			var Out_Min = String(EndedWorking["minute"])
@@ -95,7 +95,8 @@ func _on_CheckinBtn_pressed():
 	
 func InitSecond():
 	if GlobalTime.CurTimeMode != GlobalTime.TIME_CHECKED_IN: return
-	$PassedTime.text = TranslationServer.translate("passed_time_info") % GlobalTime.CalcAllTimePassed()
+	var CurDate = GlobalTime.CalcAllTimePassed()
+	$PassedTime.text = TranslationServer.translate("passed_time_info") % CurDate
 
 
 func _on_PauseBtn_pressed():

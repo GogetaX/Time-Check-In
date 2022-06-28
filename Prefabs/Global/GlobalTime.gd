@@ -218,20 +218,34 @@ func CalcHowLongWorked(Info):
 	
 
 func FloatToString(FloatNum,Nums):
-	var s = String(FloatNum)
-	if !"." in s:
-		return s
-	var ret = ""
-	var HadDot = 0
-	for x in range(s.length()):
-		ret = ret + s[x]
-		if Nums == HadDot:
-			return ret
-		if HadDot > 0:
-			HadDot += 1
-		if s[x] == ".":
-			HadDot = 1
-	return ret
+	#Seperating float <Num>.<Num>
+	var Sides = String(FloatNum).split(".")
+	if Sides.size()==2:
+		if Sides[1].length() == 1:
+			Sides[1] = Sides[1]+"0"
+		else:
+			Sides[1] = Sides[1].substr(0,Nums)
+			
+	var a = Sides[0].length()
+	var count = 0
+	var r = ""
+	while true:
+		a -= 1
+		r = Sides[0][a] + r
+		
+		count += 1
+		if count == 3 && a != 0:
+			r = ","+r
+			count = 0
+			
+		if a == 0:
+			break
+	var NewRet = r
+	if Sides.size()==2:
+		NewRet += "."+Sides[1]
+	
+	return NewRet
+	
 	
 func ShowTime():
 	var Min = String(OldTime["minute"])
@@ -361,7 +375,12 @@ func DateToSeconds(Date):
 		Res += Date["second"]
 	return Res
 
-func IsraelIncomeCalcFromSalary(GrossSalary):
+func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
+	var Salary = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
+	if Salary == null:
+		return {"no_info_on_salary":""}
+	var GrossSalary = (SecondsWorked/3600 * Salary["salary"]) + (Sec125/3600.0 * Salary["salary"] * 1.25) + (Sec150/3600.0 * Salary["salary"] * 1.50)+Salary["bonus"]
+	
 	#GrossSalary =  13480+4137.3
 	var Credit = 2.25
 	var CreditAmount = 223
@@ -370,6 +389,9 @@ func IsraelIncomeCalcFromSalary(GrossSalary):
 	var TaxInfo = [[6450, 10.0],[9240, 14.0],[14840, 20.0],[20620, 31.0], [42910,35.0], [55270,47.0]]
 	
 	var S = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	var sufix = ""
+	if Salary.has("sufix"):
+		sufix = Salary["sufix"]
 	if S.has("credit"):
 		Credit = S["credit"]
 		
@@ -379,7 +401,11 @@ func IsraelIncomeCalcFromSalary(GrossSalary):
 	
 	
 	#Gross, Income tax, Social security, Health tax, Net
-	var Rest = {"Gross": GrossSalary}
+	var Rest = {"Gross": FloatToString(GrossSalary,2)+sufix,
+		"NosafotHours 125%": String(Sec125/3600.0)+" "+TranslationServer.translate("hours"),
+		"NosafotEarned 125%": FloatToString(Sec125/3600.0*Salary["salary"] * 1.25,2)+sufix,
+		"NosafotHours 150%": String(Sec150/3600.0)+" "+TranslationServer.translate("hours"),
+		"NosafotEarned 150%": FloatToString(Sec150/3600.0*Salary["salary"] * 1.50,2)+sufix}
 	var NetList = []
 	if GrossSalary <= TaxInfo[0][0]:
 		Rest["Income-tax"] = (GrossSalary * TaxInfo[0][1]) / 100.0
@@ -405,6 +431,7 @@ func IsraelIncomeCalcFromSalary(GrossSalary):
 	
 	if Rest["Income-tax"] > (Credit * CreditAmount):
 		Rest["Income-tax"] -= (Credit * CreditAmount)
+		
 	
 	#Calc Health Tax Security
 	Rest["Social-security"] = 0
@@ -416,15 +443,61 @@ func IsraelIncomeCalcFromSalary(GrossSalary):
 		Rest["Health-tax"] = (AvarageSalary) * 3.1 / 100
 		Rest["Health-tax"] += (GrossSalary - AvarageSalary) * 5 / 100
 		
+		
 	if GrossSalary <= AvarageSalary:
 		Rest["Social-security"] = (GrossSalary) * 0.4 / 100
 	else:
 		Rest["Social-security"] = (AvarageSalary) * 0.4 / 100
 		Rest["Social-security"] += (GrossSalary - AvarageSalary) * 7 / 100
+		
 	Rest["Net"] = GrossSalary - Rest["Social-security"] - Rest["Health-tax"]-Rest["Income-tax"]
 	
+	Rest["Health-tax"] = FloatToString(Rest["Health-tax"],2)+sufix
+	Rest["Social-security"] = FloatToString(Rest["Social-security"],2)+sufix
+	Rest["Income-tax"] = FloatToString(Rest["Income-tax"],2)+sufix
+	Rest["Net"] = FloatToString(Rest["Net"],2)+sufix
 	return Rest
 	
+func GetHowManySecondsOnNosafot(TotalDailySeconds):
+	var WorkingHours = GlobalSave.GetValueFromSettingCategory("WorkingHours")
+	var has_125 = false
+	var has_150 = false
+	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	if Deduction != null:
+		if Deduction.has("overtime125"):
+			has_125 = Deduction["overtime125"]
+		if Deduction.has("overtime150"):
+			has_150 = Deduction["overtime150"]
+	if WorkingHours != null:
+		#Calculate in case 125 and 150
+		if WorkingHours.has("hours") && has_125 && has_150:
+			if TotalDailySeconds <= WorkingHours["hours"] * 3600:
+				return [TotalDailySeconds,0,0]
+			elif TotalDailySeconds > WorkingHours["hours"] * 3600 && TotalDailySeconds <= (WorkingHours["hours"]+2) * 3600:
+				return [WorkingHours["hours"] * 3600,TotalDailySeconds-(WorkingHours["hours"] * 3600),0]
+			else:
+				return [WorkingHours["hours"] * 3600,(2 * 3600),(TotalDailySeconds-((WorkingHours["hours"]+2)* 3600))]
+		#calculate if 125 and no 150
+		if WorkingHours.has("hours") && has_125 && !has_150:
+			if TotalDailySeconds <= WorkingHours["hours"] * 3600:
+				return [TotalDailySeconds,0,0]
+			else:
+				return [WorkingHours["hours"] * 3600,TotalDailySeconds-(WorkingHours["hours"] * 3600),0]
+		#calculate if no 125 and has 150
+		if WorkingHours.has("hours") && !has_125 && has_150:
+			if TotalDailySeconds <= WorkingHours["hours"] * 3600:
+				return [TotalDailySeconds,0,0]
+			else:
+				return [WorkingHours["hours"] * 3600,0,TotalDailySeconds-(WorkingHours["hours"] * 3600)]
+				
+	else:
+		return [TotalDailySeconds,0,0]
+	
+	return [TotalDailySeconds,0,0]
+	
+
+	
+
 	
 func WeekDayToDayName(DayNum):
 	match DayNum:

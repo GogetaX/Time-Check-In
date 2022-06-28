@@ -7,10 +7,11 @@ func _ready():
 func SyncFromSave():
 	var S = GlobalSave.GetValueFromSettingCategory("WorkingHours")
 	if S == null:
+		GlobalSave.AddVarsToSettings("WorkingHours","hours",$WorkingHours.InisialValue)
 		return
 
 	if S.has("hours"):
-		$ValueBox.SetInisialValue(S["hours"])
+		$WorkingHours.SetInisialValue(S["hours"])
 
 
 func _on_ValueBox_UpdatedVar(NewVar):
