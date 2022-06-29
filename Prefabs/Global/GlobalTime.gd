@@ -273,6 +273,23 @@ func CalcAllTimePassed():
 		CurTime = GetLastCheckOut()
 	return CalcTimePassed(GetLastCheckIn(),CurTime,Seconds)
 	
+func CalcAllCheckInsAndOutsToSeconds():
+	var Seconds = 0
+	if HasCheckOut != []:
+		for x in range(HasCheckOut.size()):
+			Seconds += HasCheckOut[x]["second"]-HasCheckin[x]["second"]
+			Seconds += (HasCheckOut[x]["minute"]-HasCheckin[x]["minute"])*60
+			Seconds += (HasCheckOut[x]["hour"]-HasCheckin[x]["hour"])*3600
+			Seconds += (HasCheckOut[x]["day"]-HasCheckin[x]["day"])*86400
+			if x == HasCheckOut.size()-1:
+				if HasCheckin.size() > HasCheckOut.size():
+					var CurDate = OS.get_datetime()
+					Seconds += CurDate["second"]-HasCheckin[x+1]["second"]
+					Seconds += (CurDate["minute"]-HasCheckin[x+1]["minute"])*60
+					Seconds += (CurDate["hour"]-HasCheckin[x+1]["hour"])*3600
+					Seconds += (CurDate["day"]-HasCheckin[x+1]["day"])*86400
+	return Seconds
+	
 func TimeToString(Seconds):
 	var Date = SecondsToDate(Seconds)
 	
@@ -288,16 +305,7 @@ func TimeToString(Seconds):
 	return TranslationServer.translate("second_info") % String(Date["second"])
 	
 	
-func CalcAllCheckInsAndOutsToSeconds():
-	var Seconds = 0
-	if HasCheckOut != []:
-		for x in range(HasCheckOut.size()):
-			Seconds += HasCheckOut[x]["second"]-HasCheckin[x]["second"]
-			Seconds += (HasCheckOut[x]["minute"]-HasCheckin[x]["minute"])*60
-			Seconds += (HasCheckOut[x]["hour"]-HasCheckin[x]["hour"])*3600
-			Seconds += (HasCheckOut[x]["day"]-HasCheckin[x]["day"])*86400
-	
-	return Seconds
+
 	
 func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
 	var FromSeconds = DateToSeconds(FromTime)
@@ -401,11 +409,13 @@ func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
 	
 	
 	#Gross, Income tax, Social security, Health tax, Net
-	var Rest = {"Gross": FloatToString(GrossSalary,2)+sufix,
-		"NosafotHours 125%": String(Sec125/3600.0)+" "+TranslationServer.translate("hours"),
-		"NosafotEarned 125%": FloatToString(Sec125/3600.0*Salary["salary"] * 1.25,2)+sufix,
-		"NosafotHours 150%": String(Sec150/3600.0)+" "+TranslationServer.translate("hours"),
-		"NosafotEarned 150%": FloatToString(Sec150/3600.0*Salary["salary"] * 1.50,2)+sufix}
+	var Rest = {"Gross": FloatToString(GrossSalary,2)+sufix}
+	if Sec125 > 0:
+		Rest["NosafotHours 125%"] = FloatToString(Sec125/3600.0,1)+" "+TranslationServer.translate("hours")
+		Rest["NosafotEarned 125%"] = FloatToString(Sec125/3600.0*Salary["salary"] * 1.25,2)+sufix
+	if Sec150 > 0:
+		Rest["NosafotHours 150%"] = FloatToString(Sec150/3600.0,1)+" "+TranslationServer.translate("hours")
+		Rest["NosafotEarned 150%"] = FloatToString(Sec150/3600.0*Salary["salary"] * 1.50,2)+sufix
 	var NetList = []
 	if GrossSalary <= TaxInfo[0][0]:
 		Rest["Income-tax"] = (GrossSalary * TaxInfo[0][1]) / 100.0

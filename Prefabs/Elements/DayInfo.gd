@@ -66,7 +66,6 @@ func InfoForCheckInData(Info):
 				has_nosafot_rate = "rate 150%"
 			elif WithNosafot[1] > 0:
 				has_nosafot_rate = "rate 125%"
-			print(WithNosafot)
 			$CheckInData/HowMuchEarned.text = TranslationServer.translate("Earned").format([GlobalTime.FloatToString(((WithNosafot[0]/3600.0*SalorySettings["salary"])+(WithNosafot[1]/3600.0*SalorySettings["salary"])*1.25+(WithNosafot[2]/3600.0*SalorySettings["salary"])*1.5),2),sufix,TranslationServer.translate(has_nosafot_rate)])
 			if GlobalTime.CheckIfOnGoing(Info):
 				$OnGoingTimer.start(1)

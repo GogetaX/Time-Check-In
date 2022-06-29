@@ -76,7 +76,7 @@ func TimeModeChangedTo(ToMode):
 			var StartedWorking = GlobalTime.GetLastCheckIn()
 			var EndedWorking = GlobalTime.GetLastCheckOut()
 			var PassedTime = GlobalTime.CalcAllCheckInsAndOutsToSeconds()
-			$PassedTime.text = TranslationServer.translate("worked_today_info").format([GlobalTime.TimeToString(PassedTime)])
+			$PassedTime.text = TranslationServer.translate("worked_today_info") % GlobalTime.TimeToString(PassedTime)
 			#var EndedWorking = GlobalTime.
 			var In_Min = String(StartedWorking["minute"])
 			var Out_Min = String(EndedWorking["minute"])
@@ -85,18 +85,51 @@ func TimeModeChangedTo(ToMode):
 			if Out_Min.length() == 1:
 				Out_Min = "0"+Out_Min
 			$CheckedInText.text = TranslationServer.translate("checked_out_info") % [String(StartedWorking["hour"])+":"+In_Min+ " -> " +String(EndedWorking["hour"])+":"+Out_Min]
-			
+			SyncNosafot()
 	
 
 func _on_CheckinBtn_pressed():
 	GlobalTime.ChangeTimeModes(GlobalTime.TIME_CHECKED_IN)
 	
-
+func SyncNosafot():
+	var Nosafot = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	var WorkHours = GlobalSave.GetValueFromSettingCategory("WorkingHours")
+	var has_125 = false
+	var has_150 = false
+	if Nosafot != null && WorkHours != null:
+		if Nosafot.has("overtime125"):
+			has_125 = Nosafot["overtime125"]
+		if Nosafot.has("overtime150"):
+			has_150 = Nosafot["overtime150"]
+			
+	var PassedTime = GlobalTime.CalcAllCheckInsAndOutsToSeconds()
+	$Nosafot150Info.text = ""
+	var Worked125 = 0
+	var Worked150 = 0
+	if has_125:
+		if PassedTime> WorkHours["hours"] * 3600:
+			Worked125 = PassedTime - (WorkHours["hours"] * 3600)
+			if Worked125 > 2*3600:
+				Worked125 = 2*3600
+	if has_150:
+		if PassedTime > (WorkHours["hours"]+2) * 3600:
+			Worked150 = PassedTime - ((WorkHours["hours"]+2) * 3600)
+			
+	if Worked125 == 0:
+		$Nosafot125Info.text = ""
+	else:
+		$Nosafot125Info.text = TranslationServer.translate("Overtime 125").format([GlobalTime.TimeToString(Worked125)])
+		
+	if Worked150 == 0:
+		$Nosafot150Info.text = ""
+	else:
+		$Nosafot150Info.text = TranslationServer.translate("Overtime 150").format([GlobalTime.TimeToString(Worked150)])
 	
 func InitSecond():
 	if GlobalTime.CurTimeMode != GlobalTime.TIME_CHECKED_IN: return
 	var CurDate = GlobalTime.CalcAllTimePassed()
 	$PassedTime.text = TranslationServer.translate("passed_time_info") % CurDate
+	SyncNosafot()
 
 
 func _on_PauseBtn_pressed():
