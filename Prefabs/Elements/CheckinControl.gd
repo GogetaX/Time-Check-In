@@ -67,6 +67,7 @@ func TimeModeChangedTo(ToMode):
 			$StartStopBtn.ForceToggle(false)
 			$CheckedInText.text = ""
 			$PassedTime.text = ""
+			SyncNosafot()
 		GlobalTime.TIME_CHECKED_IN:
 			$CheckedInText.text = TranslationServer.translate("check_in_info") % GlobalTime.ShowTime()
 			$StartStopBtn.ForceToggle(true)
