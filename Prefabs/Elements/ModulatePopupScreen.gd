@@ -3,14 +3,14 @@ extends Control
 signal EmitedAnswer(Answer)
 
 func _ready():
-	GlobalTime.PopupModulateUI = self
+	visible = false
 	InitAllBtns()
 	
 func InitAllBtns():
 	for a in get_children():
 		if a is Panel:
 			for b in a.get_children():
-				if b is HBoxContainer:
+				if b is HBoxContainer || b is VBoxContainer:
 					for c in b.get_children():
 						c.connect("pressed",self,"PressedButton",[c])
 						
@@ -22,8 +22,8 @@ func ShowModulate(Data):
 	add_child(T)
 	T.connect("tween_all_completed",self,"FinishShow",[T])
 	var S = $Background.material
-	T.interpolate_property(self,"modulate",modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
-	T.interpolate_property(S,"shader_param/blue_amount",0,3.5,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+	T.interpolate_property(self,"modulate",modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.2)
+	T.interpolate_property(S,"shader_param/blue_amount",0,3.5,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.5)
 	T.start()
 	
 func InitWindowFromData(Data):
@@ -31,8 +31,8 @@ func InitWindowFromData(Data):
 	for x in get_children():
 		if "Panel" in x.name:
 			if Data["type"]+"Panel" == x.name:
-				x.get_node("Title").text = Data["title"]
-				x.get_node("Desc").text = Data["desc"]
+				if Data.has("title"): x.get_node("Title").text = Data["title"]
+				if Data.has("Desc"): x.get_node("Desc").text = Data["desc"]
 				x.visible = true
 			else:
 				x.visible = false
@@ -47,7 +47,7 @@ func HideModulate():
 	T.start()
 	
 func PressedButton(BtnNode):
-	emit_signal("EmitedAnswer",BtnNode.text)
+	emit_signal("EmitedAnswer",BtnNode.name)
 	HideModulate()
 	
 	

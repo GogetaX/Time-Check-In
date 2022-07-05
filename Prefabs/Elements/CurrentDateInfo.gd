@@ -19,5 +19,5 @@ func SelectedDate(_DayButton):
 	else:
 		Day = DayInfo.instance()
 		add_child(Day)
-		
 		Day.SetInfo(GlobalTime.CurSelectedDate["info"])
+

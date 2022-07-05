@@ -72,6 +72,12 @@ func SyncButtons(Date):
 		if !D.empty():
 			DisablePrevMonth = false
 	
+	#CXheck if Next Month exist
+	if !GlobalTime.HasNextMonth(Date["month"],Date["year"]):
+		DisableNextMonth = true
+	if !GlobalTime.HasPrevMonth(Date["month"],Date["year"]):
+		DisablePrevMonth = true
+	
 	$NextMonth.SetDisabled(DisableNextMonth)
 	$PrevMonth.SetDisabled(DisablePrevMonth)
 	
@@ -257,11 +263,15 @@ func GroupPressed(BtnNode,_GroupName):
 func DisplayMonth(Date):
 	var CurDay = OS.get_datetime()
 	var MonthIndicator = ""
+	
 	if Date["month"] == CurDay["month"] && Date["year"] == CurDay["year"]:
 		MonthIndicator = TranslationServer.translate("This month")
 	elif Date["month"]+1 == CurDay["month"] && Date["year"] == CurDay["year"]:
 		MonthIndicator = TranslationServer.translate("Last month")
 	elif Date["month"]-1 == CurDay["month"] && Date["year"] == CurDay["year"]:
 		MonthIndicator = TranslationServer.translate("Next month")
-	text = TranslationServer.translate("total_title").format([MonthIndicator,GlobalTime.GetMonthName(Date["month"])[1],String(Date["year"])])
-	#text = MonthIndicator + GlobalTime.GetMonthName(Date["month"])[1]+" - "+String(Date["year"])
+	
+	if MonthIndicator != "":
+		text = TranslationServer.translate("total_title").format([MonthIndicator,GlobalTime.GetMonthName(Date["month"])[1],String(Date["year"])])
+	else:
+		text = GlobalTime.GetMonthName(Date["month"])[1]+" - "+String(Date["year"])

@@ -169,7 +169,10 @@ func LoadSpecificFile(Month,Year):
 					if "check_out" in Day:
 						CheckIns -=1
 				if CheckIns > 0:
+					var Yesterday = GlobalTime.OffsetDay(CurDate,-1)
 					var NewCheckOut = {"year":Year,"month":Month,"day":x,"hour":24,"minute":0,"second":0}
+					if Yesterday["year"] == NewCheckOut["year"] && Yesterday["month"] == NewCheckOut["month"] && Yesterday["day"] == NewCheckOut["day"]:
+						GlobalTime.ForgotCheckInYesterday = true
 					AddCheckOut(NewCheckOut)
 	return Res
 

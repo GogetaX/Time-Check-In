@@ -3,6 +3,7 @@ extends Control
 const TIME_IDLE = "IDLE"
 const TIME_CHECKED_IN = "CHECKED_IN"
 const TIME_PAUSED = "PAUSED"
+const TIME_RETRO_CHECK_IN = "RETRO_CHECK_IN"
 var CurTimeMode = TIME_IDLE
 
 var SecondTimer = null
@@ -17,7 +18,7 @@ var CurSelectedDate = {"day": 0,"month":0,"year":0}
 var TempCurMonth = 0
 var TempCurYear = 0
 var HourSelectorUI = null
-var PopupModulateUI = null
+var ForgotCheckInYesterday = false
 
 signal InitSecond()
 signal TimeModeChangedTo(TimeMode)
@@ -123,6 +124,12 @@ func AddRetroTimeChange(ToTimeMode,CurInfo):
 			HasCheckin.append(CurInfo)
 		TIME_PAUSED:
 			HasCheckOut.append(CurInfo)
+		TIME_RETRO_CHECK_IN:
+			HasCheckin.append(CurInfo)
+			GlobalSave.AddCheckIn(CurInfo)
+			CurTimeMode = TIME_CHECKED_IN
+			emit_signal("TimeModeChangedTo",CurTimeMode)
+			return
 	emit_signal("TimeModeChangedTo",ToTimeMode)
 	
 func ChangeTimeModes(ToTimeMode):
@@ -137,7 +144,6 @@ func ChangeTimeModes(ToTimeMode):
 			GlobalSave.AddCheckOut(OS.get_datetime())
 			
 	emit_signal("TimeModeChangedTo",ToTimeMode)
-	
 
 func TimeTo2DigitStr(Time):
 	var t = String(Time)
@@ -169,6 +175,17 @@ func GetAllCheckInAndOuts(Info):
 			Res = Res +" - "+TranslationServer.translate("On_Going")
 	return Res
 
+func OffsetDay(CurDay,Offset_Day):
+	CurDay["day"] += Offset_Day
+	#Check backward
+	if CurDay["day"] <= 0:
+		CurDay["month"] -= 1
+		if CurDay["month"] <= 0:
+			CurDay["year"] -= 1
+			CurDay["month"] = 12
+		CurDay["day"] = DateDB[CurDay["year"]][CurDay["month"]]["tot_days"]-CurDay["day"]
+	return CurDay
+	
 func CheckIfOnGoing(Info):
 	var TotChecks = 0
 	for x in Info:
@@ -253,6 +270,14 @@ func ShowTime():
 		Min = "0"+Min
 	return String(OldTime["hour"])+":"+Min
 	
+func ShowLastCheckIn():
+	var T = GetLastCheckIn()
+	var Min = String(T["minute"])
+	if Min.length() == 1:
+		Min = "0"+Min
+	return String(T["hour"])+":"+Min
+	
+	
 func GetLastCheckIn():
 	return GlobalTime.HasCheckin[GlobalTime.HasCheckin.size()-1]
 	
@@ -288,6 +313,13 @@ func CalcAllCheckInsAndOutsToSeconds():
 					Seconds += (CurDate["minute"]-HasCheckin[x+1]["minute"])*60
 					Seconds += (CurDate["hour"]-HasCheckin[x+1]["hour"])*3600
 					Seconds += (CurDate["day"]-HasCheckin[x+1]["day"])*86400
+	else:
+		if HasCheckin.size() > HasCheckOut.size():
+			var CurDate = OS.get_datetime()
+			Seconds += CurDate["second"]-HasCheckin[0]["second"]
+			Seconds += (CurDate["minute"]-HasCheckin[0]["minute"])*60
+			Seconds += (CurDate["hour"]-HasCheckin[0]["hour"])*3600
+			Seconds += (CurDate["day"]-HasCheckin[0]["day"])*86400
 	return Seconds
 	
 func TimeToString(Seconds):
@@ -506,8 +538,13 @@ func GetHowManySecondsOnNosafot(TotalDailySeconds):
 	return [TotalDailySeconds,0,0]
 	
 
-	
-
+func ShowPopup(data):
+	yield(get_tree(),"idle_frame")
+	var p = load("res://Prefabs/Elements/ModulatePopupScreen.tscn").instance()
+	get_node("/root/MainScreen").add_child(p)
+	p.ShowModulate(data)
+	var Answer = yield(p,"EmitedAnswer")
+	return Answer
 	
 func WeekDayToDayName(DayNum):
 	match DayNum:
@@ -537,7 +574,7 @@ func GetMonthName(MonthNum):
 		4:
 			return [TranslationServer.translate("Apr"),TranslationServer.translate("April")]
 		5:
-			return [TranslationServer.translate("May"),TranslationServer.translate("May")]
+			return [TranslationServer.translate("May_Small"),TranslationServer.translate("May_Big")]
 		6:
 			return [TranslationServer.translate("Jun"),TranslationServer.translate("June")]
 		7:

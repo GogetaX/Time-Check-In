@@ -41,8 +41,7 @@ func InitHoliday(_Info):
 	RemoveAllExcept("HolidayReport")
 	$HolidayReport/Icon.texture = load("res://Assets/Icons/holidays.png")
 	
-
-
+	
 func InfoForCheckInData(Info):
 	RemoveAllExcept("CheckInData")
 	$CheckInData/WorkingHours.text = GlobalTime.GetAllCheckInAndOuts(Info)

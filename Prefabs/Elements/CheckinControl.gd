@@ -10,7 +10,32 @@ func _ready():
 # warning-ignore:return_value_discarded
 	GlobalSave.connect("UpdateToday",self,"UpdateToday")
 	InitCurrentStatus()
+	PopupForYesterday()
 	
+	
+func PopupForYesterday():
+	
+	var CurDay = OS.get_datetime()
+	var Yesterday = GlobalTime.OffsetDay(CurDay,-1)
+	var DataYesterday = GlobalSave.MySaves[Yesterday["year"]][Yesterday["month"]][Yesterday["day"]]
+	print(DataYesterday)
+	if !GlobalTime.ForgotCheckInYesterday:
+		return
+	
+	var PopupData = {"type": "ForgetCheckOut"}
+	var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+	match Answer:
+		"ContinueBtn":
+			print("Pressed Continue")
+			var CheckInDate = OS.get_datetime()
+			CheckInDate["hour"] = 0
+			CheckInDate["minute"] = 0
+			CheckInDate["second"] = 1
+			GlobalTime.AddRetroTimeChange(GlobalTime.TIME_RETRO_CHECK_IN,CheckInDate)
+		"CheckOutBtn":
+			print("Pressed Checkout")
+	
+	GlobalTime.ForgotCheckInYesterday = false
 
 func InitCurrentStatus():
 	var CurDate = OS.get_datetime()
@@ -69,7 +94,7 @@ func TimeModeChangedTo(ToMode):
 			$PassedTime.text = ""
 			SyncNosafot()
 		GlobalTime.TIME_CHECKED_IN:
-			$CheckedInText.text = TranslationServer.translate("check_in_info") % GlobalTime.ShowTime()
+			$CheckedInText.text = TranslationServer.translate("check_in_info") % GlobalTime.ShowLastCheckIn()
 			$StartStopBtn.ForceToggle(true)
 			InitSecond()
 		GlobalTime.TIME_PAUSED:
@@ -117,13 +142,21 @@ func SyncNosafot():
 			Worked150 = PassedTime - ((WorkHours["hours"]+2) * 3600)
 			
 	if Worked125 == 0:
+		if $Nosafot125Info.visible:
+			$Nosafot125Info.visible = false
 		$Nosafot125Info.text = ""
 	else:
+		if !$Nosafot125Info.visible:
+			$Nosafot125Info.visible = true
 		$Nosafot125Info.text = TranslationServer.translate("Overtime 125").format([GlobalTime.TimeToString(Worked125)])
 		
 	if Worked150 == 0:
+		if $Nosafot150Info.visible:
+			$Nosafot150Info.visible = false
 		$Nosafot150Info.text = ""
 	else:
+		if !$Nosafot150Info.visible:
+			$Nosafot150Info.visible = true
 		$Nosafot150Info.text = TranslationServer.translate("Overtime 150").format([GlobalTime.TimeToString(Worked150)])
 	
 func InitSecond():
@@ -158,14 +191,13 @@ func _on_StartStopBtn_pressed():
 	var TodayReport = GlobalSave.HasTodayReport()
 	if TodayReport != null:
 		var PopupData = {"type": "YesNo","title":"","desc":TranslationServer.translate("are_you_sure_to_skip") % TranslationServer.translate(TodayReport)}
-		GlobalTime.PopupModulateUI.ShowModulate(PopupData)
 		$StartStopBtn.DontFlip = true
-		var Answer = yield(GlobalTime.PopupModulateUI,"EmitedAnswer")
 		
+		var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 		match Answer:
-			"No":
+			"NoBtn":
 				pass
-			"Yes":
+			"YesBtn":
 				var Date = OS.get_datetime()
 				GlobalSave.RemoveReport(Date)
 				GlobalSave.emit_signal("UpdateToday")
