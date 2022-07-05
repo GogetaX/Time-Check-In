@@ -17,8 +17,8 @@ func PopupForYesterday():
 	
 	var CurDay = OS.get_datetime()
 	var Yesterday = GlobalTime.OffsetDay(CurDay,-1)
+	GlobalSave.AddMySavesPath(Yesterday)
 	var DataYesterday = GlobalSave.MySaves[Yesterday["year"]][Yesterday["month"]][Yesterday["day"]]
-	print(DataYesterday)
 	if !GlobalTime.ForgotCheckInYesterday:
 		return
 	
@@ -190,7 +190,7 @@ func _on_StartStopBtn_Toggled():
 func _on_StartStopBtn_pressed():
 	var TodayReport = GlobalSave.HasTodayReport()
 	if TodayReport != null:
-		var PopupData = {"type": "YesNo","title":"","desc":TranslationServer.translate("are_you_sure_to_skip") % TranslationServer.translate(TodayReport)}
+		var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("are_you_sure_to_skip") % TranslationServer.translate(TodayReport)}
 		$StartStopBtn.DontFlip = true
 		
 		var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")

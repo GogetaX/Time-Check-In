@@ -16,14 +16,19 @@ func InitAllBtns():
 						
 func ShowModulate(Data):
 	InitWindowFromData(Data)
-	modulate = Color(1,1,1,0)
 	visible = true
 	var T = Tween.new()
 	add_child(T)
 	T.connect("tween_all_completed",self,"FinishShow",[T])
 	var S = $Background.material
-	T.interpolate_property(self,"modulate",modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.2)
-	T.interpolate_property(S,"shader_param/blue_amount",0,3.5,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.5)
+	S.set("shader_param/blur_amount",0)
+	T.interpolate_property(S,"shader_param/blur_amount",0,3.5,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+	for x in get_children():
+		if "Panel" in x.name:
+			if x.visible:
+				x.modulate = Color(1,1,1,0)
+				T.interpolate_property(x,"modulate",x.modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.3)
+	
 	T.start()
 	
 func InitWindowFromData(Data):
@@ -31,8 +36,8 @@ func InitWindowFromData(Data):
 	for x in get_children():
 		if "Panel" in x.name:
 			if Data["type"]+"Panel" == x.name:
-				if Data.has("title"): x.get_node("Title").text = Data["title"]
-				if Data.has("Desc"): x.get_node("Desc").text = Data["desc"]
+				if Data.has("Title"): x.get_node("Title").text = Data["Title"]
+				if Data.has("Desc"): x.get_node("Desc").text = Data["Desc"]
 				x.visible = true
 			else:
 				x.visible = false
@@ -42,8 +47,12 @@ func HideModulate():
 	add_child(T)
 	var S = $Background.material
 	T.connect("tween_all_completed",self,"FinishShowAndHide",[T])
-	T.interpolate_property(self,"modulate",modulate,Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
-	T.interpolate_property(S,"shader_param/blue_amount",3.5,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+	T.interpolate_property(S,"shader_param/blur_amount",3.5,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.3)
+	for x in get_children():
+		if "Panel" in x.name:
+			if x.visible:
+				T.interpolate_property(x,"modulate",modulate,Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+	
 	T.start()
 	
 func PressedButton(BtnNode):
