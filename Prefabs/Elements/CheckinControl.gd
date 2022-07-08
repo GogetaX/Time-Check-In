@@ -18,7 +18,6 @@ func PopupForYesterday():
 	var CurDay = OS.get_datetime()
 	var Yesterday = GlobalTime.OffsetDay(CurDay,-1)
 	GlobalSave.AddMySavesPath(Yesterday)
-	var DataYesterday = GlobalSave.MySaves[Yesterday["year"]][Yesterday["month"]][Yesterday["day"]]
 	if !GlobalTime.ForgotCheckInYesterday:
 		return
 	
