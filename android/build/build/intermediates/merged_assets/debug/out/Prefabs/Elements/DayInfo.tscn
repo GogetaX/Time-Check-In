@@ -24,7 +24,6 @@ __meta__ = {
 }
 
 [node name="NoInfo" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -56,7 +55,7 @@ margin_left = -134.5
 margin_top = 21.0
 margin_right = 134.5
 margin_bottom = 75.0
-text = "Report.."
+text = "Add..."
 items = [ "Day off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
 
 [node name="DayOffReport" type="Control" parent="."]
@@ -154,6 +153,7 @@ expand = true
 stretch_mode = 6
 
 [node name="CheckInData" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {

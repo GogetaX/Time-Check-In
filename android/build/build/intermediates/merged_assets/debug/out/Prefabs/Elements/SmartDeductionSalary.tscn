@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Prefabs/Elements/SmartDeductionSalary.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Flags/israel.png" type="Texture" id=2]
-[ext_resource path="res://Prefabs/Styles/Fonts/Size30Bold.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Prefabs/Elements/OptionBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefabs/Styles/Panel/SettingPanel.tres" type="StyleBox" id=5]
 [ext_resource path="res://Prefabs/Elements/ValueBox.tscn" type="PackedScene" id=6]
@@ -19,22 +18,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="."]
-anchor_right = 1.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
-custom_fonts/font = ExtResource( 3 )
-text = "Deduction by Country"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Flag" type="TextureRect" parent="."]
 margin_left = 160.0
-margin_top = 43.0
+margin_top = 27.0
 margin_right = 230.0
-margin_bottom = 113.0
+margin_bottom = 97.0
 rect_min_size = Vector2( 70, 70 )
 expand = true
 stretch_mode = 6
@@ -46,9 +34,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -143.5
-margin_top = 43.5
+margin_top = 27.5
 margin_right = 143.5
-margin_bottom = 104.5
+margin_bottom = 88.5
 text = "Country"
 items = [ "Deactivate", null, 0, false, false, 0, 0, null, "", false, "Israel", ExtResource( 2 ), 0, false, false, 1, 0, null, "", false ]
 
@@ -56,9 +44,9 @@ items = [ "Deactivate", null, 0, false, false, 0, 0, null, "", false, "Israel", 
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 56.0
-margin_top = 104.0
+margin_top = 96.0
 margin_right = 136.0
-margin_bottom = 159.0
+margin_bottom = 151.0
 text = "2.25"
 InisialValue = 2.25
 MinMax = Vector2( 0.5, 7.5 )

@@ -594,15 +594,15 @@ func WeekDayToDayName(DayNum):
 		1:
 			return [TranslationServer.translate("Mon"),TranslationServer.translate("Monday")]
 		2:
-			return [TranslationServer.translate("Tu"),TranslationServer.translate("Tuesday")]
+			return [TranslationServer.translate("Tue"),TranslationServer.translate("Tuesday")]
 		3:
-			return [TranslationServer.translate("We"),TranslationServer.translate("Wednesday")]
+			return [TranslationServer.translate("Wed"),TranslationServer.translate("Wednesday")]
 		4:
-			return [TranslationServer.translate("Th"),TranslationServer.translate("Thursday")]
+			return [TranslationServer.translate("Thu"),TranslationServer.translate("Thursday")]
 		5:
-			return [TranslationServer.translate("Fr"),TranslationServer.translate("Friday")]
+			return [TranslationServer.translate("Fri"),TranslationServer.translate("Friday")]
 		6:
-			return [TranslationServer.translate("Sa"),TranslationServer.translate("Saturday")]
+			return [TranslationServer.translate("Sat"),TranslationServer.translate("Saturday")]
 			
 func GetMonthName(MonthNum):
 	match MonthNum:

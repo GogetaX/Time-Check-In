@@ -9,7 +9,7 @@ func _ready():
 func ChangedStatus(Status):
 	match Status:
 		GlobalTime.TIME_IDLE:
-			text = TranslationServer.translate("Idle")
+			text = ""
 		GlobalTime.TIME_CHECKED_IN:
 			text = TranslationServer.translate("Checked_In")
 		GlobalTime.TIME_PAUSED:
