@@ -10,7 +10,7 @@ func _on_ReportBug_pressed():
 			String(date["day"])+"/"+String(date["month"])+"/"+String(date["year"])+"&body=type your bug description here.")
 			print("email ",a)
 		"iOS":
-			var a = OS.shell_open("mailto:gogetax2@gmail.com")
+			var a = OS.shell_open("message:gogetax2@gmail.com")
 
 func _on_RequestFeature_pressed():
 	var date = OS.get_datetime()
