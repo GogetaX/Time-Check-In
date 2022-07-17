@@ -80,7 +80,6 @@ func HasTodayReport():
 	return MySaves[CurDate["year"]][CurDate["month"]][CurDate["day"]]["report"]
 
 func RemoveCheckInOut(CheckInNum,Date):
-
 	var CurYear = GlobalTime.CurSelectedDate["year"]
 	var CurMonth = GlobalTime.CurSelectedDate["month"]
 	if MySaves[CurYear][CurMonth].has(Date["day"]):

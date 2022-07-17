@@ -4,6 +4,9 @@ const TIME_IDLE = "IDLE"
 const TIME_CHECKED_IN = "CHECKED_IN"
 const TIME_PAUSED = "PAUSED"
 const TIME_RETRO_CHECK_IN = "RETRO_CHECK_IN"
+const DAY_OFF_COLOR = Color.darkgreen
+const HOLIDAY_COLOR = Color.chartreuse
+
 var CurTimeMode = TIME_IDLE
 
 var SecondTimer = null
@@ -43,6 +46,12 @@ func InitDates():
 	AddDateDB(1,31,5,2022)
 	AddDateDB(4,30,6,2022)
 	AddDateDB(6,31,7,2022)
+	
+	AddDateDB(2,31,8,2022)
+	AddDateDB(5,30,9,2022)
+	AddDateDB(7,31,10,2022)
+	AddDateDB(3,30,11,2022)
+	AddDateDB(5,31,12,2022)
 
 func SelectCurDate(DayNode,DayInfo):
 	CurSelectedDate["day"] = int(DayNode.text)
@@ -50,7 +59,16 @@ func SelectCurDate(DayNode,DayInfo):
 	CurSelectedDate["month"] = TempCurMonth
 	CurSelectedDate["info"] = DayInfo
 	emit_signal("SelectDay",DayNode)
-	
+
+func GetColorFromReport(report):
+	report = report.to_lower()
+	match report:
+		"day off":
+			return DAY_OFF_COLOR
+		"holiday":
+			return HOLIDAY_COLOR
+	return null
+			
 func HasPrevMonth(Month,Year):
 	Month -= 1
 	if Month <= 0:
@@ -337,8 +355,24 @@ func TimeToString(Seconds):
 	return TranslationServer.translate("second_info") % String(Date["second"])
 	
 	
+func HowManyCheckIns(date):
+	var ret = 0
+	for x in date:
+		if "check_in" in x:
+			ret += 1
+	return ret
 
-	
+func HowMuchIEarnedFromSeconds(Seconds):
+	var Ret = 0
+	var WithNosafot = GetHowManySecondsOnNosafot(Seconds)
+	var sufix = ""
+	var SalorySettings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
+	if SalorySettings.has("sufix"):
+		sufix = SalorySettings["sufix"]
+	Ret = (WithNosafot[0]/3600.0*SalorySettings["salary"])+(WithNosafot[1]/3600.0*SalorySettings["salary"])*1.25+(WithNosafot[2]/3600.0*SalorySettings["salary"])*1.5
+	return [Ret,sufix]
+	#TranslationServer.translate("Earned").format([GlobalTime.FloatToString(((WithNosafot[0]/3600.0*SalorySettings["salary"])+(WithNosafot[1]/3600.0*SalorySettings["salary"])*1.25+(WithNosafot[2]/3600.0*SalorySettings["salary"])*1.5),2),sufix,TranslationServer.translate(has_nosafot_rate)])
+
 func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
 	var FromSeconds = DateToSeconds(FromTime)
 	var ToSeconds = DateToSeconds(ToTime)
@@ -545,7 +579,14 @@ func ShowPopup(data):
 	p.ShowModulate(data)
 	var Answer = yield(p,"EmitedAnswer")
 	return Answer
-	
+
+func GetWeekNumFromDate(Date):
+	var D = Date["day"]+DateDB[Date["year"]][Date["month"]]["start_from"]-2
+	while D >= 7:
+		D -= 7
+	return D
+		
+
 func WeekDayToDayName(DayNum):
 	match DayNum:
 		0:

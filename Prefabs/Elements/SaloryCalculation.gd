@@ -10,7 +10,9 @@ func _ready():
 func InitAllCurrencyButtons():
 	for x in $Currency.get_children():
 		x.connect("index_pressed",self,"SelectCurrency",[x])
-		
+
+
+
 func SelectCurrency(Index,MenuItem):
 	var Icon = MenuItem.get_item_icon(Index)
 	var Sufix = MenuItem.get_item_text(Index)

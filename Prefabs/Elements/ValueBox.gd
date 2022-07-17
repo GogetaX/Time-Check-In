@@ -18,7 +18,7 @@ func _ready():
 # warning-ignore:return_value_discarded
 	$VirtualKeyboardTimer.connect("timeout",self,"CheckIfVirtualKeyboard")
 	
-		
+	
 func SetFrontText(new):
 	FrontText = new
 	$Label.text = FrontText
@@ -57,18 +57,19 @@ func _gui_input(event):
 		if event.pressed:
 			if !$LineEdit.visible:
 				$LineEdit.placeholder_text = String(InisialValue)
-				$LineEdit.text = ""
+				$LineEdit.text = String(InisialValue)
 				$LineEdit.visible = true
-				$LineEdit.grab_focus()
 				self_modulate = Color(1,1,1,0)
 				$LineEdit.caret_position = 0
 				$LineEdit.select_all()
+				$LineEdit.grab_focus()
 				match OS.get_name():
 					"iOS","Android":
 						CanCloseKeyboard = false
 						OS.show_virtual_keyboard("")
 						$VirtualKeyboardTimer.start()
-						
+
+
 func _on_DownBtn_pressed():
 	var val = InisialValue
 	val -= 0.5

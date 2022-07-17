@@ -58,7 +58,6 @@ visible = false
 margin_top = -2.0
 margin_right = 130.0
 margin_bottom = 56.0
-focus_mode = 1
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )

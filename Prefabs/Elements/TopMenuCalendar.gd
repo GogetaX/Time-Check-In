@@ -1,0 +1,113 @@
+extends Panel
+
+
+func _ready():
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("BtnGroupPressed",self,"SyncMenu")
+
+	LoadCalendarSwitch()
+	
+func UpdateList():
+	if $ToggleBetween.LeftSelected:
+		return
+	GenerateList()
+	
+func SyncMenu(Btn,_Group):
+	if Btn.name == "Calendar":
+		var Calendar = get_parent().get_node("Calendar")
+		var List = get_parent().get_node("List")
+		if $ToggleBetween.LeftSelected:
+			
+			Calendar.visible = true
+			List.visible = false
+		else:
+			GenerateList()
+			Calendar.visible = false
+			List.visible = true
+			
+func _on_ToggleBetween_OnToggle(val):
+	GlobalSave.AddVarsToSettings("CalendarSettings","Calendar_Switch",val)
+	AnimToggle(val)
+
+
+func LoadCalendarSwitch():
+	var S = GlobalSave.GetValueFromSettingCategory("CalendarSettings")
+	var LeftSwitch = true
+	if S != null:
+		if S.has("Calendar_Switch"):
+			LeftSwitch = S["Calendar_Switch"]
+	
+	$ToggleBetween.LeftSelected = LeftSwitch
+	$ToggleBetween.AnimToggle(true)
+	
+
+func AnimToggle(LeftShow):
+	var Calendar = get_parent().get_node("Calendar")
+	var List = get_parent().get_node("List")
+	var MaxYPos = rect_size.y
+	var MaxXPos = rect_size.x 
+	var T = Tween.new()
+	add_child(T)
+	
+	if LeftShow:
+		Calendar.visible = true
+		Calendar.rect_position = Vector2(Calendar.rect_position.x-Calendar.rect_size.x,MaxYPos)
+		List.rect_position = Vector2(0,MaxYPos)
+		T.interpolate_property(Calendar,"rect_position",Calendar.rect_position,Vector2(0,MaxYPos),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		T.interpolate_property(List,"rect_position",List.rect_position,Vector2(MaxXPos,MaxYPos),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		T.connect("tween_all_completed",self,"FinishedTween",[T,List])
+	else:
+		List.visible = true
+		Calendar.rect_position = Vector2(0,MaxYPos)
+		List.rect_position = Vector2(MaxXPos,MaxYPos)
+		T.interpolate_property(List,"rect_position",List.rect_position,Vector2(0,MaxYPos),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		T.interpolate_property(Calendar,"rect_position",Calendar.rect_position,Vector2(-MaxXPos,MaxYPos),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		T.connect("tween_all_completed",self,"FinishedTween",[T,Calendar])
+		GenerateList()
+	T.start()
+	
+	
+func GenerateList():
+	var List = get_parent().get_node("List/Scroll/VBox")
+	#Remove old
+	for x in List.get_children():
+		if x.name != "Columns":
+			x.queue_free()
+	var MonthSelector = get_node("CurMonth")
+	var DataFromFile = GlobalSave.LoadSpecificFile(MonthSelector.CurMonth,MonthSelector.CurYear)
+	
+	var ItmInstance = load("res://Prefabs/Elements/ListItem.tscn")
+	var TotAmount = 0
+	var WorkedSeconds = 0
+	var WorkedDays = 0
+	var T = Tween.new()
+	add_child(T)
+	var delay = 0.0
+	T.connect("tween_all_completed",self,"FinishedShow",[T])
+	if DataFromFile != null:
+		for x in range(0,33):
+			if DataFromFile.has(x):
+				if !DataFromFile[x].empty():
+					var itm = ItmInstance.instance()
+					List.add_child(itm)
+					itm.modulate = Color(1,1,1,0)
+					T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
+					delay += 0.1
+					var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
+					var i = itm.InitInfo(date,DataFromFile[x])
+					TotAmount += i["earned"]
+					WorkedSeconds += i["worked_seconds"]
+					WorkedDays += i["worked_days"]
+	var itm = ItmInstance.instance()
+	List.add_child(itm)
+	itm.modulate = Color(1,1,1,0)
+	T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
+	itm.InitInfo({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth},{"total_amount":TotAmount,"worked_seconds":WorkedSeconds,"worked_days":WorkedDays})
+	T.start()
+
+func FinishedShow(T):
+	T.queue_free()
+	
+func FinishedTween(T,HideNode):
+	T.queue_free()
+	HideNode.visible = false

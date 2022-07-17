@@ -196,7 +196,6 @@ margin_left = 20.0
 margin_top = 348.0
 margin_right = -20.0
 margin_bottom = 435.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 text = "Check Out: will check you out at 24:00 from yesterday."
 align = 0
 hebrewText = "Check Out: will check you out at 24:00 from yesterday."

@@ -2,8 +2,7 @@ extends Label
 
 var NormalColor = Color("2699fb")
 var InfoColor = Color.purple
-var DayOffColor = Color.darkgreen
-var HolidayColor = Color.chartreuse
+
 
 var is_Selected = false
 var CurDayInfo = {}
@@ -29,9 +28,9 @@ func AddInfo(DayInfo):
 		elif DayInfo.has("report"):
 			match DayInfo["report"]:
 				"Day Off":
-					add_color_override("font_color",DayOffColor)
+					add_color_override("font_color",GlobalTime.DAY_OFF_COLOR)
 				"Holiday":
-					add_color_override("font_color",HolidayColor)
+					add_color_override("font_color",GlobalTime.HOLIDAY_COLOR)
 				_:
 					print("Report Uknown: ")
 					print(DayInfo)

@@ -1,6 +1,6 @@
 extends Label
 
-onready var CurMonth = get_parent().get_parent().get_parent().get_node("TopMenu/CurMonth")
+onready var CurMonth = get_parent().get_parent().get_parent().get_parent().get_node("TopMenu/CurMonth")
 
 
 func _ready():

@@ -39,7 +39,7 @@ func _on_CheckIn_BtnPressed():
 
 
 func _on_Calendar_BtnPressed():
-	$CalendarScreen/VMonth.SyncMonth()
+	$CalendarScreen/Calendar/VMonth.SyncMonth()
 	$CalendarScreen/TopMenu/CurMonth.GetDataFromFile()
 	ShowOnly("CalendarScreen")
 

@@ -1,6 +1,6 @@
 extends Label
 
-onready var VMonth = get_parent().get_parent().get_node("VMonth")
+onready var VMonth = get_parent().get_parent().get_node("Calendar/VMonth")
 
 var CurMonth = 0
 var CurYear = 0
@@ -66,6 +66,8 @@ func MonthPressed(BtnNode):
 	
 	DisplayMonth(CurMonth,CurYear)
 	VMonth.SyncMonth()
+	get_parent().UpdateList()
+	
 	GetDataFromFile()
 	
 func GetDataFromFile():

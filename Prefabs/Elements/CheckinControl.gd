@@ -20,7 +20,6 @@ func PopupForYesterday():
 	GlobalSave.AddMySavesPath(Yesterday)
 	if !GlobalTime.ForgotCheckInYesterday:
 		return
-	
 	var PopupData = {"type": "ForgetCheckOut"}
 	var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 	match Answer:

@@ -1,6 +1,6 @@
 extends GridContainer
 
-onready var MonthSelector = get_parent().get_node("TopMenu/CurMonth")
+onready var MonthSelector = get_parent().get_parent().get_node("TopMenu/CurMonth")
 
 var CalDay = preload("res://Prefabs/Elements/CalDay.tscn")
 var CurDateInfo = {}
