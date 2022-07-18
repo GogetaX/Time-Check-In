@@ -10,9 +10,9 @@ func _on_ReportBug_pressed():
 			var a = OS.shell_open("mailto:?to=gogetax2@gmail.com&subject=Report bug "+
 			String(date["day"])+"/"+String(date["month"])+"/"+String(date["year"])+"&body=type your bug description here.")
 		"iOS":
-			var a = OS.shell_open("mailto:gogetax2@gmail.com?subject=Report bug "+
+			var a = OS.shell_open("mailto:gogetax2@gmail.com&subject=Report bug "+
 			String(date["day"])+"/"+String(date["month"])+"/"+String(date["year"])+"&body=type your bug description here.")
-			
+			print(a)
 func _on_RequestFeature_pressed():
 	var date = OS.get_datetime()
 	match OS.get_name():
@@ -20,5 +20,5 @@ func _on_RequestFeature_pressed():
 			var a = OS.shell_open("mailto:?to=gogetax2@gmail.com&subject=Request feature "+
 			String(date["day"])+"/"+String(date["month"])+"/"+String(date["year"])+"&body=type your feature request description here.")
 		"iOS":
-			var a = OS.shell_open("mailto:gogetax2@gmail.com?subject=Request feature "+
+			var a = OS.shell_open("mailto:gogetax2@gmail.com&subject=Request feature "+
 			String(date["day"])+"/"+String(date["month"])+"/"+String(date["year"])+"&body=type your feature request description here.")
