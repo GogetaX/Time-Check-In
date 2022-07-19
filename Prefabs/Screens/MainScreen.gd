@@ -5,7 +5,94 @@ var CurNode = null
 func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
+# warning-ignore:return_value_discarded
+	$SwipeDetector.connect("Swiped",self,"CheckForSwipe")
 	ShowOnly("TimeScreen")
+	
+func CheckForSwipe(Dir):
+	print(Dir)
+	var T = Tween.new()
+	add_child(T)
+	var NextNode = GetNextNodeToSwipe()
+	var PrevNode = GetPrevNodeToSwipe()
+# warning-ignore:shadowed_variable
+	var CurNode = GetCurNodeToSwipe()
+	
+	print("Next ",NextNode)
+	print("Prev ",PrevNode)
+	print("Cur ",CurNode)
+
+	match Dir:
+		"LEFT":
+			if NextNode != null:
+				FindBtnByScreen(NextNode)
+				T.connect("tween_all_completed",self,"FinishedTweenSwipe",[T,CurNode])
+				NextNode.rect_position.x = NextNode.rect_size.x
+				NextNode.visible = true
+				T.interpolate_property(NextNode,"rect_position:x",NextNode.rect_position.x,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+				T.interpolate_property(CurNode,"rect_position:x",CurNode.rect_position.x,-CurNode.rect_size.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+			else:
+				T.connect("tween_all_completed",self,"FinishedTweenSwipe",[T,null])
+				T.interpolate_property(CurNode,"rect_position:x",0,-100,0.1,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+				T.interpolate_property(CurNode,"rect_position:x",-100,0,0.1,Tween.TRANS_CUBIC,Tween.EASE_OUT,0.1)
+		"RIGHT":
+			
+			if PrevNode != null:
+				FindBtnByScreen(PrevNode)
+				T.connect("tween_all_completed",self,"FinishedTweenSwipe",[T,CurNode])
+				PrevNode.rect_position.x = -PrevNode.rect_size.x
+				PrevNode.visible = true
+				T.interpolate_property(PrevNode,"rect_position:x",PrevNode.rect_position.x,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+				T.interpolate_property(CurNode,"rect_position:x",CurNode.rect_position.x,CurNode.rect_size.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+			else:
+				T.connect("tween_all_completed",self,"FinishedTweenSwipe",[T,null])
+				T.interpolate_property(CurNode,"rect_position:x",0,100,0.1,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+				T.interpolate_property(CurNode,"rect_position:x",100,0,0.1,Tween.TRANS_CUBIC,Tween.EASE_OUT,0.1)
+	T.start()
+
+func FindBtnByScreen(ScreenNode):
+	for x in $BottomUI/HBoxContainer.get_children():
+		if ScreenNode.name == x.name:
+			x.BtnToggled(true)
+			GlobalTime.emit_signal("BtnGroupPressed",x,x.BtnGroup)
+		else:
+			x.BtnToggled(false)
+
+func GetNextNodeToSwipe():
+	var NextNode = null
+	var GOForNext = false
+	for x in get_children():
+		if "Screen" in x.name && "HourEditorScreen" != x.name:
+			if GOForNext:
+				NextNode = x
+				return NextNode
+			if x.visible:
+				GOForNext = true
+	return NextNode
+	
+func GetCurNodeToSwipe():
+	for x in get_children():
+		if "Screen" in x.name && "HourEditorScreen" != x.name:
+			if x.visible:
+				return x
+	return null
+	
+func GetPrevNodeToSwipe():
+	var PrevNode = null
+	for x in get_children():
+		if "Screen" in x.name && "HourEditorScreen" != x.name:
+			if x.visible:
+				return PrevNode
+			PrevNode = x
+		
+	return null
+	
+func FinishedTweenSwipe(T,NodeToReturnBack):
+	T.queue_free()
+	if NodeToReturnBack == null:
+		return
+	NodeToReturnBack.visible = false
+	NodeToReturnBack.rect_position = Vector2.ZERO
 	
 func ShowOnly(WindowName):
 	for x in get_children():
@@ -37,10 +124,8 @@ func FinishTween(T):
 func _on_CheckIn_BtnPressed():
 	ShowOnly("TimeScreen")
 
-
 func _on_Calendar_BtnPressed():
-	$CalendarScreen/Calendar/VMonth.SyncMonth()
-	$CalendarScreen/TopMenu/CurMonth.GetDataFromFile()
+	
 	ShowOnly("CalendarScreen")
 
 

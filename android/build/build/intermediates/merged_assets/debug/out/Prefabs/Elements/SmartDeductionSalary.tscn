@@ -67,6 +67,7 @@ margin_right = -67.0
 margin_bottom = 265.0
 text = "Overtime 150%"
 
+[connection signal="gui_input" from="Flag" to="." method="_on_Flag_gui_input"]
 [connection signal="UpdatedVar" from="CreditBox" to="." method="_on_CreditBox_UpdatedVar"]
 [connection signal="OnToggle" from="Overtime1" to="." method="_on_Overtime1_OnToggle"]
 [connection signal="OnToggle" from="Overtime2" to="." method="_on_Overtime2_OnToggle"]

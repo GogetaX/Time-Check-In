@@ -36,6 +36,8 @@ signal UpdateSpecificDayInfo(DayNumber,DayInfoData)
 signal ShowOnlyScreen(ScreenName)
 # warning-ignore:unused_signal
 signal ReloadCurrentDate()
+# warning-ignore:unused_signal
+signal UpdateList()
 
 
 func _ready():
@@ -80,6 +82,8 @@ func HasPrevMonth(Month,Year):
 		return null
 	return DateDB[Year][Month]
 	
+
+	
 func HasNextMonth(Month,Year):
 	Month += 1
 	if Month > 12:
@@ -122,6 +126,12 @@ func AddDateDB(StartsFrom,TotDays,Month,Year):
 		
 	if !DateDB[Year].has(Month):
 		DateDB[Year][Month] = {"tot_days":TotDays,"start_from":StartsFrom}
+		
+func HowManyDaysInMonth(Date):
+	if DateDB.has(Date["year"]):
+		if DateDB[Date["year"]].has(Date["month"]):
+			return DateDB[Date["year"]][Date["month"]]["tot_days"]
+	return 0
 	
 func InitSecondTimer():
 	OldTime = OS.get_datetime()
@@ -203,6 +213,7 @@ func OffsetDay(CurDay,Offset_Day):
 			CurDay["month"] = 12
 		CurDay["day"] = DateDB[CurDay["year"]][CurDay["month"]]["tot_days"]-CurDay["day"]
 	return CurDay
+
 	
 func CheckIfOnGoing(Info):
 	var TotChecks = 0

@@ -4,8 +4,16 @@ extends Panel
 func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"SyncMenu")
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("UpdateList",self,"FastListUpdate")
+	
 
 	LoadCalendarSwitch()
+
+func FastListUpdate():
+	if $ToggleBetween.LeftSelected:
+		return
+	GenerateList(true)
 	
 func UpdateList():
 	if $ToggleBetween.LeftSelected:
@@ -13,11 +21,12 @@ func UpdateList():
 	GenerateList()
 	
 func SyncMenu(Btn,_Group):
-	if Btn.name == "Calendar":
+	if Btn.name == "CalendarScreen":
 		var Calendar = get_parent().get_node("Calendar")
 		var List = get_parent().get_node("List")
 		if $ToggleBetween.LeftSelected:
-			
+			get_parent().get_node("Calendar/VMonth").SyncMonth()
+			$CurMonth.GetDataFromFile()
 			Calendar.visible = true
 			List.visible = false
 		else:
@@ -67,7 +76,7 @@ func AnimToggle(LeftShow):
 	T.start()
 	
 	
-func GenerateList():
+func GenerateList(fast = false):
 	var List = get_parent().get_node("List/Scroll/VBox")
 	#Remove old
 	for x in List.get_children():
@@ -80,30 +89,46 @@ func GenerateList():
 	var TotAmount = 0
 	var WorkedSeconds = 0
 	var WorkedDays = 0
-	var T = Tween.new()
-	add_child(T)
+	var T
+	if !fast:
+		T = Tween.new()
+		add_child(T)
+		T.connect("tween_all_completed",self,"FinishedShow",[T])
 	var delay = 0.0
-	T.connect("tween_all_completed",self,"FinishedShow",[T])
 	if DataFromFile != null:
-		for x in range(0,33):
-			if DataFromFile.has(x):
-				if !DataFromFile[x].empty():
-					var itm = ItmInstance.instance()
-					List.add_child(itm)
+		var tot = GlobalTime.HowManyDaysInMonth({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth})
+		print(tot)
+		for x in range(1,tot):
+			if DataFromFile.has(x) && !DataFromFile[x].empty():
+				var itm = ItmInstance.instance()
+				List.add_child(itm)
+				if !fast:
 					itm.modulate = Color(1,1,1,0)
 					T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
-					delay += 0.1
-					var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
-					var i = itm.InitInfo(date,DataFromFile[x])
-					TotAmount += i["earned"]
-					WorkedSeconds += i["worked_seconds"]
-					WorkedDays += i["worked_days"]
+				delay += 0.1
+				var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
+				var i = itm.InitInfo(date,DataFromFile[x])
+				TotAmount += i["earned"]
+				WorkedSeconds += i["worked_seconds"]
+				WorkedDays += i["worked_days"]
+			else:
+				var itm = ItmInstance.instance()
+				List.add_child(itm)
+				if !fast:
+					itm.modulate = Color(1,1,1,0)
+					T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
+				delay += 0.1
+				var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
+				itm.AddEmptyDate(date)
+				
 	var itm = ItmInstance.instance()
 	List.add_child(itm)
-	itm.modulate = Color(1,1,1,0)
-	T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
+	if !fast:
+		itm.modulate = Color(1,1,1,0)
+		T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
 	itm.InitInfo({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth},{"total_amount":TotAmount,"worked_seconds":WorkedSeconds,"worked_days":WorkedDays})
-	T.start()
+	if !fast:
+		T.start()
 
 func FinishedShow(T):
 	T.queue_free()

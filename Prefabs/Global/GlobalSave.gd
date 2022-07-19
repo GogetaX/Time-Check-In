@@ -95,12 +95,23 @@ func RemoveCheckInOut(CheckInNum,Date):
 	MySaves[CurYear][CurMonth][Date["day"]] = ReformatCheckins(MySaves[CurYear][CurMonth][Date["day"]])
 	SaveToFile()
 	
+func AddReportOptionsToNode(NodeName):
+	#$HBoxContainer/Salary/Report.get_popup().add_icon_item(GlobalSave.ReportToImage("Day Off"),"Day off")
+	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Day Off"),"Day off")
+	NodeName.get_popup().set_item_metadata(0,"Day off")
+	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Holiday"),"Holiday")
+	NodeName.get_popup().set_item_metadata(1,"Holiday")
+	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Work day")
+	NodeName.get_popup().set_item_metadata(2,"Work day")
+	
 func ReportToImage(ReportText):
 	match ReportText:
 		"Day Off":
 			return load("res://Assets/Icons/day.png")
 		"Holiday":
 			return load("res://Assets/Icons/holidays.png")
+		"Work day":
+			return load("res://Assets/Icons/hard-work.png")
 		_:
 			return null
 			

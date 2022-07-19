@@ -40,12 +40,13 @@ func GroupPressed(BtnNode,GroupName):
 		BtnToggled(false)
 		return
 		
-		
+	
 func _gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			BtnToggled(!Pressed)
 			emit_signal("BtnPressed")
 			GlobalTime.emit_signal("BtnGroupPressed",self,BtnGroup)
+			
 func TweenFinished(T):
 	T.queue_free()

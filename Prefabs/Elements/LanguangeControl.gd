@@ -29,3 +29,8 @@ func SelectLang(Index,MenuItem):
 	GlobalTime.call_deferred("emit_signal","ShowOnlyScreen","SettingsScreen")#.emit_signal("ShowOnlyScreen","SettingsScreen")
 	GlobalSave.emit_signal("UpdateLanguange")
 	
+
+func _on_LangTexture_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			$Lang.ForceShowOnMouse(event.global_position)

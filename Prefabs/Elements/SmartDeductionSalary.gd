@@ -54,6 +54,8 @@ func SelectCountry(Index,MenuItem):
 		GlobalSave.AddVarsToSettings("SalaryDeduction","flag",Icon.resource_path)
 		GlobalSave.AddVarsToSettings("SalaryDeduction","country",Country)
 		GlobalSave.AddVarsToSettings("SalaryDeduction","credit",$CreditBox.InisialValue)
+		GlobalSave.AddVarsToSettings("SalaryDeduction","overtime125",$Overtime1.is_Pressed)
+		GlobalSave.AddVarsToSettings("SalaryDeduction","overtime150",$Overtime2.is_Pressed)
 
 
 func _on_CreditBox_UpdatedVar(NewVar):
@@ -66,3 +68,9 @@ func _on_Overtime1_OnToggle():
 
 func _on_Overtime2_OnToggle():
 	GlobalSave.AddVarsToSettings("SalaryDeduction","overtime150",$Overtime2.is_Pressed)
+
+
+func _on_Flag_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			$Country.ForceShowOnMouse(event.global_position)

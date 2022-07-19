@@ -1,16 +1,73 @@
 extends Panel
 
-func InitInfo(date,data):
+var ClickTimer = null
+var MousePos = Vector2()
+var CurData = {}
+var HintShown = false
+var MinMaxHeight = Vector2(80,140)
+
+func _ready():
+	$HBoxContainer/Salary/Report.visible = false
+	$EditWorkingHours.visible = false
+
+func ClearAll():
 	for x in $HBoxContainer.get_children():
 		if x is Label:
 			x.text = ""
+			
+func AddEmptyDate(date):
+	CurData = date
+	ClearAll()
+	var WeekDayNum = 0
+	if date.has("day"):
+		$HBoxContainer/Circle/Day.text = String(date["day"])
+		WeekDayNum = GlobalTime.GetWeekNumFromDate(date)
+		
+	$HBoxContainer/Circle/WeekDay.text = GlobalTime.WeekDayToDayName(WeekDayNum)[0]
+	$HBoxContainer/CheckIns.text = "No report"
+	$HBoxContainer/Salary/Report.visible = true
+	GlobalSave.AddReportOptionsToNode($HBoxContainer/Salary/Report)
+	$HBoxContainer/Salary/Report.get_popup().connect("index_pressed",self,"SelectedReport")
+	
+func SelectedReport(index):
+	var report = $HBoxContainer/Salary/Report.get_popup().get_item_metadata(index)
+	match report:
+		"Day off":
+			GlobalSave.AddDayOff(CurData)
+		"Holiday":
+			GlobalSave.AddHoliday(CurData)
+		"Work day":
+			GlobalSave.RemoveReport(CurData)
+			var CheckInDate = CurData.duplicate()
+			
+			CheckInDate["hour"] = 0
+			CheckInDate["minute"] = 0
+			CheckInDate["second"] = 0
+			var CheckOutDate = CheckInDate.duplicate()
+			GlobalSave.AddCheckIn(CheckInDate)
+			var S = GlobalSave.GetValueFromSettingCategory("WorkingHours")
+			if S == null:
+				CheckOutDate["hour"] += 8
+			else:
+				CheckOutDate["hour"] += S["hours"]
+			GlobalSave.AddCheckOut(CheckOutDate)
+			GlobalTime.emit_signal("UpdateSpecificDayInfo",CheckOutDate["day"],GlobalSave.MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])
+		_:
+			print(report, " not added yet.")
+	GlobalTime.emit_signal("UpdateList")
+	
+		
+	
+func InitInfo(date,data):
+	CurData = date
+	ClearAll()
 	
 	var WeekDayNum = 0
 	if date.has("day"):
 		$HBoxContainer/Circle/Day.text = String(date["day"])
 		WeekDayNum = GlobalTime.GetWeekNumFromDate(date)
 	
-		
+	
 	var WorkedTime = GlobalTime.CalcHowLongWorked(data)
 	var WorkedSeconds = GlobalTime.DateToSeconds(WorkedTime)
 	var WorkedDays = 0
@@ -41,6 +98,8 @@ func InitInfo(date,data):
 	if data.has("total_amount"):
 		$HBoxContainer/CheckIns.text = "Total"
 		$HBoxContainer/Salary.text = GlobalTime.FloatToString(data["total_amount"],2)+HowMuch[1]
+	else:
+		SetupBtnPressEvent()
 	if data.has("worked_seconds"):
 		var WorkedTotal = GlobalTime.SecondsToDate(data["worked_seconds"])
 		var Minute = String(WorkedTotal["minute"])
@@ -51,3 +110,47 @@ func InitInfo(date,data):
 		$HBoxContainer/Circle/Day.text = String(data["worked_days"])
 		$HBoxContainer/Circle/WeekDay.text = "days"
 	return {"earned":HowMuch[0],"worked_seconds":WorkedSeconds,"worked_days":WorkedDays}
+
+func SetupBtnPressEvent():
+# warning-ignore:return_value_discarded
+	$BG.connect("gui_input",self,"BGPress")
+# warning-ignore:return_value_discarded
+	$EditWorkingHours.connect("pressed",self,"EditWorkinfHoursPressed")
+	ClickTimer = Timer.new()
+	add_child(ClickTimer)
+	ClickTimer.one_shot = true
+	
+func EditWorkinfHoursPressed():
+	GlobalTime.HourSelectorUI.SyncDate(CurData)
+	GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
+	
+func BGPress(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			MousePos = event.position
+			ClickTimer.start(0.5)
+		else:
+			if MousePos - event.position == Vector2.ZERO:
+				if !ClickTimer.is_stopped():
+					AnimOpenCloseHints()
+					
+func AnimOpenCloseHints():
+	var T = Tween.new()
+	add_child(T)
+	T.connect("tween_all_completed",self,"FinishTween",[T])
+	if !HintShown:
+		$EditWorkingHours.modulate = Color(1,1,1,0)
+		$EditWorkingHours.visible = true
+		T.interpolate_property(self,"rect_min_size:y",MinMaxHeight.x,MinMaxHeight.y,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		T.interpolate_property($EditWorkingHours,"modulate",$EditWorkingHours.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+	else:
+		$EditWorkingHours.modulate = Color(1,1,1,1)
+		T.interpolate_property(self,"rect_min_size:y",MinMaxHeight.y,MinMaxHeight.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		T.interpolate_property($EditWorkingHours,"modulate",$EditWorkingHours.modulate,Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+	T.start()
+	HintShown = !HintShown
+
+func FinishTween(T):
+	if $EditWorkingHours.modulate == Color(1,1,1,0):
+		$EditWorkingHours.visible = false
+	T.queue_free()

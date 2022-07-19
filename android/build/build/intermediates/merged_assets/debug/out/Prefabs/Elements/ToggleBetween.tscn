@@ -49,25 +49,29 @@ __meta__ = {
 
 [node name="LeftToggle" type="Label" parent="."]
 anchor_bottom = 1.0
-margin_left = -250.0
-margin_top = -10.0
+margin_left = -265.0
+margin_top = -20.0
 margin_right = -57.0
-margin_bottom = 9.0
+margin_bottom = 19.0
 mouse_filter = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Left"
-align = 2
 valign = 1
 
 [node name="RightToggle" type="Label" parent="."]
+self_modulate = Color( 0.737255, 0.878431, 0.992157, 1 )
 anchor_bottom = 1.0
-margin_left = 190.0
-margin_top = -10.0
-margin_right = 383.0
-margin_bottom = 9.0
+margin_left = 174.0
+margin_top = -19.0
+margin_right = 408.0
+margin_bottom = 18.0
 mouse_filter = 0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Right"
+align = 2
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

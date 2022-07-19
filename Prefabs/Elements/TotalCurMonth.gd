@@ -168,7 +168,7 @@ func DisplayElements(_Date):
 	
 	#Deduction
 	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
-	if Deduction != null:
+	if Deduction != null && (Settings != null && Settings["enabled"]):
 		if Deduction.has("country"):
 			if Deduction["country"] == "Israel":
 				#Israel
@@ -193,35 +193,6 @@ func DisplayElements(_Date):
 				Itm.ShowItem(Delay,{})
 				Delay += 0.1
 				
-#				Itm = TotalItemInstance.instance()
-#				VBox.add_child(Itm)
-#				Itm.ShowItem(Delay,{"title":"Gross","desc":String(Gross)+Sufix})
-#				Delay += 0.1
-#
-#				Itm = TotalItemInstance.instance()
-#				VBox.add_child(Itm)
-#				Itm.ShowItem(Delay,{"title":"Income tax","desc":String(Gross)+Sufix})
-#				Delay += 0.1
-#
-#				Itm = TotalItemInstance.instance()
-#				VBox.add_child(Itm)
-#				Itm.ShowItem(Delay,{"title":"Social security","desc":String(Gross)+Sufix})
-#				Delay += 0.1
-#
-#				Itm = TotalItemInstance.instance()
-#				VBox.add_child(Itm)
-#				Itm.ShowItem(Delay,{"title":"Health tax","desc":String(Gross)+Sufix})
-#				Delay += 0.1
-#
-#				Itm = TotalItemInstance.instance()
-#				VBox.add_child(Itm)
-#				Itm.ShowItem(Delay,{"title":"Net","desc":String(Gross)+Sufix})
-#				Delay += 0.1
-#
-#				Itm = TotalItemInstance.instance()
-#				VBox.add_child(Itm)
-#				Itm.ShowItem(Delay,{})
-#				Delay += 0.1
 	
 	#Reporting Days off
 	TotDays = 0
@@ -256,7 +227,7 @@ func DisplayElements(_Date):
 	Delay += 0.1
 
 func GroupPressed(BtnNode,_GroupName):
-	if BtnNode.name != "Totals": return
+	if BtnNode.name != "TotalsScreen": return
 	SyncCurrentMonth(CurSelectedMonth)
 		
 	

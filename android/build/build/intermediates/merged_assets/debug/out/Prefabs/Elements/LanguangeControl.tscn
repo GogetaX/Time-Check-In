@@ -46,3 +46,5 @@ stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="gui_input" from="LangTexture" to="." method="_on_LangTexture_gui_input"]

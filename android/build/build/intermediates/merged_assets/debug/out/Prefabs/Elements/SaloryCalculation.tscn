@@ -68,9 +68,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 207.0
-margin_top = 4.0
+margin_top = 6.0
 margin_right = 287.0
-margin_bottom = 84.0
+margin_bottom = 86.0
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -80,3 +80,4 @@ __meta__ = {
 [connection signal="OnToggle" from="Activate" to="." method="_on_CheckBox_OnToggle"]
 [connection signal="UpdatedVar" from="SalaryBox" to="." method="_on_ValueBox_UpdatedVar"]
 [connection signal="UpdatedVar" from="TravelBox" to="." method="_on_TravelBox_UpdatedVar"]
+[connection signal="gui_input" from="CurrentCurrencyIcon" to="." method="_on_CurrentCurrencyIcon_gui_input"]

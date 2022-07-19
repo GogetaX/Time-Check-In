@@ -37,6 +37,7 @@ func SetRightText(new):
 	$RightToggle.text = RightText
 	
 func LeftGUIInput(event):
+	if LeftSelected: return
 	if event is InputEventMouseButton:
 		if event.pressed:
 			LeftSelected = true
@@ -44,6 +45,7 @@ func LeftGUIInput(event):
 			emit_signal("OnToggle",LeftSelected)
 			
 func RightGUIInput(event):
+	if !LeftSelected: return
 	if event is InputEventMouseButton:
 		if event.pressed:
 			LeftSelected = false
