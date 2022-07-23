@@ -122,6 +122,7 @@ __meta__ = {
 [node name="CheckinControl" parent="TimeScreen" instance=ExtResource( 5 )]
 
 [node name="CalendarScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -511,7 +512,6 @@ size_flags_vertical = 3
 [node name="TotalItem" parent="TotalsScreen/Scroll/VBox" instance=ExtResource( 26 )]
 
 [node name="SettingsScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -539,7 +539,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/ScrollContainer"]
-margin_right = 720.0
+margin_right = 710.0
 margin_bottom = 1264.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

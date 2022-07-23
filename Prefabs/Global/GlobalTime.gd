@@ -387,6 +387,9 @@ func HowMuchIEarnedFromSeconds(Seconds):
 	var WithNosafot = GetHowManySecondsOnNosafot(Seconds)
 	var sufix = ""
 	var SalorySettings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
+	if SalorySettings == null:
+		return [0,""]
+		
 	if SalorySettings.has("sufix"):
 		sufix = SalorySettings["sufix"]
 	Ret = (WithNosafot[0]/3600.0*SalorySettings["salary"])+(WithNosafot[1]/3600.0*SalorySettings["salary"])*1.25+(WithNosafot[2]/3600.0*SalorySettings["salary"])*1.5

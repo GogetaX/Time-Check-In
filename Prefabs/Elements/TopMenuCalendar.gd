@@ -99,30 +99,31 @@ func GenerateList(fast = false):
 		add_child(T)
 		T.connect("tween_all_completed",self,"FinishedShow",[T])
 	var delay = 0.0
-	if DataFromFile != null:
-		var tot = GlobalTime.HowManyDaysInMonth({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth})
-		for x in range(1,tot):
-			if DataFromFile.has(x) && !DataFromFile[x].empty():
-				var itm = ItmInstance.instance()
-				List.add_child(itm)
-				if !fast:
-					itm.modulate = Color(1,1,1,0)
-					T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
-				delay += StepSpd
-				var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
-				var i = itm.InitInfo(date,DataFromFile[x])
-				TotAmount += i["earned"]
-				WorkedSeconds += i["worked_seconds"]
-				WorkedDays += i["worked_days"]
-			else:
-				var itm = ItmInstance.instance()
-				List.add_child(itm)
-				if !fast:
-					itm.modulate = Color(1,1,1,0)
-					T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
-				delay += StepSpd
-				var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
-				itm.AddEmptyDate(date)
+	var tot = GlobalTime.HowManyDaysInMonth({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth})
+	if DataFromFile == null:
+		DataFromFile = {}
+	for x in range(1,tot):
+		if DataFromFile.has(x) && !DataFromFile[x].empty():
+			var itm = ItmInstance.instance()
+			List.add_child(itm)
+			if !fast:
+				itm.modulate = Color(1,1,1,0)
+				T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
+			delay += StepSpd
+			var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
+			var i = itm.InitInfo(date,DataFromFile[x])
+			TotAmount += i["earned"]
+			WorkedSeconds += i["worked_seconds"]
+			WorkedDays += i["worked_days"]
+		else:
+			var itm = ItmInstance.instance()
+			List.add_child(itm)
+			if !fast:
+				itm.modulate = Color(1,1,1,0)
+				T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
+			delay += StepSpd
+			var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
+			itm.AddEmptyDate(date)
 	
 	#Total Earned/Hours
 	var itm = ItmInstance.instance()
