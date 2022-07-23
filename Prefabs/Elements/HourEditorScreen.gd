@@ -40,4 +40,5 @@ func _on_Accept_pressed():
 		#GlobalSave.MySaves[GlobalTime.CurSelectedDate["year"]][GlobalTime.CurSelectedDate["month"]][GlobalTime.CurSelectedDate["day"]] = Checks
 		GlobalSave.SaveToFile()
 	GlobalTime.emit_signal("ReloadCurrentDate")
+	GlobalTime.emit_signal("UpdateList")
 	_on_Decline_pressed()

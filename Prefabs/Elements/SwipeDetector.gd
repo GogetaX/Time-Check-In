@@ -25,8 +25,8 @@ func _input(event):
 		var MPos = (MousePos - event.position).normalized()
 		if abs(MPos.x) + abs(MPos.y) == 1:
 			return
-		if MPos.x >= 0.98 && abs(MPos.y) < 0.2:
+		if MPos.x >= 0.8 && abs(MPos.y) < 0.5:
 			emit_signal("Swiped",SWIPE_DIR_LEFT)
 			return
-		if MPos.x <= -0.98 && abs(MPos.y) < 0.2:
+		if MPos.x <= -0.8 && abs(MPos.y) < 0.5:
 			emit_signal("Swiped",SWIPE_DIR_RIGHT)

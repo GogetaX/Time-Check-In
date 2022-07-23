@@ -1,5 +1,6 @@
 extends Panel
 
+var StepSpd = 0.05
 
 func _ready():
 # warning-ignore:return_value_discarded
@@ -37,6 +38,9 @@ func SyncMenu(Btn,_Group):
 func _on_ToggleBetween_OnToggle(val):
 	GlobalSave.AddVarsToSettings("CalendarSettings","Calendar_Switch",val)
 	AnimToggle(val)
+	if val:
+		get_parent().get_node("Calendar/VMonth").SyncMonth()
+		$CurMonth.GetDataFromFile()
 
 
 func LoadCalendarSwitch():
@@ -97,7 +101,6 @@ func GenerateList(fast = false):
 	var delay = 0.0
 	if DataFromFile != null:
 		var tot = GlobalTime.HowManyDaysInMonth({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth})
-		print(tot)
 		for x in range(1,tot):
 			if DataFromFile.has(x) && !DataFromFile[x].empty():
 				var itm = ItmInstance.instance()
@@ -105,7 +108,7 @@ func GenerateList(fast = false):
 				if !fast:
 					itm.modulate = Color(1,1,1,0)
 					T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
-				delay += 0.1
+				delay += StepSpd
 				var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
 				var i = itm.InitInfo(date,DataFromFile[x])
 				TotAmount += i["earned"]
@@ -117,10 +120,11 @@ func GenerateList(fast = false):
 				if !fast:
 					itm.modulate = Color(1,1,1,0)
 					T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
-				delay += 0.1
+				delay += StepSpd
 				var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
 				itm.AddEmptyDate(date)
-				
+	
+	#Total Earned/Hours
 	var itm = ItmInstance.instance()
 	List.add_child(itm)
 	if !fast:

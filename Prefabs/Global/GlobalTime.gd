@@ -6,6 +6,7 @@ const TIME_PAUSED = "PAUSED"
 const TIME_RETRO_CHECK_IN = "RETRO_CHECK_IN"
 const DAY_OFF_COLOR = Color.darkgreen
 const HOLIDAY_COLOR = Color.chartreuse
+const CURRENTDAY_COLOR = Color("fbffb326")
 
 var CurTimeMode = TIME_IDLE
 
@@ -61,6 +62,13 @@ func SelectCurDate(DayNode,DayInfo):
 	CurSelectedDate["month"] = TempCurMonth
 	CurSelectedDate["info"] = DayInfo
 	emit_signal("SelectDay",DayNode)
+	
+func SelectCurDayList(Date,DayInfo):
+	CurSelectedDate["day"] = Date["day"]
+	CurSelectedDate["year"] = Date["year"]
+	CurSelectedDate["month"] = Date["month"]
+	CurSelectedDate["info"] = DayInfo
+	
 
 func GetColorFromReport(report):
 	report = report.to_lower()
@@ -476,7 +484,7 @@ func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
 	var S = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
 	var sufix = ""
 	if Salary.has("sufix"):
-		sufix = Salary["sufix"]
+		sufix = TranslationServer.translate(Salary["sufix"])
 	if S.has("credit"):
 		Credit = S["credit"]
 		
@@ -488,10 +496,10 @@ func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
 	#Gross, Income tax, Social security, Health tax, Net
 	var Rest = {"Gross": FloatToString(GrossSalary,2)+sufix}
 	if Sec125 > 0:
-		Rest["NosafotHours 125%"] = FloatToString(Sec125/3600.0,1)+" "+TranslationServer.translate("hours")
+		Rest["NosafotHours 125%"] = FloatToString(Sec125/3600.0,1)
 		Rest["NosafotEarned 125%"] = FloatToString(Sec125/3600.0*Salary["salary"] * 1.25,2)+sufix
 	if Sec150 > 0:
-		Rest["NosafotHours 150%"] = FloatToString(Sec150/3600.0,1)+" "+TranslationServer.translate("hours")
+		Rest["NosafotHours 150%"] = FloatToString(Sec150/3600.0,1)
 		Rest["NosafotEarned 150%"] = FloatToString(Sec150/3600.0*Salary["salary"] * 1.50,2)+sufix
 	var NetList = []
 	if GrossSalary <= TaxInfo[0][0]:

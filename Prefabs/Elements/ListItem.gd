@@ -5,10 +5,12 @@ var MousePos = Vector2()
 var CurData = {}
 var HintShown = false
 var MinMaxHeight = Vector2(80,140)
+var CurItem = {}
 
 func _ready():
 	$HBoxContainer/Salary/Report.visible = false
 	$EditWorkingHours.visible = false
+	$Change.visible = false
 
 func ClearAll():
 	for x in $HBoxContainer.get_children():
@@ -27,10 +29,16 @@ func AddEmptyDate(date):
 	$HBoxContainer/CheckIns.text = "No report"
 	$HBoxContainer/Salary/Report.visible = true
 	GlobalSave.AddReportOptionsToNode($HBoxContainer/Salary/Report)
+	
 	$HBoxContainer/Salary/Report.get_popup().connect("index_pressed",self,"SelectedReport")
 	
 func SelectedReport(index):
-	var report = $HBoxContainer/Salary/Report.get_popup().get_item_metadata(index)
+	var report = ""
+	if $HBoxContainer/Salary/Report.visible:
+		report = $HBoxContainer/Salary/Report.get_popup().get_item_metadata(index)
+	if $Change.visible:
+		report = $Change.get_popup().get_item_metadata(index)
+	GlobalTime.SelectCurDayList(CurData,CurItem)
 	match report:
 		"Day off":
 			GlobalSave.AddDayOff(CurData)
@@ -60,6 +68,7 @@ func SelectedReport(index):
 	
 func InitInfo(date,data):
 	CurData = date
+	CurItem = data
 	ClearAll()
 	
 	var WeekDayNum = 0
@@ -88,18 +97,29 @@ func InitInfo(date,data):
 		$HBoxContainer/Salary.text = GlobalTime.FloatToString(HowMuch[0],2)+HowMuch[1]
 		
 	if data.has("report"):
+		GlobalSave.AddReportOptionsToNode($Change)
+		$Change.get_popup().connect("index_pressed",self,"SelectedReport")
 		$HBoxContainer/CheckIns.text = data["report"]
-		$HBoxContainer/Salary/Holiday.texture = GlobalSave.ReportToImage(data["report"])
+		$HBoxContainer/Time/Holiday.texture = GlobalSave.ReportToImage(data["report"])
 		var C = GlobalTime.GetColorFromReport(data["report"])
 		var CircleStyle = $HBoxContainer/Circle.get_stylebox("panel").duplicate()
 		CircleStyle.bg_color = C
 		$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
+	
+	#Check if this is current day:
+	if date.has("day"):
+		var CurDay = OS.get_datetime()
+		if CurDay["day"] == date["day"] && CurDay["month"] == date["month"] && CurDay["year"] == date["year"]:
+			var CircleStyle = $HBoxContainer/Circle.get_stylebox("panel").duplicate()
+			CircleStyle.bg_color = GlobalTime.CURRENTDAY_COLOR
+			$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
 		
 	if data.has("total_amount"):
 		$HBoxContainer/CheckIns.text = "Total"
-		$HBoxContainer/Salary.text = GlobalTime.FloatToString(data["total_amount"],2)+HowMuch[1]
+		$HBoxContainer/Salary.text = GlobalTime.FloatToString(data["total_amount"],2)+TranslationServer.translate(HowMuch[1])
 	else:
 		SetupBtnPressEvent()
+		
 	if data.has("worked_seconds"):
 		var WorkedTotal = GlobalTime.SecondsToDate(data["worked_seconds"])
 		var Minute = String(WorkedTotal["minute"])
@@ -121,6 +141,7 @@ func SetupBtnPressEvent():
 	ClickTimer.one_shot = true
 	
 func EditWorkinfHoursPressed():
+	GlobalTime.SelectCurDayList(CurData,CurItem)
 	GlobalTime.HourSelectorUI.SyncDate(CurData)
 	GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
 	
@@ -139,18 +160,33 @@ func AnimOpenCloseHints():
 	add_child(T)
 	T.connect("tween_all_completed",self,"FinishTween",[T])
 	if !HintShown:
-		$EditWorkingHours.modulate = Color(1,1,1,0)
-		$EditWorkingHours.visible = true
+		if !CurItem.has("report"):
+			$EditWorkingHours.modulate = Color(1,1,1,0)
+			$EditWorkingHours.visible = true
+			T.interpolate_property($EditWorkingHours,"modulate",$EditWorkingHours.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		else:
+			$Change.modulate = Color(1,1,1,0)
+			$Change.visible = true
+			T.interpolate_property($Change,"modulate",$Change.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		
+		
 		T.interpolate_property(self,"rect_min_size:y",MinMaxHeight.x,MinMaxHeight.y,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
-		T.interpolate_property($EditWorkingHours,"modulate",$EditWorkingHours.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		
 	else:
-		$EditWorkingHours.modulate = Color(1,1,1,1)
+		if !CurItem.has("report"):
+			$EditWorkingHours.modulate = Color(1,1,1,1)
+			T.interpolate_property($EditWorkingHours,"modulate",$EditWorkingHours.modulate,Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		else:
+			$Change.modulate = Color(1,1,1,1)
+			T.interpolate_property($Change,"modulate",$Change.modulate,Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		T.interpolate_property(self,"rect_min_size:y",MinMaxHeight.y,MinMaxHeight.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
-		T.interpolate_property($EditWorkingHours,"modulate",$EditWorkingHours.modulate,Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		
 	T.start()
 	HintShown = !HintShown
 
 func FinishTween(T):
 	if $EditWorkingHours.modulate == Color(1,1,1,0):
 		$EditWorkingHours.visible = false
+	if $Change.modulate == Color(1,1,1,0):
+		$Change.visible = false
 	T.queue_free()

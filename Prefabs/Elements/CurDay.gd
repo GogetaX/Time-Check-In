@@ -19,7 +19,7 @@ func SelectedDay(_DayNode):
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"] && CurDate["day"] == GlobalTime.CurSelectedDate["day"]+1:
 		DayDescription = TranslationServer.translate("Yesterday")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]:
-		DayDescription = TranslationServer.translate("This month ")+" "
+		DayDescription = TranslationServer.translate("This month")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]-1:
 		DayDescription = TranslationServer.translate("Next month")+" "
 	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]+1:
