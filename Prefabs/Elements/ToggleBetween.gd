@@ -60,6 +60,7 @@ func _gui_input(event):
 func AnimToggle(update = false):
 	var T = Tween.new()
 	add_child(T)
+	GlobalTime.SwipeEnabled = false
 	T.connect("tween_all_completed",self,"FinishAnim",[T])
 	if !update:
 		LeftSelected = !LeftSelected
@@ -78,3 +79,4 @@ func AnimToggle(update = false):
 	
 func FinishAnim(T):
 	T.queue_free()
+	GlobalTime.SwipeEnabled = true

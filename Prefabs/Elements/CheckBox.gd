@@ -26,6 +26,7 @@ func _gui_input(event):
 func AnimToggle():
 	var T = Tween.new()
 	add_child(T)
+	GlobalTime.SwipeEnabled = false
 	T.connect("tween_all_completed",self,"FinishAnim",[T])
 	if !is_Pressed:
 		T.interpolate_property($BG/Toggle,"rect_position:x",StartPos.x,$BG.rect_size.x-$BG/Toggle.rect_size.x-5,0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
@@ -38,4 +39,5 @@ func AnimToggle():
 	emit_signal("OnToggle")
 	
 func FinishAnim(T):
+	GlobalTime.SwipeEnabled = true
 	T.queue_free()

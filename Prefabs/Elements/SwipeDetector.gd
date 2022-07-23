@@ -18,6 +18,8 @@ func _input(event):
 		return
 	if not event is InputEventScreenTouch:
 		return
+	if !GlobalTime.SwipeEnabled:
+		return
 	if event.pressed:
 		SwipeTimer.start(0.5)
 		MousePos = event.position

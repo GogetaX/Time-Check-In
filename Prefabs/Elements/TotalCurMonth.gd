@@ -180,7 +180,7 @@ func DisplayElements(_Date):
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
-						Itm.ShowItem(Delay,{"title":"hours","desc":Rest["NosafotHours 125%"]})
+						Itm.ShowItem(Delay,{"title":"total_hours_worked","desc":Rest["NosafotHours 125%"]})
 						Delay += 0.1
 						
 						Itm = TotalItemInstance.instance()
@@ -200,7 +200,7 @@ func DisplayElements(_Date):
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
-						Itm.ShowItem(Delay,{"title":"hours","desc":Rest["NosafotHours 150%"]})
+						Itm.ShowItem(Delay,{"title":"total_hours_worked","desc":Rest["NosafotHours 150%"]})
 						Delay += 0.1
 						
 						Itm = TotalItemInstance.instance()
