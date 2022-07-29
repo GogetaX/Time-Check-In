@@ -61,7 +61,7 @@ func InitWindowFromData(Data):
 
 func AdjustPanelByTextSize(PanelName,txt):
 	var PSize = 0
-	if txt.length() >100:
+	if txt.length() >60:
 		PSize = txt.length()
 	get_node(PanelName).rect_position.y -= PSize
 	get_node(PanelName).rect_size.y += PSize
