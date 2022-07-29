@@ -1,8 +1,19 @@
 extends Control
 
+#To use the popup:
+#var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("are_you_sure_to_skip") % TranslationServer.translate(TodayReport)}
+#var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+
+#match Answer:
+	#"NoBtn":
+	#	pass
+	#"YesBtn":
+	#	pass
+
 signal EmitedAnswer(Answer)
 
 func _ready():
+	GlobalTime.SwipeEnabled = false
 	visible = false
 	InitAllBtns()
 	
@@ -37,10 +48,23 @@ func InitWindowFromData(Data):
 		if "Panel" in x.name:
 			if Data["type"]+"Panel" == x.name:
 				if Data.has("Title"): x.get_node("Title").text = Data["Title"]
-				if Data.has("Desc"): x.get_node("Desc").text = Data["Desc"]
+				if Data.has("Desc"):
+					if x.get_node("Desc").has_method("SetHebrewText"):
+						x.get_node("Desc").hebrewText = Data["Desc"]
+					else:
+						x.get_node("Desc").text = Data["Desc"]
+					if x.name == "okPanel":
+						AdjustPanelByTextSize("okPanel",Data["Desc"])
 				x.visible = true
 			else:
 				x.visible = false
+
+func AdjustPanelByTextSize(PanelName,txt):
+	var PSize = 0
+	if txt.length() >100:
+		PSize = txt.length()
+	get_node(PanelName).rect_position.y -= PSize
+	get_node(PanelName).rect_size.y += PSize
 	
 func HideModulate():
 	var T = Tween.new()
@@ -63,6 +87,7 @@ func PressedButton(BtnNode):
 func FinishShowAndHide(T):
 	T.queue_free()
 	visible = false
+	GlobalTime.SwipeEnabled = true
 	
 func FinishShow(T):
 	T.queue_free()

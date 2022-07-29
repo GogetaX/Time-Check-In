@@ -19,8 +19,8 @@ func SetHebrewText(txt):
 		hebrewText = HebrewTextConvert(TranslationServer.translate(txt),CharsPeerLine)
 		if align == ALIGN_LEFT:
 			align = ALIGN_RIGHT
-	text = hebrewText
 
+	text = hebrewText
 
 func HebrewTextConvert(txt,WrapLines):
 	var res = ""

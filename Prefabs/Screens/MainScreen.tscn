@@ -550,6 +550,7 @@ margin_right = 710.0
 margin_bottom = 60.0
 mouse_filter = 2
 CategoryText = "Auto Salary Calculation"
+PanelInfo = "info_auto_salary_calc"
 
 [node name="SaloryCalculation" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 24 )]
 anchor_right = 0.0
@@ -579,6 +580,7 @@ margin_right = 710.0
 margin_bottom = 456.0
 mouse_filter = 2
 CategoryText = "App Language"
+PanelInfo = "info_lang"
 
 [node name="LanguangeControl" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 33 )]
 margin_top = 460.0
@@ -593,6 +595,7 @@ margin_right = 710.0
 margin_bottom = 624.0
 mouse_filter = 2
 CategoryText = "Calendar Settings"
+PanelInfo = "info_cal_settings"
 
 [node name="CalendarSettings" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 35 )]
 margin_top = 628.0

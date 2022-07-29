@@ -147,7 +147,69 @@ custom_fonts/font = ExtResource( 1 )
 text = "Yes"
 flat = true
 
+[node name="okPanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -135.0
+margin_right = 300.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 500, 200 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="okPanel"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 20.0
+margin_right = -10.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Title"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" parent="okPanel" instance=ExtResource( 5 )]
+margin_top = 81.0
+margin_bottom = 253.0
+text = "We noticed you had Check in yesterday, but no check out."
+align = 0
+CharsPeerLine = 35
+hebrewText = "We noticed you had Check in yesterday, but no check out."
+
+[node name="BtnContainer" type="HBoxContainer" parent="okPanel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 0, 100 )
+custom_constants/separation = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkBtn" type="Button" parent="okPanel/BtnContainer"]
+margin_right = 600.0
+margin_bottom = 100.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Ok"
+flat = true
+
 [node name="ForgetCheckOutPanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
