@@ -10,17 +10,12 @@ func _ready():
 	ShowOnly("TimeScreen")
 	
 func CheckForSwipe(Dir):
-	print(Dir)
 	var T = Tween.new()
 	add_child(T)
 	var NextNode = GetNextNodeToSwipe()
 	var PrevNode = GetPrevNodeToSwipe()
 # warning-ignore:shadowed_variable
 	var CurNode = GetCurNodeToSwipe()
-	
-	print("Next ",NextNode)
-	print("Prev ",PrevNode)
-	print("Cur ",CurNode)
 
 	match Dir:
 		"LEFT":

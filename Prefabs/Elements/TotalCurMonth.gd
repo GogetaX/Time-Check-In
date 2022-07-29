@@ -165,7 +165,7 @@ func DisplayElements(_Date):
 	
 	#Deduction
 	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
-	if Deduction != null && (Settings != null && Settings["enabled"]):
+	if Deduction != null && (Settings != null && Settings.has("enabled") && Settings["enabled"]):
 		if Deduction.has("country"):
 			if Deduction["country"] == "Israel":
 				var Rest = GlobalTime.IsraelIncomeCalcFromSalary(SecondsWorked,SecondsFor125,SecondsFor150)
@@ -261,6 +261,8 @@ func DisplayElements(_Date):
 	Delay += 0.1
 
 func GroupPressed(BtnNode,_GroupName):
+	if BtnNode == null:
+		return
 	if BtnNode.name != "TotalsScreen": return
 	SyncCurrentMonth(CurSelectedMonth)
 		

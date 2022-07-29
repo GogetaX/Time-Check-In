@@ -58,6 +58,8 @@ func _gui_input(event):
 			AnimToggle()
 			
 func AnimToggle(update = false):
+	if Engine.editor_hint:
+		return
 	var T = Tween.new()
 	add_child(T)
 	GlobalTime.SwipeEnabled = false

@@ -2,6 +2,7 @@ extends TextureRect
 
 export (bool) var Pressed = false setget SetPressed
 export (String) var BtnGroup = "" setget SetBtngroup
+export (Color) var CustomEndColor = Color(1,1,1,0.55) setget SetCustomEndColor
 
 signal BtnPressed()
 
@@ -9,6 +10,9 @@ func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"GroupPressed")
 	SyncPressed()
+	
+func SetCustomEndColor(new):
+	CustomEndColor = new
 	
 func SetBtngroup(new):
 	BtnGroup = new
@@ -28,7 +32,7 @@ func SyncPressed():
 	if Pressed:
 		T.interpolate_property(self,"modulate",modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 	else:
-		T.interpolate_property(self,"modulate",modulate,Color(1,1,1,0.55),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		T.interpolate_property(self,"modulate",modulate,CustomEndColor,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 	T.start()
 
 func GroupPressed(BtnNode,GroupName):

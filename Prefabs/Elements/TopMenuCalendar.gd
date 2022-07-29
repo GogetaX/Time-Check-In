@@ -22,6 +22,8 @@ func UpdateList():
 	GenerateList()
 	
 func SyncMenu(Btn,_Group):
+	if Btn == null:
+		return
 	if Btn.name == "CalendarScreen":
 		var Calendar = get_parent().get_node("Calendar")
 		var List = get_parent().get_node("List")
