@@ -30,17 +30,17 @@ margin_right = -20.0
 margin_bottom = 1246.0
 custom_fonts/normal_font = ExtResource( 2 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="GridContainer" parent="."]
 anchor_right = 1.0
 margin_top = 360.0
 margin_bottom = 360.0
-alignment = 1
+columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="HBoxContainer"]
-margin_right = 720.0
+margin_right = 240.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
