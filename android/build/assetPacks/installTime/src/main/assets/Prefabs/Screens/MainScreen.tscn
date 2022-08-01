@@ -675,7 +675,6 @@ texture = ExtResource( 8 )
 BtnGroup = "Menu"
 
 [node name="HourEditorScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 30 )

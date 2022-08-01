@@ -3,9 +3,9 @@ extends Control
 var CheckInEditorInstance = preload("res://Prefabs/Elements/CheckInOutEditor.tscn")
 
 var CurDate = {}
+
 func _ready():
 	GlobalTime.HourSelectorUI = self
-	visible = false
 
 func SyncDate(EditingDate):
 	$TopMenu/Accept.focus_mode = Control.FOCUS_NONE

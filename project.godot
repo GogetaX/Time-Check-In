@@ -12,6 +12,8 @@ config_version=4
 
 config/name="Time Check In"
 run/main_scene="res://Prefabs/Screens/MainScreen.tscn"
+run/disable_stdout=true
+run/disable_stderr=true
 boot_splash/image="res://Assets/ExportIcons/200Transparent.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.945098, 0.976471, 1, 1 )
