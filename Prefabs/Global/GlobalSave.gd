@@ -162,7 +162,6 @@ func SaveToFile():
 			F.close()
 
 
-
 func LoadSpecificFile(Month,Year):
 	var Res = null
 	var F = File.new()
@@ -170,7 +169,6 @@ func LoadSpecificFile(Month,Year):
 		F.open("user://SaveFile"+String(Year*Month)+".sf",File.READ)
 		Res = F.get_var()
 	F.close()
-	return
 	if Res != null:
 		for x in Res:
 			var DateToAdd = {"year":Year,"month":Month,"day":x}
