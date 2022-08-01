@@ -88,6 +88,7 @@ func FinishShowAndHide(T):
 	T.queue_free()
 	visible = false
 	GlobalTime.SwipeEnabled = true
+	queue_free()
 	
 func FinishShow(T):
 	T.queue_free()

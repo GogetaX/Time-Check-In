@@ -90,7 +90,6 @@ func GenerateList(fast = false):
 			x.queue_free()
 	var MonthSelector = get_node("CurMonth")
 	var DataFromFile = GlobalSave.LoadSpecificFile(MonthSelector.CurMonth,MonthSelector.CurYear)
-	
 	var ItmInstance = load("res://Prefabs/Elements/ListItem.tscn")
 	var TotAmount = 0
 	var WorkedSeconds = 0
@@ -104,7 +103,7 @@ func GenerateList(fast = false):
 	var tot = GlobalTime.HowManyDaysInMonth({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth})
 	if DataFromFile == null:
 		DataFromFile = {}
-	for x in range(1,tot):
+	for x in range(1,tot+1):
 		if DataFromFile.has(x) && !DataFromFile[x].empty():
 			var itm = ItmInstance.instance()
 			List.add_child(itm)
