@@ -6,8 +6,12 @@ func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
 # warning-ignore:return_value_discarded
+	GlobalTime.connect("NoAnimShowWindow",self,"NoAnimShowWindow")
+# warning-ignore:return_value_discarded
 	$SwipeDetector.connect("Swiped",self,"CheckForSwipe")
 	ShowOnly("TimeScreen")
+	
+
 	
 func CheckForSwipe(Dir):
 	var T = Tween.new()
@@ -89,6 +93,21 @@ func FinishedTweenSwipe(T,NodeToReturnBack):
 	NodeToReturnBack.visible = false
 	NodeToReturnBack.rect_position = Vector2.ZERO
 	
+func NoAnimShowWindow(WindowName):
+	for x in get_children():
+		if "Screen" in x.name:
+			if WindowName == x.name:
+				x.visible = true
+				if CurNode == null:
+					CurNode = x
+				else:
+					CurNode.visible = false
+					CurNode = x
+					CurNode.visible = true
+			else:
+				x.visible = false
+			
+	
 func ShowOnly(WindowName):
 	for x in get_children():
 		if "Screen" in x.name:
@@ -101,21 +120,33 @@ func ShowOnly(WindowName):
 					CurNode = x
 					AnimateWindow(CurNode,true)
 			else:
-				x.visible = false
+				pass
+				#x.visible = false
 
 func AnimateWindow(WindowNode,In):
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishTween",[T])
+		
 	WindowNode.rect_pivot_offset = WindowNode.rect_size / 2
 	if In:
+		T.connect("tween_all_completed",self,"FinishTween",[T])
 		WindowNode.rect_scale = Vector2(0.5,0.5)
-		T.interpolate_property(WindowNode,"rect_scale",WindowNode.rect_scale,Vector2(1,1),0.3,Tween.TRANS_ELASTIC,Tween.EASE_OUT)
+		WindowNode.modulate = Color(1,1,1,0)
+		T.interpolate_property(WindowNode,"rect_scale",WindowNode.rect_scale,Vector2(1,1),0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
+		T.interpolate_property(WindowNode,"modulate",WindowNode.modulate,Color(1,1,1,1),0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
+	else:
+		T.connect("tween_all_completed",self,"FinishTweenAndHide",[T,WindowNode])
+		T.interpolate_property(WindowNode,"modulate",WindowNode.modulate,Color(1,1,1,0),0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
 	T.start()
 	
 func FinishTween(T):
 	T.queue_free()
 
+func FinishTweenAndHide(T,NodeToHide):
+	T.queue_free()
+	NodeToHide.visible = false
+	NodeToHide.modulate = Color(1,1,1,1)
+	
 func _on_CheckIn_BtnPressed():
 	ShowOnly("TimeScreen")
 

@@ -126,5 +126,5 @@ func FinishTweenAndClose(T):
 	GlobalSave.RemoveCheckInOut(CurCheckinNum,CurCheckInInfo)
 	var Date= {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 	GlobalTime.HourSelectorUI.SyncDate(Date)
-	GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
+	GlobalTime.emit_signal("NoAnimShowWindow","HourEditorScreen")
 	GlobalTime.emit_signal("UpdateDayInfo")

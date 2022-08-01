@@ -37,6 +37,8 @@ signal UpdateSpecificDayInfo(DayNumber,DayInfoData)
 # warning-ignore:unused_signal
 signal ShowOnlyScreen(ScreenName)
 # warning-ignore:unused_signal
+signal NoAnimShowWindow(ScreenName)
+# warning-ignore:unused_signal
 signal ReloadCurrentDate()
 # warning-ignore:unused_signal
 signal UpdateList()

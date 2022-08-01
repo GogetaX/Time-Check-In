@@ -79,6 +79,20 @@ func HasTodayReport():
 		return null
 	return MySaves[CurDate["year"]][CurDate["month"]][CurDate["day"]]["report"]
 
+func RemoveCheckOut(CheckOutNum,Date):
+	var CurYear = GlobalTime.CurSelectedDate["year"]
+	var CurMonth = GlobalTime.CurSelectedDate["month"]
+	if MySaves[CurYear][CurMonth].has(Date["day"]):
+		if MySaves[CurYear][CurMonth][Date["day"]].has("check_out"+String(CheckOutNum)):
+			MySaves[CurYear][CurMonth][Date["day"]].erase("check_out"+String(CheckOutNum))
+		else:
+			print("Error, Checking not existing ",Date," checkinnum ",CheckOutNum)
+	else:
+		print("Error, No date found to remove ",Date)
+
+	MySaves[CurYear][CurMonth][Date["day"]] = ReformatCheckins(MySaves[CurYear][CurMonth][Date["day"]])
+	SaveToFile()
+
 func RemoveCheckInOut(CheckInNum,Date):
 	var CurYear = GlobalTime.CurSelectedDate["year"]
 	var CurMonth = GlobalTime.CurSelectedDate["month"]
@@ -155,7 +169,6 @@ func LoadSpecificFile(Month,Year):
 	if F.file_exists("user://SaveFile"+String(Year*Month)+".sf"):
 		F.open("user://SaveFile"+String(Year*Month)+".sf",File.READ)
 		Res = F.get_var()
-	
 	F.close()
 	
 	if Res != null:
@@ -168,7 +181,6 @@ func LoadSpecificFile(Month,Year):
 	var CurDate = OS.get_datetime()
 	if Res != null:
 		for x in Res:
-			
 			if CurDate["year"] > Year || CurDate["month"] > Month || CurDate["day"] > x:
 				var CheckIns = 0
 # warning-ignore:unused_variable
@@ -182,6 +194,11 @@ func LoadSpecificFile(Month,Year):
 				if CheckIns > 0:
 					var Yesterday = GlobalTime.OffsetDay(CurDate,-1)
 					var NewCheckOut = {"year":Year,"month":Month,"day":x,"hour":24,"minute":0,"second":0}
+					
+					#if prev day was prev month or prev year, load prev month, add check out and save it
+					if CurDate["month"] != Month || CurDate["year"] != Year:
+						var _yest = LoadSpecificFile(Month,Year)
+						
 					if Yesterday["year"] == NewCheckOut["year"] && Yesterday["month"] == NewCheckOut["month"] && Yesterday["day"] == NewCheckOut["day"]:
 						GlobalTime.ForgotCheckInYesterday = true
 					AddCheckOut(NewCheckOut)
@@ -228,7 +245,8 @@ func LanguangeToLetters(Lang):
 		"Russian":
 			return "ru"
 		_:
-			print("Languange ",Lang," not supported yet.")
+			print("Languange ",Lang," not supported yet. (GlobalSave->LanguangeToLetters)")
+			
 func GetValueFromSettings(Category,Key):
 	if !MySettings.has(Category):
 		return null

@@ -43,6 +43,11 @@ func InitHoliday(_Info):
 	
 	
 func InfoForCheckInData(Info):
+	#check if in debug mode
+	if OS.is_debug_build():
+		$CheckInData/EditWorkdays.get_popup().add_item("Remove Check Out")
+	
+	
 	RemoveAllExcept("CheckInData")
 	$CheckInData/WorkingHours.text = GlobalTime.GetAllCheckInAndOuts(Info)
 	var D = GlobalTime.CalcHowLongWorked(Info)
@@ -111,6 +116,11 @@ func SelectReport(Index,Btn):
 	var txt = Btn.get_item_metadata(Index)
 	var Date = {}
 	match txt:
+		"Remove Check Out":
+			var LastCheckOut = GlobalSave.FindLastCheckIn(GlobalTime.CurSelectedDate["info"])
+			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
+			GlobalSave.RemoveCheckOut(LastCheckOut,Date)
+			
 		"Day off":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.AddDayOff(Date)

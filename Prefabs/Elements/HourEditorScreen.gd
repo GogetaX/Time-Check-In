@@ -5,6 +5,7 @@ var CheckInEditorInstance = preload("res://Prefabs/Elements/CheckInOutEditor.tsc
 var CurDate = {}
 func _ready():
 	GlobalTime.HourSelectorUI = self
+	visible = false
 
 func SyncDate(EditingDate):
 	$TopMenu/Accept.focus_mode = Control.FOCUS_NONE
@@ -30,7 +31,6 @@ func SyncDate(EditingDate):
 
 func _on_Decline_pressed():
 	get_parent().ShowOnly("CalendarScreen")
-
 
 func _on_Accept_pressed():
 	for x in $VBoxContainer.get_children():

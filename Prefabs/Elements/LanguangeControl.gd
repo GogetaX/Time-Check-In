@@ -26,7 +26,7 @@ func SelectLang(Index,MenuItem):
 	TranslationServer.set_locale(GlobalSave.LanguangeToLetters(Lang))
 # warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
-	GlobalTime.call_deferred("emit_signal","ShowOnlyScreen","SettingsScreen")#.emit_signal("ShowOnlyScreen","SettingsScreen")
+	GlobalTime.call_deferred("emit_signal","NoAnimShowWindow","SettingsScreen")#.emit_signal("ShowOnlyScreen","SettingsScreen")
 	GlobalSave.emit_signal("UpdateLanguange")
 	
 

@@ -4,6 +4,7 @@ extends Button
 func _ready():
 	if !OS.is_debug_build():
 		queue_free()
+# warning-ignore:return_value_discarded
 	connect("pressed",self,"DebugPress")
 
 func DebugPress():

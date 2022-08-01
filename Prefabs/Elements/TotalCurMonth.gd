@@ -1,6 +1,7 @@
 extends Label
 
 var TotalItemInstance = preload("res://Prefabs/Elements/TotalItem.tscn")
+var StepTime = 0.05
 
 onready var VBox = get_parent().get_parent().get_node("Scroll/VBox")
 
@@ -156,12 +157,12 @@ func DisplayElements(_Date):
 					TravelAmount = Settings["bonus"]
 				Gross = ((SecondsWorked+SecondsFor125+SecondsFor150)/3600)*Settings["salary"]+TravelAmount
 				Itm.ShowItem(Delay,{"title":"total_earned","desc":GlobalTime.FloatToString(Gross,2)+Sufix})
-				Delay += 0.1
+				Delay += StepTime
 	#Seperator
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
 	Itm.ShowItem(Delay,{})
-	Delay += 0.1
+	Delay += StepTime
 	
 	#Deduction
 	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
@@ -176,47 +177,47 @@ func DisplayElements(_Date):
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":TranslationServer.translate("total_nosafot_125"),"desc":""})
-						Delay += 0.1
+						Delay += StepTime
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"total_hours_worked","desc":Rest["NosafotHours 125%"]})
-						Delay += 0.1
+						Delay += StepTime
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"total_earned","desc":Rest["NosafotEarned 125%"]})
-						Delay += 0.1
+						Delay += StepTime
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"","desc":""})
-						Delay += 0.1
+						Delay += StepTime
 					if Rest.has("NosafotHours 150%"):
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":TranslationServer.translate("total_nosafot_150"),"desc":""})
-						Delay += 0.1
+						Delay += StepTime
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"total_hours_worked","desc":Rest["NosafotHours 150%"]})
-						Delay += 0.1
+						Delay += StepTime
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"total_earned","desc":Rest["NosafotEarned 150%"]})
-						Delay += 0.1
+						Delay += StepTime
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"","desc":""})
-						Delay += 0.1
+						Delay += StepTime
 				#Israel
 				Itm = TotalItemInstance.instance()
 				VBox.add_child(Itm)
 				Itm.ShowItem(Delay,{"title":"Israel Deduction","desc":""})
-				Delay += 0.1
+				Delay += StepTime
 				for x in Rest:
 					if not "Nosafot" in x:
 						Itm = TotalItemInstance.instance()
@@ -227,11 +228,11 @@ func DisplayElements(_Date):
 						elif i.is_valid_float():
 							i = GlobalTime.FloatToString(i,2)
 						Itm.ShowItem(Delay,{"title":x,"desc":i})
-						Delay += 0.1
+						Delay += StepTime
 				Itm = TotalItemInstance.instance()
 				VBox.add_child(Itm)
 				Itm.ShowItem(Delay,{})
-				Delay += 0.1
+				Delay += StepTime
 				
 	
 	#Reporting Days off
@@ -245,7 +246,7 @@ func DisplayElements(_Date):
 					TotDays += 1
 	Info = {"title":"total_days_off","desc":String(TotDays)} 
 	Itm.ShowItem(Delay,Info)
-	Delay += 0.1
+	Delay += StepTime
 	
 	#Reporting Holidays
 	TotDays = 0
@@ -258,7 +259,7 @@ func DisplayElements(_Date):
 					TotDays += 1
 	Info = {"title":"total_holidays","desc":String(TotDays)} 
 	Itm.ShowItem(Delay,Info)
-	Delay += 0.1
+	Delay += StepTime
 
 func GroupPressed(BtnNode,_GroupName):
 	if BtnNode == null:
