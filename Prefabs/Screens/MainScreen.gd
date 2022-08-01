@@ -9,10 +9,10 @@ func _ready():
 	GlobalTime.connect("NoAnimShowWindow",self,"NoAnimShowWindow")
 # warning-ignore:return_value_discarded
 	$SwipeDetector.connect("Swiped",self,"CheckForSwipe")
+	HideAll()
 	ShowOnly("TimeScreen")
 	
 
-	
 func CheckForSwipe(Dir):
 	var T = Tween.new()
 	add_child(T)
@@ -107,7 +107,11 @@ func NoAnimShowWindow(WindowName):
 			else:
 				x.visible = false
 			
-	
+func HideAll():
+	for x in get_children():
+		if "Screen" in x.name:
+			x.visible = false
+			
 func ShowOnly(WindowName):
 	for x in get_children():
 		if "Screen" in x.name:
