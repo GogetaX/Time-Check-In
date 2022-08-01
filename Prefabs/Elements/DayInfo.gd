@@ -44,8 +44,8 @@ func InitHoliday(_Info):
 	
 func InfoForCheckInData(Info):
 	#check if in debug mode
-	#if OS.is_debug_build():
-	#	$CheckInData/EditWorkdays.get_popup().add_item("Remove Check Out")
+	if OS.is_debug_build():
+		$CheckInData/EditWorkdays.get_popup().add_item("Remove Check Out")
 	
 	
 	RemoveAllExcept("CheckInData")

@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Prefabs/Styles/Panel/SettingPanel.tres" type="StyleBox" id=1]
+[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Prefabs/Elements/ReportPanel.gd" type="Script" id=3]
+
+[node name="ReportPanel" type="Panel"]
+margin_top = 1144.0
+margin_right = 710.0
+margin_bottom = 1264.0
+rect_min_size = Vector2( 0, 120 )
+mouse_filter = 1
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReportBug" type="Button" parent="HBoxContainer"]
+margin_right = 353.0
+margin_bottom = 120.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Report bug"
+flat = true
+
+[node name="RequestFeature" type="Button" parent="HBoxContainer"]
+margin_left = 357.0
+margin_right = 710.0
+margin_bottom = 120.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Request feature"
+flat = true
+
+[connection signal="pressed" from="HBoxContainer/ReportBug" to="." method="_on_ReportBug_pressed"]
+[connection signal="pressed" from="HBoxContainer/RequestFeature" to="." method="_on_RequestFeature_pressed"]

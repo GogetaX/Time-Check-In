@@ -94,6 +94,7 @@ func FinishedTweenSwipe(T,NodeToReturnBack):
 	NodeToReturnBack.rect_position = Vector2.ZERO
 	
 func NoAnimShowWindow(WindowName):
+	CurNode = GetCurNodeToSwipe()
 	for x in get_children():
 		if "Screen" in x.name:
 			if WindowName == x.name:
@@ -113,6 +114,7 @@ func HideAll():
 			x.visible = false
 			
 func ShowOnly(WindowName):
+	CurNode = GetCurNodeToSwipe()
 	for x in get_children():
 		if "Screen" in x.name:
 			if WindowName == x.name:
