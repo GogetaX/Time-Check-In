@@ -1,6 +1,6 @@
 extends Panel
 
-var StepSpd = 0.05
+const StepSpd = 0.05
 
 func _ready():
 # warning-ignore:return_value_discarded
