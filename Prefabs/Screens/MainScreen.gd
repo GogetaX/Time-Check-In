@@ -3,6 +3,7 @@ extends Control
 var CurNode = null
 
 func _ready():
+	return
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
 # warning-ignore:return_value_discarded
