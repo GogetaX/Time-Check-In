@@ -8,12 +8,9 @@ var MySaves = {}
 var MySettings = {}
 
 func _ready():
-	print("1")
 	LoadSettings()
-	print("2")
 # warning-ignore:return_value_discarded
 	connect("UpdateLanguange",self,"ClearAllData")
-	print("3")
 	
 func ClearAllData():
 	GlobalTime.HasCheckin = []
