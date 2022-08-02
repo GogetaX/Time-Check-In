@@ -94,7 +94,7 @@ func InitInfo(date,data):
 		
 	var HowMuch = GlobalTime.HowMuchIEarnedFromSeconds(GlobalTime.DateToSeconds(WorkedTime))
 	if HowMuch[0] > 0:
-		$HBoxContainer/Salary.text = GlobalTime.FloatToString(HowMuch[0],2)+HowMuch[1]
+		$HBoxContainer/Salary.text = GlobalTime.FloatToString(HowMuch[0],2)+TranslationServer.translate(HowMuch[1])
 		
 	if data.has("report"):
 		GlobalSave.AddReportOptionsToNode($Change)
