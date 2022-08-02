@@ -300,7 +300,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Time Check In/Time Check In.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = "$code_sign_style_debug";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEVELOPMENT_TEAM = 8596TZWDHC;
 				INFOPLIST_FILE = "Time Check In/Time Check In-Info.plist";
@@ -331,7 +330,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Time Check In/Time Check In.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = "$code_sign_style_release";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEVELOPMENT_TEAM = 8596TZWDHC;
 				INFOPLIST_FILE = "Time Check In/Time Check In-Info.plist";
