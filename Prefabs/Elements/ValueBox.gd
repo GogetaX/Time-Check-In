@@ -17,6 +17,7 @@ func _ready():
 	$LineEdit.visible = false
 # warning-ignore:return_value_discarded
 	$VirtualKeyboardTimer.connect("timeout",self,"CheckIfVirtualKeyboard")
+
 	
 	
 func SetFrontText(new):
@@ -55,6 +56,7 @@ func _gui_input(event):
 	if is_Disabled: return
 	if event is InputEventMouseButton:
 		if event.pressed:
+			yield(get_tree(),"idle_frame")
 			if !$LineEdit.visible:
 				$LineEdit.placeholder_text = String(InisialValue)
 				$LineEdit.text = String(InisialValue)
@@ -66,7 +68,7 @@ func _gui_input(event):
 				match OS.get_name():
 					"iOS","Android":
 						CanCloseKeyboard = false
-						OS.show_virtual_keyboard("")
+						#OS.show_virtual_keyboard("")
 						$VirtualKeyboardTimer.start()
 
 
@@ -111,3 +113,11 @@ func _on_LineEdit_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed && $LineEdit.visible:
 			CheckIfVirtualKeyboard()
+
+
+func _on_LineEdit_focus_exited():
+	CheckIfVirtualKeyboard()
+
+
+func _on_LineEdit_mouse_exited():
+	CheckIfVirtualKeyboard()
