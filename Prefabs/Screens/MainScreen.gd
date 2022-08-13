@@ -115,7 +115,8 @@ func HideAll():
 	for x in get_children():
 		if "Screen" in x.name:
 			x.visible = false
-			
+
+
 func ShowOnly(WindowName):
 	FinalizeTweens()
 	CurNode = GetCurNodeToSwipe()

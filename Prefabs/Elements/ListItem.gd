@@ -6,8 +6,10 @@ var CurData = {}
 var HintShown = false
 var MinMaxHeight = Vector2(80,140)
 var CurItem = {}
+var BGStyle = null
 
 func _ready():
+	
 	$HBoxContainer/Salary/Report.visible = false
 	$EditWorkingHours.visible = false
 	$Change.visible = false
@@ -20,6 +22,7 @@ func ClearAll():
 func AddEmptyDate(date):
 	CurData = date
 	ClearAll()
+	CheckIfToday(date)
 	var WeekDayNum = 0
 	if date.has("day"):
 		$HBoxContainer/Circle/Day.text = String(date["day"])
@@ -70,6 +73,9 @@ func InitInfo(date,data):
 	CurData = date
 	CurItem = data
 	ClearAll()
+	BGStyle = get_stylebox("panel").duplicate()
+	set("custom_styles/panel",BGStyle)
+	
 	
 	var WeekDayNum = 0
 	if date.has("day"):
@@ -107,18 +113,15 @@ func InitInfo(date,data):
 		$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
 	
 	#Check if this is current day:
-	if date.has("day"):
-		var CurDay = OS.get_datetime()
-		if CurDay["day"] == date["day"] && CurDay["month"] == date["month"] && CurDay["year"] == date["year"]:
-			var CircleStyle = $HBoxContainer/Circle.get_stylebox("panel").duplicate()
-			CircleStyle.bg_color = GlobalTime.CURRENTDAY_COLOR
-			$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
+	var is_today = false
+	is_today = CheckIfToday(date)
 		
 	if data.has("total_amount"):
 		$HBoxContainer/CheckIns.text = "Total"
 		$HBoxContainer/Salary.text = GlobalTime.FloatToString(data["total_amount"],2)+TranslationServer.translate(HowMuch[1])
 	else:
-		SetupBtnPressEvent()
+		if !is_today:
+			SetupBtnPressEvent()
 		
 	if data.has("worked_seconds"):
 		var WorkedTotal = GlobalTime.SecondsToDate(data["worked_seconds"])
@@ -131,6 +134,17 @@ func InitInfo(date,data):
 		$HBoxContainer/Circle/WeekDay.text = "days"
 	return {"earned":HowMuch[0],"worked_seconds":WorkedSeconds,"worked_days":WorkedDays}
 
+func CheckIfToday(date):
+	var is_today = false
+	if date.has("day"):
+		var CurDay = OS.get_datetime()
+		if CurDay["day"] == date["day"] && CurDay["month"] == date["month"] && CurDay["year"] == date["year"]:
+			var CircleStyle = $HBoxContainer/Circle.get_stylebox("panel").duplicate()
+			CircleStyle.bg_color = GlobalTime.CURRENTDAY_COLOR
+			$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
+			is_today = true
+	return is_today
+	
 func SetupBtnPressEvent():
 # warning-ignore:return_value_discarded
 	$BG.connect("gui_input",self,"BGPress")
@@ -169,7 +183,7 @@ func AnimOpenCloseHints():
 			$Change.visible = true
 			T.interpolate_property($Change,"modulate",$Change.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		
-		
+		T.interpolate_property(BGStyle,"bg_color:a",0,1,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		T.interpolate_property(self,"rect_min_size:y",MinMaxHeight.x,MinMaxHeight.y,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		
 	else:
@@ -180,7 +194,7 @@ func AnimOpenCloseHints():
 			$Change.modulate = Color(1,1,1,1)
 			T.interpolate_property($Change,"modulate",$Change.modulate,Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		T.interpolate_property(self,"rect_min_size:y",MinMaxHeight.y,MinMaxHeight.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
-		
+		T.interpolate_property(BGStyle,"bg_color:a",1,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 	T.start()
 	HintShown = !HintShown
 

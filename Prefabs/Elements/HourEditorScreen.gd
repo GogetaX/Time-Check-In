@@ -30,6 +30,7 @@ func SyncDate(EditingDate):
 
 
 func _on_Decline_pressed():
+	get_parent().HideAll()
 	get_parent().ShowOnly("CalendarScreen")
 
 func _on_Accept_pressed():
