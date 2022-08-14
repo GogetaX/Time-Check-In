@@ -54,9 +54,11 @@ func InfoForCheckInData(Info):
 	$CheckInData/HowLongWorked.text = TranslationServer.translate("Working Time").format(ShowHowLongWorked(D))
 	var SalorySettings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	$CheckInData/HowMuchEarned.visible = false
+	
 	if GlobalTime.CheckIfOnGoing(Info):
 		$CheckInData/EditWorkdays.visible = false
 	else:
+		
 		$CheckInData/EditWorkdays.visible = true
 	if SalorySettings != null:
 		if SalorySettings.has("enabled"):

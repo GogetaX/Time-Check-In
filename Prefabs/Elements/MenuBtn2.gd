@@ -6,6 +6,8 @@ export (Color) var CustomEndColor = Color(1,1,1,0.55) setget SetCustomEndColor
 
 signal BtnPressed()
 
+var is_pressed = false
+
 func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"GroupPressed")
@@ -48,9 +50,12 @@ func GroupPressed(BtnNode,GroupName):
 func _gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
+			is_pressed = true
+		elif is_pressed:
 			BtnToggled(!Pressed)
 			emit_signal("BtnPressed")
 			GlobalTime.emit_signal("BtnGroupPressed",self,BtnGroup)
+			is_pressed = false
 			
 func TweenFinished(T):
 	T.queue_free()

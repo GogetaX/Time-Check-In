@@ -5,6 +5,7 @@ var CurLabelEdit = null
 var CurCheckInInfo = {}
 var CurCheckOutInfo = {}
 var CurCheckinNum = 0
+var has_check_out = false
 
 func _ready():
 	modulate = Color(1,1,1,0)
@@ -22,7 +23,11 @@ func HideAllEditors():
 
 func ShowDate(Delay,_Day,Info,Checks):
 	CurCheckInInfo = Info["check_in"+String(Checks)]
-	CurCheckOutInfo = Info["check_out"+String(Checks)]
+	if Info.has("check_out"+String(Checks)):
+		CurCheckOutInfo = Info["check_out"+String(Checks)]
+		has_check_out = true
+	else:
+		has_check_out = false
 	$DelayTimer.start(Delay)
 	CurCheckinNum = Checks
 	var CheckStr = String(Checks)
@@ -33,13 +38,19 @@ func ShowDate(Delay,_Day,Info,Checks):
 # warning-ignore:unused_variable
 	var CheckInDate = Info["check_in"+String(Checks)]
 # warning-ignore:unused_variable
-	var CheckOutDate = Info["check_out"+String(Checks)]
+	if has_check_out:
+		$CheckOutHourEdit.text = String(Info["check_out"+String(Checks)]["hour"])
+		$CheckOutMinuteEdit.text = String(Info["check_out"+String(Checks)]["minute"])
+	else:
+		$CheckOutHourEdit.visible = false
+		$CheckOutMinuteEdit.visible = false
+		$CheckOutName.visible = false
+		$RemoveButton.visible = false
 	
 	$CheckInHourEdit.text = String(Info["check_in"+String(Checks)]["hour"])
 	$CheckInMinuteEdit.text = String(Info["check_in"+String(Checks)]["minute"])
 	
-	$CheckOutHourEdit.text = String(Info["check_out"+String(Checks)]["hour"])
-	$CheckOutMinuteEdit.text = String(Info["check_out"+String(Checks)]["minute"])
+	
 
 func HideAllEdits():
 	$InteractiveButton.visible = false
@@ -48,7 +59,11 @@ func HideAllEdits():
 			x.visible = false
 		elif x is Label:
 			if "Edit" in x.name:
-				x.visible = true
+				if has_check_out:
+					x.visible = true
+				elif "In" in x.name:
+					x.visible = true
+					
 				
 func SelectHour(event,itmNode):
 	if event is InputEventMouseButton:
@@ -77,7 +92,8 @@ func GetEditedInfo():
 	var CheckInNum = int($CheckInNum.text)
 	var Res = {}
 	Res["check_in"+String(CheckInNum)] = {}
-	Res["check_out"+String(CheckInNum)] = {}
+	if has_check_out:
+		Res["check_out"+String(CheckInNum)] = {}
 	
 	Res["check_in"+String(CheckInNum)]["year"] = CurCheckInInfo["year"]
 	Res["check_in"+String(CheckInNum)]["month"] = CurCheckInInfo["month"]
@@ -86,12 +102,13 @@ func GetEditedInfo():
 	Res["check_in"+String(CheckInNum)]["minute"] = int($CheckInMinuteEdit.text)
 	Res["check_in"+String(CheckInNum)]["second"] = 0
 	
-	Res["check_out"+String(CheckInNum)]["year"] = CurCheckOutInfo["year"]
-	Res["check_out"+String(CheckInNum)]["month"] = CurCheckOutInfo["month"]
-	Res["check_out"+String(CheckInNum)]["day"] = CurCheckOutInfo["day"]
-	Res["check_out"+String(CheckInNum)]["hour"] = int($CheckOutHourEdit.text)
-	Res["check_out"+String(CheckInNum)]["minute"] = int($CheckOutMinuteEdit.text)
-	Res["check_out"+String(CheckInNum)]["second"] = 0
+	if has_check_out:
+		Res["check_out"+String(CheckInNum)]["year"] = CurCheckOutInfo["year"]
+		Res["check_out"+String(CheckInNum)]["month"] = CurCheckOutInfo["month"]
+		Res["check_out"+String(CheckInNum)]["day"] = CurCheckOutInfo["day"]
+		Res["check_out"+String(CheckInNum)]["hour"] = int($CheckOutHourEdit.text)
+		Res["check_out"+String(CheckInNum)]["minute"] = int($CheckOutMinuteEdit.text)
+		Res["check_out"+String(CheckInNum)]["second"] = 0
 	return Res
 
 func _on_DelayTimer_timeout():

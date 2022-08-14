@@ -113,15 +113,13 @@ func InitInfo(date,data):
 		$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
 	
 	#Check if this is current day:
-	var is_today = false
-	is_today = CheckIfToday(date)
+	CheckIfToday(date)
 		
 	if data.has("total_amount"):
 		$HBoxContainer/CheckIns.text = "Total"
 		$HBoxContainer/Salary.text = GlobalTime.FloatToString(data["total_amount"],2)+TranslationServer.translate(HowMuch[1])
 	else:
-		if !is_today:
-			SetupBtnPressEvent()
+		SetupBtnPressEvent()
 		
 	if data.has("worked_seconds"):
 		var WorkedTotal = GlobalTime.SecondsToDate(data["worked_seconds"])
