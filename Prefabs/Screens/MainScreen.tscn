@@ -75,7 +75,6 @@ __meta__ = {
 }
 
 [node name="TimeScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -119.0
@@ -126,6 +125,7 @@ __meta__ = {
 [node name="CheckinControl" parent="TimeScreen" instance=ExtResource( 5 )]
 
 [node name="CalendarScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -118.0
@@ -199,6 +199,7 @@ LeftText = "Calendar"
 RightText = "List"
 
 [node name="Calendar" type="Control" parent="CalendarScreen"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -328,7 +329,6 @@ margin_right = 700.0
 margin_bottom = 259.0
 
 [node name="List" type="Control" parent="CalendarScreen"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -342,6 +342,7 @@ __meta__ = {
 [node name="Scroll" type="ScrollContainer" parent="CalendarScreen/List"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -92.0
 theme = ExtResource( 41 )
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -442,6 +443,11 @@ anchor_right = 0.0
 margin_top = 550.0
 margin_right = 700.0
 margin_bottom = 630.0
+
+[node name="TotalItem" parent="CalendarScreen/List" instance=ExtResource( 40 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -80.0
 
 [node name="TotalsScreen" type="Control" parent="."]
 visible = false

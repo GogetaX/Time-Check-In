@@ -199,6 +199,8 @@ func LoadSpecificFile(Month,Year):
 						
 					if Yesterday["year"] == NewCheckOut["year"] && Yesterday["month"] == NewCheckOut["month"] && Yesterday["day"] == NewCheckOut["day"]:
 						GlobalTime.ForgotCheckInYesterday = true
+					else:
+						GlobalTime.ForgotCheckInSometimeAgo = NewCheckOut
 					AddCheckOut(NewCheckOut)
 	return Res
 

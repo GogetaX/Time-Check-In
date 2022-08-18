@@ -11,10 +11,25 @@ func _ready():
 	GlobalSave.connect("UpdateToday",self,"UpdateToday")
 	InitCurrentStatus()
 	PopupForYesterday()
+	PopupForSometimeAgo()
 	
+	
+func PopupForSometimeAgo():
+	if GlobalTime.ForgotCheckInSometimeAgo == null:
+		return
+	var Date = String(GlobalTime.ForgotCheckInSometimeAgo["day"])+"."+String(GlobalTime.ForgotCheckInSometimeAgo["month"])+"."+String(GlobalTime.ForgotCheckInSometimeAgo["year"])
+	var PopupData = {"type": "ForgetCheckOutSomeTimeAgo","Desc":TranslationServer.translate("forgot_check_out_some_day") % Date}
+	var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+	match Answer:
+		"EditBtn":
+			GlobalTime.SelectCurDayList(GlobalTime.ForgotCheckInSometimeAgo,GlobalTime.ForgotCheckInSometimeAgo)
+			GlobalTime.HourSelectorUI.SyncDate(GlobalTime.ForgotCheckInSometimeAgo,"TimeScreen")
+			GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
+		"CloseBtn":
+			pass
+	GlobalTime.ForgotCheckInSometimeAgo = null
 	
 func PopupForYesterday():
-	
 	var CurDay = OS.get_datetime()
 	var Yesterday = GlobalTime.OffsetDay(CurDay,-1)
 	GlobalSave.AddMySavesPath(Yesterday)

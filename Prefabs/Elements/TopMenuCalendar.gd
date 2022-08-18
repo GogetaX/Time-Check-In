@@ -1,6 +1,6 @@
 extends Panel
 
-const StepSpd = 0.05
+const StepSpd = 0.03
 
 func _ready():
 # warning-ignore:return_value_discarded
@@ -127,11 +127,10 @@ func GenerateList(fast = false):
 			itm.AddEmptyDate(date)
 	
 	#Total Earned/Hours
-	var itm = ItmInstance.instance()
-	List.add_child(itm)
+	var itm = get_parent().get_node("List/TotalItem")
 	if !fast:
 		itm.modulate = Color(1,1,1,0)
-		T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
+		T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,0)
 	itm.InitInfo({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth},{"total_amount":TotAmount,"worked_seconds":WorkedSeconds,"worked_days":WorkedDays})
 	if !fast:
 		T.start()

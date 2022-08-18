@@ -23,6 +23,7 @@ var TempCurMonth = 0
 var TempCurYear = 0
 var HourSelectorUI = null
 var ForgotCheckInYesterday = false
+var ForgotCheckInSometimeAgo = null
 var SwipeEnabled = true
 
 signal InitSecond()
