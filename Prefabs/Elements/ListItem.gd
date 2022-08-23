@@ -79,6 +79,7 @@ func InitInfo(date,data):
 	
 	var WeekDayNum = 0
 	if date.has("day"):
+		data = GlobalTime.FilterChecksIns(data)
 		$HBoxContainer/Circle/Day.text = String(date["day"])
 		WeekDayNum = GlobalTime.GetWeekNumFromDate(date)
 	

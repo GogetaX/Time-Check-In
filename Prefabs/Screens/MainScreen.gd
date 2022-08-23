@@ -11,6 +11,7 @@ func _ready():
 	$SwipeDetector.connect("Swiped",self,"CheckForSwipe")
 	HideAll()
 	ShowOnly("TimeScreen")
+
 	
 
 func CheckForSwipe(Dir):

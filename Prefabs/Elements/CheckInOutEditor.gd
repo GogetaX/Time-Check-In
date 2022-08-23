@@ -124,7 +124,7 @@ func FinishTween(T):
 func _on_InteractiveButton_pressed():
 	if CurEditor.text.is_valid_integer():
 		if "Hour" in CurEditor.name:
-			if int(CurEditor.text) <= 24 && int(CurEditor.text)>=0:
+			if int(CurEditor.text) <= 48 && int(CurEditor.text)>=0:
 				CurLabelEdit.text = CurEditor.text
 		elif "Minute" in CurEditor.name:
 			if int(CurEditor.text) <= 60 && int(CurEditor.text)>=0:

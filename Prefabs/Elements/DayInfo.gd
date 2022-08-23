@@ -47,7 +47,7 @@ func InfoForCheckInData(Info):
 	#if OS.is_debug_build():
 	#	$CheckInData/EditWorkdays.get_popup().add_item("Remove Check Out")
 	
-	
+	Info = GlobalTime.FilterChecksIns(Info)
 	RemoveAllExcept("CheckInData")
 	$CheckInData/WorkingHours.text = GlobalTime.GetAllCheckInAndOuts(Info)
 	var D = GlobalTime.CalcHowLongWorked(Info)

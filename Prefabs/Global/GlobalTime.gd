@@ -475,19 +475,44 @@ func DateToSeconds(Date):
 		Res += Date["second"]
 	return Res
 
+#Filter the check Ins, if the check in submit is larger than check out, just filter it
+func FilterChecksIns(CheckInData):
+	for x in CheckInData:
+		if "check_in" in x:
+			var Num = x.replace("check_in","")
+			if CheckInData.has("check_out"+Num):
+				
+				if CheckInData[x]["hour"]*3600+CheckInData[x]["minute"]*60 >  CheckInData["check_out"+Num]["hour"]*3600+CheckInData["check_out"+Num]["minute"]*60:
+					CheckInData["check_out"+Num]["hour"] = 24 + CheckInData["check_out"+Num]["hour"]
+	return CheckInData
+	
 func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
+	#Values Updated Every Year
+	#TaxInfo, TaxMore Info: https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94
+	var TaxInfo = [[6450, 10.0],[9240, 14.0],[14840, 20.0],[20620, 31.0], [42910,35.0], [55270,47.0]]
+	var TaxMore = 50.0
+	
+	#CreditAmount Info Nekudot Zokui: https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99
+	var CreditAmount = 223
+	
+	#TaxHealth, TaxSocial, AvarageSalary Info: https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx
+	var AvarageSalary = 6331
+	var TaxHealth = [3.1,5] 
+	var TaxSocial = [0.4,7]
+	#-------------------------------------------
+	
 	var Salary = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	if Salary == null:
 		return {"no_info_on_salary":""}
-	var GrossSalary = (SecondsWorked/3600 * Salary["salary"]) + (Sec125/3600.0 * Salary["salary"] * 1.25) + (Sec150/3600.0 * Salary["salary"] * 1.50)+Salary["bonus"]
+	var GrossSalary = (SecondsWorked/3600.0 * Salary["salary"]) + (Sec125/3600.0 * Salary["salary"] * 1.25) + (Sec150/3600.0 * Salary["salary"] * 1.50)+Salary["bonus"]
 	
 	#GrossSalary =  13480+4137.3
-	var Credit = 2.25
-	var CreditAmount = 223
-	var TaxMore = 50.0
-	var AvarageSalary = 6331
-	var TaxInfo = [[6450, 10.0],[9240, 14.0],[14840, 20.0],[20620, 31.0], [42910,35.0], [55270,47.0]]
 	
+	var Credit = 2.25
+	
+	
+	
+	var LastTaxPercent = 0.0
 	var S = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
 	var sufix = ""
 	if Salary.has("sufix"):
@@ -510,47 +535,54 @@ func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
 		Rest["NosafotEarned 150%"] = FloatToString(Sec150/3600.0*Salary["salary"] * 1.50,2)+sufix
 	var NetList = []
 	if GrossSalary <= TaxInfo[0][0]:
+		Rest["Income-tax-percent"] = String(TaxInfo[0][1])+"%"
 		Rest["Income-tax"] = (GrossSalary * TaxInfo[0][1]) / 100.0
 	else:
 		var LastValue = 0
+		
 		for Tax in TaxInfo:
 			if GrossSalary >= Tax[0]:
 				var T = ((Tax[0]-LastValue) * Tax[1]) / 100.0
 				NetList.append(T)
 				LastValue = Tax[0]
+				LastTaxPercent = Tax[1]
 			else:
 				var T = ((GrossSalary - LastValue) * Tax[1]) / 100.0
+				LastTaxPercent = Tax[1]
 				NetList.append(T)
 				break
 		if GrossSalary > TaxInfo[TaxInfo.size()-1][0]:
 			var T = ((GrossSalary - LastValue) * TaxMore) / 100.0
+			LastTaxPercent = TaxMore
 			NetList.append(T)
 		var Tax = 0
 		
 		for x in NetList:
 			Tax += x
+		Rest["Income-tax-percent"] = String(LastTaxPercent)+"%"
 		Rest["Income-tax"] = Tax
-	
+		
+		
 	if Rest["Income-tax"] > (Credit * CreditAmount):
 		Rest["Income-tax"] -= (Credit * CreditAmount)
-		
+		Rest["Income-tax-percent"] = String(LastTaxPercent)+"%"
 	
 	#Calc Health Tax Security
 	Rest["Social-security"] = 0
 	Rest["Health-tax"] = 0
 	
 	if GrossSalary <= AvarageSalary:
-		Rest["Health-tax"] = (GrossSalary) * 3.1 / 100
+		Rest["Health-tax"] = (GrossSalary) * TaxHealth[0] / 100
 	else:
-		Rest["Health-tax"] = (AvarageSalary) * 3.1 / 100
-		Rest["Health-tax"] += (GrossSalary - AvarageSalary) * 5 / 100
+		Rest["Health-tax"] = (AvarageSalary) * TaxHealth[0] / 100
+		Rest["Health-tax"] += (GrossSalary - AvarageSalary) * TaxHealth[1] / 100
 		
 		
 	if GrossSalary <= AvarageSalary:
-		Rest["Social-security"] = (GrossSalary) * 0.4 / 100
+		Rest["Social-security"] = (GrossSalary) * TaxSocial[0] / 100
 	else:
-		Rest["Social-security"] = (AvarageSalary) * 0.4 / 100
-		Rest["Social-security"] += (GrossSalary - AvarageSalary) * 7 / 100
+		Rest["Social-security"] = (AvarageSalary) * TaxSocial[0] / 100
+		Rest["Social-security"] += (GrossSalary - AvarageSalary) * TaxSocial[1] / 100
 		
 	Rest["Net"] = GrossSalary - Rest["Social-security"] - Rest["Health-tax"]-Rest["Income-tax"]
 	

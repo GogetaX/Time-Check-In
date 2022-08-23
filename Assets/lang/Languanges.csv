@@ -124,6 +124,7 @@
 "NosafotHours 150%","Overtime(hours) 150%","%150 תופסונ תועש","Сверхурочные (часы) 150%"
 "NosafotEarned 125%","Overtime(earned) 125%","%125 תופסונ תועש חוור","Сверхурочные (заработано) 125%"
 "NosafotEarned 150%","Overtime(earned) 150%","%150 תופסונ תועש חוור","Сверхурочные (заработано) 150%"
+"Income-tax-percent","Tax rate","סמה רועיש","Ставка налога"
 "no_info_on_salary","No Information about Salary","תרוכשמ לע עדימ ןיא","Нет информации о зарплате"
 "Forgot Check-Out?","Forgot Check-Out?","?תאצל תחכש","Забыли выйти?"
 "We noticed you had Check in yesterday, but no check out.","We noticed you had Check-In yesterday, but no Check-Out","שמנו לב שהיתה לך כניסה אתמול, אבל לא יציאה","Мы заметили, что вчера вы нажали Старт, но не нажали Стоп"
@@ -155,3 +156,5 @@
 "info_lang","Select language for your app","בחירת שפת תוכנה","Выберите язык для вашего приложения"
 "info_cal_settings","Select start of a week day","בחירת היום שבו השבוע מתחיל","Выберите начало дня недели"
 "info_auto_salary_calc","HOURLY WADGE: indicates how much you earn per hour\nBONUS: will include all the salary bonuses such as transport, bonus and so on","שכר שעתי: מציין כמה אתה מרוויח לשעה\n בונוס חודשי: יכלול את כל מענקי השכר כגון הובלה, בונוס וכדומה","Часовая ставка: указывает, сколько вы зарабатываете в час\nБонус: будет включать все бонусы к зарплате, такие как транспорт, бонус и т. д."
+"email_bug_description","type your bug description here.","הקלד כאן תיאור הבעיה בתוכנה","введите описание ошибки здесь."
+"email_feature_description","type your feature description here.","הקלד תיאור אופציה נוספת כאן","введите здесь описание вашей функции."

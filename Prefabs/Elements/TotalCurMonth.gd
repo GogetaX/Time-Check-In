@@ -4,6 +4,7 @@ var TotalItemInstance = preload("res://Prefabs/Elements/TotalItem.tscn")
 var StepTime = 0.05
 
 onready var VBox = get_parent().get_parent().get_node("Scroll/VBox")
+onready var TotEarned = get_parent().get_parent().get_node("TotEarned")
 
 var CurSelectedMonth = {}
 
@@ -13,7 +14,7 @@ func _ready():
 	CurSelectedMonth = OS.get_datetime()
 	InitMonthButtons()
 	SyncButtons(CurSelectedMonth)
-	SyncCurrentMonth(CurSelectedMonth)
+	#SyncCurrentMonth(CurSelectedMonth)
 
 func InitMonthButtons():
 	for x in VBox.get_children():
@@ -112,6 +113,7 @@ func DisplayElements(_Date):
 	VBox.add_child(Itm)
 	if DaysInMonth != null:
 		for x in DaysInMonth:
+			DaysInMonth[x] = GlobalTime.FilterChecksIns(DaysInMonth[x])
 			if DaysInMonth[x].has("check_in1"):
 				TotDays += 1
 	Info = {"title":"total_worked_days","desc":String(TotDays)} 
@@ -127,6 +129,7 @@ func DisplayElements(_Date):
 	if DaysInMonth != null:
 		
 		for x in DaysInMonth:
+			
 			var SecondsThisDay = GlobalTime.CalcBetweenCheckinsTOSeconds(DaysInMonth[x])
 			var Tot = GlobalTime.GetHowManySecondsOnNosafot(SecondsThisDay)
 			SecondsWorked += Tot[0]
@@ -145,19 +148,17 @@ func DisplayElements(_Date):
 	var Sufix = ""
 	#Tot Earned Money
 	var Settings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
-	if Settings != null:
+	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	if Settings != null && Deduction == null:
 		if Settings.has("enabled"):
 			if Settings["enabled"]:
-				Itm = TotalItemInstance.instance()
-				VBox.add_child(Itm)
 				if Settings.has("sufix"):
 					Sufix = TranslationServer.translate(Settings["sufix"])
 				var TravelAmount = 0
 				if Settings.has("bonus"):
 					TravelAmount = Settings["bonus"]
-				Gross = ((SecondsWorked+SecondsFor125+SecondsFor150)/3600)*Settings["salary"]+TravelAmount
-				Itm.ShowItem(Delay,{"title":"total_earned","desc":GlobalTime.FloatToString(Gross,2)+Sufix})
-				Delay += StepTime
+				Gross = ((SecondsWorked+SecondsFor125+SecondsFor150)/3600.0)*Settings["salary"]+TravelAmount
+				TotEarned.ShowItem(0,{"title":"total_earned","desc":GlobalTime.FloatToString(Gross,2)+Sufix})
 	#Seperator
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
@@ -165,7 +166,7 @@ func DisplayElements(_Date):
 	Delay += StepTime
 	
 	#Deduction
-	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	
 	if Deduction != null && (Settings != null && Settings.has("enabled") && Settings["enabled"]):
 		if Deduction.has("country"):
 			if Deduction["country"] == "Israel":
@@ -219,7 +220,7 @@ func DisplayElements(_Date):
 				Itm.ShowItem(Delay,{"title":"Israel Deduction","desc":""})
 				Delay += StepTime
 				for x in Rest:
-					if not "Nosafot" in x:
+					if not "Nosafot" in x && not "Net" in x:
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						var i = String(Rest[x])
@@ -229,6 +230,13 @@ func DisplayElements(_Date):
 							i = GlobalTime.FloatToString(i,2)
 						Itm.ShowItem(Delay,{"title":x,"desc":i})
 						Delay += StepTime
+					if x == "Net":
+						var i = String(Rest[x])
+						if i.is_valid_integer():
+							i = String(i)
+						elif i.is_valid_float():
+							i = GlobalTime.FloatToString(i,2)
+						TotEarned.ShowItem(0,{"title":x,"desc":i})
 				Itm = TotalItemInstance.instance()
 				VBox.add_child(Itm)
 				Itm.ShowItem(Delay,{})

@@ -24,7 +24,7 @@ __meta__ = {
 }
 
 [node name="ReportBug" type="Button" parent="HBoxContainer"]
-margin_right = 353.0
+margin_right = 337.0
 margin_bottom = 120.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -35,8 +35,8 @@ text = "Report bug"
 flat = true
 
 [node name="RequestFeature" type="Button" parent="HBoxContainer"]
-margin_left = 357.0
-margin_right = 710.0
+margin_left = 341.0
+margin_right = 678.0
 margin_bottom = 120.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -46,5 +46,16 @@ custom_fonts/font = ExtResource( 2 )
 text = "Request feature"
 flat = true
 
+[node name="Debugger" type="Button" parent="HBoxContainer"]
+margin_left = 682.0
+margin_right = 710.0
+margin_bottom = 120.0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "  "
+flat = true
+
 [connection signal="pressed" from="HBoxContainer/ReportBug" to="." method="_on_ReportBug_pressed"]
 [connection signal="pressed" from="HBoxContainer/RequestFeature" to="." method="_on_RequestFeature_pressed"]
+[connection signal="pressed" from="HBoxContainer/Debugger" to="." method="_on_Debugger_pressed"]

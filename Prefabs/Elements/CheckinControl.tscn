@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/CheckinControl.gd" type="Script" id=2]
@@ -46,6 +46,15 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 corner_detail = 10
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+void vertex(){
+	VERTEX.x += sin(TIME) * 10.0 * (UV.y-1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
 
 [node name="CheckinControl" type="Control"]
 anchor_right = 1.0
@@ -198,6 +207,7 @@ margin_right = 199.0
 margin_bottom = 343.5
 
 [node name="TextureButton" type="TextureRect" parent="HolidayToday"]
+material = SubResource( 8 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -60.0

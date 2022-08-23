@@ -199,7 +199,6 @@ LeftText = "Calendar"
 RightText = "List"
 
 [node name="Calendar" type="Control" parent="CalendarScreen"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -329,6 +328,7 @@ margin_right = 700.0
 margin_bottom = 259.0
 
 [node name="List" type="Control" parent="CalendarScreen"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -504,11 +504,19 @@ margin_bottom = -8.0
 rect_min_size = Vector2( 60, 60 )
 icon = ExtResource( 17 )
 
+[node name="TotEarned" parent="TotalsScreen" instance=ExtResource( 26 )]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -70.0
+margin_right = 0.0
+margin_bottom = 0.0
+
 [node name="Scroll" type="ScrollContainer" parent="TotalsScreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 184.0
-margin_bottom = -10.0
+margin_bottom = -74.0
 theme = ExtResource( 41 )
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -517,7 +525,7 @@ __meta__ = {
 
 [node name="VBox" type="VBoxContainer" parent="TotalsScreen/Scroll"]
 margin_right = 720.0
-margin_bottom = 963.0
+margin_bottom = 899.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
