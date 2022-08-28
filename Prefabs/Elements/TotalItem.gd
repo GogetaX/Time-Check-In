@@ -8,7 +8,11 @@ func _ready():
 func ShowItem(Delay,Info):
 	$Title.set_message_translation(false)
 	$Desc.set_message_translation(false)
-	$Timer.start(Delay)
+	if Delay >0.0:
+		$Timer.start(Delay)
+	else:
+		modulate = Color(1,1,1,1)
+		
 	if Info.empty():
 		$Title.text = ""
 		$Desc.text = ""

@@ -139,6 +139,7 @@ func CheckIfToday(date):
 		var CurDay = OS.get_datetime()
 		if CurDay["day"] == date["day"] && CurDay["month"] == date["month"] && CurDay["year"] == date["year"]:
 			var CircleStyle = $HBoxContainer/Circle.get_stylebox("panel").duplicate()
+			GlobalTime.emit_signal("ScrollToCurrentDay",self)
 			CircleStyle.bg_color = GlobalTime.CURRENTDAY_COLOR
 			$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
 			is_today = true

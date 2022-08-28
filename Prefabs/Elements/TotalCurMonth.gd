@@ -88,10 +88,13 @@ func SyncCurrentMonth(Date):
 	DisplayMonth(Date)
 	DisplayElements(Date)
 	
-func DisplayElements(_Date):
-	#Remove Old Elements
+func RemoveOld():
 	for x in VBox.get_children():
 		x.queue_free()
+		
+func DisplayElements(_Date):
+	#Remove Old Elements
+	RemoveOld()
 	
 	var Itm = null
 	var Info = {}
@@ -149,6 +152,7 @@ func DisplayElements(_Date):
 	#Tot Earned Money
 	var Settings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	TotEarned.ShowItem(0,{})
 	if Settings != null && Deduction == null:
 		if Settings.has("enabled"):
 			if Settings["enabled"]:
@@ -272,7 +276,9 @@ func DisplayElements(_Date):
 func GroupPressed(BtnNode,_GroupName):
 	if BtnNode == null:
 		return
-	if BtnNode.name != "TotalsScreen": return
+	if BtnNode.name != "TotalsScreen":
+		RemoveOld()
+		return
 	SyncCurrentMonth(CurSelectedMonth)
 		
 	

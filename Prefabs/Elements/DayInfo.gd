@@ -157,3 +157,5 @@ func SelectReport(Index,Btn):
 
 func _on_OnGoingTimer_timeout():
 	UpdateDayInfo()
+
+

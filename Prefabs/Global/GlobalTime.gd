@@ -43,6 +43,8 @@ signal NoAnimShowWindow(ScreenName)
 signal ReloadCurrentDate()
 # warning-ignore:unused_signal
 signal UpdateList()
+# warning-ignore:unused_signal
+signal ScrollToCurrentDay(ListNode)
 
 
 func _ready():

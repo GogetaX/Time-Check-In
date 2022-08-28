@@ -1,16 +1,35 @@
 extends Panel
 
 const StepSpd = 0.03
+var ScrollToPos = null
+var ScreenSize = Vector2()
+var FastLoad = false
+
+onready var ListScroll = get_parent().get_node("List/Scroll")
 
 func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"SyncMenu")
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("UpdateList",self,"FastListUpdate")
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("ScrollToCurrentDay",self,"ScrollToCurrentDay")
 	
-
 	LoadCalendarSwitch()
-
+	
+func ScrollToCurrentDay(ListNode):
+	if FastLoad:
+		return
+	yield(get_tree(),"idle_frame")
+	ScrollToPos = ListNode
+	ScreenSize = get_viewport_rect().size
+	var T = Tween.new()
+	add_child(T)
+	var EndPoint = (ScrollToPos.rect_global_position.y+ScrollToPos.rect_size.y)
+	T.connect("tween_all_completed",self,"FinishedShow",[T])
+	T.interpolate_property(ListScroll,"scroll_vertical",0,EndPoint,0.3,Tween.TRANS_QUAD,Tween.EASE_IN_OUT,0.2)
+	T.start()
+	
 func FastListUpdate():
 	if $ToggleBetween.LeftSelected:
 		return
@@ -36,6 +55,8 @@ func SyncMenu(Btn,_Group):
 			GenerateList()
 			Calendar.visible = false
 			List.visible = true
+	else:
+		RemoveOld()
 			
 func _on_ToggleBetween_OnToggle(val):
 	GlobalSave.AddVarsToSettings("CalendarSettings","Calendar_Switch",val)
@@ -55,7 +76,12 @@ func LoadCalendarSwitch():
 	$ToggleBetween.LeftSelected = LeftSwitch
 	$ToggleBetween.AnimToggle(true)
 	
-
+func RemoveOld():
+	var List = get_parent().get_node("List/Scroll/VBox")
+	for x in List.get_children():
+		if x.name != "Columns":
+			x.queue_free()
+			
 func AnimToggle(LeftShow):
 	var Calendar = get_parent().get_node("Calendar")
 	var List = get_parent().get_node("List")
@@ -83,11 +109,12 @@ func AnimToggle(LeftShow):
 	
 	
 func GenerateList(fast = false):
+	FastLoad = fast
+	if !fast: 
+		ListScroll.scroll_vertical = 0
 	var List = get_parent().get_node("List/Scroll/VBox")
 	#Remove old
-	for x in List.get_children():
-		if x.name != "Columns":
-			x.queue_free()
+	RemoveOld()
 	var MonthSelector = get_node("CurMonth")
 	var DataFromFile = GlobalSave.LoadSpecificFile(MonthSelector.CurMonth,MonthSelector.CurYear)
 	var ItmInstance = load("res://Prefabs/Elements/ListItem.tscn")
@@ -99,7 +126,6 @@ func GenerateList(fast = false):
 		T = Tween.new()
 		add_child(T)
 		T.connect("tween_all_completed",self,"FinishedShow",[T])
-	var delay = 0.0
 	var tot = GlobalTime.HowManyDaysInMonth({"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth})
 	if DataFromFile == null:
 		DataFromFile = {}
@@ -109,8 +135,7 @@ func GenerateList(fast = false):
 			List.add_child(itm)
 			if !fast:
 				itm.modulate = Color(1,1,1,0)
-				T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
-			delay += StepSpd
+				T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 			var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
 			var i = itm.InitInfo(date,DataFromFile[x])
 			TotAmount += i["earned"]
@@ -121,8 +146,7 @@ func GenerateList(fast = false):
 			List.add_child(itm)
 			if !fast:
 				itm.modulate = Color(1,1,1,0)
-				T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN,delay)
-			delay += StepSpd
+				T.interpolate_property(itm,"modulate",itm.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 			var date = {"year":MonthSelector.CurYear,"month":MonthSelector.CurMonth,"day":x}
 			itm.AddEmptyDate(date)
 	
