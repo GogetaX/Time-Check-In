@@ -36,8 +36,8 @@ config/icon="res://Assets/ExportIcons/120.png"
 
 GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"
-localnotification="*res://scripts/localnotification.gd"
 GlobalNotif="*res://Prefabs/Global/GlobalNotif.gd"
+localnotification="*res://scripts/localnotification.gd"
 
 [display]
 
