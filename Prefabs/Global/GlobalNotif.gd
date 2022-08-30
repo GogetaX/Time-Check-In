@@ -15,12 +15,15 @@ func PushCheckOutReminder():
 	
 	if WorkingHours.has("check_out_reminder"):
 		if WorkingHours["check_out_reminder"]:
-			localnotification.show("Passed "+String(tot_hours)+" hours, time to check out!","Time Check-In",tot_hours*3600,0)
+			localnotification.show(TranslationServer.translate("p_notif_passed_hours") % String(tot_hours),"Time Check-In",tot_hours*3600,0)
 			if Deduction != null:
 				if Deduction.has("overtime125") && Deduction["overtime125"]:
-					localnotification.show("You have started your overtime 125%","Time Check-In",8*3600,0)
+					if tot_hours == 8:
+						localnotification.show(TranslationServer.translate("p_notif_125"),"Time Check-In",8*3600,0)
+					else:
+						localnotification.show(TranslationServer.translate("p_notif_125"),"Time Check-In",8*3600,2)
 				if Deduction.has("overtime150") && Deduction["overtime150"]:
-					localnotification.show("You have started your overtime 150%","Time Check-In",10*3600,1)
+					localnotification.show(TranslationServer.translate("p_notif_150"),"Time Check-In",10*3600,1)
 
 func RequestPermision():
 	match OS.get_name():

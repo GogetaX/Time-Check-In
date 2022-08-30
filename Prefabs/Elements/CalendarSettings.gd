@@ -2,6 +2,7 @@ extends Panel
 
 const UnselectedColor = Color.white
 const SelectedColor = Color("2699fb")
+var is_pressed = false
 
 
 func _ready():
@@ -29,10 +30,13 @@ func InitWeeks():
 		x.text = GlobalTime.WeekDayToDayName(Num)[0]
 		x.mouse_filter = Control.MOUSE_FILTER_PASS
 		x.connect("gui_input",self,"WeekClick",[x])
-
+		
 func WeekClick(event,weekLabel):
 	if event is InputEventMouseButton:
 		if event.pressed:
+			is_pressed = weekLabel
+		if !event.pressed && is_pressed == weekLabel:
+			is_pressed = null
 			SelectWeekLabel(weekLabel)
 
 func LabelToNum(WeekLabel):

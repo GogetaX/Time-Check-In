@@ -159,3 +159,8 @@
 "info_auto_salary_calc","HOURLY WADGE: indicates how much you earn per hour\nBONUS: will include all the salary bonuses such as transport, bonus and so on","שכר שעתי: מציין כמה אתה מרוויח לשעה\n בונוס חודשי: יכלול את כל מענקי השכר כגון הובלה, בונוס וכדומה","Часовая ставка: указывает, сколько вы зарабатываете в час\nБонус: будет включать все бонусы к зарплате, такие как транспорт, бонус и т. д."
 "email_bug_description","type your bug description here.","הקלד כאן תיאור הבעיה בתוכנה","введите описание ошибки здесь."
 "email_feature_description","type your feature description here.","הקלד תיאור אופציה נוספת כאן","введите здесь описание вашей функции."
+"p_notif_passed_hours","Passed %s hours, time to check out!","עברו %s שעות, זמן יציאה!","Прошло %s часов, пора выписываться!"
+"p_notif_125","You have started your overtime 125%","התחלת את ה125% שעות נוספות","Вы начали сверхурочную работу 125%"
+"p_notif_150","You have started your overtime 150%","התחלת את ה150% שעות נוספות","Вы начали сверхурочную работу 150%"
+"Problem","Problem","היעב","Проблема"
+"Notification is not enabled in the device settings","Notification is not enabled in the device settings","התראה אינה מופעלת בהגדרות המכשיר","Уведомление не включено в настройках устройства"

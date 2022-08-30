@@ -27,4 +27,6 @@ func _on_CheckOutReminder_OnToggle():
 		GlobalNotif.RequestPermision()
 		if OS.get_name() == "iOS":
 			if !localnotification.is_enabled():
+				var PopupData = {"type": "ok","Title":TranslationServer.translate("Problem"),"Desc":TranslationServer.translate("Notification is not enabled in the device settings")}
+				GlobalTime.ShowPopup(PopupData)
 				$CheckOutReminder.AnimToggle()

@@ -7,6 +7,8 @@ var _ln = null
 onready var _analytics := $'/root/analytics' if has_node('/root/analytics') else null
 
 func _ready() -> void:
+	if OS.get_name()=="Windows":
+		return
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	if Engine.has_singleton("LocalNotification"):
 		_ln = Engine.get_singleton("LocalNotification")
