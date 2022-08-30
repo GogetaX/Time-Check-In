@@ -35,6 +35,11 @@ func FindLastCheckIn(data):
 	last -= 1
 	return last
 	
+func FindFirstCheckIn(data):
+	if data.has("check_in1"):
+		return data["check_in1"]
+	return null
+	
 func AddCheckOut(CheckOutDate):
 	AddMySavesPath(CheckOutDate)
 	var L = FindLastCheckIn(MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])

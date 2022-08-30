@@ -23,4 +23,8 @@ func _on_ValueBox_UpdatedVar(NewVar):
 
 func _on_CheckOutReminder_OnToggle():
 	GlobalSave.AddVarsToSettings("WorkingHours","check_out_reminder",$CheckOutReminder.is_Pressed)
-	GlobalNotif.RequestPermision()
+	if $CheckOutReminder.is_Pressed:
+		GlobalNotif.RequestPermision()
+		if OS.get_name() == "iOS":
+			if !localnotification.is_enabled():
+				$CheckOutReminder.AnimToggle()

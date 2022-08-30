@@ -9,6 +9,7 @@ func _ready():
 	GlobalTime.connect("TimeModeChangedTo",self,"TimeModeChangedTo")
 # warning-ignore:return_value_discarded
 	GlobalSave.connect("UpdateToday",self,"UpdateToday")
+	GlobalNotif.ClearNotifications()
 	InitCurrentStatus()
 	PopupForYesterday()
 	PopupForSometimeAgo()
@@ -197,6 +198,7 @@ func _on_StartStopBtn_Toggled():
 		GlobalTime.ChangeTimeModes(GlobalTime.TIME_CHECKED_IN)
 		GlobalNotif.PushCheckOutReminder()
 	else:
+		GlobalNotif.ClearNotifications()
 		GlobalTime.ChangeTimeModes(GlobalTime.TIME_PAUSED)
 		
 
