@@ -12,7 +12,15 @@ func SyncFromSave():
 
 	if S.has("hours"):
 		$WorkingHours.SetInisialValue(S["hours"])
+	if S.has("check_out_reminder"):
+		if S["check_out_reminder"]:
+			$CheckOutReminder.AnimToggle()
 
 
 func _on_ValueBox_UpdatedVar(NewVar):
 	GlobalSave.AddVarsToSettings("WorkingHours","hours",NewVar)
+
+
+func _on_CheckOutReminder_OnToggle():
+	GlobalSave.AddVarsToSettings("WorkingHours","check_out_reminder",$CheckOutReminder.is_Pressed)
+	GlobalNotif.RequestPermision()

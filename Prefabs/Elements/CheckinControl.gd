@@ -195,6 +195,7 @@ func _on_CheckOutBtn_pressed():
 func _on_StartStopBtn_Toggled():
 	if $StartStopBtn.is_Toggled:
 		GlobalTime.ChangeTimeModes(GlobalTime.TIME_CHECKED_IN)
+		GlobalNotif.PushCheckOutReminder()
 	else:
 		GlobalTime.ChangeTimeModes(GlobalTime.TIME_PAUSED)
 		

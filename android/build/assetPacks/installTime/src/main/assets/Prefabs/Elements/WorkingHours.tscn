@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Panel/SettingPanel.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Elements/WorkingHours.gd" type="Script" id=2]
 [ext_resource path="res://Prefabs/Elements/ValueBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Elements/CheckBox.tscn" type="PackedScene" id=4]
 
 [node name="WorkingHours" type="Panel"]
 margin_top = 292.0
 margin_right = 720.0
-margin_bottom = 372.0
-rect_min_size = Vector2( 0, 80 )
+margin_bottom = 399.0
+rect_min_size = Vector2( 0, 107 )
 custom_styles/panel = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -26,4 +27,12 @@ MinMax = Vector2( 1, 24 )
 HasArrows = false
 FrontText = "Working hours"
 
+[node name="CheckOutReminder" parent="." instance=ExtResource( 4 )]
+margin_left = 20.0
+margin_top = 62.0
+margin_right = -20.0
+margin_bottom = 104.0
+text = "Check out reminder"
+
 [connection signal="UpdatedVar" from="WorkingHours" to="." method="_on_ValueBox_UpdatedVar"]
+[connection signal="OnToggle" from="CheckOutReminder" to="." method="_on_CheckOutReminder_OnToggle"]

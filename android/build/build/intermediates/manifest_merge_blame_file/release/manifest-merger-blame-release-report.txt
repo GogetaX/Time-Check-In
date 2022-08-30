@@ -59,73 +59,99 @@
 34        android:targetPackage="org.godotengine.timecheckin" />
 34-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:22:9-60
 35
-36    <application
-36-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:5-81:19
-37        android:allowBackup="true"
-37-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:68-95
-38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-38-->[androidx.core:core:1.2.0] C:\Users\Sergio\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
-39        android:hasFragileUserData="true"
-39-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:118-152
-40        android:icon="@mipmap/icon"
-40-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:238-265
-41        android:isGame="false"
-41-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:96-117
-42        android:label="@string/godot_project_name_string"
-42-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:18-67
-43        android:requestLegacyExternalStorage="true" >
-43-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:153-197
-44        <activity
-44-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:53:9-75:20
-45            android:name="com.godot.game.GodotApp"
-45-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:54:13-37
-46            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-46-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:60:13-141
-47            android:excludeFromRecents="false"
-47-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:58:13-47
-48            android:label="@string/godot_project_name_string"
-48-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:55:13-62
-49            android:launchMode="singleTask"
-49-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:57:13-44
-50            android:resizeableActivity="false"
-50-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:61:13-47
-51            android:screenOrientation="portrait"
-51-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:59:13-50
-52            android:theme="@style/GodotAppSplashTheme" >
-52-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:56:13-55
-53            <intent-filter>
-53-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:67:13-74:29
-54                <action android:name="android.intent.action.MAIN" />
-54-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:68:17-69
-54-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:68:25-66
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-56-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:69:17-77
-56-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:69:27-74
+36    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+36-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\a6aa9563ac54a31c1268174354c74bdb\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:5-78
+36-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\a6aa9563ac54a31c1268174354c74bdb\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:22-75
+37
+38    <application
+38-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:5-81:19
+39        android:allowBackup="true"
+39-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:68-95
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.2.0] C:\Users\Sergio\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+41        android:hasFragileUserData="true"
+41-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:118-152
+42        android:icon="@mipmap/icon"
+42-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:238-265
+43        android:isGame="false"
+43-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:96-117
+44        android:label="@string/godot_project_name_string"
+44-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:18-67
+45        android:requestLegacyExternalStorage="true" >
+45-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:31:153-197
+46        <activity
+46-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:53:9-75:20
+47            android:name="com.godot.game.GodotApp"
+47-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:54:13-37
+48            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+48-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:60:13-141
+49            android:excludeFromRecents="false"
+49-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:58:13-47
+50            android:label="@string/godot_project_name_string"
+50-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:55:13-62
+51            android:launchMode="singleTask"
+51-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:57:13-44
+52            android:resizeableActivity="false"
+52-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:61:13-47
+53            android:screenOrientation="portrait"
+53-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:59:13-50
+54            android:theme="@style/GodotAppSplashTheme" >
+54-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:56:13-55
+55            <intent-filter>
+55-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:67:13-74:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:68:17-69
+56-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:68:25-66
 57
-58                <!--
-59                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
-60                platforms.
-61                -->
-62                <category android:name="com.oculus.intent.category.VR" />
-62-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:73:17-74
-62-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:73:27-71
-63            </intent-filter>
-64        </activity>
-65        <!-- Records the version of the Godot editor used for building -->
-66        <meta-data
-67            android:name="org.godotengine.editor.version"
-68            android:value="3.4.2.stable" /> <!-- Records the version of the Godot library -->
-69        <meta-data
-69-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:19:9-21:44
-70            android:name="org.godotengine.library.version"
-70-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:20:13-59
-71            android:value="3.4.2.stable" />
-71-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:21:13-41
-72
-73        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-73-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:9-80
-73-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:18-77
-74    </application>
-75
-76</manifest>
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:69:17-77
+58-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:69:27-74
+59
+60                <!--
+61                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
+62                platforms.
+63                -->
+64                <category android:name="com.oculus.intent.category.VR" />
+64-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:73:17-74
+64-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:73:27-71
+65            </intent-filter>
+66        </activity>
+67        <!-- Records the version of the Godot editor used for building -->
+68        <meta-data
+69            android:name="org.godotengine.editor.version"
+70            android:value="3.4.2.stable" />
+71        <!--
+72    Plugin metadata:
+73    - In the `android:name` attribute, the `org.godotengine.plugin.v1` prefix
+74    is required so Godot can recognize the project as a valid Godot
+75    Android plugin. The plugin name following the prefix should match the value
+76    of the plugin name returned by the plugin initializer.
+77    - The `android:value` attribute should be the classpath to the plugin
+78    initializer.
+79        -->
+80        <meta-data
+80-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\a6aa9563ac54a31c1268174354c74bdb\transformed\jetified-LocalNotification.release\AndroidManifest.xml:24:9-26:78
+81            android:name="org.godotengine.plugin.v1.LocalNotification"
+81-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\a6aa9563ac54a31c1268174354c74bdb\transformed\jetified-LocalNotification.release\AndroidManifest.xml:25:13-71
+82            android:value="ru.mobilap.localnotification.LocalNotification" />
+82-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\a6aa9563ac54a31c1268174354c74bdb\transformed\jetified-LocalNotification.release\AndroidManifest.xml:26:13-75
+83
+84        <receiver
+84-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\a6aa9563ac54a31c1268174354c74bdb\transformed\jetified-LocalNotification.release\AndroidManifest.xml:28:9-30:41
+85            android:name="ru.mobilap.localnotification.LocalNotificationReceiver"
+85-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\a6aa9563ac54a31c1268174354c74bdb\transformed\jetified-LocalNotification.release\AndroidManifest.xml:29:13-82
+86            android:process=":remote" /> <!-- Records the version of the Godot library -->
+86-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\a6aa9563ac54a31c1268174354c74bdb\transformed\jetified-LocalNotification.release\AndroidManifest.xml:30:13-38
+87        <meta-data
+87-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:19:9-21:44
+88            android:name="org.godotengine.library.version"
+88-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:20:13-59
+89            android:value="3.4.2.stable" />
+89-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:21:13-41
+90
+91        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+91-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:9-80
+91-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\e1a2b8fd50dcbe7932b4afa131d44709\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:18-77
+92    </application>
+93
+94</manifest>

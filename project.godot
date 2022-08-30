@@ -8,6 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "",
+"class": "LocalNotification",
+"language": "NativeScript",
+"path": "res://addons/localnotification-ios/localnotification.gdns"
+} ]
+_global_script_class_icons={
+"LocalNotification": ""
+}
+
+[NativeLib]
+
+Python="C:/Python310/python.exe"
+
 [application]
 
 config/name="Time Check In"
@@ -22,6 +36,8 @@ config/icon="res://Assets/ExportIcons/120.png"
 
 GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"
+localnotification="*res://scripts/localnotification.gd"
+GlobalNotif="*res://Prefabs/Global/GlobalNotif.gd"
 
 [display]
 
@@ -32,6 +48,14 @@ window/size/test_height=640
 window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg" )
+
+[gdnative]
+
+singletons=[ "res://addons/localnotification-ios/localnotification.gdnlib" ]
 
 [input_devices]
 
