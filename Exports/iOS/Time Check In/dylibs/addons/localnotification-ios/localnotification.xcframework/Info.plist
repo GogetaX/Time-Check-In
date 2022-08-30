@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<string>mailto</string>
+	</array>
 <dict>
 	<key>AvailableLibraries</key>
 	<array>
@@ -31,10 +35,6 @@
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
 		</dict>
-	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-	<string>mailto</string>
 	</array>
 	<key>CFBundlePackageType</key>
 	<string>XFWK</string>
