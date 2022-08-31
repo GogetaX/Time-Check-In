@@ -9,7 +9,6 @@ func _ready():
 	GlobalTime.connect("TimeModeChangedTo",self,"TimeModeChangedTo")
 # warning-ignore:return_value_discarded
 	GlobalSave.connect("UpdateToday",self,"UpdateToday")
-	GlobalNotif.ClearNotifications()
 	InitCurrentStatus()
 	PopupForYesterday()
 	PopupForSometimeAgo()

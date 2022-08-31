@@ -92,7 +92,6 @@ margin_bottom = 55.0
 rect_min_size = Vector2( 40, 40 )
 size_flags_vertical = 3
 texture = ExtResource( 8 )
-Pressed = true
 BtnGroup = "Gender"
 CustomEndColor = Color( 0, 0, 0, 0.305882 )
 
@@ -104,6 +103,7 @@ margin_bottom = 55.0
 rect_min_size = Vector2( 40, 40 )
 size_flags_vertical = 3
 texture = ExtResource( 9 )
+Pressed = true
 BtnGroup = "Gender"
 CustomEndColor = Color( 0, 0, 0, 0.305882 )
 

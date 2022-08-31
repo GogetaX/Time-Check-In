@@ -561,7 +561,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/ScrollContainer"]
 margin_right = 710.0
-margin_bottom = 1291.0
+margin_bottom = 1299.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -592,64 +592,64 @@ PanelInfo = "info_working_hours"
 [node name="WorkingHours" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 32 )]
 margin_top = 312.0
 margin_right = 710.0
-margin_bottom = 419.0
+margin_bottom = 427.0
 mouse_filter = 1
 
 [node name="CategoryPanel3" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
 anchor_right = 0.0
-margin_top = 423.0
+margin_top = 431.0
 margin_right = 710.0
-margin_bottom = 483.0
+margin_bottom = 491.0
 mouse_filter = 2
 CategoryText = "App Language"
 PanelInfo = "info_lang"
 
 [node name="LanguangeControl" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 33 )]
-margin_top = 487.0
+margin_top = 495.0
 margin_right = 710.0
-margin_bottom = 587.0
+margin_bottom = 595.0
 mouse_filter = 1
 
 [node name="CategoryPanel4" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
 anchor_right = 0.0
-margin_top = 591.0
+margin_top = 599.0
 margin_right = 710.0
-margin_bottom = 651.0
+margin_bottom = 659.0
 mouse_filter = 2
 CategoryText = "Calendar Settings"
 PanelInfo = "info_cal_settings"
 
 [node name="CalendarSettings" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 35 )]
-margin_top = 655.0
+margin_top = 663.0
 margin_right = 710.0
-margin_bottom = 755.0
+margin_bottom = 763.0
 mouse_filter = 1
 
 [node name="CategoryPanel5" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
 anchor_right = 0.0
-margin_top = 759.0
+margin_top = 767.0
 margin_right = 710.0
-margin_bottom = 819.0
+margin_bottom = 827.0
 mouse_filter = 2
 CategoryText = "Smart deduction from salary"
 
 [node name="SmartDeductionSalary" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 36 )]
-margin_top = 823.0
+margin_top = 831.0
 margin_right = 710.0
-margin_bottom = 1103.0
+margin_bottom = 1111.0
 mouse_filter = 1
 
 [node name="CategoryPanel6" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 23 )]
 anchor_right = 0.0
-margin_top = 1107.0
+margin_top = 1115.0
 margin_right = 710.0
-margin_bottom = 1167.0
+margin_bottom = 1175.0
 mouse_filter = 2
 CategoryText = "Report to developer"
 
 [node name="ReportPanel" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 42 )]
-margin_top = 1171.0
-margin_bottom = 1291.0
+margin_top = 1179.0
+margin_bottom = 1299.0
 
 [node name="BottomUI" type="Panel" parent="."]
 anchor_top = 1.0
