@@ -122,6 +122,10 @@ func AddReportOptionsToNode(NodeName):
 	NodeName.get_popup().set_item_metadata(1,"Holiday")
 	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Work day")
 	NodeName.get_popup().set_item_metadata(2,"Work day")
+	NodeName.get_popup().grab_focus()
+	if OS.get_name() == "Windows":
+		NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Check In")
+		NodeName.get_popup().set_item_metadata(3,"Check In")
 	
 func ReportToImage(ReportText):
 	match ReportText:
@@ -167,7 +171,7 @@ func SaveToFile():
 			F.close()
 
 
-func LoadSpecificFile(Month,Year):
+func LoadSpecificFile(Month,Year,find_before = true):
 	var Res = null
 	var F = File.new()
 	if F.file_exists("user://SaveFile"+String(Year*Month)+".sf"):
@@ -182,7 +186,7 @@ func LoadSpecificFile(Month,Year):
 	
 	#Find if there are dates checked_out in last days and do checkout on 00:00
 	var CurDate = OS.get_datetime()
-	if Res != null:
+	if Res != null && find_before:
 		for x in Res:
 			if CurDate["year"] > Year || CurDate["month"] > Month || CurDate["day"] > x:
 				var CheckIns = 0
@@ -195,13 +199,13 @@ func LoadSpecificFile(Month,Year):
 					if "check_out" in Day:
 						CheckIns -=1
 				if CheckIns > 0:
-					var Yesterday = GlobalTime.OffsetDay(CurDate,-1)
+					
 					var NewCheckOut = {"year":Year,"month":Month,"day":x,"hour":24,"minute":0,"second":0}
 					
 					#if prev day was prev month or prev year, load prev month, add check out and save it
 					if CurDate["month"] != Month || CurDate["year"] != Year:
-						var _yest = LoadSpecificFile(Month,Year)
-						
+						var _yest = LoadSpecificFile(Month,Year,false)
+					var Yesterday = GlobalTime.OffsetDay(CurDate,-1)
 					if Yesterday["year"] == NewCheckOut["year"] && Yesterday["month"] == NewCheckOut["month"] && Yesterday["day"] == NewCheckOut["day"]:
 						GlobalTime.ForgotCheckInYesterday = true
 					else:

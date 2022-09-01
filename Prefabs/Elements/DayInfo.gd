@@ -9,11 +9,15 @@ func _ready():
 	InitItemsInReport()
 	$CheckInData.visible = false
 	$NoInfo.visible = true
+	GlobalSave.AddReportOptionsToNode($NoInfo/Report)
+	
 	
 func SetInfo(Info):
 	CurInfo = Info
 	$OnGoingTimer.stop()
+	
 	RemoveAllExcept("NoInfo")
+	
 	if CurInfo.has("report"):
 		match CurInfo.report:
 			"Day Off":
@@ -150,6 +154,15 @@ func SelectReport(Index,Btn):
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalTime.HourSelectorUI.SyncDate(Date)
 			GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
+		"Check In":
+			#This is in debug mode only (Windows) will add only check in without check out
+			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
+			
+			Date["hour"] = 0
+			Date["minute"] = 0
+			Date["second"] = 0
+			GlobalSave.AddCheckIn(Date)
+			GlobalTime.emit_signal("UpdateSpecificDayInfo",Date["day"],GlobalSave.MySaves[Date["year"]][Date["month"]][Date["day"]])
 		_:
 			print(txt, " not added yet.")
 	GlobalTime.emit_signal("UpdateDayInfo")
