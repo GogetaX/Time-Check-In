@@ -21,11 +21,14 @@ func ScrollToCurrentDay(ListNode):
 	if FastLoad:
 		return
 	yield(get_tree(),"idle_frame")
+	
 	ScrollToPos = ListNode
+	if ScrollToPos.rect_global_position.y-400 < 1000:
+		return
 	ScreenSize = get_viewport_rect().size
 	var T = Tween.new()
 	add_child(T)
-	var EndPoint = (ScrollToPos.rect_global_position.y+ScrollToPos.rect_size.y)
+	var EndPoint = (ScrollToPos.rect_global_position.y+ScrollToPos.rect_size.y-450)
 	T.connect("tween_all_completed",self,"FinishedShow",[T])
 	T.interpolate_property(ListScroll,"scroll_vertical",0,EndPoint,0.3,Tween.TRANS_QUAD,Tween.EASE_IN_OUT,0.2)
 	T.start()

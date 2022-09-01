@@ -122,7 +122,7 @@ func AddReportOptionsToNode(NodeName):
 	NodeName.get_popup().set_item_metadata(1,"Holiday")
 	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Work day")
 	NodeName.get_popup().set_item_metadata(2,"Work day")
-	NodeName.get_popup().grab_focus()
+	NodeName.get_popup().grab_click_focus()
 	if OS.get_name() == "Windows":
 		NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Check In")
 		NodeName.get_popup().set_item_metadata(3,"Check In")

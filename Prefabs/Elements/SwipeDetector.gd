@@ -25,6 +25,8 @@ func _input(event):
 		MousePos = event.position
 	if !event.pressed && !SwipeTimer.is_stopped() && SwipeTimer.time_left< 0.45:
 		var MPos = (MousePos - event.position).normalized()
+		if abs(MousePos.x - event.position.x)<100:
+			return
 		if abs(MPos.x) + abs(MPos.y) == 1:
 			return
 		if MPos.x >= 0.8 && abs(MPos.y) < 0.5:
