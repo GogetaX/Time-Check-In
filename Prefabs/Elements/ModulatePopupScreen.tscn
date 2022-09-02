@@ -241,14 +241,17 @@ __meta__ = {
 }
 
 [node name="Desc" parent="ForgetCheckOutPanel" instance=ExtResource( 5 )]
+margin_left = 19.0
+margin_right = -19.0
+margin_bottom = 230.0
 text = "We noticed you had Check in yesterday, but no check out."
 hebrewText = "We noticed you had Check in yesterday, but no check out."
 
 [node name="Desc2" parent="ForgetCheckOutPanel" instance=ExtResource( 5 )]
 margin_left = 20.0
-margin_top = 276.0
+margin_top = 244.0
 margin_right = -20.0
-margin_bottom = 354.0
+margin_bottom = 322.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 text = "CONTINUE: will continue check in"
 align = 0
@@ -256,9 +259,9 @@ hebrewText = "CONTINUE: will continue check in"
 
 [node name="Desc4" parent="ForgetCheckOutPanel" instance=ExtResource( 5 )]
 margin_left = 20.0
-margin_top = 348.0
+margin_top = 356.0
 margin_right = -20.0
-margin_bottom = 435.0
+margin_bottom = 443.0
 text = "Check Out: will check you out at 24:00 from yesterday."
 align = 0
 hebrewText = "Check Out: will check you out at 24:00 from yesterday."
@@ -269,9 +272,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -206.0
-margin_top = -373.0
+margin_top = -337.0
 margin_right = 206.0
-margin_bottom = -30.0
+margin_bottom = -97.0
 rect_min_size = Vector2( 0, 100 )
 custom_constants/separation = 0
 alignment = 1
@@ -280,9 +283,9 @@ __meta__ = {
 }
 
 [node name="ContinueBtn" type="Button" parent="ForgetCheckOutPanel/BtnContainer"]
-margin_top = 81.0
+margin_top = 30.0
 margin_right = 412.0
-margin_bottom = 171.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 0, 90 )
 focus_mode = 0
 size_flags_horizontal = 3
@@ -294,9 +297,9 @@ custom_styles/normal = SubResource( 4 )
 text = "Continue"
 
 [node name="CheckOutBtn" type="Button" parent="ForgetCheckOutPanel/BtnContainer"]
-margin_top = 171.0
+margin_top = 120.0
 margin_right = 412.0
-margin_bottom = 261.0
+margin_bottom = 210.0
 rect_min_size = Vector2( 0, 90 )
 focus_mode = 0
 size_flags_horizontal = 3
@@ -306,6 +309,7 @@ text = "Check Out"
 flat = true
 
 [node name="ForgetCheckOutSomeTimeAgoPanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

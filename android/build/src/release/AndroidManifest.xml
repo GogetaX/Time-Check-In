@@ -23,7 +23,7 @@
     <application android:label="@string/godot_project_name_string"
         android:allowBackup="true"
         android:isGame="false"
-        android:hasFragileUserData="true"
+        android:hasFragileUserData="false"
         android:requestLegacyExternalStorage="true"
         tools:replace="android:allowBackup,android:isGame,android:hasFragileUserData,android:requestLegacyExternalStorage"
         tools:ignore="GoogleAppIndexingWarning"

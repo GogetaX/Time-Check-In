@@ -13,7 +13,6 @@ func _ready():
 	ShowOnly("TimeScreen")
 
 	
-
 func CheckForSwipe(Dir):
 	var T = Tween.new()
 	add_child(T)
@@ -182,4 +181,5 @@ func _on_Totals_BtnPressed():
 
 func _on_Settings_BtnPressed():
 	ShowOnly("SettingsScreen")
+
 

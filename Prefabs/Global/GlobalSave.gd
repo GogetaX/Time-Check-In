@@ -122,7 +122,6 @@ func AddReportOptionsToNode(NodeName):
 	NodeName.get_popup().set_item_metadata(1,"Holiday")
 	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Work day")
 	NodeName.get_popup().set_item_metadata(2,"Work day")
-	NodeName.get_popup().grab_click_focus()
 	if OS.get_name() == "Windows":
 		NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Check In")
 		NodeName.get_popup().set_item_metadata(3,"Check In")
@@ -203,9 +202,10 @@ func LoadSpecificFile(Month,Year,find_before = true):
 					var NewCheckOut = {"year":Year,"month":Month,"day":x,"hour":24,"minute":0,"second":0}
 					
 					#if prev day was prev month or prev year, load prev month, add check out and save it
-					if CurDate["month"] != Month || CurDate["year"] != Year:
-						var _yest = LoadSpecificFile(Month,Year,false)
 					var Yesterday = GlobalTime.OffsetDay(CurDate,-1)
+					if CurDate["month"] != Yesterday["month"] || CurDate["year"] != Yesterday["year"]:
+						var _yest = LoadSpecificFile(Yesterday["month"],Yesterday["year"],false)
+					
 					if Yesterday["year"] == NewCheckOut["year"] && Yesterday["month"] == NewCheckOut["month"] && Yesterday["day"] == NewCheckOut["day"]:
 						GlobalTime.ForgotCheckInYesterday = true
 					else:

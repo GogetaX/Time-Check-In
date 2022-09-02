@@ -123,6 +123,8 @@ func DisplayElements(_Date):
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 	
+	
+	
 	#Tot Worked Hours
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
@@ -140,7 +142,8 @@ func DisplayElements(_Date):
 			SecondsFor150 += Tot[2]
 	var CurMonth = OS.get_datetime()
 	var dec = ""
-	dec = TranslationServer.translate("total_hours_info").format([GlobalTime.FloatToString((SecondsWorked+SecondsFor125+SecondsFor150)/3600,1)])
+	var TotalSecondsWorked = SecondsWorked+SecondsFor125+SecondsFor150
+	dec = TranslationServer.translate("total_hours_info").format([GlobalTime.FloatToString(TotalSecondsWorked/3600,1)])
 	if CurMonth["month"] == CurSelectedMonth["month"] && CurMonth["year"] == CurSelectedMonth["year"]:
 		if GlobalTime.CurTimeMode == GlobalTime.TIME_CHECKED_IN:
 			dec = TranslationServer.translate("total_hours_and_going").format([GlobalTime.FloatToString((SecondsWorked+SecondsFor125+SecondsFor150)/3600,1)])
@@ -149,6 +152,13 @@ func DisplayElements(_Date):
 	Delay += 0.1
 	var Gross = 0
 	var Sufix = ""
+	#Avrg Working hours per day
+	Itm = TotalItemInstance.instance()
+	VBox.add_child(Itm)
+	Info = {"title":"total_avrg_hrs_per_day","desc":GlobalTime.FloatToString((TotalSecondsWorked/3600)/TotDays,1) } 
+	Itm.ShowItem(Delay,Info)
+	Delay += 0.1
+	
 	#Tot Earned Money
 	var Settings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
