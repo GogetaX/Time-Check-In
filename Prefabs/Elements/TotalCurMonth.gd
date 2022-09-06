@@ -162,15 +162,16 @@ func DisplayElements(_Date):
 	var Sufix = ""
 	print(5.8)
 	#Avrg Working hours per day
-	Itm = TotalItemInstance.instance()
-	VBox.add_child(Itm)
-	print(5.9)
-	Info = {"title":"total_avrg_hrs_per_day","desc":GlobalTime.FloatToString((TotalSecondsWorked/3600)/TotDays,1) } 
-	print(5.91)
-	Itm.ShowItem(Delay,Info)
-	print(5.92)
-	Delay += 0.1
-	print(6)
+	if TotDays >0:
+		Itm = TotalItemInstance.instance()
+		VBox.add_child(Itm)
+		print(5.9)
+		Info = {"title":"total_avrg_hrs_per_day","desc":GlobalTime.FloatToString((TotalSecondsWorked/3600)/TotDays,1) } 
+		print(5.91)
+		Itm.ShowItem(Delay,Info)
+		print(5.92)
+		Delay += 0.1
+		print(6)
 	
 	#Tot Earned Money
 	var Settings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
