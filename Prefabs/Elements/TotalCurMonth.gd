@@ -95,7 +95,6 @@ func RemoveOld():
 func DisplayElements(_Date):
 	#Remove Old Elements
 	RemoveOld()
-	print(1)
 	var Itm = null
 	var Info = {}
 	var Delay = 0.1
@@ -104,11 +103,10 @@ func DisplayElements(_Date):
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
 	var minmax = GlobalTime.GetDateInfo(CurSelectedMonth["month"],CurSelectedMonth["year"])["tot_days"]
-	print(2)
 	Info = {"title":"total_period","desc":String(minmax)} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
-	print(3)
+
 	#Tot Worked Days
 	var DaysInMonth = GlobalSave.LoadSpecificFile(CurSelectedMonth["month"],CurSelectedMonth["year"])
 	var TotDays = 0
@@ -122,8 +120,6 @@ func DisplayElements(_Date):
 	Info = {"title":"total_worked_days","desc":String(TotDays)} 
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
-	
-	print(4)
 	
 	#Tot Worked Hours
 	Itm = TotalItemInstance.instance()
@@ -141,37 +137,25 @@ func DisplayElements(_Date):
 			SecondsFor125 += Tot[1]
 			SecondsFor150 += Tot[2]
 	var CurMonth = OS.get_datetime()
-	print(5)
 	var dec = ""
 	var TotalSecondsWorked = SecondsWorked+SecondsFor125+SecondsFor150
-	print(5.1)
 	dec = TranslationServer.translate("total_hours_info").format([GlobalTime.FloatToString(TotalSecondsWorked/3600,1)])
-	print(5.2)
 	if CurMonth["month"] == CurSelectedMonth["month"] && CurMonth["year"] == CurSelectedMonth["year"]:
-		print(5.3)
 		if GlobalTime.CurTimeMode == GlobalTime.TIME_CHECKED_IN:
-			print(5.4)
 			dec = TranslationServer.translate("total_hours_and_going").format([GlobalTime.FloatToString((SecondsWorked+SecondsFor125+SecondsFor150)/3600,1)])
-	print(5.5)
 	Info = {"title":"total_hours_worked","desc":dec} 
-	print(5.6)
 	Itm.ShowItem(Delay,Info)
-	print(5.7)
 	Delay += 0.1
 	var Gross = 0
 	var Sufix = ""
-	print(5.8)
+
 	#Avrg Working hours per day
 	if TotDays >0:
 		Itm = TotalItemInstance.instance()
 		VBox.add_child(Itm)
-		print(5.9)
 		Info = {"title":"total_avrg_hrs_per_day","desc":GlobalTime.FloatToString((TotalSecondsWorked/3600)/TotDays,1) } 
-		print(5.91)
 		Itm.ShowItem(Delay,Info)
-		print(5.92)
 		Delay += 0.1
-		print(6)
 	
 	#Tot Earned Money
 	var Settings = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
@@ -192,7 +176,6 @@ func DisplayElements(_Date):
 	VBox.add_child(Itm)
 	Itm.ShowItem(Delay,{})
 	Delay += StepTime
-	print(7)
 	
 	#Deduction
 	
@@ -208,17 +191,17 @@ func DisplayElements(_Date):
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":TranslationServer.translate("total_nosafot_125"),"desc":""})
 						Delay += StepTime
-						print(8)
+						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"total_hours_worked","desc":Rest["NosafotHours 125%"]})
 						Delay += StepTime
-						print(9)
+						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"total_earned","desc":Rest["NosafotEarned 125%"]})
 						Delay += StepTime
-						print(10)
+						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"","desc":""})
@@ -228,23 +211,23 @@ func DisplayElements(_Date):
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":TranslationServer.translate("total_nosafot_150"),"desc":""})
 						Delay += StepTime
-						print(11)
+
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"total_hours_worked","desc":Rest["NosafotHours 150%"]})
 						Delay += StepTime
-						print(12)
+
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"total_earned","desc":Rest["NosafotEarned 150%"]})
 						Delay += StepTime
-						print(13)
+
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"","desc":""})
 						Delay += StepTime
 				#Israel
-				print(14)
+
 				Itm = TotalItemInstance.instance()
 				VBox.add_child(Itm)
 				Itm.ShowItem(Delay,{"title":"Israel Deduction","desc":""})
@@ -267,7 +250,6 @@ func DisplayElements(_Date):
 						elif i.is_valid_float():
 							i = GlobalTime.FloatToString(i,2)
 						TotEarned.ShowItem(0,{"title":x,"desc":i})
-				print(15)
 				Itm = TotalItemInstance.instance()
 				VBox.add_child(Itm)
 				Itm.ShowItem(Delay,{})
@@ -286,7 +268,6 @@ func DisplayElements(_Date):
 	Info = {"title":"total_days_off","desc":String(TotDays)} 
 	Itm.ShowItem(Delay,Info)
 	Delay += StepTime
-	print(16)
 	
 	#Reporting Holidays
 	TotDays = 0
@@ -300,7 +281,6 @@ func DisplayElements(_Date):
 	Info = {"title":"total_holidays","desc":String(TotDays)} 
 	Itm.ShowItem(Delay,Info)
 	Delay += StepTime
-	print(17)
 
 func GroupPressed(BtnNode,_GroupName):
 	if BtnNode == null:
