@@ -111,7 +111,7 @@
 "Salary /h","Hourly wage","העשל רכש","Часовая ставка"
 "Bonus /m","Monthly bonus","ישדוח סונוב","Бонус"
 "today_is_my","Today is my %s","%s םוי אוה םויה","Сегодня мой %s"
-"are_you_sure_to_skip","Are you sure you want to skip %s?","?%s לע רטוול הצרתש חוטב התא םאה","Вы уверены, что хотите пропустить %s?"
+"are_you_sure_to_skip","Are you sure you want to skip %s?","האם אתה בטוח שתרצה לווטר על %s?","Вы уверены, что хотите пропустить %s?"
 "Yes","Yes","ןכ","Да"
 "No","No","אל","Нет"
 "rate 125%","rate 125%","125% תופסונ","Ставка 125%"
@@ -166,3 +166,4 @@
 "Problem","Problem","היעב","Проблема"
 "Notification is not enabled in the device settings","Notification is not enabled in the device settings","התראה אינה מופעלת בהגדרות המכשיר","Уведомление не включено в настройках устройства"
 "check_out_notif","Enable checkout notification","הדובע םויס לע תועדוה לעפה","Включить уведомление о выходе"
+"you_have_worked_today_for_x_hours","You already worked today for %s, do you wish to remove it?","היום כבר עבדת %s, תרצה לווטר על זה?","Вы уже работали сегодня в течение %s, вы хотите удалить это?"

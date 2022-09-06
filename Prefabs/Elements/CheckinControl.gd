@@ -1,8 +1,12 @@
 extends Control
 
-
+var HoldTween = Tween.new()
 
 func _ready():
+	add_child(HoldTween)
+	HoldTween.connect("tween_all_completed",self,"FinishedWaitTween")
+	GlobalSave.AddReportOptionsToNode($IdleOptions,true)
+	$StartStopBtn/TextureProgress.visible = false
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("InitSecond",self,"InitSecond")
 # warning-ignore:return_value_discarded
@@ -12,6 +16,7 @@ func _ready():
 	InitCurrentStatus()
 	PopupForYesterday()
 	PopupForSometimeAgo()
+	$IdleOptions.get_popup().connect("index_pressed",self,"SelectedReport")
 	
 	
 func PopupForSometimeAgo():
@@ -203,9 +208,11 @@ func _on_StartStopBtn_Toggled():
 
 
 func _on_StartStopBtn_pressed():
+	if $IdleOptions.get_popup().visible:
+		return
 	var TodayReport = GlobalSave.HasTodayReport()
 	if TodayReport != null:
-		var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("are_you_sure_to_skip") % TranslationServer.translate(TodayReport)}
+		var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("are_you_sure_to_skip") % GlobalHebrew.HebrewTextConvert(TranslationServer.translate(TodayReport),30)}
 		$StartStopBtn.DontFlip = true
 		
 		var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
@@ -219,3 +226,72 @@ func _on_StartStopBtn_pressed():
 				$StartStopBtn.BtnPressed()
 				#$StartStopBtn.DontFlip = true
 	#GlobalTime.PopupModulateUI.ShowModulate(null)
+	
+func _on_StartStopBtn_button_down():
+	if $StartStopBtn.is_Toggled:
+		return
+	HoldTween.remove_all()
+	$StartStopBtn/TextureProgress.value = 0
+	$StartStopBtn/TextureProgress.visible = true
+	HoldTween.interpolate_property($StartStopBtn/TextureProgress,"value",0,100,1.5,Tween.TRANS_LINEAR,Tween.EASE_IN)
+	HoldTween.start()
+
+
+func _on_StartStopBtn_button_up():
+	if HoldTween.is_active():
+		HoldTween.remove_all()
+		$StartStopBtn/TextureProgress.visible = false
+
+func FinishedWaitTween():
+	$StartStopBtn.DontFlip = true
+	#$IdleOptions.visible = true
+	$IdleOptions.get_popup().show_modal()
+	$IdleOptions.get_popup().rect_position = get_viewport_rect().size / 2
+
+func SelectedReport(index):
+	var report = ""
+	report = $IdleOptions.get_popup().get_item_metadata(index)
+	var CurData = OS.get_datetime()
+	GlobalTime.SelectCurDayList(CurData,CurData)
+	match report:
+		"Day off":
+			var GetToday = GlobalSave.GetTodayInfo()
+			if GetToday.has("check_in1"):
+				var PassedTime = GlobalHebrew.HebrewTextConvert(GlobalTime.CalcAllTimePassed(),30)
+				var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("you_have_worked_today_for_x_hours") % TranslationServer.translate(PassedTime)}
+				var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+				match Answer:
+					"NoBtn":
+						return
+					"YesBtn":
+						GlobalSave.RemoveDayComplete(CurData)
+						GlobalSave.AddDayOff(CurData)
+						InitCurrentStatus()
+						GlobalSave.emit_signal("UpdateToday")
+			else:
+				GlobalSave.RemoveDayComplete(CurData)
+				GlobalSave.AddDayOff(CurData)
+				InitCurrentStatus()
+				GlobalSave.emit_signal("UpdateToday")
+			#GlobalSave.AddDayOff(CurData)
+		"Holiday":
+			var GetToday = GlobalSave.GetTodayInfo()
+			if GetToday.has("check_in1"):
+				var PassedTime = GlobalHebrew.HebrewTextConvert(GlobalTime.CalcAllTimePassed(),30)
+				var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("you_have_worked_today_for_x_hours") % TranslationServer.translate(PassedTime)}
+				var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+				match Answer:
+					"NoBtn":
+						return
+					"YesBtn":
+						GlobalSave.RemoveDayComplete(CurData)
+						GlobalSave.AddHoliday(CurData)
+						InitCurrentStatus()
+						GlobalSave.emit_signal("UpdateToday")
+			else:
+				GlobalSave.RemoveDayComplete(CurData)
+				GlobalSave.AddHoliday(CurData)
+				InitCurrentStatus()
+				GlobalSave.emit_signal("UpdateToday")
+		_:
+			print(report, " not added yet.")

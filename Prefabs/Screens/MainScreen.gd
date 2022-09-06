@@ -11,7 +11,6 @@ func _ready():
 	$SwipeDetector.connect("Swiped",self,"CheckForSwipe")
 	HideAll()
 	ShowOnly("TimeScreen")
-
 	
 func CheckForSwipe(Dir):
 	var T = Tween.new()
@@ -104,12 +103,15 @@ func NoAnimShowWindow(WindowName):
 				x.visible = true
 				if CurNode == null:
 					CurNode = x
+					
 				else:
 					CurNode.visible = false
 					CurNode = x
 					CurNode.visible = true
+					FindBtnByScreen(CurNode)
 			else:
 				x.visible = false
+				
 			
 func HideAll():
 	for x in get_children():

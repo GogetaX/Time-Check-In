@@ -83,6 +83,16 @@ func HasTodayReport():
 	if !MySaves[CurDate["year"]][CurDate["month"]][CurDate["day"]].has("report"):
 		return null
 	return MySaves[CurDate["year"]][CurDate["month"]][CurDate["day"]]["report"]
+	
+func GetTodayInfo():
+	var CurDate = OS.get_datetime()
+	if !MySaves.has(CurDate["year"]):
+		return null
+	if !MySaves[CurDate["year"]].has(CurDate["month"]):
+		return null
+	if !MySaves[CurDate["year"]][CurDate["month"]].has(CurDate["day"]):
+		return null
+	return MySaves[CurDate["year"]][CurDate["month"]][CurDate["day"]]
 
 func RemoveCheckOut(CheckOutNum,Date):
 	var CurYear = GlobalTime.CurSelectedDate["year"]
@@ -97,7 +107,16 @@ func RemoveCheckOut(CheckOutNum,Date):
 
 	MySaves[CurYear][CurMonth][Date["day"]] = ReformatCheckins(MySaves[CurYear][CurMonth][Date["day"]])
 	SaveToFile()
-
+	
+func RemoveDayComplete(Date):
+	if !MySaves.has(Date["year"]):
+		return
+	if !MySaves[Date["year"]].has(Date["month"]):
+		return
+	if MySaves[Date["year"]][Date["month"]].has(Date["day"]):
+		MySaves[Date["year"]][Date["month"]][Date["day"]] = {}
+	SaveToFile()
+	
 func RemoveCheckInOut(CheckInNum,Date):
 	var CurYear = GlobalTime.CurSelectedDate["year"]
 	var CurMonth = GlobalTime.CurSelectedDate["month"]
@@ -114,17 +133,22 @@ func RemoveCheckInOut(CheckInNum,Date):
 	MySaves[CurYear][CurMonth][Date["day"]] = ReformatCheckins(MySaves[CurYear][CurMonth][Date["day"]])
 	SaveToFile()
 	
-func AddReportOptionsToNode(NodeName):
+func AddReportOptionsToNode(NodeName,ExcludeWorkDay = false):
+	var MetaData = 0
 	#$HBoxContainer/Salary/Report.get_popup().add_icon_item(GlobalSave.ReportToImage("Day Off"),"Day off")
 	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Day Off"),"Day off")
-	NodeName.get_popup().set_item_metadata(0,"Day off")
+	NodeName.get_popup().set_item_metadata(MetaData,"Day off")
+	MetaData += 1
 	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Holiday"),"Holiday")
-	NodeName.get_popup().set_item_metadata(1,"Holiday")
-	NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Work day")
-	NodeName.get_popup().set_item_metadata(2,"Work day")
+	NodeName.get_popup().set_item_metadata(MetaData,"Holiday")
+	MetaData += 1
+	if !ExcludeWorkDay:
+		NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Work day")
+		NodeName.get_popup().set_item_metadata(MetaData,"Work day")
+		MetaData += 1
 	if OS.get_name() == "Windows":
 		NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Check In")
-		NodeName.get_popup().set_item_metadata(3,"Check In")
+		NodeName.get_popup().set_item_metadata(MetaData,"Check In")
 	
 func ReportToImage(ReportText):
 	match ReportText:
@@ -255,7 +279,24 @@ func LanguangeToLetters(Lang):
 			return "ru"
 		_:
 			print("Languange ",Lang," not supported yet. (GlobalSave->LanguangeToLetters)")
-			
+
+func HowManyMonthsWorked():
+	var files = []
+	var dir = Directory.new()
+	dir.open("user://")
+	dir.list_dir_begin()
+
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not file.begins_with(".") && file.ends_with(".sf"):
+			files.append(file)
+
+	dir.list_dir_end()
+
+	return files
+
 func GetValueFromSettings(Category,Key):
 	if !MySettings.has(Category):
 		return null

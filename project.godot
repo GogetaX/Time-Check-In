@@ -22,6 +22,65 @@ _global_script_class_icons={
 
 Python="C:/Python310/python.exe"
 
+[admob]
+
+config={
+"banner": {
+"position": 2,
+"respect_safe_area": true,
+"show_instantly": false,
+"size": "ADAPTIVE",
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-6225081745698787/2464537032"
+},
+"iOS": {
+"standard": "ca-app-pub-6225081745698787/5173093874"
+}
+}
+},
+"debug": {
+"is_debug_on_release": true,
+"is_real": false,
+"is_test_europe_user_consent": true
+},
+"general": {
+"is_enabled": true,
+"is_for_child_directed_treatment": false,
+"max_ad_content_rating": "PG"
+},
+"interstitial": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/1033173712"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/4411468910"
+}
+}
+},
+"rewarded": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/5224354917"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/1712485313"
+}
+}
+},
+"rewarded_interstitial": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/5354046379"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/6978759866"
+}
+}
+}
+}
+
 [application]
 
 config/name="Time Check In"
@@ -38,6 +97,8 @@ GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"
 GlobalNotif="*res://Prefabs/Global/GlobalNotif.gd"
 localnotification="*res://scripts/localnotification.gd"
+MobileAds="*res://addons/admob/src/singletons/MobileAds.gd"
+GlobalHebrew="*res://Prefabs/Global/GlobalHebrew.gd"
 
 [display]
 
@@ -51,7 +112,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg", "res://addons/admob/plugin.cfg" )
 
 [gdnative]
 

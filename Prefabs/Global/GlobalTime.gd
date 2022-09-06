@@ -26,6 +26,7 @@ var ForgotCheckInYesterday = false
 var ForgotCheckInSometimeAgo = null
 var SwipeEnabled = true
 
+
 signal InitSecond()
 signal TimeModeChangedTo(TimeMode)
 # warning-ignore:unused_signal

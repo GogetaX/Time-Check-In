@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/ModulatePopupScreen.gd" type="Script" id=2]
-[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=4]
 [ext_resource path="res://Prefabs/Elements/HebrewLabel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/Elements/PopupBtn.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -30,7 +30,7 @@ shadow_color = Color( 0, 0, 0, 0.129412 )
 shadow_size = 50
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -69,7 +69,6 @@ __meta__ = {
 }
 
 [node name="YesNoPanel" type="Panel" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -99,20 +98,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Desc" type="Label" parent="YesNoPanel"]
-anchor_right = 1.0
-margin_left = 10.0
-margin_top = 92.0
-margin_right = -10.0
-margin_bottom = 231.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 3 )
-text = "Would you like to cancel your Holiday?"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Desc" parent="YesNoPanel" instance=ExtResource( 5 )]
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 83.0
+margin_right = -8.0
+margin_bottom = -120.0
+text = "We noticed you had Check in yesterday, but no check out."
+hebrewText = "We noticed you had Check in yesterday, but no check out."
 
 [node name="BtnContainer" type="HBoxContainer" parent="YesNoPanel"]
 anchor_top = 1.0
@@ -127,26 +120,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NoBtn" type="Button" parent="YesNoPanel/BtnContainer"]
-margin_right = 300.0
-margin_bottom = 100.0
-focus_mode = 0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
-text = "No"
-flat = true
+[node name="NoBtn" parent="YesNoPanel/BtnContainer" instance=ExtResource( 6 )]
+iconType = "NO"
 
-[node name="YesBtn" type="Button" parent="YesNoPanel/BtnContainer"]
+[node name="YesBtn" parent="YesNoPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_left = 300.0
 margin_right = 600.0
-margin_bottom = 100.0
-focus_mode = 0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
 text = "Yes"
-flat = true
+iconType = "YES"
 
 [node name="okPanel" type="Panel" parent="."]
 visible = false
@@ -200,17 +181,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OkBtn" type="Button" parent="okPanel/BtnContainer"]
+[node name="OkBtn" parent="okPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_right = 600.0
-margin_bottom = 100.0
-focus_mode = 0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
 text = "Ok"
-flat = true
+iconType = "YES"
 
 [node name="ForgetCheckOutPanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -282,31 +259,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ContinueBtn" type="Button" parent="ForgetCheckOutPanel/BtnContainer"]
+[node name="ContinueBtn" parent="ForgetCheckOutPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_top = 30.0
 margin_right = 412.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 0, 90 )
-focus_mode = 0
-size_flags_horizontal = 3
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/hover = SubResource( 5 )
+custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 4 )
 text = "Continue"
+flat = false
+iconType = "NEXT"
 
-[node name="CheckOutBtn" type="Button" parent="ForgetCheckOutPanel/BtnContainer"]
+[node name="CheckOutBtn" parent="ForgetCheckOutPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_top = 120.0
 margin_right = 412.0
 margin_bottom = 210.0
 rect_min_size = Vector2( 0, 90 )
-focus_mode = 0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
 text = "Check Out"
-flat = true
+iconType = "STOP"
 
 [node name="ForgetCheckOutSomeTimeAgoPanel" type="Panel" parent="."]
 visible = false
@@ -378,26 +350,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EditBtn" type="Button" parent="ForgetCheckOutSomeTimeAgoPanel/BtnContainer"]
+[node name="EditBtn2" parent="ForgetCheckOutSomeTimeAgoPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_top = 81.0
 margin_right = 412.0
 margin_bottom = 171.0
 rect_min_size = Vector2( 0, 90 )
-size_flags_horizontal = 3
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/hover = SubResource( 5 )
+custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 4 )
 text = "Edit"
+flat = false
+iconType = "EDIT"
 
-[node name="CloseBtn" type="Button" parent="ForgetCheckOutSomeTimeAgoPanel/BtnContainer"]
+[node name="CloseBtn2" parent="ForgetCheckOutSomeTimeAgoPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_top = 171.0
 margin_right = 412.0
 margin_bottom = 261.0
 rect_min_size = Vector2( 0, 90 )
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
 text = "Close"
-flat = true
+iconType = "NO"

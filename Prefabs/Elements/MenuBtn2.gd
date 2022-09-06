@@ -9,6 +9,8 @@ signal BtnPressed()
 var is_pressed = false
 
 func _ready():
+	var ShaderDup = material.duplicate()
+	material = ShaderDup
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"GroupPressed")
 	SyncPressed()
