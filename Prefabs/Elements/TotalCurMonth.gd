@@ -144,20 +144,31 @@ func DisplayElements(_Date):
 	print(5)
 	var dec = ""
 	var TotalSecondsWorked = SecondsWorked+SecondsFor125+SecondsFor150
+	print(5.1)
 	dec = TranslationServer.translate("total_hours_info").format([GlobalTime.FloatToString(TotalSecondsWorked/3600,1)])
+	print(5.2)
 	if CurMonth["month"] == CurSelectedMonth["month"] && CurMonth["year"] == CurSelectedMonth["year"]:
+		print(5.3)
 		if GlobalTime.CurTimeMode == GlobalTime.TIME_CHECKED_IN:
+			print(5.4)
 			dec = TranslationServer.translate("total_hours_and_going").format([GlobalTime.FloatToString((SecondsWorked+SecondsFor125+SecondsFor150)/3600,1)])
+	print(5.5)
 	Info = {"title":"total_hours_worked","desc":dec} 
+	print(5.6)
 	Itm.ShowItem(Delay,Info)
+	print(5.7)
 	Delay += 0.1
 	var Gross = 0
 	var Sufix = ""
+	print(5.8)
 	#Avrg Working hours per day
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
+	print(5.9)
 	Info = {"title":"total_avrg_hrs_per_day","desc":GlobalTime.FloatToString((TotalSecondsWorked/3600)/TotDays,1) } 
+	print(5.91)
 	Itm.ShowItem(Delay,Info)
+	print(5.92)
 	Delay += 0.1
 	print(6)
 	
