@@ -1,9 +1,11 @@
 extends Node
 
-var AvoidLetters = "1234567890."
+var NonAvoidLetters = "קראטוןםפשדגכעיחלךףזסבהנמצתץ "
 var AvoidBuffer = ""
 
 func HebrewTextConvert(txt,WrapLines):
+	if TranslationServer.get_locale() != "he":
+		return txt
 	var res = ""
 	var WrapCounter = 0
 	for x in range(txt.length()):
@@ -16,7 +18,7 @@ func HebrewTextConvert(txt,WrapLines):
 			if txt[x] == " ":
 				WrapCounter = 0
 				txt[x] = "\n"
-		if isAvoid(txt[x]):
+		if !isNotAvoid(txt[x]):
 			AvoidBuffer = AvoidBuffer + txt[x]
 		else:
 			if AvoidBuffer.length() > 0:
@@ -34,8 +36,8 @@ func HebrewTextConvert(txt,WrapLines):
 	return res 
 	
 	
-func isAvoid(txt):
-	for x in range(AvoidLetters.length()):
-		if txt == AvoidLetters[x]:
+func isNotAvoid(txt):
+	for x in range(NonAvoidLetters.length()):
+		if txt == NonAvoidLetters[x]:
 			return true
 	return false

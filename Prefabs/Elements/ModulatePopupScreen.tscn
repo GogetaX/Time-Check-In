@@ -105,6 +105,7 @@ margin_top = 83.0
 margin_right = -8.0
 margin_bottom = -120.0
 text = "We noticed you had Check in yesterday, but no check out."
+CharsPeerLine = 35
 hebrewText = "We noticed you had Check in yesterday, but no check out."
 
 [node name="BtnContainer" type="HBoxContainer" parent="YesNoPanel"]
