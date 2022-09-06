@@ -204,3 +204,11 @@ func FinishTween(T):
 	if $Change.modulate == Color(1,1,1,0):
 		$Change.visible = false
 	T.queue_free()
+
+
+func _on_VisibilityEnabler2D_viewport_entered(_viewport):
+	modulate = Color(1,1,1,1)
+
+
+func _on_VisibilityEnabler2D_viewport_exited(_viewport):
+	modulate = Color(1,1,1,0)

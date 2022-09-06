@@ -179,3 +179,10 @@ margin_bottom = 0.0
 custom_fonts/font = ExtResource( 2 )
 text = "Change…"
 items = [  ]
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 344, 8 )
+rect = Rect2( -40, -10, 40, 80 )
+
+[connection signal="viewport_entered" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_viewport_entered"]
+[connection signal="viewport_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_viewport_exited"]
