@@ -11,7 +11,7 @@ func _on_ReportBug_pressed():
 			OS.shell_open("mailto:?to=gogetax2@gmail.com&subject=Report bug "+
 			String(date["day"])+"."+String(date["month"])+"."+String(date["year"])+"/"+OS.get_name()+"&body="+BugDescription)
 		"iOS":
-			var txt = "mailto:gogetax2@gmail.com?subject=Report bug "+String(date["day"])+"."+String(date["month"])+"."+String(date["year"])+"/"+OS.get_name()+"&body="+BugDescription
+			var txt = "mailto:gogetax2@gmail.com?subject=Report bug "+String(date["day"])+"."+String(date["month"])+"."+String(date["year"])+"/"+OS.get_name()+"&body="
 			txt = txt.replace(" ","%20")
 # warning-ignore:return_value_discarded
 			OS.shell_open(txt)
@@ -25,7 +25,7 @@ func _on_RequestFeature_pressed():
 			OS.shell_open("mailto:?to=gogetax2@gmail.com&subject=Request feature "+
 			String(date["day"])+"."+String(date["month"])+"."+String(date["year"])+"/"+OS.get_name()+"&body="+FeatureDescription)
 		"iOS":
-			var txt = "mailto:gogetax2@gmail.com?subject=Request feature "+String(date["day"])+"."+String(date["month"])+"."+String(date["year"])+"/"+OS.get_name()+"&body="+FeatureDescription
+			var txt = "mailto:gogetax2@gmail.com?subject=Request feature "+String(date["day"])+"."+String(date["month"])+"."+String(date["year"])+"/"+OS.get_name()+"&body="
 			txt = txt.replace(" ","%20")
 # warning-ignore:return_value_discarded
 			OS.shell_open(txt)
