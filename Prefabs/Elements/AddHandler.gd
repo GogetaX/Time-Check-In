@@ -4,6 +4,7 @@ export (bool) var ShowAds = false setget SetShowAds
 export (String, MULTILINE) var DontShowAdsOnDevices = "" setget SetDontShowAds
 export (int) var HowManyMonthsNoAds = 3 setget SetHowManyMonthsNoAds
 
+var AdsInited = false
 
 func _ready():
 	InitAds()
@@ -26,13 +27,16 @@ func SkipAds():
 	return false
 	
 func InitAds():
-	#if SkipAds():
-	#	return
+	
+	if SkipAds():
+		return
 	if GlobalSave.HowManyMonthsWorked().size() <= HowManyMonthsNoAds:
 		return
 	if ShowAds:
 		match OS.get_name():
+			
 			"iOS","Android":
+				AdsInited = true
 	# warning-ignore:return_value_discarded
 				MobileAds.connect("consent_info_update_success",self,"consent_info_update_success")
 	# warning-ignore:return_value_discarded

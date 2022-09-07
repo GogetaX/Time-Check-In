@@ -11,6 +11,20 @@ func _ready():
 	$SwipeDetector.connect("Swiped",self,"CheckForSwipe")
 	HideAll()
 	ShowOnly("TimeScreen")
+	ResizeAllForAds()
+	
+func ResizeAllForAds():
+	if !$AddHandler.AdsInited:
+		return
+	var MoveAdsYValue = 90
+	$BottomUI.rect_size.y += MoveAdsYValue
+	$BottomUI.rect_position.y -= MoveAdsYValue
+	$CalendarScreen/Calendar.rect_size.y -= MoveAdsYValue
+	$CalendarScreen/List.rect_size.y -= MoveAdsYValue
+	$TotalsScreen/Scroll.rect_size.y -= MoveAdsYValue
+	$SettingsScreen/ScrollContainer.rect_size.y -= MoveAdsYValue
+	$TotalsScreen/TotEarned.rect_position.y -= MoveAdsYValue
+	
 	
 func CheckForSwipe(Dir):
 	var T = Tween.new()
