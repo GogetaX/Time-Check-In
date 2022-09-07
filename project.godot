@@ -26,7 +26,7 @@ Python="C:/Python310/python.exe"
 
 config={
 "banner": {
-"position": 2,
+"position": 0,
 "respect_safe_area": true,
 "show_instantly": false,
 "size": "ADAPTIVE",
