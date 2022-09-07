@@ -8,6 +8,7 @@ var FastLoad = false
 onready var ListScroll = get_parent().get_node("List/Scroll")
 
 func _ready():
+	ClearAll()
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"SyncMenu")
 # warning-ignore:return_value_discarded
@@ -16,6 +17,10 @@ func _ready():
 	GlobalTime.connect("ScrollToCurrentDay",self,"ScrollToCurrentDay")
 	
 	LoadCalendarSwitch()
+
+func ClearAll():
+	for x in get_parent().get_node("List/Scroll/VBox/Columns").get_children():
+		x.queue_free()
 	
 func ScrollToCurrentDay(ListNode):
 	if FastLoad:
@@ -23,12 +28,12 @@ func ScrollToCurrentDay(ListNode):
 	yield(get_tree(),"idle_frame")
 	
 	ScrollToPos = ListNode
-	if ScrollToPos.rect_global_position.y-400 < 1000:
+	if ScrollToPos.rect_global_position.y-400 < 260:
 		return
 	ScreenSize = get_viewport_rect().size
 	var T = Tween.new()
 	add_child(T)
-	var EndPoint = (ScrollToPos.rect_global_position.y+ScrollToPos.rect_size.y-450)
+	var EndPoint = (ScrollToPos.rect_global_position.y+ScrollToPos.rect_size.y-550)
 	T.connect("tween_all_completed",self,"FinishedShow",[T])
 	T.interpolate_property(ListScroll,"scroll_vertical",0,EndPoint,0.3,Tween.TRANS_QUAD,Tween.EASE_IN_OUT,0.2)
 	T.start()

@@ -208,7 +208,9 @@ func FinishTween(T):
 
 func _on_VisibilityEnabler2D_viewport_entered(_viewport):
 	modulate = Color(1,1,1,1)
+	$BG.visible = true
 
 
 func _on_VisibilityEnabler2D_viewport_exited(_viewport):
 	modulate = Color(1,1,1,0)
+	$BG.visible = false
