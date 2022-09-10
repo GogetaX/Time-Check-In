@@ -39,9 +39,11 @@ func DisableEnable(SetAsDisable):
 func _on_ValueBox_UpdatedVar(NewVar):
 	GlobalSave.AddVarsToSettings("SaloryCalculation","salary",NewVar)
 	GlobalTime.emit_signal("UpdateDayInfo")
+	GlobalTime.emit_signal("ShowInterstitalAd")
 	
 func _on_TravelBox_UpdatedVar(NewVar):
 	GlobalSave.AddVarsToSettings("SaloryCalculation","bonus",NewVar)
+	GlobalTime.emit_signal("ShowInterstitalAd")
 
 func SyncFromSave():
 	var S = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")

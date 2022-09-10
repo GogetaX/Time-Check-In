@@ -89,6 +89,7 @@ func SelectCountry(Index,MenuItem):
 		$GenderSelector.visible = false
 		EnableDisableModule(false)
 	else:
+		GlobalTime.emit_signal("ShowInterstitalAd")
 		EnableDisableModule(true)
 		$CreditBox.visible = true
 		$Overtime1.visible = true

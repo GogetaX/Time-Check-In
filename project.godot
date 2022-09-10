@@ -52,10 +52,10 @@ config={
 "interstitial": {
 "unit_ids": {
 "Android": {
-"standard": "ca-app-pub-3940256099942544/1033173712"
+"standard": "ca-app-pub-6225081745698787/3302652586"
 },
 "iOS": {
-"standard": "ca-app-pub-3940256099942544/4411468910"
+"standard": "ca-app-pub-6225081745698787/9676489247"
 }
 }
 },

@@ -256,7 +256,7 @@ func SelectedReport(index):
 	match report:
 		"Day off":
 			var GetToday = GlobalSave.GetTodayInfo()
-			if GetToday.has("check_in1"):
+			if GetToday != null && GetToday.has("check_in1"):
 				var PassedTime = GlobalHebrew.HebrewTextConvert(GlobalTime.CalcAllTimePassed(),30)
 				var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("you_have_worked_today_for_x_hours") % TranslationServer.translate(PassedTime)}
 				var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
@@ -276,7 +276,7 @@ func SelectedReport(index):
 			#GlobalSave.AddDayOff(CurData)
 		"Holiday":
 			var GetToday = GlobalSave.GetTodayInfo()
-			if GetToday.has("check_in1"):
+			if GetToday != null && GetToday.has("check_in1"):
 				var PassedTime = GlobalHebrew.HebrewTextConvert(GlobalTime.CalcAllTimePassed(),30)
 				var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("you_have_worked_today_for_x_hours") % TranslationServer.translate(PassedTime)}
 				var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")

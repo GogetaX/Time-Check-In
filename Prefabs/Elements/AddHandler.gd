@@ -27,7 +27,6 @@ func SkipAds():
 	return false
 	
 func InitAds():
-	
 	if SkipAds():
 		return
 	if GlobalSave.HowManyMonthsWorked().size() <= HowManyMonthsNoAds:
@@ -51,9 +50,18 @@ func InitAds():
 				MobileAds.connect("banner_loaded",self,"BannerLoaded")
 	# warning-ignore:return_value_discarded
 				MobileAds.connect("banner_failed_to_load",self,"banner_failed_to_load")
+# warning-ignore:return_value_discarded
+				MobileAds.connect("interstitial_loaded",self,"ShowInterstitalAd")
 	# warning-ignore:return_value_discarded
 				MobileAds.request_user_consent()
+				GlobalTime.connect("ShowInterstitalAd",self,"LoadInterstitalAd")
 
+func ShowInterstitalAd():
+	MobileAds.show_interstitial()
+	
+func LoadInterstitalAd():
+	MobileAds.load_interstitial()
+	
 func consent_status_changed(status_message):
 	MobileAds.initialize()
 	print("Consent status changed: ",status_message)
@@ -73,6 +81,7 @@ func BannerLoaded():
 func AdMobInitComplete(status : int, _adapter_name : String):
 	if status == MobileAds.AdMobSettings.INITIALIZATION_STATUS.READY:
 		MobileAds.load_banner()
+		
 		print("AdMob initialized on GDScript! With parameters:")
 		#for x in MobileAds.config:
 			#print(x,": ",MobileAds.config[x])
