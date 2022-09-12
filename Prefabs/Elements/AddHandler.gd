@@ -50,14 +50,10 @@ func InitAds():
 				MobileAds.connect("banner_loaded",self,"BannerLoaded")
 	# warning-ignore:return_value_discarded
 				MobileAds.connect("banner_failed_to_load",self,"banner_failed_to_load")
-# warning-ignore:return_value_discarded
-				MobileAds.connect("interstitial_loaded",self,"ShowInterstitalAd")
 	# warning-ignore:return_value_discarded
 				MobileAds.request_user_consent()
 				GlobalTime.connect("ShowInterstitalAd",self,"LoadInterstitalAd")
 
-func ShowInterstitalAd():
-	MobileAds.show_interstitial()
 	
 func LoadInterstitalAd():
 	MobileAds.show_interstitial()
