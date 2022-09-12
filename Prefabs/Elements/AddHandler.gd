@@ -3,11 +3,15 @@ extends Node
 export (bool) var ShowAds = false setget SetShowAds
 export (String, MULTILINE) var DontShowAdsOnDevices = "" setget SetDontShowAds
 export (int) var HowManyMonthsNoAds = 3 setget SetHowManyMonthsNoAds
+export (int) var MaxInistalarAds = 1 setget SetMaxInistalarAds
 
 var AdsInited = false
+var InstAdCounter = 0
 
 func _ready():
 	InitAds()
+func SetMaxInistalarAds(new):
+	MaxInistalarAds = new
 	
 func SetHowManyMonthsNoAds(new):
 	HowManyMonthsNoAds = new
@@ -50,14 +54,20 @@ func InitAds():
 				MobileAds.connect("banner_loaded",self,"BannerLoaded")
 	# warning-ignore:return_value_discarded
 				MobileAds.connect("banner_failed_to_load",self,"banner_failed_to_load")
+				MobileAds.connect("interstitial_closed",self,"interstitial_closed")
 	# warning-ignore:return_value_discarded
 				MobileAds.request_user_consent()
 				GlobalTime.connect("ShowInterstitalAd",self,"LoadInterstitalAd")
 
+func interstitial_closed():
+	MobileAds.load_interstitial()
 	
 func LoadInterstitalAd():
+	if InstAdCounter >= MaxInistalarAds:
+		return
+	InstAdCounter += 1
 	MobileAds.show_interstitial()
-	MobileAds.load_interstitial()
+	
 	
 func consent_status_changed(status_message):
 	MobileAds.initialize()
