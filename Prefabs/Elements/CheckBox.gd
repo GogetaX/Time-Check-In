@@ -23,7 +23,7 @@ func _gui_input(event):
 		if event.pressed:
 			AnimToggle()
 
-func AnimToggle():
+func AnimToggle(emit_signal = true):
 	var T = Tween.new()
 	add_child(T)
 	GlobalTime.SwipeEnabled = false
@@ -36,7 +36,8 @@ func AnimToggle():
 		T.interpolate_property(ColorStyle,"bg_color",ColorStyle.get_bg_color(),BASE_COLOR,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 	is_Pressed = !is_Pressed
 	T.start()
-	emit_signal("OnToggle")
+	if emit_signal:
+		emit_signal("OnToggle")
 	
 func FinishAnim(T):
 	GlobalTime.SwipeEnabled = true

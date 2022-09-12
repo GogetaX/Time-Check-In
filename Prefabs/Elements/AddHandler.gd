@@ -60,6 +60,7 @@ func ShowInterstitalAd():
 	MobileAds.show_interstitial()
 	
 func LoadInterstitalAd():
+	MobileAds.show_interstitial()
 	MobileAds.load_interstitial()
 	
 func consent_status_changed(status_message):
@@ -81,7 +82,7 @@ func BannerLoaded():
 func AdMobInitComplete(status : int, _adapter_name : String):
 	if status == MobileAds.AdMobSettings.INITIALIZATION_STATUS.READY:
 		MobileAds.load_banner()
-		
+		MobileAds.load_interstitial()
 		print("AdMob initialized on GDScript! With parameters:")
 		#for x in MobileAds.config:
 			#print(x,": ",MobileAds.config[x])

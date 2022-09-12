@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/ModulatePopupScreen.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Icons/applause.png" type="Texture" id=3]
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=4]
 [ext_resource path="res://Prefabs/Elements/HebrewLabel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Prefabs/Elements/PopupBtn.tscn" type="PackedScene" id=6]
@@ -29,6 +30,30 @@ border_color = Color( 0.737255, 0.878431, 0.992157, 1 )
 shadow_color = Color( 0, 0, 0, 0.129412 )
 shadow_size = 50
 anti_aliasing = false
+
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+
+uniform vec4 u_color_key : hint_color;
+uniform vec4 u_replacement_color : hint_color;
+
+void fragment() {
+    vec4 col = texture(TEXTURE, UV);
+	float alpha = col.a;
+	
+    vec4 d4 = abs(col - u_color_key);
+    float d = max(max(d4.r, d4.g), d4.b);
+    if(d < 0.01) {
+        col = u_replacement_color;
+    }
+    COLOR = col;
+	COLOR.a = alpha;
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/u_color_key = Color( 0, 0, 0, 1 )
+shader_param/u_replacement_color = Color( 0.14902, 0.6, 0.984314, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.498039, 0.768627, 0.992157, 1 )
@@ -69,6 +94,7 @@ __meta__ = {
 }
 
 [node name="YesNoPanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -185,6 +211,93 @@ __meta__ = {
 [node name="OkBtn" parent="okPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_right = 600.0
 text = "Ok"
+iconType = "YES"
+
+[node name="CongratsPanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -135.0
+margin_right = 300.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 500, 200 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CongratsPanel"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 20.0
+margin_right = -10.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Title"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CongratsPanel/Title"]
+material = SubResource( 9 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -27.5
+margin_right = 55.0
+margin_bottom = 27.5
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="CongratsPanel/Title"]
+material = SubResource( 9 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -55.0
+margin_top = -27.5
+margin_bottom = 27.5
+texture = ExtResource( 3 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" parent="CongratsPanel" instance=ExtResource( 5 )]
+margin_top = 81.0
+margin_bottom = 253.0
+text = "We noticed you had Check in yesterday, but no check out."
+align = 0
+CharsPeerLine = 35
+hebrewText = "We noticed you had Check in yesterday, but no check out."
+
+[node name="BtnContainer" type="HBoxContainer" parent="CongratsPanel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 0, 100 )
+custom_constants/separation = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkBtn" parent="CongratsPanel/BtnContainer" instance=ExtResource( 6 )]
+margin_right = 600.0
+focus_mode = 0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+text = "Close"
 iconType = "YES"
 
 [node name="ForgetCheckOutPanel" type="Panel" parent="."]

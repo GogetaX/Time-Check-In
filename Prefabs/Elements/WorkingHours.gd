@@ -12,9 +12,10 @@ func SyncFromSave():
 
 	if S.has("hours"):
 		$WorkingHours.SetInisialValue(S["hours"])
+		
 	if S.has("check_out_reminder"):
 		if S["check_out_reminder"]:
-			$CheckOutReminder.AnimToggle()
+			$CheckOutReminder.AnimToggle(false)
 
 
 func _on_ValueBox_UpdatedVar(NewVar):

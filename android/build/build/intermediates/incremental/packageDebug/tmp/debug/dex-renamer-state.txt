@@ -1,4 +1,0 @@
-#Sat Sep 10 13:32:02 IDT 2022
-base.0=C\:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
