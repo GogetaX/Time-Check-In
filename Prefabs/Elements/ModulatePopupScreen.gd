@@ -1,5 +1,6 @@
 extends Control
 
+var CurrentlyOpenNode = null
 #To use the popup:
 #var PopupData = {"type": "YesNo","Title":"","Desc":TranslationServer.translate("are_you_sure_to_skip") % TranslationServer.translate(TodayReport)}
 #var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
@@ -37,6 +38,7 @@ func ShowModulate(Data):
 	for x in get_children():
 		if "Panel" in x.name:
 			if x.visible:
+				CurrentlyOpenNode = x
 				x.modulate = Color(1,1,1,0)
 				T.interpolate_property(x,"modulate",x.modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.3)
 	
@@ -92,3 +94,12 @@ func FinishShowAndHide(T):
 	
 func FinishShow(T):
 	T.queue_free()
+
+
+func _on_Background_gui_input(event):
+	if CurrentlyOpenNode == null:
+		return
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if CurrentlyOpenNode.get_node("BtnContainer").get_child_count()==1:
+				PressedButton(CurrentlyOpenNode.get_node("BtnContainer").get_child(0))

@@ -484,3 +484,5 @@ margin_bottom = 261.0
 rect_min_size = Vector2( 0, 90 )
 text = "Close"
 iconType = "NO"
+
+[connection signal="gui_input" from="Background" to="." method="_on_Background_gui_input"]

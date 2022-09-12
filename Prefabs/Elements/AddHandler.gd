@@ -54,15 +54,16 @@ func InitAds():
 				MobileAds.connect("banner_loaded",self,"BannerLoaded")
 	# warning-ignore:return_value_discarded
 				MobileAds.connect("banner_failed_to_load",self,"banner_failed_to_load")
+# warning-ignore:return_value_discarded
 				MobileAds.connect("interstitial_closed",self,"interstitial_closed")
 	# warning-ignore:return_value_discarded
 				MobileAds.request_user_consent()
-				GlobalTime.connect("ShowInterstitalAd",self,"LoadInterstitalAd")
+				GlobalTime.connect("ShowInterstitalAd",self,"ShowInterstitalAd")
 
 func interstitial_closed():
 	MobileAds.load_interstitial()
 	
-func LoadInterstitalAd():
+func ShowInterstitalAd():
 	if InstAdCounter >= MaxInistalarAds:
 		return
 	InstAdCounter += 1
