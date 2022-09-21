@@ -76,7 +76,6 @@ __meta__ = {
 }
 
 [node name="TimeScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -119.0
@@ -149,8 +148,8 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -54.0
-margin_bottom = 1.0
+margin_top = -56.0
+margin_bottom = -1.0
 custom_fonts/font = ExtResource( 34 )
 text = "Januray 2022"
 align = 1
@@ -202,6 +201,7 @@ LeftText = "Calendar"
 RightText = "List"
 
 [node name="Calendar" type="Control" parent="CalendarScreen"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -536,6 +536,7 @@ size_flags_vertical = 3
 [node name="TotalItem" parent="TotalsScreen/Scroll/VBox" instance=ExtResource( 26 )]
 
 [node name="SettingsScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -118.0
@@ -563,7 +564,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/ScrollContainer"]
-margin_right = 710.0
+margin_right = 720.0
 margin_bottom = 1299.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

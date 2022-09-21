@@ -8,8 +8,9 @@ export (int) var MaxInistalarAds = 1 setget SetMaxInistalarAds
 var AdsInited = false
 var InstAdCounter = 0
 
-func _ready():
+func _init():
 	InitAds()
+	
 func SetMaxInistalarAds(new):
 	MaxInistalarAds = new
 	

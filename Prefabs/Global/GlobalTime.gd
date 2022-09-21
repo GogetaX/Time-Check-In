@@ -55,6 +55,8 @@ func _ready():
 	InitDates()
 	
 func InitDates():
+	#Start of the week (1 = Sun), total_months, month_num,year_num
+	#2022
 	AddDateDB(1,31,5,2022)
 	AddDateDB(4,30,6,2022)
 	AddDateDB(6,31,7,2022)
@@ -64,7 +66,21 @@ func InitDates():
 	AddDateDB(7,31,10,2022)
 	AddDateDB(3,30,11,2022)
 	AddDateDB(5,31,12,2022)
-
+	
+	#2023
+	AddDateDB(1,31,1,2023)
+	AddDateDB(4,28,2,2023)
+	AddDateDB(4,31,3,2023)
+	AddDateDB(7,30,4,2023)
+	AddDateDB(2,31,5,2023)
+	AddDateDB(5,30,6,2023)
+	AddDateDB(7,31,7,2023)
+	AddDateDB(3,31,8,2023)
+	AddDateDB(6,30,9,2023)
+	AddDateDB(1,31,10,2023)
+	AddDateDB(4,30,11,2023)
+	AddDateDB(6,31,12,2023)
+	
 func SelectCurDate(DayNode,DayInfo):
 	CurSelectedDate["day"] = int(DayNode.text)
 	CurSelectedDate["year"] = TempCurYear
@@ -517,7 +533,7 @@ func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
 	
 	
 	
-	var LastTaxPercent = 0.0
+	var LastTaxPercent = TaxInfo[0][1]
 	var S = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
 	var sufix = ""
 	if Salary.has("sufix"):
@@ -551,6 +567,7 @@ func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
 				NetList.append(T)
 				LastValue = Tax[0]
 				LastTaxPercent = Tax[1]
+				
 			else:
 				var T = ((GrossSalary - LastValue) * Tax[1]) / 100.0
 				LastTaxPercent = Tax[1]
