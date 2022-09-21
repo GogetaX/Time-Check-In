@@ -8,7 +8,7 @@ export (int) var MaxInistalarAds = 1 setget SetMaxInistalarAds
 var AdsInited = false
 var InstAdCounter = 0
 
-func _init():
+func _ready():
 	InitAds()
 	
 func SetMaxInistalarAds(new):
@@ -38,8 +38,8 @@ func InitAds():
 		return
 	if ShowAds:
 		match OS.get_name():
-			
 			"iOS","Android":
+				
 				AdsInited = true
 	# warning-ignore:return_value_discarded
 				MobileAds.connect("consent_info_update_success",self,"consent_info_update_success")
