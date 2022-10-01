@@ -1,6 +1,7 @@
 extends Label
 
 var TotalItemInstance = preload("res://Prefabs/Elements/TotalItem.tscn")
+var TotalItemOvertimeInstance = preload("res://Prefabs/Elements/OvertimeTotalItem.tscn")
 var StepTime = 0.05
 
 onready var VBox = get_parent().get_parent().get_node("Scroll/VBox")
@@ -26,20 +27,38 @@ func InitMonthButtons():
 			x.connect("pressed",self,"MonthBtnPressed",[x])
 
 func MonthBtnPressed(BtnNode):
-	match BtnNode.name:
-		"NextMonth":
-			CurSelectedMonth["month"]+=1
-			if CurSelectedMonth["month"]>=13:
-				CurSelectedMonth["month"] = 1
-				CurSelectedMonth["year"] += 1
-		"PrevMonth":
-			CurSelectedMonth["month"]-=1
-			if CurSelectedMonth["month"]==0:
-				CurSelectedMonth["month"] = 12
-				CurSelectedMonth["year"] -= 1
+	if BtnNode is Button:
+		AnimateButton(BtnNode)
+		match BtnNode.name:
+			"NextMonth":
+				CurSelectedMonth["month"]+=1
+				if CurSelectedMonth["month"]>=13:
+					CurSelectedMonth["month"] = 1
+					CurSelectedMonth["year"] += 1
+			"PrevMonth":
+				CurSelectedMonth["month"]-=1
+				if CurSelectedMonth["month"]==0:
+					CurSelectedMonth["month"] = 12
+					CurSelectedMonth["year"] -= 1
+	elif BtnNode is String:
+		match BtnNode:
+			"This month":
+				CurSelectedMonth = OS.get_datetime()
+			"Last month":
+				CurSelectedMonth = OS.get_datetime()
+				MonthBtnPressed($PrevMonth)
+				return
+			"Salary simulator":
+				GlobalTime.emit_signal("ShowOnlyScreen","SalarySimulatorScreen")
+				return
+			_:
+				print("Eror TotalCurMonth.gd->MonthBtnPressed() String unknown: ",BtnNode)
+				return
+	else:
+		print("Eror TotalCurMonth.gd->MonthBtnPressed() ButtonType unknown: ",BtnNode)
 	
 	SyncButtons(CurSelectedMonth)
-	AnimateButton(BtnNode)
+		
 	
 	SyncCurrentMonth(CurSelectedMonth)
 
@@ -83,10 +102,29 @@ func SyncButtons(Date):
 	$NextMonth.SetDisabled(DisableNextMonth)
 	$PrevMonth.SetDisabled(DisablePrevMonth)
 	
+func SyncTools():
+	var Tool = get_parent().get_node("Tools")
+	var ToolList = []
+	var S = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
+	if S != null:
+		if S.has("country"):
+			if S["country"] == "Israel":
+				ToolList.append(["Salary simulator","res://Assets/Icons/sales.png"])
+	var ThisDay = OS.get_datetime()
+	if CurSelectedMonth["month"] != ThisDay["month"] || CurSelectedMonth["year"] != ThisDay["year"]:
+		ToolList.append(["This month","res://Assets/Icons/Today.png"])
+	else:
+		ToolList.append(["Last month","res://Assets/Icons/Today.png"])
+	Tool.ShowTools(ToolList,self,"BtnPressed")
+	
+func BtnPressed(BtnName):
+	MonthBtnPressed(BtnName)
+	
 func SyncCurrentMonth(Date):
 	CurSelectedMonth = Date
 	DisplayMonth(Date)
 	DisplayElements(Date)
+	SyncTools()
 	
 func RemoveOld():
 	for x in VBox.get_children():
@@ -185,42 +223,24 @@ func DisplayElements(_Date):
 				var Rest = GlobalTime.IsraelIncomeCalcFromSalary(SecondsWorked,SecondsFor125,SecondsFor150)
 				if Rest.has("NosafotHours 125%") || Rest.has("NosafotHours 150%"):
 					#ADd Nosafot on top
-					#if has 125:
+					#if has 125: #[title,working_title,working_value,earned_title,earned_value
 					if Rest.has("NosafotHours 125%"):
-						Itm = TotalItemInstance.instance()
+						Itm = TotalItemOvertimeInstance.instance()
 						VBox.add_child(Itm)
-						Itm.ShowItem(Delay,{"title":TranslationServer.translate("total_nosafot_125"),"desc":""})
+						Itm.ShowOvertime(Delay,{"title":"total_nosafot_125","working_title":"total_hours_worked","working_value":Rest["NosafotHours 125%"],"earned_title":"total_earned","earned_value":Rest["NosafotEarned 125%"]})
 						Delay += StepTime
 						
-						Itm = TotalItemInstance.instance()
-						VBox.add_child(Itm)
-						Itm.ShowItem(Delay,{"title":"total_hours_worked","desc":Rest["NosafotHours 125%"]})
-						Delay += StepTime
-						
-						Itm = TotalItemInstance.instance()
-						VBox.add_child(Itm)
-						Itm.ShowItem(Delay,{"title":"total_earned","desc":Rest["NosafotEarned 125%"]})
-						Delay += StepTime
 						
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
 						Itm.ShowItem(Delay,{"title":"","desc":""})
 						Delay += StepTime
 					if Rest.has("NosafotHours 150%"):
-						Itm = TotalItemInstance.instance()
+						Itm = TotalItemOvertimeInstance.instance()
 						VBox.add_child(Itm)
-						Itm.ShowItem(Delay,{"title":TranslationServer.translate("total_nosafot_150"),"desc":""})
+						Itm.ShowOvertime(Delay,{"title":"total_nosafot_150","working_title":"total_hours_worked","working_value":Rest["NosafotHours 150%"],"earned_title":"total_earned","earned_value":Rest["NosafotEarned 150%"]})
 						Delay += StepTime
-
-						Itm = TotalItemInstance.instance()
-						VBox.add_child(Itm)
-						Itm.ShowItem(Delay,{"title":"total_hours_worked","desc":Rest["NosafotHours 150%"]})
-						Delay += StepTime
-
-						Itm = TotalItemInstance.instance()
-						VBox.add_child(Itm)
-						Itm.ShowItem(Delay,{"title":"total_earned","desc":Rest["NosafotEarned 150%"]})
-						Delay += StepTime
+						
 
 						Itm = TotalItemInstance.instance()
 						VBox.add_child(Itm)
@@ -289,6 +309,7 @@ func GroupPressed(BtnNode,_GroupName):
 		RemoveOld()
 		return
 	SyncCurrentMonth(CurSelectedMonth)
+	
 		
 	
 func DisplayMonth(Date):

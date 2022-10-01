@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/ModulatePopupScreen.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=4]
 [ext_resource path="res://Prefabs/Elements/HebrewLabel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Prefabs/Elements/PopupBtn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=7]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -214,6 +215,7 @@ text = "Ok"
 iconType = "YES"
 
 [node name="CongratsPanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -395,7 +397,6 @@ text = "Check Out"
 iconType = "STOP"
 
 [node name="ForgetCheckOutSomeTimeAgoPanel" type="Panel" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -464,7 +465,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EditBtn2" parent="ForgetCheckOutSomeTimeAgoPanel/BtnContainer" instance=ExtResource( 6 )]
+[node name="EditBtn" parent="ForgetCheckOutSomeTimeAgoPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_top = 81.0
 margin_right = 412.0
 margin_bottom = 171.0
@@ -477,10 +478,93 @@ text = "Edit"
 flat = false
 iconType = "EDIT"
 
-[node name="CloseBtn2" parent="ForgetCheckOutSomeTimeAgoPanel/BtnContainer" instance=ExtResource( 6 )]
+[node name="CloseBtn" parent="ForgetCheckOutSomeTimeAgoPanel/BtnContainer" instance=ExtResource( 6 )]
 margin_top = 171.0
 margin_right = 412.0
 margin_bottom = 261.0
+rect_min_size = Vector2( 0, 90 )
+text = "Close"
+iconType = "NO"
+
+[node name="WhatsNewPanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -418.5
+margin_right = 300.0
+margin_bottom = 418.5
+rect_min_size = Vector2( 500, 350 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="WhatsNewPanel"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 20.0
+margin_right = -10.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Whats new"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rich" type="RichTextLabel" parent="WhatsNewPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 97.0
+margin_right = -20.0
+margin_bottom = -247.0
+custom_colors/default_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "Hello World"
+text = "Hello World"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnContainer" type="VBoxContainer" parent="WhatsNewPanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -206.0
+margin_top = -224.0
+margin_right = 206.0
+margin_bottom = -29.0
+rect_min_size = Vector2( 0, 100 )
+custom_constants/separation = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DismissBtn" parent="WhatsNewPanel/BtnContainer" instance=ExtResource( 6 )]
+margin_top = 7.0
+margin_right = 412.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 0, 90 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 4 )
+text = "Dismiss"
+flat = false
+iconType = "YES"
+
+[node name="CloseBtn" parent="WhatsNewPanel/BtnContainer" instance=ExtResource( 6 )]
+margin_top = 97.0
+margin_right = 412.0
+margin_bottom = 187.0
 rect_min_size = Vector2( 0, 90 )
 text = "Close"
 iconType = "NO"

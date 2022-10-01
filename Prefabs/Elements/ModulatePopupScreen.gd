@@ -24,6 +24,7 @@ func InitAllBtns():
 			for b in a.get_children():
 				if b is HBoxContainer || b is VBoxContainer:
 					for c in b.get_children():
+						c.focus_mode = Control.FOCUS_NONE
 						c.connect("pressed",self,"PressedButton",[c])
 						
 func ShowModulate(Data):
@@ -57,6 +58,8 @@ func InitWindowFromData(Data):
 						x.get_node("Desc").text = Data["Desc"]
 					if x.name == "okPanel":
 						AdjustPanelByTextSize("okPanel",Data["Desc"])
+				if Data.has("Rich"):
+					x.get_node("Rich").bbcode_text = Data["Rich"]
 				x.visible = true
 			else:
 				x.visible = false

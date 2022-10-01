@@ -12,10 +12,10 @@ func _ready():
 	HideAllEditors()
 	
 func HideAllEditors():
-	$InteractiveButton.visible = false
 	for x in get_children():
 		if x is LineEdit:
 			x.visible = false
+			x.virtual_keyboard_enabled = false
 		elif x is Label:
 			if "Edit" in x.name:
 				x.mouse_filter = Control.MOUSE_FILTER_PASS
@@ -39,8 +39,12 @@ func ShowDate(Delay,_Day,Info,Checks):
 	var CheckInDate = Info["check_in"+String(Checks)]
 # warning-ignore:unused_variable
 	if has_check_out:
+		
 		$CheckOutHourEdit.text = String(Info["check_out"+String(Checks)]["hour"])
-		$CheckOutMinuteEdit.text = String(Info["check_out"+String(Checks)]["minute"])
+		var Min = String(Info["check_out"+String(Checks)]["minute"])
+		if Min.length()==1:
+			Min = "0"+Min
+		$CheckOutMinuteEdit.text = Min
 	else:
 		$CheckOutHourEdit.visible = false
 		$CheckOutMinuteEdit.visible = false
@@ -48,12 +52,16 @@ func ShowDate(Delay,_Day,Info,Checks):
 		$RemoveButton.visible = false
 	
 	$CheckInHourEdit.text = String(Info["check_in"+String(Checks)]["hour"])
-	$CheckInMinuteEdit.text = String(Info["check_in"+String(Checks)]["minute"])
+	var Min = String(Info["check_in"+String(Checks)]["minute"])
+	if Min.length()==1:
+		Min = "0"+Min
+		
+	
+	$CheckInMinuteEdit.text = Min
 	
 	
 
 func HideAllEdits():
-	$InteractiveButton.visible = false
 	for x in get_children():
 		if x is LineEdit:
 			x.visible = false
@@ -70,22 +78,39 @@ func SelectHour(event,itmNode):
 		if event.pressed:
 			if CurEditor != null:
 				if CurEditor.has_focus():
-					_on_InteractiveButton_pressed()
+					UpdateCurEditor()
 				else:
 					HideAllEdits()
 			else:
 				HideAllEdits()
-			$InteractiveButton.visible = true
 			var n = get_node(itmNode.name+"or")
+			GlobalTime.ShowKeypad(self,"OnEntry",".")
+			
 			n.visible = true
 			itmNode.visible = false
 			n.placeholder_text = itmNode.text
 			n.text = ""
-			n.grab_focus()
 			CurEditor = n
 			CurLabelEdit = itmNode
+			CurEditor.caret_position = CurEditor.text.length()
 
-
+func OnEntry(Key):
+	match Key:
+		"<":
+			if CurEditor.text.length() > 0:
+				CurEditor.text = CurEditor.text.substr(0,CurEditor.text.length()-1)
+		"ENT":
+			CurEditor.visible = false
+			if CurEditor.text.is_valid_integer():
+				UpdateCurEditor()
+			else:
+				CurLabelEdit.visible = true
+		"CLS":
+			CurEditor.visible = false
+			CurLabelEdit.visible = true
+		_:
+			CurEditor.text += Key
+	CurEditor.caret_position = CurEditor.text.length()
 
 
 func GetEditedInfo():
@@ -121,14 +146,19 @@ func _on_DelayTimer_timeout():
 func FinishTween(T):
 	T.queue_free()
 
-func _on_InteractiveButton_pressed():
+				
+func UpdateCurEditor():
 	if CurEditor.text.is_valid_integer():
 		if "Hour" in CurEditor.name:
 			if int(CurEditor.text) <= 48 && int(CurEditor.text)>=0:
 				CurLabelEdit.text = CurEditor.text
+			elif int(CurEditor.text) > 48:
+				CurLabelEdit.text = "48"
 		elif "Minute" in CurEditor.name:
 			if int(CurEditor.text) <= 60 && int(CurEditor.text)>=0:
 				CurLabelEdit.text = CurEditor.text
+			elif int(CurEditor.text) > 60:
+				CurLabelEdit.text = "60"
 	HideAllEdits()
 
 func _on_RemoveButton_pressed():

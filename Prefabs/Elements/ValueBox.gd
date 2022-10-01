@@ -5,20 +5,22 @@ export (float) var InisialValue = 35.5 setget SetInisialValue
 export (Vector2) var MinMax = Vector2(0,300.0) setget SetMinMax
 export (bool) var HasArrows = true setget SetHasArrows
 export (String) var FrontText = "Salary" setget SetFrontText
-
+export (Color) var FontColor = Color("#2699fb") setget SetFontColor
 
 signal UpdatedVar(NewVar)
 
 
 var is_Disabled = false
-var CanCloseKeyboard = false
 
 func _ready():
 	$LineEdit.visible = false
+	$LineEdit.virtual_keyboard_enabled = false
 # warning-ignore:return_value_discarded
 	$VirtualKeyboardTimer.connect("timeout",self,"CheckIfVirtualKeyboard")
 
-	
+func SetFontColor(new):
+	FontColor = new
+	$Label.set("custom_colors/font_color",FontColor)
 	
 func SetFrontText(new):
 	FrontText = new
@@ -58,48 +60,43 @@ func _gui_input(event):
 		if event.pressed:
 			yield(get_tree(),"idle_frame")
 			if !$LineEdit.visible:
-				$LineEdit.placeholder_text = String(InisialValue)
-				$LineEdit.text = String(InisialValue)
-				$LineEdit.visible = true
-				self_modulate = Color(1,1,1,0)
-				$LineEdit.caret_position = 0
-				$LineEdit.select_all()
+				GlobalTime.ShowKeypad(self,"OnEntry")
 				$LineEdit.grab_focus()
-				match OS.get_name():
-					"iOS","Android":
-						CanCloseKeyboard = false
-						#OS.show_virtual_keyboard("")
-						$VirtualKeyboardTimer.start()
+				$LineEdit.placeholder_text = text
+				$LineEdit.max_length = String(MinMax.y).length()
+				$LineEdit.align = align
+				$LineEdit.visible = true
+				$LineEdit.text = ""
+				$LineEdit.caret_position = $LineEdit.text.length()
+				text = ""
+				
 
-
+func OnEntry(Key):
+	match Key:
+		"<":
+			if $LineEdit.text.length() > 0:
+				$LineEdit.text = $LineEdit.text.substr(0,$LineEdit.text.length()-1)
+		"ENT":
+			$LineEdit.visible = false
+			if $LineEdit.text.is_valid_integer() || $LineEdit.text.is_valid_float():
+				SetInisialValue($LineEdit.text.to_float())
+				return
+			else:
+				text = String(InisialValue)
+		"CLS":
+			$LineEdit.visible = false
+			SetInisialValue(InisialValue)
+			return
+		_:
+			$LineEdit.text += Key
+	$LineEdit.caret_position = $LineEdit.text.length()
+	
 func _on_DownBtn_pressed():
 	var val = InisialValue
 	val -= 0.5
 	if val < MinMax.x:
 		val = MinMax.x
 	SetInisialValue(val)
-
-func CheckIfVirtualKeyboard():
-	if OS.get_name() == "Windows":
-		CanCloseKeyboard = true
-		var Val = float($LineEdit.text)
-		SetInisialValue(Val)
-		self_modulate = Color(1,1,1,1)
-		$LineEdit.visible = false
-		$VirtualKeyboardTimer.stop()
-		return
-		
-	if OS.get_virtual_keyboard_height()>0:
-		CanCloseKeyboard = true
-		
-	if OS.get_virtual_keyboard_height() <= 0 && CanCloseKeyboard:
-		$LineEdit.visible = false
-		var Val = float($LineEdit.text)
-		SetInisialValue(Val)
-			
-		self_modulate = Color(1,1,1,1)
-		
-		$VirtualKeyboardTimer.stop()
 	
 func _on_UpBtn_pressed():
 	var val = InisialValue
@@ -107,17 +104,3 @@ func _on_UpBtn_pressed():
 	if val > MinMax.y:
 		val = MinMax.y
 	SetInisialValue(val)
-
-
-func _on_LineEdit_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.pressed && $LineEdit.visible:
-			CheckIfVirtualKeyboard()
-
-
-func _on_LineEdit_focus_exited():
-	CheckIfVirtualKeyboard()
-
-
-func _on_LineEdit_mouse_exited():
-	CheckIfVirtualKeyboard()

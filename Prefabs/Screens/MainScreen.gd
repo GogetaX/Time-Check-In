@@ -14,7 +14,7 @@ func _ready():
 	ResizeAllForAds()
 	
 func ResizeAllForAds():
-	if !$AddHandler.AdsInited:
+	if !$AdHandler.AdsInited:
 		return
 	var MoveAdsYValue = 90
 	$BottomUI.rect_size.y += MoveAdsYValue
@@ -77,7 +77,7 @@ func GetNextNodeToSwipe():
 	var NextNode = null
 	var GOForNext = false
 	for x in get_children():
-		if "Screen" in x.name && "HourEditorScreen" != x.name:
+		if "Screen" in x.name && "HourEditorScreen" != x.name && "SalarySimulatorScreen" != x.name && not "Permanent" in x.name:
 			if GOForNext:
 				NextNode = x
 				return NextNode
@@ -87,7 +87,7 @@ func GetNextNodeToSwipe():
 	
 func GetCurNodeToSwipe():
 	for x in get_children():
-		if "Screen" in x.name && "HourEditorScreen" != x.name:
+		if "Screen" in x.name && "HourEditorScreen" != x.name && not "Permanent" in x.name && "SalarySimulatorScreen" != x.name:
 			if x.visible:
 				return x
 	return null
@@ -95,7 +95,7 @@ func GetCurNodeToSwipe():
 func GetPrevNodeToSwipe():
 	var PrevNode = null
 	for x in get_children():
-		if "Screen" in x.name && "HourEditorScreen" != x.name:
+		if "Screen" in x.name && "HourEditorScreen" != x.name && not "Permanent" in x.name && "SalarySimulatorScreen" != x.name:
 			if x.visible:
 				return PrevNode
 			PrevNode = x
@@ -112,7 +112,7 @@ func FinishedTweenSwipe(T,NodeToReturnBack):
 func NoAnimShowWindow(WindowName):
 	CurNode = GetCurNodeToSwipe()
 	for x in get_children():
-		if "Screen" in x.name:
+		if "Screen" in x.name && not "Permanent" in x.name:
 			if WindowName == x.name:
 				x.visible = true
 				if CurNode == null:
@@ -129,7 +129,7 @@ func NoAnimShowWindow(WindowName):
 			
 func HideAll():
 	for x in get_children():
-		if "Screen" in x.name:
+		if "Screen" in x.name && not "Permanent" in x.name:
 			x.visible = false
 
 
@@ -137,7 +137,7 @@ func ShowOnly(WindowName):
 	FinalizeTweens()
 	CurNode = GetCurNodeToSwipe()
 	for x in get_children():
-		if "Screen" in x.name:
+		if "Screen" in x.name && not "Permanent" in x.name:
 			if WindowName == x.name:
 				if CurNode == x:
 					return

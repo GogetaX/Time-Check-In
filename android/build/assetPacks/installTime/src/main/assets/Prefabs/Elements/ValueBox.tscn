@@ -12,7 +12,7 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 [node name="ValueBox" type="Label"]
 margin_right = 80.0
 margin_bottom = 54.0
-mouse_filter = 1
+mouse_filter = 0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "35.5"
@@ -55,14 +55,15 @@ icon = ExtResource( 4 )
 
 [node name="LineEdit" type="LineEdit" parent="."]
 visible = false
-margin_top = -2.0
-margin_right = 130.0
-margin_bottom = 56.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
 text = "35.5"
 max_length = 5
+virtual_keyboard_enabled = false
+caret_blink = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -72,6 +73,3 @@ wait_time = 0.3
 
 [connection signal="pressed" from="DownBtn" to="." method="_on_DownBtn_pressed"]
 [connection signal="pressed" from="UpBtn" to="." method="_on_UpBtn_pressed"]
-[connection signal="focus_exited" from="LineEdit" to="." method="_on_LineEdit_focus_exited"]
-[connection signal="gui_input" from="LineEdit" to="." method="_on_LineEdit_gui_input"]
-[connection signal="mouse_exited" from="LineEdit" to="." method="_on_LineEdit_mouse_exited"]

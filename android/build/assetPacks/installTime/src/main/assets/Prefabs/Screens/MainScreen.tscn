@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
@@ -43,8 +43,17 @@
 [ext_resource path="res://Prefabs/Styles/Scroll.tres" type="Theme" id=41]
 [ext_resource path="res://Prefabs/Elements/ReportPanel.tscn" type="PackedScene" id=42]
 [ext_resource path="res://Prefabs/Elements/AddHandler.gd" type="Script" id=43]
+[ext_resource path="res://Prefabs/Elements/IconContainer.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Prefabs/Elements/OvertimeTotalItem.tscn" type="PackedScene" id=45]
+[ext_resource path="res://Assets/Fonts/OpenSans-Bold.ttf" type="DynamicFontData" id=46]
+[ext_resource path="res://Prefabs/Elements/TopTools.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Prefabs/Elements/TopScreenPermanent.gd" type="Script" id=48]
+[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=49]
+[ext_resource path="res://Assets/Flags/israel.png" type="Texture" id=50]
+[ext_resource path="res://Prefabs/Elements/ValueBox.tscn" type="PackedScene" id=51]
+[ext_resource path="res://Prefabs/Elements/SalarySimulatorScreen.gd" type="Script" id=53]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.14902, 0.6, 0.984314, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -55,6 +64,11 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+use_filter = true
+font_data = ExtResource( 46 )
 
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
@@ -76,6 +90,7 @@ __meta__ = {
 }
 
 [node name="TimeScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -119.0
@@ -125,6 +140,10 @@ __meta__ = {
 
 [node name="CheckinControl" parent="TimeScreen" instance=ExtResource( 5 )]
 
+[node name="IconContainer" parent="TimeScreen" instance=ExtResource( 44 )]
+margin_top = 44.0
+margin_bottom = 124.0
+
 [node name="CalendarScreen" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -151,7 +170,6 @@ anchor_bottom = 1.0
 margin_top = -56.0
 margin_bottom = -1.0
 custom_fonts/font = ExtResource( 34 )
-text = "Januray 2022"
 align = 1
 script = ExtResource( 18 )
 __meta__ = {
@@ -196,7 +214,7 @@ icon = ExtResource( 16 )
 [node name="ToggleBetween" parent="CalendarScreen/TopMenu" instance=ExtResource( 37 )]
 margin_top = 72.0
 margin_bottom = 108.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 3 )
 LeftText = "Calendar"
 RightText = "List"
 
@@ -453,7 +471,6 @@ anchor_bottom = 1.0
 margin_top = -80.0
 
 [node name="TotalsScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -123.0
@@ -508,6 +525,10 @@ margin_bottom = -8.0
 rect_min_size = Vector2( 60, 60 )
 icon = ExtResource( 17 )
 
+[node name="Tools" parent="TotalsScreen/TopMenu" instance=ExtResource( 47 )]
+margin_top = 150.0
+margin_bottom = 210.0
+
 [node name="TotEarned" parent="TotalsScreen" instance=ExtResource( 26 )]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -519,7 +540,7 @@ margin_bottom = 0.0
 [node name="Scroll" type="ScrollContainer" parent="TotalsScreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 154.0
+margin_top = 211.0
 margin_bottom = -74.0
 theme = ExtResource( 41 )
 scroll_horizontal_enabled = false
@@ -529,11 +550,15 @@ __meta__ = {
 
 [node name="VBox" type="VBoxContainer" parent="TotalsScreen/Scroll"]
 margin_right = 720.0
-margin_bottom = 929.0
+margin_bottom = 872.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TotalItem" parent="TotalsScreen/Scroll/VBox" instance=ExtResource( 26 )]
+
+[node name="TotalItemOvertime" parent="TotalsScreen/Scroll/VBox" instance=ExtResource( 45 )]
+margin_top = 74.0
+margin_bottom = 254.0
 
 [node name="SettingsScreen" type="Control" parent="."]
 visible = false
@@ -761,10 +786,137 @@ __meta__ = {
 
 [node name="CheckInOutEditor" parent="HourEditorScreen/VBoxContainer" instance=ExtResource( 31 )]
 
-[node name="AddHandler" type="Node" parent="."]
+[node name="SalarySimulatorScreen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 53 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="Panel" parent="SalarySimulatorScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopScreen" type="Panel" parent="SalarySimulatorScreen"]
+anchor_right = 1.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+custom_styles/panel = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="SalarySimulatorScreen/TopScreen"]
+anchor_right = 1.0
+margin_left = 28.0
+margin_top = 56.0
+margin_right = -128.0
+margin_bottom = 98.0
+custom_fonts/font = ExtResource( 49 )
+text = "Salary simulator for Israel"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="SalarySimulatorScreen/TopScreen"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -112.0
+margin_top = 32.0
+margin_right = -20.0
+margin_bottom = 124.0
+texture = ExtResource( 50 )
+expand = true
+stretch_mode = 6
+
+[node name="ValueBox" parent="SalarySimulatorScreen/TopScreen" instance=ExtResource( 51 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -123.0
+margin_top = 121.0
+margin_right = 155.0
+margin_bottom = 176.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "300"
+align = 1
+InisialValue = 300.0
+MinMax = Vector2( 0, 1e+07 )
+HasArrows = false
+FontColor = Color( 1, 1, 1, 1 )
+
+[node name="CloseBtn" parent="SalarySimulatorScreen/TopScreen" instance=ExtResource( 27 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -89.0
+margin_top = 112.0
+margin_right = -24.0
+margin_bottom = 192.0
+icon = ExtResource( 29 )
+
+[node name="Scroll" type="ScrollContainer" parent="SalarySimulatorScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 201.0
+margin_right = -10.0
+margin_bottom = -20.0
+theme = ExtResource( 41 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SalarySimulatorScreen/Scroll"]
+margin_right = 700.0
+margin_bottom = 1059.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AdHandler" type="Node" parent="."]
 script = ExtResource( 43 )
 ShowAds = true
 DontShowAdsOnDevices = "66125c610ed41faa"
+
+[node name="TopScreenPermanent" type="Control" parent="."]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 30 )
+script = ExtResource( 48 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftSideLabel" type="Label" parent="TopScreenPermanent"]
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 4.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Today: Friday"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightSideLabel" type="Label" parent="TopScreenPermanent"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -149.0
+margin_top = 4.0
+margin_right = -16.0
+margin_bottom = 2.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "10.8.22"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="OnToggle" from="CalendarScreen/TopMenu/ToggleBetween" to="CalendarScreen/TopMenu" method="_on_ToggleBetween_OnToggle"]
 [connection signal="BtnPressed" from="BottomUI/HBoxContainer/TimeScreen" to="." method="_on_CheckIn_BtnPressed"]
@@ -773,3 +925,5 @@ DontShowAdsOnDevices = "66125c610ed41faa"
 [connection signal="BtnPressed" from="BottomUI/HBoxContainer/SettingsScreen" to="." method="_on_Settings_BtnPressed"]
 [connection signal="pressed" from="HourEditorScreen/TopMenu/Accept" to="HourEditorScreen" method="_on_Accept_pressed"]
 [connection signal="pressed" from="HourEditorScreen/TopMenu/Decline" to="HourEditorScreen" method="_on_Decline_pressed"]
+[connection signal="UpdatedVar" from="SalarySimulatorScreen/TopScreen/ValueBox" to="SalarySimulatorScreen" method="_on_ValueBox_UpdatedVar"]
+[connection signal="pressed" from="SalarySimulatorScreen/TopScreen/CloseBtn" to="SalarySimulatorScreen" method="_on_CloseBtn_pressed"]

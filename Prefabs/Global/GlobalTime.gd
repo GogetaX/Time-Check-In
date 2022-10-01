@@ -507,7 +507,7 @@ func FilterChecksIns(CheckInData):
 					CheckInData["check_out"+Num]["hour"] = 24 + CheckInData["check_out"+Num]["hour"]
 	return CheckInData
 	
-func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
+func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150,custom_salary = 0):
 	#Values Updated Every Year
 	#TaxInfo, TaxMore Info: https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94
 	var TaxInfo = [[6450, 10.0],[9240, 14.0],[14840, 20.0],[20620, 31.0], [42910,35.0], [55270,47.0]]
@@ -525,8 +525,11 @@ func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150):
 	var Salary = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	if Salary == null:
 		return {"no_info_on_salary":""}
-	var GrossSalary = (SecondsWorked/3600.0 * Salary["salary"]) + (Sec125/3600.0 * Salary["salary"] * 1.25) + (Sec150/3600.0 * Salary["salary"] * 1.50)+Salary["bonus"]
-	
+	var GrossSalary = 0
+	if custom_salary == 0:
+		GrossSalary = (SecondsWorked/3600.0 * Salary["salary"]) + (Sec125/3600.0 * Salary["salary"] * 1.25) + (Sec150/3600.0 * Salary["salary"] * 1.50)+Salary["bonus"]
+	else:
+		GrossSalary = custom_salary
 	#GrossSalary =  13480+4137.3
 	
 	var Credit = 2.25
@@ -659,6 +662,13 @@ func ShowPopup(data):
 	p.ShowModulate(data)
 	var Answer = yield(p,"EmitedAnswer")
 	return Answer
+
+func ShowKeypad(self_node,On_Entry,exclude_buttons = ""):
+	var p = load("res://Prefabs/Elements/NumpadKeyboard.tscn").instance()
+	get_node("/root/MainScreen").add_child(p)
+	p.ShowModulate(exclude_buttons)
+	p.connect("OnEntry",self_node,On_Entry)
+	return p
 
 func GetWeekNumFromDate(Date):
 	var D = Date["day"]+DateDB[Date["year"]][Date["month"]]["start_from"]-2
