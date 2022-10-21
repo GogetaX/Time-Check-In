@@ -1,3 +1,9 @@
+Version 0.8.2:
+    +   Fixed: when changing languanges, the darkmode disables
+    +   Added: support for multi-jobs
+    +   Added: Daily working hours has now minutes as well
+    +   Added: Break hours
+
 Version 0.8.1:
     -   Added: Dark Mode
     -   Added: Subtotal time in Check-In Editor
