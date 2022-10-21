@@ -99,6 +99,7 @@ GlobalNotif="*res://Prefabs/Global/GlobalNotif.gd"
 localnotification="*res://scripts/localnotification.gd"
 MobileAds="*res://addons/admob/src/singletons/MobileAds.gd"
 GlobalHebrew="*res://Prefabs/Global/GlobalHebrew.gd"
+GlobalTheme="*res://Prefabs/Global/GlobalTheme.gd"
 
 [display]
 

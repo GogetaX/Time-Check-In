@@ -31,11 +31,9 @@ func SyncFromSave():
 	var S = GlobalSave.GetValueFromSettingCategory("AppSettings")
 	if S == null:
 		GlobalSave.AddVarsToSettings("AppSettings","DarkMode","Disable")
-		return
+	S = GlobalSave.GetValueFromSettingCategory("AppSettings")
 	if S["DarkMode"] == "Disable":
 		$ToggleBetween.AnimToggle(false)
-	else:
-		$ToggleBetween.AnimToggle(true)
 	SyncTheme()
 	
 	
@@ -49,7 +47,7 @@ func FinishedShow(T):
 	T.queue_free()
 	
 func AdjustThemeColor(ThemePath,color,invert = false):
-	var inv = load(ThemePath)
+	var inv = GlobalTheme.LoadResource(ThemePath)
 	var T = Tween.new()
 	add_child(T)
 	T.connect("tween_all_completed",self,"FinishedShow",[T])
@@ -69,7 +67,7 @@ func CanvasModul(to_color):
 	T.start()
 	
 func GetColor(ThemePath,color_path):
-	return load(ThemePath).get(color_path)
+	return GlobalTheme.LoadResource(ThemePath).get(color_path)
 	
 func SyncTheme():
 	var S = GlobalSave.GetValueFromSettingCategory("AppSettings")

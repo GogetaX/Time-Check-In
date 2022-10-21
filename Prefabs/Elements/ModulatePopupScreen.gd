@@ -39,7 +39,7 @@ func ShowModulate(Data):
 	for x in get_children():
 		if "Panel" in x.name:
 			if x.visible:
-				x.set("custom_styles/panel",ResourceLoader.load_interactive("res://Prefabs/Styles/ModulatePopupScreen.tres"))
+				x.set("custom_styles/panel",GlobalTheme.LoadResource("res://Prefabs/Styles/ModulatePopupScreen.tres"))
 				CurrentlyOpenNode = x
 				x.modulate = Color(1,1,1,0)
 				T.interpolate_property(x,"modulate",x.modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.3)
