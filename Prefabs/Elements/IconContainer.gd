@@ -21,13 +21,20 @@ func CheckForWhatsNew():
 	F.close()
 	#print(T)
 	var LastVersion = T.split("\n")[0].replace("Version ","")
+	var I = ""
+	
+	for x in T.split("\n"):
+		I += x+"\n"
+		if x == "":
+			break
+	
 	LastVersion = LastVersion.replace(":","")
 	var S = GlobalSave.GetValueFromSettingCategory("WhatsNew")
 	if S == null:
-		GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":T})
+		GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":I})
 	else:
 		if S["version"] != LastVersion:
-			GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":T})
+			GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":I})
 
 func GenerateIconedBtn(TexturePath,FuncName,dict):
 	var T = TextureRect.new()

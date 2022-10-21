@@ -26,8 +26,11 @@ func ShowDate(Delay,_Day,Info,Checks):
 	if Info.has("check_out"+String(Checks)):
 		CurCheckOutInfo = Info["check_out"+String(Checks)]
 		has_check_out = true
+		var p = GlobalTime.CalcTimePassed(Info["check_in"+String(Checks)],Info["check_out"+String(Checks)])
+		$HowLongWorked.text = TranslationServer.translate("Working Time").format([p,""])
 	else:
 		has_check_out = false
+		$HowLongWorked.text = "no_check_out_yet"
 	$DelayTimer.start(Delay)
 	CurCheckinNum = Checks
 	var CheckStr = String(Checks)

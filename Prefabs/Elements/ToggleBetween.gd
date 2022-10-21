@@ -2,21 +2,25 @@ tool
 extends Panel
 
 const SELECTED_COLOR = Color("2699FB")
-const TEXT_SELECTED_COLOR = Color.white
-const TEXT_UNSELECTED_COLOR = Color("bce0fd")
+const TEXT_SELECTED_COLOR = Color(1,1,1,1.0)
+const TEXT_UNSELECTED_COLOR = Color(1,1,1,0.2)
 var StartPos = Vector2()
 
 
 
 export (String) var LeftText = "Left" setget SetLeftText
 export (String) var RightText = "Right" setget SetRightText
+export (Color) var FontColor = Color(1,1,1,1) setget SetFontColor
 
 var ColorStyle
 var LeftSelected = true
 
 signal OnToggle(val)
 
-
+func SetFontColor(new):
+	FontColor = new
+	
+	
 func _ready():
 	StartPos = $Toggle.rect_position
 	ColorStyle = get_stylebox("panel").duplicate()
@@ -27,6 +31,8 @@ func _ready():
 	$LeftToggle.connect("gui_input",self,"LeftGUIInput")
 # warning-ignore:return_value_discarded
 	$RightToggle.connect("gui_input",self,"RightGUIInput")
+	$LeftToggle.set("custom_colors/font_color",FontColor)
+	$RightToggle.set("custom_colors/font_color",FontColor)
 	
 func SetLeftText(new):
 	LeftText = new

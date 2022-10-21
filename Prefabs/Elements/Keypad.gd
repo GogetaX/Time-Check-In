@@ -4,7 +4,7 @@ var Cmd = ""
 
 func _ready():
 	InitIcon()
-	
+
 func InitIcon():
 	Cmd = text
 	match text:

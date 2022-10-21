@@ -41,7 +41,7 @@ func _on_ValueBox_UpdatedVar(NewVar):
 		var PercentUp = int((NewVar / OldSalary -1) * 100)
 		if PercentUp >= 1 && PercentUp <= 100:
 			var MonthsUsed = GlobalSave.HowManyMonthsWorked()
-			if MonthsUsed != null && MonthsUsed.size()>2:
+			if MonthsUsed != null && MonthsUsed.size()>1:
 				PercentUp = String(PercentUp)+"%"
 				var PopupData = {"type": "Congrats","Title":TranslationServer.translate("salary_raise"),"Desc":TranslationServer.translate("congrats_on_salary_raise") % PercentUp}
 				GlobalTime.ShowPopup(PopupData)

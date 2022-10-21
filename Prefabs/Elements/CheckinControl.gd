@@ -233,7 +233,7 @@ func _on_StartStopBtn_button_down():
 	HoldTween.remove_all()
 	$StartStopBtn/TextureProgress.value = 0
 	$StartStopBtn/TextureProgress.visible = true
-	HoldTween.interpolate_property($StartStopBtn/TextureProgress,"value",0,100,1.5,Tween.TRANS_LINEAR,Tween.EASE_IN)
+	HoldTween.interpolate_property($StartStopBtn/TextureProgress,"value",0,100,0.8,Tween.TRANS_LINEAR,Tween.EASE_IN)
 	HoldTween.start()
 
 

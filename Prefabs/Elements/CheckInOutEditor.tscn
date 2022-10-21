@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Prefabs/Styles/Panel/TotalItem.tres" type="StyleBox" id=3]
 [ext_resource path="res://Prefabs/Elements/CheckInOutEditor.gd" type="Script" id=4]
 [ext_resource path="res://Prefabs/Elements/InteractiveButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Assets/Icons/trash-can.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -12,8 +13,8 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="CheckInOutEditor" type="Panel"]
 margin_right = 720.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 0, 120 )
+margin_bottom = 167.0
+rect_min_size = Vector2( 0, 167 )
 custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -35,12 +36,12 @@ __meta__ = {
 }
 
 [node name="CheckInName" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 136.0
-margin_top = -59.0
-margin_right = 338.0
-margin_bottom = -11.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.0
+margin_top = 1.0
+margin_right = -22.0
+margin_bottom = 49.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "check_in"
@@ -50,12 +51,12 @@ __meta__ = {
 }
 
 [node name="CheckOutName" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 136.0
-margin_top = -3.0
-margin_right = 339.0
-margin_bottom = 45.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.0
+margin_top = 57.0
+margin_right = -21.0
+margin_bottom = 105.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "checked_out"
@@ -64,13 +65,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HowLongWorked" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -49.0
+margin_bottom = -7.0
+custom_colors/font_color = Color( 0.737255, 0.878431, 0.992157, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "worked"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CheckInHourEdit" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 393.0
-margin_top = -59.0
-margin_right = 495.0
-margin_bottom = -11.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 33.0
+margin_top = 1.0
+margin_right = 135.0
+margin_bottom = 49.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "12"
@@ -80,12 +95,12 @@ __meta__ = {
 }
 
 [node name="CheckInHourEditor" type="LineEdit" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 375.0
-margin_top = -59.0
-margin_right = 495.0
-margin_bottom = -11.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 15.0
+margin_top = 1.0
+margin_right = 135.0
+margin_bottom = 49.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
@@ -96,12 +111,12 @@ placeholder_text = "12"
 caret_blink = true
 
 [node name="CheckOutHourEditor" type="LineEdit" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 375.0
-margin_top = -3.0
-margin_right = 495.0
-margin_bottom = 45.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 15.0
+margin_top = 57.0
+margin_right = 135.0
+margin_bottom = 105.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
@@ -112,12 +127,12 @@ placeholder_text = "12"
 caret_blink = true
 
 [node name="CheckInMinuteEditor" type="LineEdit" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 524.0
-margin_top = -59.0
-margin_right = 644.0
-margin_bottom = -11.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 164.0
+margin_top = 1.0
+margin_right = 284.0
+margin_bottom = 49.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
@@ -127,12 +142,12 @@ placeholder_text = "12"
 caret_blink = true
 
 [node name="CheckOutMinuteEditor" type="LineEdit" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 524.0
-margin_top = -3.0
-margin_right = 644.0
-margin_bottom = 45.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 164.0
+margin_top = 57.0
+margin_right = 284.0
+margin_bottom = 105.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
@@ -142,12 +157,12 @@ placeholder_text = "12"
 caret_blink = true
 
 [node name="CheckOutHourEdit" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 397.0
-margin_top = -3.0
-margin_right = 495.0
-margin_bottom = 45.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 37.0
+margin_top = 57.0
+margin_right = 135.0
+margin_bottom = 105.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "12"
@@ -157,12 +172,12 @@ __meta__ = {
 }
 
 [node name="CheckInMinuteEdit" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 524.0
-margin_top = -59.0
-margin_right = 626.0
-margin_bottom = -11.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 164.0
+margin_top = 1.0
+margin_right = 266.0
+margin_bottom = 49.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "12"
@@ -171,12 +186,12 @@ __meta__ = {
 }
 
 [node name="CheckOutMinuteEdit" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 524.0
-margin_top = -3.0
-margin_right = 621.0
-margin_bottom = 45.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 164.0
+margin_top = 57.0
+margin_right = 261.0
+margin_bottom = 105.0
 custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "12"
@@ -185,12 +200,12 @@ __meta__ = {
 }
 
 [node name="Dots1" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 505.0
-margin_top = -59.0
-margin_right = 516.0
-margin_bottom = -11.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 145.0
+margin_top = 1.0
+margin_right = 156.0
+margin_bottom = 49.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = ":"
@@ -199,12 +214,12 @@ __meta__ = {
 }
 
 [node name="Dots2" type="Label" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 505.0
-margin_top = -3.0
-margin_right = 516.0
-margin_bottom = 45.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 145.0
+margin_top = 57.0
+margin_right = 156.0
+margin_bottom = 105.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = ":"
