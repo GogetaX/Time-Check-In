@@ -26,8 +26,9 @@ func ShowDate(Delay,_Day,Info,Checks):
 	if Info.has("check_out"+String(Checks)):
 		CurCheckOutInfo = Info["check_out"+String(Checks)]
 		has_check_out = true
-		var p = GlobalTime.CalcTimePassed(Info["check_in"+String(Checks)],Info["check_out"+String(Checks)])
-		$HowLongWorked.text = TranslationServer.translate("Working Time").format([p,""])
+		
+		#var p = GlobalTime.CalcTimePassed(Info["check_in"+String(Checks)],Info["check_out"+String(Checks)])
+		#$HowLongWorked.text = TranslationServer.translate("Working Time").format([p,""])
 	else:
 		has_check_out = false
 		$HowLongWorked.text = "no_check_out_yet"
@@ -61,9 +62,23 @@ func ShowDate(Delay,_Day,Info,Checks):
 		
 	
 	$CheckInMinuteEdit.text = Min
+	UpdateHowLongWorkd()
+	
+func UpdateHowLongWorkd():
+	if !$CheckOutHourEdit.visible:
+		$HowLongWorked.text = TranslationServer.translate("no_check_out_yet")
+		return
+	var CheckInHour = int($CheckInHourEdit.text)
+	var CheckInMinute = int($CheckInMinuteEdit.text)
+	
+	var CheckOutHour = int($CheckOutHourEdit.text)
+	var CheckOutMinute = int($CheckOutMinuteEdit.text)
+	var data_in = {"hour":CheckInHour,"minute":CheckInMinute}
+	var data_out = {"hour":CheckOutHour,"minute":CheckOutMinute}
+	var p = GlobalTime.CalcTimePassedFull(data_in,data_out)
+	$HowLongWorked.text = TranslationServer.translate("Working Time").format([p,""])
 	
 	
-
 func HideAllEdits():
 	for x in get_children():
 		if x is LineEdit:
@@ -102,10 +117,11 @@ func OnEntry(Key):
 		"<":
 			if CurEditor.text.length() > 0:
 				CurEditor.text = CurEditor.text.substr(0,CurEditor.text.length()-1)
-		"ENT":
+		"ENT","TAP_OUTSIDE":
 			CurEditor.visible = false
 			if CurEditor.text.is_valid_integer():
 				UpdateCurEditor()
+				UpdateHowLongWorkd()
 			else:
 				CurLabelEdit.visible = true
 		"CLS":

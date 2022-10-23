@@ -10,6 +10,8 @@ func _ready():
 	InitToday()
 	
 func ChangedUI(BtnNode,_Group):
+	if BtnNode == null:
+		return
 	match BtnNode.name:
 		"TimeScreen":
 			visible = false

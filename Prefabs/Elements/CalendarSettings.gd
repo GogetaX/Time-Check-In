@@ -35,9 +35,12 @@ func WeekClick(event,weekLabel):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			is_pressed = weekLabel
+			$PressTimer.start()
 		if !event.pressed && is_pressed == weekLabel:
-			is_pressed = null
-			SelectWeekLabel(weekLabel)
+			if is_pressed != null:
+				if is_pressed.get_global_rect().has_point(event.global_position) && !$PressTimer.is_stopped():
+					is_pressed = null
+					SelectWeekLabel(weekLabel)
 
 func LabelToNum(WeekLabel):
 	return int(WeekLabel.name.replace("Num",""))

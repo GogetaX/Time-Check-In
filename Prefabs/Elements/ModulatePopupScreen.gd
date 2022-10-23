@@ -107,3 +107,5 @@ func _on_Background_gui_input(event):
 		if event.pressed:
 			if CurrentlyOpenNode.get_node("BtnContainer").get_child_count()==1:
 				PressedButton(CurrentlyOpenNode.get_node("BtnContainer").get_child(0))
+			if CurrentlyOpenNode.get_node("BtnContainer").get_node_or_null("CloseBtn"):
+				PressedButton(CurrentlyOpenNode.get_node("BtnContainer").get_node("CloseBtn"))

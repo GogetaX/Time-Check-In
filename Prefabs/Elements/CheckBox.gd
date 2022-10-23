@@ -21,6 +21,8 @@ func _ready():
 func _gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
+			$PressTimer.start()
+		if !event.pressed && get_global_rect().has_point(event.global_position) && !$PressTimer.is_stopped():
 			AnimToggle()
 
 func AnimToggle(emit_signal = true):

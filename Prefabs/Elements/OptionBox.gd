@@ -5,6 +5,15 @@ func _ready():
 	focus_mode = Control.FOCUS_NONE
 # warning-ignore:return_value_discarded
 	connect("about_to_show",self,"about_to_show")
+# warning-ignore:return_value_discarded
+	get_popup().connect("modal_closed",self,"Closed")
+
+func Closed():
+	get_popup().margin_left = 0
+	get_popup().margin_right = 0
+	get_popup().margin_bottom = 0
+	get_popup().margin_top = 0
+	get_popup().rect_position = Vector2.ZERO
 	
 func about_to_show():
 	for a in get_children():
@@ -32,3 +41,12 @@ func ForceShowOnMouse(Position):
 		get_popup().rect_position.y = 0
 	
 	get_popup().show_modal(false)
+
+
+func _on_Currency_gui_input(event):
+	if event is InputEventMouseButton:
+		#print(get_rect().has_point(event.position))
+		if event.pressed:
+			$PressTimer.start()
+		if !event.pressed && get_global_rect().has_point(event.global_position) && !$PressTimer.is_stopped():
+			ForceShowOnMouse(event.global_position)

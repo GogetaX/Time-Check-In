@@ -52,7 +52,7 @@ margin_right = 136.0
 margin_bottom = 151.0
 text = "2.25"
 InisialValue = 2.25
-MinMax = Vector2( 0.5, 7.5 )
+MinMax = Vector2( 0.5, 15.95 )
 HasArrows = false
 FrontText = "Coefficient"
 

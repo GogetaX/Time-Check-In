@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Flags/israel.png" type="Texture" id=2]
 [ext_resource path="res://Prefabs/Styles/OptionBox/OptionBox.tres" type="Theme" id=3]
 [ext_resource path="res://Prefabs/Elements/OptionBox.gd" type="Script" id=4]
+[ext_resource path="res://Prefabs/Elements/PressTimer.tscn" type="PackedScene" id=5]
 
 [node name="Currency" type="MenuButton"]
 margin_left = 448.0
@@ -15,6 +16,8 @@ theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_colors/font_color_pressed = Color( 0.14902, 0.6, 0.984314, 1 )
 custom_fonts/font = ExtResource( 1 )
+action_mode = 1
+button_mask = 0
 enabled_focus_mode = 0
 text = "Currency"
 expand_icon = true
@@ -23,3 +26,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PressTimer" parent="." instance=ExtResource( 5 )]
+
+[connection signal="gui_input" from="." to="." method="_on_Currency_gui_input"]

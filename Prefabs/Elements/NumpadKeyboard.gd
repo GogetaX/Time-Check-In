@@ -60,7 +60,7 @@ func FinishedTweenAndQueue(T):
 func _on_NumpadKeyboard_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
-			emit_signal("OnEntry","CLS")
+			emit_signal("OnEntry","TAP_OUTSIDE")
 			HideModulate()
 
 

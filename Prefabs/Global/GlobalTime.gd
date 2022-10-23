@@ -420,6 +420,18 @@ func HowMuchIEarnedFromSeconds(Seconds):
 	return [Ret,sufix]
 	#TranslationServer.translate("Earned").format([GlobalTime.FloatToString(((WithNosafot[0]/3600.0*SalorySettings["salary"])+(WithNosafot[1]/3600.0*SalorySettings["salary"])*1.25+(WithNosafot[2]/3600.0*SalorySettings["salary"])*1.5),2),sufix,TranslationServer.translate(has_nosafot_rate)])
 
+func CalcTimePassedFull(FromTime,ToTime):
+	var FromSeconds = DateToSeconds(FromTime)
+	var ToSeconds = DateToSeconds(ToTime)
+	
+	var SecondsPassed = ToSeconds - FromSeconds
+	var Date = SecondsToDate(SecondsPassed)
+	var minute = String(Date["minute"])
+	if minute.length() == 1:
+		minute = "0"+minute
+	
+	return String(Date["hour"])+":"+minute
+	
 func CalcTimePassed(FromTime,ToTime,PlusSeconds = 0):
 	var FromSeconds = DateToSeconds(FromTime)
 	var ToSeconds = DateToSeconds(ToTime)

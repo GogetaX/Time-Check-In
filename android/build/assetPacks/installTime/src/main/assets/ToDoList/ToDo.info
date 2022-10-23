@@ -1,3 +1,17 @@
+Version TODO:
+    +   Added: support for multi-jobs
+    +   Added: Daily working hours has now minutes as well
+    +   Added: Break hours
+    +   Added: More dark mode theme change
+
+Version 0.8.2:
+    -   Fixed: while scrolling, the buttons are bein pressed
+    -   Fixed: Stability bugs
+    -   Fixed: when changing languanges, the darkmode disables
+    -   Fixed: Israel Coefficient (Custom was working)
+    -   Fixed: Numpad tap outside now saves instead of clears input
+    -   Fixed: Hour Editor, How long worked was not correct and not updating
+
 Version 0.8.1:
     -   Added: Dark Mode
     -   Added: Subtotal time in Check-In Editor

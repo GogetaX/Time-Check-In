@@ -116,7 +116,8 @@ func InitItemsInReport():
 			if b is MenuButton:
 				for c in b.get_children():
 					#c.set_item_metadata(c.get_current_index(),c.get_item_text())
-					c.connect("index_pressed",self,"SelectReport",[c])
+					if not c is Timer:
+						c.connect("index_pressed",self,"SelectReport",[c])
 		
 func SelectReport(Index,Btn):
 	var txt = Btn.get_item_metadata(Index)

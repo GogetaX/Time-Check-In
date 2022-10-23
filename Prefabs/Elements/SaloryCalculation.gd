@@ -9,7 +9,8 @@ func _ready():
 	
 func InitAllCurrencyButtons():
 	for x in $Currency.get_children():
-		x.connect("index_pressed",self,"SelectCurrency",[x])
+		if not x is Timer:
+			x.connect("index_pressed",self,"SelectCurrency",[x])
 
 
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size30Bold.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Prefabs/Styles/Panel/SettingPanel.tres" type="StyleBox" id=3]
 [ext_resource path="res://Prefabs/Elements/CalendarSettings.gd" type="Script" id=4]
+[ext_resource path="res://Prefabs/Elements/PressTimer.tscn" type="PackedScene" id=5]
 
 [node name="CalendarSettings" type="Panel"]
 margin_top = 668.0
@@ -101,3 +102,5 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Sun"
 align = 1
+
+[node name="PressTimer" parent="." instance=ExtResource( 5 )]

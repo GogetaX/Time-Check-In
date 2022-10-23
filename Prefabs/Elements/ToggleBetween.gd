@@ -46,6 +46,8 @@ func LeftGUIInput(event):
 	if LeftSelected: return
 	if event is InputEventMouseButton:
 		if event.pressed:
+			$PressTimer.start()
+		if !event.pressed && $LeftToggle.get_global_rect().has_point(event.global_position) && !$PressTimer.is_stopped():
 			LeftSelected = true
 			AnimToggle(true)
 			emit_signal("OnToggle",LeftSelected)
@@ -54,6 +56,8 @@ func RightGUIInput(event):
 	if !LeftSelected: return
 	if event is InputEventMouseButton:
 		if event.pressed:
+			$PressTimer.start()
+		if !event.pressed && $RightToggle.get_global_rect().has_point(event.global_position) && !$PressTimer.is_stopped():
 			LeftSelected = false
 			AnimToggle(true)
 			emit_signal("OnToggle",LeftSelected)
@@ -61,6 +65,8 @@ func RightGUIInput(event):
 func _gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
+			$PressTimer.start()
+		if !event.pressed && get_global_rect().has_point(event.global_position) && !$PressTimer.is_stopped():
 			AnimToggle()
 			
 func AnimToggle(update = false):

@@ -76,7 +76,7 @@ func OnEntry(Key):
 		"<":
 			if $LineEdit.text.length() > 0:
 				$LineEdit.text = $LineEdit.text.substr(0,$LineEdit.text.length()-1)
-		"ENT":
+		"ENT","TAP_OUTSIDE":
 			$LineEdit.visible = false
 			if $LineEdit.text.is_valid_integer() || $LineEdit.text.is_valid_float():
 				SetInisialValue($LineEdit.text.to_float())

@@ -109,6 +109,9 @@ align = 2
 max_length = 2
 placeholder_text = "12"
 caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CheckOutHourEditor" type="LineEdit" parent="."]
 anchor_left = 0.5

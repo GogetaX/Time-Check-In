@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Prefabs/Elements/CategoryPanel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Icons/info (1).png" type="Texture" id=3]
+[ext_resource path="res://Prefabs/Styles/Panel/SettingTitle.tres" type="StyleBox" id=4]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform vec4 u_color_key : hint_color;
+uniform vec4 u_replacement_color : hint_color;
+
+void fragment() {
+    vec4 col = texture(TEXTURE, UV);
+	float alpha = col.a;
+	
+    vec4 d4 = abs(col - u_color_key);
+    float d = max(max(d4.r, d4.g), d4.b);
+    if(d < 0.01) {
+        col = u_replacement_color;
+    }
+    COLOR = col;
+	COLOR.a = alpha;
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/u_color_key = Color( 0, 0, 0, 1 )
+shader_param/u_replacement_color = Color( 1, 1, 1, 1 )
+
+[node name="CategoryPanel" type="Panel"]
+anchor_right = 1.0
+rect_min_size = Vector2( 100, 60 )
+mouse_filter = 1
+size_flags_horizontal = 3
+custom_styles/panel = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Category"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="TextureRect" parent="."]
+visible = false
+material = SubResource( 3 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -56.0
+margin_top = -20.0
+margin_right = -16.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="Info" to="." method="_on_Info_gui_input"]

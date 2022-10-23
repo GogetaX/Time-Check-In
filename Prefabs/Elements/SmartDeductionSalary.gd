@@ -13,7 +13,8 @@ func _ready():
 	
 func InitCountryButton():
 	for x in $Country.get_children():
-		x.connect("index_pressed",self,"SelectCountry",[x])
+		if not x is Timer:
+			x.connect("index_pressed",self,"SelectCountry",[x])
 		
 func LoadSettings():
 	var S = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")

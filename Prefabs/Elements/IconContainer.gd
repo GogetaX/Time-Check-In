@@ -20,21 +20,30 @@ func CheckForWhatsNew():
 	var T = F.get_as_text()
 	F.close()
 	#print(T)
-	var LastVersion = T.split("\n")[0].replace("Version ","")
-	var I = ""
-	
+	var LastVersion = null
+	var VersionList = {}
+	var CurVer = null
 	for x in T.split("\n"):
-		I += x+"\n"
-		if x == "":
-			break
-	
-	LastVersion = LastVersion.replace(":","")
+		if x.begins_with("Version"):
+			CurVer = x.replace("Version ","")
+			CurVer = CurVer.replace(":","")
+			if LastVersion == null && CurVer != "TODO":
+				LastVersion = CurVer
+		else:
+			if x != "" && CurVer != null:
+				if !VersionList.has(CurVer):
+					VersionList[CurVer] = "Version "+CurVer+":\n"+x
+				else:
+					VersionList[CurVer] = VersionList[CurVer]+"\n"+x
+
+	if LastVersion == null:
+		return
 	var S = GlobalSave.GetValueFromSettingCategory("WhatsNew")
 	if S == null:
-		GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":I})
+		GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":VersionList[LastVersion]})
 	else:
 		if S["version"] != LastVersion:
-			GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":I})
+			GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":VersionList[LastVersion]})
 
 func GenerateIconedBtn(TexturePath,FuncName,dict):
 	var T = TextureRect.new()

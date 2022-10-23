@@ -7,7 +7,8 @@ func _ready():
 	
 func InitLanguangeButton():
 	for x in $Lang.get_children():
-		x.connect("index_pressed",self,"SelectLang",[x])
+		if not x is Timer:
+			x.connect("index_pressed",self,"SelectLang",[x])
 
 func SyncFromSave():
 	var S = GlobalSave.GetValueFromSettingCategory("Languange")
