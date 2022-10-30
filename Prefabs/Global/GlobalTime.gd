@@ -174,6 +174,7 @@ func InitSecondTimer():
 	SecondTimer.connect("timeout",self,"timeout")
 	SecondTimer.start(-1)
 	
+
 func timeout():
 	OldTime = OS.get_datetime()
 	emit_signal("InitSecond")
@@ -192,6 +193,15 @@ func AddRetroTimeChange(ToTimeMode,CurInfo):
 			emit_signal("TimeModeChangedTo",CurTimeMode)
 			return
 	emit_signal("TimeModeChangedTo",ToTimeMode)
+
+func FillCheckInOutArray(CheckInData,CheckOutData):
+	var CurDate = OS.get_datetime()
+	if CheckInData["year"] != CurDate["year"] || CheckInData["month"] != CurDate["month"] || CheckInData["day"] != CurDate["day"]:
+		return
+	HasCheckOut = []
+	HasCheckin = []
+	HasCheckin.append(CheckInData)
+	HasCheckOut.append(CheckOutData)
 	
 func ChangeTimeModes(ToTimeMode):
 	CurTimeMode = ToTimeMode
@@ -247,7 +257,7 @@ func OffsetDay(CurDay,Offset_Day):
 		CurDay["day"] = DateDB[CurDay["year"]][CurDay["month"]]["tot_days"]-CurDay["day"]
 	return CurDay
 
-	
+
 func CheckIfOnGoing(Info):
 	var TotChecks = 0
 	for x in Info:
@@ -360,6 +370,11 @@ func CalcAllTimePassed():
 		CurTime = GetLastCheckOut()
 	return CalcTimePassed(GetLastCheckIn(),CurTime,Seconds)
 	
+func SyncCurDay(Date):
+	var CurDay = OS.get_datetime()
+	if CurDay["day"] == Date["day"] && CurDay["month"] == Date["month"] && CurDay["year"] == Date["year"]:
+		GlobalSave.emit_signal("UpdateToday")
+		
 func CalcAllCheckInsAndOutsToSeconds():
 	var Seconds = 0
 	if HasCheckOut != []:

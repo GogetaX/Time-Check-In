@@ -1,8 +1,15 @@
 Version TODO:
     +   Added: support for multi-jobs
-    +   Added: Daily working hours has now minutes as well
     +   Added: Break hours
-    +   Added: More dark mode theme change
+    +   Added: Export to CSV file
+
+Version 0.8.3:
+    -   Added: Daily working hours has now minutes as well
+    -   Added: Indian INR Currency
+    -   Fixed: when adding Working day for today was not working properly
+    -   Fixed: the Main screen was not updating when reporting work day
+    -   Changed: the day and Hour on top of the screen now goes in a row
+    -   Changed: Instead of pause, now its Check-Out
 
 Version 0.8.2:
     -   Fixed: while scrolling, the buttons are bein pressed

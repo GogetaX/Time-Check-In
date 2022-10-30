@@ -91,6 +91,7 @@ __meta__ = {
 }
 
 [node name="TimeScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -119.0
@@ -156,7 +157,7 @@ __meta__ = {
 [node name="TopMenu" type="Panel" parent="CalendarScreen"]
 anchor_right = 1.0
 margin_bottom = 180.0
-rect_min_size = Vector2( 0, 180 )
+rect_min_size = Vector2( 0, 185 )
 custom_styles/panel = ExtResource( 12 )
 script = ExtResource( 38 )
 __meta__ = {
@@ -212,18 +213,17 @@ margin_right = 162.0
 icon = ExtResource( 16 )
 
 [node name="ToggleBetween" parent="CalendarScreen/TopMenu" instance=ExtResource( 37 )]
-margin_top = 72.0
-margin_bottom = 108.0
+margin_top = 79.0
+margin_bottom = 115.0
 custom_styles/panel = SubResource( 3 )
 LeftText = "Calendar"
 RightText = "List"
 
 [node name="Calendar" type="Control" parent="CalendarScreen"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 180.0
+margin_top = 184.0
 margin_right = -10.0
 margin_bottom = -10.0
 __meta__ = {
@@ -232,7 +232,7 @@ __meta__ = {
 
 [node name="VMonth" type="GridContainer" parent="CalendarScreen/Calendar"]
 anchor_right = 1.0
-margin_top = 48.0
+margin_top = 5.0
 margin_bottom = 468.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 20
@@ -350,10 +350,11 @@ margin_right = 700.0
 margin_bottom = 259.0
 
 [node name="List" type="Control" parent="CalendarScreen"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 183.0
+margin_top = 185.0
 margin_right = -10.0
 margin_bottom = -10.0
 __meta__ = {
@@ -562,7 +563,6 @@ margin_top = 74.0
 margin_bottom = 254.0
 
 [node name="SettingsScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -118.0
@@ -573,7 +573,7 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="SettingsScreen"]
 anchor_right = 1.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
+rect_min_size = Vector2( 0, 80 )
 custom_styles/panel = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -582,7 +582,7 @@ __meta__ = {
 [node name="ScrollContainer" type="ScrollContainer" parent="SettingsScreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 51.0
+margin_top = 81.0
 theme = ExtResource( 41 )
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -590,7 +590,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/ScrollContainer"]
-margin_right = 720.0
+margin_right = 710.0
 margin_bottom = 1467.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -741,7 +741,6 @@ texture = ExtResource( 8 )
 BtnGroup = "Menu"
 
 [node name="HourEditorScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 30 )
@@ -800,6 +799,7 @@ __meta__ = {
 [node name="CheckInOutEditor" parent="HourEditorScreen/VBoxContainer" instance=ExtResource( 31 )]
 
 [node name="SalarySimulatorScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 53 )
@@ -907,7 +907,8 @@ __meta__ = {
 [node name="LeftSideLabel" type="Label" parent="TopScreenPermanent"]
 anchor_bottom = 1.0
 margin_left = 20.0
-margin_top = 4.0
+margin_right = 186.0
+margin_bottom = 5.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Today: Friday"

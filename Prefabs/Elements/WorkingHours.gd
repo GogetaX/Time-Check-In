@@ -8,8 +8,14 @@ func SyncFromSave():
 	var S = GlobalSave.GetValueFromSettingCategory("WorkingHours")
 	if S == null:
 		GlobalSave.AddVarsToSettings("WorkingHours","hours",$WorkingHours.InisialValue)
+		GlobalSave.AddVarsToSettings("WorkingHours","minutes",$WorkingMinutes.InisialValue)
 		return
-
+		
+	if S.has("minutes"):
+		$WorkingMinutes.SetInisialValue(S["minutes"])
+	else:
+		$WorkingMinutes.SetInisialValue(0)
+		
 	if S.has("hours"):
 		$WorkingHours.SetInisialValue(S["hours"])
 		
@@ -31,3 +37,7 @@ func _on_CheckOutReminder_OnToggle():
 				var PopupData = {"type": "ok","Title":TranslationServer.translate("Problem"),"Desc":TranslationServer.translate("Notification is not enabled in the device settings")}
 				GlobalTime.ShowPopup(PopupData)
 				$CheckOutReminder.AnimToggle()
+
+
+func _on_WorkingMinutes_UpdatedVar(NewVar):
+	GlobalSave.AddVarsToSettings("WorkingHours","minutes",NewVar)

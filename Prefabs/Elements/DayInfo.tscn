@@ -107,6 +107,7 @@ expand = true
 stretch_mode = 6
 
 [node name="HolidayReport" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -153,7 +154,6 @@ expand = true
 stretch_mode = 6
 
 [node name="CheckInData" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -226,7 +226,7 @@ custom_colors/font_color_hover = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_colors/font_color_pressed = Color( 0.498039, 0.768627, 0.992157, 1 )
 text = "..."
 align = 2
-items = [ "Edit working hours", null, 0, false, false, 0, 0, null, "", false ]
+items = [  ]
 
 [node name="OnGoingTimer" type="Timer" parent="."]
 one_shot = true

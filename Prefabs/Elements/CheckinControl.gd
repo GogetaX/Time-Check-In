@@ -13,6 +13,7 @@ func _ready():
 	GlobalTime.connect("TimeModeChangedTo",self,"TimeModeChangedTo")
 # warning-ignore:return_value_discarded
 	GlobalSave.connect("UpdateToday",self,"UpdateToday")
+# warning-ignore:return_value_discarded
 	InitCurrentStatus()
 	PopupForYesterday()
 	PopupForSometimeAgo()
@@ -55,7 +56,7 @@ func PopupForYesterday():
 	
 	GlobalTime.ForgotCheckInYesterday = false
 
-func InitCurrentStatus():
+func InitCurrentStatus(report_only = false):
 	var CurDate = OS.get_datetime()
 	var CurDay = GlobalSave.LoadSpecificFile(CurDate["month"],CurDate["year"])
 	var TotChecks = 0
@@ -71,12 +72,15 @@ func InitCurrentStatus():
 					
 					while CurDay[x].has("check_in"+String(CurCheck)):
 						TotChecks += 1
-						GlobalTime.AddRetroTimeChange(GlobalTime.TIME_CHECKED_IN,CurDay[x]["check_in"+String(CurCheck)])
+						if !report_only:
+							GlobalTime.AddRetroTimeChange(GlobalTime.TIME_CHECKED_IN,CurDay[x]["check_in"+String(CurCheck)])
 						if CurDay[x].has("check_out"+String(CurCheck)):
-							GlobalTime.AddRetroTimeChange(GlobalTime.TIME_PAUSED,CurDay[x]["check_out"+String(CurCheck)])
+							if !report_only:
+								GlobalTime.AddRetroTimeChange(GlobalTime.TIME_PAUSED,CurDay[x]["check_out"+String(CurCheck)])
 							TotChecks -= 1
 						CurCheck += 1
-				
+	
+	
 	if TotChecks >= 1:
 		TimeModeChangedTo(GlobalTime.TIME_CHECKED_IN)
 	else:
@@ -86,16 +90,9 @@ func InitCurrentStatus():
 			TimeModeChangedTo(GlobalTime.TIME_PAUSED)
 
 func UpdateToday():
-	var CurDate = OS.get_datetime()
-	var CurDay = GlobalSave.LoadSpecificFile(CurDate["month"],CurDate["year"])
-	$HolidayToday.visible = false
-	if CurDay != null:
-		for x in CurDay:
-			if x == CurDate["day"]:
-				if CurDay[x].has("report"):
-					$HolidayToday.visible = true
-					ShowDayOff(CurDay[x]["report"])
-					
+	InitCurrentStatus(true)
+	
+
 func ShowDayOff(Data):
 	if Data == null:
 		$HolidayToday.visible = false
@@ -158,7 +155,7 @@ func SyncNosafot():
 	if has_150:
 		if PassedTime > (WorkHours["hours"]+2) * 3600:
 			Worked150 = PassedTime - ((WorkHours["hours"]+2) * 3600)
-			
+
 	if Worked125 == 0:
 		if $Nosafot125Info.visible:
 			$Nosafot125Info.visible = false

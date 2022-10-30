@@ -22,7 +22,7 @@ func InitToday():
 	var Date = OS.get_datetime()
 	$RightSideLabel.text = String(Date["day"])+"."+String(Date["month"])+"."+String(Date["year"]).substr(2,2)
 	$LeftSideLabel.text = GlobalTime.WeekDayToDayName(Date["weekday"])[1]
-	$LeftSideLabel.text += " "+FilterNumber(Date["hour"])+":"+FilterNumber(Date["minute"])
+	$LeftSideLabel.text += "\n"+FilterNumber(Date["hour"])+":"+FilterNumber(Date["minute"])
 
 func FilterNumber(Num):
 	if Num < 10:

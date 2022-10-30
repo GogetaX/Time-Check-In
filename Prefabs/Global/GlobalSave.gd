@@ -20,6 +20,7 @@ func AddCheckIn(CheckInDate):
 	AddMySavesPath(CheckInDate)
 	var C = FindEmptyCheckIn(MySaves[CheckInDate["year"]][CheckInDate["month"]][CheckInDate["day"]])
 	MySaves[CheckInDate["year"]][CheckInDate["month"]][CheckInDate["day"]]["check_in"+String(C)] = CheckInDate
+	
 	SaveToFile()
 	
 func FindEmptyCheckIn(data):
@@ -50,26 +51,21 @@ func AddDayOff(DayOffDay):
 	AddMySavesPath(DayOffDay)
 	MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]]["report"] = "Day Off"
 	SaveToFile()
-	GlobalTime.emit_signal("UpdateSpecificDayInfo",DayOffDay["day"],MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]])
-	
-	var CurDate = OS.get_datetime()
-	if DayOffDay["day"] == CurDate["day"] && DayOffDay["month"] == CurDate["month"] && DayOffDay["year"] == CurDate["year"]:
-		emit_signal("UpdateToday")
 	
 func AddHoliday(DayOffDay):
 	AddMySavesPath(DayOffDay)
 	MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]]["report"] = "Holiday"
 	SaveToFile()
-	GlobalTime.emit_signal("UpdateSpecificDayInfo",DayOffDay["day"],MySaves[DayOffDay["year"]][DayOffDay["month"]][DayOffDay["day"]])
-	var CurDate = OS.get_datetime()
-	if DayOffDay["day"] == CurDate["day"] && DayOffDay["month"] == CurDate["month"] && DayOffDay["year"] == CurDate["year"]:
-		emit_signal("UpdateToday")
 	
 func RemoveReport(Date):
 	AddMySavesPath(Date)
 	if MySaves[Date["year"]][Date["month"]][Date["day"]].has("report"):
 		MySaves[Date["year"]][Date["month"]][Date["day"]].erase("report")
+	
+	var CurDate = OS.get_datetime()
 	SaveToFile()
+	if Date["day"] == CurDate["day"] && Date["month"] == CurDate["month"] && Date["year"] == CurDate["year"]:
+		emit_signal("UpdateToday")
 	GlobalTime.emit_signal("UpdateSpecificDayInfo",Date["day"],MySaves[Date["year"]][Date["month"]][Date["day"]])
 
 func HasTodayReport():
@@ -150,6 +146,13 @@ func AddReportOptionsToNode(NodeName,ExcludeWorkDay = false):
 		NodeName.get_popup().add_icon_item(GlobalSave.ReportToImage("Work day"),"Check In")
 		NodeName.get_popup().set_item_metadata(MetaData,"Check In")
 	
+func AddCustomListOptionsToNode(NodeName:MenuButton,array):
+	var MetaData = 0
+	for x in array:
+		NodeName.get_popup().add_item(TranslationServer.translate(x))
+		NodeName.get_popup().set_item_metadata(MetaData,x)
+		MetaData += 1
+		
 func ReportToImage(ReportText):
 	match ReportText:
 		"Day Off":

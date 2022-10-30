@@ -48,7 +48,7 @@ func SelectedReport(index):
 		"Holiday":
 			GlobalSave.AddHoliday(CurData)
 		"Work day":
-			GlobalSave.RemoveReport(CurData)
+			GlobalSave.RemoveDayComplete(CurData)
 			var CheckInDate = CurData.duplicate()
 			
 			CheckInDate["hour"] = 0
@@ -61,7 +61,10 @@ func SelectedReport(index):
 				CheckOutDate["hour"] += 8
 			else:
 				CheckOutDate["hour"] += S["hours"]
+				if S.has("minutes"):
+					CheckOutDate["minute"] = S["minutes"]
 			GlobalSave.AddCheckOut(CheckOutDate)
+			GlobalTime.FillCheckInOutArray(CheckInDate,CheckOutDate)
 			GlobalTime.emit_signal("UpdateSpecificDayInfo",CheckOutDate["day"],GlobalSave.MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])
 		_:
 			print(report, " not added yet.")
@@ -105,7 +108,8 @@ func InitInfo(date,data):
 		
 	if data.has("report"):
 		GlobalSave.AddReportOptionsToNode($Change)
-		$Change.get_popup().connect("index_pressed",self,"SelectedReport")
+		if !$Change.get_popup().is_connected("index_pressed",self,"SelectedReport"):
+			$Change.get_popup().connect("index_pressed",self,"SelectedReport")
 		$HBoxContainer/CheckIns.text = data["report"]
 		$HBoxContainer/Time/Holiday.texture = GlobalSave.ReportToImage(data["report"])
 		var C = GlobalTime.GetColorFromReport(data["report"])

@@ -6,6 +6,7 @@ export (Vector2) var MinMax = Vector2(0,300.0) setget SetMinMax
 export (bool) var HasArrows = true setget SetHasArrows
 export (String) var FrontText = "Salary" setget SetFrontText
 export (Color) var FontColor = Color("#2699fb") setget SetFontColor
+export (bool) var MinuteIndicator = false setget SetMinuteIndicator
 
 signal UpdatedVar(NewVar)
 
@@ -18,6 +19,14 @@ func _ready():
 # warning-ignore:return_value_discarded
 	$VirtualKeyboardTimer.connect("timeout",self,"CheckIfVirtualKeyboard")
 
+func SetMinuteIndicator(new):
+	MinuteIndicator = new
+	if MinuteIndicator:
+		if text.length()==1:
+			text = "0"+text
+		if text.length()==0:
+			text = "00"
+			
 func SetFontColor(new):
 	FontColor = new
 	$Label.set("custom_colors/font_color",FontColor)
@@ -41,6 +50,7 @@ func SetInisialValue(new):
 	elif InisialValue < MinMax.x:
 		InisialValue = MinMax.x
 	text = String(InisialValue)
+	SetMinuteIndicator(MinuteIndicator)
 	if Engine.editor_hint: return
 	emit_signal("UpdatedVar",InisialValue)
 

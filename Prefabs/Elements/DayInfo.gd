@@ -3,13 +3,14 @@ extends Panel
 var CurInfo = {}
 
 func _ready():
-	RemoveAllExcept("NoInfo")
+	
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("UpdateDayInfo",self,"UpdateDayInfo")
-	InitItemsInReport()
 	$CheckInData.visible = false
 	$NoInfo.visible = true
+	
 	GlobalSave.AddReportOptionsToNode($NoInfo/Report)
+	$NoInfo/Report.get_popup().connect("index_pressed",self,"SelectReport",[$NoInfo/Report])
 	
 	
 func SetInfo(Info):
@@ -17,6 +18,7 @@ func SetInfo(Info):
 	$OnGoingTimer.stop()
 	
 	RemoveAllExcept("NoInfo")
+	
 	
 	if CurInfo.has("report"):
 		match CurInfo.report:
@@ -34,15 +36,24 @@ func RemoveAllExcept(ControlName):
 		if x is Control:
 			if x.name == ControlName:
 				x.visible = true
+				for a in x.get_children():
+					if a is MenuButton:
+						a.get_popup().clear()
 			else:
 				x.visible = false
 			
 func InitDayOff(_Info):
 	RemoveAllExcept("DayOffReport")
+	GlobalSave.AddReportOptionsToNode($DayOffReport/Report)
+	if !$DayOffReport/Report.get_popup().is_connected("index_pressed",self,"SelectReport"):
+		$DayOffReport/Report.get_popup().connect("index_pressed",self,"SelectReport",[$DayOffReport/Report])
 	$DayOffReport/Icon.texture = load("res://Assets/Icons/day.png")
 	
 func InitHoliday(_Info):
 	RemoveAllExcept("HolidayReport")
+	GlobalSave.AddReportOptionsToNode($HolidayReport/Report)
+	if !$HolidayReport/Report.get_popup().is_connected("index_pressed",self,"SelectReport"):
+		$HolidayReport/Report.get_popup().connect("index_pressed",self,"SelectReport",[$HolidayReport/Report])
 	$HolidayReport/Icon.texture = load("res://Assets/Icons/holidays.png")
 	
 	
@@ -53,6 +64,8 @@ func InfoForCheckInData(Info):
 	
 	Info = GlobalTime.FilterChecksIns(Info)
 	RemoveAllExcept("CheckInData")
+	
+	
 	$CheckInData/WorkingHours.text = GlobalTime.GetAllCheckInAndOuts(Info)
 	var D = GlobalTime.CalcHowLongWorked(Info)
 	$CheckInData/HowLongWorked.text = TranslationServer.translate("Working Time").format(ShowHowLongWorked(D))
@@ -64,6 +77,10 @@ func InfoForCheckInData(Info):
 	else:
 		
 		$CheckInData/EditWorkdays.visible = true
+		GlobalSave.AddCustomListOptionsToNode($CheckInData/EditWorkdays,["Edit working hours"])
+		if !$CheckInData/EditWorkdays.get_popup().is_connected("index_pressed",self,"SelectReport"):
+			$CheckInData/EditWorkdays.get_popup().connect("index_pressed",self,"SelectReport",[$CheckInData/EditWorkdays])
+	
 	if SalorySettings != null:
 		if SalorySettings.has("enabled"):
 			$CheckInData/HowMuchEarned.visible = SalorySettings["enabled"]
@@ -110,17 +127,9 @@ func ShowHowLongWorked(Date):
 		
 	return [Res,LastWord]
  
-func InitItemsInReport():
-	for a in get_children():
-		for b in a.get_children():
-			if b is MenuButton:
-				for c in b.get_children():
-					#c.set_item_metadata(c.get_current_index(),c.get_item_text())
-					if not c is Timer:
-						c.connect("index_pressed",self,"SelectReport",[c])
 		
 func SelectReport(Index,Btn):
-	var txt = Btn.get_item_metadata(Index)
+	var txt = Btn.get_popup().get_item_metadata(Index)
 	var Date = {}
 	match txt:
 		"Remove Check Out":
@@ -131,26 +140,36 @@ func SelectReport(Index,Btn):
 		"Day off":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.AddDayOff(Date)
+			GlobalTime.emit_signal("UpdateSpecificDayInfo",GlobalTime.CurSelectedDate["day"],GlobalSave.MySaves[GlobalTime.CurSelectedDate["year"]][GlobalTime.CurSelectedDate["month"]][GlobalTime.CurSelectedDate["day"]])
+			GlobalTime.SyncCurDay(Date)
 		"Holiday":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalSave.AddHoliday(Date)
+			GlobalTime.emit_signal("UpdateSpecificDayInfo",GlobalTime.CurSelectedDate["day"],GlobalSave.MySaves[GlobalTime.CurSelectedDate["year"]][GlobalTime.CurSelectedDate["month"]][GlobalTime.CurSelectedDate["day"]])
+			GlobalTime.SyncCurDay(Date)
 		"Work day":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
-			GlobalSave.RemoveReport(Date)
+			GlobalSave.RemoveDayComplete(Date)
+			#GlobalSave.RemoveReport(Date)
 			var CheckInDate = Date.duplicate()
 			
 			CheckInDate["hour"] = 0
 			CheckInDate["minute"] = 0
 			CheckInDate["second"] = 0
 			var CheckOutDate = CheckInDate.duplicate()
+			
 			GlobalSave.AddCheckIn(CheckInDate)
 			var S = GlobalSave.GetValueFromSettingCategory("WorkingHours")
 			if S == null:
 				CheckOutDate["hour"] += 8
 			else:
 				CheckOutDate["hour"] += S["hours"]
+				if S.has("minutes"):
+					CheckOutDate["minute"] = S["minutes"]
 			GlobalSave.AddCheckOut(CheckOutDate)
+			GlobalTime.FillCheckInOutArray(CheckInDate,CheckOutDate)
 			GlobalTime.emit_signal("UpdateSpecificDayInfo",CheckOutDate["day"],GlobalSave.MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])
+			GlobalTime.SyncCurDay(CheckOutDate)
 		"Edit working hours":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			GlobalTime.HourSelectorUI.SyncDate(Date)
