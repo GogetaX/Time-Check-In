@@ -49,7 +49,7 @@ func _on_Accept_pressed():
 				elif "check_out" in a:
 					GlobalTime.HasCheckOut.append(Checks[a])
 				else:
-					print("Error: HourEditorScreen.gd->_on_Accept_pressed() problem with Checkin/out?")
+					print("Error: HourEditorScreen.gd->_on_Accept_pressed() problem with Checkin/out? ",a)
 				#GlobalTime.HasCheckOut.append()
 		#GlobalSave.MySaves[GlobalTime.CurSelectedDate["year"]][GlobalTime.CurSelectedDate["month"]][GlobalTime.CurSelectedDate["day"]] = Checks
 		GlobalSave.SaveToFile()

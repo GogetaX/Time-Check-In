@@ -2,12 +2,15 @@ Version TODO:
     +   Added: support for multi-jobs
     +   Added: Break hours
     +   Added: Export to CSV file
+    +   Added: when holding down the START button, now you are able to add custom worktime in case you missed checkin today
+   
 
 Version 0.8.3:
     -   Added: Daily working hours has now minutes as well
     -   Added: Indian INR Currency
     -   Fixed: when adding Working day for today was not working properly
     -   Fixed: the Main screen was not updating when reporting work day
+    -   Fixed: Popups are hidden under ads
     -   Changed: the day and Hour on top of the screen now goes in a row
     -   Changed: Instead of pause, now its Check-Out
 

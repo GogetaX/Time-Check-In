@@ -66,6 +66,7 @@ func SelectedReport(index):
 			GlobalSave.AddCheckOut(CheckOutDate)
 			GlobalTime.FillCheckInOutArray(CheckInDate,CheckOutDate)
 			GlobalTime.emit_signal("UpdateSpecificDayInfo",CheckOutDate["day"],GlobalSave.MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])
+			GlobalTime.SyncCurDay(CheckOutDate)
 		_:
 			print(report, " not added yet.")
 	GlobalTime.emit_signal("UpdateList")

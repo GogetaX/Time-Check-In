@@ -28,6 +28,7 @@ func ForceShowOnMouse(Position):
 	get_popup().rect_position = Position
 	#If too on right, move lil bit left
 	var WindowSize = get_viewport_rect().size
+	WindowSize.y -= 100
 	if get_popup().rect_position.x + get_popup().rect_size.x > WindowSize.x:
 		get_popup().rect_position.x = WindowSize.x - get_popup().rect_size.x
 		

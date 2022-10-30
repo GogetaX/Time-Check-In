@@ -741,6 +741,7 @@ texture = ExtResource( 8 )
 BtnGroup = "Menu"
 
 [node name="HourEditorScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 30 )
@@ -906,8 +907,8 @@ __meta__ = {
 
 [node name="LeftSideLabel" type="Label" parent="TopScreenPermanent"]
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_right = 186.0
+margin_left = 14.0
+margin_right = 180.0
 margin_bottom = 5.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
