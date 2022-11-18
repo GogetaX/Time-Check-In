@@ -66,7 +66,7 @@ func GetIOSUserDir():
 	return "/"+d[1]+"/"+d[2]
 
 func AttachFileToEmailiOS(ReportFile):
-	var txt = "mailto:?subject=Report: "+String(ReportFile)
+	var txt = "mailto:?subject=Report: "+String(ReportFile)+"&attachment=user://exports/"+ReportFile
 	txt = txt.replace(" ","%20")
 # warning-ignore:return_value_discarded
 	OS.shell_open(txt)
