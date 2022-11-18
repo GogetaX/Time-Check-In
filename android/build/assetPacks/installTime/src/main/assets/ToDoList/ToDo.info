@@ -1,13 +1,15 @@
 Version TODO:
     +   Added: support for multi-jobs
+    +   Added: Calendar multi-select
     +   Added: Break hours
-    +   Added: when holding down the START button, now you are able to add custom worktime in case you missed checkin today
     +   Fixed: when scrolling the settings, the Input are being pressed
-    +   Added: Export options (.CSV)
-    +   Added: Scroll now enabled for TOOLS on Totals
-    +   I need to add "cstr6suwn9.skadnetwork" network as Googles ads
     +   Added: Total list has Total Hours worked as well
 
+Version 0.8.4:
+    -   Added: Export options (.CSV)
+    -   Added: Scroll now enabled for TOOLS on Totals
+    -   Added: On day list, there is a headers
+    -   Changed: re-arranged the Popup buttons on Whats new.
    
 
 Version 0.8.3:
@@ -19,7 +21,7 @@ Version 0.8.3:
     -   Fixed: first users now has default USD as default currency
     -   Changed: the day and Hour on top of the screen now goes in a row
     -   Changed: Instead of pause, now its Check-Out
-    -   Changed: re-arranged the Popup buttons on Whats new.
+    
 
 Version 0.8.2:
     -   Fixed: while scrolling, the buttons are bein pressed
