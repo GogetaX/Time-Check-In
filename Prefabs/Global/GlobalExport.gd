@@ -27,7 +27,7 @@ func ExportModule(info):
 			if !D.dir_exists(ProjectSettings.globalize_path("user://Documents")):
 				D.make_dir(ProjectSettings.globalize_path("user://Documents"))
 			print(ProjectSettings.globalize_path("user://Documents/"+f_name))
-			F.open(ProjectSettings.globalize_path("user://Documents"+f_name),File.WRITE)
+			F.open(ProjectSettings.globalize_path("user://Documents/"+f_name),File.WRITE)
 		"Windows","Android":
 			print(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
 			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
