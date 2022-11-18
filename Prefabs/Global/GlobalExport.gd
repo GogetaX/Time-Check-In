@@ -23,8 +23,11 @@ func ExportModule(info):
 	print("Saving as path")
 	match OS.get_name():
 		"iOS":
-			print(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name)
-			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
+			var D = Directory.new()
+			if !D.dir_exists("Documents"):
+				D.make_dir("Documents")
+			print("Documents/"+ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
+			F.open("Documents/"+ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
 		"Windows","Android":
 			print(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
 			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)

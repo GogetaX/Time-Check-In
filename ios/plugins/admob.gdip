@@ -42,6 +42,9 @@ LSApplicationQueriesSchemes:raw="
 </array>
 "
 
+<key>UIFileSharingEnabled</key>
+<true/>
+
 SKAdNetworkItems:raw="
 <array>
     <dict>
