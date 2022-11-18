@@ -23,7 +23,10 @@ func ExportModule(info):
 	var Cur_Date = OS.get_datetime()
 	var f_name = "ExportCSV-"+String(Cur_Date["day"])+"-"+String(Cur_Date["month"])+"-"+String(Cur_Date["year"])+".csv"
 	#F.open("user://exports/"+f_name,File.WRITE)
-	F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
+	print("Saving as path")
+	print(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
+	var o = F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
+	print("File Open Msg: ",o)
 	F.store_string("Date,Worked hours,Details\n")
 	for Year in ExportData:
 		for Month in ExportData[Year]:
