@@ -1,5 +1,7 @@
 extends Node
 
+	
+
 func ExportModule(info):
 	var ExportData = {}
 	while true:
@@ -50,8 +52,13 @@ func ExportModule(info):
 					F.store_string(s)
 	F.close()
 # warning-ignore:return_value_discarded
-	var PopupData = {"type": "ok","Title":"Export","Desc":TranslationServer.translate("finished_export_as") % f_name}
-	var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+	match OS.get_name():
+		"Android","Windows":
+			var PopupData = {"type": "ok","Title":"Export","Desc":TranslationServer.translate("finished_export_as") % f_name}
+			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+		"iOS":
+			var PopupData = {"type": "ok","Title":"Export","Desc":"full:\n"+ProjectSettings.globalize_path("user://")+"\n\nUser Dir:\n"+GetIOSUserDir()}
+			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 
 func GetIOSUserDir():
 	#/Users/sergiokirienko/Library/Developer/CoreSimulator/Devices/10672DE3-D6D4-409F-94FD-CCAA11573322/data/Containers/Data/Application/614E7B6F-A5DD-4B63-BAB8-5306F16F24FA/Documents/Documents/ExportCSV-18-11-2022.csv
