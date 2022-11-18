@@ -31,9 +31,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
-	<true/>
+	<false/>
 	<key>UIFileSharingEnabled</key>
-	<true/>
+	<false/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 			</array>
@@ -64,6 +64,7 @@
     </dict>
 </array>
 
+<key>NSDownloadsFolderUsageDescription</key><string>The app needs to access DOWNLOADS folder if you need to export your own data</string>
 <key>LSApplicationQueriesSchemes</key>
 <array>
 <string>mailto</string>

@@ -34,6 +34,7 @@ GADDelayAppMeasurementInit:boolean=false
 
 ;OPTIONAL: Advanced users can modify these extra properties.
 NSUserTrackingUsageDescription="This identifier will be used to deliver personalized ads to you."
+NSDownloadsFolderUsageDescription="The app needs to access DOWNLOADS folder if you need to export your own data"
 
 LSApplicationQueriesSchemes:raw="
 <array>
