@@ -17,18 +17,14 @@ func ExportModule(info):
 			info["CurYear"] += 1
 			info["CurMonth"] = 1
 	var F = File.new()
-	var dir = Directory.new()
-	if !dir.dir_exists("user://exports/"):
-		dir.make_dir("user://exports/")
 	var Cur_Date = OS.get_datetime()
 	var f_name = "ExportCSV-"+String(Cur_Date["day"])+"-"+String(Cur_Date["month"])+"-"+String(Cur_Date["year"])+".csv"
 	#F.open("user://exports/"+f_name,File.WRITE)
 	print("Saving as path")
 	match OS.get_name():
 		"iOS":
-			OS.request_permissions()
-			print("~/Downloads"+"/"+f_name)
-			F.open("~/Downloads"+"/"+f_name,File.WRITE)
+			print(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
+			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
 		"Windows","Android":
 			print(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
 			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
