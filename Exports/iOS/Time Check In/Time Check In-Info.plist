@@ -56,18 +56,18 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>GADDelayAppMeasurementInit</key><false/>
-<key>NSDownloadsFolderUsageDescription</key><string>The app needs to access DOWNLOADS folder if you need to export your own data</string>
-<key>LSApplicationQueriesSchemes</key>
-<array>
-<string>mailto</string>
-</array>
-
-<key><key>UIFileSharingEnabled</key><true/>SKAdNetworkItems</key>
+<key>SKAdNetworkItems</key>
 <array>
     <dict>
         <key>SKAdNetworkIdentifier</key>
         <string>cstr6suwn9.skadnetwork</string>
     </dict>
+</array>
+
+<key>NSDownloadsFolderUsageDescription</key><string>The app needs to access DOWNLOADS folder if you need to export your own data</string>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+<string>mailto</string>
 </array>
 
 <key>GADApplicationIdentifier</key><string>ca-app-pub-6225081745698787~6873188351</string>
