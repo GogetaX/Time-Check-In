@@ -179,3 +179,15 @@
 "Enable","Enable","לעפה","Включить"
 "Disable","Disable","הבכ","Выключить"
 "no_check_out_yet","Check-out not reported","האיצי החווד אל","Нет выхода"
+"Exporter","Exporter","ץבוק תאצוה","Экспортер"
+"Select period","Select period","הפוקת רחב","Выберите период"
+"Last 3 months","Last 3 months","םינורחא םישדוח 3","Последние 3 месяца"
+"Export format","Export format","אוציי טמרופ","Формат экспорта"
+"More export options?","More export options?","?הרימש תויצפוא דוע","Больше возможностей экспорта?"
+"Report to Developer","Report to Developer","תנכתמל חווד","Сообщить разработчику"
+"Export","Export","אוצי","Экспорт"
+"Unchangeable titles","Unchangeable titles",,
+"Custom data","Custom data",,
+"finished_export_as","Export complete, the file %s saved inside DOWNLOADS folder of your phone.","הייצוא נשמר בשם \n%s בתיקיית הורדות.","Экспорт завершен, файл %s сохранен в папке DOWNLOADS на вашем телефоне."
+"Confirm","Confirm","יתלביק","Подтверждать"
+"Not now","Not now","וישכע אל","Не сейчас"

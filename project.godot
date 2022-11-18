@@ -100,6 +100,7 @@ localnotification="*res://scripts/localnotification.gd"
 MobileAds="*res://addons/admob/src/singletons/MobileAds.gd"
 GlobalHebrew="*res://Prefabs/Global/GlobalHebrew.gd"
 GlobalTheme="*res://Prefabs/Global/GlobalTheme.gd"
+GlobalExport="*res://Prefabs/Global/GlobalExport.gd"
 
 [display]
 

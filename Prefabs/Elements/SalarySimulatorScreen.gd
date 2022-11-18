@@ -35,3 +35,9 @@ func _on_ValueBox_UpdatedVar(NewVar):
 			Itm = TotalItemInstance.instance()
 			VBox.add_child(Itm)
 			Itm.ShowItem(Delay,{"title":x,"desc":i})
+
+
+func _on_SalarySimulatorScreen_visibility_changed():
+	if visible:
+		print($TopScreen/ValueBox.InisialValue)
+		_on_ValueBox_UpdatedVar($TopScreen/ValueBox.InisialValue)

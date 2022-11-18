@@ -6,10 +6,10 @@ func _ready():
 	ClearTools()
 
 func ClearTools():
-	for x in $HBoxContainer.get_children():
+	for x in $ScrollContainer/HBoxContainer.get_children():
 		if x is Button:
 			x.queue_free()
-	$HBoxContainer/Label.text = ""
+	$ScrollContainer/HBoxContainer/Label.text = ""
 	
 func ShowTools(ToolArray,emit_node,emit_func):
 	ClearTools()
@@ -17,11 +17,19 @@ func ShowTools(ToolArray,emit_node,emit_func):
 		if x.size() > 0:
 			var Btn = ToolBtnInstance.instance()
 			Btn.text = "        "+TranslationServer.translate(x[0])
-			Btn.connect("button_up",emit_node,emit_func,[x[0]])
+			Btn.connect("ButtonPressed",emit_node,emit_func,[x[0]])
 			Btn.focus_mode = Control.FOCUS_NONE
-			$HBoxContainer.add_child(Btn)
+			$ScrollContainer/HBoxContainer.add_child(Btn)
 			if x.size()==2:
 				Btn.SetBtnTexture(x[1])
 	
-	if $HBoxContainer.get_child_count()>1:
-		$HBoxContainer/Label.text = "Go to"
+	if $ScrollContainer/HBoxContainer.get_child_count()>1:
+		$ScrollContainer/HBoxContainer/Label.text = "Go to"
+
+
+func _on_ScrollContainer_mouse_entered():
+	GlobalTime.SwipeEnabled = false
+
+
+func _on_ScrollContainer_mouse_exited():
+	GlobalTime.SwipeEnabled = true

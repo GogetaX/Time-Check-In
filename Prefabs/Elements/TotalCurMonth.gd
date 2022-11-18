@@ -51,9 +51,13 @@ func MonthBtnPressed(BtnNode):
 			"Salary simulator":
 				GlobalTime.emit_signal("ShowOnlyScreen","SalarySimulatorScreen")
 				return
+			"Export":
+				GlobalTime.emit_signal("ShowOnlyScreen","ExporterScreen")
+				return
 			_:
 				print("Eror TotalCurMonth.gd->MonthBtnPressed() String unknown: ",BtnNode)
 				return
+			
 	else:
 		print("Eror TotalCurMonth.gd->MonthBtnPressed() ButtonType unknown: ",BtnNode)
 	
@@ -115,6 +119,7 @@ func SyncTools():
 		ToolList.append(["This month","res://Assets/Icons/Today.png"])
 	else:
 		ToolList.append(["Last month","res://Assets/Icons/Today.png"])
+	ToolList.append(["Export","res://Assets/Icons/export.png"])
 	Tool.ShowTools(ToolList,self,"BtnPressed")
 	
 func BtnPressed(BtnName):

@@ -48,8 +48,8 @@ margin_top = 21.0
 margin_right = 133.0
 margin_bottom = 76.0
 text = "300"
-InisialValue = 300.0
 MinMax = Vector2( 0, 999999 )
+InisialValue = 300.0
 HasArrows = false
 FrontText = "Bonus /m"
 

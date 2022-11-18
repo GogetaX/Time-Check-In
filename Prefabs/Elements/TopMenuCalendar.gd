@@ -19,8 +19,9 @@ func _ready():
 	LoadCalendarSwitch()
 
 func ClearAll():
-	for x in get_parent().get_node("List/Scroll/VBox/Columns").get_children():
-		x.queue_free()
+	for x in get_parent().get_node("List/Scroll/VBox").get_children():
+		if x.name != "Columns":
+			x.queue_free()
 	
 func ScrollToCurrentDay(ListNode):
 	if FastLoad:

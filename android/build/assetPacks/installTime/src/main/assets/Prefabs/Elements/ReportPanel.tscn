@@ -24,7 +24,7 @@ __meta__ = {
 }
 
 [node name="ReportBug" type="Button" parent="HBoxContainer"]
-margin_right = 337.0
+margin_right = 338.0
 margin_bottom = 120.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -35,8 +35,8 @@ text = "Report bug"
 flat = true
 
 [node name="RequestFeature" type="Button" parent="HBoxContainer"]
-margin_left = 341.0
-margin_right = 678.0
+margin_left = 342.0
+margin_right = 680.0
 margin_bottom = 120.0
 focus_mode = 0
 size_flags_horizontal = 3
@@ -47,7 +47,7 @@ text = "Request feature"
 flat = true
 
 [node name="Debugger" type="Button" parent="HBoxContainer"]
-margin_left = 682.0
+margin_left = 684.0
 margin_right = 710.0
 margin_bottom = 120.0
 size_flags_vertical = 3

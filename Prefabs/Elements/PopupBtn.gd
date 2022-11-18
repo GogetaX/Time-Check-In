@@ -1,7 +1,7 @@
 tool
 extends Button
 
-export (String,"EMPTY","NO","YES","NEXT","STOP","EDIT") var iconType = "EMPTY" setget SetIconType
+export (String,"EMPTY","NO","YES","NEXT","STOP","EDIT","EXPORT","EMAIL") var iconType = "EMPTY" setget SetIconType
 
 func SetIconType(new):
 	iconType = new
@@ -22,3 +22,7 @@ func SetIconType(new):
 			$Icon.texture = load("res://Assets/Icons/stop.png")
 		"EDIT":
 			$Icon.texture = load("res://Assets/Icons/editing.png")
+		"EXPORT":
+			$Icon.texture = load("res://Assets/Icons/export.png")
+		"EMAIL":
+			$Icon.texture = load("res://Assets/Icons/email.png")

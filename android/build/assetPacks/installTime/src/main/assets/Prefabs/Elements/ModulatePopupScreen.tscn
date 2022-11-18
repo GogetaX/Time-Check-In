@@ -387,6 +387,7 @@ text = "Check Out"
 iconType = "STOP"
 
 [node name="ForgetCheckOutSomeTimeAgoPanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -547,7 +548,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 4 )
-text = "Dismiss"
+text = "Confirm"
 flat = false
 iconType = "YES"
 
@@ -556,7 +557,7 @@ margin_top = 97.0
 margin_right = 412.0
 margin_bottom = 187.0
 rect_min_size = Vector2( 0, 90 )
-text = "Close"
-iconType = "NO"
+text = "Not now"
+iconType = "NEXT"
 
 [connection signal="gui_input" from="Background" to="." method="_on_Background_gui_input"]

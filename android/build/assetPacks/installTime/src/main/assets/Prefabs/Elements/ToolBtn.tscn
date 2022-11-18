@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/OpenSans-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Prefabs/Elements/ToolBtn.gd" type="Script" id=2]
 [ext_resource path="res://Prefabs/Shaders/MenuBtn.tres" type="Material" id=3]
+[ext_resource path="res://Prefabs/Elements/PressTimer.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -13,6 +14,7 @@ font_data = ExtResource( 1 )
 margin_left = 85.0
 margin_right = 261.0
 margin_bottom = 34.0
+mouse_filter = 1
 custom_fonts/font = SubResource( 1 )
 text = "Salary Simulator"
 flat = true
@@ -35,3 +37,5 @@ stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PressTimer" parent="." instance=ExtResource( 4 )]

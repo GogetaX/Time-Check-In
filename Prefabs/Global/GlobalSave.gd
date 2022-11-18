@@ -196,7 +196,33 @@ func SaveToFile():
 			F.store_var(MySaves[year][month])
 			F.close()
 
+func GetAllDateFiles():
+	var files = []
+	var dir = Directory.new()
+	dir.open("user://")
+	dir.list_dir_begin()
 
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not file.begins_with(".") && file.begins_with("SaveFile") && file.ends_with(".sf"):
+			files.append(file)
+
+	dir.list_dir_end()
+
+	return files
+	
+func LoadDateForExport(Month,Year):
+	var Res = null
+	var F = File.new()
+	if !F.file_exists("user://SaveFile"+String(Year*Month)+".sf"):
+		return null
+	F.open("user://SaveFile"+String(Year*Month)+".sf",File.READ)
+	Res = F.get_var()
+	F.close()
+	return Res
+	
 func LoadSpecificFile(Month,Year,find_before = true):
 	var Res = null
 	var F = File.new()

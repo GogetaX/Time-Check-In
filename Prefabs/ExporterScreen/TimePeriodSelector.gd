@@ -1,0 +1,125 @@
+extends Control
+
+const SelectedColor = Color("#fbffb326")
+const UnSelectedColor = Color("#bce0fd")
+
+var CurSelected = null
+var FoundDateList = []
+
+func _ready():
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
+
+	
+func ShowOnly(ScreenName):
+	if ScreenName != "ExporterScreen":
+		return
+	InitButtons()
+	FastSelect("LastMonth")
+	InitOptions()
+	
+func InitOptions():
+	FoundDateList.clear()
+	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().clear()
+	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().clear()
+	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().connect("index_pressed",self,"SelectedFirstDate")
+	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().connect("index_pressed",self,"SelectedLastDate")
+	var FList = GlobalSave.GetAllDateFiles()
+	var F = File.new()
+	if FList != []:
+		for x in FList:
+			F.open("user://"+x,File.READ)
+			var d = F.get_var()
+			for a in d:
+				if d[a].has("check_in1"):
+					FoundDateList.append(d[a]["check_in1"])
+					break
+			F.close()
+	for x in FoundDateList:
+		$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().add_item(String(x["month"])+"."+String(x["year"]))
+	
+func SelectedFirstDate(Index):
+	var DateSelected = $VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().get_item_text(Index)
+	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.text = DateSelected
+	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().clear()
+	var DSplit = DateSelected.split(".")
+	var SelectedDate = {}
+	SelectedDate["year"] = int(DSplit[1])
+	SelectedDate["month"] = int(DSplit[0])
+	for x in FoundDateList:
+		if x["year"]*x["month"] >= SelectedDate["year"]*SelectedDate["month"]:
+			$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().add_item(String(x["month"])+"."+String(x["year"]))
+		
+func SelectedLastDate(Index):
+	var DateSelected = $VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().get_item_text(Index)
+	$VBoxContainer/HBoxContainer2/SelectedMonthLast.text = DateSelected
+	
+func InitButtons():
+	for x in $VBoxContainer/HBoxContainer.get_children():
+		if x is Label:
+			x.connect("gui_input",self,"MonthSelectorPressed",[x])
+		
+func MonthSelectorPressed(event,btn):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			var T = Tween.new()
+			add_child(T)
+			T.connect("tween_all_completed",self,"FinishTween",[T,btn])
+			T.interpolate_property(btn,"custom_colors/font_color",btn.get("custom_colors/font_color"),SelectedColor,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
+			if CurSelected != null:
+				T.interpolate_property(CurSelected,"custom_colors/font_color",CurSelected.get("custom_colors/font_color"),UnSelectedColor,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
+			T.start()
+			
+func FinishTween(T,new_btn):
+	T.queue_free()
+	CurSelected = new_btn
+	SyncDates()
+	
+func GetFirstMonth():
+	var t = $VBoxContainer/HBoxContainer2/SelectedMonthFirst.text.split(".")
+	return {"month":int(t[0]),"year":int(t[1])}
+	
+func GetLastMonth():
+	var t = $VBoxContainer/HBoxContainer2/SelectedMonthLast.text.split(".")
+	return {"month":int(t[0]),"year":int(t[1])}
+	
+func FastSelect(lbl_name):
+	CurSelected = null
+	for x in $VBoxContainer/HBoxContainer.get_children():
+		if x.name ==lbl_name:
+			x.set("custom_colors/font_color",SelectedColor)
+			CurSelected = x
+		else:
+			x.set("custom_colors/font_color",UnSelectedColor) 
+	SyncDates()
+
+func SyncDates():
+	var CurDate = OS.get_datetime()
+	var FromDate = {}
+	var ToDate = {}
+	match CurSelected.name:
+		"LastMonth":
+			CurDate["month"]-=1
+			if CurDate["month"] <=0:
+				CurDate["month"] = 12
+				CurDate["year"] -= 1
+			FromDate = CurDate
+			ToDate = CurDate
+		"ThisMonth":
+			FromDate = CurDate
+			ToDate = CurDate
+		"Last3Months":
+			CurDate["month"]-=1
+			if CurDate["month"] <=0:
+				CurDate["month"] = 12
+				CurDate["year"] -= 1
+			ToDate = CurDate.duplicate()
+			CurDate["month"]-=3
+			if CurDate["month"] <=0:
+				CurDate["month"] = 12+CurDate["month"]
+				CurDate["year"] -= 1
+			FromDate = CurDate
+		_:
+			print("Erorr TimePeriodSelector->SyncDates() date does not found: ",CurSelected.name)
+	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.text = String(FromDate["month"])+"."+String(FromDate["year"])
+	$VBoxContainer/HBoxContainer2/SelectedMonthLast.text = String(ToDate["month"])+"."+String(ToDate["year"])

@@ -22,6 +22,7 @@ var CurSelectedDate = {"day": 0,"month":0,"year":0}
 var TempCurMonth = 0
 var TempCurYear = 0
 var HourSelectorUI = null
+var ExporterUI = null
 var ForgotCheckInYesterday = false
 var ForgotCheckInSometimeAgo = null
 var SwipeEnabled = true
@@ -221,7 +222,7 @@ func TimeTo2DigitStr(Time):
 	if t.length() == 1:
 		t = "0"+t
 	return t
-func GetAllCheckInAndOuts(Info):
+func GetAllCheckInAndOuts(Info,max_check_outs = 2,translate = true):
 	var Res = ""
 	var Times = 1
 	var TotChecks = 0
@@ -232,10 +233,16 @@ func GetAllCheckInAndOuts(Info):
 			SelectedDay = Info[x]
 			if Times == 1:
 				Res = Res + TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
-			elif Times == 2:
+			elif Times >1 && Times <= max_check_outs:
 				Res = Res+", " + TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
 			else:
-				Res = String(Times) +" "+TranslationServer.translate("Checkins")+", "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
+				if translate:
+					Res = String(Times) +" "+TranslationServer.translate("Checkins")+", "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
+				else:
+					var l = TranslationServer.get_locale()
+					TranslationServer.set_locale("en")
+					Res = String(Times) +" "+TranslationServer.translate("Checkins")+", "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
+					TranslationServer.set_locale(l)
 		if "check_out" in x:
 			TotChecks -= 1
 			Res = Res +" - "+TimeTo2DigitStr(Info[x]["hour"])+":"+TimeTo2DigitStr(Info[x]["minute"])
@@ -243,7 +250,13 @@ func GetAllCheckInAndOuts(Info):
 	var CurDay = OS.get_datetime()
 	if TotChecks == 1:
 		if SelectedDay["day"] == CurDay["day"] && SelectedDay["month"] == CurDay["month"] && SelectedDay["year"] == CurDay["year"]:
-			Res = Res +" - "+TranslationServer.translate("On_Going")
+			if translate:
+				Res = Res +" - "+TranslationServer.translate("On_Going")
+			else:
+				var l = TranslationServer.get_locale()
+				TranslationServer.set_locale("en")
+				Res = Res +" - "+TranslationServer.translate("On_Going")
+				TranslationServer.set_locale(l)
 	return Res
 
 func OffsetDay(CurDay,Offset_Day):

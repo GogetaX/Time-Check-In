@@ -34,6 +34,10 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [resource]
+HScrollBar/styles/grabber = SubResource( 4 )
+HScrollBar/styles/grabber_highlight = SubResource( 5 )
+HScrollBar/styles/grabber_pressed = SubResource( 7 )
+HScrollBar/styles/scroll = SubResource( 8 )
 VScrollBar/styles/grabber = SubResource( 4 )
 VScrollBar/styles/grabber_highlight = SubResource( 5 )
 VScrollBar/styles/grabber_pressed = SubResource( 7 )

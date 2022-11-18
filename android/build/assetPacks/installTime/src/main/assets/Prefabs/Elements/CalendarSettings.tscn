@@ -42,8 +42,9 @@ __meta__ = {
 }
 
 [node name="Num0" type="Label" parent="WeekContainer"]
+margin_top = 2.0
 margin_right = 97.0
-margin_bottom = 42.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Sun"
@@ -51,8 +52,9 @@ align = 1
 
 [node name="Num1" type="Label" parent="WeekContainer"]
 margin_left = 97.0
+margin_top = 2.0
 margin_right = 194.0
-margin_bottom = 42.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Sun"
@@ -60,8 +62,9 @@ align = 1
 
 [node name="Num2" type="Label" parent="WeekContainer"]
 margin_left = 194.0
+margin_top = 2.0
 margin_right = 291.0
-margin_bottom = 42.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Sun"
@@ -69,8 +72,9 @@ align = 1
 
 [node name="Num3" type="Label" parent="WeekContainer"]
 margin_left = 291.0
+margin_top = 2.0
 margin_right = 388.0
-margin_bottom = 42.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Sun"
@@ -78,8 +82,9 @@ align = 1
 
 [node name="Num4" type="Label" parent="WeekContainer"]
 margin_left = 388.0
+margin_top = 2.0
 margin_right = 485.0
-margin_bottom = 42.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Sun"
@@ -87,8 +92,9 @@ align = 1
 
 [node name="Num5" type="Label" parent="WeekContainer"]
 margin_left = 485.0
+margin_top = 2.0
 margin_right = 582.0
-margin_bottom = 42.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Sun"
@@ -96,8 +102,9 @@ align = 1
 
 [node name="Num6" type="Label" parent="WeekContainer"]
 margin_left = 582.0
+margin_top = 2.0
 margin_right = 680.0
-margin_bottom = 42.0
+margin_bottom = 37.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Sun"

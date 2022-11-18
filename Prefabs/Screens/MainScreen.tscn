@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
@@ -53,8 +53,12 @@
 [ext_resource path="res://Prefabs/Elements/ValueBox.tscn" type="PackedScene" id=51]
 [ext_resource path="res://Prefabs/Elements/AppSettings.tscn" type="PackedScene" id=52]
 [ext_resource path="res://Prefabs/Elements/SalarySimulatorScreen.gd" type="Script" id=53]
+[ext_resource path="res://Prefabs/Screens/ExporterScreen.gd" type="Script" id=54]
+[ext_resource path="res://Prefabs/ExporterScreen/TimePeriodSelector.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Prefabs/Elements/PopupBtn.tscn" type="PackedScene" id=57]
+[ext_resource path="res://Prefabs/ExporterScreen/CustomVars.tscn" type="PackedScene" id=58]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.14902, 0.6, 0.984314, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -65,6 +69,27 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.14902, 0.6, 0.984314, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="DynamicFont" id=2]
 size = 25
@@ -215,11 +240,12 @@ icon = ExtResource( 16 )
 [node name="ToggleBetween" parent="CalendarScreen/TopMenu" instance=ExtResource( 37 )]
 margin_top = 79.0
 margin_bottom = 115.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 7 )
 LeftText = "Calendar"
 RightText = "List"
 
 [node name="Calendar" type="Control" parent="CalendarScreen"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -350,11 +376,10 @@ margin_right = 700.0
 margin_bottom = 259.0
 
 [node name="List" type="Control" parent="CalendarScreen"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 185.0
+margin_top = 188.0
 margin_right = -10.0
 margin_bottom = -10.0
 __meta__ = {
@@ -563,6 +588,7 @@ margin_top = 74.0
 margin_bottom = 254.0
 
 [node name="SettingsScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -118.0
@@ -590,7 +616,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/ScrollContainer"]
-margin_right = 710.0
+margin_right = 720.0
 margin_bottom = 1467.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -800,7 +826,6 @@ __meta__ = {
 [node name="CheckInOutEditor" parent="HourEditorScreen/VBoxContainer" instance=ExtResource( 31 )]
 
 [node name="SalarySimulatorScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 53 )
@@ -857,10 +882,10 @@ margin_top = 121.0
 margin_right = 155.0
 margin_bottom = 176.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "300"
+text = "5000"
 align = 1
-InisialValue = 300.0
 MinMax = Vector2( 0, 1e+07 )
+InisialValue = 5000.0
 HasArrows = false
 FontColor = Color( 1, 1, 1, 1 )
 
@@ -891,6 +916,254 @@ margin_right = 700.0
 margin_bottom = 1059.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="ExporterScreen" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="ExporterScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopMenu" type="Panel" parent="ExporterScreen"]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 180 )
+custom_styles/panel = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="ExporterScreen/TopMenu"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -113.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 34 )
+text = "Exporter"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Accept" parent="ExporterScreen/TopMenu" instance=ExtResource( 27 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -85.0
+margin_top = 116.0
+margin_right = -20.0
+margin_bottom = 176.0
+focus_mode = 2
+icon = ExtResource( 28 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExporterScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 181.0
+margin_right = -10.0
+margin_bottom = -128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_right = 700.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+text = "Select period"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimePeriodSelector" parent="ExporterScreen/VBoxContainer" instance=ExtResource( 55 )]
+anchor_right = 0.0
+margin_top = 46.0
+margin_right = 700.0
+margin_bottom = 146.0
+
+[node name="Label6" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 150.0
+margin_right = 700.0
+margin_bottom = 192.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 196.0
+margin_right = 700.0
+margin_bottom = 238.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+text = "Unchangeable data"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CustomVars" parent="ExporterScreen/VBoxContainer" instance=ExtResource( 58 )]
+VarList = "<Date>,<Total Working hours>,<Detials>"
+
+[node name="Label8" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 296.0
+margin_right = 700.0
+margin_bottom = 338.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 342.0
+margin_right = 700.0
+margin_bottom = 384.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+text = "Custom data"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CustomVars2" parent="ExporterScreen/VBoxContainer" instance=ExtResource( 58 )]
+margin_top = 388.0
+margin_bottom = 438.0
+VarList = "<under construction>"
+SelectedAll = false
+
+[node name="Label2" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 442.0
+margin_right = 700.0
+margin_bottom = 484.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 488.0
+margin_right = 700.0
+margin_bottom = 530.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+text = "Export format"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExportFormat" parent="ExporterScreen/VBoxContainer" instance=ExtResource( 58 )]
+margin_top = 534.0
+margin_bottom = 584.0
+VarList = ".csv"
+SelectedAll = false
+DefaultSelection = ".csv"
+
+[node name="Label10" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 588.0
+margin_right = 700.0
+margin_bottom = 630.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label11" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 634.0
+margin_right = 700.0
+margin_bottom = 676.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+text = "Export to"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExportFormat2" parent="ExporterScreen/VBoxContainer" instance=ExtResource( 58 )]
+margin_top = 680.0
+margin_bottom = 730.0
+VarList = "<Downloads/>"
+SelectedAll = false
+DefaultSelection = "<Downloads/>"
+
+[node name="Label12" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 734.0
+margin_right = 700.0
+margin_bottom = 776.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExportBtn" parent="ExporterScreen/VBoxContainer" instance=ExtResource( 57 )]
+margin_top = 780.0
+margin_right = 700.0
+margin_bottom = 870.0
+rect_min_size = Vector2( 0, 90 )
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Export"
+flat = false
+iconType = "EXPORT"
+
+[node name="Label4" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 874.0
+margin_right = 700.0
+margin_bottom = 916.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="ExporterScreen/VBoxContainer"]
+margin_top = 920.0
+margin_right = 700.0
+margin_bottom = 962.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 39 )
+text = "More export options?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReportToDev" parent="ExporterScreen/VBoxContainer" instance=ExtResource( 57 )]
+margin_top = 966.0
+margin_right = 700.0
+margin_bottom = 1027.0
+focus_mode = 0
+text = "Report to Developer"
+iconType = "EMAIL"
 
 [node name="AdHandler" type="Node" parent="."]
 script = ExtResource( 43 )
@@ -941,5 +1214,9 @@ __meta__ = {
 [connection signal="BtnPressed" from="BottomUI/HBoxContainer/SettingsScreen" to="." method="_on_Settings_BtnPressed"]
 [connection signal="pressed" from="HourEditorScreen/TopMenu/Accept" to="HourEditorScreen" method="_on_Accept_pressed"]
 [connection signal="pressed" from="HourEditorScreen/TopMenu/Decline" to="HourEditorScreen" method="_on_Decline_pressed"]
+[connection signal="visibility_changed" from="SalarySimulatorScreen" to="SalarySimulatorScreen" method="_on_SalarySimulatorScreen_visibility_changed"]
 [connection signal="UpdatedVar" from="SalarySimulatorScreen/TopScreen/ValueBox" to="SalarySimulatorScreen" method="_on_ValueBox_UpdatedVar"]
 [connection signal="pressed" from="SalarySimulatorScreen/TopScreen/CloseBtn" to="SalarySimulatorScreen" method="_on_CloseBtn_pressed"]
+[connection signal="pressed" from="ExporterScreen/TopMenu/Accept" to="ExporterScreen" method="_on_Accept_pressed"]
+[connection signal="pressed" from="ExporterScreen/VBoxContainer/ExportBtn" to="ExporterScreen" method="_on_ExportBtn_pressed"]
+[connection signal="pressed" from="ExporterScreen/VBoxContainer/ReportToDev" to="ExporterScreen" method="_on_ReportToDev_pressed"]

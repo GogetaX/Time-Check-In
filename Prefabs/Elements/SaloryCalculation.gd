@@ -59,6 +59,7 @@ func _on_TravelBox_UpdatedVar(NewVar):
 func SyncFromSave():
 	var S = GlobalSave.GetValueFromSettingCategory("SaloryCalculation")
 	if S == null:
+		SelectCurrency(1,$Currency.get_popup())
 		return
 
 	if S.has("salary"):
