@@ -24,10 +24,10 @@ func ExportModule(info):
 	match OS.get_name():
 		"iOS":
 			var D = Directory.new()
-			if !D.dir_exists("user://Documents"):
-				D.make_dir("user://Documents")
-			print("user://Documents/"+f_name)
-			F.open("user://Documents/"+f_name,File.WRITE)
+			if !D.dir_exists(ProjectSettings.globalize_path("user://Documents")):
+				D.make_dir(ProjectSettings.globalize_path("user://Documents"))
+			print(ProjectSettings.globalize_path("user://Documents/"+f_name))
+			F.open(ProjectSettings.globalize_path("user://Documents"+f_name),File.WRITE)
 		"Windows","Android":
 			print(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
 			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
