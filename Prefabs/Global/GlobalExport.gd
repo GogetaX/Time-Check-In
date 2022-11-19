@@ -2,6 +2,9 @@ extends Node
 
 	
 func CreateFile(path,fname):
+	var D = Directory.new()
+	if !D.dir_exists(path):
+		D.make_dir_recursive(path)
 	var F = File.new()
 	F.open(path+fname,File.WRITE)
 	F.store_line("Path: "+path)
@@ -11,6 +14,13 @@ func ExportModule(info):
 	CreateFile("user://","test.csv")
 	CreateFile("./Documents/","test.csv")
 	CreateFile("./Downloads/","test.csv")
+	CreateFile("./Downloads/","test.csv")
+	CreateFile("./Library/","test.csv")
+	CreateFile("./Library/Preferences/","test.csv")
+	CreateFile("Library/","test.csv")
+	CreateFile("Library/Preferences/","test.csv")
+	CreateFile("user://Library/","test.csv")
+	CreateFile("user://Library/Preferences/","test.csv")
 	CreateFile(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)),"test.csv")
 	CreateFile(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)),"test.csv")
 	
@@ -68,7 +78,8 @@ func ExportModule(info):
 			var PopupData = {"type": "ok","Title":"Export","Desc":TranslationServer.translate("finished_export_as") % f_name}
 			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 		"iOS":
-			AttachFileToEmailiOS(f_name)
+			pass
+			#AttachFileToEmailiOS(f_name)
 
 func GetIOSUserDir():
 	#/Users/sergiokirienko/Library/Developer/CoreSimulator/Devices/10672DE3-D6D4-409F-94FD-CCAA11573322/data/Containers/Data/Application/614E7B6F-A5DD-4B63-BAB8-5306F16F24FA/Documents/Documents/ExportCSV-18-11-2022.csv
