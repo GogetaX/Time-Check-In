@@ -21,6 +21,11 @@ func ExportModule(info):
 	CreateFile("Library/Preferences/","test.csv")
 	CreateFile("user://Library/","test.csv")
 	CreateFile("user://Library/Preferences/","test.csv")
+	CreateFile(ProjectSettings.globalize_path("user://Documents/Inbox"),"test.csv")
+	CreateFile(ProjectSettings.globalize_path("user://tmp/"),"test.csv")
+	CreateFile(ProjectSettings.globalize_path("Documents/Inbox"),"test.csv")
+	CreateFile(ProjectSettings.globalize_path("tmp/"),"test.csv")
+	CreateFile("user://Library/Preferences/","test.csv")
 	CreateFile(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)),"test.csv")
 	CreateFile(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)),"test.csv")
 	
