@@ -1,8 +1,19 @@
 extends Node
 
 	
-
+func CreateFile(path,fname):
+	var F = File.new()
+	F.open(path+fname,File.WRITE)
+	F.store_line("Path: "+path)
+	F.close()
+	
 func ExportModule(info):
+	CreateFile("user://","test.csv")
+	CreateFile("./Documents/","test.csv")
+	CreateFile("./Downloads/","test.csv")
+	CreateFile(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)),"test.csv")
+	CreateFile(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)),"test.csv")
+	
 	var ExportData = {}
 	while true:
 		if info["CurYear"]*info["CurMonth"] > info["LastMonth"]["year"]*info["LastMonth"]["month"]:
