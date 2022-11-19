@@ -11,24 +11,6 @@ func CreateFile(path,fname):
 	F.close()
 	
 func ExportModule(info):
-	CreateFile("user://","test.csv")
-	CreateFile("./Documents/","test.csv")
-	CreateFile("./Downloads/","test.csv")
-	CreateFile("./Downloads/","test.csv")
-	CreateFile("./Library/","test.csv")
-	CreateFile("./Library/Preferences/","test.csv")
-	CreateFile("Library/","test.csv")
-	CreateFile("Library/Preferences/","test.csv")
-	CreateFile("user://Library/","test.csv")
-	CreateFile("user://Library/Preferences/","test.csv")
-	CreateFile(ProjectSettings.globalize_path("user://Documents/Inbox"),"test.csv")
-	CreateFile(ProjectSettings.globalize_path("user://tmp/"),"test.csv")
-	CreateFile(ProjectSettings.globalize_path("Documents/Inbox"),"test.csv")
-	CreateFile(ProjectSettings.globalize_path("tmp/"),"test.csv")
-	CreateFile("user://Library/Preferences/","test.csv")
-	CreateFile(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)),"test.csv")
-	CreateFile(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)),"test.csv")
-	
 	var ExportData = {}
 	while true:
 		if info["CurYear"]*info["CurMonth"] > info["LastMonth"]["year"]*info["LastMonth"]["month"]:
@@ -54,7 +36,6 @@ func ExportModule(info):
 			var D = Directory.new()
 			if !D.dir_exists("user://exports/"):
 				D.make_dir("user://exports/")
-			print("user://exports/"+f_name)
 			F.open("user://exports/"+f_name,File.WRITE)
 		"Windows","Android":
 			print(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
@@ -83,8 +64,13 @@ func ExportModule(info):
 			var PopupData = {"type": "ok","Title":"Export","Desc":TranslationServer.translate("finished_export_as") % f_name}
 			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 		"iOS":
-			pass
-			#AttachFileToEmailiOS(f_name)
+			
+			var PopupData = {"type": "ok","Title":"Export","Desc":"Opening "+"user://exports/"+f_name}
+			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+			OS.shell_open("user://exports/"+f_name)
+			PopupData = {"type": "ok","Title":"Export","Desc":"Opening user://exports/"}
+			_Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+			OS.shell_open("user://exports/")
 
 func GetIOSUserDir():
 	#/Users/sergiokirienko/Library/Developer/CoreSimulator/Devices/10672DE3-D6D4-409F-94FD-CCAA11573322/data/Containers/Data/Application/614E7B6F-A5DD-4B63-BAB8-5306F16F24FA/Documents/Documents/ExportCSV-18-11-2022.csv
