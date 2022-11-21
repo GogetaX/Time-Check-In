@@ -4,6 +4,8 @@ extends Control
 
 func _ready():
 	GlobalTime.ExporterUI = self
+	if OS.get_name() == "iOS":
+		$VBoxContainer/ExportBtn.disabled = true
 
 
 func _on_Accept_pressed():

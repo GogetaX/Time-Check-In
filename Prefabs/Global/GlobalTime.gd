@@ -49,6 +49,8 @@ signal UpdateList()
 signal ScrollToCurrentDay(ListNode)
 # warning-ignore:unused_signal
 signal ShowInterstitalAd()
+# warning-ignore:unused_signal
+signal app_loaded()
 
 
 func _ready():

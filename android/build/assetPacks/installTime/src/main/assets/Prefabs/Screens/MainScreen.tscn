@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
@@ -55,10 +55,32 @@
 [ext_resource path="res://Prefabs/Elements/SalarySimulatorScreen.gd" type="Script" id=53]
 [ext_resource path="res://Prefabs/Screens/ExporterScreen.gd" type="Script" id=54]
 [ext_resource path="res://Prefabs/ExporterScreen/TimePeriodSelector.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Prefabs/Elements/EffectHandler.gd" type="Script" id=56]
 [ext_resource path="res://Prefabs/Elements/PopupBtn.tscn" type="PackedScene" id=57]
 [ext_resource path="res://Prefabs/ExporterScreen/CustomVars.tscn" type="PackedScene" id=58]
+[ext_resource path="res://Assets/Particles/cold.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Particles/snowflake.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Particles/santa-claus.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Particles/christmas-tree.png" type="Texture" id=62]
+[ext_resource path="res://Prefabs/Shaders/FlappingShader.tres" type="Material" id=63]
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 2
+emission_box_extents = Vector3( 400, 1, 1 )
+flag_disable_z = true
+flatness = 1.0
+gravity = Vector3( 0, 98, 0 )
+angular_velocity = 276.64
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 45.0
+radial_accel_random = 1.0
+scale = 0.2
+hue_variation = 0.2
+hue_variation_random = 1.0
+
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.14902, 0.6, 0.984314, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -107,6 +129,37 @@ __meta__ = {
 [node name="SwipeDetector" type="Node" parent="."]
 script = ExtResource( 10 )
 
+[node name="EffectHandler" type="Node" parent="."]
+script = ExtResource( 56 )
+
+[node name="Winter" type="Node" parent="EffectHandler"]
+
+[node name="Snow1" type="Particles2D" parent="EffectHandler/Winter"]
+position = Vector2( 368, 48 )
+amount = 10
+lifetime = 15.0
+visibility_rect = Rect2( -400, -100, 800, 100 )
+process_material = SubResource( 8 )
+texture = ExtResource( 59 )
+
+[node name="Snow2" type="Particles2D" parent="EffectHandler/Winter"]
+position = Vector2( 368, 48 )
+amount = 10
+lifetime = 15.0
+visibility_rect = Rect2( -400, -100, 800, 100 )
+process_material = SubResource( 8 )
+texture = ExtResource( 60 )
+
+[node name="Sprite" type="Sprite" parent="EffectHandler/Winter"]
+material = ExtResource( 63 )
+position = Vector2( 168, 208 )
+texture = ExtResource( 61 )
+
+[node name="Sprite2" type="Sprite" parent="EffectHandler/Winter"]
+material = ExtResource( 63 )
+position = Vector2( 520, 200 )
+texture = ExtResource( 62 )
+
 [node name="Background" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -116,7 +169,6 @@ __meta__ = {
 }
 
 [node name="TimeScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -119.0
@@ -240,7 +292,7 @@ icon = ExtResource( 16 )
 [node name="ToggleBetween" parent="CalendarScreen/TopMenu" instance=ExtResource( 37 )]
 margin_top = 79.0
 margin_bottom = 115.0
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 9 )
 LeftText = "Calendar"
 RightText = "List"
 
@@ -826,6 +878,7 @@ __meta__ = {
 [node name="CheckInOutEditor" parent="HourEditorScreen/VBoxContainer" instance=ExtResource( 31 )]
 
 [node name="SalarySimulatorScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 53 )

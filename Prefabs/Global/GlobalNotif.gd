@@ -23,7 +23,8 @@ func PushCheckOutReminder():
 	
 	if WorkingHours.has("check_out_reminder"):
 		if WorkingHours["check_out_reminder"]:
-			localnotification.show(TranslationServer.translate("p_notif_passed_hours") % String(tot_hours)+":"+tot_minutes_str,"Time Check-In",(tot_hours*3600)+(tot_minutes*60),0)
+			var passed_time = String(tot_hours)+":"+tot_minutes_str
+			localnotification.show(TranslationServer.translate("p_notif_passed_hours") % passed_time,"Time Check-In",(tot_hours*3600)+(tot_minutes*60),0)
 			if Deduction != null:
 				if Deduction.has("overtime125") && Deduction["overtime125"]:
 					if tot_hours == 8:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/CheckinControl.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Icons/Ellipse 1.png" type="Texture" id=8]
 [ext_resource path="res://Prefabs/Elements/OptionBox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Fonts/OpenSans-Medium.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Prefabs/Shaders/FlappingShader.tres" type="Material" id=11]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.498039, 0.768627, 0.984314, 0.992157 )
@@ -54,15 +55,6 @@ corner_detail = 10
 size = 30
 use_filter = true
 font_data = ExtResource( 10 )
-
-[sub_resource type="Shader" id=7]
-code = "shader_type canvas_item;
-void vertex(){
-	VERTEX.x += sin(TIME) * 30.0 * (UV.y-1.0);
-}"
-
-[sub_resource type="ShaderMaterial" id=8]
-shader = SubResource( 7 )
 
 [node name="CheckinControl" type="Control"]
 anchor_right = 1.0
@@ -241,7 +233,7 @@ margin_right = 287.0
 margin_bottom = 343.5
 
 [node name="TextureButton" type="TextureRect" parent="HolidayToday"]
-material = SubResource( 8 )
+material = ExtResource( 11 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -60.0

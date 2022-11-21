@@ -7,6 +7,7 @@ func _ready():
 	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("NoAnimShowWindow",self,"NoAnimShowWindow")
+	GlobalTime.emit_signal("app_loaded")
 # warning-ignore:return_value_discarded
 	$SwipeDetector.connect("Swiped",self,"CheckForSwipe")
 	HideAll()
