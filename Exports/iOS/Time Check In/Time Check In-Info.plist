@@ -64,13 +64,7 @@
     </dict>
 </array>
 
-<key>NSDownloadsFolderUsageDescription</key><string>The app needs to access DOWNLOADS folder if you need to export your own data</string>
-<key>LSApplicationQueriesSchemes</key>
-<array>
-<string>mailto</string>
-</array>
-
-<key>GADApplicationIdentifier</key><string>ca-app-pub-6225081745698787~6873188351</string>
+<key>GADApplicationIdentifier</key><string>ca-app-pub-3940256099942544~1458002511</string>
 <key>NSUserTrackingUsageDescription</key><string>This identifier will be used to deliver personalized ads to you.</string>
 
 	<key>UILaunchStoryboardName</key>
