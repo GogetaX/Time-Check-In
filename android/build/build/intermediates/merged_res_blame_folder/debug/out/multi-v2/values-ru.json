@@ -1,0 +1,77 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ru\\values-ru.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\49c4f150cc482270fa9b8c4457642341\\transformed\\jetified-play-services-ads-20.4.0\\res\\values-ru\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,292,394,444,572,632,776,864,913,994,1031,1068,1115,1196",
+                        "endColumns": "92,101,49,127,59,143,87,48,80,36,36,46,80,46",
+                        "endOffsets": "291,393,443,571,631,775,863,912,993,1030,1067,1114,1195,1242"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "389,486,592,646,778,842,990,1082,1135,1220,1261,1302,1353,1438",
+                        "endColumns": "96,105,53,131,63,147,91,52,84,40,40,50,84,50",
+                        "endOffsets": "481,587,641,773,837,985,1077,1130,1215,1256,1297,1348,1433,1484"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\9617710e59968e2412aeb3b23f549743\\transformed\\core-1.2.0\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "1489",
+                        "endColumns": "100",
+                        "endOffsets": "1585"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\3059271789af547d802d8d35e8f7033a\\transformed\\jetified-play-services-basement-17.6.0\\res\\values-ru\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "215",
+                        "endOffsets": "462"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "215",
+                        "endOffsets": "316"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\res\\values-ru\\godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "64",
+                        "endOffsets": "175"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "321",
+                        "endColumns": "67",
+                        "endOffsets": "384"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -42,6 +42,8 @@
 		D0BCFE3418AEBDA2004A7AAE /* Time Check In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Check In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BCFE4318AEBDA2004A7AAE /* Time Check In-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Time Check In-Info.plist"; sourceTree = "<group>"; };
 		D0BCFE4518AEBDA2004A7AAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D0BCFE4518AEBDA2004A0000 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0BCFE7718AEBFEB004A7AAE /* Time Check In.pck */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Time Check In.pck"; sourceTree = "<group>"; };
 		90DD2D9D24B36E8000717FE1 = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,6 +237,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				D0BCFE4518AEBDA2004A7AAE /* en */,
+				D0BCFE4518AEBDA2004A0000 /* he */,
+D0BCFE4518AEBDA2004A0001 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -336,6 +340,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Time Check In/Time Check In.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = "Automatic";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEVELOPMENT_TEAM = 8596TZWDHC;
 				INFOPLIST_FILE = "Time Check In/Time Check In-Info.plist";
@@ -366,6 +371,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Time Check In/Time Check In.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = "Manual";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEVELOPMENT_TEAM = 8596TZWDHC;
 				INFOPLIST_FILE = "Time Check In/Time Check In-Info.plist";
