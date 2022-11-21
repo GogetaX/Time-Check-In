@@ -1,0 +1,77 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sl\\values-sl.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\9617710e59968e2412aeb3b23f549743\\transformed\\core-1.2.0\\res\\values-sl\\values-sl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "1450",
+                        "endColumns": "100",
+                        "endOffsets": "1546"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\res\\values-sl\\godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "64",
+                        "endOffsets": "175"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "304",
+                        "endColumns": "67",
+                        "endOffsets": "367"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\49c4f150cc482270fa9b8c4457642341\\transformed\\jetified-play-services-ads-20.4.0\\res\\values-sl\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,287,399,453,576,633,748,844,890,970,1005,1039,1099,1177",
+                        "endColumns": "87,111,53,122,56,114,95,45,79,34,33,59,77,43",
+                        "endOffsets": "286,398,452,575,632,747,843,889,969,1004,1038,1098,1176,1220"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "372,464,580,638,765,826,945,1045,1095,1179,1218,1256,1320,1402",
+                        "endColumns": "91,115,57,126,60,118,99,49,83,38,37,63,81,47",
+                        "endOffsets": "459,575,633,760,821,940,1040,1090,1174,1213,1251,1315,1397,1445"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\3059271789af547d802d8d35e8f7033a\\transformed\\jetified-play-services-basement-17.6.0\\res\\values-sl\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "198",
+                        "endOffsets": "445"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "198",
+                        "endOffsets": "299"
+                    }
+                }
+            ]
+        }
+    ]
+}

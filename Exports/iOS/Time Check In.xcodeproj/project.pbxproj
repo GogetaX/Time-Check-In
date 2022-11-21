@@ -25,6 +25,7 @@
 				dstSubfolderSpec = 10;
 				files = (
 					589384010000000000000013,
+589384010000000000000016,
 
 				);
 				name = "Embed Frameworks";
@@ -67,6 +68,9 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 589384010000000000000011 = {isa = PBXBuildFile; fileRef = 589384010000000000000012; };
 589384010000000000000012 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "localnotification.xcframework"; path = "Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework"; sourceTree = "<group>"; };
 589384010000000000000013 = {isa = PBXBuildFile; fileRef = 589384010000000000000012; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+589384010000000000000014 = {isa = PBXBuildFile; fileRef = 589384010000000000000015; };
+589384010000000000000015 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "localnotification.xcframework"; path = "Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework"; sourceTree = "<group>"; };
+589384010000000000000016 = {isa = PBXBuildFile; fileRef = 589384010000000000000015; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,8 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 58938401000000000000000B,
 58938401000000000000000D,
 58938401000000000000000F,
-589384010000000000000011
+589384010000000000000011,
+589384010000000000000014
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +129,8 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 58938401000000000000000C,
 58938401000000000000000E,
 589384010000000000000010,
-589384010000000000000012
+589384010000000000000012,
+589384010000000000000015
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,7 +256,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "arm64";
+				ARCHS = "armv7 arm64";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -295,7 +301,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "arm64";
+				ARCHS = "armv7 arm64";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -334,7 +340,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 		D0BCFE7218AEBDA3004A7AAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "arm64";
+				ARCHS = "armv7 arm64";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				
 				CODE_SIGN_ENTITLEMENTS = "Time Check In/Time Check In.entitlements";
@@ -365,7 +371,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 		D0BCFE7318AEBDA3004A7AAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "arm64";
+				ARCHS = "armv7 arm64";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				
 				CODE_SIGN_ENTITLEMENTS = "Time Check In/Time Check In.entitlements";
