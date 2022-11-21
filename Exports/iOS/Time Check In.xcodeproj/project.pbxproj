@@ -346,7 +346,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 				CODE_SIGN_ENTITLEMENTS = "Time Check In/Time Check In.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = "Automatic";
+				CODE_SIGN_STYLE = "Manual";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEVELOPMENT_TEAM = 8596TZWDHC;
 				INFOPLIST_FILE = "Time Check In/Time Check In-Info.plist";
@@ -361,7 +361,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiok.TimeCheckIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "TimeCheckInProfile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 				WRAPPER_EXTENSION = app;
@@ -392,7 +392,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiok.TimeCheckIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "TimeCheckInProfile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 				WRAPPER_EXTENSION = app;
