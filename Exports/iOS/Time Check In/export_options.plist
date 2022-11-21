@@ -11,7 +11,7 @@
     <key>provisioningProfiles</key>
     <dict>
         <key>com.sergiok.TimeCheckIn</key>
-        <string>TimeCheckInProfile</string>
+        <string></string>
     </dict>
 
     <key>compileBitcode</key>
