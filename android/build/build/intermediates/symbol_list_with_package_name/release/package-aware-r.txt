@@ -31,8 +31,11 @@ attr layout_keyline
 attr statusBarBackground
 attr ttcIndex
 bool enable_system_alarm_service_default
+bool enable_system_foreground_service_default
 bool enable_system_job_service_default
 bool workmanager_test_configuration
+color androidx_core_ripple_material_light
+color androidx_core_secondary_text_default_material_light
 color browser_actions_bg_grey
 color browser_actions_divider_color
 color browser_actions_text_color
@@ -40,8 +43,6 @@ color browser_actions_title_color
 color notification_action_color_filter
 color notification_color
 color notification_icon_bg_color
-color ripple_material_light
-color secondary_text_default_material_light
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
 dimen compat_button_inset_horizontal_material
@@ -184,10 +185,15 @@ id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
 id tag_accessibility_pane_title
+id tag_on_apply_window_listener
+id tag_on_receive_content_listener
+id tag_on_receive_content_mime_types
 id tag_screen_reader_focusable
+id tag_state_description
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id tag_window_insets_animation_callback
 id text
 id text2
 id textPausedParagraph1
@@ -219,6 +225,7 @@ layout status_bar_ongoing_event_progress_bar
 mipmap icon
 mipmap icon_background
 mipmap icon_foreground
+string androidx_startup
 string common_google_play_services_unknown_issue
 string godot_project_name_string
 string kilobytes_per_second

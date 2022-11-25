@@ -5,6 +5,7 @@ signal ButtonPressed()
 func _ready():
 # warning-ignore:return_value_discarded
 	connect("gui_input",self,"gui_input")
+	
 func SetBtnTexture(new):
 	$TextureRect.texture = load(new)
 	

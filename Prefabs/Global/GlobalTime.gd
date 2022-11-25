@@ -437,6 +437,7 @@ func HowManyCheckIns(date):
 	return ret
 
 func HowMuchIEarnedFromSeconds(Seconds):
+	
 	var Ret = 0
 	var WithNosafot = GetHowManySecondsOnNosafot(Seconds)
 	var sufix = ""
@@ -446,6 +447,8 @@ func HowMuchIEarnedFromSeconds(Seconds):
 		
 	if SalorySettings.has("sufix"):
 		sufix = SalorySettings["sufix"]
+	if Seconds == 0 || !SalorySettings.has("salary"):
+		return [0,sufix]
 	Ret = (WithNosafot[0]/3600.0*SalorySettings["salary"])+(WithNosafot[1]/3600.0*SalorySettings["salary"])*1.25+(WithNosafot[2]/3600.0*SalorySettings["salary"])*1.5
 	return [Ret,sufix]
 	#TranslationServer.translate("Earned").format([GlobalTime.FloatToString(((WithNosafot[0]/3600.0*SalorySettings["salary"])+(WithNosafot[1]/3600.0*SalorySettings["salary"])*1.25+(WithNosafot[2]/3600.0*SalorySettings["salary"])*1.5),2),sufix,TranslationServer.translate(has_nosafot_rate)])

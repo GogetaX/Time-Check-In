@@ -23,8 +23,10 @@ func _ready():
 func ReloadCurrentDate():
 	GetDataFromFile()
 	
+	
 func DisplayMonth(MonthNum,Year):
 	text = GlobalTime.GetMonthName(MonthNum)[1]+" "+String(Year)
+	SyncTools()
 	
 
 func InitButtons():
@@ -35,33 +37,44 @@ func InitButtons():
 
 
 func MonthPressed(BtnNode):
-	match BtnNode.name:
-		"NextMonth":
-			CurMonth += 1
-			if CurMonth > 12:
+	var ThisDate = OS.get_datetime()
+	if BtnNode is String:
+		match BtnNode:
+			"This month":
+				GlobalTime.CurSelectedDate["day"] = ThisDate["day"]
+				CurMonth = ThisDate["month"]
+				CurYear = ThisDate["year"]
+			_:
+				print("CurMonth.gd->MonthPressed() unknown MonthType: ",BtnNode)
+	else:
+		match BtnNode.name:
+			"NextMonth":
+				CurMonth += 1
+				if CurMonth > 12:
+					CurYear += 1
+					CurMonth = 1
+			"PrevMonth":
+				CurMonth -= 1
+				if CurMonth <= 0:
+					CurYear -= 1
+					CurMonth = 12
+			"NextYear":
 				CurYear += 1
-				CurMonth = 1
-		"PrevMonth":
-			CurMonth -= 1
-			if CurMonth <= 0:
+			"PrevYear":
 				CurYear -= 1
-				CurMonth = 12
-		"NextYear":
-			CurYear += 1
-		"PrevYear":
-			CurYear -= 1
 	GlobalTime.TempCurMonth = CurMonth
 	GlobalTime.TempCurYear = CurYear
 	
 	SyncDateButtons()
-	var T = Tween.new()
-	add_child(T)
-	T.connect("tween_all_completed",self,"FinishedTween",[T])
-	if !BtnNode.is_Disabled:
-		T.interpolate_property(BtnNode,"modulate",Color(0.5,0.5,0.5,1),Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
-	else:
-		T.interpolate_property(BtnNode,"modulate",Color(1,1,1,1),Color(0.5,0.5,0.5,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
-	T.start()
+	if !BtnNode is String:
+		var T = Tween.new()
+		add_child(T)
+		T.connect("tween_all_completed",self,"FinishedTween",[T])
+		if !BtnNode.is_Disabled:
+			T.interpolate_property(BtnNode,"modulate",Color(0.5,0.5,0.5,1),Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
+		else:
+			T.interpolate_property(BtnNode,"modulate",Color(1,1,1,1),Color(0.5,0.5,0.5,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
+		T.start()
 	
 	
 	DisplayMonth(CurMonth,CurYear)
@@ -106,6 +119,20 @@ func SyncDateButtons():
 	else:
 		$NextYear.SetDisabled(false)
 	
+
+func SyncTools():
+	var Tool = get_parent().get_node("Tools")
+	var ToolList = []
+	
+	var ThisDay = OS.get_datetime()
+	if CurMonth != ThisDay["month"] || CurYear != ThisDay["year"]:
+		ToolList.append(["This month","res://Assets/Icons/Today.png"])
+	Tool.ShowTools(ToolList,self,"BtnPressed")
+	
+func BtnPressed(BtnName):
+	match BtnName:
+		"This month":
+			MonthPressed(BtnName)
 	
 func FinishedTween(T):
 	T.queue_free()

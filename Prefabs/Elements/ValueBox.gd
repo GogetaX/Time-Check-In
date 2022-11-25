@@ -68,6 +68,9 @@ func _gui_input(event):
 	if is_Disabled: return
 	if event is InputEventMouseButton:
 		if event.pressed:
+			$PressTimer.start()
+			
+		if !event.pressed && get_global_rect().has_point(event.global_position) && !$PressTimer.is_stopped():
 			yield(get_tree(),"idle_frame")
 			if !$LineEdit.visible:
 				GlobalTime.ShowKeypad(self,"OnEntry")
@@ -92,7 +95,9 @@ func OnEntry(Key):
 				SetInisialValue($LineEdit.text.to_float())
 				return
 			else:
-				text = String(InisialValue)
+				SetInisialValue(InisialValue)
+				#text = String(InisialValue)
+				#SetMinuteIndicator(MinuteIndicator)
 		"CLS":
 			$LineEdit.visible = false
 			SetInisialValue(InisialValue)

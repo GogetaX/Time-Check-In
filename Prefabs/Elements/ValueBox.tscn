@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/Elements/ValueBox.gd" type="Script" id=2]
 [ext_resource path="res://Prefabs/Elements/InteractiveButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Icons/up-arrow.png" type="Texture" id=4]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Prefabs/Elements/PressTimer.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -12,15 +13,12 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 [node name="ValueBox" type="Label"]
 margin_right = 120.0
 margin_bottom = 55.0
-mouse_filter = 0
+mouse_filter = 1
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "35.5"
 valign = 1
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 MinMax = Vector2( 0, 300 )
 
 [node name="Label" type="Label" parent="."]
@@ -71,6 +69,8 @@ __meta__ = {
 
 [node name="VirtualKeyboardTimer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="PressTimer" parent="." instance=ExtResource( 6 )]
 
 [connection signal="pressed" from="DownBtn" to="." method="_on_DownBtn_pressed"]
 [connection signal="pressed" from="UpBtn" to="." method="_on_UpBtn_pressed"]

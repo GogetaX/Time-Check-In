@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\04abf1938972f4cede67eae582e41d26\\transformed\\work-runtime-2.1.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\ecb35f7f6ba3d8c32ea9f7f3fd387068\\transformed\\work-runtime-2.7.0-alpha04\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

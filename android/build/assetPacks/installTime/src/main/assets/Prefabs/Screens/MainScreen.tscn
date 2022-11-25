@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
@@ -63,6 +63,11 @@
 [ext_resource path="res://Assets/Particles/santa-claus.png" type="Texture" id=61]
 [ext_resource path="res://Assets/Particles/christmas-tree.png" type="Texture" id=62]
 [ext_resource path="res://Prefabs/Shaders/FlappingShader.tres" type="Material" id=63]
+[ext_resource path="res://Assets/Icons/email.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Icons/time.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Icons/Today.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Icons/tax-free.png" type="Texture" id=67]
+[ext_resource path="res://Assets/Icons/translate.png" type="Texture" id=68]
 
 [sub_resource type="ParticlesMaterial" id=8]
 emission_shape = 2
@@ -122,9 +127,6 @@ font_data = ExtResource( 46 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SwipeDetector" type="Node" parent="."]
 script = ExtResource( 10 )
@@ -237,9 +239,6 @@ margin_bottom = 180.0
 rect_min_size = Vector2( 0, 185 )
 custom_styles/panel = ExtResource( 12 )
 script = ExtResource( 38 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CurMonth" type="Label" parent="CalendarScreen/TopMenu"]
 anchor_top = 1.0
@@ -296,22 +295,23 @@ custom_styles/panel = SubResource( 9 )
 LeftText = "Calendar"
 RightText = "List"
 
+[node name="Tools" parent="CalendarScreen/TopMenu" instance=ExtResource( 47 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -2.0
+margin_bottom = 58.0
+
 [node name="Calendar" type="Control" parent="CalendarScreen"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 184.0
+margin_top = 247.0
 margin_right = -10.0
 margin_bottom = -10.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VMonth" type="GridContainer" parent="CalendarScreen/Calendar"]
 anchor_right = 1.0
-margin_top = 5.0
-margin_bottom = 468.0
+anchor_bottom = 1.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 20
 columns = 7
@@ -321,7 +321,7 @@ __meta__ = {
 }
 
 [node name="WeekDay01" type="Label" parent="CalendarScreen/Calendar/VMonth"]
-margin_right = 82.0
+margin_right = 83.0
 margin_bottom = 55.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -331,8 +331,8 @@ text = "We"
 align = 1
 
 [node name="WeekDay02" type="Label" parent="CalendarScreen/Calendar/VMonth"]
-margin_left = 102.0
-margin_right = 184.0
+margin_left = 103.0
+margin_right = 186.0
 margin_bottom = 55.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -342,8 +342,8 @@ text = "We"
 align = 1
 
 [node name="WeekDay03" type="Label" parent="CalendarScreen/Calendar/VMonth"]
-margin_left = 204.0
-margin_right = 286.0
+margin_left = 206.0
+margin_right = 289.0
 margin_bottom = 55.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -353,8 +353,8 @@ text = "We"
 align = 1
 
 [node name="WeekDay04" type="Label" parent="CalendarScreen/Calendar/VMonth"]
-margin_left = 306.0
-margin_right = 388.0
+margin_left = 309.0
+margin_right = 392.0
 margin_bottom = 55.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -364,8 +364,8 @@ text = "We"
 align = 1
 
 [node name="WeekDay05" type="Label" parent="CalendarScreen/Calendar/VMonth"]
-margin_left = 408.0
-margin_right = 490.0
+margin_left = 412.0
+margin_right = 495.0
 margin_bottom = 55.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -375,8 +375,8 @@ text = "We"
 align = 1
 
 [node name="WeekDay06" type="Label" parent="CalendarScreen/Calendar/VMonth"]
-margin_left = 510.0
-margin_right = 592.0
+margin_left = 515.0
+margin_right = 598.0
 margin_bottom = 55.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -386,8 +386,8 @@ text = "We"
 align = 1
 
 [node name="WeekDay07" type="Label" parent="CalendarScreen/Calendar/VMonth"]
-margin_left = 612.0
-margin_right = 694.0
+margin_left = 618.0
+margin_right = 700.0
 margin_bottom = 55.0
 grow_horizontal = 0
 size_flags_horizontal = 3
@@ -428,10 +428,11 @@ margin_right = 700.0
 margin_bottom = 259.0
 
 [node name="List" type="Control" parent="CalendarScreen"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 188.0
+margin_top = 247.0
 margin_right = -10.0
 margin_bottom = -10.0
 __meta__ = {
@@ -441,7 +442,7 @@ __meta__ = {
 [node name="Scroll" type="ScrollContainer" parent="CalendarScreen/List"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -92.0
+margin_bottom = -93.0
 theme = ExtResource( 41 )
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -546,7 +547,8 @@ margin_bottom = 630.0
 [node name="TotalItem" parent="CalendarScreen/List" instance=ExtResource( 40 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -80.0
+margin_top = -84.0
+margin_bottom = -4.0
 
 [node name="TotalsScreen" type="Control" parent="."]
 visible = false
@@ -696,6 +698,7 @@ margin_bottom = 308.0
 mouse_filter = 2
 CategoryText = "Daily working hours"
 PanelInfo = "info_working_hours"
+Icon = ExtResource( 65 )
 
 [node name="WorkingHours" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 32 )]
 margin_top = 312.0
@@ -711,6 +714,7 @@ margin_bottom = 491.0
 mouse_filter = 2
 CategoryText = "App Language"
 PanelInfo = "info_lang"
+Icon = ExtResource( 68 )
 
 [node name="LanguangeControl" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 33 )]
 margin_top = 495.0
@@ -726,6 +730,7 @@ margin_bottom = 659.0
 mouse_filter = 2
 CategoryText = "Calendar Settings"
 PanelInfo = "info_cal_settings"
+Icon = ExtResource( 66 )
 
 [node name="CalendarSettings" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 35 )]
 margin_top = 663.0
@@ -740,6 +745,7 @@ margin_right = 710.0
 margin_bottom = 827.0
 mouse_filter = 2
 CategoryText = "Smart deduction from salary"
+Icon = ExtResource( 67 )
 
 [node name="SmartDeductionSalary" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 36 )]
 margin_top = 831.0
@@ -754,6 +760,7 @@ margin_right = 710.0
 margin_bottom = 1175.0
 mouse_filter = 2
 CategoryText = "App settings"
+Icon = ExtResource( 8 )
 
 [node name="AppSettings" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 52 )]
 margin_top = 1179.0
@@ -766,6 +773,7 @@ margin_right = 710.0
 margin_bottom = 1343.0
 mouse_filter = 2
 CategoryText = "Report to developer"
+Icon = ExtResource( 64 )
 
 [node name="ReportPanel" parent="SettingsScreen/ScrollContainer/VBoxContainer" instance=ExtResource( 42 )]
 margin_top = 1347.0

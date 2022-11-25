@@ -5,13 +5,22 @@ var LastMousePos = Vector2()
 
 export (String) var CategoryText = "Category" setget SetCategoryText
 export (String,MULTILINE) var PanelInfo = "" setget SetPanelInfo
+export (Texture) var Icon = null setget SetTexture
 
 func _ready():
 	if PanelInfo == "":
 		$Info.visible = false
 	else:
 		$Info.visible = true
+	
+	if Icon == null:
+		$Icon.visible = false
+	else:
+		$Icon.texture = Icon
 		
+func SetTexture(new):
+	Icon = new
+	
 func SetPanelInfo(new):
 	PanelInfo = new
 	if PanelInfo == "":

@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [NativeLib]
 
-Python="C:/Python310/python.exe"
+Python="c:/Python310/python.exe"
 
 [admob]
 
@@ -96,11 +96,11 @@ config/icon="res://Assets/ExportIcons/120.png"
 GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"
 GlobalNotif="*res://Prefabs/Global/GlobalNotif.gd"
-localnotification="*res://scripts/localnotification.gd"
 MobileAds="*res://addons/admob/src/singletons/MobileAds.gd"
 GlobalHebrew="*res://Prefabs/Global/GlobalHebrew.gd"
 GlobalTheme="*res://Prefabs/Global/GlobalTheme.gd"
 GlobalExport="*res://Prefabs/Global/GlobalExport.gd"
+localnotification="*res://scripts/localnotification.gd"
 
 [display]
 

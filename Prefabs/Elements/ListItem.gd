@@ -9,7 +9,6 @@ var CurItem = {}
 var BGStyle = null
 
 func _ready():
-	
 	$HBoxContainer/Salary/Report.visible = false
 	$EditWorkingHours.visible = false
 	$Change.visible = false

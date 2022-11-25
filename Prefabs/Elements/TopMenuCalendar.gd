@@ -115,8 +115,8 @@ func AnimToggle(LeftShow):
 		T.connect("tween_all_completed",self,"FinishedTween",[T,Calendar])
 		GenerateList()
 	T.start()
-	
-	
+
+
 func GenerateList(fast = false):
 	FastLoad = fast
 	if !fast: 

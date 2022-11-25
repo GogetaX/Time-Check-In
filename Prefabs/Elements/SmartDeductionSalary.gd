@@ -20,6 +20,7 @@ func LoadSettings():
 	var S = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
 	if S == null:
 		rect_min_size.y = ClosedOpenedYValue.y
+		SelectCountry(0,$Country.get_popup())
 		return
 		
 	if S.has("flag"):

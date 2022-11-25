@@ -20,7 +20,6 @@ func PushCheckOutReminder():
 			tot_minutes_str = "0"+String(tot_minutes)
 		else:
 			tot_minutes_str = String(tot_minutes)
-	
 	if WorkingHours.has("check_out_reminder"):
 		if WorkingHours["check_out_reminder"]:
 			var passed_time = String(tot_hours)+":"+tot_minutes_str

@@ -2,16 +2,16 @@
     "id": "de7b3fe7-967e-45e9-ac58-a8156eca0469",
     "platforms": [
         "all",
-        "android",
-        "ios"
+        "ios",
+        "android"
     ],
     "packages": {
         "local-notification": {
             "version": "0.2.2",
             "platforms": [
                 "all",
-                "android",
-                "ios"
+                "ios",
+                "android"
             ],
             "dependencies": [],
             "autoload": {

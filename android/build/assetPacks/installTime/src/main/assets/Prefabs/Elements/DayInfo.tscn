@@ -19,9 +19,6 @@ rect_min_size = Vector2( 300, 200 )
 size_flags_horizontal = 3
 custom_styles/panel = SubResource( 3 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NoInfo" type="Control" parent="."]
 visible = false

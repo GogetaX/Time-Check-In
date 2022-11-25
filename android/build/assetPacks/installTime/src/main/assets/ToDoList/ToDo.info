@@ -2,8 +2,19 @@ Version TODO:
     +   Added: support for multi-jobs
     +   Added: Calendar multi-select
     +   Added: Break hours
-    +   Fixed: when scrolling the settings, the Input are being pressed
     +   Added: Total list has Total Hours worked as well
+    +   Improved: app loading time (get all the data from ios)
+    +   Fixed: when Selecting date on Export, the 2nd date must not not greather than the 1st one
+    +   Changed: Instead of Deactivate, do NONE (with icon)
+    +   Changed: TAXES button should look like Activate/Deactivate buttons
+    
+Version 0.8.5:
+    -   Added: more icons on the settings menu
+    -   Added: Navigation button for current date
+    -   Fixed: when scrolling the settings, the Input are being pressed
+    -   Fixed: crash when nothing on the calendar
+    -   Fixed: crash on some devices
+
 
 Version 0.8.4:
     -   Added: Export options (.CSV) (Android ONLY)

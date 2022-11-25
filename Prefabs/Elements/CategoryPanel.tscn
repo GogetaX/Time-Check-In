@@ -36,9 +36,6 @@ mouse_filter = 1
 size_flags_horizontal = 3
 custom_styles/panel = ExtResource( 4 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -64,6 +61,21 @@ margin_right = -16.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 40, 40 )
 texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="."]
+material = SubResource( 3 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 16.0
+margin_top = -20.0
+margin_right = 56.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 40 )
 expand = true
 stretch_mode = 5
 __meta__ = {
