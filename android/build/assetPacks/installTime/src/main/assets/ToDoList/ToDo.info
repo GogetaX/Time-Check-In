@@ -5,9 +5,20 @@ Version TODO:
     +   Added: Total list has Total Hours worked as well
     +   Improved: app loading time (get all the data from ios)
     +   Fixed: when Selecting date on Export, the 2nd date must not not greather than the 1st one
-    +   Changed: Instead of Deactivate, do NONE (with icon)
-    +   Changed: TAXES button should look like Activate/Deactivate buttons
+    +   MultiSelect: when pressing MULTI-SELECT, it should light up Yellow
+    +   Multiselect: when pressing again, it should deselect
+    +   MultiSelect: Cal-Day if Left,Right also selected, show different theme (connect them)
+    +   Multiselect: When ENTERING Multiselect mode, nothing should be selected
+    +   MultiSelect: When 0 selected, dont display "Popup" button
+    +   Multiselect: Add choices button
     
+Version 0.8.6:
+    -   Added: On calendar now there is Multiselect option
+    
+Version 0.8.5a:
+    -   Urgent Fix: sudden crash when clicking START
+
+
 Version 0.8.5:
     -   Added: more icons on the settings menu
     -   Added: Navigation button for current date

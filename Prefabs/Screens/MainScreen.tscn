@@ -171,6 +171,7 @@ __meta__ = {
 }
 
 [node name="TimeScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -119.0
@@ -225,7 +226,6 @@ margin_top = 44.0
 margin_bottom = 124.0
 
 [node name="CalendarScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -118.0
@@ -235,30 +235,28 @@ __meta__ = {
 
 [node name="TopMenu" type="Panel" parent="CalendarScreen"]
 anchor_right = 1.0
-margin_bottom = 180.0
-rect_min_size = Vector2( 0, 185 )
+margin_bottom = 220.0
+rect_min_size = Vector2( 0, 240 )
 custom_styles/panel = ExtResource( 12 )
 script = ExtResource( 38 )
 
 [node name="CurMonth" type="Label" parent="CalendarScreen/TopMenu"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -56.0
-margin_bottom = -1.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -360.0
+margin_top = 128.0
+margin_right = 360.0
+margin_bottom = 183.0
 custom_fonts/font = ExtResource( 34 )
 align = 1
 script = ExtResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NextMonth" parent="CalendarScreen/TopMenu/CurMonth" instance=ExtResource( 14 )]
 material = ExtResource( 13 )
 margin_left = -58.0
 margin_top = -35.0
 margin_right = 2.0
-margin_bottom = 25.0
+margin_bottom = 26.0
 rect_min_size = Vector2( 60, 60 )
 focus_mode = 0
 
@@ -266,6 +264,7 @@ focus_mode = 0
 material = ExtResource( 13 )
 margin_left = -170.0
 margin_right = -120.0
+margin_bottom = 34.0
 focus_mode = 0
 icon = ExtResource( 15 )
 
@@ -276,7 +275,7 @@ anchor_right = 0.0
 margin_left = 8.0
 margin_top = -35.0
 margin_right = 68.0
-margin_bottom = 25.0
+margin_bottom = 26.0
 rect_min_size = Vector2( 60, 60 )
 icon = ExtResource( 17 )
 
@@ -286,6 +285,7 @@ anchor_left = 0.0
 anchor_right = 0.0
 margin_left = 112.0
 margin_right = 162.0
+margin_bottom = 34.0
 icon = ExtResource( 16 )
 
 [node name="ToggleBetween" parent="CalendarScreen/TopMenu" instance=ExtResource( 37 )]
@@ -298,8 +298,8 @@ RightText = "List"
 [node name="Tools" parent="CalendarScreen/TopMenu" instance=ExtResource( 47 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -2.0
-margin_bottom = 58.0
+margin_top = -58.0
+margin_bottom = 2.0
 
 [node name="Calendar" type="Control" parent="CalendarScreen"]
 anchor_right = 1.0
@@ -316,9 +316,6 @@ custom_constants/vseparation = 10
 custom_constants/hseparation = 20
 columns = 7
 script = ExtResource( 19 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="WeekDay01" type="Label" parent="CalendarScreen/Calendar/VMonth"]
 margin_right = 83.0
@@ -1269,6 +1266,7 @@ __meta__ = {
 }
 
 [connection signal="OnToggle" from="CalendarScreen/TopMenu/ToggleBetween" to="CalendarScreen/TopMenu" method="_on_ToggleBetween_OnToggle"]
+[connection signal="visibility_changed" from="CalendarScreen/Calendar" to="CalendarScreen/TopMenu/CurMonth" method="_on_Calendar_visibility_changed"]
 [connection signal="BtnPressed" from="BottomUI/HBoxContainer/TimeScreen" to="." method="_on_CheckIn_BtnPressed"]
 [connection signal="BtnPressed" from="BottomUI/HBoxContainer/CalendarScreen" to="." method="_on_Calendar_BtnPressed"]
 [connection signal="BtnPressed" from="BottomUI/HBoxContainer/TotalsScreen" to="." method="_on_Totals_BtnPressed"]

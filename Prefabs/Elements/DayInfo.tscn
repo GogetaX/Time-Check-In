@@ -56,6 +56,67 @@ margin_bottom = 75.0
 text = "Add..."
 items = [  ]
 
+[node name="MultiSelect" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Report" parent="MultiSelect" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 21.0
+margin_right = 134.5
+margin_bottom = 75.0
+text = "Add..."
+items = [  ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MultiSelect"]
+anchor_right = 1.0
+margin_top = 48.0
+margin_bottom = 103.0
+alignment = 1
+
+[node name="Label" type="Label" parent="MultiSelect/HBoxContainer"]
+margin_left = 165.0
+margin_right = 397.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Multi-select "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DayNum" type="Label" parent="MultiSelect/HBoxContainer"]
+margin_left = 401.0
+margin_right = 424.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "4"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Days" type="Label" parent="MultiSelect/HBoxContainer"]
+margin_left = 428.0
+margin_right = 554.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = " Day(s)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DayOffReport" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -151,6 +212,7 @@ expand = true
 stretch_mode = 6
 
 [node name="CheckInData" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {

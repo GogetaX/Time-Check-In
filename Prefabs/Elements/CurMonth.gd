@@ -1,13 +1,17 @@
 extends Label
 
 onready var VMonth = get_parent().get_parent().get_node("Calendar/VMonth")
+onready var Calendar = get_parent().get_parent().get_node("Calendar")
 
 var CurMonth = 0
 var CurYear = 0
+var MultiSelectActive = false setget SetMultiSelect
 
 func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("ReloadCurrentDate",self,"ReloadCurrentDate")
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("MultiSelect",self,"MultiSelect")
 	var Date = OS.get_datetime()
 	CurMonth = Date["month"]
 	CurYear = Date["year"]
@@ -20,6 +24,13 @@ func _ready():
 	InitButtons()
 	SyncDateButtons()
 
+func SetMultiSelect(new):
+	GlobalTime.emit_signal("MultiSelect",new)
+
+func MultiSelect(new):
+	MultiSelectActive = new
+	SyncTools()
+	
 func ReloadCurrentDate():
 	GetDataFromFile()
 	
@@ -37,6 +48,8 @@ func InitButtons():
 
 
 func MonthPressed(BtnNode):
+	SetMultiSelect(false)
+	
 	var ThisDate = OS.get_datetime()
 	if BtnNode is String:
 		match BtnNode:
@@ -124,15 +137,30 @@ func SyncTools():
 	var Tool = get_parent().get_node("Tools")
 	var ToolList = []
 	
-	var ThisDay = OS.get_datetime()
-	if CurMonth != ThisDay["month"] || CurYear != ThisDay["year"]:
-		ToolList.append(["This month","res://Assets/Icons/Today.png"])
+	if !MultiSelectActive:
+		var ThisDay = OS.get_datetime()
+		if CurMonth != ThisDay["month"] || CurYear != ThisDay["year"]:
+			ToolList.append(["This month","res://Assets/Icons/Today.png"])
+		if Calendar.visible:
+			ToolList.append(["Multi-select","res://Assets/Icons/choice.png"])
+	else:
+		ToolList.append(["Cancel selection","res://Assets/Icons/choice.png",GlobalTime.HOLIDAY_COLOR])
 	Tool.ShowTools(ToolList,self,"BtnPressed")
 	
 func BtnPressed(BtnName):
 	match BtnName:
 		"This month":
 			MonthPressed(BtnName)
+		"Multi-select":
+			SetMultiSelect(true)
+			SyncTools()
+		"Cancel selection":
+			SetMultiSelect(false)
+			SyncTools()
 	
 func FinishedTween(T):
 	T.queue_free()
+
+
+func _on_Calendar_visibility_changed():
+	SyncTools()

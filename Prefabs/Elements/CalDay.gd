@@ -6,6 +6,7 @@ var InfoColor = Color.purple
 
 var is_Selected = false
 var CurDayInfo = {}
+var MultiSelectEnabled = false
 
 func _ready():
 	Select(false)
@@ -14,8 +15,14 @@ func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("SelectDay",self,"AnimateSelectedDay")
 # warning-ignore:return_value_discarded
+	GlobalTime.connect("MultiSelect",self,"MultiSelect")
+# warning-ignore:return_value_discarded
 	connect("gui_input",self,"DaySelect")
 	
+func MultiSelect(Enabled):
+	MultiSelectEnabled = Enabled
+	
+
 func AddInfo(DayInfo):
 	var UpdateInfo = false
 	
@@ -41,7 +48,8 @@ func AddInfo(DayInfo):
 		add_color_override("font_color",NormalColor)
 		
 	if UpdateInfo:
-		GlobalTime.SelectCurDate(self,CurDayInfo)
+		if !MultiSelectEnabled:
+			GlobalTime.SelectCurDate(self,CurDayInfo)
 	
 func Select(SelectIt):
 	is_Selected = SelectIt
@@ -51,7 +59,10 @@ func DaySelect(event):
 	if text == " ":return
 	if event is InputEventMouseButton:
 		if event.pressed:
-			GlobalTime.SelectCurDate(self,CurDayInfo)
+			if !MultiSelectEnabled:
+				GlobalTime.SelectCurDate(self,CurDayInfo)
+			else:
+				GlobalTime.MultiSelectDate(self)
 			
 func SelectTodaysDay():
 	$CurrentDay.visible = true
@@ -63,7 +74,16 @@ func AnimateSelectedDay(DayNode):
 	if !is_Selected && DayNode == self:
 		AnimateSelected(true)
 		return
-		
+
+func AnimateCantSelect():
+	var T = Tween.new()
+	add_child(T)
+	T.connect("tween_all_completed",self,"FinishAnim",[T])
+	$Selected.modulate = Color(1,0,0,1)
+	$Selected.visible = true
+	T.interpolate_property($Selected,"modulate",$Selected.modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+	T.start()
+	
 func AnimateSelected(AnimIn):
 	if !AnimIn && !$Selected.visible:
 		return

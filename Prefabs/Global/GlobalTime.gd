@@ -26,6 +26,7 @@ var ExporterUI = null
 var ForgotCheckInYesterday = false
 var ForgotCheckInSometimeAgo = null
 var SwipeEnabled = true
+var CurCalDaySelected = null
 
 
 signal InitSecond()
@@ -51,6 +52,9 @@ signal ScrollToCurrentDay(ListNode)
 signal ShowInterstitalAd()
 # warning-ignore:unused_signal
 signal app_loaded()
+# warning-ignore:unused_signal
+signal MultiSelect(Enabled)
+signal MultiSelectedDate(DayNode)
 
 
 func _ready():
@@ -85,12 +89,16 @@ func InitDates():
 	AddDateDB(6,31,12,2023)
 	
 func SelectCurDate(DayNode,DayInfo):
+	CurCalDaySelected = DayNode
 	CurSelectedDate["day"] = int(DayNode.text)
 	CurSelectedDate["year"] = TempCurYear
 	CurSelectedDate["month"] = TempCurMonth
 	CurSelectedDate["info"] = DayInfo
 	emit_signal("SelectDay",DayNode)
 	
+func MultiSelectDate(DayNode):
+	emit_signal("MultiSelectedDate",DayNode)
+
 func SelectCurDayList(Date,DayInfo):
 	CurSelectedDate["day"] = Date["day"]
 	CurSelectedDate["year"] = Date["year"]

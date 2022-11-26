@@ -2,15 +2,20 @@ extends Panel
 
 var CurInfo = {}
 
+var MultiSelectedInfo = []
+signal FinishedReport()
+
 func _ready():
 	
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("UpdateDayInfo",self,"UpdateDayInfo")
 	$CheckInData.visible = false
 	$NoInfo.visible = true
-	
+	RemoveAllExcept("NoInfo")
 	GlobalSave.AddReportOptionsToNode($NoInfo/Report)
+	
 	$NoInfo/Report.get_popup().connect("index_pressed",self,"SelectReport",[$NoInfo/Report])
+	$MultiSelect/Report.get_popup().connect("index_pressed",self,"SelectReport",[$MultiSelect/Report,true])
 	
 	
 func SetInfo(Info):
@@ -56,6 +61,34 @@ func InitHoliday(_Info):
 		$HolidayReport/Report.get_popup().connect("index_pressed",self,"SelectReport",[$HolidayReport/Report])
 	$HolidayReport/Icon.texture = load("res://Assets/Icons/holidays.png")
 	
+func ReleaseAllSelected():
+	for x in MultiSelectedInfo:
+		x.AnimateSelected(false)
+	MultiSelectedInfo.clear()
+	
+func MultiSelect(Info):
+	RemoveAllExcept("MultiSelect")
+	GlobalSave.AddReportOptionsToNode($MultiSelect/Report)
+
+	if Info == null:
+		$MultiSelect/HBoxContainer/DayNum.text = "0"
+	else:
+		if MultiSelectedInfo.has(Info):
+			Info.AnimateSelected(false)
+			MultiSelectedInfo.erase(Info)
+		else:
+			if Info.CurDayInfo.empty():
+				MultiSelectedInfo.append(Info)
+				Info.AnimateSelected(true)
+			else:
+				Info.AnimateCantSelect()
+	if MultiSelectedInfo.size()==1:
+		$MultiSelect/Report.visible = false
+	else:
+		$MultiSelect/Report.visible = true
+		
+	$MultiSelect/HBoxContainer/DayNum.text = String(MultiSelectedInfo.size())
+		
 	
 func InfoForCheckInData(Info):
 	#check if in debug mode
@@ -128,7 +161,15 @@ func ShowHowLongWorked(Date):
 	return [Res,LastWord]
  
 		
-func SelectReport(Index,Btn):
+func SelectReport(Index,Btn,multi_select = false):
+	if multi_select:
+		
+		for x in MultiSelectedInfo:
+			GlobalTime.CurSelectedDate["day"] = int(x.text)
+			SelectReport(Index,Btn,false)
+			
+		GlobalTime.emit_signal("MultiSelect",false)
+		return
 	var txt = Btn.get_popup().get_item_metadata(Index)
 	var Date = {}
 	match txt:
@@ -186,6 +227,7 @@ func SelectReport(Index,Btn):
 		_:
 			print(txt, " not added yet.")
 	GlobalTime.emit_signal("UpdateDayInfo")
+	emit_signal("FinishedReport")
 
 
 func _on_OnGoingTimer_timeout():

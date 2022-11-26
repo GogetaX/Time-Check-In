@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.godotengine.timecheckin"
     android:installLocation="auto"
-    android:versionCode="32"
-    android:versionName="0.8.5" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+    android:versionCode="34"
+    android:versionName="0.8.6" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="32" />
@@ -28,6 +28,7 @@
         android:maxSdkVersion="29" />
     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- Android package visibility setting -->
     <queries>
 
@@ -65,7 +66,7 @@
             android:excludeFromRecents="false"
             android:exported="true"
             android:label="@string/godot_project_name_string"
-            android:launchMode="singleInstance"
+            android:launchMode="singleTask"
             android:resizeableActivity="true"
             android:screenOrientation="portrait"
             android:theme="@style/GodotAppSplashTheme" >
@@ -134,6 +135,11 @@
             android:name="com.google.android.gms.ads.AdService"
             android:enabled="true"
             android:exported="false" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <meta-data
             android:name="com.google.android.gms.version"

@@ -20,8 +20,10 @@ func ShowTools(ToolArray,emit_node,emit_func):
 			Btn.connect("ButtonPressed",emit_node,emit_func,[x[0]])
 			Btn.focus_mode = Control.FOCUS_NONE
 			$ScrollContainer/HBoxContainer.add_child(Btn)
-			if x.size()==2:
+			if x.size()>=2:
 				Btn.SetBtnTexture(x[1])
+			if x.size()>=3:
+				Btn.modulate = x[2]
 	
 	if $ScrollContainer/HBoxContainer.get_child_count()>1:
 		$ScrollContainer/HBoxContainer/Label.text = "Go to"

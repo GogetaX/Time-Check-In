@@ -93,6 +93,7 @@ config/icon="res://Assets/ExportIcons/120.png"
 
 [autoload]
 
+localnotification="*res://scripts/localnotification.gd"
 GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"
 GlobalNotif="*res://Prefabs/Global/GlobalNotif.gd"
@@ -100,7 +101,6 @@ MobileAds="*res://addons/admob/src/singletons/MobileAds.gd"
 GlobalHebrew="*res://Prefabs/Global/GlobalHebrew.gd"
 GlobalTheme="*res://Prefabs/Global/GlobalTheme.gd"
 GlobalExport="*res://Prefabs/Global/GlobalExport.gd"
-localnotification="*res://scripts/localnotification.gd"
 
 [display]
 
