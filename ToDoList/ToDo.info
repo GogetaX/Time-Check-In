@@ -1,20 +1,13 @@
 Version TODO:
     +   Added: support for multi-jobs
-    +   Added: Calendar multi-select
     +   Added: Break hours
     +   Added: Total list has Total Hours worked as well
     +   Improved: app loading time (get all the data from ios)
     +   Fixed: when Selecting date on Export, the 2nd date must not not greather than the 1st one
-    +   MultiSelect: when pressing MULTI-SELECT, it should light up Yellow
-    +   Multiselect: when pressing again, it should deselect
-    +   MultiSelect: Cal-Day if Left,Right also selected, show different theme (connect them)
-    +   Multiselect: When ENTERING Multiselect mode, nothing should be selected
-    +   MultiSelect: When 0 selected, dont display "Popup" button
-    +   Multiselect: Add choices button
     
 Version 0.8.6:
-    -   Added: On calendar now there is Multiselect option
-    
+    -   Added: Calendar multi-select
+
 Version 0.8.5a:
     -   Urgent Fix: sudden crash when clicking START
 

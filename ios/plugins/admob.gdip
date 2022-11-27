@@ -27,10 +27,10 @@ linker_flags=["-ObjC"]
 ;Warning: You will need to update the [plist] section every time you reinstall/upgrade the plugin!
 
 ;@ IMPORTANT @: Replace with your app id: https://support.google.com/admob/answer/7356431
-GADApplicationIdentifier="ca-app-pub-3940256099942544~1458002511"
+GADApplicationIdentifier="ca-app-pub-6225081745698787~6873188351"
 
 ;OPTIONAL: If you are using User Messaging Platform (UMP), you can enable Delay app measurement: https://developers.google.com/admob/ump/ios/quick-start#delay_app_measurement_optional
-GADDelayAppMeasurementInit:boolean=false
+GADDelayAppMeasurementInit:boolean=true
 
 ;OPTIONAL: Advanced users can modify these extra properties.
 NSUserTrackingUsageDescription="This identifier will be used to deliver personalized ads to you."

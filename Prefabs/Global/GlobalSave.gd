@@ -6,6 +6,8 @@ signal UpdateToday()
 
 var MySaves = {}
 var MySettings = {}
+var DebugData = []
+var DebugEnabled = true
 
 func _ready():
 	LoadSettings()
@@ -224,6 +226,7 @@ func LoadDateForExport(Month,Year):
 	return Res
 	
 func LoadSpecificFile(Month,Year,find_before = true):
+	DebugStart("LoadSpecificFile()")
 	var Res = null
 	var F = File.new()
 	if F.file_exists("user://SaveFile"+String(Year*Month)+".sf"):
@@ -264,6 +267,7 @@ func LoadSpecificFile(Month,Year,find_before = true):
 					else:
 						GlobalTime.ForgotCheckInSometimeAgo = NewCheckOut
 					AddCheckOut(NewCheckOut)
+	DebugStop("LoadSpecificFile()")
 	return Res
 
 func SaveSettings():
@@ -286,17 +290,20 @@ func RemoveSettingByCategory(Category):
 	
 	
 func LoadSettings():
+	DebugStart("LoadSettings()")
 	var F = File.new()
 	if !F.file_exists("user://Settings.ini"):
 		return
+	
 	F.open("user://Settings.ini",File.READ)
 	MySettings = F.get_var()
 	F.close()
+	
 	var Lang = GetValueFromSettingCategory("Languange")
 	if Lang != null:
 		if Lang.has("lang"):
-			#print(Lang["lang"])
 			TranslationServer.set_locale(LanguangeToLetters(Lang["lang"]))
+	DebugStop("LoadSettings()")
 	
 func LanguangeToLetters(Lang):
 	match Lang:
@@ -326,6 +333,34 @@ func HowManyMonthsWorked():
 
 	return files
 
+func DebugStart(DebugName):
+	if !DebugEnabled:
+		return
+	#data: [count,Name,StartAtMS]
+	DebugData.append([DebugData.size(),DebugName,OS.get_ticks_usec()])
+	
+func DebugStop(DebugName):
+	if !DebugEnabled:
+		return
+		
+	for x in DebugData:
+		if x[1] == DebugName:
+			x[2] = OS.get_ticks_usec()-x[2]
+			x[1] = x[1] +"-Stopped"
+			DebugSave()
+			return
+	
+			
+func DebugSave():
+	if !DebugEnabled: 
+		return
+	var F = File.new()
+	F.open("user://DebugLog.log",File.WRITE)
+	for x in DebugData:
+		F.store_line(String(x[0])+" : "+x[1]+" : "+String(x[2]))
+	F.close()
+			
+	
 func GetValueFromSettings(Category,Key):
 	if !MySettings.has(Category):
 		return null
