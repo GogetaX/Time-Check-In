@@ -17,8 +17,8 @@ func GetiOSLibraryPath():
 	return r
 	
 func RearangeFilesForiOS():
-	UserPath = GetiOSLibraryPath()
 	if OS.get_name() == "iOS":
+		UserPath = GetiOSLibraryPath()
 		var files = []
 		var dir = Directory.new()
 		dir.open("user://")

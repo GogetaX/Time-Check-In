@@ -210,9 +210,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -323.0
-margin_top = -162.0
+margin_top = -171.0
 margin_right = 323.0
-margin_bottom = 162.0
+margin_bottom = 171.0
 rect_min_size = Vector2( 500, 200 )
 custom_styles/panel = ExtResource( 8 )
 

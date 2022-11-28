@@ -7,8 +7,9 @@ Version TODO:
 Version 0.8.6:
     -   Added: Calendar multi-select
     -   Added: app will start first time with prefered languange
+    -   Added: Export for iOS
     -   Improved: app loading time
-    +   Fixed: Export date settings
+    -   Fixed: Export date settings
 
 Version 0.8.5a:
     -   Urgent Fix: sudden crash when clicking START

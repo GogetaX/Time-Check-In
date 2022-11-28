@@ -640,7 +640,6 @@ margin_top = 74.0
 margin_bottom = 254.0
 
 [node name="SettingsScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -118.0
@@ -665,7 +664,7 @@ theme = ExtResource( 41 )
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/ScrollContainer"]
-margin_right = 720.0
+margin_right = 710.0
 margin_bottom = 1467.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -971,6 +970,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ExporterScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 54 )
