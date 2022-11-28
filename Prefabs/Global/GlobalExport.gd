@@ -85,6 +85,8 @@ func GetIOSUserDir():
 	var d = res.split("/")
 	var r = ""
 	for x in d:
+		if x == "Documents":
+			return r
 		r = r + "/"+x
 	return r
 
