@@ -4,6 +4,7 @@ extends Control
 
 func _ready():
 	GlobalTime.ExporterUI = self
+# warning-ignore:return_value_discarded
 	connect("visibility_changed",self,"visibility_changed")
 	
 func visibility_changed():

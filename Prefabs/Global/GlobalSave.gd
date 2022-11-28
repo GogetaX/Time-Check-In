@@ -12,6 +12,8 @@ func _ready():
 # warning-ignore:return_value_discarded
 	connect("UpdateLanguange",self,"ClearAllData")
 	
+
+	
 func ClearAllData():
 	GlobalTime.HasCheckin = []
 	GlobalTime.HasCheckOut = []
@@ -192,14 +194,14 @@ func SaveToFile():
 	for year in MySaves:
 		for month in MySaves[year]:
 			var F = File.new()
-			F.open("user://SaveFile"+String(year*month)+".sf",File.WRITE)
+			F.open(GlobalIosArrange.UserPath+"SaveFile"+String(year*month)+".sf",File.WRITE)
 			F.store_var(MySaves[year][month])
 			F.close()
 
 func GetAllDateFiles():
 	var files = []
 	var dir = Directory.new()
-	dir.open("user://")
+	dir.open(GlobalIosArrange.UserPath)
 	dir.list_dir_begin()
 
 	while true:
@@ -216,9 +218,9 @@ func GetAllDateFiles():
 func LoadDateForExport(Month,Year):
 	var Res = null
 	var F = File.new()
-	if !F.file_exists("user://SaveFile"+String(Year*Month)+".sf"):
+	if !F.file_exists(GlobalIosArrange.UserPath+"SaveFile"+String(Year*Month)+".sf"):
 		return null
-	F.open("user://SaveFile"+String(Year*Month)+".sf",File.READ)
+	F.open(GlobalIosArrange.UserPath+"SaveFile"+String(Year*Month)+".sf",File.READ)
 	Res = F.get_var()
 	F.close()
 	return Res
@@ -227,8 +229,8 @@ func LoadSpecificFile(Month,Year,find_before = true):
 
 	var Res = null
 	var F = File.new()
-	if F.file_exists("user://SaveFile"+String(Year*Month)+".sf"):
-		F.open("user://SaveFile"+String(Year*Month)+".sf",File.READ)
+	if F.file_exists(GlobalIosArrange.UserPath+"SaveFile"+String(Year*Month)+".sf"):
+		F.open(GlobalIosArrange.UserPath+"SaveFile"+String(Year*Month)+".sf",File.READ)
 		Res = F.get_var()
 	F.close()
 	if Res != null:
@@ -269,7 +271,7 @@ func LoadSpecificFile(Month,Year,find_before = true):
 
 func SaveSettings():
 	var F = File.new()
-	F.open("user://Settings.ini",File.WRITE)
+	F.open(GlobalIosArrange.UserPath+"Settings.ini",File.WRITE)
 	F.store_var(MySettings)
 	F.close()
 	
@@ -289,10 +291,10 @@ func RemoveSettingByCategory(Category):
 func LoadSettings():
 
 	var F = File.new()
-	if !F.file_exists("user://Settings.ini"):
+	if !F.file_exists(GlobalIosArrange.UserPath+"Settings.ini"):
 		return
 	
-	F.open("user://Settings.ini",File.READ)
+	F.open(GlobalIosArrange.UserPath+"Settings.ini",File.READ)
 	MySettings = F.get_var()
 	F.close()
 	var Lang = GetValueFromSettingCategory("Languange")
@@ -315,7 +317,7 @@ func LanguangeToLetters(Lang):
 func HowManyMonthsWorked():
 	var files = []
 	var dir = Directory.new()
-	dir.open("user://")
+	dir.open(GlobalIosArrange.UserPath)
 	dir.list_dir_begin()
 
 	while true:

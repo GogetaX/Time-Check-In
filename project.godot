@@ -92,6 +92,7 @@ config/icon="res://Assets/ExportIcons/120.png"
 
 [autoload]
 
+GlobalIosArrange="*res://Prefabs/Global/GlobalIOSArrange.gd"
 localnotification="*res://scripts/localnotification.gd"
 GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"
