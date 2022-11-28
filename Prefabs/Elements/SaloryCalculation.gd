@@ -3,9 +3,10 @@ extends Panel
 var OldSalary = 0
 
 func _ready():
-	#GlobalSave.AddVarsToSettings("SaloryCalculation","salary",$ValueBox.InisialValue)
 	InitAllCurrencyButtons()
 	SyncFromSave()
+	
+	
 	
 func InitAllCurrencyButtons():
 	for x in $Currency.get_children():

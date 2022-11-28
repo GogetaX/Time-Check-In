@@ -40,8 +40,5 @@ rect_min_size = Vector2( 70, 70 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="gui_input" from="LangTexture" to="." method="_on_LangTexture_gui_input"]

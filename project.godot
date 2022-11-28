@@ -85,7 +85,6 @@ config={
 
 config/name="Time Check In"
 run/main_scene="res://Prefabs/Screens/MainScreen.tscn"
-run/flush_stdout_on_print=true
 boot_splash/image="res://Assets/ExportIcons/200Transparent.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.945098, 0.976471, 1, 1 )

@@ -2,6 +2,12 @@ extends Panel
 
 
 func _ready():
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("app_loaded",self,"app_loaded")
+	#SyncFromSave()
+	
+func app_loaded():
+	yield(get_tree(),"idle_frame")
 	SyncFromSave()
 	
 func SyncFromSave():

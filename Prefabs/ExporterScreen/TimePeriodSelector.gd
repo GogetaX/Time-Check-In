@@ -39,17 +39,27 @@ func InitOptions():
 		$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().add_item(String(x["month"])+"."+String(x["year"]))
 	
 func SelectedFirstDate(Index):
-	var DateSelected = $VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().get_item_text(Index)
-	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.text = DateSelected
+	var DateSelectedFirst = $VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().get_item_text(Index)
+	var DateSelectedLast = $VBoxContainer/HBoxContainer2/SelectedMonthLast.text
+	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.text = DateSelectedFirst
+	#$VBoxContainer/HBoxContainer2/SelectedMonthLast.text = LastDateSelected
 	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().clear()
-	var DSplit = DateSelected.split(".")
-	var SelectedDate = {}
-	SelectedDate["year"] = int(DSplit[1])
-	SelectedDate["month"] = int(DSplit[0])
+	var DSplit = DateSelectedFirst.split(".")
+	var DLastSplit = DateSelectedLast.split(".")
+	var SelectedDateFirst = {}
+	SelectedDateFirst["year"] = int(DSplit[1])
+	SelectedDateFirst["month"] = int(DSplit[0])
+	
+	var SelectedDateLast = {}
+	SelectedDateLast["year"] = int(DLastSplit[1])
+	SelectedDateLast["month"] = int(DLastSplit[0])
+	
 	for x in FoundDateList:
-		if x["year"]*x["month"] >= SelectedDate["year"]*SelectedDate["month"]:
+		if x["year"]*x["year"] + x["month"] >= SelectedDateFirst["year"]*SelectedDateFirst["year"] + SelectedDateFirst["month"]:
 			$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().add_item(String(x["month"])+"."+String(x["year"]))
-		
+	if SelectedDateFirst["year"]*SelectedDateFirst["year"] + SelectedDateFirst["month"]>SelectedDateLast["year"]*SelectedDateLast["year"]+ SelectedDateLast["month"]:
+		SelectedLastDate(0)
+	
 func SelectedLastDate(Index):
 	var DateSelected = $VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().get_item_text(Index)
 	$VBoxContainer/HBoxContainer2/SelectedMonthLast.text = DateSelected

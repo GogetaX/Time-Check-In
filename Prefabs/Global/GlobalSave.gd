@@ -298,7 +298,6 @@ func LoadSettings():
 	F.open("user://Settings.ini",File.READ)
 	MySettings = F.get_var()
 	F.close()
-	
 	var Lang = GetValueFromSettingCategory("Languange")
 	if Lang != null:
 		if Lang.has("lang"):

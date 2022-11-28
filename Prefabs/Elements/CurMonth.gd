@@ -144,7 +144,7 @@ func SyncTools():
 		if Calendar.visible:
 			ToolList.append(["Multi-select","res://Assets/Icons/choice.png"])
 	else:
-		ToolList.append(["Cancel selection","res://Assets/Icons/choice.png",GlobalTime.HOLIDAY_COLOR])
+		ToolList.append(["Cancel selection","res://Assets/Icons/choice.png",GlobalTime.MULTISELECT_COLOR])
 	Tool.ShowTools(ToolList,self,"BtnPressed")
 	
 func BtnPressed(BtnName):

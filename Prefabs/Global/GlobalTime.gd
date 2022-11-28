@@ -7,6 +7,7 @@ const TIME_RETRO_CHECK_IN = "RETRO_CHECK_IN"
 const DAY_OFF_COLOR = Color.darkgreen
 const HOLIDAY_COLOR = Color.chartreuse
 const CURRENTDAY_COLOR = Color("fbffb326")
+const MULTISELECT_COLOR = Color.yellow
 
 var CurTimeMode = TIME_IDLE
 
