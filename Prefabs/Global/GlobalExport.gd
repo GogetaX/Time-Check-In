@@ -73,7 +73,7 @@ func ExportModule(info):
 			var t = T.get_as_text()
 			T.close()
 			
-			var PopupData = {"type": "ok","Title":"Export","Desc":t+"\n"+String(o)+"\n"+String(one)}
+			var PopupData = {"type": "ok","Title":"Export","Desc":t+"\n"+String(o)+"\n"+String(one)+"\n"+GetIOSUserDir()}
 			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 			
 			return
@@ -86,8 +86,6 @@ func GetIOSUserDir():
 	var r = ""
 	for x in d:
 		r = r + "/"+x
-		if x == "Documents":
-			return r
 	return r
 
 func AttachFileToEmailiOS(ReportFile):
