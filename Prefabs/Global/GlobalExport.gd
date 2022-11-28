@@ -70,7 +70,7 @@ func ExportModule(info):
 			var t = T.get_line()
 			T.close()
 			
-			var PopupData = {"type": "ok","Title":"Export","Desc":t+"\n"+o}
+			var PopupData = {"type": "ok","Title":"Export","Desc":t+"\n"+String(o)}
 			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 			
 			return

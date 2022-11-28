@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Prefabs/ExporterScreen/TimePeriodSelector.gd" type="Script" id=2]
-[ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Icons/fast-forward.png" type="Texture" id=3]
 [ext_resource path="res://Prefabs/Elements/OptionBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Shaders/IconContainer.tres" type="Material" id=5]
 
 [node name="TimePeriodSelector" type="Control"]
 anchor_right = 1.0
@@ -61,22 +62,23 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="SelectedMonthFirst" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 4 )]
-margin_left = 129.0
+margin_left = 127.0
 margin_top = 0.0
-margin_right = 322.0
+margin_right = 320.0
 margin_bottom = 61.0
 
-[node name="SelectedMonthBetween" type="Label" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 342.0
-margin_top = 3.0
-margin_right = 378.0
-margin_bottom = 58.0
-custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
-custom_fonts/font = ExtResource( 3 )
-text = "->"
+[node name="SelectedMonthBetween" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+material = ExtResource( 5 )
+margin_left = 340.0
+margin_right = 380.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 40, 20 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
 
 [node name="SelectedMonthLast" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 4 )]
-margin_left = 398.0
+margin_left = 400.0
 margin_top = 0.0
-margin_right = 591.0
+margin_right = 593.0
 margin_bottom = 61.0
