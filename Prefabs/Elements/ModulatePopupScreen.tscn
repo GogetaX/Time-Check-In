@@ -204,6 +204,81 @@ margin_right = 600.0
 text = "Ok"
 iconType = "YES"
 
+[node name="exportPanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -323.0
+margin_top = -162.0
+margin_right = 323.0
+margin_bottom = 162.0
+rect_min_size = Vector2( 500, 200 )
+custom_styles/panel = ExtResource( 8 )
+
+[node name="Title" type="Label" parent="exportPanel"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 20.0
+margin_right = -10.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Title"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FName" type="Label" parent="exportPanel"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 69.0
+margin_right = -10.0
+margin_bottom = 124.0
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Title"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc1" parent="exportPanel" instance=ExtResource( 5 )]
+margin_top = 128.0
+margin_bottom = 163.0
+text = "Export Complete!"
+CharsPeerLine = 35
+hebrewText = "Export Complete!"
+
+[node name="Desc2" parent="exportPanel" instance=ExtResource( 5 )]
+margin_top = 170.0
+margin_bottom = 254.0
+text = "We noticed you had Check in yesterday, but no check out."
+align = 0
+CharsPeerLine = 42
+hebrewText = "We noticed you had Check in yesterday, but no check out."
+
+[node name="BtnContainer" type="HBoxContainer" parent="exportPanel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 0, 100 )
+custom_constants/separation = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkBtn" parent="exportPanel/BtnContainer" instance=ExtResource( 6 )]
+margin_right = 646.0
+text = "Ok"
+iconType = "YES"
+
 [node name="CongratsPanel" type="Panel" parent="."]
 visible = false
 anchor_left = 0.5
@@ -478,6 +553,7 @@ text = "Close"
 iconType = "NO"
 
 [node name="WhatsNewPanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

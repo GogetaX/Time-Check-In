@@ -188,7 +188,9 @@
 "Export","Export","אוצי","Экспорт"
 "Unchangeable titles","Unchangeable titles",,
 "Custom data","Custom data",,
-"finished_export_as","Export complete, the file %s saved inside DOWNLOADS folder of your phone.","הייצוא נשמר בשם \n%s בתיקיית הורדות.","Экспорт завершен, файл %s сохранен в папке DOWNLOADS на вашем телефоне."
-"finished_export_as_ios","Export Complete, the file %s saved. Use File app > On My Phone > Time Check In/Export folder","\n%s יש לכנס לתוכנת קבצים של הטלפון < פלאפון שלי > Time Check In/Exports","Экспорт завершен, файл %s сохранен. Используйте приложение «Файл» > «На моем телефоне» > «Time Check In/Export»."
 "Confirm","Confirm","יתלביק","Подтвердить"
 "Not now","Not now","וישכע אל","Не сейчас"
+"finished_export_android","Export complete","הייצוא הושלם","Экспорт завершен"
+"finished_export_android_path","the file can be found in your DOWNLOADS folder","ניתן למצוא את הקובץ בתיקיית ההורדות שלך","файл можно найти в папке DOWNLOADS"
+"finished_export_ios","Export complete","הייצוא הושלם","Экспорт завершен"
+"finished_export_ios_path","the File can be found in iPhone File App > On My Phone > Time Check In/exports","ניתן למצוא את הקובץ באפליקציית הקבצים של iPhone > בטלפון שלי > TimeCheckIn/export","Файл можно найти в приложении «Файл iPhone» > «На моем телефоне» > «Время регистрации/экспорта»."

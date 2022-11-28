@@ -59,10 +59,10 @@ func ExportModule(info):
 # warning-ignore:return_value_discarded
 	match OS.get_name():
 		"Android","Windows","MacOS":
-			var PopupData = {"type": "ok","Title":"Export","Desc":TranslationServer.translate("finished_export_as") % f_name}
+			var PopupData = {"type": "export","Title":"Export","FName":f_name,"Desc1":TranslationServer.translate("finished_export_android"),"Desc2":TranslationServer.translate("finished_export_android_path")}
 			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 		"iOS":
-			var PopupData = {"type": "ok","Title":"Export","Desc":TranslationServer.translate("finished_export_as_ios") % f_name}
+			var PopupData = {"type": "export","Title":"Export","FName":f_name,"Desc1":TranslationServer.translate("finished_export_ios"),"Desc2":TranslationServer.translate("finished_export_ios_path")}
 			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 			
 			return

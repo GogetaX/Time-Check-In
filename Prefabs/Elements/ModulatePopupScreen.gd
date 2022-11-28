@@ -47,20 +47,23 @@ func ShowModulate(Data):
 	T.start()
 	
 func InitWindowFromData(Data):
-	# {"type": "YesNo","title":"","desc":TranslationServer.translate("Are you sure you want to skip a") % TranslationServer.translate(TodayReport)}
 	for x in get_children():
 		if "Panel" in x.name:
 			if Data["type"]+"Panel" == x.name:
-				if Data.has("Title"): x.get_node("Title").text = Data["Title"]
-				if Data.has("Desc"):
-					if x.get_node("Desc").has_method("SetHebrewText"):
-						x.get_node("Desc").hebrewText = Data["Desc"]
-					else:
-						x.get_node("Desc").text = Data["Desc"]
-					if x.name == "okPanel":
-						AdjustPanelByTextSize("okPanel",Data["Desc"])
-				if Data.has("Rich"):
-					x.get_node("Rich").bbcode_text = Data["Rich"]
+				#if Data.has("Title"): x.get_node("Title").text = Data["Title"]
+				for d in x.get_children():
+					if Data.has(d.name):
+						if x.get_node(d.name).has_method("SetHebrewText"):
+							x.get_node(d.name).hebrewText = Data[d.name]
+						else:
+							x.get_node(d.name).text = Data[d.name]
+							
+						if x.name == "okPanel":
+							if "Desc" in d.name:
+								AdjustPanelByTextSize("okPanel",Data[d.name])
+					
+				#if Data.has("Rich"):
+					#x.get_node("Rich").bbcode_text = Data["Rich"]
 				x.visible = true
 			else:
 				x.visible = false
