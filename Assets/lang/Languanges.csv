@@ -189,6 +189,6 @@
 "Unchangeable titles","Unchangeable titles",,
 "Custom data","Custom data",,
 "finished_export_as","Export complete, the file %s saved inside DOWNLOADS folder of your phone.","הייצוא נשמר בשם \n%s בתיקיית הורדות.","Экспорт завершен, файл %s сохранен в папке DOWNLOADS на вашем телефоне."
-"finished_export_as_ios","Export Complete, the file %s saved. Use File app → On My Phone → Time Check In → Export folder","\n%s יש לכנס לתוכנת קבצים של הטלפון → פלאפון שלי → Time Check In → Exports","Экспорт завершен, файл %s сохранен. Используйте приложение «Файл» → «На моем телефоне» → «Time Check In» → «Export»."
+"finished_export_as_ios","Export Complete, the file %s saved. Use File app > On My Phone > Time Check In/Export folder","\n%s יש לכנס לתוכנת קבצים של הטלפון < פלאפון שלי > Time Check In/Exports","Экспорт завершен, файл %s сохранен. Используйте приложение «Файл» > «На моем телефоне» > «Time Check In/Export»."
 "Confirm","Confirm","יתלביק","Подтвердить"
 "Not now","Not now","וישכע אל","Не сейчас"
