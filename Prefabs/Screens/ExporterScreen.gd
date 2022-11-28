@@ -4,7 +4,13 @@ extends Control
 
 func _ready():
 	GlobalTime.ExporterUI = self
-
+	connect("visibility_changed",self,"visibility_changed")
+	
+func visibility_changed():
+	if visible:
+		if OS.get_name() == "iOS":
+			$VBoxContainer/ExportTo.VarList = "<My Phone/TimeCheckIn/export>"
+			$VBoxContainer/ExportTo.DefaultSelection = $VBoxContainer/ExportTo.VarList
 
 func _on_Accept_pressed():
 	get_parent().HideAll()

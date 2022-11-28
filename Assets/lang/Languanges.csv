@@ -193,4 +193,4 @@
 "finished_export_android","Export complete","הייצוא הושלם","Экспорт завершен"
 "finished_export_android_path","the file can be found in your DOWNLOADS folder","ניתן למצוא את הקובץ בתיקיית ההורדות שלך","файл можно найти в папке DOWNLOADS"
 "finished_export_ios","Export complete","הייצוא הושלם","Экспорт завершен"
-"finished_export_ios_path","the File can be found in iPhone File App > On My Phone > Time Check In/exports","ניתן למצוא את הקובץ באפליקציית הקבצים של iPhone > בטלפון שלי > TimeCheckIn/export","Файл можно найти в приложении «Файл iPhone» > «На моем телефоне» > «Время регистрации/экспорта»."
+"finished_export_ios_path","the File can be found in iPhone File App > On My Phone > Time Check In/exports","ניתן למצוא את הקובץ באפליקציית הקבצים של iPhone < בטלפון שלי < TimeCheckIn/export","Файл можно найти в приложении «Файл iPhone» > «На моем телефоне» > «Время регистрации/экспорта»."
