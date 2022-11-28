@@ -37,7 +37,6 @@ func ExportModule(info):
 				D.make_dir("user://exports/")
 			F.open("user://exports/"+f_name,File.WRITE)
 		"Windows","Android":
-			print(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name))
 			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
 	F.store_string("Date,Worked hours,Details\n")
 	for Year in ExportData:
@@ -63,6 +62,15 @@ func ExportModule(info):
 			var PopupData = {"type": "ok","Title":"Export","Desc":TranslationServer.translate("finished_export_as") % f_name}
 			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 		"iOS":
+			var T = File.new()
+			T.open("./Library/TestFile.txt",File.WRITE)
+			T.store_line("Hello World!")
+			T.close()
+			T.open("./Library/TestFile.txt",File.READ)
+			var t = T.get_line()
+			var PopupData = {"type": "ok","Title":"Export","Desc":t}
+			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+			T.close()
 			return
 
 func GetIOSUserDir():
