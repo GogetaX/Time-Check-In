@@ -28,7 +28,7 @@ func InitOptions():
 	var F = File.new()
 	if FList != []:
 		for x in FList:
-			F.open("user://"+x,File.READ)
+			F.open(GlobalIosArrange.UserPath+x,File.READ)
 			var d = F.get_var()
 			for a in d:
 				if d[a].has("check_in1"):
