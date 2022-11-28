@@ -36,7 +36,7 @@ func ExportModule(info):
 			if !D.dir_exists("user://exports/"):
 				D.make_dir("user://exports/")
 			F.open("user://exports/"+f_name,File.WRITE)
-		"Windows","Android":
+		"Windows","Android","MacOS":
 			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
 	F.store_string("Date,Worked hours,Details\n")
 	for Year in ExportData:
@@ -58,7 +58,7 @@ func ExportModule(info):
 	F.close()
 # warning-ignore:return_value_discarded
 	match OS.get_name():
-		"Android","Windows":
+		"Android","Windows","MacOS":
 			var PopupData = {"type": "ok","Title":"Export","Desc":TranslationServer.translate("finished_export_as") % f_name}
 			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 		"iOS":
