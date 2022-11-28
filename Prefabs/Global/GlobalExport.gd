@@ -66,11 +66,13 @@ func ExportModule(info):
 			T.open("./Library/TestFile.txt",File.WRITE)
 			T.store_line("Hello World!")
 			T.close()
-			T.open("./Library/TestFile.txt",File.READ)
+			var o = T.open("./Library/TestFile.txt",File.READ)
 			var t = T.get_line()
-			var PopupData = {"type": "ok","Title":"Export","Desc":t}
-			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
 			T.close()
+			
+			var PopupData = {"type": "ok","Title":"Export","Desc":t+"\n"+o}
+			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+			
 			return
 
 func GetIOSUserDir():
