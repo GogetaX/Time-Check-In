@@ -161,7 +161,7 @@
 "info_auto_salary_calc","HOURLY WADGE: indicates how much you earn per hour\nBONUS: will include all the salary bonuses such as transport, bonus and so on","שכר שעתי: מציין כמה אתה מרוויח לשעה\n בונוס חודשי: יכלול את כל מענקי השכר כגון הובלה, בונוס וכדומה","Часовая ставка: указывает, сколько вы зарабатываете в час\nБонус: будет включать все бонусы к зарплате, такие как транспорт, бонус и т. д."
 "email_bug_description","type your bug description here.","הקלד כאן תיאור הבעיה בתוכנה","введите описание ошибки здесь"
 "email_feature_description","type your feature description here.","הקלד תיאור אופציה נוספת כאן","введите описание здесь"
-"p_notif_passed_hours","Just a reminder, %s passed so far.","תזכורת. עברו %s מאז הכניסה.","Напоминаем, что прошло %s."
+"p_notif_passed_hours","Just a reminder, %s passed so far.","תזכורת: עברו %s מאז הכניסה.","Напоминаем, что прошло %s."
 "p_notif_125","You have started your overtime 125%","התחלת את ה125% שעות נוספות","Вы начали сверхурочную работу 125%"
 "p_notif_150","You have started your overtime 150%","התחלת את ה150% שעות נוספות","Вы начали сверхурочную работу 150%"
 "Problem","Problem","היעב","Проблема"
@@ -189,5 +189,6 @@
 "Unchangeable titles","Unchangeable titles",,
 "Custom data","Custom data",,
 "finished_export_as","Export complete, the file %s saved inside DOWNLOADS folder of your phone.","הייצוא נשמר בשם \n%s בתיקיית הורדות.","Экспорт завершен, файл %s сохранен в папке DOWNLOADS на вашем телефоне."
-"Confirm","Confirm","יתלביק","Подтверждать"
+"finished_export_as_ios","Export Complete, the file %s saved. Use File app → On My Phone → Time Check In → Export folder","\n%s יש לכנס לתוכנת קבצים של הטלפון → פלאפון שלי → Time Check In → Exports","Экспорт завершен, файл %s сохранен. Используйте приложение «Файл» → «На моем телефоне» → «Time Check In» → «Export»."
+"Confirm","Confirm","יתלביק","Подтвердить"
 "Not now","Not now","וישכע אל","Не сейчас"
