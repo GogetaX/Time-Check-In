@@ -64,11 +64,11 @@ func ExportModule(info):
 		"iOS":
 			var T = File.new()
 			var D = Directory.new()
-			D.make_dir_recursive("./Library/")
-			var one = T.open("./Library/TestFile.txt",File.WRITE)
+			D.make_dir_recursive("././Library/")
+			var one = T.open("././Library/TestFile.txt",File.WRITE)
 			T.store_line("Hello World!")
 			T.close()
-			var o = T.open("./Library/TestFile.txt",File.READ)
+			var o = T.open("././Library/TestFile.txt",File.READ)
 			var t = T.get_as_text()
 			T.close()
 			
