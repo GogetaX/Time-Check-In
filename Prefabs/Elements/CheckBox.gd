@@ -12,8 +12,9 @@ signal OnToggle()
 
 func _ready():
 	StartPos = $BG/Toggle.rect_position
-	
-	
+	ColorStyle = $BG.get_stylebox("panel").duplicate()
+	$BG.add_stylebox_override("panel",ColorStyle)
+	ColorStyle.set_bg_color(BASE_COLOR)
 	
 func _gui_input(event):
 	if event is InputEventMouseButton:
@@ -23,10 +24,7 @@ func _gui_input(event):
 			AnimToggle()
 
 func AnimToggle(emit_signal = true):
-	if ColorStyle == null:
-		ColorStyle = $BG.get_stylebox("panel").duplicate()
-		$BG.add_stylebox_override("panel",ColorStyle)
-		ColorStyle.set_bg_color(BASE_COLOR)
+		
 	var T = Tween.new()
 	add_child(T)
 	GlobalTime.SwipeEnabled = false

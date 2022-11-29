@@ -45,6 +45,8 @@ func ForceShowOnMouse(Position):
 
 
 func _on_Currency_gui_input(event):
+	if disabled:
+		return
 	if event is InputEventMouseButton:
 		#print(get_rect().has_point(event.position))
 		if event.pressed:

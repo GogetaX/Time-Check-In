@@ -9,21 +9,22 @@ var FoundDateList = []
 func _ready():
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
+	InitButtons()
+	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().connect("index_pressed",self,"SelectedFirstDate")
+	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().connect("index_pressed",self,"SelectedLastDate")
 
 	
 func ShowOnly(ScreenName):
 	if ScreenName != "ExporterScreen":
 		return
-	InitButtons()
-	FastSelect("LastMonth")
 	InitOptions()
+	FastSelect("LastMonth")
+	
 	
 func InitOptions():
 	FoundDateList.clear()
 	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().clear()
 	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().clear()
-	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().connect("index_pressed",self,"SelectedFirstDate")
-	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().connect("index_pressed",self,"SelectedLastDate")
 	var FList = GlobalSave.GetAllDateFiles()
 	var F = File.new()
 	if FList != []:
@@ -37,7 +38,7 @@ func InitOptions():
 			F.close()
 	for x in FoundDateList:
 		$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().add_item(String(x["month"])+"."+String(x["year"]))
-	
+		
 func SelectedFirstDate(Index):
 	var DateSelectedFirst = $VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().get_item_text(Index)
 	var DateSelectedLast = $VBoxContainer/HBoxContainer2/SelectedMonthLast.text
@@ -133,3 +134,8 @@ func SyncDates():
 			print("Erorr TimePeriodSelector->SyncDates() date does not found: ",CurSelected.name)
 	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.text = String(FromDate["month"])+"."+String(FromDate["year"])
 	$VBoxContainer/HBoxContainer2/SelectedMonthLast.text = String(ToDate["month"])+"."+String(ToDate["year"])
+
+
+	for x in FoundDateList:
+		if x["year"]*x["year"] + x["month"] >= ToDate["year"]*ToDate["year"] + ToDate["month"]:
+			$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().add_item(String(x["month"])+"."+String(x["year"]))

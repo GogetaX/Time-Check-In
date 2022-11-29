@@ -80,6 +80,8 @@ func SyncFromSave():
 
 
 func _on_CurrentCurrencyIcon_gui_input(event):
+	if !$Activate.is_Pressed:
+		return
 	if event is InputEventMouseButton:
 		if event.pressed:
 			$Currency.ForceShowOnMouse(event.global_position)
