@@ -289,15 +289,16 @@ func GetAllCheckInAndOuts(Info,max_check_outs = 2,translate = true):
 	return Res
 
 func OffsetDay(CurDay,Offset_Day):
-	CurDay["day"] += Offset_Day
+	var NewCurDay = CurDay.duplicate()
+	NewCurDay["day"] += Offset_Day
 	#Check backward
-	if CurDay["day"] <= 0:
-		CurDay["month"] -= 1
-		if CurDay["month"] <= 0:
-			CurDay["year"] -= 1
-			CurDay["month"] = 12
-		CurDay["day"] = DateDB[CurDay["year"]][CurDay["month"]]["tot_days"]-CurDay["day"]
-	return CurDay
+	if NewCurDay["day"] <= 0:
+		NewCurDay["month"] -= 1
+		if NewCurDay["month"] <= 0:
+			NewCurDay["year"] -= 1
+			NewCurDay["month"] = 12
+		NewCurDay["day"] = DateDB[NewCurDay["year"]][NewCurDay["month"]]["tot_days"]-NewCurDay["day"]
+	return NewCurDay
 
 
 func CheckIfOnGoing(Info):

@@ -5,6 +5,10 @@ Version TODO:
     +   When pressing One of the menu buttons, should show on bottom what what menu u are in
     
 Version 0.8.7:
+    -   Fixed: Urgent bug when it removes Nov 2022
+Sorry everyone who experienced issue with data erased in November 2022
+I do my best to fix those bugs so all of you can enjoy this app!
+
     -   Added: Screen indicator
     -   Improved: Tool bar looks cleaner
     -   Improved: App loading time

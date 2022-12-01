@@ -226,7 +226,6 @@ func LoadDateForExport(Month,Year):
 	return Res
 	
 func LoadSpecificFile(Month,Year,find_before = true):
-
 	var Res = null
 	var F = File.new()
 	if F.file_exists(GlobalIosArrange.UserPath+"SaveFile"+String(Year*Month)+".sf"):
