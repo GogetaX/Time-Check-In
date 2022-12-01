@@ -16,6 +16,7 @@ func _ready():
 		GlobalTheme.DefaultColors["StartCalDayBorder"] = GetColor("res://Prefabs/Styles/CalDay.tres","border_color")
 		GlobalTheme.DefaultColors["StartPopupScreenBG"] = GetColor("res://Prefabs/Styles/ModulatePopupScreen.tres","bg_color")
 		GlobalTheme.DefaultColors["StartPopupScreenBorder"] = GetColor("res://Prefabs/Styles/ModulatePopupScreen.tres","border_color")
+		GlobalTheme.DefaultColors["StartCurScreenPopup"] = GetColor("res://Prefabs/Styles/CurScreenIndicator.tres","bg_color")
 		GlobalTheme.SavedColor = true
 		SyncFromSave()
 	else:
@@ -84,6 +85,7 @@ func SyncTheme():
 		AdjustThemeColor("res://Prefabs/Styles/CalDay.tres",{"border_color":GlobalTheme.DefaultColors["StartCalDayBorder"]},true)
 		AdjustThemeColor("res://Prefabs/Styles/ModulatePopupScreen.tres",{"bg_color":GlobalTheme.DefaultColors["StartPopupScreenBG"]},true)
 		AdjustThemeColor("res://Prefabs/Styles/ModulatePopupScreen.tres",{"border_color":GlobalTheme.DefaultColors["StartPopupScreenBorder"]},true)
+		AdjustThemeColor("res://Prefabs/Styles/CurScreenIndicator.tres",{"bg_color":GlobalTheme.DefaultColors["StartCurScreenPopup"]},true)
 		CanvasModul(GlobalTheme.DarkColor)
 	else:
 		AdjustThemeColor("res://Prefabs/Styles/Background_LightBlue.tres",{"bg_color":GlobalTheme.DefaultColors["StartBGColor"]})
@@ -95,6 +97,7 @@ func SyncTheme():
 		AdjustThemeColor("res://Prefabs/Styles/CalDay.tres",{"border_color":GlobalTheme.DefaultColors["StartCalDayBorder"]})
 		AdjustThemeColor("res://Prefabs/Styles/ModulatePopupScreen.tres",{"bg_color":GlobalTheme.DefaultColors["StartPopupScreenBG"]})
 		AdjustThemeColor("res://Prefabs/Styles/ModulatePopupScreen.tres",{"border_color":GlobalTheme.DefaultColors["StartPopupScreenBorder"]})
+		AdjustThemeColor("res://Prefabs/Styles/CurScreenIndicator.tres",{"bg_color":GlobalTheme.DefaultColors["StartCurScreenPopup"]})
 		CanvasModul(Color(1,1,1,1))
 		
 #

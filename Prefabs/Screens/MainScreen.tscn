@@ -28,6 +28,7 @@
 [ext_resource path="res://Prefabs/Elements/TotalItem.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Prefabs/Elements/CurrentScreen.gd" type="Script" id=27]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=28]
+[ext_resource path="res://Prefabs/Styles/CurScreenIndicator.tres" type="StyleBox" id=29]
 [ext_resource path="res://Prefabs/Elements/WorkingHours.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Prefabs/Elements/LanguangeControl.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=34]
@@ -90,13 +91,6 @@ corner_radius_bottom_left = 30
 size = 25
 use_filter = true
 font_data = ExtResource( 46 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.14902, 0.6, 0.984314, 1 )
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
 
 [node name="MainScreen" type="Control"]
 anchor_right = 1.0
@@ -849,7 +843,7 @@ margin_right = 30.0
 margin_bottom = -160.0
 rect_clip_content = true
 mouse_filter = 2
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = ExtResource( 29 )
 script = ExtResource( 27 )
 
 [node name="Icon" type="TextureRect" parent="TopScreenPermanent/CurrentScreen"]
