@@ -213,7 +213,8 @@ func SelectReport(Index,Btn,multi_select = false):
 			GlobalTime.SyncCurDay(CheckOutDate)
 		"Edit working hours":
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
-			GlobalTime.HourSelectorUI.SyncDate(Date)
+			var hourUI = GlobalTime.LoadTool("Hour Editor")
+			hourUI.SyncDate(Date)
 			GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
 		"Check In":
 			#This is in debug mode only (Windows) will add only check in without check out

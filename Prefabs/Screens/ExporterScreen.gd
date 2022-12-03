@@ -3,7 +3,6 @@ extends Control
 
 
 func _ready():
-	GlobalTime.ExporterUI = self
 # warning-ignore:return_value_discarded
 	connect("visibility_changed",self,"visibility_changed")
 	
@@ -14,11 +13,12 @@ func visibility_changed():
 			$VBoxContainer/ExportTo.DefaultSelection = $VBoxContainer/ExportTo.VarList
 
 func _on_Accept_pressed():
-	get_parent().HideAll()
+	GlobalTime.FreeTool(self)
 	get_parent().ShowOnly("TotalsScreen")
 
 
 func _on_ExportBtn_pressed():
+	GlobalTime.emit_signal("ShowInterstitalAd")
 	var GetFirstMonth = $VBoxContainer/TimePeriodSelector.GetFirstMonth()
 	var GetLastMonth = $VBoxContainer/TimePeriodSelector.GetLastMonth()
 	var CurMonth = GetFirstMonth["month"]

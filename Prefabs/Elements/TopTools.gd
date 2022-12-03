@@ -2,6 +2,8 @@ extends Panel
 
 var ToolBtnInstance = preload("res://Prefabs/Elements/ToolBtn.tscn")
 
+export (bool) var has_goto = true
+
 func _ready():
 	ClearTools()
 
@@ -25,7 +27,7 @@ func ShowTools(ToolArray,emit_node,emit_func):
 			if x.size()>=3:
 				Btn.modulate = x[2]
 	
-	if $ScrollContainer/HBoxContainer.get_child_count()>1:
+	if $ScrollContainer/HBoxContainer.get_child_count()>1 && has_goto:
 		$ScrollContainer/HBoxContainer/Label.text = "Go to"
 
 

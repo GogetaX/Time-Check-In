@@ -186,8 +186,8 @@
 "More export options?","More export options?","?הרימש תויצפוא דוע","Больше возможностей экспорта?"
 "Report to Developer","Report to Developer","תנכתמל חווד","Сообщить разработчику"
 "Export","Export","אוצי","Экспорт"
-"Unchangeable titles","Unchangeable titles",,
-"Custom data","Custom data",,
+"Unchangeable titles","Unchangeable titles","Unchangeable titles","Unchangeable titles"
+"Custom data","Custom data","Custom data","Custom data"
 "Confirm","Confirm","יתלביק","Подтвердить"
 "Not now","Not now","וישכע אל","Не сейчас"
 "finished_export_android","Export complete","הייצוא הושלם","Экспорт завершен"
@@ -196,3 +196,5 @@
 "finished_export_ios_path","the File can be found in iPhone File App > On My Phone > Time Check In/exports","ניתן למצוא את הקובץ באפליקציית הקבצים של iPhone < בטלפון שלי < TimeCheckIn/export","Файл можно найти в приложении «Файл iPhone» > «На моем телефоне» > «Время регистрации/экспорта»."
 "Multi-select","Multi-select","הבורמ הריחב","Выбрать несколько"
 "Cancel selection","Cancel selection","הריחב לוטיב","Отменить выбор"
+"Totals","Totals","םימוכיס","Итоги"
+"Settings","Settings","תורדגה","Настройки"

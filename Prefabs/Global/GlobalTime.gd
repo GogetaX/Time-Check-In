@@ -22,12 +22,11 @@ var DateDB = {}
 var CurSelectedDate = {"day": 0,"month":0,"year":0}
 var TempCurMonth = 0
 var TempCurYear = 0
-var HourSelectorUI = null
-var ExporterUI = null
 var ForgotCheckInYesterday = false
 var ForgotCheckInSometimeAgo = null
 var SwipeEnabled = true
 var CurCalDaySelected = null
+var ToolHandler = null
 
 
 signal InitSecond()
@@ -56,8 +55,27 @@ signal app_loaded()
 # warning-ignore:unused_signal
 signal MultiSelect(Enabled)
 signal MultiSelectedDate(DayNode)
+# warning-ignore:unused_signal
+signal CurScreenIndicator(IconTexture,txt)
 
+func LoadTool(ToolName):
+	var l = null
+	match ToolName:
+		"Export":
+			l = load("res://Prefabs/Screens/ExporterScreen.tscn").instance()
+		"Salary Simulator":
+			l = load("res://Prefabs/Screens/SalarySimulatorScreen.tscn").instance()
+		"Hour Editor":
+			l = load("res://Prefabs/Screens/HourEditorScreen.tscn").instance()
+			
+	if l != null:
+		ToolHandler.add_child(l)
+		ToolHandler.move_child(l,ToolHandler.get_child_count()-3)
+	return l
 
+func FreeTool(ToolNode):
+	ToolNode.queue_free()
+	
 func _ready():
 	InitSecondTimer()
 	InitDates()

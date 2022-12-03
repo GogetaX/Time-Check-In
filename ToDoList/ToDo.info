@@ -4,6 +4,10 @@ Version TODO:
     +   Added: Total list has Total Hours worked as well (with progress bar)
     +   When pressing One of the menu buttons, should show on bottom what what menu u are in
     
+Version 0.8.7:
+    -   Added: Screen indicator
+    -   Improved: Tool bar looks cleaner
+    -   Improved: App loading time
     
 Version 0.8.6:
     -   Added: Calendar multi-select

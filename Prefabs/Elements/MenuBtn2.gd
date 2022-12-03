@@ -54,6 +54,7 @@ func _gui_input(event):
 		if event.pressed:
 			is_pressed = true
 		elif is_pressed:
+			GlobalTime.emit_signal("CurScreenIndicator",texture,name.replace("Screen",""))
 			BtnToggled(!Pressed)
 			emit_signal("BtnPressed")
 			GlobalTime.emit_signal("BtnGroupPressed",self,BtnGroup)

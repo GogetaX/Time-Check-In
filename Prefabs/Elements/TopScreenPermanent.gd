@@ -2,7 +2,8 @@ extends Control
 
 
 func _ready():
-	visible = false
+	$RightSideLabel.visible = false
+	$LeftSideLabel.visible = false
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"ChangedUI")
 # warning-ignore:return_value_discarded
@@ -14,9 +15,11 @@ func ChangedUI(BtnNode,_Group):
 		return
 	match BtnNode.name:
 		"TimeScreen":
-			visible = false
+			$RightSideLabel.visible = false
+			$LeftSideLabel.visible = false
 		_:
-			visible = true
+			$RightSideLabel.visible = true
+			$LeftSideLabel.visible = true
 
 func InitToday():
 	var Date = OS.get_datetime()

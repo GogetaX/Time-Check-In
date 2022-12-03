@@ -14,8 +14,6 @@ func _ready():
 	SwipeTimer.one_shot = true
 	
 func _input(event):
-	if get_parent().get_node("HourEditorScreen").visible:
-		return
 	if not event is InputEventScreenTouch:
 		return
 	if !GlobalTime.SwipeEnabled:

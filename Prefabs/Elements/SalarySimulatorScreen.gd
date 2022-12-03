@@ -2,8 +2,12 @@ extends Control
 
 var TotalItemInstance = preload("res://Prefabs/Elements/TotalItem.tscn")
 
+func _ready():
+# warning-ignore:return_value_discarded
+	connect("visibility_changed",self,"_on_SalarySimulatorScreen_visibility_changed")
+	
 func _on_CloseBtn_pressed():
-	get_parent().HideAll()
+	GlobalTime.FreeTool(self)
 	get_parent().ShowOnly("TotalsScreen")
 
 

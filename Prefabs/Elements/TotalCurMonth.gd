@@ -49,9 +49,11 @@ func MonthBtnPressed(BtnNode):
 				MonthBtnPressed($PrevMonth)
 				return
 			"Salary simulator":
+				GlobalTime.LoadTool("Salary Simulator")
 				GlobalTime.emit_signal("ShowOnlyScreen","SalarySimulatorScreen")
 				return
 			"Export":
+				GlobalTime.LoadTool("Export")
 				GlobalTime.emit_signal("ShowOnlyScreen","ExporterScreen")
 				return
 			_:

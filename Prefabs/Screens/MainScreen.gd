@@ -3,6 +3,7 @@ extends Control
 var CurNode = null
 
 func _ready():
+	GlobalTime.ToolHandler = self
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
 # warning-ignore:return_value_discarded
@@ -25,6 +26,7 @@ func ResizeAllForAds():
 	$TotalsScreen/Scroll.rect_size.y -= MoveAdsYValue
 	$SettingsScreen/ScrollContainer.rect_size.y -= MoveAdsYValue
 	$TotalsScreen/TotEarned.rect_position.y -= MoveAdsYValue
+	$TopScreenPermanent/CurrentScreen.CenterPos.y -= MoveAdsYValue
 	
 	
 func CheckForSwipe(Dir):

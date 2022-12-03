@@ -6,7 +6,12 @@ var CurDate = {}
 var CustomShowScreen = "CalendarScreen"
 
 func _ready():
-	GlobalTime.HourSelectorUI = self
+# warning-ignore:return_value_discarded
+	connect("visibility_changed",self,"visibility_changed")
+	
+func visibility_changed():
+	if visible:
+		GlobalTime.SwipeEnabled = false
 
 func SyncDate(EditingDate,CloseToScreen = "CalendarScreen"):
 	CustomShowScreen = CloseToScreen
@@ -32,7 +37,8 @@ func SyncDate(EditingDate,CloseToScreen = "CalendarScreen"):
 
 
 func _on_Decline_pressed():
-	get_parent().HideAll()
+	GlobalTime.SwipeEnabled = true
+	GlobalTime.FreeTool(self)
 	get_parent().ShowOnly(CustomShowScreen)
 
 func _on_Accept_pressed():

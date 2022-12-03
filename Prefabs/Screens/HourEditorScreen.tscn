@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=3]
+[ext_resource path="res://Prefabs/Elements/HourEditorScreen.gd" type="Script" id=6]
+[ext_resource path="res://Prefabs/Elements/InteractiveButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Elements/CheckInOutEditor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Icons/check-mark.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Icons/unchecked.png" type="Texture" id=10]
+[ext_resource path="res://Prefabs/Styles/Panel/BottomScreen.tres" type="StyleBox" id=11]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 u_color_key : hint_color;
+uniform vec4 u_replacement_color : hint_color;
+
+void fragment() {
+    vec4 col = texture(TEXTURE, UV);
+	float alpha = col.a;
+	
+    vec4 d4 = abs(col - u_color_key);
+    float d = max(max(d4.r, d4.g), d4.b);
+    if(d < 0.01) {
+        col = u_replacement_color;
+    }
+    COLOR = col;
+	COLOR.a = alpha;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/u_color_key = null
+shader_param/u_replacement_color = Color( 1, 1, 1, 1 )
+
+[node name="HourEditorScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopMenu" type="Panel" parent="."]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 180 )
+custom_styles/panel = ExtResource( 11 )
+
+[node name="Title" type="Label" parent="TopMenu"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -53.0
+margin_bottom = 2.0
+custom_fonts/font = ExtResource( 2 )
+text = "Editing Sun 26/date"
+align = 1
+
+[node name="Accept" parent="TopMenu" instance=ExtResource( 7 )]
+material = SubResource( 2 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -85.0
+margin_top = 116.0
+margin_right = -20.0
+margin_bottom = 176.0
+icon = ExtResource( 9 )
+
+[node name="Decline" parent="TopMenu" instance=ExtResource( 7 )]
+material = SubResource( 2 )
+margin_left = 20.0
+margin_top = 116.0
+margin_right = 85.0
+margin_bottom = 176.0
+icon = ExtResource( 10 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 189.0
+margin_bottom = -104.0
+
+[node name="CheckInOutEditor" parent="VBoxContainer" instance=ExtResource( 8 )]
+
+[connection signal="pressed" from="TopMenu/Accept" to="." method="_on_Accept_pressed"]
+[connection signal="pressed" from="TopMenu/Decline" to="." method="_on_Decline_pressed"]

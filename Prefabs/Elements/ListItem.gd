@@ -160,7 +160,8 @@ func SetupBtnPressEvent():
 	
 func EditWorkinfHoursPressed():
 	GlobalTime.SelectCurDayList(CurData,CurItem)
-	GlobalTime.HourSelectorUI.SyncDate(CurData)
+	var HourUI = GlobalTime.LoadTool("Hour Editor")
+	HourUI.SyncDate(CurData)
 	GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
 	
 func BGPress(event):
