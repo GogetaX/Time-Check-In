@@ -220,7 +220,7 @@ func SelectReport(Index,Btn,multi_select = false):
 			#This is in debug mode only (Windows) will add only check in without check out
 			Date = {"year":GlobalTime.CurSelectedDate["year"],"month":GlobalTime.CurSelectedDate["month"],"day":GlobalTime.CurSelectedDate["day"]}
 			
-			Date["hour"] = 0
+			Date["hour"] = 12
 			Date["minute"] = 0
 			Date["second"] = 0
 			GlobalSave.AddCheckIn(Date)

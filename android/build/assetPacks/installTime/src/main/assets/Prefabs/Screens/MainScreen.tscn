@@ -74,7 +74,7 @@ scale = 0.2
 hue_variation = 0.2
 hue_variation_random = 1.0
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.14902, 0.6, 0.984314, 1 )
 border_width_left = 5
 border_width_top = 5
@@ -201,7 +201,6 @@ margin_top = 44.0
 margin_bottom = 124.0
 
 [node name="CalendarScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -118.0
@@ -267,7 +266,7 @@ icon = ExtResource( 16 )
 [node name="ToggleBetween" parent="CalendarScreen/TopMenu" instance=ExtResource( 37 )]
 margin_top = 79.0
 margin_bottom = 115.0
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 11 )
 LeftText = "Calendar"
 RightText = "List"
 
@@ -803,6 +802,7 @@ HowManyMonthsNoAds = 2
 MaxInistalarAds = 2
 
 [node name="TopScreenPermanent" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 30 )

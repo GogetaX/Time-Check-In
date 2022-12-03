@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready():
+	visible = true
 	$RightSideLabel.visible = false
 	$LeftSideLabel.visible = false
 # warning-ignore:return_value_discarded
