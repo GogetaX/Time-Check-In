@@ -4,12 +4,19 @@ export (bool) var ShowAds = false setget SetShowAds
 export (String, MULTILINE) var DontShowAdsOnDevices = "" setget SetDontShowAds
 export (int) var HowManyMonthsNoAds = 3 setget SetHowManyMonthsNoAds
 export (int) var MaxInistalarAds = 1 setget SetMaxInistalarAds
+export (int) var InterstitalAdDelay = 45 setget SetInterstitalAdDelay
 
 var AdsInited = false
 var InstAdCounter = 0
+var InitAdTimer = Timer.new()
 
 func _ready():
+	add_child(InitAdTimer)
+	InitAdTimer.one_shot = true
 	InitAds()
+
+func SetInterstitalAdDelay(new):
+	InterstitalAdDelay = new
 	
 func SetMaxInistalarAds(new):
 	MaxInistalarAds = new
@@ -67,8 +74,11 @@ func interstitial_closed():
 func ShowInterstitalAd():
 	if InstAdCounter >= MaxInistalarAds:
 		return
+	if !InitAdTimer.is_stopped():
+		return
 	InstAdCounter += 1
 	MobileAds.show_interstitial()
+	InitAdTimer.start(InterstitalAdDelay)
 	
 	
 func consent_status_changed(status_message):

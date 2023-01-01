@@ -38,7 +38,10 @@ func PopupForSometimeAgo():
 func PopupForYesterday():
 	var CurDay = OS.get_datetime()
 	var Yesterday = GlobalTime.OffsetDay(CurDay,-1)
-	GlobalSave.AddMySavesPath(Yesterday)
+	if CurDay["month"] != Yesterday["month"] || CurDay["year"] != Yesterday["year"]:
+		var _yest = GlobalSave.LoadSpecificFile(Yesterday["month"],Yesterday["year"],true)
+	else:
+		GlobalSave.AddMySavesPath(Yesterday)
 	if !GlobalTime.ForgotCheckInYesterday:
 		return
 	var PopupData = {"type": "ForgetCheckOut"}

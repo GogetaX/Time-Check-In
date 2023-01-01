@@ -590,7 +590,7 @@ func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150,custom_salary = 0):
 	var CreditAmount = 223
 	
 	#TaxHealth, TaxSocial, AvarageSalary Info: https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx
-	var AvarageSalary = 6331
+	var AvarageSalary = 7122 #2022: 6331
 	var TaxHealth = [3.1,5] 
 	var TaxSocial = [0.4,7]
 	#-------------------------------------------

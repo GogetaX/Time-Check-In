@@ -4,19 +4,22 @@ func _ready():
 	DeactivateAll()
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("app_loaded",self,"app_loaded")
-	for x in get_parent().get_node("BottomUI/HBoxContainer").get_children():
-		x.connect("BtnPressed",self,"BtnPressed",[x])
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("BtnGroupPressed",self,"GroupBtnPressed")
 	
 
 func app_loaded():
 	if IfBetweenMonths({"month":12,"year":2022},{"month":3,"year":2023}):
 		ActivateOnly("Winter")
 
-func BtnPressed(BtnNode):
+func GroupBtnPressed(BtnNode,GroupName):
+	if GroupName != "Menu":
+		return
 	if BtnNode.name == "TimeScreen":
 		app_loaded()
 	else:
 		DeactivateAll()
+	
 	
 func IfBetweenMonths(Date1,Date2):
 	var CurMonth = OS.get_datetime()

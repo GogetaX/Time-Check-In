@@ -2,10 +2,24 @@ Version TODO:
     +   Added: support for multi-jobs
     +   Added: Break hours
     +   Added: Total list has Total Hours worked as well (with progress bar)
-    +   When pressing One of the menu buttons, should show on bottom what what menu u are in
+    +   Added: Holding option for Check-out, Edit working hours
+    +   Added: holding option for Check-In (in case you have check out today), Edit working hours
+    +   The last month removed when entered 2023
     
+Version 0.8.8:
+    -   2023 Update for Israel Salary calculation 2023:
+        Avarage salary 6,331₪ -> 7,122₪
+    -   Fixed: When swiping from Main Menu, the animations were still visible
+    -   Fixed: issue with Multi-select day and Swipe
+    -   Fixed: some stability issues
+    -   Changed: Multi-select icon
+
+
+    
+
 Version 0.8.7:
     -   Fixed: Urgent bug when it removes Nov 2022
+
 Sorry everyone who experienced issue with data erased in November 2022
 I do my best to fix those bugs so all of you can enjoy this app!
 

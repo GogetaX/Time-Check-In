@@ -62,6 +62,8 @@ func InitHoliday(_Info):
 	$HolidayReport/Icon.texture = load("res://Assets/Icons/holidays.png")
 	
 func ReleaseAllSelected():
+	if MultiSelectedInfo == []:
+		return
 	for x in MultiSelectedInfo:
 		x.AnimateSelected(false)
 	MultiSelectedInfo.clear()

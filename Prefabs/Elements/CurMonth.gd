@@ -142,9 +142,9 @@ func SyncTools():
 		if CurMonth != ThisDay["month"] || CurYear != ThisDay["year"]:
 			ToolList.append(["This month","res://Assets/Icons/Today.png"])
 		if Calendar.visible:
-			ToolList.append(["Multi-select","res://Assets/Icons/choice.png"])
+			ToolList.append(["Multi-select","res://Assets/Icons/multiselect.png"])
 	else:
-		ToolList.append(["Cancel selection","res://Assets/Icons/choice.png",GlobalTime.MULTISELECT_COLOR])
+		ToolList.append(["Cancel selection","res://Assets/Icons/multiselect.png",GlobalTime.MULTISELECT_COLOR])
 	Tool.ShowTools(ToolList,self,"BtnPressed")
 	
 func BtnPressed(BtnName):
