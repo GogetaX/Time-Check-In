@@ -4,11 +4,10 @@ Version TODO:
     +   Added: Total list has Total Hours worked as well (with progress bar)
     +   Added: Holding option for Check-out, Edit working hours
     +   Added: holding option for Check-In (in case you have check out today), Edit working hours
-    +   The last month removed when entered 2023
     
 Version 0.8.8:
     -   2023 Update for Israel Salary calculation 2023:
-        Avarage salary 6,331₪ -> 7,122₪
+        Average salary 6,331₪ -> 7,122₪
     -   Fixed: When swiping from Main Menu, the animations were still visible
     -   Fixed: issue with Multi-select day and Swipe
     -   Fixed: some stability issues
