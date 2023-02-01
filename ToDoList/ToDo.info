@@ -5,6 +5,13 @@ Version TODO:
     +   Added: Holding option for Check-out, Edit working hours
     +   Added: holding option for Check-In (in case you have check out today), Edit working hours
     
+Version 0.8.9:
+    -   Added: Holding the START button, more options
+    -   Translation: Translated Export screen
+    -   Changed: Multi select icon
+    -   Fixed: Multi select now can be enabled to a single day as well
+
+
 Version 0.8.8:
     -   2023 Update for Israel Salary calculation 2023:
         Average salary 6,331₪ -> 7,122₪

@@ -84,7 +84,7 @@ func MultiSelect(Info):
 				Info.AnimateSelected(true)
 			else:
 				Info.AnimateCantSelect()
-	if MultiSelectedInfo.size()==1:
+	if MultiSelectedInfo.size()==0:
 		$MultiSelect/Report.visible = false
 	else:
 		$MultiSelect/Report.visible = true

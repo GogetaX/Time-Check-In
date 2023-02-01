@@ -130,6 +130,11 @@ func RemoveCheckInOut(CheckInNum,Date):
 
 	MySaves[CurYear][CurMonth][Date["day"]] = ReformatCheckins(MySaves[CurYear][CurMonth][Date["day"]])
 	SaveToFile()
+
+func AddAditionalReportOptions(NodeName):
+	var MetaData = NodeName.get_popup().get_item_count()
+	NodeName.get_popup().add_icon_item(ReportToImage("Forgot Check-in?"),"Forgot Check-in?")
+	NodeName.get_popup().set_item_metadata(MetaData,"Forgot Check-in?")
 	
 func AddReportOptionsToNode(NodeName,ExcludeWorkDay = false):
 	var MetaData = 0
@@ -163,6 +168,8 @@ func ReportToImage(ReportText):
 			return load("res://Assets/Icons/holidays.png")
 		"Work day":
 			return load("res://Assets/Icons/hard-work.png")
+		"Forgot Check-in?":
+			return load("res://Assets/Icons/confusion.png")
 		_:
 			return null
 			

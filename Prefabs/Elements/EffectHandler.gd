@@ -6,8 +6,15 @@ func _ready():
 	GlobalTime.connect("app_loaded",self,"app_loaded")
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("BtnGroupPressed",self,"GroupBtnPressed")
+# warning-ignore:return_value_discarded
+	GlobalTime.connect("ShowOnlyScreen",self,"HourEditorScreen")
 	
-
+func HourEditorScreen(ScreenName):
+	if ScreenName != "TimeScreen":
+		DeactivateAll()
+	else:
+		app_loaded()
+	
 func app_loaded():
 	if IfBetweenMonths({"month":12,"year":2022},{"month":3,"year":2023}):
 		ActivateOnly("Winter")

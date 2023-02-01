@@ -137,6 +137,8 @@ func HideAll():
 
 
 func ShowOnly(WindowName):
+	if WindowName == "TimeScreen":
+		$EffectHandler.app_loaded()
 	FinalizeTweens()
 	CurNode = GetCurNodeToSwipe()
 	for x in get_children():

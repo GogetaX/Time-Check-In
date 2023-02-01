@@ -14,7 +14,8 @@ func visibility_changed():
 		GlobalTime.SwipeEnabled = false
 
 func SyncDate(EditingDate,CloseToScreen = "CalendarScreen"):
-	CustomShowScreen = CloseToScreen
+	if CloseToScreen != "":
+		CustomShowScreen = CloseToScreen
 	$TopMenu/Accept.focus_mode = Control.FOCUS_NONE
 	$TopMenu/Decline.focus_mode = Control.FOCUS_NONE
 	for x in $VBoxContainer.get_children():

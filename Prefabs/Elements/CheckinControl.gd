@@ -6,6 +6,7 @@ func _ready():
 	add_child(HoldTween)
 	HoldTween.connect("tween_all_completed",self,"FinishedWaitTween")
 	GlobalSave.AddReportOptionsToNode($IdleOptions,true)
+	GlobalSave.AddAditionalReportOptions($IdleOptions)
 	$StartStopBtn/TextureProgress.visible = false
 # warning-ignore:return_value_discarded
 	GlobalTime.connect("InitSecond",self,"InitSecond")
@@ -245,8 +246,9 @@ func _on_StartStopBtn_button_up():
 func FinishedWaitTween():
 	$StartStopBtn.DontFlip = true
 	#$IdleOptions.visible = true
-	$IdleOptions.get_popup().show_modal()
-	$IdleOptions.get_popup().rect_position = get_viewport_rect().size / 2
+	$IdleOptions.ForceShowOnMouse(get_global_mouse_position())
+	#$IdleOptions.get_popup().show_modal()
+	#$IdleOptions.get_popup().rect_position = get_viewport_rect().size / 2
 
 func SelectedReport(index):
 	var report = ""
@@ -254,6 +256,38 @@ func SelectedReport(index):
 	var CurData = OS.get_datetime()
 	GlobalTime.SelectCurDayList(CurData,CurData)
 	match report:
+		"Forgot Check-in?":
+			
+			#GlobalSave.RemoveReport(Date)
+			var CheckInDate = CurData.duplicate()
+			var S = GlobalSave.GetValueFromSettingCategory("WorkingHours")
+			if S != null:
+				if S.has("minutes"):
+					CheckInDate["minute"] -= S["minutes"]
+				if S.has("hours"):
+					CheckInDate["hour"] -= S["hours"]
+				if CheckInDate["minute"] < 0:
+					CheckInDate["hour"] -= 1
+					CheckInDate["minute"] = 60 - CheckInDate["minute"]
+				if CheckInDate["hour"] < 1:
+					CheckInDate["hour"] = 1
+				
+			var CheckOutDate = CurData.duplicate()
+			
+			
+			GlobalSave.AddCheckIn(CheckInDate)
+			GlobalSave.AddCheckOut(CheckOutDate)
+			
+			GlobalTime.FillCheckInOutArray(CheckInDate,CheckOutDate)
+			GlobalTime.emit_signal("UpdateSpecificDayInfo",CheckOutDate["day"],GlobalSave.MySaves[CheckOutDate["year"]][CheckOutDate["month"]][CheckOutDate["day"]])
+			GlobalTime.SyncCurDay(CheckOutDate)
+			
+		#Edit working hours
+			var hourUI = GlobalTime.LoadTool("Hour Editor")
+			hourUI.SyncDate(CurData,"TimeScreen")
+			#GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
+			GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
+			
 		"Day off":
 			var GetToday = GlobalSave.GetTodayInfo()
 			if GetToday != null && GetToday.has("check_in1"):

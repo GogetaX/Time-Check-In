@@ -62,9 +62,6 @@ margin_top = 496.0
 margin_bottom = 703.0
 rect_min_size = Vector2( 0, 207 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="IdleOptions" parent="." instance=ExtResource( 9 )]
 visible = false

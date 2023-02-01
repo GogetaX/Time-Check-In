@@ -140,7 +140,6 @@ __meta__ = {
 }
 
 [node name="TimeScreen" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -119.0
@@ -195,6 +194,7 @@ margin_top = 44.0
 margin_bottom = 124.0
 
 [node name="CalendarScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -118.0
@@ -793,7 +793,7 @@ script = ExtResource( 43 )
 ShowAds = true
 DontShowAdsOnDevices = "66125c610ed41faa"
 HowManyMonthsNoAds = 2
-MaxInistalarAds = 3
+MaxInistalarAds = 10
 
 [node name="TopScreenPermanent" type="Control" parent="."]
 visible = false
