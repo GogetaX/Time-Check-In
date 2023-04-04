@@ -1,14 +1,23 @@
+tool
 extends Node
 
+export (bool) var HideAll = false setget SetHideAll
+
 func _ready():
-	DeactivateAll()
-# warning-ignore:return_value_discarded
-	GlobalTime.connect("app_loaded",self,"app_loaded")
-# warning-ignore:return_value_discarded
-	GlobalTime.connect("BtnGroupPressed",self,"GroupBtnPressed")
-# warning-ignore:return_value_discarded
-	GlobalTime.connect("ShowOnlyScreen",self,"HourEditorScreen")
+	if !Engine.editor_hint:
+		DeactivateAll()
+	# warning-ignore:return_value_discarded
+		GlobalTime.connect("app_loaded",self,"app_loaded")
+	# warning-ignore:return_value_discarded
+		GlobalTime.connect("BtnGroupPressed",self,"GroupBtnPressed")
+	# warning-ignore:return_value_discarded
+		GlobalTime.connect("ShowOnlyScreen",self,"HourEditorScreen")
 	
+func SetHideAll(new):
+	HideAll = new
+	if Engine.editor_hint:
+		if HideAll:
+			DeactivateAll()
 func HourEditorScreen(ScreenName):
 	if ScreenName != "TimeScreen":
 		DeactivateAll()
@@ -16,8 +25,12 @@ func HourEditorScreen(ScreenName):
 		app_loaded()
 	
 func app_loaded():
-	if IfBetweenMonths({"month":12,"year":2022},{"month":3,"year":2023}):
+	if IfBetweenMonths({"month":12,"year":2023},{"month":1,"year":2024}):
 		ActivateOnly("Winter")
+	if ExactDayInYear({"month":4,"day":1}):
+		ActivateOnly("AprilFool")
+	if ExactDayInYear({"month":3,"day":8}):
+		ActivateOnly("WomansDay")
 
 func GroupBtnPressed(BtnNode,GroupName):
 	if GroupName != "Menu":
@@ -27,6 +40,11 @@ func GroupBtnPressed(BtnNode,GroupName):
 	else:
 		DeactivateAll()
 	
+func ExactDayInYear(Date):
+	var CurMonth = OS.get_datetime()
+	if CurMonth["month"]==Date["month"] && CurMonth["day"] == Date["day"]:
+		return true
+	return false
 	
 func IfBetweenMonths(Date1,Date2):
 	var CurMonth = OS.get_datetime()

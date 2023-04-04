@@ -583,7 +583,7 @@ func FilterChecksIns(CheckInData):
 func IsraelIncomeCalcFromSalary(SecondsWorked,Sec125,Sec150,custom_salary = 0):
 	#Values Updated Every Year
 	#TaxInfo, TaxMore Info: https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94
-	var TaxInfo = [[6450, 10.0],[9240, 14.0],[14840, 20.0],[20620, 31.0], [42910,35.0], [55270,47.0]]
+	var TaxInfo = [[6790, 10.0],[9730, 14.0],[15620, 20.0],[21710, 31.0], [45180,35.0], [58190,47.0]]
 	var TaxMore = 50.0
 	
 	#CreditAmount Info Nekudot Zokui: https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99
