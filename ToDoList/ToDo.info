@@ -4,6 +4,7 @@ Version TODO:
     +   Added: Calendar and Total dates should be synced
     
 Version 0.9.1:
+    -   Added: Capability with newer versions of IOS/Android
     -   Added: Better translation
     -   Added: Target working hours for month
     -   Added: Progress bar on Total screen that shows how many hours done/left
