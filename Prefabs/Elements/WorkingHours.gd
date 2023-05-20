@@ -15,6 +15,7 @@ func SyncFromSave():
 	if S == null:
 		GlobalSave.AddVarsToSettings("WorkingHours","hours",$WorkingHours.InisialValue)
 		GlobalSave.AddVarsToSettings("WorkingHours","minutes",$WorkingMinutes.InisialValue)
+		GlobalSave.AddVarsToSettings("WorkingHours","monthly_hours",$WorkingMonthlyHours.InisialValue)
 		return
 		
 	if S.has("minutes"):
@@ -24,6 +25,7 @@ func SyncFromSave():
 	if S.has("monthly_hours"):
 		$WorkingMonthlyHours.SetInisialValue(S["monthly_hours"])
 	else:
+		
 		$WorkingMonthlyHours.SetInisialValue(176)
 		
 	if S.has("hours"):

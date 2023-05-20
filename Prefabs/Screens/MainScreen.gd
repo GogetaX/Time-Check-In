@@ -135,7 +135,7 @@ func HideAll():
 		if "Screen" in x.name && not "Permanent" in x.name:
 			x.visible = false
 
-
+ 
 func ShowOnly(WindowName):
 	if WindowName == "TimeScreen":
 		$EffectHandler.app_loaded()
