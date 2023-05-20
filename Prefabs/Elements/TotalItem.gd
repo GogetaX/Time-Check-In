@@ -1,10 +1,14 @@
 extends Panel
 
+var CurInfo = {}
 
 func _ready():
 	modulate = Color(1,1,1,0)
 # warning-ignore:return_value_discarded
 	$Timer.connect("timeout",self,"DelayStart")
+	var p_bar = get_node_or_null("ProgressBar")
+	if p_bar != null:
+		p_bar.visible = false
 
 
 func ShowOvertime(Delay,Info):
@@ -47,6 +51,7 @@ func ShowOvertime(Delay,Info):
 	
 		
 func ShowItem(Delay,Info):
+	CurInfo = Info
 	$Title.set_message_translation(false)
 	$Desc.set_message_translation(false)
 	if Delay >0.0:
@@ -57,6 +62,12 @@ func ShowItem(Delay,Info):
 	if Info.empty():
 		$Title.text = ""
 		$Desc.text = ""
+	
+	if Info.has("progress_percent"):
+		$ProgressBar.visible = true
+		$ProgressBar.min_value = 0
+		$ProgressBar.max_value = 100.0
+		$ProgressBar.value = 0.0
 		
 	if TranslationServer.get_locale() == "he":
 		if Info.has("title"):
@@ -77,4 +88,8 @@ func DelayStart():
 	T.start()
 
 func FinishedShowTween(T):
+	#Show percent after the item shown..
+	if CurInfo.has("progress_percent"):
+		var tw = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+		tw.tween_property($ProgressBar,"value",CurInfo["progress_percent"],0.9)
 	T.queue_free()

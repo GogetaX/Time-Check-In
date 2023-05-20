@@ -20,7 +20,11 @@ func SyncFromSave():
 	if S.has("minutes"):
 		$WorkingMinutes.SetInisialValue(S["minutes"])
 	else:
-		$WorkingMinutes.SetInisialValue(0)
+		$WorkingMinutes.SetInisialValue(8)
+	if S.has("monthly_hours"):
+		$WorkingMonthlyHours.SetInisialValue(S["monthly_hours"])
+	else:
+		$WorkingMonthlyHours.SetInisialValue(176)
 		
 	if S.has("hours"):
 		$WorkingHours.SetInisialValue(S["hours"])
@@ -47,3 +51,7 @@ func _on_CheckOutReminder_OnToggle():
 
 func _on_WorkingMinutes_UpdatedVar(NewVar):
 	GlobalSave.AddVarsToSettings("WorkingHours","minutes",NewVar)
+
+
+func _on_WorkingMonthlyHours_UpdatedVar(NewVar):
+	GlobalSave.AddVarsToSettings("WorkingHours","monthly_hours",NewVar)

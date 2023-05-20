@@ -167,6 +167,7 @@ func DisplayElements(_Date):
 	Delay += 0.1
 	
 	#Tot Worked Hours
+	var working_hours = GlobalSave.GetValueFromSettingCategory("WorkingHours")
 	Itm = TotalItemInstance.instance()
 	VBox.add_child(Itm)
 	var SecondsWorked = 0
@@ -188,7 +189,10 @@ func DisplayElements(_Date):
 	if CurMonth["month"] == CurSelectedMonth["month"] && CurMonth["year"] == CurSelectedMonth["year"]:
 		if GlobalTime.CurTimeMode == GlobalTime.TIME_CHECKED_IN:
 			dec = TranslationServer.translate("total_hours_and_going").format([GlobalTime.FloatToString((SecondsWorked+SecondsFor125+SecondsFor150)/3600,1)])
-	Info = {"title":"total_hours_worked","desc":dec} 
+	Info = {"title":"total_hours_worked","desc":dec}
+	if working_hours.has("monthly_hours"):
+		Info["progress_percent"] = float(dec) * 100.0 / working_hours["monthly_hours"]
+		Info["desc"] += "/"+String(working_hours["monthly_hours"])
 	Itm.ShowItem(Delay,Info)
 	Delay += 0.1
 	var Gross = 0

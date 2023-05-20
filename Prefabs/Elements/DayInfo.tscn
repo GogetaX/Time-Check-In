@@ -79,15 +79,16 @@ items = [  ]
 anchor_right = 1.0
 margin_top = 48.0
 margin_bottom = 103.0
+custom_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="MultiSelect/HBoxContainer"]
-margin_left = 165.0
-margin_right = 397.0
+margin_left = 169.0
+margin_right = 391.0
 margin_bottom = 55.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Multi-select "
+text = "Multi-select"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -106,12 +107,12 @@ __meta__ = {
 }
 
 [node name="Days" type="Label" parent="MultiSelect/HBoxContainer"]
-margin_left = 428.0
-margin_right = 554.0
+margin_left = 434.0
+margin_right = 550.0
 margin_bottom = 55.0
 custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = " Day(s)"
+text = "Day(s)"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
