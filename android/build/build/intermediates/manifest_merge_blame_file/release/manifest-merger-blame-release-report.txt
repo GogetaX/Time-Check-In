@@ -60,8 +60,8 @@
 32-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:20:5-76
 32-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\AndroidManifest.xml:20:22-73
 33    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-33-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\44efd78434ae586ad4587af9aa553843\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:5-78
-33-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\44efd78434ae586ad4587af9aa553843\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:22-75
+33-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\239ebcac8c845e4b77b60517d64be60e\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:5-78
+33-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\239ebcac8c845e4b77b60517d64be60e\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:22-75
 34    <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- Android package visibility setting -->
 34-->[com.google.android.gms:play-services-ads-lite:21.1.0] C:\Users\Sergio\.gradle\caches\transforms-3\0ac4ceb7916ab853718b502c54d0969d\transformed\jetified-play-services-ads-lite-21.1.0\AndroidManifest.xml:25:5-79
 34-->[com.google.android.gms:play-services-ads-lite:21.1.0] C:\Users\Sergio\.gradle\caches\transforms-3\0ac4ceb7916ab853718b502c54d0969d\transformed\jetified-play-services-ads-lite-21.1.0\AndroidManifest.xml:25:22-76
@@ -185,18 +185,18 @@
 104    initializer.
 105        -->
 106        <meta-data
-106-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\44efd78434ae586ad4587af9aa553843\transformed\jetified-LocalNotification.release\AndroidManifest.xml:25:9-27:78
+106-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\239ebcac8c845e4b77b60517d64be60e\transformed\jetified-LocalNotification.release\AndroidManifest.xml:24:9-26:78
 107            android:name="org.godotengine.plugin.v1.LocalNotification"
-107-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\44efd78434ae586ad4587af9aa553843\transformed\jetified-LocalNotification.release\AndroidManifest.xml:26:13-71
+107-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\239ebcac8c845e4b77b60517d64be60e\transformed\jetified-LocalNotification.release\AndroidManifest.xml:25:13-71
 108            android:value="ru.mobilap.localnotification.LocalNotification" />
-108-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\44efd78434ae586ad4587af9aa553843\transformed\jetified-LocalNotification.release\AndroidManifest.xml:27:13-75
+108-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\239ebcac8c845e4b77b60517d64be60e\transformed\jetified-LocalNotification.release\AndroidManifest.xml:26:13-75
 109
 110        <receiver
-110-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\44efd78434ae586ad4587af9aa553843\transformed\jetified-LocalNotification.release\AndroidManifest.xml:29:9-31:41
+110-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\239ebcac8c845e4b77b60517d64be60e\transformed\jetified-LocalNotification.release\AndroidManifest.xml:28:9-30:41
 111            android:name="ru.mobilap.localnotification.LocalNotificationReceiver"
-111-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\44efd78434ae586ad4587af9aa553843\transformed\jetified-LocalNotification.release\AndroidManifest.xml:30:13-82
+111-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\239ebcac8c845e4b77b60517d64be60e\transformed\jetified-LocalNotification.release\AndroidManifest.xml:29:13-82
 112            android:process=":remote" /> <!-- Records the version of the Godot library -->
-112-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\44efd78434ae586ad4587af9aa553843\transformed\jetified-LocalNotification.release\AndroidManifest.xml:31:13-38
+112-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\239ebcac8c845e4b77b60517d64be60e\transformed\jetified-LocalNotification.release\AndroidManifest.xml:30:13-38
 113        <meta-data
 113-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\0fa57c0f6a5b656a5e020e48cde123e3\transformed\jetified-godot-lib.release\AndroidManifest.xml:14:9-16:44
 114            android:name="org.godotengine.library.version"
