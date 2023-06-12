@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "",
 "class": "LocalNotification",
 "language": "NativeScript",
-"path": "res://addons/localnotification-ios/localnotification.gdns"
+"path": "res://addons/localnotification-ios_1/localnotification.gdns"
 } ]
 _global_script_class_icons={
 "LocalNotification": ""
@@ -93,7 +93,6 @@ config/icon="res://Assets/ExportIcons/120.png"
 [autoload]
 
 GlobalIosArrange="*res://Prefabs/Global/GlobalIOSArrange.gd"
-localnotification="*res://scripts/localnotification.gd"
 GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"
 GlobalNotif="*res://Prefabs/Global/GlobalNotif.gd"
@@ -101,6 +100,7 @@ MobileAds="*res://addons/admob/src/singletons/MobileAds.gd"
 GlobalHebrew="*res://Prefabs/Global/GlobalHebrew.gd"
 GlobalTheme="*res://Prefabs/Global/GlobalTheme.gd"
 GlobalExport="*res://Prefabs/Global/GlobalExport.gd"
+localnotification="*res://scripts/localnotification.gd"
 
 [display]
 
@@ -118,7 +118,7 @@ enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg", "res://addons/admo
 
 [gdnative]
 
-singletons=[ "res://addons/localnotification-ios/localnotification.gdnlib" ]
+singletons=[ "res://addons/ios-framework/build/localnotification.gdnlib", "res://addons/localnotification-ios_1/localnotification.gdnlib" ]
 
 [input_devices]
 

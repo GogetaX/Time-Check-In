@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-gl\\values-gl.xml",
+            "outputFile": "com.godot.game-mergeReleaseResources-18:/values-gl/values-gl.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\5868fee0d55e2fbb059e1c9b61f1e8c9\\transformed\\jetified-play-services-base-18.0.0\\res\\values-gl\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "193,295,454,579,683,838,966,1081,1186,1353,1458,1623,1754,1915,2063,2126,2191",
-                        "endColumns": "101,158,124,103,154,127,114,104,166,104,164,130,160,147,62,64,80",
-                        "endOffsets": "294,453,578,682,837,965,1080,1185,1352,1457,1622,1753,1914,2062,2125,2190,2271"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,161,324,453,561,720,852,971,1214,1385,1494,1663,1798,1963,2115,2182,2251",
-                        "endColumns": "105,162,128,107,158,131,118,108,170,108,168,134,164,151,66,68,84",
-                        "endOffsets": "156,319,448,556,715,847,966,1075,1380,1489,1658,1793,1958,2110,2177,2246,2331"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\46847407a7ed17f1e7667b47aa61de2b\\transformed\\jetified-play-services-ads-21.1.0\\res\\values-gl\\values.xml",
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\5740972c8a5dadccb8f7bf2267e72266\\transformed\\jetified-play-services-ads-21.1.0\\res\\values-gl\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\7ff34864a49cde2050bc5771e32d2e83\\transformed\\browser-1.4.0\\res\\values-gl\\values-gl.xml",
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\84bc507719e348d7b70b4f1cfee234c2\\transformed\\browser-1.4.0\\res\\values-gl\\values-gl.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\27ccd9abac2ca9691477ef5cc78dc9c9\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-gl\\values.xml",
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\ce1a4a168e9eb728eb8ef3571af82a31\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-gl\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -72,7 +55,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\b2322852ad0c2e532452f6897fe83364\\transformed\\core-1.6.0\\res\\values-gl\\values-gl.xml",
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\ff6d2f45ffbdaa7f9acc2191114b1811\\transformed\\jetified-play-services-base-18.0.0\\res\\values-gl\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,295,454,579,683,838,966,1081,1186,1353,1458,1623,1754,1915,2063,2126,2191",
+                        "endColumns": "101,158,124,103,154,127,114,104,166,104,164,130,160,147,62,64,80",
+                        "endOffsets": "294,453,578,682,837,965,1080,1185,1352,1457,1622,1753,1914,2062,2125,2190,2271"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,161,324,453,561,720,852,971,1214,1385,1494,1663,1798,1963,2115,2182,2251",
+                        "endColumns": "105,162,128,107,158,131,118,108,170,108,168,134,164,151,66,68,84",
+                        "endOffsets": "156,319,448,556,715,847,966,1075,1380,1489,1658,1793,1958,2110,2177,2246,2331"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\0c7fc07378bbb3da85c2b30accbca564\\transformed\\core-1.6.0\\res\\values-gl\\values-gl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

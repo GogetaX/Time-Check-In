@@ -2,6 +2,12 @@ Version TODO:
     +   Added: support for multi-jobs
     +   Added: Break hours
     +   Added: Calendar and Total dates should be synced
+
+Version 0.9.2:
+    -   Improved: visual for Totals screen
+    -   Added: Progress on total hours for Total Screen
+    -   Added: Working hours can now be set for little as 1 minute
+    -   Fixed: Notifications and crashes that related to Notification manager
     
 Version 0.9.1:
     -   Added: Capability with newer versions of IOS/Android

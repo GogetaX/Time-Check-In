@@ -27,6 +27,9 @@ func SetMinuteIndicator(new):
 		if text.length()==0:
 			text = "00"
 			
+func GetValue():
+	return text
+	
 func SetFontColor(new):
 	FontColor = new
 	$Label.set("custom_colors/font_color",FontColor)

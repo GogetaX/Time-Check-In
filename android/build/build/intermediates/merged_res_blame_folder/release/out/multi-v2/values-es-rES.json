@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-es-rES\\values-es-rES.xml",
+            "outputFile": "com.godot.game-mergeReleaseResources-18:/values-es-rES/values-es-rES.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Sergio\\Godot Projects\\Time Check In\\android\\build\\res\\values-es-rES\\godot_project_name_string.xml",

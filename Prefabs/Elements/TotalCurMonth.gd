@@ -203,6 +203,10 @@ func DisplayElements(_Date):
 		Itm = TotalItemInstance.instance()
 		VBox.add_child(Itm)
 		Info = {"title":"total_avrg_hrs_per_day","desc":GlobalTime.FloatToString((TotalSecondsWorked/3600)/TotDays,1) } 
+		if working_hours.has("hours") && working_hours.has("minutes"):
+			var minutes = working_hours["minutes"]*100 / 60.0
+			Info["progress_percent"] = float(Info["desc"]) * 100.0 / float(String(working_hours["hours"])+"."+String(minutes))
+			Info["desc"] += "/"+String(working_hours["hours"])+"."+String(minutes)
 		Itm.ShowItem(Delay,Info)
 		Delay += 0.1
 	

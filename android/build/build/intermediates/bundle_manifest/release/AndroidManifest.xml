@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.godotengine.timecheckin"
     android:installLocation="auto"
-    android:versionCode="40"
-    android:versionName="0.9.1" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+    android:versionCode="42"
+    android:versionName="0.9.2" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="32" />
@@ -27,8 +27,10 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="29" />
     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATION" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- Android package visibility setting -->
     <queries>
 
@@ -85,7 +87,7 @@
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
             android:name="org.godotengine.editor.version"
-            android:value="3.5.1.stable" />
+            android:value="3.5.2.stable" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6225081745698787~6022893692" />
@@ -110,7 +112,7 @@
             android:process=":remote" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
-            android:value="3.5.1.stable" />
+            android:value="3.5.2.stable" />
 
         <service android:name="org.godotengine.godot.GodotDownloaderService" />
 

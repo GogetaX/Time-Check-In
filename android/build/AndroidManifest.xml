@@ -90,8 +90,6 @@
             tools:replace="android:value"
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6225081745698787~6022893692"/>
-            <!--RealThing: ca-app-pub-6225081745698787~5374249051-->
-            <!--Test: ca-app-pub-3940256099942544~3347511713-->
 
 <!-- Custom application XML added by add-ons. -->
 <!--CHUNK_APPLICATION_BEGIN-->

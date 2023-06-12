@@ -37,6 +37,10 @@ func SyncFromSave():
 
 
 func _on_ValueBox_UpdatedVar(NewVar):
+	if int(NewVar) == 0:
+		if int($WorkingMinutes.GetValue()) == 0:
+			$WorkingMinutes.SetInisialValue(30)
+			GlobalSave.AddVarsToSettings("WorkingHours","minutes",$WorkingMinutes.InisialValue)
 	GlobalSave.AddVarsToSettings("WorkingHours","hours",NewVar)
 
 
@@ -52,6 +56,10 @@ func _on_CheckOutReminder_OnToggle():
 
 
 func _on_WorkingMinutes_UpdatedVar(NewVar):
+	if int(NewVar) == 0:
+		if int($WorkingHours.GetValue()) == 0:
+			$WorkingHours.SetInisialValue(1)
+			GlobalSave.AddVarsToSettings("WorkingHours","hours",$WorkingMinutes.InisialValue)
 	GlobalSave.AddVarsToSettings("WorkingHours","minutes",NewVar)
 
 

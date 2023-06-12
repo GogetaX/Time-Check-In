@@ -4,22 +4,25 @@ func ClearNotifications():
 	localnotification.cancel_all()
 
 func PushCheckOutReminder():
+	print("1")
 	var tot_hours = 8
 	var tot_minutes = 0
 	var tot_minutes_str = "00"
 	var Deduction = GlobalSave.GetValueFromSettingCategory("SalaryDeduction")
 	var WorkingHours = GlobalSave.GetValueFromSettingCategory("WorkingHours")
-	
+	print("2")
 	if WorkingHours == null:
 		return
 	if WorkingHours.has("hours"):
 		tot_hours = WorkingHours["hours"]
+	print("3")
 	if WorkingHours.has("minutes"):
 		tot_minutes = WorkingHours["minutes"]
 		if tot_minutes<10:
 			tot_minutes_str = "0"+String(tot_minutes)
 		else:
 			tot_minutes_str = String(tot_minutes)
+	print("4")
 	if WorkingHours.has("check_out_reminder"):
 		if WorkingHours["check_out_reminder"]:
 			var passed_time = String(tot_hours)+":"+tot_minutes_str
