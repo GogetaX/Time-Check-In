@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "",
 "class": "LocalNotification",
 "language": "NativeScript",
-"path": "res://addons/localnotification-ios/localnotification.gdns"
+"path": "res://ios-framework/build/localnotification.gdns"
 } ]
 _global_script_class_icons={
 "LocalNotification": ""
@@ -118,7 +118,8 @@ enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg", "res://addons/admo
 
 [gdnative]
 
-singletons=[ "res://Exports/iOS/ios-framework/build/localnotification.gdnlib", "res://addons/localnotification-ios/localnotification.gdnlib" ]
+singletons=[ "res://addons/ios-framework/build/localnotification.gdnlib", "res://addons/localnotification-ios/localnotification.gdnlib", "res://ios-framework/build/localnotification.gdnlib" ]
+singletons_disabled=[  ]
 
 [input_devices]
 
