@@ -1,0 +1,113 @@
+Version TODO:
+    +   Added: support for multi-jobs
+    +   Added: Break hours
+    +   Added: Calendar and Total dates should be synced
+
+Version 0.9.2:
+    -   Improved: visual for Totals screen
+    -   Added: Progress on total hours for Total Screen
+    -   Added: Working hours can now be set for little as 1 minute
+    -   Fixed: Notifications and crashes that related to Notification manager
+    
+Version 0.9.1:
+    -   Added: Capability with newer versions of IOS/Android
+    -   Added: Better translation
+    -   Added: Target working hours for month
+    -   Added: Progress bar on Total screen that shows how many hours done/left
+
+Version 0.9.0:
+    -   Added holiday notifications
+    -   Added: QATAR Flag and Currency
+    -   Updated: Israel salary deduction year 2023
+
+Version 0.8.9:
+    -   Added: Holding the START button, more options
+    -   Translation: Translated Export screen
+    -   Changed: Multi select icon
+    -   Fixed: Multi select now can be enabled to a single day as well
+
+
+Version 0.8.8:
+    -   2023 Update for Israel Salary calculation 2023:
+        Average salary 6,331₪ -> 7,122₪
+    -   Fixed: When swiping from Main Menu, the animations were still visible
+    -   Fixed: issue with Multi-select day and Swipe
+    -   Fixed: some stability issues
+    -   Changed: Multi-select icon
+
+
+    
+
+Version 0.8.7:
+    -   Fixed: Urgent bug when it removes Nov 2022
+
+Sorry everyone who experienced issue with data erased in November 2022
+I do my best to fix those bugs so all of you can enjoy this app!
+
+    -   Added: Screen indicator
+    -   Improved: Tool bar looks cleaner
+    -   Improved: App loading time
+    
+Version 0.8.6:
+    -   Added: Calendar multi-select
+    -   Added: app will start first time with prefered languange
+    -   Added: Export for iOS
+    -   Improved: app loading time
+    -   Fixed: Export date settings
+
+Version 0.8.5a:
+    -   Urgent Fix: sudden crash when clicking START
+
+
+Version 0.8.5:
+    -   Added: more icons on the settings menu
+    -   Added: Navigation button for current date
+    -   Fixed: when scrolling the settings, the Input are being pressed
+    -   Fixed: crash when nothing on the calendar
+    -   Fixed: crash on some devices
+
+
+Version 0.8.4:
+    -   Added: Export options (.CSV) (Android ONLY)
+    -   Added: Scroll now enabled for TOOLS on Totals
+    -   Added: On day list, there is a headers
+    -   Changed: re-arranged the Popup buttons on What's new.
+   
+
+Version 0.8.3:
+    -   Added: Daily working hours has now minutes as well
+    -   Added: Indian INR Currency
+    -   Fixed: when adding Working day for today was not working properly
+    -   Fixed: the Main screen was not updating when reporting work day
+    -   Fixed: Popups are hidden under ads
+    -   Fixed: first users now has default USD as default currency
+    -   Changed: the day and Hour on top of the screen now goes in a row
+    -   Changed: Instead of pause, now its Check-Out
+    
+
+Version 0.8.2:
+    -   Fixed: while scrolling, the buttons are bein pressed
+    -   Fixed: Stability bugs
+    -   Fixed: when changing languanges, the darkmode disables
+    -   Fixed: Israel Coefficient (Custom was working)
+    -   Fixed: Numpad tap outside now saves instead of clears input
+    -   Fixed: Hour Editor, How long worked was not correct and not updating
+
+Version 0.8.1:
+    -   Added: Dark Mode
+    -   Added: Subtotal time in Check-In Editor
+    -   Changed: the Clock on the left cleaner
+    -   Changed: the date on the right cleaner
+    -   Changed: Holding start button for more options is now faster
+    -   Fixed: the Whats new Popup displays better now
+    -   Fixed: Congrats on Raise Popup wasnt showing
+    -   Translation: few translation fixes
+
+Version 0.8.0:
+    -   Added: Whats new Popup
+    -   Added: custom Numpad Keyboard
+    -   Added: easier option to navigate on Total screen
+    -   Added: Salary simulator on Israel deduction
+    -   Added: today's date on top of the screen
+    -   Changed: Total is better sorted
+    -   Changed: the hour editor is easier to use
