@@ -24,7 +24,9 @@
 				dstPath = "";
 				dstSubfolderSpec = 10;
 				files = (
-					
+					589384010000000000000013,
+589384010000000000000016,
+
 				);
 				name = "Embed Frameworks";
 				runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +65,12 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 58938401000000000000000E = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "PromisesObjC.xcframework"; path = "Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework"; sourceTree = "<group>"; };
 58938401000000000000000F = {isa = PBXBuildFile; fileRef = 589384010000000000000010; };
 589384010000000000000010 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "JavaScriptCore.framework"; path = "/System/Library/Frameworks/JavaScriptCore.framework"; sourceTree = "<group>"; };
+589384010000000000000011 = {isa = PBXBuildFile; fileRef = 589384010000000000000012; };
+589384010000000000000012 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "localnotification.xcframework"; path = "Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework"; sourceTree = "<group>"; };
+589384010000000000000013 = {isa = PBXBuildFile; fileRef = 589384010000000000000012; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+589384010000000000000014 = {isa = PBXBuildFile; fileRef = 589384010000000000000015; };
+589384010000000000000015 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "localnotification.xcframework"; path = "Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework"; sourceTree = "<group>"; };
+589384010000000000000016 = {isa = PBXBuildFile; fileRef = 589384010000000000000015; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +87,9 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 589384010000000000000009,
 58938401000000000000000B,
 58938401000000000000000D,
-58938401000000000000000F
+58938401000000000000000F,
+589384010000000000000011,
+589384010000000000000014
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +128,9 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 58938401000000000000000A,
 58938401000000000000000C,
 58938401000000000000000E,
-589384010000000000000010
+589384010000000000000010,
+589384010000000000000012,
+589384010000000000000015
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
