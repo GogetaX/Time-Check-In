@@ -38,8 +38,8 @@ NSUserTrackingUsageDescription="This identifier will be used to deliver personal
 SKAdNetworkItems:raw="
 <key>LSApplicationQueriesSchemes</key>
 <array>
-    <string>mailto</string>
-    <string>itms-apps</string>
+<string>maito</string>
+<string>itms-apps</string>
 </array>
 <key>SKAdNetworkItems</key>
 <array>
