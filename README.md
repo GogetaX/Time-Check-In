@@ -1,98 +1,41 @@
-# Local/Push notification plugin for Godot engine
+# NativeLib UI
 
-This is a module for [Godot Game Engine](http://godotengine.org/) which add local and remote notification feature for iOS and Android. 
+NativeLib is a plugin management system for [Godot engine](http://godotengine.org/). It designed to easy operate with native libraries for iOS/Android. Also it takes care about plugin dependencies and provides hasslefree native libs updating.
 
 ## Installation
 
-1. At first you need [NativeLib-CLI](https://github.com/DrMoriarty/nativelib-cli) or [NativeLib Addon](https://github.com/DrMoriarty/nativelib).
+This repository contains project addon with GUI for command line NativeLib. Just copy it into your `addons` folder of your project and enable it in **Project > Project Settings > Plugins**.
 
-2. Make `nativelib -i local-notification` in your project directory if you are using CLI. Find `LOCAL-NOTIFICATION` in plugins list and press "Install" button if you are using GUI Addon.
+Or you can install NativeLib from AssetLib [https://godotengine.org/asset-library/asset/824](https://godotengine.org/asset-library/asset/824)
 
-3. Enable **Custom Build** for using in Android.
+## Platform notes
 
-## Usage
+### Windows
 
-Add wrapper `scripts/localnotification.gd` into autoloading list in your project. So you can use it everywhere in your code.
+You should install [Python 3](https://www.python.org/downloads/windows/). Than you should open NativeLib addon and select your python executable (button "Select Python" in right top corner). After that you will be able to use NativeLib.
 
-## API
+### MacOS
 
-### show(message: String, title: String, interval: float, tag: int, repeating_interval: int = 0)
+Usually MacOSes have preinstalled python 2.7.x. NativeLib-CLI tested with this python version and it should work. But if you have some strange errors you can try install Python 3. With it NativeLib works more stable.
 
-Show notification with `title` and `message` after delay of `interval` seconds with `tag`. You can override notification by it's tag before it was fired.
-If you defined `repeating_interval` the notification will be fired in a loop until you cancelled it.
+### Linux
 
-### show_daily(message: String, title: String, hour: int, minute: int, tag: int = 1)
+Install python 3 (if it's not installed yet). Also check if python is available in your $PATH. You can set path to python executable if necessary (button "Select Python" in right top corner).
 
-Show notification daily at specific hour and minute (in 24 hour format).
-You can overide the notification with new time, or cancel it with tag and register a new one.
+### Python notes
 
-*Need help*: Currently just support ios, need help on Android
+Unfortunately I can not test NativeLib with every version of Python (at least I know that NativeLib doesn't work with python 3.5.x)
 
-### cancel(tag: int)
+Usually I check it with python 2.7.x and 3.9.x. If you have strange errors try to upgrade your Python version. 
 
-Cancel previously created notification.
+## First launch
 
-### cancel_all()
+During first launch it will install local copy of NativeLib (if you don't have one at system level) and it will update local repository so you can instantly start working with plugins.
 
-Cancel all pending notifications (implemented for iOS only).
+## Settings
 
-### init()
+In the bottom status line there are very useful command buttons. Enable Android platform (button with robot) or iOS platform (button with apple) before installing any plugin. Also you can install local or update local NativeLib at any time. The last button updates local repository and fetches info about new plugins.
 
-Request permission for notifications (iOS only).
-
-### is_inited() -> bool
-
-Check if notification permission was requested from user (iOS only).
-
-### is_enabled() -> bool
-
-Check if notification permission was granted by user (iOS only).
-
-### register_remote_notification()
-
-Request system token for push notifications.
-
-### get_device_token() -> String
-
-Returns system token for push notification.
-
-### get_notification_data() -> Dictionary
-
-Returns custom data from activated notification (Android only).
-
-### get_deeplink_action() -> String
-
-Returns action from deeplink, if exists. (Android only).
-
-### get_deeplink_uri() -> String
-
-Returns deeplink URI, if exists (Android only).
-
-## Customising notifications for Android
-
-The default notification color is defined in `android/build/res/values/notification-color.xml`. You can change it at your desire. The color string format is `#RRGGBB`.
-
-In order to change default notification icon you should make this new files:
-```
-android/build/res/mipmap/notification_icon.png            Size 192x192
-android/build/res/mipmap-hdpi-v4/notification_icon.png    Size 72x72
-android/build/res/mipmap-mdpi-v4/notification_icon.png    Size 48x48
-android/build/res/mipmap-xhdpi-v4/notification_icon.png   Size 96x96
-android/build/res/mipmap-xxhdpi-v4/notification_icon.png  Size 144x144
-android/build/res/mipmap-xxxhdpi-v4/notification_icon.png Size 192x192
-```
-Notification icons should be b/w with alpha channel. They will be tinted with color which we discuss above.
-
-## Use push notifications for iOS
-
-1) check if notifications `is_inited`, it means that application requested permissions from user.
-2) call `init` if app didn’t requested it yet.
-3) catch signal `enabled` or check method `is_enabled`. It will return `false` if user didn’t grant you permission.
-4) get device token (`get_device_token`) for push notifications or catch signal `device_token_received`
-5) send your device token to the server side.
-
-That’s all. Sending notifications processed by your server, receiving notifications processed by OS. 
-
-## Troubleshooting
-
-If the notification doesn't appear, make sure you're not trying to display it while your game is in the foreground. In iOS, apps can only show notifications if they are in the background. This implies that you must use `interval` > 0.
+# TODO
+* Ability to show files of installed plugin
+* Show files which differs from the original ones.

@@ -1,0 +1,294 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Prefabs/Elements/DayInfo.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/Elements/OptionBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Icons/day.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Icons/holidays.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Icons/hard-work.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_top = 10
+border_width_bottom = 10
+
+[node name="DayInfo" type="Panel"]
+margin_right = 720.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 200 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 2 )
+
+[node name="NoInfo" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NoInfo"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.5
+margin_top = -48.0
+margin_right = 264.5
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Currently No Info for this day."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Report" parent="NoInfo" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 21.0
+margin_right = 134.5
+margin_bottom = 75.0
+text = "Add..."
+items = [  ]
+
+[node name="MultiSelect" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Report" parent="MultiSelect" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 21.0
+margin_right = 134.5
+margin_bottom = 75.0
+text = "Add..."
+items = [  ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MultiSelect"]
+anchor_right = 1.0
+margin_top = 48.0
+margin_bottom = 103.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="MultiSelect/HBoxContainer"]
+margin_left = 169.0
+margin_right = 391.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Multi-select"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DayNum" type="Label" parent="MultiSelect/HBoxContainer"]
+margin_left = 401.0
+margin_right = 424.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "4"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Days" type="Label" parent="MultiSelect/HBoxContainer"]
+margin_left = 434.0
+margin_right = 550.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Day(s)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DayOffReport" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DayOffReport"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -48.0
+margin_right = 130.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Day off"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Report" parent="DayOffReport" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 21.0
+margin_right = 134.5
+margin_bottom = 75.0
+focus_mode = 2
+text = "Change…"
+items = [ "Day off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+
+[node name="Icon" type="TextureRect" parent="DayOffReport"]
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 180.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 200, 0 )
+expand = true
+stretch_mode = 6
+
+[node name="HolidayReport" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HolidayReport"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -48.0
+margin_right = 130.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Holiday"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Report" parent="HolidayReport" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 21.0
+margin_right = 134.5
+margin_bottom = 75.0
+focus_mode = 2
+text = "Change…"
+items = [ "Day off", ExtResource( 4 ), 0, false, false, 0, 0, null, "", false, "Holiday", ExtResource( 5 ), 0, false, false, 1, 0, null, "", false, "Work day", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
+
+[node name="Icon" type="TextureRect" parent="HolidayReport"]
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 180.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 200, 0 )
+expand = true
+stretch_mode = 6
+
+[node name="CheckInData" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorkingHours" type="Label" parent="CheckInData"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.5
+margin_top = -86.0
+margin_right = 264.5
+margin_bottom = -31.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "10:15 -> 10:16"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowLongWorked" type="Label" parent="CheckInData"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.5
+margin_top = -32.0
+margin_right = 264.5
+margin_bottom = 23.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "01 Seconds Worked"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowMuchEarned" type="Label" parent="CheckInData"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -347.0
+margin_top = 24.0
+margin_right = 292.0
+margin_bottom = 79.0
+custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Earned ILS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EditWorkdays" parent="CheckInData" instance=ExtResource( 3 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -62.0
+margin_right = -16.0
+margin_bottom = -8.0
+custom_colors/font_color_focus = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
+custom_colors/font_color_hover = Color( 0.498039, 0.768627, 0.992157, 1 )
+custom_colors/font_color_pressed = Color( 0.498039, 0.768627, 0.992157, 1 )
+text = "..."
+align = 2
+items = [  ]
+
+[node name="OnGoingTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="OnGoingTimer" to="." method="_on_OnGoingTimer_timeout"]

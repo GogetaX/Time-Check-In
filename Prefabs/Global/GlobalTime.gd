@@ -107,6 +107,20 @@ func InitDates():
 	AddDateDB(4,30,11,2023)
 	AddDateDB(6,31,12,2023)
 	
+	#2024
+	AddDateDB(2,31,1,2024)
+	AddDateDB(5,29,2,2024)
+	AddDateDB(6,31,3,2024)
+	AddDateDB(2,30,4,2024)
+	AddDateDB(4,31,5,2024)
+	AddDateDB(7,30,6,2024)
+	AddDateDB(2,31,7,2024)
+	AddDateDB(5,31,8,2024)
+	AddDateDB(1,30,9,2024)
+	AddDateDB(3,31,10,2024)
+	AddDateDB(6,30,11,2024)
+	AddDateDB(1,31,12,2024)
+	
 func SelectCurDate(DayNode,DayInfo):
 	CurCalDaySelected = DayNode
 	CurSelectedDate["day"] = int(DayNode.text)
@@ -118,6 +132,16 @@ func SelectCurDate(DayNode,DayInfo):
 func MultiSelectDate(DayNode):
 	emit_signal("MultiSelectedDate",DayNode)
 
+func GetDifferenceBetweenDates(Date1,Date2):
+	var res = {"year":abs(Date1["year"] - Date2["year"]),"month":abs(Date1["month"] - Date2["month"]),"day":abs(Date1["day"] - Date2["day"])}
+	return res
+	
+func DateToDays(date):
+	var year = date["year"]*12*30
+	var month = date["month"]*30
+	var day = date["day"]
+	return year+month+day
+	
 func SelectCurDayList(Date,DayInfo):
 	CurSelectedDate["day"] = Date["day"]
 	CurSelectedDate["year"] = Date["year"]

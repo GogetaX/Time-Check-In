@@ -192,7 +192,6 @@ func _on_CheckIn_BtnPressed():
 	ShowOnly("TimeScreen")
 
 func _on_Calendar_BtnPressed():
-	
 	ShowOnly("CalendarScreen")
 
 

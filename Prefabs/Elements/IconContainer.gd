@@ -44,8 +44,18 @@ func CheckForWhatsNew():
 	else:
 		if S["version"] != LastVersion:
 			GenerateIconedBtn("res://Assets/Icons/whats-new.png","WhatsNew",{"version":LastVersion,"Rich":VersionList[LastVersion]})
-
-func GenerateIconedBtn(TexturePath,FuncName,dict):
+	
+	var RateMe = GlobalSave.GetValueFromSettingCategory("RateMe")
+	if RateMe == null:
+		GenerateIconedBtn("res://Assets/Icons/star.png","RateMe",{"Rich":"rate_me_msg"})
+	else:
+		if RateMe.has("date"):
+			var d = GlobalTime.GetDifferenceBetweenDates(OS.get_date(),RateMe["date"])
+			var days = GlobalTime.DateToDays(d)
+			if days > 30*6: #if 6 months passed, show rate me msg again
+				GenerateIconedBtn("res://Assets/Icons/star.png","RateMe",{"Rich":"rate_me_msg"})
+			
+func GenerateIconedBtn(TexturePath,FuncName,dict = null):
 	var T = TextureRect.new()
 	T.rect_min_size = Vector2(rect_min_size.y,rect_min_size.y)
 	T.expand = true
@@ -69,3 +79,27 @@ func PressedOnBtn(event,_TextureNode,FuncName,dict):
 							_TextureNode.queue_free()
 						"CloseBtn":
 							pass
+				"RateMe":
+					var PopupData = {"type": "RateMe"}
+					var Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+					match Answer:
+						"DismissBtn":
+							GlobalSave.AddVarsToSettings("RateMe","date",OS.get_date())
+							_TextureNode.queue_free()
+							match OS.get_name():
+								"Windows":
+									# warning-ignore:return_value_discarded
+									OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.timecheckin")
+								"Android":
+									# warning-ignore:return_value_discarded
+									OS.shell_open("market://details?id=org.godotengine.timecheckin")
+								"iOS":
+									var txt = "itms-apps://itunes.apple.com/app/idtime-check-in?action=write-review"
+									txt = txt.replace(" ","%20")
+									# warning-ignore:return_value_discarded
+									OS.shell_open(txt)
+						"CloseBtn":
+							pass
+					
+				_:
+					print_debug("This is not set yet: ",FuncName)

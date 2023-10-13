@@ -1,18 +1,18 @@
-com.godot.game-jetified-play-services-ads-lite-21.1.0-0 C:\Users\Sergio\.gradle\caches\transforms-3\0ac4ceb7916ab853718b502c54d0969d\transformed\jetified-play-services-ads-lite-21.1.0\res
-com.godot.game-core-1.6.0-1 C:\Users\Sergio\.gradle\caches\transforms-3\0c7fc07378bbb3da85c2b30accbca564\transformed\core-1.6.0\res
-com.godot.game-jetified-godot-lib.release-2 C:\Users\Sergio\.gradle\caches\transforms-3\0fa57c0f6a5b656a5e020e48cde123e3\transformed\jetified-godot-lib.release\res
-com.godot.game-fragment-1.3.6-3 C:\Users\Sergio\.gradle\caches\transforms-3\3988ca109072542b599ce7e9be34dfe8\transformed\fragment-1.3.6\res
-com.godot.game-lifecycle-viewmodel-2.3.1-4 C:\Users\Sergio\.gradle\caches\transforms-3\4c067594c7a5fabbdbbd7fb61251b4dc\transformed\lifecycle-viewmodel-2.3.1\res
-com.godot.game-lifecycle-runtime-2.3.1-5 C:\Users\Sergio\.gradle\caches\transforms-3\4de22f91c9f03c3f0301e54427d6d2cd\transformed\lifecycle-runtime-2.3.1\res
-com.godot.game-jetified-play-services-ads-21.1.0-6 C:\Users\Sergio\.gradle\caches\transforms-3\5740972c8a5dadccb8f7bf2267e72266\transformed\jetified-play-services-ads-21.1.0\res
-com.godot.game-jetified-savedstate-1.1.0-7 C:\Users\Sergio\.gradle\caches\transforms-3\81dae0f1b920881bd1ae25fcb0dead09\transformed\jetified-savedstate-1.1.0\res
-com.godot.game-browser-1.4.0-8 C:\Users\Sergio\.gradle\caches\transforms-3\84bc507719e348d7b70b4f1cfee234c2\transformed\browser-1.4.0\res
-com.godot.game-jetified-admob-release-9 C:\Users\Sergio\.gradle\caches\transforms-3\9f472c2921cf39215885d74fcaaf7267\transformed\jetified-admob-release\res
-com.godot.game-work-runtime-2.7.0-10 C:\Users\Sergio\.gradle\caches\transforms-3\ae268974631f3c27a5d5a49167282e68\transformed\work-runtime-2.7.0\res
-com.godot.game-jetified-play-services-basement-18.0.0-11 C:\Users\Sergio\.gradle\caches\transforms-3\ce1a4a168e9eb728eb8ef3571af82a31\transformed\jetified-play-services-basement-18.0.0\res
-com.godot.game-jetified-startup-runtime-1.0.0-12 C:\Users\Sergio\.gradle\caches\transforms-3\d254c8ee89ab8bf3629d713a0a266ba6\transformed\jetified-startup-runtime-1.0.0\res
-com.godot.game-jetified-annotation-experimental-1.1.0-13 C:\Users\Sergio\.gradle\caches\transforms-3\eec83ecb24b584e3a10b5e93e1de6e66\transformed\jetified-annotation-experimental-1.1.0\res
-com.godot.game-jetified-play-services-base-18.0.0-14 C:\Users\Sergio\.gradle\caches\transforms-3\ff6d2f45ffbdaa7f9acc2191114b1811\transformed\jetified-play-services-base-18.0.0\res
+com.godot.game-lifecycle-runtime-2.3.1-0 C:\Users\Sergio\.gradle\caches\transforms-3\0ce7ec994a520619fa7bc00a51a36777\transformed\lifecycle-runtime-2.3.1\res
+com.godot.game-jetified-play-services-base-18.0.0-1 C:\Users\Sergio\.gradle\caches\transforms-3\0e628cf47af6527003ab8a0aef8cdcd5\transformed\jetified-play-services-base-18.0.0\res
+com.godot.game-jetified-admob-release-2 C:\Users\Sergio\.gradle\caches\transforms-3\164249a2cc7563002c27b258d04d49e6\transformed\jetified-admob-release\res
+com.godot.game-browser-1.4.0-3 C:\Users\Sergio\.gradle\caches\transforms-3\164e1ff50f0a8aa760aa5dde073f2f68\transformed\browser-1.4.0\res
+com.godot.game-fragment-1.3.6-4 C:\Users\Sergio\.gradle\caches\transforms-3\189e80978ed2f28e12fcb892018fb934\transformed\fragment-1.3.6\res
+com.godot.game-jetified-play-services-ads-21.1.0-5 C:\Users\Sergio\.gradle\caches\transforms-3\1cc54a7a50e3673b47af99688248bb6a\transformed\jetified-play-services-ads-21.1.0\res
+com.godot.game-jetified-play-services-ads-lite-21.1.0-6 C:\Users\Sergio\.gradle\caches\transforms-3\2565dc30e771760d3aa20061ee07945a\transformed\jetified-play-services-ads-lite-21.1.0\res
+com.godot.game-lifecycle-viewmodel-2.3.1-7 C:\Users\Sergio\.gradle\caches\transforms-3\3102a421f9f9c72d52e08f6fe09310fd\transformed\lifecycle-viewmodel-2.3.1\res
+com.godot.game-core-1.6.0-8 C:\Users\Sergio\.gradle\caches\transforms-3\3bce1657da59fb5b3cf43800f84c8bdd\transformed\core-1.6.0\res
+com.godot.game-jetified-play-services-basement-18.0.0-9 C:\Users\Sergio\.gradle\caches\transforms-3\4b1271ea82deb3a856a6d71030563e6d\transformed\jetified-play-services-basement-18.0.0\res
+com.godot.game-jetified-savedstate-1.1.0-10 C:\Users\Sergio\.gradle\caches\transforms-3\94b972ed44b18279006052b701b4135c\transformed\jetified-savedstate-1.1.0\res
+com.godot.game-work-runtime-2.7.0-11 C:\Users\Sergio\.gradle\caches\transforms-3\9d61bbcf0d0d6a6d30d2f81da24cf2d3\transformed\work-runtime-2.7.0\res
+com.godot.game-jetified-godot-lib.release-12 C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\res
+com.godot.game-jetified-annotation-experimental-1.1.0-13 C:\Users\Sergio\.gradle\caches\transforms-3\c2e7a6f7c18e58aee699d724727cbaf5\transformed\jetified-annotation-experimental-1.1.0\res
+com.godot.game-jetified-startup-runtime-1.0.0-14 C:\Users\Sergio\.gradle\caches\transforms-3\c90f9d8837d8d9899dfd66ab5a4f5730\transformed\jetified-startup-runtime-1.0.0\res
 com.godot.game-pngs-15 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\pngs\release
 com.godot.game-resValues-16 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\resValues\release
 com.godot.game-rs-17 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\rs\release

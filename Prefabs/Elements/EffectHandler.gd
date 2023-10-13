@@ -18,6 +18,7 @@ func SetHideAll(new):
 	if Engine.editor_hint:
 		if HideAll:
 			DeactivateAll()
+			
 func HourEditorScreen(ScreenName):
 	if ScreenName != "TimeScreen":
 		DeactivateAll()
@@ -27,6 +28,9 @@ func HourEditorScreen(ScreenName):
 func app_loaded():
 	if IfBetweenMonths({"month":12,"year":2023},{"month":1,"year":2024}):
 		ActivateOnly("Winter")
+	if IfBetweenMonths({"month":10,"year":2023},{"month":12,"year":2023}):
+		ActivateOnly("WeWithILUA")
+		
 	if ExactDayInYear({"month":4,"day":1}):
 		ActivateOnly("AprilFool")
 	if ExactDayInYear({"month":3,"day":8}):
@@ -63,11 +67,15 @@ func ActivateOnly(OnlyEffect):
 					b.emitting = true
 				if b is Sprite:
 					b.visible = true
+				if b is Label:
+					b.visible = true
 		else:
 			for b in a.get_children():
 				if b is Particles2D:
 					b.emitting = false
 				if b is Sprite:
+					b.visible = false
+				if b is Label:
 					b.visible = false
 func DeactivateAll():
 	for a in get_children():
@@ -75,4 +83,6 @@ func DeactivateAll():
 			if b is Particles2D:
 				b.emitting = false
 			if b is Sprite:
+				b.visible = false
+			if b is Label:
 				b.visible = false

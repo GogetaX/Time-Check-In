@@ -24,8 +24,9 @@ func InitAllBtns():
 			for b in a.get_children():
 				if b is HBoxContainer || b is VBoxContainer:
 					for c in b.get_children():
-						c.focus_mode = Control.FOCUS_NONE
-						c.connect("pressed",self,"PressedButton",[c])
+						if c is Button:
+							c.focus_mode = Control.FOCUS_NONE
+							c.connect("pressed",self,"PressedButton",[c])
 						
 func ShowModulate(Data):
 	InitWindowFromData(Data)

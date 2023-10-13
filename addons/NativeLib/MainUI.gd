@@ -15,7 +15,7 @@ var _name_filter := ''
 var _installed_filter := false
 var _nativelib_path := 'nativelib'
 var _python_path := 'python'
-onready var _home_path := '%s/../'%OS.get_system_dir(OS.SYSTEM_DIR_DESKTOP)
+var _home_path = "c:\\Users\\Sergio\\"
 
 signal downloading_complete
 
@@ -118,7 +118,7 @@ func set_editor(editor: EditorPlugin) -> void:
 
 func load_storage() -> void:
 	var _ind = {}
-	var index_path = "c:/Users/Sergio/.nativelib/meta/"
+	var index_path = _home_path+'.nativelib\\meta'
 	var dir = Directory.new()
 	if dir.open(index_path) == OK:
 		dir.list_dir_begin()

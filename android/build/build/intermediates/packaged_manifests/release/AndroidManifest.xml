@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.godotengine.timecheckin"
     android:installLocation="auto"
-    android:versionCode="42"
-    android:versionName="0.9.2" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+    android:versionCode="43"
+    android:versionName="0.9.3" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="32" />
+        android:targetSdkVersion="33" />
 
     <supports-screens
         android:largeScreens="true"
@@ -29,7 +29,7 @@
     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- Android package visibility setting -->
     <queries>
@@ -87,7 +87,7 @@
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
             android:name="org.godotengine.editor.version"
-            android:value="3.5.2.stable" />
+            android:value="3.5.3.stable" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6225081745698787~6022893692" />
@@ -112,7 +112,7 @@
             android:process=":remote" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
-            android:value="3.5.2.stable" />
+            android:value="3.5.3.stable" />
 
         <service android:name="org.godotengine.godot.GodotDownloaderService" />
 
@@ -120,7 +120,17 @@
             android:name="org.godotengine.godot.utils.ProcessPhoenix"
             android:exported="false"
             android:process=":phoenix"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="org.godotengine.timecheckin.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/godot_provider_paths" />
+        </provider> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
