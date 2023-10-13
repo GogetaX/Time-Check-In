@@ -57,11 +57,6 @@
 	</array>
 	<key>GADDelayAppMeasurementInit</key><true/>
 <key>SKAdNetworkItems</key>
-<key>LSApplicationQueriesSchemes</key>
-<array>
-<string>maito</string>
-<string>itms-apps</string>
-</array>
 <key>SKAdNetworkItems</key>
 <array>
   <dict>
@@ -260,6 +255,12 @@
     <key>SKAdNetworkIdentifier</key>
     <string>3qcr597p9d.skadnetwork</string>
   </dict>
+</array>
+
+<key>LSApplicationQueriesSchemes</key>
+<array>
+<string>maito</string>
+<string>itms-apps</string>
 </array>
 
 <key>GADApplicationIdentifier</key><string>ca-app-pub-6225081745698787~6873188351</string>
