@@ -94,7 +94,7 @@ func PressedOnBtn(event,_TextureNode,FuncName,dict):
 									# warning-ignore:return_value_discarded
 									OS.shell_open("market://details?id=org.godotengine.timecheckin")
 								"iOS":
-									var txt = "itms-apps://itunes.apple.com/app/idtime-check-in?action=write-review"
+									var txt = "itms-apps://itunes.apple.com/us/app/itunes-u/id1629057890?action=write-review"
 									txt = txt.replace(" ","%20")
 									# warning-ignore:return_value_discarded
 									OS.shell_open(txt)
