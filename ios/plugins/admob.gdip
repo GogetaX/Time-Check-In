@@ -35,11 +35,12 @@ GADDelayAppMeasurementInit:boolean=true
 ;OPTIONAL: Advanced users can modify these extra properties.
 NSUserTrackingUsageDescription="This identifier will be used to deliver personalized ads to you."
 
-<key>LSApplicationQueriesSchemes</key>
+LSApplicationQueriesSchemes:raw="
   <array>
     <string>mailto</string>
     <string>itms-apps</string>
   </array>
+"
 SKAdNetworkItems:raw="
 <array>
   <dict>
