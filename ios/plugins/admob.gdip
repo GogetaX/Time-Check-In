@@ -35,13 +35,6 @@ GADDelayAppMeasurementInit:boolean=true
 ;OPTIONAL: Advanced users can modify these extra properties.
 NSUserTrackingUsageDescription="This identifier will be used to deliver personalized ads to you."
 
-LSApplicationQueriesSchemes:raw="
-<array>
-<string>maito</string>
-<string>itms-apps</string>
-</array>
-"
-
 SKAdNetworkItems:raw="
 <key>SKAdNetworkItems</key>
 <array>
