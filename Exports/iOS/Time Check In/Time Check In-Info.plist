@@ -56,7 +56,9 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>GADDelayAppMeasurementInit</key><true/>
-<key>SKAdNetworkItems</key>
+<key>GADApplicationIdentifier</key><string>ca-app-pub-6225081745698787~6873188351</string>
+<key>NSUserTrackingUsageDescription</key><string>This identifier will be used to deliver personalized ads to you.</string>
+<key><key>LSApplicationQueriesSchemes</key><array><string>mailto</string><string>itms-apps</string></array>SKAdNetworkItems</key>
 <array>
   <dict>
     <key>SKAdNetworkIdentifier</key>
@@ -256,8 +258,6 @@
   </dict>
 </array>
 
-<key>GADApplicationIdentifier</key><string>ca-app-pub-6225081745698787~6873188351</string>
-<key>NSUserTrackingUsageDescription</key><string>This identifier will be used to deliver personalized ads to you.</string>
 
 	<key>UILaunchStoryboardName</key>
 <string>Launch Screen</string>
