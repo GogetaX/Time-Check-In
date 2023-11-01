@@ -30,7 +30,8 @@ func PopupForSometimeAgo():
 	match Answer:
 		"EditBtn":
 			GlobalTime.SelectCurDayList(GlobalTime.ForgotCheckInSometimeAgo,GlobalTime.ForgotCheckInSometimeAgo)
-			GlobalTime.HourSelectorUI.SyncDate(GlobalTime.ForgotCheckInSometimeAgo,"TimeScreen")
+			var hour_editor = GlobalTime.LoadTool("Hour Editor")
+			hour_editor.SyncDate(GlobalTime.ForgotCheckInSometimeAgo,"TimeScreen")
 			GlobalTime.emit_signal("ShowOnlyScreen","HourEditorScreen")
 		"CloseBtn":
 			pass

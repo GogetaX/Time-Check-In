@@ -11,7 +11,7 @@
     <key>provisioningProfiles</key>
     <dict>
         <key>com.sergiok.TimeCheckIn</key>
-        <string></string>
+        <string>iPhone Developer</string>
     </dict>
 
     <key>compileBitcode</key>

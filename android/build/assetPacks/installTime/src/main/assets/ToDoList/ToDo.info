@@ -8,6 +8,11 @@ Version TODO:
     +   Added: Specific Day and Specific Time Salary increase?
     +   Added: Multiselect that supports next months also
 
+Version 0.9.4:
+    -   Fixed Crash: when you forget to check out a day before
+    -   Fixed: miss type on Calendar view
+
+
 Version 0.9.3:
     -   I support Israel & Ukraine
     -   Added: Dates up to 2024

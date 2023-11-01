@@ -32,9 +32,11 @@ config={
 "size": "ADAPTIVE",
 "unit_ids": {
 "Android": {
+"AndroidBanner": "ca-app-pub-6225081745698787/2464537032",
 "standard": "ca-app-pub-6225081745698787/2464537032"
 },
 "iOS": {
+"iOSBanner": "ca-app-pub-6225081745698787/5173093874",
 "standard": "ca-app-pub-6225081745698787/5173093874"
 }
 }
@@ -52,9 +54,11 @@ config={
 "interstitial": {
 "unit_ids": {
 "Android": {
+"Interstital": "ca-app-pub-6225081745698787/3302652586",
 "standard": "ca-app-pub-6225081745698787/3302652586"
 },
 "iOS": {
+"Interstitial": "ca-app-pub-6225081745698787/9676489247",
 "standard": "ca-app-pub-6225081745698787/9676489247"
 }
 }
