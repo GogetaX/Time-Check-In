@@ -361,7 +361,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiok.TimeCheckIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "TimeCheckInProfile";
+				PROVISIONING_PROFILE = "Automatic";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 				WRAPPER_EXTENSION = app;
@@ -392,7 +392,7 @@ D0BCFE4518AEBDA2004A0001 /* ru */,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergiok.TimeCheckIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "TimeCheckInProfile";
+				PROVISIONING_PROFILE = "Automatic";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 				WRAPPER_EXTENSION = app;
