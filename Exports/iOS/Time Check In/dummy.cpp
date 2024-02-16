@@ -34,17 +34,11 @@ void godot_ios_plugins_initialize();
 void godot_ios_plugins_deinitialize();
 // Exported Plugins
 
-// Plugin: AdMob
-extern void register_admob_types();
-extern void unregister_admob_types();
-
 // Use Plugins
 void godot_ios_plugins_initialize() {
-	register_admob_types();
 }
 
 void godot_ios_plugins_deinitialize() {
-	unregister_admob_types();
 }
 
 

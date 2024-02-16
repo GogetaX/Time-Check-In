@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.godot.game-mergeReleaseResources-17:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\969caa259e6020f49ef9d0cbccc2bed2\\transformed\\appcompat-1.0.0\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

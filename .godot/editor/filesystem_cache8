@@ -1,13 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697146460
-default_env.tres::Environment::-1::1697146454::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1697146106::0::1::::<><>::
+::res://::1708017956
+default_env.tres::Environment::-1::1707675148::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1706468379::0::1::::<><>::
 icon.png::CompressedTexture2D::-1::0::0::1::::<><>::
-README.md::TextFile::-1::1686588095::0::1::::<><>::
-::res://addons/::1686602714
-::res://addons/admob/::1697146441
-plugin.cfg::TextFile::-1::1662393928::0::1::::<><>::
-::res://addons/admob/assets/::1697145979
+MACAPPSTORE.md::TextFile::-1::1697143709::0::1::::<><>::
+README.md::TextFile::-1::1697143709::0::1::::<><>::
+::res://addons/::1686599114
+::res://addons/admob/::1697142964
+plugin.cfg::TextFile::-1::1697142964::0::1::::<><>::
+::res://addons/admob/assets/::1697142964
 android.png::CompressedTexture2D::-1::0::0::1::::<><>::
 icon-15.png::CompressedTexture2D::-1::0::0::1::::<><>::
 icon-76.png::CompressedTexture2D::-1::0::0::1::::<><>::
@@ -15,81 +16,81 @@ icon-120.png::CompressedTexture2D::-1::0::0::1::::<><>::
 icon-500.png::CompressedTexture2D::-1::0::0::1::::<><>::
 icon-1024.png::CompressedTexture2D::-1::0::0::1::::<><>::
 ios.png::CompressedTexture2D::-1::0::0::1::::<><>::
-music.ogg::AudioStreamOggVorbis::2021096524385309404::1686604382::1697146460::1::::<><>::
+music.ogg::AudioStreamOggVorbis::8178261415521059381::1697142964::1708017958::1::::<><>::
 poing.jpeg::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://addons/admob/assets/fonts/::1686604382
+::res://addons/admob/assets/fonts/::1697142963
 arial.ttf::::-1::0::0::0::::<><>::
 orange_juice_2_0.ttf::::-1::0::0::0::::<><>::
-::res://addons/admob/downloads/::1662393636
-::res://addons/admob/downloads/android/::1697145824
-::res://addons/admob/downloads/ios/::1697145848
-::res://addons/admob/src/::1662393637
-::res://addons/admob/src/core/::1697146441
-AdMob.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-AdMobEditor.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-AdMobEditor.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/assets/android.png<>res://addons/admob/assets/poing.jpeg<>res://addons/admob/assets/fonts/arial.ttf<>res://addons/admob/src/core/AdMobEditor.gd<>res://addons/admob/assets/ios.png<>res://addons/admob/assets/icon-76.png<>res://addons/admob/src/core/components/ad_format/BannerAdFormat.tscn<>res://addons/admob/src/core/components/General.tscn<>res://addons/admob/src/core/components/ad_format/InterstitialAdFormat.tscn<>res://addons/admob/src/core/components/ad_format/RewardedAdFormat.tscn<>res://addons/admob/src/core/components/ad_format/RewardedInterstitialAdFormat.tscn<>res://addons/admob/src/core/components/Downloads.tscn<>res://addons/admob/src/core/components/Debug.tscn<>res://addons/admob/src/core/SupportVersion.gd<>res://addons/admob/src/core/CurrentVersion.gd<>res://addons/admob/src/core/VersionSupportedHTTPRequest.tscn
-CurrentVersion.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-SupportVersion.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-VersionSupportedHTTPRequest.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-VersionSupportedHTTPRequest.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/VersionSupportedHTTPRequest.gd
-::res://addons/admob/src/core/components/::1697146441
-Debug.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-Debug.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/Debug.gd
-Downloads.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-Downloads.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/Downloads.gd<>res://addons/admob/src/core/components/VerifyNetworkGithub.gd<>res://addons/admob/src/core/VersionSupportedHTTPRequest.tscn
-Enabled.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-General.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-General.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/General.gd<>res://addons/admob/src/core/components/Enabled.gd
-VerifyNetworkGithub.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-::res://addons/admob/src/core/components/ad_format/::1697146441
-AdFormat.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/ad_format/unit_ids/UnitIds.tscn
-BannerAdFormat.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-BannerAdFormat.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/ad_format/AdFormat.tscn<>res://addons/admob/src/core/components/ad_format/BannerAdFormat.gd<>res://addons/admob/src/core/components/ad_format/RespectSafeArea.gd
-InterstitialAdFormat.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/ad_format/AdFormat.tscn
-RespectSafeArea.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-RewardedAdFormat.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/ad_format/AdFormat.tscn
-RewardedInterstitialAdFormat.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/ad_format/AdFormat.tscn
-::res://addons/admob/src/core/components/ad_format/unit_ids/::1697146441
-UnitIds.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-UnitIds.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/ad_format/unit_ids/UnitIds.gd<>res://addons/admob/src/core/components/ad_format/unit_ids/ad_unit_operational_system/AdUnitOperationalSystem.tscn
-::res://addons/admob/src/core/components/ad_format/unit_ids/ad_unit_operational_system/::1697146441
-AdUnitOperationalSystem.tscn::PackedScene::-1::1697146441::0::1::::<><>::
-::res://addons/admob/src/core/components/ad_format/unit_ids/ad_unit_operational_system/ad_unit/::1697146441
-AdUnit.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-AdUnit.tscn::PackedScene::-1::1697146441::0::1::::<><>::res://addons/admob/src/core/components/ad_format/unit_ids/ad_unit_operational_system/ad_unit/AdUnit.gd
-::res://addons/admob/src/singletons/::1697146441
-AdMobSingleton.gd::GDScript::-1::1697146441::0::1::::<>Node<>::
-MobileAds.gd::GDScript::-1::1697146441::0::1::::<>Node<>::
-::res://addons/admob/src/utils/::1697146441
-AdMobGlobals.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-AdMobLoad.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-AdMobSave.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-AdMobSettings.gd::GDScript::-1::1697146441::0::1::::<>RefCounted<>::
-::res://addons/admob/test/::1686604382
-Example.gd::GDScript::-1::1686604382::0::1::::<>Control<>::
-Example.tscn::PackedScene::-1::1686604382::0::1::::<><>::res://addons/admob/test/Example.gd<>res://addons/admob/assets/icon-500.png<>res://addons/admob/assets/poing.jpeg<>res://addons/admob/assets/music.ogg<>res://addons/admob/test/MusicCheckButton.gd
-MusicCheckButton.gd::GDScript::-1::1686604382::0::1::::<>CheckButton<>::
-::res://addons/localnotification-html5/::1686589697
-HTML5NotificationsPlugin.gd::GDScript::-1::1686588095::0::1::::<>RefCounted<>::
-::res://addons/localnotification-ios/::1686602714
-::res://addons/localnotification-ios/localnotification.xcframework/::1686602714
-::res://addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/::1686602714
-::res://addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/localnotification.framework/::1686602714
-::res://addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/localnotification.framework/Headers/::1686602714
-::res://addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/::1686602714
-::res://addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/::1686602714
-::res://addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/Headers/::1686602714
-::res://addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/_CodeSignature/::1686602714
-::res://addons/NativeLib/::1697145870
-MainUI.gd::GDScript::-1::1669378437::0::1::::<>RefCounted<>::
-MainUI.tscn::PackedScene::-1::1626309488::0::1::::<><>::res://addons/NativeLib/MainUI.gd<>res://addons/NativeLib/icons/glass.svg<>res://addons/NativeLib/icons/android.svg<>res://addons/NativeLib/icons/apple_logo.svg<>res://addons/NativeLib/icons/reload.svg<>res://addons/NativeLib/icons/download.svg<>res://addons/NativeLib/icons/universal_platform.svg<>res://addons/NativeLib/icons/osx.svg<>res://addons/NativeLib/icons/tvos.svg
-package_info.gd::GDScript::-1::1669377910::0::1::::<>RefCounted<>::
-package_info.tscn::PackedScene::-1::1626309488::0::1::::<><>::res://addons/NativeLib/package_info.gd<>res://addons/NativeLib/icons/android.svg<>res://addons/NativeLib/icons/apple_logo.svg<>res://addons/NativeLib/icons/download.svg<>res://addons/NativeLib/icons/reload.svg<>res://addons/NativeLib/icons/trash_bin.svg<>res://addons/NativeLib/icons/universal_platform.svg<>res://addons/NativeLib/icons/www.svg<>res://addons/NativeLib/icons/heart_icon.svg<>res://addons/NativeLib/icons/osx.svg<>res://addons/NativeLib/icons/tvos.svg
-plugin.cfg::TextFile::-1::1626309488::0::1::::<><>::
-plugin.gd::GDScript::-1::1626309488::0::1::::<>RefCounted<>::
-plugin_variable.gd::GDScript::-1::1626309488::0::1::::<>RefCounted<>::
-plugin_variable.tscn::PackedScene::-1::1626309488::0::1::::<><>::res://addons/NativeLib/plugin_variable.gd
-::res://addons/NativeLib/icons/::1661868416
+::res://addons/admob/downloads/::1662390036
+::res://addons/admob/downloads/android/::1697143210
+::res://addons/admob/downloads/ios/::1697143215
+::res://addons/admob/src/::1662390037
+::res://addons/admob/src/core/::1697142964
+AdMob.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+AdMobEditor.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+AdMobEditor.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/assets/android.png<>res://addons/admob/assets/poing.jpeg<>res://addons/admob/assets/fonts/arial.ttf<>res://addons/admob/src/core/AdMobEditor.gd<>res://addons/admob/assets/ios.png<>res://addons/admob/assets/icon-76.png<>res://addons/admob/src/core/components/ad_format/BannerAdFormat.tscn<>res://addons/admob/src/core/components/General.tscn<>res://addons/admob/src/core/components/ad_format/InterstitialAdFormat.tscn<>res://addons/admob/src/core/components/ad_format/RewardedAdFormat.tscn<>res://addons/admob/src/core/components/ad_format/RewardedInterstitialAdFormat.tscn<>res://addons/admob/src/core/components/Downloads.tscn<>res://addons/admob/src/core/components/Debug.tscn<>res://addons/admob/src/core/SupportVersion.gd<>res://addons/admob/src/core/CurrentVersion.gd<>res://addons/admob/src/core/VersionSupportedHTTPRequest.tscn
+CurrentVersion.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+SupportVersion.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+VersionSupportedHTTPRequest.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+VersionSupportedHTTPRequest.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/VersionSupportedHTTPRequest.gd
+::res://addons/admob/src/core/components/::1697142964
+Debug.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+Debug.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/Debug.gd
+Downloads.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+Downloads.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/Downloads.gd<>res://addons/admob/src/core/components/VerifyNetworkGithub.gd<>res://addons/admob/src/core/VersionSupportedHTTPRequest.tscn
+Enabled.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+General.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+General.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/General.gd<>res://addons/admob/src/core/components/Enabled.gd
+VerifyNetworkGithub.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+::res://addons/admob/src/core/components/ad_format/::1697142964
+AdFormat.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/ad_format/unit_ids/UnitIds.tscn
+BannerAdFormat.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+BannerAdFormat.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/ad_format/AdFormat.tscn<>res://addons/admob/src/core/components/ad_format/BannerAdFormat.gd<>res://addons/admob/src/core/components/ad_format/RespectSafeArea.gd
+InterstitialAdFormat.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/ad_format/AdFormat.tscn
+RespectSafeArea.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+RewardedAdFormat.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/ad_format/AdFormat.tscn
+RewardedInterstitialAdFormat.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/ad_format/AdFormat.tscn
+::res://addons/admob/src/core/components/ad_format/unit_ids/::1697142964
+UnitIds.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+UnitIds.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/ad_format/unit_ids/UnitIds.gd<>res://addons/admob/src/core/components/ad_format/unit_ids/ad_unit_operational_system/AdUnitOperationalSystem.tscn
+::res://addons/admob/src/core/components/ad_format/unit_ids/ad_unit_operational_system/::1697142964
+AdUnitOperationalSystem.tscn::PackedScene::-1::1697142964::0::1::::<><>::
+::res://addons/admob/src/core/components/ad_format/unit_ids/ad_unit_operational_system/ad_unit/::1697142964
+AdUnit.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+AdUnit.tscn::PackedScene::-1::1697142964::0::1::::<><>::res://addons/admob/src/core/components/ad_format/unit_ids/ad_unit_operational_system/ad_unit/AdUnit.gd
+::res://addons/admob/src/singletons/::1697142964
+AdMobSingleton.gd::GDScript::-1::1697142964::0::1::::<>Node<>::
+MobileAds.gd::GDScript::-1::1697142964::0::1::::<>Node<>::
+::res://addons/admob/src/utils/::1697142964
+AdMobGlobals.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+AdMobLoad.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+AdMobSave.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+AdMobSettings.gd::GDScript::-1::1697142964::0::1::::<>RefCounted<>::
+::res://addons/admob/test/::1686600782
+Example.gd::GDScript::-1::1686600782::0::1::::<>Control<>::
+Example.tscn::PackedScene::-1::1686600782::0::1::::<><>::res://addons/admob/test/Example.gd<>res://addons/admob/assets/icon-500.png<>res://addons/admob/assets/poing.jpeg<>res://addons/admob/assets/music.ogg<>res://addons/admob/test/MusicCheckButton.gd
+MusicCheckButton.gd::GDScript::-1::1686600782::0::1::::<>CheckButton<>::
+::res://addons/localnotification-html5/::1686586097
+HTML5NotificationsPlugin.gd::GDScript::-1::1686584495::0::1::::<>RefCounted<>::
+::res://addons/localnotification-ios/::1686599114
+::res://addons/localnotification-ios/localnotification.xcframework/::1686599114
+::res://addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/::1686599114
+::res://addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/localnotification.framework/::1686599114
+::res://addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/localnotification.framework/Headers/::1686599114
+::res://addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/::1686599114
+::res://addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/::1686599114
+::res://addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/Headers/::1686599114
+::res://addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/_CodeSignature/::1686599114
+::res://addons/NativeLib/::1707675167
+MainUI.gd::GDScript::-1::1707675148::0::1::::<>RefCounted<>::
+MainUI.tscn::PackedScene::-1::1707675003::0::1::::<><>::res://addons/NativeLib/MainUI.gd<>res://addons/NativeLib/icons/glass.svg<>res://addons/NativeLib/icons/android.svg<>res://addons/NativeLib/icons/apple_logo.svg<>res://addons/NativeLib/icons/reload.svg<>res://addons/NativeLib/icons/download.svg<>res://addons/NativeLib/icons/universal_platform.svg<>res://addons/NativeLib/icons/osx.svg<>res://addons/NativeLib/icons/tvos.svg
+package_info.gd::GDScript::-1::1707675138::0::1::::<>RefCounted<>::
+package_info.tscn::PackedScene::-1::1707675003::0::1::::<><>::res://addons/NativeLib/package_info.gd<>res://addons/NativeLib/icons/android.svg<>res://addons/NativeLib/icons/apple_logo.svg<>res://addons/NativeLib/icons/download.svg<>res://addons/NativeLib/icons/reload.svg<>res://addons/NativeLib/icons/trash_bin.svg<>res://addons/NativeLib/icons/universal_platform.svg<>res://addons/NativeLib/icons/www.svg<>res://addons/NativeLib/icons/heart_icon.svg<>res://addons/NativeLib/icons/osx.svg<>res://addons/NativeLib/icons/tvos.svg
+plugin.cfg::TextFile::-1::1707675003::0::1::::<><>::
+plugin.gd::GDScript::-1::1707675003::0::1::::<>RefCounted<>::
+plugin_variable.gd::GDScript::-1::1707675003::0::1::::<>RefCounted<>::
+plugin_variable.tscn::PackedScene::-1::1707675003::0::1::::<><>::res://addons/NativeLib/plugin_variable.gd
+::res://addons/NativeLib/icons/::1697143709
 android.svg::CompressedTexture2D::-1::0::0::1::::<><>::
 apple_logo.svg::CompressedTexture2D::-1::0::0::1::::<><>::
 download.svg::CompressedTexture2D::-1::0::0::1::::<><>::
@@ -103,33 +104,31 @@ trash_bin.svg::CompressedTexture2D::-1::0::0::1::::<><>::
 tvos.svg::CompressedTexture2D::-1::0::0::1::::<><>::
 universal_platform.svg::CompressedTexture2D::-1::0::0::1::::<><>::
 www.svg::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://android/::1697146138
-::res://android/plugins/::1697146138
-::res://android_temp/::1697146041
-::res://android_temp/plugins/::1697146041
-::res://Assets/::1669066291
-::res://Assets/ExportIcons/::1655404425
+::res://android/::1697142538
+::res://android/plugins/::1697184636
+::res://Assets/::1669062691
+::res://Assets/ExportIcons/::1655400825
 64Transparent.png::CompressedTexture2D::-1::0::0::1::::<><>::
 76.png::CompressedTexture2D::-1::0::0::1::::<><>::
 120.png::CompressedTexture2D::-1::0::0::1::::<><>::
 200Transparent.png::CompressedTexture2D::-1::0::0::1::::<><>::
 512.png::CompressedTexture2D::-1::0::0::1::::<><>::
 1024.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Assets/Flags/::1680625109
+::res://Assets/Flags/::1680621509
 european-union.png::CompressedTexture2D::-1::0::0::1::::<><>::
 india.png::CompressedTexture2D::-1::0::0::1::::<><>::
 israel.png::CompressedTexture2D::-1::0::0::1::::<><>::
 qatar.png::CompressedTexture2D::-1::0::0::1::::<><>::
 russia.png::CompressedTexture2D::-1::0::0::1::::<><>::
 united-states.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Assets/Fonts/::1680625353
+::res://Assets/Fonts/::1680621753
 coolvetica rg it.otf::::-1::0::0::0::::<><>::
 LateefRegOT.ttf::::-1::0::0::0::::<><>::
 OpenSans-Bold.ttf::::-1::0::0::0::::<><>::
 OpenSans-Medium.ttf::::-1::0::0::0::::<><>::
 Roboto-Bold.ttf::::-1::0::0::0::::<><>::
 Roboto-Medium.ttf::::-1::0::0::0::::<><>::
-::res://Assets/Icons/::1697138672
+::res://Assets/Icons/::1697135072
 applause.png::CompressedTexture2D::-1::0::0::1::::<><>::
 backspace.png::CompressedTexture2D::-1::0::0::1::::<><>::
 bag.png::CompressedTexture2D::-1::0::0::1::::<><>::
@@ -182,158 +181,158 @@ unchecked.png::CompressedTexture2D::-1::0::0::1::::<><>::
 up-arrow.png::CompressedTexture2D::-1::0::0::1::::<><>::
 whats-new.png::CompressedTexture2D::-1::0::0::1::::<><>::
 WomansDay.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Assets/lang/::1697145979
-Languanges.csv::Translation::2830017178310472518::1697144958::1697146461::1::::<><>::
-Languanges.en.translation::OptimizedTranslation::2938709361924748751::1697146460::0::1::::<><>::
-Languanges.he.translation::OptimizedTranslation::1272055677748117502::1697146460::0::1::::<><>::
-Languanges.ru.translation::OptimizedTranslation::1083390987081752938::1697146461::0::1::::<><>::
-::res://Assets/Particles/::1669066603
+::res://Assets/lang/::1698775604
+Languanges.csv::Translation::6312848496882745519::1698775600::1708017957::1::::<><>::
+Languanges.en.translation::OptimizedTranslation::5443416561538546301::1708017957::0::1::::<><>::
+Languanges.he.translation::OptimizedTranslation::7458078457021291502::1708017957::0::1::::<><>::
+Languanges.ru.translation::OptimizedTranslation::3017483118180511022::1708017957::0::1::::<><>::
+::res://Assets/Particles/::1669063003
 christmas-tree.png::CompressedTexture2D::-1::0::0::1::::<><>::
 cold.png::CompressedTexture2D::-1::0::0::1::::<><>::
 santa-claus.png::CompressedTexture2D::-1::0::0::1::::<><>::
 snowflake.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Exports/::1686602827
-::res://Exports/Android/::1655391336
-::res://Exports/icons/::1686584197
+::res://Exports/::1686599227
+::res://Exports/Android/::1655387736
+::res://Exports/icons/::1686580597
 icon192.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Exports/iOS/::1697146223
-::res://Exports/iOS/Time Check In/::1697146225
-::res://Exports/iOS/Time Check In/dylibs/::1697146225
-::res://Exports/iOS/Time Check In/dylibs/addons/::1686669076
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/::1686669076
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/::1697146226
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/::1686669076
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/localnotification.framework/::1697146226
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/localnotification.framework/Headers/::1697146226
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/::1686669077
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/::1697146226
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/Headers/::1697146226
-::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/_CodeSignature/::1697146226
-::res://Exports/iOS/Time Check In/dylibs/ios/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/Mediation/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/RTBMediation/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/Mediation/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/RTBMediation/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Headers/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Headers/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Headers/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Headers/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Headers/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/::1686602832
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Headers/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Modules/::1697146223
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/::1686602834
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Headers/::1697146225
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Modules/::1697146225
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/::1686602834
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/::1697146225
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1697146225
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1697146225
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/::1686602833
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Headers/::1697146224
-::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Modules/::1697146224
-::res://Exports/iOS/Time Check In/en.lproj/::1697146226
-::res://Exports/iOS/Time Check In/he.lproj/::1697146226
-::res://Exports/iOS/Time Check In/Images.xcassets/::1686602835
-::res://Exports/iOS/Time Check In/Images.xcassets/AppIcon.appiconset/::1697146226
-Contents.json::JSON::-1::1697146226::0::1::::<><>::
+::res://Exports/iOS/::1698874685
+::res://Exports/iOS/Time Check In/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/addons/::1686665476
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/::1686665476
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/::1698874689
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/::1686665476
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/localnotification.framework/::1698874689
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-arm64_armv7/localnotification.framework/Headers/::1698874689
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/::1686665477
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/::1698874689
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/Headers/::1698874689
+::res://Exports/iOS/Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework/ios-x86_64-simulator/localnotification.framework/_CodeSignature/::1698874689
+::res://Exports/iOS/Time Check In/dylibs/ios/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/Mediation/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/RTBMediation/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Modules/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/Mediation/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/RTBMediation/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Modules/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Headers/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Modules/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Headers/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Modules/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/::1698874686
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Headers/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Headers/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Headers/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Headers/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Headers/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/::1686599232
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Headers/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Modules/::1698874685
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/::1686599234
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/::1686599234
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/::1686599233
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Headers/::1698874687
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Modules/::1698874687
+::res://Exports/iOS/Time Check In/en.lproj/::1698874688
+::res://Exports/iOS/Time Check In/he.lproj/::1698874688
+::res://Exports/iOS/Time Check In/Images.xcassets/::1686599235
+::res://Exports/iOS/Time Check In/Images.xcassets/AppIcon.appiconset/::1698874688
+Contents.json::JSON::-1::1698874688::0::1::::<><>::
 Icon-40.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Icon-76.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Icon-80.png::CompressedTexture2D::-1::0::0::1::::<><>::
@@ -342,25 +341,25 @@ Icon-152.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Icon-167.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Icon-180.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Icon-1024.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Exports/iOS/Time Check In/Images.xcassets/LaunchImage.launchimage/::1697146226
-::res://Exports/iOS/Time Check In/Images.xcassets/SplashImage.imageset/::1697146226
-Contents.json::JSON::-1::1697146225::0::1::::<><>::
+::res://Exports/iOS/Time Check In/Images.xcassets/LaunchImage.launchimage/::1698874688
+::res://Exports/iOS/Time Check In/Images.xcassets/SplashImage.imageset/::1698874688
+Contents.json::JSON::-1::1698874687::0::1::::<><>::
 splash@2x.png::CompressedTexture2D::-1::0::0::1::::<><>::
 splash@3x.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Exports/iOS/Time Check In/ios/::1686602832
-::res://Exports/iOS/Time Check In/ios/plugins/::1686602832
-::res://Exports/iOS/Time Check In/ios/plugins/admob/::1686602832
-::res://Exports/iOS/Time Check In/ios/plugins/admob/bin/::1697146223
-::res://Exports/iOS/Time Check In/ru.lproj/::1697146226
-::res://Exports/iOS/Time Check In.xcframework/::1697146225
-::res://Exports/iOS/Time Check In.xcframework/ios-arm64/::1697146226
-::res://Exports/iOS/Time Check In.xcframework/ios-arm64_x86_64-simulator/::1697146225
-::res://Exports/iOS/Time Check In.xcodeproj/::1697146226
-::res://Exports/iOS/Time Check In.xcodeproj/project.xcworkspace/::1697146225
-::res://Exports/iOS/Time Check In.xcodeproj/xcshareddata/::1697146225
-::res://Exports/iOS/Time Check In.xcodeproj/xcshareddata/xcschemes/::1697146225
-::res://Exports/iOSScreenshots/::1655388985
-::res://Exports/iOSScreenshots/iphone5.5/::1655404425
+::res://Exports/iOS/Time Check In/ios/::1686599232
+::res://Exports/iOS/Time Check In/ios/plugins/::1686599232
+::res://Exports/iOS/Time Check In/ios/plugins/admob/::1686599232
+::res://Exports/iOS/Time Check In/ios/plugins/admob/bin/::1698874685
+::res://Exports/iOS/Time Check In/ru.lproj/::1698874688
+::res://Exports/iOS/Time Check In.xcframework/::1698874688
+::res://Exports/iOS/Time Check In.xcframework/ios-arm64/::1698874688
+::res://Exports/iOS/Time Check In.xcframework/ios-arm64_x86_64-simulator/::1698874688
+::res://Exports/iOS/Time Check In.xcodeproj/::1698874689
+::res://Exports/iOS/Time Check In.xcodeproj/project.xcworkspace/::1698874687
+::res://Exports/iOS/Time Check In.xcodeproj/xcshareddata/::1698874687
+::res://Exports/iOS/Time Check In.xcodeproj/xcshareddata/xcschemes/::1698874687
+::res://Exports/iOSScreenshots/::1655385385
+::res://Exports/iOSScreenshots/iphone5.5/::1655400825
 5.5-inch Screenshot 1.png::CompressedTexture2D::-1::0::0::1::::<><>::
 5.5-inch Screenshot 2.png::CompressedTexture2D::-1::0::0::1::::<><>::
 5.5-inch Screenshot 3.png::CompressedTexture2D::-1::0::0::1::::<><>::
@@ -395,7 +394,7 @@ Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07
 Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.39.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.44.53.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Track your working hoursanytime and any job!.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Exports/iOSScreenshots/iphone 8/::1655390927
+::res://Exports/iOSScreenshots/iphone 8/::1655387327
 Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.35.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.40.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.48.png::CompressedTexture2D::-1::0::0::1::::<><>::
@@ -403,7 +402,7 @@ Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.56.png::CompressedTexture
 Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.02.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.06.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.20.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Exports/iOSScreenshots/iphone 12/::1655390921
+::res://Exports/iOSScreenshots/iphone 12/::1655387321
 Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.44.53.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.46.33.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.46.49.png::CompressedTexture2D::-1::0::0::1::::<><>::
@@ -411,7 +410,7 @@ Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.47.32.png::CompressedTextur
 Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.47.42.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.48.00.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.48.40.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Exports/iOSScreenshots/iPhone Pro/::1655390922
+::res://Exports/iOSScreenshots/iPhone Pro/::1655387322
 Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.17.17.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.18.23.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.04.png::CompressedTexture2D::-1::0::0::1::::<><>::
@@ -419,294 +418,307 @@ Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.12.png::Compress
 Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.23.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.26.png::CompressedTexture2D::-1::0::0::1::::<><>::
 Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.39.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://Exports/keystore/::1655391228
-::res://fakes_saves/::1660292425
-Settings.ini::TextFile::-1::1660673360::0::1::::<><>::
-::res://ios/::1662394321
-::res://ios/plugins/::1686589176
-::res://ios/plugins/admob/::1662490416
-::res://ios/plugins/admob/bin/::1662394334
-::res://ios/plugins/admob/lib/::1662490502
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/Modules/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/Modules/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/Modules/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/Modules/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662394356
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/::1662394358
-::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662394358
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/::1662394359
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/::1662394359
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/::1662394360
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/Mediation/::1662394359
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/RTBMediation/::1662394360
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/::1662394358
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/::1662394359
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/::1662394359
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/Mediation/::1662394359
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/RTBMediation/::1662394359
-::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Modules/::1662394359
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/Licenses/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Modules/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Headers/::1662394360
-::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Modules/::1662394360
-::res://Prefabs/::1667649875
-::res://Prefabs/Elements/::1697145666
-AddHandler.gd::GDScript::-1::1672946013::0::1::::<>Node<>::
-AnimatedDate.gd::GDScript::-1::1663965539::0::1::::<>Control<>::
-AnimatedDate.tscn::PackedScene::-1::1663966564::0::1::::<><>::res://Prefabs/Elements/AnimatedDate.gd<>res://Prefabs/Elements/AnimatedLabel.tscn
-AnimatedLabel.gd::GDScript::-1::1663966462::0::1::::<>Label<>::
-AnimatedLabel.tscn::PackedScene::-1::1663968122::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/AnimatedLabel.gd
-AppSettings.gd::GDScript::-1::1669917783::0::1::::<>Panel<>::
-AppSettings.tscn::PackedScene::-1::1670177159::0::1::::<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Elements/AppSettings.gd<>res://Prefabs/Elements/ToggleBetween.tscn
-CalDay.gd::GDScript::-1::1669481045::0::1::::<>Label<>::
-CalDay.tscn::PackedScene::-1::1669481521::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/CalDay.gd<>res://Prefabs/Styles/CalDay.tres
-CalendarButton.gd::GDScript::-1::1654960099::0::1::::<>Button<>::
-CalendarButton.tscn::PackedScene::-1::1655141364::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Assets/Icons/right-arrow.png<>res://Prefabs/Elements/CalendarButton.gd
-CalendarSettings.gd::GDScript::-1::1666539113::0::1::::<>Panel<>::
-CalendarSettings.tscn::PackedScene::-1::1667650038::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/CalendarSettings.gd<>res://Prefabs/Elements/PressTimer.tscn
-CategoryPanel.gd::GDScript::-1::1669151475::0::1::::<>RefCounted<>::
-CategoryPanel.tscn::PackedScene::-1::1669151644::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/CategoryPanel.gd<>res://Assets/Icons/info (1).png<>res://Prefabs/Styles/Panel/SettingTitle.tres
-CheckBox.gd::GDScript::-1::1669734092::0::1::::<>Label<>::
-CheckBox.tscn::PackedScene::-1::1669734660::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Elements/CheckBox.gd<>res://Prefabs/Elements/PressTimer.tscn
-CheckinControl.gd::GDScript::-1::1675276474::0::1::::<>Control<>::
-CheckinControl.tscn::PackedScene::-1::1675276889::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/CheckinControl.gd<>res://Assets/Icons/pause-button.png<>res://Prefabs/Elements/StartStopBtn.gd<>res://Prefabs/Shaders/MenuBtn.tres<>res://Assets/Icons/play.png<>res://Assets/Icons/holidays.png<>res://Assets/Icons/Ellipse 1.png<>res://Prefabs/Elements/OptionBox.tscn<>res://Assets/Fonts/OpenSans-Medium.ttf<>res://Prefabs/Shaders/FlappingShader.tres
-CheckInOutEditor.gd::GDScript::-1::1675276855::0::1::::<>Panel<>::
-CheckInOutEditor.tscn::PackedScene::-1::1670101316::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Styles/Fonts/Size100.tres<>res://Prefabs/Styles/Panel/TotalItem.tres<>res://Prefabs/Elements/CheckInOutEditor.gd<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Assets/Icons/trash-can.png
-CurDay.gd::GDScript::-1::1658586916::0::1::::<>Label<>::
-CurMonth.gd::GDScript::-1::1675274116::0::1::::<>Label<>::
-CurrentDateInfo.gd::GDScript::-1::1675274576::0::1::::<>VBoxContainer<>::
-CurrentScreen.gd::GDScript::-1::1670106851::0::1::::<>Panel<>::
-CurTime.gd::GDScript::-1::1655550103::0::1::::<>Label<>::
-DayInfo.gd::GDScript::-1::1675274675::0::1::::<>Panel<>::
-DayInfo.tscn::PackedScene::-1::1684584771::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/DayInfo.gd<>res://Prefabs/Elements/OptionBox.tscn<>res://Assets/Icons/day.png<>res://Assets/Icons/holidays.png<>res://Assets/Icons/hard-work.png
-EffectHandler.gd::GDScript::-1::1697138002::0::1::::<>RefCounted<>::
-HebrewLabel.gd::GDScript::-1::1662487451::0::1::::<>RefCounted<>::
-HebrewLabel.tscn::PackedScene::-1::1662488430::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Elements/HebrewLabel.gd
-HebrewReachLabel.gd::GDScript::-1::1659110817::0::1::::<>RichTextLabel<>::
-HebrewReachLabel.tscn::PackedScene::-1::1659110958::0::1::::<><>::res://Prefabs/Elements/HebrewReachLabel.gd<>res://Prefabs/Styles/Fonts/Size30.tres
-HourEditorScreen.gd::GDScript::-1::1675276887::0::1::::<>Control<>::
-IconContainer.gd::GDScript::-1::1697145666::0::1::::<>HBoxContainer<>::
-IconContainer.tscn::PackedScene::-1::1663972056::0::1::::<><>::res://Prefabs/Elements/IconContainer.gd
-InteractiveButton.gd::GDScript::-1::1656259420::0::1::::<>Button<>::
-InteractiveButton.tscn::PackedScene::-1::1664623404::0::1::::<><>::res://Assets/Icons/down-arrow.png<>res://Prefabs/Elements/InteractiveButton.gd
-Keypad.gd::GDScript::-1::1666352012::0::1::::<>Button<>::
-Keypad.tscn::PackedScene::-1::1666355268::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf<>res://Prefabs/Elements/Keypad.gd
-LanguangeControl.gd::GDScript::-1::1669649074::0::1::::<>Panel<>::
-LanguangeControl.tscn::PackedScene::-1::1669649751::0::1::::<><>::res://Prefabs/Elements/LanguangeControl.gd<>res://Assets/Flags/israel.png<>res://Assets/Flags/united-states.png<>res://Prefabs/Elements/OptionBox.tscn<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Assets/Flags/russia.png
-ListItem.gd::GDScript::-1::1670101165::0::1::::<>Panel<>::
-ListItem.tscn::PackedScene::-1::1667172590::0::1::::<><>::res://Prefabs/Styles/Panel/TotalItem.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/ListItem.gd<>res://Prefabs/Elements/OptionBox.tscn
-LoaderScreen.gd::GDScript::-1::1655140955::0::1::::<>Control<>::
-MenuBtn2.gd::GDScript::-1::1670108017::0::1::::<>TextureRect<>::
-MenuBtn2.tscn::PackedScene::-1::1670108030::0::1::::<><>::res://Assets/Icons/time.png<>res://Prefabs/Shaders/MenuBtn.tres<>res://Prefabs/Elements/MenuBtn2.gd
-MenuBtn.gd::GDScript::-1::1654619289::0::1::::<>Button<>::
-MenuBtn.tscn::PackedScene::-1::1654867499::0::1::::<><>::res://Assets/Icons/time.png<>res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/MenuBtn.gd<>res://Prefabs/Shaders/MenuBtn.tres
-ModulatePopupScreen.gd::GDScript::-1::1697140229::0::1::::<>Control<>::
-ModulatePopupScreen.tscn::PackedScene::-1::1697145612::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/ModulatePopupScreen.gd<>res://Assets/Icons/applause.png<>res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Elements/HebrewLabel.tscn<>res://Prefabs/Elements/PopupBtn.tscn<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/ModulatePopupScreen.tres<>res://Assets/Icons/star.png<>res://Prefabs/Elements/StarBox.gd
-NumpadKeyboard.gd::GDScript::-1::1666543104::0::1::::<>Control<>::
-NumpadKeyboard.tscn::PackedScene::-1::1666543120::0::1::::<><>::res://Prefabs/Elements/Keypad.tscn<>res://Prefabs/Elements/NumpadKeyboard.gd
-OptionBox.gd::GDScript::-1::1675275165::0::1::::<>MenuButton<>::
-OptionBox.tscn::PackedScene::-1::1675276889::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Assets/Flags/israel.png<>res://Prefabs/Styles/OptionBox/OptionBox.tres<>res://Prefabs/Elements/OptionBox.gd<>res://Prefabs/Elements/PressTimer.tscn
-OvertimeTotalItem.tscn::PackedScene::-1::1684596547::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/TotalItem.gd<>res://Prefabs/Styles/Panel/TotalItem.tres<>res://Assets/Icons/time-management.png<>res://Prefabs/Shaders/IconContainer.tres
-PopupBtn.gd::GDScript::-1::1667656442::0::1::::<>RefCounted<>::
-PopupBtn.tscn::PackedScene::-1::1672604852::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/PopupBtn.gd
-PressTimer.tscn::PackedScene::-1::1666539136::0::1::::<><>::
-ReportPanel.gd::GDScript::-1::1662564887::0::1::::<>Panel<>::
-ReportPanel.tscn::PackedScene::-1::1697145612::0::1::::<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Elements/ReportPanel.gd
-SalarySimulatorScreen.gd::GDScript::-1::1670100832::0::1::::<>Control<>::
-SaloryCalculation.gd::GDScript::-1::1669734157::0::1::::<>Panel<>::
-SaloryCalculation.tscn::PackedScene::-1::1680625462::0::1::::<><>::res://Prefabs/Elements/CheckBox.tscn<>res://Prefabs/Elements/SaloryCalculation.gd<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/ValueBox.tscn<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Elements/OptionBox.tscn<>res://Assets/Flags/israel.png<>res://Assets/Flags/united-states.png<>res://Assets/Flags/russia.png<>res://Assets/Flags/european-union.png<>res://Assets/Flags/india.png<>res://Assets/Flags/qatar.png
-SmartDeductionSalary.gd::GDScript::-1::1669368331::0::1::::<>Panel<>::
-SmartDeductionSalary.tscn::PackedScene::-1::1670100583::0::1::::<><>::res://Prefabs/Elements/SmartDeductionSalary.gd<>res://Assets/Flags/israel.png<>res://Prefabs/Elements/MenuBtn2.tscn<>res://Prefabs/Elements/OptionBox.tscn<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/ValueBox.tscn<>res://Prefabs/Elements/CheckBox.tscn<>res://Assets/Icons/female.png<>res://Assets/Icons/male.png<>res://Assets/Icons/no-tax.png
-StarBox.gd::GDScript::-1::1697141449::0::1::::<>HBoxContainer<>::
-StartStopBtn.gd::GDScript::-1::1656273791::0::1::::<>Button<>::
-Status.gd::GDScript::-1::1658083133::0::1::::<>Label<>::
-SwipeDetector.gd::GDScript::-1::1670101029::0::1::::<>Node<>::
-ToggleBetween.gd::GDScript::-1::1666539412::0::1::::<>RefCounted<>::
-ToggleBetween.tscn::PackedScene::-1::1666539572::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/ToggleBetween.gd<>res://Prefabs/Elements/PressTimer.tscn
-ToolBtn.gd::GDScript::-1::1669371452::0::1::::<>Button<>::
-ToolBtn.tscn::PackedScene::-1::1669376839::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf<>res://Prefabs/Elements/ToolBtn.gd<>res://Prefabs/Shaders/MenuBtn.tres<>res://Prefabs/Elements/PressTimer.tscn
-TopMenuCalendar.gd::GDScript::-1::1669457625::0::1::::<>Panel<>::
-TopScreenPermanent.gd::GDScript::-1::1672604848::0::1::::<>Control<>::
-TopTools.gd::GDScript::-1::1670099229::0::1::::<>Panel<>::
-TopTools.tscn::PackedScene::-1::1675274024::0::1::::<><>::res://Prefabs/Elements/TopTools.gd<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/Scroll.tres<>res://Prefabs/Styles/Panel/BottomScreen.tres
-TotalCurMonth.gd::GDScript::-1::1684596229::0::1::::<>Label<>::
-TotalItem.gd::GDScript::-1::1684586464::0::1::::<>Panel<>::
-TotalItem.tscn::PackedScene::-1::1684596465::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/TotalItem.gd<>res://Prefabs/Styles/Panel/TotalItem.tres<>res://Prefabs/Styles/ProgressBar.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres
-ValueBox.gd::GDScript::-1::1686517507::0::1::::<>RefCounted<>::
-ValueBox.tscn::PackedScene::-1::1686517808::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/ValueBox.gd<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Assets/Icons/up-arrow.png<>res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/PressTimer.tscn
-VMonth.gd::GDScript::-1::1669373403::0::1::::<>GridContainer<>::
-WorkingHours.gd::GDScript::-1::1686602657::0::1::::<>Panel<>::
-WorkingHours.tscn::PackedScene::-1::1686603814::0::1::::<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/WorkingHours.gd<>res://Prefabs/Elements/ValueBox.tscn<>res://Prefabs/Elements/CheckBox.tscn<>res://Prefabs/Styles/Fonts/Size40.tres
-::res://Prefabs/ExporterScreen/::1669734660
-CustomVars.gd::GDScript::-1::1667773722::0::1::::<>RefCounted<>::
-CustomVars.tscn::PackedScene::-1::1667686072::0::1::::<><>::res://Prefabs/ExporterScreen/CustomVars.gd
-ExportFormat.gd::GDScript::-1::1667653423::0::1::::<>Control<>::
-ExportFormat.tscn::PackedScene::-1::1667653537::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/ExporterScreen/ExportFormat.gd
-TimePeriodSelector.gd::GDScript::-1::1669734011::0::1::::<>Control<>::
-TimePeriodSelector.tscn::PackedScene::-1::1669734660::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/ExporterScreen/TimePeriodSelector.gd<>res://Assets/Icons/fast-forward.png<>res://Prefabs/Elements/OptionBox.tscn<>res://Prefabs/Shaders/IconContainer.tres
-::res://Prefabs/Global/::1697145504
-GlobalAds.gd::GDScript::-1::1663785879::0::1::::<>Node<>::
-GlobalExport.gd::GDScript::-1::1669671059::0::1::::<>Node<>::
-GlobalHebrew.gd::GDScript::-1::1662495516::0::1::::<>Node<>::
-GlobalIOSArrange.gd::GDScript::-1::1670088330::0::1::::<>Node<>::
-GlobalNotif.gd::GDScript::-1::1686513415::0::1::::<>Node<>::
-GlobalSave.gd::GDScript::-1::1675275072::0::1::::<>Node<>::
-GlobalTheme.gd::GDScript::-1::1666541549::0::1::::<>Node<>::
-GlobalTime.gd::GDScript::-1::1697145504::0::1::::<>Control<>::
-::res://Prefabs/Screens/::1697146454
-ExporterScreen.gd::GDScript::-1::1670100510::0::1::::<>Control<>::
-ExporterScreen.tscn::PackedScene::-1::1675276889::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Screens/ExporterScreen.gd<>res://Prefabs/Elements/PopupBtn.tscn<>res://Prefabs/ExporterScreen/TimePeriodSelector.tscn<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/ExporterScreen/CustomVars.tscn<>res://Assets/Icons/check-mark.png<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Styles/Panel/BottomScreen.tres
-HourEditorScreen.tscn::PackedScene::-1::1675276999::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Elements/HourEditorScreen.gd<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/Elements/CheckInOutEditor.tscn<>res://Assets/Icons/check-mark.png<>res://Assets/Icons/unchecked.png<>res://Prefabs/Styles/Panel/BottomScreen.tres
-IsarelSalaryScreen.gd::GDScript::-1::1655914742::0::1::::<>Control<>::
-MainScreen.gd::GDScript::-1::1687628778::0::1::::<>Control<>::
-MainScreen.tscn::PackedScene::-1::1697146454::0::1::::<><>::res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Styles/Fonts/Size100.tres<>res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/CurTime.gd<>res://Prefabs/Elements/CheckinControl.tscn<>res://Prefabs/Elements/TotalCurMonth.gd<>res://Assets/Icons/to-do-list.png<>res://Assets/Icons/settings.png<>res://Assets/Icons/sales.png<>res://Prefabs/Elements/SwipeDetector.gd<>res://Prefabs/Screens/MainScreen.gd<>res://Prefabs/Styles/Panel/BottomScreen.tres<>res://Prefabs/Shaders/MenuBtn.tres<>res://Prefabs/Elements/CalendarButton.tscn<>res://Assets/Icons/fast-forward-button.png<>res://Assets/Icons/fast-backward.png<>res://Assets/Icons/left-arrow.png<>res://Prefabs/Elements/CurMonth.gd<>res://Prefabs/Elements/VMonth.gd<>res://Prefabs/Elements/DayInfo.tscn<>res://Prefabs/Elements/CurDay.gd<>res://Prefabs/Elements/CurrentDateInfo.gd<>res://Prefabs/Elements/CategoryPanel.tscn<>res://Prefabs/Elements/SaloryCalculation.tscn<>res://Prefabs/Elements/MenuBtn2.tscn<>res://Prefabs/Elements/TotalItem.tscn<>res://Prefabs/Elements/CurrentScreen.gd<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/CurScreenIndicator.tres<>res://Assets/Icons/surpise-box.png<>res://Assets/Icons/WomansDay.png<>res://Prefabs/Elements/WorkingHours.tscn<>res://Prefabs/Elements/LanguangeControl.tscn<>res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/CalendarSettings.tscn<>res://Prefabs/Elements/SmartDeductionSalary.tscn<>res://Prefabs/Elements/ToggleBetween.tscn<>res://Prefabs/Elements/TopMenuCalendar.gd<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Elements/ListItem.tscn<>res://Prefabs/Styles/Scroll.tres<>res://Prefabs/Elements/ReportPanel.tscn<>res://Prefabs/Elements/AddHandler.gd<>res://Prefabs/Elements/IconContainer.tscn<>res://Prefabs/Elements/OvertimeTotalItem.tscn<>res://Assets/Fonts/OpenSans-Bold.ttf<>res://Prefabs/Elements/TopTools.tscn<>res://Prefabs/Elements/TopScreenPermanent.gd<>res://Assets/Flags/israel.png<>res://Assets/Icons/ukraine.png<>res://Prefabs/Elements/AppSettings.tscn<>res://Prefabs/Elements/EffectHandler.gd<>res://Assets/Particles/cold.png<>res://Assets/Particles/snowflake.png<>res://Assets/Particles/santa-claus.png<>res://Assets/Particles/christmas-tree.png<>res://Prefabs/Shaders/FlappingShader.tres<>res://Assets/Icons/email.png<>res://Assets/Icons/time.png<>res://Assets/Icons/Today.png<>res://Assets/Icons/tax-free.png<>res://Assets/Icons/translate.png
-SalarySimulatorScreen.tscn::PackedScene::-1::1670100832::0::1::::<><>::res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/Elements/ValueBox.tscn<>res://Assets/Flags/israel.png<>res://Prefabs/Elements/SalarySimulatorScreen.gd<>res://Prefabs/Styles/Scroll.tres<>res://Assets/Icons/unchecked.png<>res://Prefabs/Styles/Panel/BottomScreen.tres
-Tools.gd::GDScript::-1::1670100112::0::1::::<>Node<>::
-::res://Prefabs/Shaders/::1697145983
-FlappingShader.tres::ShaderMaterial::-1::1697145983::0::1::::<><>::
-IconContainer.tres::ShaderMaterial::-1::1697145983::0::1::::<><>::
-MenuBtn.tres::ShaderMaterial::-1::1697145983::0::1::::<><>::
-::res://Prefabs/Styles/::1697145983
-Background_LightBlue.tres::StyleBoxFlat::-1::1687629098::0::1::::<><>::
-CalDay.tres::StyleBoxFlat::-1::1687629098::0::1::::<><>::
-CurScreenIndicator.tres::StyleBoxFlat::-1::1687629098::0::1::::<><>::
-ModulatePopupScreen.tres::StyleBoxFlat::-1::1684585281::0::1::::<><>::
-ProgressBar.tres::StyleBoxFlat::-1::1684585631::0::1::::<><>::
-Scroll.tres::Theme::-1::1697145983::0::1::::<><>::
-::res://Prefabs/Styles/CheckinBtn/::1684585245
-Normal.tres::StyleBoxFlat::-1::1684585245::0::1::::<><>::
-::res://Prefabs/Styles/Fonts/::1697145983
-Size30.tres::FontFile::-1::1687629098::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf
-Size30Bold.tres::FontFile::-1::1687629098::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf
-Size40.tres::FontFile::-1::1687629098::0::1::::<><>::res://Assets/Fonts/OpenSans-Medium.ttf<>res://Assets/Fonts/coolvetica rg it.otf<>res://Assets/Fonts/LateefRegOT.ttf
-Size40Bold.tres::FontFile::-1::1687629098::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf
-Size100.tres::FontFile::-1::1697145983::0::1::::<><>::res://Assets/Fonts/Roboto-Bold.ttf
-::res://Prefabs/Styles/OptionBox/::1697145983
-OptionBox.tres::Theme::-1::1697145983::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres
-::res://Prefabs/Styles/Panel/::1687629098
-BottomScreen.tres::StyleBoxFlat::-1::1669647036::0::1::::<><>::
-SettingPanel.tres::StyleBoxFlat::-1::1687629098::0::1::::<><>::
-SettingTitle.tres::StyleBoxFlat::-1::1666351810::0::1::::<><>::
-TotalItem.tres::StyleBoxFlat::-1::1687629098::0::1::::<><>::
-::res://scripts/::1686602722
-localnotification.gd::GDScript::-1::1686602722::0::1::::<>Node<>::
-::res://Source/::1697144948
-::res://Source/XD/::1662477010
+::res://Exports/keystore/::1655387628
+::res://fakes_saves/::1660288825
+Settings.ini::TextFile::-1::1660669760::0::1::::<><>::
+::res://ios/::1662390721
+::res://ios/plugins/::1686585576
+::res://ios/plugins/admob/::1662486816
+::res://ios/plugins/admob/bin/::1662390734
+::res://ios/plugins/admob/lib/::1662486902
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/Modules/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/Modules/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/Modules/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/Modules/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662390756
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/::1662390758
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Modules/::1662390758
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/::1662390759
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/::1662390759
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/::1662390760
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/Mediation/::1662390759
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/RTBMediation/::1662390760
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/::1662390758
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/::1662390759
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/::1662390759
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/Mediation/::1662390759
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/RTBMediation/::1662390759
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Modules/::1662390759
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/Licenses/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Modules/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Headers/::1662390760
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Modules/::1662390760
+::res://Prefabs/::1667646275
+::res://Prefabs/Elements/::1698775627
+AddHandler.gd::GDScript::-1::1672942413::0::1::::<>Node<>::
+AnimatedDate.gd::GDScript::-1::1663961939::0::1::::<>Control<>::
+AnimatedDate.tscn::PackedScene::-1::1663962964::0::1::::<><>::res://Prefabs/Elements/AnimatedDate.gd<>res://Prefabs/Elements/AnimatedLabel.tscn
+AnimatedLabel.gd::GDScript::-1::1663962862::0::1::::<>Label<>::
+AnimatedLabel.tscn::PackedScene::-1::1663964522::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/AnimatedLabel.gd
+AppSettings.gd::GDScript::-1::1669914183::0::1::::<>Panel<>::
+AppSettings.tscn::PackedScene::-1::1670173559::0::1::::<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Elements/AppSettings.gd<>res://Prefabs/Elements/ToggleBetween.tscn
+CalDay.gd::GDScript::-1::1669477445::0::1::::<>Label<>::
+CalDay.tscn::PackedScene::-1::1669477921::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/CalDay.gd<>res://Prefabs/Styles/CalDay.tres
+CalendarButton.gd::GDScript::-1::1654956499::0::1::::<>Button<>::
+CalendarButton.tscn::PackedScene::-1::1655137764::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Assets/Icons/right-arrow.png<>res://Prefabs/Elements/CalendarButton.gd
+CalendarSettings.gd::GDScript::-1::1666535513::0::1::::<>Panel<>::
+CalendarSettings.tscn::PackedScene::-1::1667646438::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/CalendarSettings.gd<>res://Prefabs/Elements/PressTimer.tscn
+CategoryPanel.gd::GDScript::-1::1669147875::0::1::::<>RefCounted<>::
+CategoryPanel.tscn::PackedScene::-1::1669148044::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/CategoryPanel.gd<>res://Assets/Icons/info (1).png<>res://Prefabs/Styles/Panel/SettingTitle.tres
+CheckBox.gd::GDScript::-1::1669730492::0::1::::<>Label<>::
+CheckBox.tscn::PackedScene::-1::1669731060::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Elements/CheckBox.gd<>res://Prefabs/Elements/PressTimer.tscn
+CheckinControl.gd::GDScript::-1::1698775468::0::1::::<>Control<>::
+CheckinControl.tscn::PackedScene::-1::1697187193::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/CheckinControl.gd<>res://Assets/Icons/pause-button.png<>res://Prefabs/Elements/StartStopBtn.gd<>res://Prefabs/Shaders/MenuBtn.tres<>res://Assets/Icons/play.png<>res://Assets/Icons/holidays.png<>res://Assets/Icons/Ellipse 1.png<>res://Prefabs/Elements/OptionBox.tscn<>res://Assets/Fonts/OpenSans-Medium.ttf<>res://Prefabs/Shaders/FlappingShader.tres
+CheckInOutEditor.gd::GDScript::-1::1675273255::0::1::::<>Panel<>::
+CheckInOutEditor.tscn::PackedScene::-1::1670097716::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Styles/Fonts/Size100.tres<>res://Prefabs/Styles/Panel/TotalItem.tres<>res://Prefabs/Elements/CheckInOutEditor.gd<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Assets/Icons/trash-can.png
+CurDay.gd::GDScript::-1::1658583316::0::1::::<>Label<>::
+CurMonth.gd::GDScript::-1::1675270516::0::1::::<>Label<>::
+CurrentDateInfo.gd::GDScript::-1::1675270976::0::1::::<>VBoxContainer<>::
+CurrentScreen.gd::GDScript::-1::1670103251::0::1::::<>Panel<>::
+CurTime.gd::GDScript::-1::1655546503::0::1::::<>Label<>::
+DayInfo.gd::GDScript::-1::1675271075::0::1::::<>Panel<>::
+DayInfo.tscn::PackedScene::-1::1698775627::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/DayInfo.gd<>res://Prefabs/Elements/OptionBox.tscn<>res://Assets/Icons/day.png<>res://Assets/Icons/holidays.png<>res://Assets/Icons/hard-work.png
+EffectHandler.gd::GDScript::-1::1697134402::0::1::::<>RefCounted<>::
+HebrewLabel.gd::GDScript::-1::1662483851::0::1::::<>RefCounted<>::
+HebrewLabel.tscn::PackedScene::-1::1662484830::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Elements/HebrewLabel.gd
+HebrewReachLabel.gd::GDScript::-1::1659107217::0::1::::<>RichTextLabel<>::
+HebrewReachLabel.tscn::PackedScene::-1::1659107358::0::1::::<><>::res://Prefabs/Elements/HebrewReachLabel.gd<>res://Prefabs/Styles/Fonts/Size30.tres
+HourEditorScreen.gd::GDScript::-1::1698775275::0::1::::<>Control<>::
+IconContainer.gd::GDScript::-1::1697194341::0::1::::<>HBoxContainer<>::
+IconContainer.tscn::PackedScene::-1::1663968456::0::1::::<><>::res://Prefabs/Elements/IconContainer.gd
+InteractiveButton.gd::GDScript::-1::1656255820::0::1::::<>Button<>::
+InteractiveButton.tscn::PackedScene::-1::1664619804::0::1::::<><>::res://Assets/Icons/down-arrow.png<>res://Prefabs/Elements/InteractiveButton.gd
+Keypad.gd::GDScript::-1::1666348412::0::1::::<>Button<>::
+Keypad.tscn::PackedScene::-1::1666351668::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf<>res://Prefabs/Elements/Keypad.gd
+LanguangeControl.gd::GDScript::-1::1669645474::0::1::::<>Panel<>::
+LanguangeControl.tscn::PackedScene::-1::1669646151::0::1::::<><>::res://Prefabs/Elements/LanguangeControl.gd<>res://Assets/Flags/israel.png<>res://Assets/Flags/united-states.png<>res://Prefabs/Elements/OptionBox.tscn<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Assets/Flags/russia.png
+ListItem.gd::GDScript::-1::1670097565::0::1::::<>Panel<>::
+ListItem.tscn::PackedScene::-1::1667168990::0::1::::<><>::res://Prefabs/Styles/Panel/TotalItem.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/ListItem.gd<>res://Prefabs/Elements/OptionBox.tscn
+LoaderScreen.gd::GDScript::-1::1655137355::0::1::::<>Control<>::
+MenuBtn2.gd::GDScript::-1::1670104417::0::1::::<>TextureRect<>::
+MenuBtn2.tscn::PackedScene::-1::1670104430::0::1::::<><>::res://Assets/Icons/time.png<>res://Prefabs/Shaders/MenuBtn.tres<>res://Prefabs/Elements/MenuBtn2.gd
+MenuBtn.gd::GDScript::-1::1654615689::0::1::::<>Button<>::
+MenuBtn.tscn::PackedScene::-1::1654863899::0::1::::<><>::res://Assets/Icons/time.png<>res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/MenuBtn.gd<>res://Prefabs/Shaders/MenuBtn.tres
+ModulatePopupScreen.gd::GDScript::-1::1697136629::0::1::::<>Control<>::
+ModulatePopupScreen.tscn::PackedScene::-1::1697142012::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/ModulatePopupScreen.gd<>res://Assets/Icons/applause.png<>res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Elements/HebrewLabel.tscn<>res://Prefabs/Elements/PopupBtn.tscn<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/ModulatePopupScreen.tres<>res://Assets/Icons/star.png<>res://Prefabs/Elements/StarBox.gd
+NumpadKeyboard.gd::GDScript::-1::1666539504::0::1::::<>Control<>::
+NumpadKeyboard.tscn::PackedScene::-1::1666539520::0::1::::<><>::res://Prefabs/Elements/Keypad.tscn<>res://Prefabs/Elements/NumpadKeyboard.gd
+OptionBox.gd::GDScript::-1::1675271565::0::1::::<>MenuButton<>::
+OptionBox.tscn::PackedScene::-1::1675273289::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Assets/Flags/israel.png<>res://Prefabs/Styles/OptionBox/OptionBox.tres<>res://Prefabs/Elements/OptionBox.gd<>res://Prefabs/Elements/PressTimer.tscn
+OvertimeTotalItem.tscn::PackedScene::-1::1684592947::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/TotalItem.gd<>res://Prefabs/Styles/Panel/TotalItem.tres<>res://Assets/Icons/time-management.png<>res://Prefabs/Shaders/IconContainer.tres
+PopupBtn.gd::GDScript::-1::1667652842::0::1::::<>RefCounted<>::
+PopupBtn.tscn::PackedScene::-1::1672601252::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/PopupBtn.gd
+PressTimer.tscn::PackedScene::-1::1666535536::0::1::::<><>::
+ReportPanel.gd::GDScript::-1::1662561287::0::1::::<>Panel<>::
+ReportPanel.tscn::PackedScene::-1::1697142012::0::1::::<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Elements/ReportPanel.gd
+SalarySimulatorScreen.gd::GDScript::-1::1670097232::0::1::::<>Control<>::
+SaloryCalculation.gd::GDScript::-1::1669730557::0::1::::<>Panel<>::
+SaloryCalculation.tscn::PackedScene::-1::1680621862::0::1::::<><>::res://Prefabs/Elements/CheckBox.tscn<>res://Prefabs/Elements/SaloryCalculation.gd<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/ValueBox.tscn<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Elements/OptionBox.tscn<>res://Assets/Flags/israel.png<>res://Assets/Flags/united-states.png<>res://Assets/Flags/russia.png<>res://Assets/Flags/european-union.png<>res://Assets/Flags/india.png<>res://Assets/Flags/qatar.png
+SmartDeductionSalary.gd::GDScript::-1::1669364731::0::1::::<>Panel<>::
+SmartDeductionSalary.tscn::PackedScene::-1::1670096983::0::1::::<><>::res://Prefabs/Elements/SmartDeductionSalary.gd<>res://Assets/Flags/israel.png<>res://Prefabs/Elements/MenuBtn2.tscn<>res://Prefabs/Elements/OptionBox.tscn<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/ValueBox.tscn<>res://Prefabs/Elements/CheckBox.tscn<>res://Assets/Icons/female.png<>res://Assets/Icons/male.png<>res://Assets/Icons/no-tax.png
+StarBox.gd::GDScript::-1::1697137849::0::1::::<>HBoxContainer<>::
+StartStopBtn.gd::GDScript::-1::1656270191::0::1::::<>Button<>::
+Status.gd::GDScript::-1::1658079533::0::1::::<>Label<>::
+SwipeDetector.gd::GDScript::-1::1670097429::0::1::::<>Node<>::
+ToggleBetween.gd::GDScript::-1::1666535812::0::1::::<>RefCounted<>::
+ToggleBetween.tscn::PackedScene::-1::1666535972::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/ToggleBetween.gd<>res://Prefabs/Elements/PressTimer.tscn
+ToolBtn.gd::GDScript::-1::1669367852::0::1::::<>Button<>::
+ToolBtn.tscn::PackedScene::-1::1669373239::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf<>res://Prefabs/Elements/ToolBtn.gd<>res://Prefabs/Shaders/MenuBtn.tres<>res://Prefabs/Elements/PressTimer.tscn
+TopMenuCalendar.gd::GDScript::-1::1669454025::0::1::::<>Panel<>::
+TopScreenPermanent.gd::GDScript::-1::1672601248::0::1::::<>Control<>::
+TopTools.gd::GDScript::-1::1670095629::0::1::::<>Panel<>::
+TopTools.tscn::PackedScene::-1::1675270424::0::1::::<><>::res://Prefabs/Elements/TopTools.gd<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/Scroll.tres<>res://Prefabs/Styles/Panel/BottomScreen.tres
+TotalCurMonth.gd::GDScript::-1::1684592629::0::1::::<>Label<>::
+TotalItem.gd::GDScript::-1::1684582864::0::1::::<>Panel<>::
+TotalItem.tscn::PackedScene::-1::1684592865::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/TotalItem.gd<>res://Prefabs/Styles/Panel/TotalItem.tres<>res://Prefabs/Styles/ProgressBar.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres
+ValueBox.gd::GDScript::-1::1686513907::0::1::::<>RefCounted<>::
+ValueBox.tscn::PackedScene::-1::1686514208::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/ValueBox.gd<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Assets/Icons/up-arrow.png<>res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/PressTimer.tscn
+VMonth.gd::GDScript::-1::1669369803::0::1::::<>GridContainer<>::
+WorkingHours.gd::GDScript::-1::1686599057::0::1::::<>Panel<>::
+WorkingHours.tscn::PackedScene::-1::1698775627::0::1::::<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/WorkingHours.gd<>res://Prefabs/Elements/ValueBox.tscn<>res://Prefabs/Elements/CheckBox.tscn<>res://Prefabs/Styles/Fonts/Size40.tres
+::res://Prefabs/ExporterScreen/::1669731060
+CustomVars.gd::GDScript::-1::1667770122::0::1::::<>RefCounted<>::
+CustomVars.tscn::PackedScene::-1::1667682472::0::1::::<><>::res://Prefabs/ExporterScreen/CustomVars.gd
+ExportFormat.gd::GDScript::-1::1667649823::0::1::::<>Control<>::
+ExportFormat.tscn::PackedScene::-1::1667649937::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/ExporterScreen/ExportFormat.gd
+TimePeriodSelector.gd::GDScript::-1::1669730411::0::1::::<>Control<>::
+TimePeriodSelector.tscn::PackedScene::-1::1669731060::0::1::::<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/ExporterScreen/TimePeriodSelector.gd<>res://Assets/Icons/fast-forward.png<>res://Prefabs/Elements/OptionBox.tscn<>res://Prefabs/Shaders/IconContainer.tres
+::res://Prefabs/Global/::1697186800
+GlobalAds.gd::GDScript::-1::1663782279::0::1::::<>Node<>::
+GlobalExport.gd::GDScript::-1::1669667459::0::1::::<>Node<>::
+GlobalHebrew.gd::GDScript::-1::1662491916::0::1::::<>Node<>::
+GlobalIOSArrange.gd::GDScript::-1::1670084730::0::1::::<>Node<>::
+GlobalNotif.gd::GDScript::-1::1697186800::0::1::::<>Node<>::
+GlobalSave.gd::GDScript::-1::1675271472::0::1::::<>Node<>::
+GlobalTheme.gd::GDScript::-1::1666537949::0::1::::<>Node<>::
+GlobalTime.gd::GDScript::-1::1697141904::0::1::::<>Control<>::
+::res://Prefabs/Screens/::1707675148
+ExporterScreen.gd::GDScript::-1::1670096910::0::1::::<>Control<>::
+ExporterScreen.tscn::PackedScene::-1::1675273289::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Screens/ExporterScreen.gd<>res://Prefabs/Elements/PopupBtn.tscn<>res://Prefabs/ExporterScreen/TimePeriodSelector.tscn<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/ExporterScreen/CustomVars.tscn<>res://Assets/Icons/check-mark.png<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Styles/Panel/BottomScreen.tres
+HourEditorScreen.tscn::PackedScene::-1::1698775627::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Elements/HourEditorScreen.gd<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/Elements/CheckInOutEditor.tscn<>res://Assets/Icons/check-mark.png<>res://Assets/Icons/unchecked.png<>res://Prefabs/Styles/Panel/BottomScreen.tres
+IsarelSalaryScreen.gd::GDScript::-1::1655911142::0::1::::<>Control<>::
+MainScreen.gd::GDScript::-1::1687625178::0::1::::<>Control<>::
+MainScreen.tscn::PackedScene::-1::1707675148::0::1::::<><>::res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Styles/Fonts/Size100.tres<>res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Elements/CurTime.gd<>res://Prefabs/Elements/CheckinControl.tscn<>res://Prefabs/Elements/TotalCurMonth.gd<>res://Assets/Icons/to-do-list.png<>res://Assets/Icons/settings.png<>res://Assets/Icons/sales.png<>res://Prefabs/Elements/SwipeDetector.gd<>res://Prefabs/Screens/MainScreen.gd<>res://Prefabs/Styles/Panel/BottomScreen.tres<>res://Prefabs/Shaders/MenuBtn.tres<>res://Prefabs/Elements/CalendarButton.tscn<>res://Assets/Icons/fast-forward-button.png<>res://Assets/Icons/fast-backward.png<>res://Assets/Icons/left-arrow.png<>res://Prefabs/Elements/CurMonth.gd<>res://Prefabs/Elements/VMonth.gd<>res://Prefabs/Elements/DayInfo.tscn<>res://Prefabs/Elements/CurDay.gd<>res://Prefabs/Elements/CurrentDateInfo.gd<>res://Prefabs/Elements/CategoryPanel.tscn<>res://Prefabs/Elements/SaloryCalculation.tscn<>res://Prefabs/Elements/MenuBtn2.tscn<>res://Prefabs/Elements/TotalItem.tscn<>res://Prefabs/Elements/CurrentScreen.gd<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/CurScreenIndicator.tres<>res://Assets/Icons/surpise-box.png<>res://Assets/Icons/WomansDay.png<>res://Prefabs/Elements/WorkingHours.tscn<>res://Prefabs/Elements/LanguangeControl.tscn<>res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Elements/CalendarSettings.tscn<>res://Prefabs/Elements/SmartDeductionSalary.tscn<>res://Prefabs/Elements/ToggleBetween.tscn<>res://Prefabs/Elements/TopMenuCalendar.gd<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Elements/ListItem.tscn<>res://Prefabs/Styles/Scroll.tres<>res://Prefabs/Elements/ReportPanel.tscn<>res://Prefabs/Elements/AddHandler.gd<>res://Prefabs/Elements/IconContainer.tscn<>res://Prefabs/Elements/OvertimeTotalItem.tscn<>res://Assets/Fonts/OpenSans-Bold.ttf<>res://Prefabs/Elements/TopTools.tscn<>res://Prefabs/Elements/TopScreenPermanent.gd<>res://Assets/Flags/israel.png<>res://Assets/Icons/ukraine.png<>res://Prefabs/Elements/AppSettings.tscn<>res://Prefabs/Elements/EffectHandler.gd<>res://Assets/Particles/cold.png<>res://Assets/Particles/snowflake.png<>res://Assets/Particles/santa-claus.png<>res://Assets/Particles/christmas-tree.png<>res://Prefabs/Shaders/FlappingShader.tres<>res://Assets/Icons/email.png<>res://Assets/Icons/time.png<>res://Assets/Icons/Today.png<>res://Assets/Icons/tax-free.png<>res://Assets/Icons/translate.png
+SalarySimulatorScreen.tscn::PackedScene::-1::1670097232::0::1::::<><>::res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/Elements/ValueBox.tscn<>res://Assets/Flags/israel.png<>res://Prefabs/Elements/SalarySimulatorScreen.gd<>res://Prefabs/Styles/Scroll.tres<>res://Assets/Icons/unchecked.png<>res://Prefabs/Styles/Panel/BottomScreen.tres
+Tools.gd::GDScript::-1::1670096512::0::1::::<>Node<>::
+::res://Prefabs/Shaders/::1707674883
+FlappingShader.tres::ShaderMaterial::-1::1707674883::0::1::::<><>::
+IconContainer.tres::ShaderMaterial::-1::1707674883::0::1::::<><>::
+MenuBtn.tres::ShaderMaterial::-1::1707674883::0::1::::<><>::
+::res://Prefabs/Styles/::1707674883
+Background_LightBlue.tres::StyleBoxFlat::-1::1687625498::0::1::::<><>::
+CalDay.tres::StyleBoxFlat::-1::1687625498::0::1::::<><>::
+CurScreenIndicator.tres::StyleBoxFlat::-1::1687625498::0::1::::<><>::
+ModulatePopupScreen.tres::StyleBoxFlat::-1::1684581681::0::1::::<><>::
+ProgressBar.tres::StyleBoxFlat::-1::1684582031::0::1::::<><>::
+Scroll.tres::Theme::-1::1707674883::0::1::::<><>::
+::res://Prefabs/Styles/CheckinBtn/::1684581645
+Normal.tres::StyleBoxFlat::-1::1684581645::0::1::::<><>::
+::res://Prefabs/Styles/Fonts/::1707674883
+Size30.tres::FontFile::-1::1687625498::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf
+Size30Bold.tres::FontFile::-1::1687625498::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf
+Size40.tres::FontFile::-1::1687625498::0::1::::<><>::res://Assets/Fonts/OpenSans-Medium.ttf<>res://Assets/Fonts/coolvetica rg it.otf<>res://Assets/Fonts/LateefRegOT.ttf
+Size40Bold.tres::FontFile::-1::1687625498::0::1::::<><>::res://Assets/Fonts/OpenSans-Bold.ttf
+Size100.tres::FontFile::-1::1707674883::0::1::::<><>::res://Assets/Fonts/Roboto-Bold.ttf
+::res://Prefabs/Styles/OptionBox/::1707674883
+OptionBox.tres::Theme::-1::1707674883::0::1::::<><>::res://Prefabs/Styles/Fonts/Size40.tres
+::res://Prefabs/Styles/Panel/::1687625498
+BottomScreen.tres::StyleBoxFlat::-1::1669643436::0::1::::<><>::
+SettingPanel.tres::StyleBoxFlat::-1::1687625498::0::1::::<><>::
+SettingTitle.tres::StyleBoxFlat::-1::1666348210::0::1::::<><>::
+TotalItem.tres::StyleBoxFlat::-1::1687625498::0::1::::<><>::
+::res://scripts/::1697144414
+localnotification.gd::GDScript::-1::1697144414::0::1::::<>Node<>::
+::res://Source/::1698775682
+::res://Source/XD/::1662473410
 Ellipse 1.png::CompressedTexture2D::-1::0::0::1::::<><>::
-::res://ToDoList/::1697146195
-Ios_Android_Template_Instructions.ini::TextFile::-1::1697146361::0::1::::<><>::
-NextTodo.ini::TextFile::-1::1666390660::0::1::::<><>::
+::res://ToDoList/::1697184866
+Ios_Android_Template_Instructions.ini::TextFile::-1::1697192236::0::1::::<><>::
+NextTodo.ini::TextFile::-1::1666387060::0::1::::<><>::
+::res://ToDoList/android/::1697184876
+::res://ToDoList/android/build/::1697184881
+::res://ToDoList/android/build/res/::1697184883
+::res://ToDoList/android/build/res/mipmap-hdpi-v4/::1697185084
+notification_icon.png::CompressedTexture2D::-1::0::0::1::::<><>::
+::res://ToDoList/android/build/res/mipmap-mdpi-v4/::1697185084
+notification_icon.png::CompressedTexture2D::-1::0::0::1::::<><>::
+::res://ToDoList/android/build/res/mipmap-xhdpi-v4/::1697185084
+notification_icon.png::CompressedTexture2D::-1::0::0::1::::<><>::
+::res://ToDoList/android/build/res/mipmap-xxhdpi-v4/::1697185084
+notification_icon.png::CompressedTexture2D::-1::0::0::1::::<><>::
+::res://ToDoList/android/build/res/mipmap-xxxhdpi-v4/::1697185084
+notification_icon.png::CompressedTexture2D::-1::0::0::1::::<><>::

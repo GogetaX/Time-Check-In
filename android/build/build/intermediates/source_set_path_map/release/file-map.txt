@@ -1,23 +1,22 @@
-com.godot.game-lifecycle-runtime-2.3.1-0 C:\Users\Sergio\.gradle\caches\transforms-3\0ce7ec994a520619fa7bc00a51a36777\transformed\lifecycle-runtime-2.3.1\res
-com.godot.game-jetified-play-services-base-18.0.0-1 C:\Users\Sergio\.gradle\caches\transforms-3\0e628cf47af6527003ab8a0aef8cdcd5\transformed\jetified-play-services-base-18.0.0\res
-com.godot.game-jetified-admob-release-2 C:\Users\Sergio\.gradle\caches\transforms-3\164249a2cc7563002c27b258d04d49e6\transformed\jetified-admob-release\res
-com.godot.game-browser-1.4.0-3 C:\Users\Sergio\.gradle\caches\transforms-3\164e1ff50f0a8aa760aa5dde073f2f68\transformed\browser-1.4.0\res
-com.godot.game-fragment-1.3.6-4 C:\Users\Sergio\.gradle\caches\transforms-3\189e80978ed2f28e12fcb892018fb934\transformed\fragment-1.3.6\res
-com.godot.game-jetified-play-services-ads-21.1.0-5 C:\Users\Sergio\.gradle\caches\transforms-3\1cc54a7a50e3673b47af99688248bb6a\transformed\jetified-play-services-ads-21.1.0\res
-com.godot.game-jetified-play-services-ads-lite-21.1.0-6 C:\Users\Sergio\.gradle\caches\transforms-3\2565dc30e771760d3aa20061ee07945a\transformed\jetified-play-services-ads-lite-21.1.0\res
-com.godot.game-lifecycle-viewmodel-2.3.1-7 C:\Users\Sergio\.gradle\caches\transforms-3\3102a421f9f9c72d52e08f6fe09310fd\transformed\lifecycle-viewmodel-2.3.1\res
-com.godot.game-core-1.6.0-8 C:\Users\Sergio\.gradle\caches\transforms-3\3bce1657da59fb5b3cf43800f84c8bdd\transformed\core-1.6.0\res
-com.godot.game-jetified-play-services-basement-18.0.0-9 C:\Users\Sergio\.gradle\caches\transforms-3\4b1271ea82deb3a856a6d71030563e6d\transformed\jetified-play-services-basement-18.0.0\res
-com.godot.game-jetified-savedstate-1.1.0-10 C:\Users\Sergio\.gradle\caches\transforms-3\94b972ed44b18279006052b701b4135c\transformed\jetified-savedstate-1.1.0\res
-com.godot.game-work-runtime-2.7.0-11 C:\Users\Sergio\.gradle\caches\transforms-3\9d61bbcf0d0d6a6d30d2f81da24cf2d3\transformed\work-runtime-2.7.0\res
-com.godot.game-jetified-godot-lib.release-12 C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\res
-com.godot.game-jetified-annotation-experimental-1.1.0-13 C:\Users\Sergio\.gradle\caches\transforms-3\c2e7a6f7c18e58aee699d724727cbaf5\transformed\jetified-annotation-experimental-1.1.0\res
-com.godot.game-jetified-startup-runtime-1.0.0-14 C:\Users\Sergio\.gradle\caches\transforms-3\c90f9d8837d8d9899dfd66ab5a4f5730\transformed\jetified-startup-runtime-1.0.0\res
-com.godot.game-pngs-15 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\pngs\release
-com.godot.game-resValues-16 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\resValues\release
-com.godot.game-rs-17 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\rs\release
-com.godot.game-mergeReleaseResources-18 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
-com.godot.game-mergeReleaseResources-19 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-com.godot.game-merged_res-20 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\intermediates\merged_res\release
-com.godot.game-build-21 C:\Users\Sergio\Godot Projects\Time Check In\android\build\res
-com.godot.game-release-22 C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\res
+com.godot.game-recyclerview-1.0.0-0 C:\Users\Sergio\.gradle\caches\transforms-3\04a0452a2fc6a99bee33c732543ad47e\transformed\recyclerview-1.0.0\res
+com.godot.game-lifecycle-runtime-2.3.1-1 C:\Users\Sergio\.gradle\caches\transforms-3\0ce7ec994a520619fa7bc00a51a36777\transformed\lifecycle-runtime-2.3.1\res
+com.godot.game-fragment-1.3.6-2 C:\Users\Sergio\.gradle\caches\transforms-3\189e80978ed2f28e12fcb892018fb934\transformed\fragment-1.3.6\res
+com.godot.game-media-1.0.0-3 C:\Users\Sergio\.gradle\caches\transforms-3\1dc114d5894fd735b4d875b9aee19410\transformed\media-1.0.0\res
+com.godot.game-jetified-play-services-basement-16.0.1-4 C:\Users\Sergio\.gradle\caches\transforms-3\29b1d0a846b669ea03b006b7f8f72211\transformed\jetified-play-services-basement-16.0.1\res
+com.godot.game-lifecycle-viewmodel-2.3.1-5 C:\Users\Sergio\.gradle\caches\transforms-3\3102a421f9f9c72d52e08f6fe09310fd\transformed\lifecycle-viewmodel-2.3.1\res
+com.godot.game-jetified-AppLovinMax.release-6 C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\res
+com.godot.game-coordinatorlayout-1.0.0-7 C:\Users\Sergio\.gradle\caches\transforms-3\8d79b2aef0105f41e31b404a6b3b656c\transformed\coordinatorlayout-1.0.0\res
+com.godot.game-jetified-savedstate-1.1.0-8 C:\Users\Sergio\.gradle\caches\transforms-3\94b972ed44b18279006052b701b4135c\transformed\jetified-savedstate-1.1.0\res
+com.godot.game-appcompat-1.0.0-9 C:\Users\Sergio\.gradle\caches\transforms-3\969caa259e6020f49ef9d0cbccc2bed2\transformed\appcompat-1.0.0\res
+com.godot.game-core-1.2.0-10 C:\Users\Sergio\.gradle\caches\transforms-3\9bcb1a65f5938aad264f4d73e9a06f28\transformed\core-1.2.0\res
+com.godot.game-browser-1.0.0-11 C:\Users\Sergio\.gradle\caches\transforms-3\a05518ae44db98241999a990ffb9d12c\transformed\browser-1.0.0\res
+com.godot.game-jetified-applovin-sdk-10.0.1-12 C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\res
+com.godot.game-jetified-godot-lib.release-13 C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\res
+com.godot.game-pngs-14 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\pngs\release
+com.godot.game-resValues-15 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\resValues\release
+com.godot.game-rs-16 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\generated\res\rs\release
+com.godot.game-mergeReleaseResources-17 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.godot.game-mergeReleaseResources-18 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.godot.game-merged_res-19 C:\Users\Sergio\Godot Projects\Time Check In\android\build\build\intermediates\merged_res\release
+com.godot.game-build-20 C:\Users\Sergio\Godot Projects\Time Check In\android\build\res
+com.godot.game-release-21 C:\Users\Sergio\Godot Projects\Time Check In\android\build\src\release\res

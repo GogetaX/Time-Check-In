@@ -6,14 +6,15 @@ export (int) var HowManyMonthsNoAds = 3 setget SetHowManyMonthsNoAds
 export (int) var MaxInistalarAds = 1 setget SetMaxInistalarAds
 export (int) var InterstitalAdDelay = 45 setget SetInterstitalAdDelay
 
+var banner = {"Banner":"4f66203cb47f99c9","Interstitial":"02e2392c449b9ab0"}
 var AdsInited = false
 var InstAdCounter = 0
-var InitAdTimer = Timer.new()
+
+var ReadyShowInterstitalID = ""
 
 func _ready():
-	add_child(InitAdTimer)
-	InitAdTimer.one_shot = true
 	InitAds()
+	pass
 
 func SetInterstitalAdDelay(new):
 	InterstitalAdDelay = new
@@ -46,69 +47,30 @@ func InitAds():
 	if ShowAds:
 		match OS.get_name():
 			"iOS","Android":
-				
 				AdsInited = true
-	# warning-ignore:return_value_discarded
-				MobileAds.connect("consent_info_update_success",self,"consent_info_update_success")
-	# warning-ignore:return_value_discarded
-				MobileAds.connect("consent_status_changed",self,"consent_status_changed")
-	# warning-ignore:return_value_discarded
-				MobileAds.connect("consent_form_load_failure",self,"consent_form_load_failure")
-	# warning-ignore:return_value_discarded
-				MobileAds.connect("consent_info_update_failure",self,"consent_form_load_failure")
-	# warning-ignore:return_value_discarded
-				MobileAds.connect("initialization_complete",self,"AdMobInitComplete")
-	# warning-ignore:return_value_discarded
-				MobileAds.connect("banner_loaded",self,"BannerLoaded")
-	# warning-ignore:return_value_discarded
-				MobileAds.connect("banner_failed_to_load",self,"banner_failed_to_load")
+				print("loading banner!")
 # warning-ignore:return_value_discarded
-				MobileAds.connect("interstitial_closed",self,"interstitial_closed")
-	# warning-ignore:return_value_discarded
-				MobileAds.request_user_consent()
+				ApplovinMax.loadBanner(banner.Banner,false,get_instance_id())
+				ApplovinMax.loadInterstitial(banner.Interstitial,get_instance_id())
 				GlobalTime.connect("ShowInterstitalAd",self,"ShowInterstitalAd")
-
-func interstitial_closed():
-	MobileAds.load_interstitial()
-	
+		
 func ShowInterstitalAd():
-	if InstAdCounter >= MaxInistalarAds:
-		return
-	if !InitAdTimer.is_stopped():
-		return
-	InstAdCounter += 1
-	MobileAds.show_interstitial()
-	InitAdTimer.start(InterstitalAdDelay)
-	
-	
-func consent_status_changed(status_message):
-	MobileAds.initialize()
-	print("Consent status changed: ",status_message)
-	
-func consent_info_update_success(status_message):
-	MobileAds.initialize()
-	print("Consent info update success: ",status_message)
-	
-func consent_form_load_failure(error_code, error_message):
-	MobileAds.initialize()
-	print("Concert error num ",error_code," msg ",error_message)
-	
-func BannerLoaded():
-	print("Showing Ad!")
-	MobileAds.show_banner()
-	
-func AdMobInitComplete(status : int, _adapter_name : String):
-	if status == MobileAds.AdMobSettings.INITIALIZATION_STATUS.READY:
-		MobileAds.load_banner()
-		MobileAds.load_interstitial()
-		print("AdMob initialized on GDScript! With parameters:")
-		#for x in MobileAds.config:
-			#print(x,": ",MobileAds.config[x])
-		#print(JSON.print(MobileAds.config, "\t"))
-		print("instance_id: " + str(get_instance_id()))
+	if ReadyShowInterstitalID != "":
+		print("Showing ReadyShowInterstitalID")
+		ApplovinMax.showInterstitial(ReadyShowInterstitalID)
 	else:
-		print("AdMob not initialized, check your configuration")
-	print("---------------------------------------------------")
+		print("No ReadyShowInterstitalID to show")
 	
-func banner_failed_to_load(error_code):
-	print("Error On Loading Banner, Code: ",error_code)
+	
+func _on_banner_loaded(id):
+# warning-ignore:return_value_discarded
+	print("show banner!")
+	ApplovinMax.showBanner(id)
+
+func _on_interstitial_loaded(id):
+	print("ready ReadyShowInterstitalID")
+	ReadyShowInterstitalID = id
+
+func _on_interstitial_close(id):
+	ReadyShowInterstitalID = ""
+	ApplovinMax.loadInterstitial(banner.Interstitial,get_instance_id())

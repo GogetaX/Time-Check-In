@@ -18,6 +18,10 @@ _global_script_class_icons={
 "LocalNotification": ""
 }
 
+[AppLovin]
+
+SdkKey="VTSilvkRTG3ue0vvLqdFrCWCH1Tw7s3laPIwGTwMGB30MztNKuytu5IqSyxmUUVmtHdpeuLqtix20cnWidCO4X"
+
 [NativeLib]
 
 Python="c:/Python310/python.exe"
@@ -93,10 +97,13 @@ boot_splash/image="res://Assets/ExportIcons/200Transparent.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.945098, 0.976471, 1, 1 )
 config/icon="res://Assets/ExportIcons/120.png"
-config/features=PoolStringArray( "4.1" )
+config/features=PoolStringArray( "4.2" )
 
 [autoload]
 
+applovin_max="*res://scripts/applovin_max.gd"
+ApplovinMax="*res://scripts/applovin_max.gd"
+localnotification="*res://scripts/localnotification.gd"
 GlobalIosArrange="*res://Prefabs/Global/GlobalIOSArrange.gd"
 GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"
@@ -104,8 +111,6 @@ GlobalNotif="*res://Prefabs/Global/GlobalNotif.gd"
 GlobalHebrew="*res://Prefabs/Global/GlobalHebrew.gd"
 GlobalTheme="*res://Prefabs/Global/GlobalTheme.gd"
 GlobalExport="*res://Prefabs/Global/GlobalExport.gd"
-localnotification="*res://scripts/localnotification.gd"
-MobileAds="*res://addons/admob/src/singletons/MobileAds.gd"
 
 [display]
 
@@ -119,7 +124,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg", "res://addons/admob/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg" )
 
 [gdnative]
 

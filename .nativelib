@@ -2,21 +2,57 @@
     "id": "de7b3fe7-967e-45e9-ac58-a8156eca0469",
     "platforms": [
         "all",
-        "ios",
-        "android"
+        "android",
+        "ios"
     ],
     "packages": {
-        "local-notification": {
-            "version": "0.2.2",
+        "nativelib-export": {
+            "version": "0.2.0",
+            "platforms": [
+                "all"
+            ],
+            "dependencies": []
+        },
+        "applovinmax": {
+            "version": "0.1.2",
             "platforms": [
                 "all",
                 "ios",
                 "android"
             ],
+            "dependencies": [
+                "nativelib-export@0.2.0"
+            ],
+            "variables": {
+                "AppLovin/SdkKey": {
+                    "info": "Set your SDK key here"
+                }
+            },
+            "autoload": {
+                "applovin_max": "*res://scripts/applovin_max.gd"
+            }
+        },
+        "local-notification": {
+            "version": "0.2.2",
+            "platforms": [
+                "all",
+                "android",
+                "ios"
+            ],
             "dependencies": [],
             "autoload": {
                 "localnotification": "*res://scripts/localnotification.gd"
             }
+        },
+        "applovinmax-facebook": {
+            "version": "0.1.1",
+            "platforms": [
+                "android",
+                "ios"
+            ],
+            "dependencies": [
+                "applovinmax@0.1.1"
+            ]
         }
     }
 }

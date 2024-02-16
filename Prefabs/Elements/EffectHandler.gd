@@ -35,6 +35,8 @@ func app_loaded():
 		ActivateOnly("AprilFool")
 	if ExactDayInYear({"month":3,"day":8}):
 		ActivateOnly("WomansDay")
+	if ExactDayInYear({"month":2,"day":14}):
+		ActivateOnly("ValentinceDay")
 
 func GroupBtnPressed(BtnNode,GroupName):
 	if GroupName != "Menu":

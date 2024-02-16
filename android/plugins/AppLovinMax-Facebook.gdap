@@ -1,0 +1,13 @@
+[config]
+
+name="AppLovinMax-Facebook"
+binary_type="remote"
+binary="com.applovin.mediation:facebook-adapter:+"
+
+[dependencies]
+
+local=[]
+remote=[]
+custom_maven_repos=[
+  "https://applovin.bintray.com/Android-Adapter-SDKs"
+]

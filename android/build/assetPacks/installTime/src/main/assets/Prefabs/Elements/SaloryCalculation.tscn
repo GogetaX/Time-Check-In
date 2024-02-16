@@ -73,9 +73,6 @@ margin_right = 287.0
 margin_bottom = 86.0
 expand = true
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="OnToggle" from="Activate" to="." method="_on_CheckBox_OnToggle"]
 [connection signal="UpdatedVar" from="SalaryBox" to="." method="_on_ValueBox_UpdatedVar"]

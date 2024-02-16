@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "com.godot.game-mergeReleaseResources-18:/values-v16/values-v16.xml",
+            "outputFile": "com.godot.game-mergeReleaseResources-17:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\3bce1657da59fb5b3cf43800f84c8bdd\\transformed\\core-1.6.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\969caa259e6020f49ef9d0cbccc2bed2\\transformed\\appcompat-1.0.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-3\\9bcb1a65f5938aad264f4d73e9a06f28\\transformed\\core-1.2.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

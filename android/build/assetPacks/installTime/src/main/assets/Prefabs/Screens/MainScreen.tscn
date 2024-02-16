@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
 [ext_resource path="res://Prefabs/Styles/Fonts/Size100.tres" type="DynamicFont" id=2]
@@ -50,6 +50,7 @@
 [ext_resource path="res://Prefabs/Elements/TopScreenPermanent.gd" type="Script" id=48]
 [ext_resource path="res://Assets/Flags/israel.png" type="Texture" id=49]
 [ext_resource path="res://Assets/Icons/ukraine.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Icons/LoveDay.png" type="Texture" id=51]
 [ext_resource path="res://Prefabs/Elements/AppSettings.tscn" type="PackedScene" id=52]
 [ext_resource path="res://Prefabs/Elements/EffectHandler.gd" type="Script" id=56]
 [ext_resource path="res://Assets/Particles/cold.png" type="Texture" id=59]
@@ -133,6 +134,7 @@ align = 1
 [node name="WeWithILUA" type="Node" parent="EffectHandler"]
 
 [node name="Label" type="Label" parent="EffectHandler/WeWithILUA"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -96.5
@@ -155,6 +157,26 @@ material = ExtResource( 63 )
 position = Vector2( 144.5, 91 )
 rotation = 0.261799
 texture = ExtResource( 50 )
+
+[node name="ValentinceDay" type="Node" parent="EffectHandler"]
+
+[node name="Label" type="Label" parent="EffectHandler/ValentinceDay"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -155.0
+margin_top = 85.0
+margin_right = 159.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 1, 0.701961, 0.14902, 0.984314 )
+custom_fonts/font = ExtResource( 28 )
+text = "Valentine's day"
+align = 1
+
+[node name="Sprite3" type="Sprite" parent="EffectHandler/ValentinceDay/Label"]
+material = ExtResource( 63 )
+position = Vector2( 160, 99 )
+texture = ExtResource( 51 )
 
 [node name="WomansDay" type="Node" parent="EffectHandler"]
 

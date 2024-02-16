@@ -7,6 +7,15 @@ Version TODO:
     +   New ios: check if admob + notification working
     +   Added: Specific Day and Specific Time Salary increase?
     +   Added: Multiselect that supports next months also
+    +   Added: 14.2.xxxx valentinces day icon
+    +   Added: facebook ads instead of google ads
+    
+Statistics on ADMOB (30 days):
+    ~5.20 Shekel in android
+    ~0.78 Shekel in ios
+
+Version 0.9.5:
+    -   Maintenance update.
 
 Version 0.9.4:
     -   Fixed Crash: when you forget to check out a day before
