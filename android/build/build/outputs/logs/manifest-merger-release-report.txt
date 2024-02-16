@@ -10,6 +10,7 @@ INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\Android
 INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:2:1-96:12
 MERGED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:2:1-96:12
 MERGED from [AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:2:1-38:12
+MERGED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:2:1-33:12
 MERGED from [godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:2:1-37:12
 MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\Sergio\.gradle\caches\transforms-3\969caa259e6020f49ef9d0cbccc2bed2\transformed\appcompat-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.applovin.mediation:facebook-adapter:6.16.0.2] C:\Users\Sergio\.gradle\caches\transforms-3\120b0675b8b13054ee26b8cbd3e57be9\transformed\jetified-facebook-adapter-6.16.0.2\AndroidManifest.xml:2:1-10:12
@@ -103,6 +104,8 @@ MERGED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidMa
 MERGED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:5-94:19
 MERGED from [AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:17:5-36:19
 MERGED from [AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:17:5-36:19
+MERGED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:13:5-31:19
+MERGED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:13:5-31:19
 MERGED from [godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:11:5-35:19
 MERGED from [godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:11:5-35:19
 MERGED from [com.applovin.mediation:facebook-adapter:6.16.0.2] C:\Users\Sergio\.gradle\caches\transforms-3\120b0675b8b13054ee26b8cbd3e57be9\transformed\jetified-facebook-adapter-6.16.0.2\AndroidManifest.xml:8:5-20
@@ -245,6 +248,8 @@ INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\Android
 INJECTED from C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml
 MERGED from [AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:7:5-9:41
 MERGED from [AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:7:5-9:41
+MERGED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:7:5-9:41
+MERGED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:7:5-9:41
 MERGED from [godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:7:5-9:41
 MERGED from [godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\Sergio\.gradle\caches\transforms-3\969caa259e6020f49ef9d0cbccc2bed2\transformed\appcompat-1.0.0\AndroidManifest.xml:20:5-44
@@ -427,6 +432,22 @@ ADDED from [AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3
 		ADDED from [AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:35:13-33
 	android:name
 		ADDED from [AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:34:13-69
+uses-permission#com.android.alarm.permission.SET_ALARM
+ADDED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:5-78
+	android:name
+		ADDED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:22-75
+meta-data#org.godotengine.plugin.v1.LocalNotification
+ADDED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:24:9-26:78
+	android:value
+		ADDED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:26:13-75
+	android:name
+		ADDED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:25:13-71
+receiver#ru.mobilap.localnotification.LocalNotificationReceiver
+ADDED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:28:9-30:41
+	android:process
+		ADDED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:30:13-38
+	android:name
+		ADDED from [LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\51563c43419b8af87ebf4c3646f0c001\transformed\jetified-LocalNotification.release\AndroidManifest.xml:29:13-82
 meta-data#org.godotengine.library.version
 ADDED from [godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:14:9-16:44
 	android:value
