@@ -24,8 +24,8 @@
 				dstPath = "";
 				dstSubfolderSpec = 10;
 				files = (
-					589384010000000000000003,
-589384010000000000000006,
+					589384010000000000000007,
+58938401000000000000000A,
 
 				);
 				name = "Embed Frameworks";
@@ -50,11 +50,15 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 /* End PBXFileReference section */
 
 		589384010000000000000001 = {isa = PBXBuildFile; fileRef = 589384010000000000000002; };
-589384010000000000000002 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "localnotification.xcframework"; path = "Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework"; sourceTree = "<group>"; };
-589384010000000000000003 = {isa = PBXBuildFile; fileRef = 589384010000000000000002; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-589384010000000000000004 = {isa = PBXBuildFile; fileRef = 589384010000000000000005; };
-589384010000000000000005 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "localnotification.xcframework"; path = "Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework"; sourceTree = "<group>"; };
-589384010000000000000006 = {isa = PBXBuildFile; fileRef = 589384010000000000000005; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+589384010000000000000002 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "ios-att.xcframework"; path = "Time Check In/dylibs/ios/plugins/ios-att/ios-att.xcframework"; sourceTree = "<group>"; };
+589384010000000000000003 = {isa = PBXBuildFile; fileRef = 589384010000000000000004; };
+589384010000000000000004 = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AppTrackingTransparency.framework"; path = "/System/Library/Frameworks/AppTrackingTransparency.framework"; sourceTree = "<group>"; };
+589384010000000000000005 = {isa = PBXBuildFile; fileRef = 589384010000000000000006; };
+589384010000000000000006 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "localnotification.xcframework"; path = "Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework"; sourceTree = "<group>"; };
+589384010000000000000007 = {isa = PBXBuildFile; fileRef = 589384010000000000000006; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+589384010000000000000008 = {isa = PBXBuildFile; fileRef = 589384010000000000000009; };
+589384010000000000000009 = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "localnotification.xcframework"; path = "Time Check In/dylibs/addons/localnotification-ios/localnotification.xcframework"; sourceTree = "<group>"; };
+58938401000000000000000A = {isa = PBXBuildFile; fileRef = 589384010000000000000009; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,9 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 				DEADBEEF2F582BE20003B888 /* Time Check In.xcframework */,
 				
 				589384010000000000000001,
-589384010000000000000004
+589384010000000000000003,
+589384010000000000000005,
+589384010000000000000008
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +104,9 @@ D0BCFE4518AEBDA2004A0001 /* ru */ = {isa = PBXFileReference; lastKnownFileType =
 				DEADBEEF1F582BE20003B888 /* Time Check In.xcframework */,
 				
 				589384010000000000000002,
-589384010000000000000005
+589384010000000000000004,
+589384010000000000000006,
+589384010000000000000009
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

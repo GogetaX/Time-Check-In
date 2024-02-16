@@ -34,11 +34,17 @@ void godot_ios_plugins_initialize();
 void godot_ios_plugins_deinitialize();
 // Exported Plugins
 
+// Plugin: ATT
+extern void ios_att_init();
+extern void ios_att_deinit();
+
 // Use Plugins
 void godot_ios_plugins_initialize() {
+	ios_att_init();
 }
 
 void godot_ios_plugins_deinitialize() {
+	ios_att_deinit();
 }
 
 

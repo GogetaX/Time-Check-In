@@ -36,8 +36,6 @@
 
     <uses-feature android:name="android.hardware.location.network" />
 
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-
     <queries>
         <package android:name="com.facebook.katana" />
     </queries>
@@ -95,23 +93,7 @@
             android:value="ru.mobilap.applovinmax.AppLovinMax" />
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true" />
-        <!--
-    Plugin metadata:
-    - In the `android:name` attribute, the `org.godotengine.plugin.v1` prefix
-    is required so Godot can recognize the project as a valid Godot
-    Android plugin. The plugin name following the prefix should match the value
-    of the plugin name returned by the plugin initializer.
-    - The `android:value` attribute should be the classpath to the plugin
-    initializer.
-        -->
-        <meta-data
-            android:name="org.godotengine.plugin.v1.LocalNotification"
-            android:value="ru.mobilap.localnotification.LocalNotification" />
-
-        <receiver
-            android:name="ru.mobilap.localnotification.LocalNotificationReceiver"
-            android:process=":remote" /> <!-- Records the version of the Godot library -->
+            android:value="true" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
             android:value="3.5.3.stable" />

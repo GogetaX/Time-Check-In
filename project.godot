@@ -101,9 +101,10 @@ config/features=PoolStringArray( "4.2" )
 
 [autoload]
 
+ATT="*res://scripts/att.gd"
+localnotification="*res://scripts/localnotification.gd"
 applovin_max="*res://scripts/applovin_max.gd"
 ApplovinMax="*res://scripts/applovin_max.gd"
-localnotification="*res://scripts/localnotification.gd"
 GlobalIosArrange="*res://Prefabs/Global/GlobalIOSArrange.gd"
 GlobalTime="*res://Prefabs/Global/GlobalTime.gd"
 GlobalSave="*res://Prefabs/Global/GlobalSave.gd"

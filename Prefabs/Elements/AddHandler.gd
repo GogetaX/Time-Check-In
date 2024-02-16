@@ -45,6 +45,10 @@ func InitAds():
 	if GlobalSave.HowManyMonthsWorked().size() <= HowManyMonthsNoAds:
 		return
 	if ShowAds:
+		if OS.get_name() == "iOS":
+			ATT.connect("requestCompleted", self, "_att_completed")
+			ATT.request()
+			
 		match OS.get_name():
 			"iOS","Android":
 				AdsInited = true
@@ -53,7 +57,11 @@ func InitAds():
 				ApplovinMax.loadBanner(banner.Banner,false,get_instance_id())
 				ApplovinMax.loadInterstitial(banner.Interstitial,get_instance_id())
 				GlobalTime.connect("ShowInterstitalAd",self,"ShowInterstitalAd")
-		
+
+func _att_completed(status: int):
+	print('ATT Status: %d'%status)
+	# if status == 3 the user permitted data collection
+	
 func ShowInterstitalAd():
 	if ReadyShowInterstitalID != "":
 		print("Showing ReadyShowInterstitalID")

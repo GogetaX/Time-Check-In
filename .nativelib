@@ -32,16 +32,17 @@
                 "applovin_max": "*res://scripts/applovin_max.gd"
             }
         },
-        "local-notification": {
-            "version": "0.2.2",
+        "ios-att": {
+            "version": "1.0.1",
             "platforms": [
                 "all",
-                "android",
                 "ios"
             ],
-            "dependencies": [],
+            "dependencies": [
+                "nativelib-export@0.2.0"
+            ],
             "autoload": {
-                "localnotification": "*res://scripts/localnotification.gd"
+                "ATT": "*res://scripts/att.gd"
             }
         },
         "applovinmax-facebook": {
@@ -53,6 +54,18 @@
             "dependencies": [
                 "applovinmax@0.1.1"
             ]
+        },
+        "local-notification": {
+            "version": "0.2.2",
+            "platforms": [
+                "all",
+                "android",
+                "ios"
+            ],
+            "dependencies": [],
+            "autoload": {
+                "localnotification": "*res://scripts/localnotification.gd"
+            }
         }
     }
 }

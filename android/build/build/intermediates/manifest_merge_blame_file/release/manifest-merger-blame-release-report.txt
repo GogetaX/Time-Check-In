@@ -73,282 +73,256 @@
 37-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:15:5-70
 37-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:15:19-67
 38
-39    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-39-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\4f4354d0d528da23da88c18309ae6e10\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:5-78
-39-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\4f4354d0d528da23da88c18309ae6e10\transformed\jetified-LocalNotification.release\AndroidManifest.xml:11:22-75
-40
-41    <queries>
-41-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:11:5-13:15
-42        <package android:name="com.facebook.katana" />
-42-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:12:9-55
-42-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:12:18-52
-43    </queries>
+39    <queries>
+39-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:11:5-13:15
+40        <package android:name="com.facebook.katana" />
+40-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:12:9-55
+40-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:12:18-52
+41    </queries>
+42
+43    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+43-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:17:5-79
+43-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:17:22-76
 44
-45    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-45-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:17:5-79
-45-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:17:22-76
-46
-47    <application
-47-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:5-94:19
-48        android:name="androidx.multidex.MultiDexApplication"
-49        android:allowBackup="true"
-49-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:68-95
-50        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-50-->[androidx.core:core:1.2.0] C:\Users\Sergio\.gradle\caches\transforms-3\9bcb1a65f5938aad264f4d73e9a06f28\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
-51        android:hardwareAccelerated="true"
-51-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:18:9-43
-52        android:hasFragileUserData="false"
-52-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:118-152
-53        android:icon="@mipmap/icon"
-53-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:238-265
-54        android:isGame="false"
-54-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:96-117
-55        android:label="@string/godot_project_name_string"
-55-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:18-67
-56        android:networkSecurityConfig="@xml/network_security_config"
-56-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:19:9-69
-57        android:requestLegacyExternalStorage="true" >
-57-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:153-197
-58        <activity
-58-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:65:9-88:20
-59            android:name="com.godot.game.GodotApp"
-59-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:66:13-37
-60            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-60-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:73:13-141
-61            android:excludeFromRecents="false"
-61-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:70:13-47
-62            android:exported="true"
-62-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:71:13-36
-63            android:label="@string/godot_project_name_string"
-63-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:67:13-62
-64            android:launchMode="singleTask"
-64-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:69:13-44
-65            android:resizeableActivity="true"
-65-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:74:13-47
-66            android:screenOrientation="portrait"
-66-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:72:13-50
-67            android:theme="@style/GodotAppSplashTheme" >
-67-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:68:13-55
-68            <intent-filter>
-68-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:80:13-87:29
-69                <action android:name="android.intent.action.MAIN" />
-69-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:81:17-69
-69-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:81:25-66
+45    <application
+45-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:5-94:19
+46        android:name="androidx.multidex.MultiDexApplication"
+47        android:allowBackup="true"
+47-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:68-95
+48        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+48-->[androidx.core:core:1.2.0] C:\Users\Sergio\.gradle\caches\transforms-3\9bcb1a65f5938aad264f4d73e9a06f28\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+49        android:hardwareAccelerated="true"
+49-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:18:9-43
+50        android:hasFragileUserData="false"
+50-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:118-152
+51        android:icon="@mipmap/icon"
+51-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:238-265
+52        android:isGame="false"
+52-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:96-117
+53        android:label="@string/godot_project_name_string"
+53-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:18-67
+54        android:networkSecurityConfig="@xml/network_security_config"
+54-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:19:9-69
+55        android:requestLegacyExternalStorage="true" >
+55-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:30:153-197
+56        <activity
+56-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:65:9-88:20
+57            android:name="com.godot.game.GodotApp"
+57-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:66:13-37
+58            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+58-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:73:13-141
+59            android:excludeFromRecents="false"
+59-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:70:13-47
+60            android:exported="true"
+60-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:71:13-36
+61            android:label="@string/godot_project_name_string"
+61-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:67:13-62
+62            android:launchMode="singleTask"
+62-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:69:13-44
+63            android:resizeableActivity="true"
+63-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:74:13-47
+64            android:screenOrientation="portrait"
+64-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:72:13-50
+65            android:theme="@style/GodotAppSplashTheme" >
+65-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:68:13-55
+66            <intent-filter>
+66-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:80:13-87:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:81:17-69
+67-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:81:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:82:17-77
+69-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:82:27-74
 70
-71                <category android:name="android.intent.category.LAUNCHER" />
-71-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:82:17-77
-71-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:82:27-74
-72
-73                <!--
-74                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
-75                platforms.
-76                -->
-77                <category android:name="com.oculus.intent.category.VR" />
-77-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:86:17-74
-77-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:86:27-71
-78            </intent-filter>
-79        </activity>
-80        <!-- Records the version of the Godot editor used for building -->
-81        <meta-data
-82            android:name="org.godotengine.editor.version"
-83            android:value="3.5.3.stable" />
-84        <!--
-85    Plugin metadata:
-86    - In the `android:name` attribute, the `org.godotengine.plugin.v1` prefix
-87    is required so Godot can recognize the project as a valid Godot
-88    Android plugin. The plugin name following the prefix should match the value
-89    of the plugin name returned by the plugin initializer.
-90    - The `android:value` attribute should be the classpath to the plugin
-91    initializer.
-92        -->
-93        <meta-data
-93-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:30:9-32:66
-94            android:name="org.godotengine.plugin.v1.AppLovinMax"
-94-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:31:13-65
-95            android:value="ru.mobilap.applovinmax.AppLovinMax" />
-95-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:32:13-63
-96        <meta-data
-96-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:33:9-35:36
-97            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-97-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:34:13-69
-98            android:value="true" />
-98-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:35:13-33
-99        <!--
-100    Plugin metadata:
-101    - In the `android:name` attribute, the `org.godotengine.plugin.v1` prefix
-102    is required so Godot can recognize the project as a valid Godot
-103    Android plugin. The plugin name following the prefix should match the value
-104    of the plugin name returned by the plugin initializer.
-105    - The `android:value` attribute should be the classpath to the plugin
-106    initializer.
-107        -->
-108        <meta-data
-108-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\4f4354d0d528da23da88c18309ae6e10\transformed\jetified-LocalNotification.release\AndroidManifest.xml:25:9-27:78
-109            android:name="org.godotengine.plugin.v1.LocalNotification"
-109-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\4f4354d0d528da23da88c18309ae6e10\transformed\jetified-LocalNotification.release\AndroidManifest.xml:26:13-71
-110            android:value="ru.mobilap.localnotification.LocalNotification" />
-110-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\4f4354d0d528da23da88c18309ae6e10\transformed\jetified-LocalNotification.release\AndroidManifest.xml:27:13-75
-111
-112        <receiver
-112-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\4f4354d0d528da23da88c18309ae6e10\transformed\jetified-LocalNotification.release\AndroidManifest.xml:29:9-31:41
-113            android:name="ru.mobilap.localnotification.LocalNotificationReceiver"
-113-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\4f4354d0d528da23da88c18309ae6e10\transformed\jetified-LocalNotification.release\AndroidManifest.xml:30:13-82
-114            android:process=":remote" /> <!-- Records the version of the Godot library -->
-114-->[LocalNotification.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\4f4354d0d528da23da88c18309ae6e10\transformed\jetified-LocalNotification.release\AndroidManifest.xml:31:13-38
-115        <meta-data
-115-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:14:9-16:44
-116            android:name="org.godotengine.library.version"
-116-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:15:13-59
-117            android:value="3.5.3.stable" />
-117-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:16:13-41
+71                <!--
+72                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
+73                platforms.
+74                -->
+75                <category android:name="com.oculus.intent.category.VR" />
+75-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:86:17-74
+75-->C:\Users\Sergio\Godot Projects\Time Check In\android\build\AndroidManifest.xml:86:27-71
+76            </intent-filter>
+77        </activity>
+78        <!-- Records the version of the Godot editor used for building -->
+79        <meta-data
+80            android:name="org.godotengine.editor.version"
+81            android:value="3.5.3.stable" />
+82        <!--
+83    Plugin metadata:
+84    - In the `android:name` attribute, the `org.godotengine.plugin.v1` prefix
+85    is required so Godot can recognize the project as a valid Godot
+86    Android plugin. The plugin name following the prefix should match the value
+87    of the plugin name returned by the plugin initializer.
+88    - The `android:value` attribute should be the classpath to the plugin
+89    initializer.
+90        -->
+91        <meta-data
+91-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:30:9-32:66
+92            android:name="org.godotengine.plugin.v1.AppLovinMax"
+92-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:31:13-65
+93            android:value="ru.mobilap.applovinmax.AppLovinMax" />
+93-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:32:13-63
+94        <meta-data
+94-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:33:9-35:36
+95            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+95-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:34:13-69
+96            android:value="true" /> <!-- Records the version of the Godot library -->
+96-->[AppLovinMax.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\430e7d6460f2138dc29d6dce6a0d6a58\transformed\jetified-AppLovinMax.release\AndroidManifest.xml:35:13-33
+97        <meta-data
+97-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:14:9-16:44
+98            android:name="org.godotengine.library.version"
+98-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:15:13-59
+99            android:value="3.5.3.stable" />
+99-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:16:13-41
+100
+101        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+101-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:18:9-80
+101-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:18:18-77
+102
+103        <activity
+103-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:20:9-24:75
+104            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+104-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:21:13-70
+105            android:exported="false"
+105-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:22:13-37
+106            android:process=":phoenix"
+106-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:13-39
+107            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+107-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:24:13-72
+108
+109        <provider
+109-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:26:9-34:20
+110            android:name="androidx.core.content.FileProvider"
+110-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:27:13-62
+111            android:authorities="org.godotengine.timecheckin.fileprovider"
+111-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:28:13-64
+112            android:exported="false"
+112-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:29:13-37
+113            android:grantUriPermissions="true" >
+113-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:30:13-47
+114            <meta-data
+114-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:31:13-33:64
+115                android:name="android.support.FILE_PROVIDER_PATHS"
+115-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:32:17-67
+116                android:resource="@xml/godot_provider_paths" />
+116-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:33:17-61
+117        </provider>
 118
-119        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-119-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:18:9-80
-119-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:18:18-77
-120
-121        <activity
-121-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:20:9-24:75
-122            android:name="org.godotengine.godot.utils.ProcessPhoenix"
-122-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:21:13-70
-123            android:exported="false"
-123-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:22:13-37
-124            android:process=":phoenix"
-124-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:13-39
-125            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-125-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:24:13-72
-126
-127        <provider
-127-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:26:9-34:20
-128            android:name="androidx.core.content.FileProvider"
-128-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:27:13-62
-129            android:authorities="org.godotengine.timecheckin.fileprovider"
-129-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:28:13-64
-130            android:exported="false"
-130-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:29:13-37
-131            android:grantUriPermissions="true" >
-131-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:30:13-47
-132            <meta-data
-132-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:31:13-33:64
-133                android:name="android.support.FILE_PROVIDER_PATHS"
-133-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:32:17-67
-134                android:resource="@xml/godot_provider_paths" />
-134-->[godot-lib.release.aar] C:\Users\Sergio\.gradle\caches\transforms-3\c204f6256ab1c893863f649b4d178444\transformed\jetified-godot-lib.release\AndroidManifest.xml:33:17-61
-135        </provider>
-136
-137        <activity
-137-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:20:9-24:75
-138            android:name="com.facebook.ads.AudienceNetworkActivity"
-138-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:21:13-68
-139            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
-139-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:22:13-106
-140            android:exported="false"
-140-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:23:13-37
-141            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-141-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:24:13-72
-142
-143        <provider
-143-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:26:9-29:40
-144            android:name="com.facebook.ads.AudienceNetworkContentProvider"
-144-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:27:13-75
-145            android:authorities="org.godotengine.timecheckin.AudienceNetworkContentProvider"
-145-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:28:13-82
-146            android:exported="false" />
-146-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:29:13-37
-147
-148        <activity
-148-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:15:9-19:50
-149            android:name="com.applovin.adview.AppLovinInterstitialActivity"
-149-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:16:13-76
-150            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|uiMode"
-150-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:17:13-98
-151            android:hardwareAccelerated="true"
-151-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:18:13-47
-152            android:screenOrientation="behind" />
-152-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:19:13-47
+119        <activity
+119-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:20:9-24:75
+120            android:name="com.facebook.ads.AudienceNetworkActivity"
+120-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:21:13-68
+121            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
+121-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:22:13-106
+122            android:exported="false"
+122-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:23:13-37
+123            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+123-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:24:13-72
+124
+125        <provider
+125-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:26:9-29:40
+126            android:name="com.facebook.ads.AudienceNetworkContentProvider"
+126-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:27:13-75
+127            android:authorities="org.godotengine.timecheckin.AudienceNetworkContentProvider"
+127-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:28:13-82
+128            android:exported="false" />
+128-->[com.facebook.android:audience-network-sdk:6.16.0] C:\Users\Sergio\.gradle\caches\transforms-3\9721076451ba624411ad9cc19fef361b\transformed\jetified-audience-network-sdk-6.16.0\AndroidManifest.xml:29:13-37
+129
+130        <activity
+130-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:15:9-19:50
+131            android:name="com.applovin.adview.AppLovinInterstitialActivity"
+131-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:16:13-76
+132            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|uiMode"
+132-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:17:13-98
+133            android:hardwareAccelerated="true"
+133-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:18:13-47
+134            android:screenOrientation="behind" />
+134-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:19:13-47
+135        <activity
+135-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:20:9-26:50
+136            android:name="com.applovin.adview.AppLovinFullscreenActivity"
+136-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:21:13-74
+137            android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+137-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:22:13-129
+138            android:exported="false"
+138-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:23:13-37
+139            android:hardwareAccelerated="true"
+139-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:24:13-47
+140            android:launchMode="singleTop"
+140-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:25:13-43
+141            android:screenOrientation="behind" />
+141-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:26:13-47
+142        <activity
+142-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:27:9-29:84
+143            android:name="com.applovin.sdk.AppLovinWebViewActivity"
+143-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:28:13-68
+144            android:configChanges="keyboardHidden|orientation|screenSize|uiMode" />
+144-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:29:13-81
+145        <activity
+145-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:30:9-33:87
+146            android:name="com.applovin.mediation.MaxDebuggerActivity"
+146-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:31:13-70
+147            android:configChanges="keyboardHidden|orientation|screenSize"
+147-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:32:13-74
+148            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+148-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:33:13-84
+149        <activity
+149-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:34:9-37:87
+150            android:name="com.applovin.mediation.MaxDebuggerDetailActivity"
+150-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:35:13-76
+151            android:configChanges="keyboardHidden|orientation|screenSize"
+151-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:36:13-74
+152            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+152-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:37:13-84
 153        <activity
-153-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:20:9-26:50
-154            android:name="com.applovin.adview.AppLovinFullscreenActivity"
-154-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:21:13-74
-155            android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-155-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:22:13-129
-156            android:exported="false"
-156-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:23:13-37
-157            android:hardwareAccelerated="true"
-157-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:24:13-47
-158            android:launchMode="singleTop"
-158-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:25:13-43
-159            android:screenOrientation="behind" />
-159-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:26:13-47
-160        <activity
-160-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:27:9-29:84
-161            android:name="com.applovin.sdk.AppLovinWebViewActivity"
-161-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:28:13-68
-162            android:configChanges="keyboardHidden|orientation|screenSize|uiMode" />
-162-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:29:13-81
-163        <activity
-163-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:30:9-33:87
-164            android:name="com.applovin.mediation.MaxDebuggerActivity"
-164-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:31:13-70
-165            android:configChanges="keyboardHidden|orientation|screenSize"
-165-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:32:13-74
-166            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-166-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:33:13-84
-167        <activity
-167-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:34:9-37:87
-168            android:name="com.applovin.mediation.MaxDebuggerDetailActivity"
-168-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:35:13-76
-169            android:configChanges="keyboardHidden|orientation|screenSize"
-169-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:36:13-74
-170            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-170-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:37:13-84
-171        <activity
-171-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:38:9-41:87
-172            android:name="com.applovin.mediation.MaxDebuggerMultiAdActivity"
-172-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:39:13-77
-173            android:configChanges="keyboardHidden|orientation|screenSize"
-173-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:40:13-74
-174            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-174-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:41:13-84
-175        <activity
-175-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:42:9-45:87
-176            android:name="com.applovin.mediation.MaxDebuggerAdUnitsListActivity"
-176-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:43:13-81
-177            android:configChanges="keyboardHidden|orientation|screenSize"
-177-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:44:13-74
-178            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-178-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:45:13-84
-179        <activity
-179-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:46:9-49:87
-180            android:name="com.applovin.mediation.MaxDebuggerAdUnitDetailActivity"
-180-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:47:13-82
-181            android:configChanges="keyboardHidden|orientation|screenSize"
-181-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:48:13-74
-182            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-182-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:49:13-84
-183
-184        <service
-184-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:51:9-54:44
-185            android:name="com.applovin.impl.sdk.utils.AppKilledService"
-185-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:52:13-72
-186            android:exported="false"
-186-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:53:13-37
-187            android:stopWithTask="false" />
-187-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:54:13-41
-188        <service
-188-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:55:9-58:44
-189            android:name="com.applovin.impl.adview.activity.FullscreenAdService"
-189-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:56:13-81
-190            android:exported="false"
-190-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:57:13-37
-191            android:stopWithTask="false" />
-191-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:58:13-41
-192
-193        <meta-data
-193-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\29b1d0a846b669ea03b006b7f8f72211\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
-194            android:name="com.google.android.gms.version"
-194-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\29b1d0a846b669ea03b006b7f8f72211\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
-195            android:value="@integer/google_play_services_version" />
-195-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\29b1d0a846b669ea03b006b7f8f72211\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
-196    </application>
-197
-198</manifest>
+153-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:38:9-41:87
+154            android:name="com.applovin.mediation.MaxDebuggerMultiAdActivity"
+154-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:39:13-77
+155            android:configChanges="keyboardHidden|orientation|screenSize"
+155-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:40:13-74
+156            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+156-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:41:13-84
+157        <activity
+157-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:42:9-45:87
+158            android:name="com.applovin.mediation.MaxDebuggerAdUnitsListActivity"
+158-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:43:13-81
+159            android:configChanges="keyboardHidden|orientation|screenSize"
+159-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:44:13-74
+160            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+160-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:45:13-84
+161        <activity
+161-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:46:9-49:87
+162            android:name="com.applovin.mediation.MaxDebuggerAdUnitDetailActivity"
+162-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:47:13-82
+163            android:configChanges="keyboardHidden|orientation|screenSize"
+163-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:48:13-74
+164            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+164-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:49:13-84
+165
+166        <service
+166-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:51:9-54:44
+167            android:name="com.applovin.impl.sdk.utils.AppKilledService"
+167-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:52:13-72
+168            android:exported="false"
+168-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:53:13-37
+169            android:stopWithTask="false" />
+169-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:54:13-41
+170        <service
+170-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:55:9-58:44
+171            android:name="com.applovin.impl.adview.activity.FullscreenAdService"
+171-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:56:13-81
+172            android:exported="false"
+172-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:57:13-37
+173            android:stopWithTask="false" />
+173-->[com.applovin:applovin-sdk:10.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\b23886d5981eb2882b52230dd619ff99\transformed\jetified-applovin-sdk-10.0.1\AndroidManifest.xml:58:13-41
+174
+175        <meta-data
+175-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\29b1d0a846b669ea03b006b7f8f72211\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
+176            android:name="com.google.android.gms.version"
+176-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\29b1d0a846b669ea03b006b7f8f72211\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
+177            android:value="@integer/google_play_services_version" />
+177-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Sergio\.gradle\caches\transforms-3\29b1d0a846b669ea03b006b7f8f72211\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
+178    </application>
+179
+180</manifest>
