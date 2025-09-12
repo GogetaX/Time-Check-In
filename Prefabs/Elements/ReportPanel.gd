@@ -3,7 +3,7 @@ extends Panel
 
 
 func _on_ReportBug_pressed():
-	var date = OS.get_datetime()
+	var date = Time.get_datetime_dict_from_system()
 	var BugDescription = TranslationServer.translate("email_bug_description")
 	match OS.get_name():
 		"Android","Windows":
@@ -17,7 +17,7 @@ func _on_ReportBug_pressed():
 			OS.shell_open(txt)
 			
 func _on_RequestFeature_pressed():
-	var date = OS.get_datetime()
+	var date = Time.get_datetime_dict_from_system()
 	var FeatureDescription = TranslationServer.translate("email_feature_description")
 	match OS.get_name():
 		"Android","Windows":
@@ -33,7 +33,7 @@ func _on_RequestFeature_pressed():
 
 
 func _on_Debugger_pressed():
-	var date = OS.get_datetime()
+	var date = Time.get_datetime_dict_from_system()
 	var FeatureDescription = OS.get_unique_id()
 	match OS.get_name():
 		"Android","Windows":

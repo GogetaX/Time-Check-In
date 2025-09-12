@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://1bsyid423ren"]
+
+[ext_resource type="FontFile" uid="uid://brb8alwfedm5p" path="res://Assets/Fonts/OpenSans-Bold.ttf" id="1_t6r5f"]
+
+[resource]
+font = ExtResource("1_t6r5f")
+font_size = 40

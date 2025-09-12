@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://bvsbupai5vqxl"]
 
-[ext_resource path="res://Prefabs/Elements/HebrewReachLabel.gd" type="Script" id=1]
-[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=2]
+[ext_resource type="Script" uid="uid://biuqs7m4ro214" path="res://Prefabs/Elements/HebrewReachLabel.gd" id="1"]
+[ext_resource type="FontFile" path="res://Prefabs/Styles/Fonts/Size30.tres" id="2"]
 
 [node name="HebrewReachLabel" type="RichTextLabel"]
-margin_right = 706.0
-margin_bottom = 561.0
-custom_colors/default_color = Color( 0.14902, 0.6, 0.984314, 1 )
-custom_fonts/normal_font = ExtResource( 2 )
+offset_right = 706.0
+offset_bottom = 561.0
+theme_override_colors/default_color = Color(0.14902, 0.6, 0.984314, 1)
+theme_override_fonts/normal_font = ExtResource("2")
 bbcode_enabled = true
-bbcode_text = "info_auto_salary_calc"
 text = "info_auto_salary_calc"
-script = ExtResource( 1 )
+text = "info_auto_salary_calc"
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -20,8 +20,8 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -68.0
-margin_bottom = 7.0
+offset_top = -68.0
+offset_bottom = 7.0
 text = "SYYNC"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

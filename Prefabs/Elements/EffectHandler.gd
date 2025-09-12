@@ -1,21 +1,21 @@
-tool
+@tool
 extends Node
 
-export (bool) var HideAll = false setget SetHideAll
+@export var HideAll: bool = false: set = SetHideAll
 
 func _ready():
-	if !Engine.editor_hint:
+	if !Engine.is_editor_hint():
 		DeactivateAll()
 	# warning-ignore:return_value_discarded
-		GlobalTime.connect("app_loaded",self,"app_loaded")
+		GlobalTime.connect("app_loaded", Callable(self, "app_loaded"))
 	# warning-ignore:return_value_discarded
-		GlobalTime.connect("BtnGroupPressed",self,"GroupBtnPressed")
+		GlobalTime.connect("BtnGroupPressed", Callable(self, "GroupBtnPressed"))
 	# warning-ignore:return_value_discarded
-		GlobalTime.connect("ShowOnlyScreen",self,"HourEditorScreen")
+		GlobalTime.connect("ShowOnlyScreen", Callable(self, "HourEditorScreen"))
 	
 func SetHideAll(new):
 	HideAll = new
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		if HideAll:
 			DeactivateAll()
 			
@@ -47,13 +47,13 @@ func GroupBtnPressed(BtnNode,GroupName):
 		DeactivateAll()
 	
 func ExactDayInYear(Date):
-	var CurMonth = OS.get_datetime()
+	var CurMonth = Time.get_datetime_dict_from_system()
 	if CurMonth["month"]==Date["month"] && CurMonth["day"] == Date["day"]:
 		return true
 	return false
 	
 func IfBetweenMonths(Date1,Date2):
-	var CurMonth = OS.get_datetime()
+	var CurMonth = Time.get_datetime_dict_from_system()
 	var Min = Date1["year"]*Date1["year"] + Date1["month"]
 	var Max = Date2["year"]*Date2["year"] + Date2["month"]
 	var Cur = CurMonth["year"]*CurMonth["year"] + CurMonth["month"]
@@ -65,26 +65,26 @@ func ActivateOnly(OnlyEffect):
 	for a in get_children():
 		if a.name == OnlyEffect:
 			for b in a.get_children():
-				if b is Particles2D:
+				if b is GPUParticles2D:
 					b.emitting = true
-				if b is Sprite:
+				if b is Sprite2D:
 					b.visible = true
 				if b is Label:
 					b.visible = true
 		else:
 			for b in a.get_children():
-				if b is Particles2D:
+				if b is GPUParticles2D:
 					b.emitting = false
-				if b is Sprite:
+				if b is Sprite2D:
 					b.visible = false
 				if b is Label:
 					b.visible = false
 func DeactivateAll():
 	for a in get_children():
 		for b in a.get_children():
-			if b is Particles2D:
+			if b is GPUParticles2D:
 				b.emitting = false
-			if b is Sprite:
+			if b is Sprite2D:
 				b.visible = false
 			if b is Label:
 				b.visible = false

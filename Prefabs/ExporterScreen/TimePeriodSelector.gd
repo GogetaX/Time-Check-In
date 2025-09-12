@@ -1,6 +1,6 @@
 extends Control
 
-const SelectedColor = Color("#fbffb326")
+const SelectedColor = Color("#ffb326fb")
 const UnSelectedColor = Color("#bce0fd")
 
 var CurSelected = null
@@ -8,10 +8,10 @@ var FoundDateList = []
 
 func _ready():
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
+	GlobalTime.connect("ShowOnlyScreen", Callable(self, "ShowOnly"))
 	InitButtons()
-	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().connect("index_pressed",self,"SelectedFirstDate")
-	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().connect("index_pressed",self,"SelectedLastDate")
+	$VBoxContainer/HBoxContainer2/SelectedMonthFirst.get_popup().connect("index_pressed", Callable(self, "SelectedFirstDate"))
+	$VBoxContainer/HBoxContainer2/SelectedMonthLast.get_popup().connect("index_pressed", Callable(self, "SelectedLastDate"))
 
 	
 func ShowOnly(ScreenName):
@@ -68,17 +68,17 @@ func SelectedLastDate(Index):
 func InitButtons():
 	for x in $VBoxContainer/HBoxContainer.get_children():
 		if x is Label:
-			x.connect("gui_input",self,"MonthSelectorPressed",[x])
+			x.connect("gui_input", Callable(self, "MonthSelectorPressed").bind(x))
 		
 func MonthSelectorPressed(event,btn):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			var T = Tween.new()
 			add_child(T)
-			T.connect("tween_all_completed",self,"FinishTween",[T,btn])
-			T.interpolate_property(btn,"custom_colors/font_color",btn.get("custom_colors/font_color"),SelectedColor,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
+			T.connect("tween_all_completed", Callable(self, "FinishTween").bind(T,btn))
+			T.interpolate_property(btn,"theme_override_colors/font_color",btn.get("theme_override_colors/font_color"),SelectedColor,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
 			if CurSelected != null:
-				T.interpolate_property(CurSelected,"custom_colors/font_color",CurSelected.get("custom_colors/font_color"),UnSelectedColor,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
+				T.interpolate_property(CurSelected,"theme_override_colors/font_color",CurSelected.get("theme_override_colors/font_color"),UnSelectedColor,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN_OUT)
 			T.start()
 			
 func FinishTween(T,new_btn):
@@ -98,14 +98,14 @@ func FastSelect(lbl_name):
 	CurSelected = null
 	for x in $VBoxContainer/HBoxContainer.get_children():
 		if x.name ==lbl_name:
-			x.set("custom_colors/font_color",SelectedColor)
+			x.set("theme_override_colors/font_color",SelectedColor)
 			CurSelected = x
 		else:
-			x.set("custom_colors/font_color",UnSelectedColor) 
+			x.set("theme_override_colors/font_color",UnSelectedColor) 
 	SyncDates()
 
 func SyncDates():
-	var CurDate = OS.get_datetime()
+	var CurDate = Time.get_datetime_dict_from_system()
 	var FromDate = {}
 	var ToDate = {}
 	match CurSelected.name:

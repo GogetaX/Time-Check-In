@@ -19,7 +19,7 @@ func HideAllEditors():
 		elif x is Label:
 			if "Edit" in x.name:
 				x.mouse_filter = Control.MOUSE_FILTER_PASS
-				x.connect("gui_input",self,"SelectHour",[x])
+				x.connect("gui_input", Callable(self, "SelectHour").bind(x))
 
 func ShowDate(Delay,_Day,Info,Checks):
 	CurCheckInInfo = Info["check_in"+String(Checks)]
@@ -110,7 +110,7 @@ func SelectHour(event,itmNode):
 			n.text = ""
 			CurEditor = n
 			CurLabelEdit = itmNode
-			CurEditor.caret_position = CurEditor.text.length()
+			CurEditor.caret_column = CurEditor.text.length()
 
 func OnEntry(Key):
 	match Key:
@@ -119,7 +119,7 @@ func OnEntry(Key):
 				CurEditor.text = CurEditor.text.substr(0,CurEditor.text.length()-1)
 		"ENT","TAP_OUTSIDE":
 			CurEditor.visible = false
-			if CurEditor.text.is_valid_integer():
+			if CurEditor.text.is_valid_int():
 				UpdateCurEditor()
 				UpdateHowLongWorkd()
 			else:
@@ -129,7 +129,7 @@ func OnEntry(Key):
 			CurLabelEdit.visible = true
 		_:
 			CurEditor.text += Key
-	CurEditor.caret_position = CurEditor.text.length()
+	CurEditor.caret_column = CurEditor.text.length()
 
 
 func GetEditedInfo():
@@ -158,7 +158,7 @@ func GetEditedInfo():
 func _on_DelayTimer_timeout():
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishTween",[T])
+	T.connect("tween_all_completed", Callable(self, "FinishTween").bind(T))
 	T.interpolate_property(self,"modulate",Color(1,1,1,0),Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 	T.start()
 	
@@ -167,7 +167,7 @@ func FinishTween(T):
 
 				
 func UpdateCurEditor():
-	if CurEditor.text.is_valid_integer():
+	if CurEditor.text.is_valid_int():
 		if "Hour" in CurEditor.name:
 			if int(CurEditor.text) <= 48 && int(CurEditor.text)>=0:
 				CurLabelEdit.text = CurEditor.text
@@ -183,7 +183,7 @@ func UpdateCurEditor():
 func _on_RemoveButton_pressed():
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishTweenAndClose",[T])
+	T.connect("tween_all_completed", Callable(self, "FinishTweenAndClose").bind(T))
 	T.interpolate_property(self,"modulate",modulate,Color(1,1,1,0),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 	T.start()
 	

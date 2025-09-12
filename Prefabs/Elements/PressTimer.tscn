@@ -1,4 +1,4 @@
-[gd_scene format=2]
+[gd_scene format=3 uid="uid://b5j8ga6gl06lb"]
 
 [node name="PressTimer" type="Timer"]
 wait_time = 0.2

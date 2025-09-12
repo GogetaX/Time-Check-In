@@ -3,7 +3,7 @@ extends HBoxContainer
 
 func _ready():
 	for x in get_children():
-		x.connect("gui_input",self,"on_star_input",[x])
+		x.connect("gui_input", Callable(self, "on_star_input").bind(x))
 		
 	MarkStars(5)
 	

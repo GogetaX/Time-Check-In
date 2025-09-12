@@ -10,16 +10,16 @@ func _ready():
 func AnimNext(txt):
 	$Next.valign = valign
 	$Next.text = txt
-	yield(get_tree(),"idle_frame")
-	$Next.rect_position = InislaPos
-	$Next.rect_position.y -= $Next.rect_size.y
+	await get_tree().idle_frame
+	$Next.position = InislaPos
+	$Next.position.y -= $Next.size.y
 	$Next.self_modulate = Color(1,1,1,0)
 	
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishedNext",[T])
+	T.connect("tween_all_completed", Callable(self, "FinishedNext").bind(T))
 	T.interpolate_property($Next,"self_modulate",$Next.self_modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
-	T.interpolate_property(self,"rect_position:y",rect_position.y,rect_position.y+$Next.rect_size.y,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+	T.interpolate_property(self,"position:y",position.y,position.y+$Next.size.y,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 	T.interpolate_property(self,"self_modulate",Color(1,1,1,1),Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 	T.start()
 
@@ -28,4 +28,4 @@ func FinishedNext(T):
 	text = $Next.text
 	$Next.visible = false
 	self_modulate = Color(1,1,1,1)
-	rect_position = InislaPos
+	position = InislaPos

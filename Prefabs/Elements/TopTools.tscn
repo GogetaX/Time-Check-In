@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://cbslbyubeegfg"]
 
-[ext_resource path="res://Prefabs/Elements/TopTools.gd" type="Script" id=1]
-[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Prefabs/Styles/Scroll.tres" type="Theme" id=3]
-[ext_resource path="res://Prefabs/Styles/Panel/BottomScreen.tres" type="StyleBox" id=6]
+[ext_resource type="Script" uid="uid://7ku3iy4rci5c" path="res://Prefabs/Elements/TopTools.gd" id="1"]
+[ext_resource type="FontFile" path="res://Prefabs/Styles/Fonts/Size30.tres" id="2"]
+[ext_resource type="Theme" uid="uid://1pc7q1evdyfd" path="res://Prefabs/Styles/Scroll.tres" id="3"]
+[ext_resource type="StyleBox" path="res://Prefabs/Styles/Panel/BottomScreen.tres" id="6"]
 
 [node name="Tools" type="Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -360.0
-margin_right = 360.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 0, 60 )
+offset_left = -360.0
+offset_right = 360.0
+offset_bottom = 60.0
+custom_minimum_size = Vector2(0, 60)
 mouse_filter = 1
-custom_styles/panel = ExtResource( 6 )
-script = ExtResource( 1 )
+theme_override_styles/panel = ExtResource("6")
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -22,15 +22,15 @@ __meta__ = {
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_right = -10.0
+offset_left = 10.0
+offset_right = -10.0
 mouse_filter = 1
-theme = ExtResource( 3 )
+theme = ExtResource("3")
 scroll_vertical_enabled = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
-margin_right = 700.0
-margin_bottom = 60.0
+offset_right = 700.0
+offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -38,11 +38,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="ScrollContainer/HBoxContainer"]
-margin_top = 12.0
-margin_right = 66.0
-margin_bottom = 47.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 2 )
+offset_top = 12.0
+offset_right = 66.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2")
 text = "Go to"
 
 [connection signal="mouse_entered" from="ScrollContainer" to="." method="_on_ScrollContainer_mouse_entered"]

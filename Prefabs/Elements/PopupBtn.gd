@@ -1,7 +1,7 @@
-tool
+@tool
 extends Button
 
-export (String,"EMPTY","NO","YES","NEXT","STOP","EDIT","EXPORT","EMAIL") var iconType = "EMPTY" setget SetIconType
+@export var iconType = "EMPTY": set = SetIconType
 
 func SetIconType(new):
 	iconType = new

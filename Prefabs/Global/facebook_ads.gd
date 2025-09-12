@@ -5,7 +5,7 @@ Facebook  ads Plugin
 https://github.com/MrZak-dev/GodotFAN
 """
 #Facebook Ads
-onready var Facebook = null 
+@onready var Facebook = null 
 
 """
 replace with your ids

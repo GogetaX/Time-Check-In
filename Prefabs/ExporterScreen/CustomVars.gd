@@ -1,14 +1,14 @@
-tool
+@tool
 extends Control
 
-const SelectedColor = Color("#fbffb326")
+const SelectedColor = Color("#ffb326fb")
 const UnSelectedColor = Color("#bce0fd")
 
 var font = preload("res://Prefabs/Styles/Fonts/Size30.tres")
 
-export (String) var VarList = "" setget SetVarList
-export (bool) var SelectedAll = true setget SetSelectedAll
-export (String) var DefaultSelection = "" setget SetDefaultSelection
+@export var VarList: String = "": set = SetVarList
+@export var SelectedAll: bool = true: set = SetSelectedAll
+@export var DefaultSelection: String = "": set = SetDefaultSelection
 
 func SetVarList(new):
 	VarList = new
@@ -23,9 +23,9 @@ func SetSelectedAll(new):
 	if SelectedAll:
 		for x in $HBoxContainer.get_children():
 			if x.text != ", ":
-				x.set("custom_colors/font_color",SelectedColor)
+				x.set("theme_override_colors/font_color",SelectedColor)
 			else:
-				x.set("custom_colors/font_color",UnSelectedColor)
+				x.set("theme_override_colors/font_color",UnSelectedColor)
 			
 func SyncVars():
 	for x in $HBoxContainer.get_children():
@@ -37,16 +37,16 @@ func SyncVars():
 	for x in v:
 		var lbl = Label.new()
 		lbl.text = x
-		lbl.set("custom_fonts/font",font)
+		lbl.set("theme_override_fonts/font",font)
 		$HBoxContainer.add_child(lbl)
 		if DefaultSelection != "":
 			if x == DefaultSelection:
-				lbl.set("custom_colors/font_color",SelectedColor)
+				lbl.set("theme_override_colors/font_color",SelectedColor)
 			else:
-				lbl.set("custom_colors/font_color",UnSelectedColor)
+				lbl.set("theme_override_colors/font_color",UnSelectedColor)
 		last_comma = Label.new()
 		last_comma.text = ", "
-		last_comma.set("custom_fonts/font",font)
+		last_comma.set("theme_override_fonts/font",font)
 		$HBoxContainer.add_child(last_comma)
 	if last_comma != null:
 		$HBoxContainer.remove_child(last_comma)

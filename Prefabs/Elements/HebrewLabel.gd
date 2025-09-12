@@ -1,8 +1,8 @@
-tool
+@tool
 extends Label
 
-export (int) var CharsPeerLine = 30 setget SetCharsPeerLine
-export (String,MULTILINE) var hebrewText = "" setget SetHebrewText
+@export var CharsPeerLine: int = 30: set = SetCharsPeerLine
+@export var hebrewText = "": set = SetHebrewText
 
 
 

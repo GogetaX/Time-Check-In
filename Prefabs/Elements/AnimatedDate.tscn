@@ -1,38 +1,38 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://cbwq6ylyroqnr"]
 
-[ext_resource path="res://Prefabs/Elements/AnimatedDate.gd" type="Script" id=1]
-[ext_resource path="res://Prefabs/Elements/AnimatedLabel.tscn" type="PackedScene" id=3]
+[ext_resource type="Script" uid="uid://boc67r8plqo3b" path="res://Prefabs/Elements/AnimatedDate.gd" id="1"]
+[ext_resource type="PackedScene" path="res://Prefabs/Elements/AnimatedLabel.tscn" id="3"]
 
 [node name="AnimatedDate" type="Control"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1280.0
-margin_bottom = -1225.0
-rect_min_size = Vector2( 0, 55 )
+offset_top = -1280.0
+offset_bottom = -1225.0
+custom_minimum_size = Vector2(0, 55)
 mouse_filter = 2
-script = ExtResource( 1 )
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Month" parent="." instance=ExtResource( 3 )]
+[node name="Month" parent="." instance=ExtResource("3")]
 anchor_left = 0.0208333
 anchor_right = 0.0555556
 anchor_bottom = 0.0
-margin_left = 178.0
-margin_top = 0.0
-margin_right = 350.0
-margin_bottom = 55.0
+offset_left = 178.0
+offset_top = 0.0
+offset_right = 350.0
+offset_bottom = 55.0
 text = "Januarry"
 
-[node name="Year" parent="." instance=ExtResource( 3 )]
+[node name="Year" parent="." instance=ExtResource("3")]
 anchor_left = 0.0777778
 anchor_right = 0.0777778
 anchor_bottom = 0.0
-margin_left = 370.0
-margin_top = 0.0
-margin_right = 542.0
-margin_bottom = 55.0
+offset_left = 370.0
+offset_top = 0.0
+offset_right = 542.0
+offset_bottom = 55.0
 text = "2022"
 align = 0

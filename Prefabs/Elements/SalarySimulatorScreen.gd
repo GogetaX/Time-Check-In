@@ -4,7 +4,7 @@ var TotalItemInstance = preload("res://Prefabs/Elements/TotalItem.tscn")
 
 func _ready():
 # warning-ignore:return_value_discarded
-	connect("visibility_changed",self,"_on_SalarySimulatorScreen_visibility_changed")
+	connect("visibility_changed", Callable(self, "_on_SalarySimulatorScreen_visibility_changed"))
 	
 func _on_CloseBtn_pressed():
 	GlobalTime.FreeTool(self)
@@ -21,10 +21,10 @@ func _on_ValueBox_UpdatedVar(NewVar):
 	var StepTime = 0.1
 	for x in IL:
 		if not "Nosafot" in x && not "Net" in x:
-			Itm = TotalItemInstance.instance()
+			Itm = TotalItemInstance.instantiate()
 			VBox.add_child(Itm)
 			var i = String(IL[x])
-			if i.is_valid_integer():
+			if i.is_valid_int():
 				i = String(i)
 			elif i.is_valid_float():
 				i = GlobalTime.FloatToString(i,2)
@@ -32,11 +32,11 @@ func _on_ValueBox_UpdatedVar(NewVar):
 			Delay += StepTime
 		if x == "Net":
 			var i = String(IL[x])
-			if i.is_valid_integer():
+			if i.is_valid_int():
 				i = String(i)
 			elif i.is_valid_float():
 				i = GlobalTime.FloatToString(i,2)
-			Itm = TotalItemInstance.instance()
+			Itm = TotalItemInstance.instantiate()
 			VBox.add_child(Itm)
 			Itm.ShowItem(Delay,{"title":x,"desc":i})
 

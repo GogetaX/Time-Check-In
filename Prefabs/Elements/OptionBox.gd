@@ -4,18 +4,18 @@ extends MenuButton
 func _ready():
 	focus_mode = Control.FOCUS_NONE
 # warning-ignore:return_value_discarded
-	connect("about_to_show",self,"about_to_show")
+	connect("about_to_popup", Callable(self, "about_to_popup"))
 # warning-ignore:return_value_discarded
-	get_popup().connect("modal_closed",self,"Closed")
+	get_popup().connect("modal_closed", Callable(self, "Closed"))
 
 func Closed():
-	get_popup().margin_left = 0
-	get_popup().margin_right = 0
-	get_popup().margin_bottom = 0
-	get_popup().margin_top = 0
-	get_popup().rect_position = Vector2.ZERO
+	get_popup().offset_left = 0
+	get_popup().offset_right = 0
+	get_popup().offset_bottom = 0
+	get_popup().offset_top = 0
+	get_popup().position = Vector2.ZERO
 	
-func about_to_show():
+func about_to_popup():
 	for a in get_children():
 		a.submenu_popup_delay = 0
 		for b in a.get_item_count():
@@ -25,21 +25,21 @@ func about_to_show():
 
 
 func ForceShowOnMouse(Position):
-	get_popup().rect_position = Position
+	get_popup().position = Position
 	#If too on right, move lil bit left
 	var WindowSize = get_viewport_rect().size
 	WindowSize.y -= 100
-	if get_popup().rect_position.x + get_popup().rect_size.x > WindowSize.x:
-		get_popup().rect_position.x = WindowSize.x - get_popup().rect_size.x
+	if get_popup().position.x + get_popup().size.x > WindowSize.x:
+		get_popup().position.x = WindowSize.x - get_popup().size.x
 		
-	if get_popup().rect_position.x < 0:
-		get_popup().rect_position.x = 0
+	if get_popup().position.x < 0:
+		get_popup().position.x = 0
 		
-	if get_popup().rect_position.y + get_popup().rect_size.y > WindowSize.y:
-		get_popup().rect_position.y = WindowSize.y - get_popup().rect_size.y
+	if get_popup().position.y + get_popup().size.y > WindowSize.y:
+		get_popup().position.y = WindowSize.y - get_popup().size.y
 		
-	if get_popup().rect_position.y < 0:
-		get_popup().rect_position.y = 0
+	if get_popup().position.y < 0:
+		get_popup().position.y = 0
 	
 	get_popup().show_modal(false)
 

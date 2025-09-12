@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://bbtk8aoi4yky3"]
 
-[ext_resource path="res://Prefabs/ExporterScreen/CustomVars.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://knsmvs0oyt5d" path="res://Prefabs/ExporterScreen/CustomVars.gd" id="1"]
 
 [node name="CustomVars" type="Control"]
-margin_top = 242.0
-margin_right = 700.0
-margin_bottom = 292.0
-rect_min_size = Vector2( 0, 50 )
-script = ExtResource( 1 )
+offset_top = 242.0
+offset_right = 700.0
+offset_bottom = 292.0
+custom_minimum_size = Vector2(0, 50)
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }

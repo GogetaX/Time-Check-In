@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://b75w7tii2evqn"]
 
-[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Prefabs/ExporterScreen/ExportFormat.gd" type="Script" id=2]
+[ext_resource type="FontFile" path="res://Prefabs/Styles/Fonts/Size30.tres" id="1"]
+[ext_resource type="Script" uid="uid://dqhme8jruh0lg" path="res://Prefabs/ExporterScreen/ExportFormat.gd" id="2"]
 
 [node name="ExportFormat" type="Control"]
-margin_top = 242.0
-margin_right = 700.0
-margin_bottom = 292.0
-rect_min_size = Vector2( 0, 50 )
-script = ExtResource( 2 )
+offset_top = 242.0
+offset_right = 700.0
+offset_bottom = 292.0
+custom_minimum_size = Vector2(0, 50)
+script = ExtResource("2")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -22,11 +22,11 @@ __meta__ = {
 }
 
 [node name="csv" type="Label" parent="HBoxContainer"]
-margin_left = 327.0
-margin_top = 7.0
-margin_right = 373.0
-margin_bottom = 42.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
+offset_left = 327.0
+offset_top = 7.0
+offset_right = 373.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.498039, 0.768627, 0.992157, 1)
+theme_override_fonts/font = ExtResource("1")
 text = ".csv"
 align = 1

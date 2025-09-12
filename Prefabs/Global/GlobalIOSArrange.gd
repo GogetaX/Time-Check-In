@@ -10,10 +10,10 @@ func _ready():
 func IfDeveloperCreateFolderAndSendCopy():
 	if OS.get_unique_id() == "C5C6FE2C-0454-4B72-9781-54AB542EB87C":
 		var CopyPath = "user://SavedData/"
-		var dir = Directory.new()
-		dir.make_dir_recursive(CopyPath)
-		dir.open(UserPath)
-		dir.list_dir_begin()
+		var dir = DirAccess.open(CopyPath)
+		#dir.make_dir_recursive(CopyPath)
+		#dir.open(UserPath)
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		var files = []
 		
 		while true:
@@ -44,9 +44,9 @@ func RearangeFilesForiOS():
 	if OS.get_name() == "iOS":
 		UserPath = GetiOSLibraryPath()
 		var files = []
-		var dir = Directory.new()
-		dir.open("user://")
-		dir.list_dir_begin()
+		var dir = DirAccess.open("user://")
+		#dir.open("user://")
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 
 		while true:
 			var file = dir.get_next()

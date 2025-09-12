@@ -1,12 +1,12 @@
-tool
+@tool
 extends Label
 
-export (Vector2) var MinMax = Vector2(0,99999999) setget SetMinMax
-export (float) var InisialValue = 35.5 setget SetInisialValue
-export (bool) var HasArrows = true setget SetHasArrows
-export (String) var FrontText = "Salary" setget SetFrontText
-export (Color) var FontColor = Color("#2699fb") setget SetFontColor
-export (bool) var MinuteIndicator = false setget SetMinuteIndicator
+@export var MinMax: Vector2 = Vector2(0,99999999): set = SetMinMax
+@export var InisialValue: float = 35.5: set = SetInisialValue
+@export var HasArrows: bool = true: set = SetHasArrows
+@export var FrontText: String = "Salary": set = SetFrontText
+@export var FontColor: Color = Color("#2699fb"): set = SetFontColor
+@export var MinuteIndicator: bool = false: set = SetMinuteIndicator
 
 signal UpdatedVar(NewVar)
 
@@ -17,7 +17,7 @@ func _ready():
 	$LineEdit.visible = false
 	$LineEdit.virtual_keyboard_enabled = false
 # warning-ignore:return_value_discarded
-	$VirtualKeyboardTimer.connect("timeout",self,"CheckIfVirtualKeyboard")
+	$VirtualKeyboardTimer.connect("timeout", Callable(self, "CheckIfVirtualKeyboard"))
 
 func SetMinuteIndicator(new):
 	MinuteIndicator = new
@@ -32,7 +32,7 @@ func GetValue():
 	
 func SetFontColor(new):
 	FontColor = new
-	$Label.set("custom_colors/font_color",FontColor)
+	$Label.set("theme_override_colors/font_color",FontColor)
 	
 func SetFrontText(new):
 	FrontText = new
@@ -52,9 +52,9 @@ func SetInisialValue(new):
 		InisialValue = MinMax.y 
 	elif InisialValue < MinMax.x:
 		InisialValue = MinMax.x
-	text = String(InisialValue)
+	text = str(InisialValue)
 	SetMinuteIndicator(MinuteIndicator)
-	if Engine.editor_hint: return
+	if Engine.is_editor_hint(): return
 	emit_signal("UpdatedVar",InisialValue)
 
 func Disable(setDisabled):
@@ -74,16 +74,16 @@ func _gui_input(event):
 			$PressTimer.start()
 			
 		if !event.pressed && get_global_rect().has_point(event.global_position) && !$PressTimer.is_stopped():
-			yield(get_tree(),"idle_frame")
+			await get_tree().idle_frame
 			if !$LineEdit.visible:
 				GlobalTime.ShowKeypad(self,"OnEntry")
 				$LineEdit.grab_focus()
 				$LineEdit.placeholder_text = text
-				$LineEdit.max_length = String(MinMax.y).length()
-				$LineEdit.align = align
+				$LineEdit.max_length = str(MinMax.y).length()
+				#$LineEdit.align = align
 				$LineEdit.visible = true
 				$LineEdit.text = ""
-				$LineEdit.caret_position = $LineEdit.text.length()
+				$LineEdit.caret_column = $LineEdit.text.length()
 				text = ""
 				
 
@@ -94,7 +94,7 @@ func OnEntry(Key):
 				$LineEdit.text = $LineEdit.text.substr(0,$LineEdit.text.length()-1)
 		"ENT","TAP_OUTSIDE":
 			$LineEdit.visible = false
-			if $LineEdit.text.is_valid_integer() || $LineEdit.text.is_valid_float():
+			if $LineEdit.text.is_valid_int() || $LineEdit.text.is_valid_float():
 				SetInisialValue($LineEdit.text.to_float())
 				return
 			else:
@@ -107,7 +107,7 @@ func OnEntry(Key):
 			return
 		_:
 			$LineEdit.text += Key
-	$LineEdit.caret_position = $LineEdit.text.length()
+	$LineEdit.caret_column = $LineEdit.text.length()
 	
 func _on_DownBtn_pressed():
 	var val = InisialValue

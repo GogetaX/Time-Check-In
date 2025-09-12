@@ -5,11 +5,11 @@ var MultiSelectNode = null
 
 func _ready():
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("SelectDay",self,"SelectedDate")
+	GlobalTime.connect("SelectDay", Callable(self, "SelectedDate"))
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("MultiSelectedDate",self,"MultiSelectedDate")
+	GlobalTime.connect("MultiSelectedDate", Callable(self, "MultiSelectedDate"))
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("MultiSelect",self,"EnableMultiSelect")
+	GlobalTime.connect("MultiSelect", Callable(self, "EnableMultiSelect"))
 	
 func RemoveAllDays():
 	for x in get_children():
@@ -27,7 +27,7 @@ func GetSelected():
 func EnableMultiSelect(Enabled):
 	RemoveAllDays()
 	if Enabled:
-		MultiSelectNode = DayInfo.instance()
+		MultiSelectNode = DayInfo.instantiate()
 		add_child(MultiSelectNode)
 		MultiSelectNode.MultiSelect(GetSelected())
 	else:
@@ -43,11 +43,11 @@ func MultiSelectedDate(DateNode):
 func SelectedDate(_DayButton):
 	RemoveAllDays()
 	var Day = null
-	if GlobalTime.CurSelectedDate["info"].empty():
-		Day = DayInfo.instance()
+	if GlobalTime.CurSelectedDate["info"].is_empty():
+		Day = DayInfo.instantiate()
 		add_child(Day)
 	else:
-		Day = DayInfo.instance()
+		Day = DayInfo.instantiate()
 		add_child(Day)
 		Day.SetInfo(GlobalTime.CurSelectedDate["info"])
 

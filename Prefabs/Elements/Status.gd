@@ -3,7 +3,7 @@ extends Label
 
 func _ready():
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("TimeModeChangedTo",self,"ChangedStatus")
+	GlobalTime.connect("TimeModeChangedTo", Callable(self, "ChangedStatus"))
 	
 	
 func ChangedStatus(Status):

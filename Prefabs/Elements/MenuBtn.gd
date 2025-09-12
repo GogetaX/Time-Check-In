@@ -4,7 +4,7 @@ extends Button
 	
 func _ready():
 # warning-ignore:return_value_discarded
-	connect("toggled",self,"BtnToggled")
+	connect("toggled", Callable(self, "BtnToggled"))
 	SyncPressed()
 
 func BtnToggled(_pressed):
@@ -13,7 +13,7 @@ func BtnToggled(_pressed):
 func SyncPressed():
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"TweenFinished",[T])
+	T.connect("tween_all_completed", Callable(self, "TweenFinished").bind(T))
 	if pressed:
 		T.interpolate_property(self,"modulate",modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 	else:

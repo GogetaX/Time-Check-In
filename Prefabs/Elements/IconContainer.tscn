@@ -1,14 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://bgd32rw5iwncg"]
 
-[ext_resource path="res://Prefabs/Elements/IconContainer.gd" type="Script" id=2]
+[ext_resource type="Script" uid="uid://dahta3s7sbspe" path="res://Prefabs/Elements/IconContainer.gd" id="2"]
 
 [node name="IconContainer" type="HBoxContainer"]
 anchor_right = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-rect_min_size = Vector2( 0, 80 )
-script = ExtResource( 2 )
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+custom_minimum_size = Vector2(0, 80)
+script = ExtResource("2")
 __meta__ = {
 "_edit_use_anchors_": false
 }

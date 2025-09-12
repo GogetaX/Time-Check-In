@@ -1,19 +1,19 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://bccdxkgrebbd"]
 
-[ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=3]
-[ext_resource path="res://Prefabs/Elements/HourEditorScreen.gd" type="Script" id=6]
-[ext_resource path="res://Prefabs/Elements/InteractiveButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Prefabs/Elements/CheckInOutEditor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Icons/check-mark.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Icons/unchecked.png" type="Texture" id=10]
-[ext_resource path="res://Prefabs/Styles/Panel/BottomScreen.tres" type="StyleBox" id=11]
+[ext_resource type="FontFile" path="res://Prefabs/Styles/Fonts/Size40Bold.tres" id="2"]
+[ext_resource type="StyleBox" path="res://Prefabs/Styles/Background_LightBlue.tres" id="3"]
+[ext_resource type="Script" uid="uid://fubs14u3mgws" path="res://Prefabs/Elements/HourEditorScreen.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://gnr3gt6ki61r" path="res://Prefabs/Elements/InteractiveButton.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://61ecges76v68" path="res://Prefabs/Elements/CheckInOutEditor.tscn" id="8"]
+[ext_resource type="Texture2D" uid="uid://cy1biypcr2el6" path="res://Assets/Icons/check-mark.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bpa6l6ytes6g5" path="res://Assets/Icons/unchecked.png" id="10"]
+[ext_resource type="StyleBox" path="res://Prefabs/Styles/Panel/BottomScreen.tres" id="11"]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
 
-uniform vec4 u_color_key : hint_color;
-uniform vec4 u_replacement_color : hint_color;
+uniform vec4 u_color_key : source_color;
+uniform vec4 u_replacement_color : source_color;
 
 void fragment() {
     vec4 col = texture(TEXTURE, UV);
@@ -28,64 +28,64 @@ void fragment() {
 	COLOR.a = alpha;
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/u_color_key = null
-shader_param/u_replacement_color = Color( 1, 1, 1, 1 )
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
+shader_parameter/u_color_key = Color(0, 0, 0, 1)
+shader_parameter/u_replacement_color = Color(1, 1, 1, 1)
 
 [node name="HourEditorScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="Background" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("3")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TopMenu" type="Panel" parent="."]
 anchor_right = 1.0
-rect_min_size = Vector2( 0, 180 )
-custom_styles/panel = ExtResource( 11 )
+custom_minimum_size = Vector2(0, 180)
+theme_override_styles/panel = ExtResource("11")
 
 [node name="Title" type="Label" parent="TopMenu"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -53.0
-margin_bottom = 2.0
-custom_fonts/font = ExtResource( 2 )
+offset_top = -53.0
+offset_bottom = 2.0
+theme_override_fonts/font = ExtResource("2")
 text = "Editing Sun 26/date"
 align = 1
 
-[node name="Accept" parent="TopMenu" instance=ExtResource( 7 )]
-material = SubResource( 2 )
+[node name="Accept" parent="TopMenu" instance=ExtResource("7")]
+material = SubResource("2")
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -85.0
-margin_top = 116.0
-margin_right = -20.0
-margin_bottom = 176.0
-icon = ExtResource( 9 )
+offset_left = -85.0
+offset_top = 116.0
+offset_right = -20.0
+offset_bottom = 176.0
+icon = ExtResource("9")
 
-[node name="Decline" parent="TopMenu" instance=ExtResource( 7 )]
-material = SubResource( 2 )
-margin_left = 20.0
-margin_top = 116.0
-margin_right = 85.0
-margin_bottom = 176.0
-icon = ExtResource( 10 )
+[node name="Decline" parent="TopMenu" instance=ExtResource("7")]
+material = SubResource("2")
+offset_left = 20.0
+offset_top = 116.0
+offset_right = 85.0
+offset_bottom = 176.0
+icon = ExtResource("10")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 189.0
-margin_bottom = -104.0
+offset_top = 189.0
+offset_bottom = -104.0
 
-[node name="CheckInOutEditor" parent="VBoxContainer" instance=ExtResource( 8 )]
+[node name="CheckInOutEditor" parent="VBoxContainer" instance=ExtResource("8")]
 
 [connection signal="pressed" from="TopMenu/Accept" to="." method="_on_Accept_pressed"]
 [connection signal="pressed" from="TopMenu/Decline" to="." method="_on_Decline_pressed"]

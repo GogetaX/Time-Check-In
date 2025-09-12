@@ -11,11 +11,12 @@ var ColorStyle = null
 signal OnToggle()
 
 func _ready():
-	StartPos = $BG/Toggle.rect_position
-	ColorStyle = $BG.get_stylebox("panel").duplicate()
-	$BG.add_stylebox_override("panel",ColorStyle)
+	StartPos = $BG/Toggle.position
+	# Assuming $BG is a Panel node; adjust "Panel" if the node type differs
+	ColorStyle = get_theme_stylebox("panel", "Panel").duplicate()
+	$BG.add_theme_stylebox_override("panel", ColorStyle)
 	ColorStyle.set_bg_color(BASE_COLOR)
-	
+
 func _gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
@@ -24,22 +25,19 @@ func _gui_input(event):
 			AnimToggle()
 
 func AnimToggle(emit_signal = true):
-		
-	var T = Tween.new()
-	add_child(T)
+	var T = create_tween()
 	GlobalTime.SwipeEnabled = false
-	T.connect("tween_all_completed",self,"FinishAnim",[T])
+	T.connect("finished", Callable(self, "FinishAnim").bind(T))
 	if !is_Pressed:
-		T.interpolate_property($BG/Toggle,"rect_position:x",StartPos.x,$BG.rect_size.x-$BG/Toggle.rect_size.x-5,0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
-		T.interpolate_property(ColorStyle,"bg_color",ColorStyle.get_bg_color(),SELECTED_COLOR,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		T.tween_property($BG/Toggle, "position:x", $BG.size.x - $BG/Toggle.size.x - 5, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		T.tween_property(ColorStyle, "bg_color", SELECTED_COLOR, 0.3).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
 	else:
-		T.interpolate_property($BG/Toggle,"rect_position:x",$BG/Toggle.rect_position.x,5,0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
-		T.interpolate_property(ColorStyle,"bg_color",ColorStyle.get_bg_color(),BASE_COLOR,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		T.tween_property($BG/Toggle, "position:x", 5, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		T.tween_property(ColorStyle, "bg_color", BASE_COLOR, 0.3).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
 	is_Pressed = !is_Pressed
-	T.start()
 	if emit_signal:
-		emit_signal("OnToggle")
-	
-func FinishAnim(T):
+		OnToggle.emit()
+
+func FinishAnim(_T):
 	GlobalTime.SwipeEnabled = true
-	T.queue_free()
+	# No need to free T; create_tween() handles cleanup automatically

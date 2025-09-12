@@ -4,7 +4,7 @@ var KeyboardHeight = 0
 signal OnEntry(BtnText)
 
 func _ready():
-	KeyboardHeight = $Panel.rect_position.y
+	KeyboardHeight = $Panel.position.y
 	InitAllBtns()
 	$Panel.visible = false
 	
@@ -13,7 +13,7 @@ func InitAllBtns():
 		for btn in x.get_children():
 			if btn is Button:
 				btn.focus_mode = Control.FOCUS_NONE
-				btn.connect("pressed",self,"BtnPressed",[btn.Cmd])
+				btn.connect("pressed", Callable(self, "BtnPressed").bind(btn.Cmd))
 			
 func BtnPressed(btnText):
 	emit_signal("OnEntry",btnText)
@@ -31,11 +31,11 @@ func ShowModulate(exclude_buttons = ""):
 	GlobalTime.SwipeEnabled = false
 	var T = Tween.new()
 	var ScreenSize = get_viewport_rect().size.y
-	$Panel.rect_position.y = ScreenSize
+	$Panel.position.y = ScreenSize
 	$Panel.visible = true
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishedTween",[T])
-	T.interpolate_property($Panel,"rect_position:y",$Panel.rect_position.y,KeyboardHeight,0.2,Tween.TRANS_CIRC,Tween.EASE_OUT)
+	T.connect("tween_all_completed", Callable(self, "FinishedTween").bind(T))
+	T.interpolate_property($Panel,"position:y",$Panel.position.y,KeyboardHeight,0.2,Tween.TRANS_CIRC,Tween.EASE_OUT)
 	T.start()
 
 func HideModulate():
@@ -43,13 +43,13 @@ func HideModulate():
 	var T = Tween.new()
 	var ScreenSize = get_viewport_rect().size.y
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishedTweenAndQueue",[T])
-	T.interpolate_property($Panel,"rect_position:y",$Panel.rect_position.y,ScreenSize,0.2,Tween.TRANS_CIRC,Tween.EASE_IN)
+	T.connect("tween_all_completed", Callable(self, "FinishedTweenAndQueue").bind(T))
+	T.interpolate_property($Panel,"position:y",$Panel.position.y,ScreenSize,0.2,Tween.TRANS_CIRC,Tween.EASE_IN)
 	T.start()
 	
 func FinishedTween(T):
 # warning-ignore:return_value_discarded
-	connect("gui_input",self,"_on_NumpadKeyboard_gui_input")
+	connect("gui_input", Callable(self, "_on_NumpadKeyboard_gui_input"))
 	T.queue_free()
 	
 func FinishedTweenAndQueue(T):

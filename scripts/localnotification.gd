@@ -1,90 +1,117 @@
 extends Node
 
-signal device_token_received(token)
-signal enabled
-var _ln = null
+@warning_ignore("unused_signal")
+signal on_permission_request_completed()
 
-onready var _analytics := $'/root/analytics' if has_node('/root/analytics') else null
+var ln = null
 
-func _ready() -> void:
-	pause_mode = Node.PAUSE_MODE_PROCESS
+
+# Change this to _ready() if you want automatically init
+func init():
 	if Engine.has_singleton("LocalNotification"):
-		_ln = Engine.get_singleton("LocalNotification")
-	elif OS.get_name() == 'iOS':
-		_ln = load("res://addons/localnotification-ios/localnotification.gdns").new()
-		_ln.connect('notifications_enabled', self, '_on_notifications_enabled')
-		_ln.connect('device_token_received', self, '_on_device_token_received')
-	elif OS.get_name() == 'HTML5':
-		_ln = load("res://addons/localnotification-html5/HTML5NotificationsPlugin.gd").new()
-	if _ln == null:
-		push_warning('LocalNotification plugin not found!')
-	else:
-		print('LocalNotification plugin inited')
+		ln = Engine.get_singleton("LocalNotification")
+		init_signals()
 
-func init() -> void:
-	if _ln != null:
-		_ln.init()
 
-func show(message: String, title: String, interval: int, tag: int = 1, repeat_duration: int = 0) -> void:
-	if _ln != null:
-		if repeat_duration <= 0:
-			_ln.showLocalNotification(message, title, interval, tag)
-		else:
-			_ln.showRepeatingNotification(message, title, interval, tag, repeat_duration)
+func init_signals():
+	ln.connect("permission_request_completed", Callable(self, "_permission_request_completed"))
 
-func cancel(tag: int = 1) -> void:
-	if _ln != null:
-		_ln.cancelLocalNotification(tag)
 
-func cancel_all() -> void:
-	if _ln != null:
-		_ln.cancelAllNotifications()
+func _permission_request_completed():
+	emit_signal("on_permission_request_completed")
 
-func is_inited() -> bool:
-	if _ln != null:
-		return _ln.isInited()
-	else:
+
+func isPermissionGranted() -> bool:
+	if not ln:
+		not_found_plugin()
 		return false
+	
+	return ln.isPermissionGranted()
 
-func is_enabled() -> bool:
-	if _ln != null:
-		return _ln.isEnabled()
+
+func requestPermission():
+	if not ln:
+		not_found_plugin()
+		return
+	
+	ln.requestPermission()
+
+
+func openAppSetting():
+	if not ln:
+		not_found_plugin()
+		return
+	
+	ln.openAppSetting()
+
+
+func show(title, message, interval, tag):
+	if not ln:
+		not_found_plugin()
+		return
+	
+	ln.show(title, message, interval, tag)
+
+
+func showRepeating(title, message, interval, repeat_interval, tag):
+	if not ln:
+		not_found_plugin()
+		return
+	
+	ln.showRepeating(title, message, interval, repeat_interval, tag)
+
+
+func showDaily(title, message, at_hour, at_minute, tag):
+	if not ln:
+		not_found_plugin()
+		return
+	
+	if OS.get_name() == "iOS":
+		ln.showDaily(title, message, at_hour, at_minute, tag)
 	else:
-		return false
+		# This may not a properly and correct way but at least it work for me ATM.
+		# If you have any good solution, please help :D
+		ln.showRepeating(title, message,\
+			_generate_android_daily_notify_interval(at_hour, at_minute), 86400, tag)
 
-func register_remote_notification() -> void:
-	if _ln != null:
-		_ln.register_remote_notification()
 
-func get_device_token():
-	if _ln != null:
-		return _ln.get_device_token()
+func cancel(tag):
+	if not ln:
+		not_found_plugin()
+		return
+	
+	ln.cancel(tag)
+
+
+func not_found_plugin():
+	print('[LocalNotification] Not found plugin. Please ensure that you checked LocalNotification plugin in the export template')
+
+
+func _generate_android_daily_notify_interval(hour, minute):
+	var today_time = Time.get_datetime_dict_from_system()
+	today_time.hour = 0
+	today_time.minute = 0
+	today_time.second = 0
+	
+	var today_unix = Time.get_date_dict_from_unix_time(today_time)
+	var tomorrow_unix = today_unix + 86400
+	
+	var current_time = Time.get_time_dict_from_system()
+	today_time.hour = current_time.hour
+	today_time.minute = current_time.minute
+	today_time.second = current_time.second
+	var current_unix = Time.get_date_dict_from_unix_time(today_time)
+	
+	var remaining_unix = tomorrow_unix - current_unix
+
+	var r_hour = hour
+	var r_minute = minute
+	
+	# Today
+	today_unix += r_hour * 3600
+	today_unix += r_minute * 60
+	
+	if today_unix > current_unix && today_unix < tomorrow_unix:
+		return today_unix - current_unix
 	else:
-		return null
-
-func get_notification_data():
-	if _ln != null:
-		return _ln.get_notification_data()
-	else:
-		return null
-
-func get_deeplink_action():
-	if _ln != null:
-		return _ln.get_deeplink_action()
-	else:
-		return null
-
-func get_deeplink_uri():
-	if _ln != null:
-		return _ln.get_deeplink_uri()
-	else:
-		return null
-
-func _on_notifications_enabled() -> void:
-	if _analytics != null:
-		_analytics.event('notifications_enabled')
-	emit_signal('enabled')
-
-func _on_device_token_received(token) -> void:
-	#print('on_device_token_received: %s'%var2str(token))
-	emit_signal('device_token_received', token)
+		return remaining_unix + r_hour * 3600 + r_minute * 60

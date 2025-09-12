@@ -1,9 +1,9 @@
 extends Node
 
-export (bool) var ShowAds = false setget SetShowAds
-export (String, MULTILINE) var DontShowAdsOnDevices = "" setget SetDontShowAds
-export (int) var HowManyMonthsNoAds = 3 setget SetHowManyMonthsNoAds
-export (int) var MaxInistalarAds = 1 setget SetMaxInistalarAds
+@export var ShowAds: bool = false: set = SetShowAds
+@export var DontShowAdsOnDevices = "": set = SetDontShowAds
+@export var HowManyMonthsNoAds: int = 3: set = SetHowManyMonthsNoAds
+@export var MaxInistalarAds: int = 1: set = SetMaxInistalarAds
 
 var AdsInited = false
 var InstAdCounter = 0
@@ -50,24 +50,24 @@ func InitAds():
 		"iOS","Android":
 			AdsInited = true
 # warning-ignore:return_value_discarded
-			MobileAds.connect("consent_info_update_success",self,"consent_info_update_success")
+			MobileAds.connect("consent_info_update_success", Callable(self, "consent_info_update_success"))
 # warning-ignore:return_value_discarded
-			MobileAds.connect("consent_status_changed",self,"consent_status_changed")
+			MobileAds.connect("consent_status_changed", Callable(self, "consent_status_changed"))
 # warning-ignore:return_value_discarded
-			MobileAds.connect("consent_form_load_failure",self,"consent_form_load_failure")
+			MobileAds.connect("consent_form_load_failure", Callable(self, "consent_form_load_failure"))
 # warning-ignore:return_value_discarded
-			MobileAds.connect("consent_info_update_failure",self,"consent_form_load_failure")
+			MobileAds.connect("consent_info_update_failure", Callable(self, "consent_form_load_failure"))
 # warning-ignore:return_value_discarded
-			MobileAds.connect("initialization_complete",self,"AdMobInitComplete")
+			MobileAds.connect("initialization_complete", Callable(self, "AdMobInitComplete"))
 # warning-ignore:return_value_discarded
-			MobileAds.connect("banner_loaded",self,"BannerLoaded")
+			MobileAds.connect("banner_loaded", Callable(self, "BannerLoaded"))
 # warning-ignore:return_value_discarded
-			MobileAds.connect("banner_failed_to_load",self,"banner_failed_to_load")
+			MobileAds.connect("banner_failed_to_load", Callable(self, "banner_failed_to_load"))
 # warning-ignore:return_value_discarded
-			MobileAds.connect("interstitial_closed",self,"interstitial_closed")
+			MobileAds.connect("interstitial_closed", Callable(self, "interstitial_closed"))
 # warning-ignore:return_value_discarded
 			MobileAds.request_user_consent()
-			GlobalTime.connect("ShowInterstitalAd",self,"ShowInterstitalAd")
+			GlobalTime.connect("ShowInterstitalAd", Callable(self, "ShowInterstitalAd"))
 
 func interstitial_closed():
 	MobileAds.load_interstitial()

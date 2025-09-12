@@ -4,75 +4,67 @@ var CurNode = null
 
 func _ready():
 	GlobalTime.ToolHandler = self
-# warning-ignore:return_value_discarded
-	GlobalTime.connect("ShowOnlyScreen",self,"ShowOnly")
-# warning-ignore:return_value_discarded
-	GlobalTime.connect("NoAnimShowWindow",self,"NoAnimShowWindow")
+	# warning-ignore:return_value_discarded
+	GlobalTime.connect("ShowOnlyScreen", Callable(self, "ShowOnly"))
+	# warning-ignore:return_value_discarded
+	GlobalTime.connect("NoAnimShowWindow", Callable(self, "NoAnimShowWindow"))
 	GlobalTime.emit_signal("app_loaded")
-# warning-ignore:return_value_discarded
-	$SwipeDetector.connect("Swiped",self,"CheckForSwipe")
+	# warning-ignore:return_value_discarded
+	$SwipeDetector.connect("Swiped", Callable(self, "CheckForSwipe"))
 	HideAll()
 	ShowOnly("TimeScreen")
 	ResizeAllForAds()
-	
+
 func ResizeAllForAds():
-	if !$AdHandler.AdsInited:
-		return
-	var MoveAdsYValue = 90
-	$BottomUI.rect_size.y += MoveAdsYValue
-	$BottomUI.rect_position.y -= MoveAdsYValue
-	$CalendarScreen/Calendar.rect_size.y -= MoveAdsYValue
-	$CalendarScreen/List.rect_size.y -= MoveAdsYValue
-	$TotalsScreen/Scroll.rect_size.y -= MoveAdsYValue
-	$SettingsScreen/ScrollContainer.rect_size.y -= MoveAdsYValue
-	$TotalsScreen/TotEarned.rect_position.y -= MoveAdsYValue
+	var MoveAdsYValue = 0
+	$BottomUI.size.y += MoveAdsYValue
+	$BottomUI.position.y -= MoveAdsYValue
+	$CalendarScreen/Calendar.size.y -= MoveAdsYValue
+	$CalendarScreen/List.size.y -= MoveAdsYValue
+	$TotalsScreen/Scroll.size.y -= MoveAdsYValue
+	$SettingsScreen/ScrollContainer.size.y -= MoveAdsYValue
+	$TotalsScreen/TotEarned.position.y -= MoveAdsYValue
 	$TopScreenPermanent/CurrentScreen.CenterPos.y -= MoveAdsYValue
-	
-	
+
 func CheckForSwipe(Dir):
-	var T = Tween.new()
-	add_child(T)
+	var T = create_tween()
 	var NextNode = GetNextNodeToSwipe()
 	var PrevNode = GetPrevNodeToSwipe()
-# warning-ignore:shadowed_variable
 	var CurNode = GetCurNodeToSwipe()
 
 	match Dir:
 		"LEFT":
 			if NextNode != null:
 				FindBtnByScreen(NextNode)
-				T.connect("tween_all_completed",self,"FinishedTweenSwipe",[T,CurNode])
-				NextNode.rect_position.x = NextNode.rect_size.x
+				T.connect("finished", Callable(self, "FinishedTweenSwipe").bind(CurNode))
+				NextNode.position.x = NextNode.size.x
 				NextNode.visible = true
-				NextNode.rect_scale = Vector2(1,1)
-				T.interpolate_property(NextNode,"rect_position:x",NextNode.rect_position.x,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
-				T.interpolate_property(CurNode,"rect_position:x",CurNode.rect_position.x,-CurNode.rect_size.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+				NextNode.scale = Vector2(1,1)
+				T.tween_property(NextNode, "position:x", 0, 0.2).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
+				T.tween_property(CurNode, "position:x", -CurNode.size.x, 0.2).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
 			else:
-				CurNode.rect_scale = Vector2(1,1)
-				T.connect("tween_all_completed",self,"FinishedTweenSwipe",[T,null])
-				T.interpolate_property(CurNode,"rect_position:x",0,-100,0.1,Tween.TRANS_LINEAR,Tween.EASE_OUT)
-				T.interpolate_property(CurNode,"rect_position:x",-100,0,0.1,Tween.TRANS_CUBIC,Tween.EASE_OUT,0.1)
+				CurNode.scale = Vector2(1,1)
+				T.connect("finished", Callable(self, "FinishedTweenSwipe").bind(null))
+				T.tween_property(CurNode, "position:x", -100, 0.1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
+				T.tween_property(CurNode, "position:x", 0, 0.1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_delay(0.1)
 		"RIGHT":
-			
 			if PrevNode != null:
 				FindBtnByScreen(PrevNode)
-				T.connect("tween_all_completed",self,"FinishedTweenSwipe",[T,CurNode])
-				PrevNode.rect_position.x = -PrevNode.rect_size.x
+				T.connect("finished", Callable(self, "FinishedTweenSwipe").bind(CurNode))
+				PrevNode.position.x = -PrevNode.size.x
 				PrevNode.visible = true
-				T.interpolate_property(PrevNode,"rect_position:x",PrevNode.rect_position.x,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
-				T.interpolate_property(CurNode,"rect_position:x",CurNode.rect_position.x,CurNode.rect_size.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+				T.tween_property(PrevNode, "position:x", 0, 0.2).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
+				T.tween_property(CurNode, "position:x", CurNode.size.x, 0.2).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
 			else:
-				T.connect("tween_all_completed",self,"FinishedTweenSwipe",[T,null])
-				T.interpolate_property(CurNode,"rect_position:x",0,100,0.1,Tween.TRANS_LINEAR,Tween.EASE_OUT)
-				T.interpolate_property(CurNode,"rect_position:x",100,0,0.1,Tween.TRANS_CUBIC,Tween.EASE_OUT,0.1)
-	T.start()
+				T.connect("finished", Callable(self, "FinishedTweenSwipe").bind(null))
+				T.tween_property(CurNode, "position:x", 100, 0.1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
+				T.tween_property(CurNode, "position:x", 0, 0.1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_delay(0.1)
 
-			
 func FindBtnByScreen(ScreenNode):
 	for x in $BottomUI/HBoxContainer.get_children():
 		if ScreenNode.name == x.name:
 			x.BtnToggled(true)
-			GlobalTime.emit_signal("BtnGroupPressed",x,x.BtnGroup)
+			GlobalTime.emit_signal("BtnGroupPressed", x, x.BtnGroup)
 		else:
 			x.BtnToggled(false)
 
@@ -87,14 +79,14 @@ func GetNextNodeToSwipe():
 			if x.visible:
 				GOForNext = true
 	return NextNode
-	
+
 func GetCurNodeToSwipe():
 	for x in get_children():
 		if "Screen" in x.name && "HourEditorScreen" != x.name && not "Permanent" in x.name && "SalarySimulatorScreen" != x.name:
 			if x.visible:
 				return x
 	return null
-	
+
 func GetPrevNodeToSwipe():
 	var PrevNode = null
 	for x in get_children():
@@ -102,16 +94,14 @@ func GetPrevNodeToSwipe():
 			if x.visible:
 				return PrevNode
 			PrevNode = x
-		
 	return null
-	
-func FinishedTweenSwipe(T,NodeToReturnBack):
-	T.queue_free()
+
+func FinishedTweenSwipe(NodeToReturnBack):
 	if NodeToReturnBack == null:
 		return
 	NodeToReturnBack.visible = false
-	NodeToReturnBack.rect_position = Vector2.ZERO
-	
+	NodeToReturnBack.position = Vector2.ZERO
+
 func NoAnimShowWindow(WindowName):
 	CurNode = GetCurNodeToSwipe()
 	for x in get_children():
@@ -120,7 +110,6 @@ func NoAnimShowWindow(WindowName):
 				x.visible = true
 				if CurNode == null:
 					CurNode = x
-					
 				else:
 					CurNode.visible = false
 					CurNode = x
@@ -128,18 +117,15 @@ func NoAnimShowWindow(WindowName):
 					FindBtnByScreen(CurNode)
 			else:
 				x.visible = false
-				
-			
+
 func HideAll():
 	for x in get_children():
 		if "Screen" in x.name && not "Permanent" in x.name:
 			x.visible = false
 
- 
 func ShowOnly(WindowName):
 	if WindowName == "TimeScreen":
 		$EffectHandler.app_loaded()
-	FinalizeTweens()
 	CurNode = GetCurNodeToSwipe()
 	for x in get_children():
 		if "Screen" in x.name && not "Permanent" in x.name:
@@ -147,59 +133,42 @@ func ShowOnly(WindowName):
 				if CurNode == x:
 					return
 				x.visible = true
-				
 				if CurNode != null:
-					AnimateWindow(CurNode,false)
+					AnimateWindow(CurNode, false)
 				CurNode = x
-				AnimateWindow(CurNode,true)
+				AnimateWindow(CurNode, true)
 			else:
 				pass
-				#x.visible = false
-				
-func FinalizeTweens():
-	for x in get_children():
-		if x is Tween:
-			if x.is_active():
-				x.reset_all()
-				x.stop_all()
-				
-func AnimateWindow(WindowNode,In):
-	var T = Tween.new()
-	add_child(T)
-		
-	WindowNode.rect_pivot_offset = WindowNode.rect_size / 2
-	if In:
-		T.connect("tween_all_completed",self,"FinishTween",[T])
-		WindowNode.rect_position = Vector2.ZERO
-		WindowNode.rect_scale = Vector2(0.5,0.5)
-		WindowNode.modulate = Color(1,1,1,0)
-		T.interpolate_property(WindowNode,"rect_scale",WindowNode.rect_scale,Vector2(1,1),0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
-		T.interpolate_property(WindowNode,"modulate",WindowNode.modulate,Color(1,1,1,1),0.2,Tween.TRANS_SINE,Tween.EASE_OUT)
-	else:
-		T.connect("tween_all_completed",self,"FinishTweenAndHide",[T,WindowNode])
-		T.interpolate_property(WindowNode,"modulate",WindowNode.modulate,Color(1,1,1,0),0.2,Tween.TRANS_SINE,Tween.EASE_OUT)
-	T.start()
-	
-func FinishTween(T):
-	T.queue_free()
 
-func FinishTweenAndHide(T,NodeToHide):
-	T.queue_free()
+func AnimateWindow(WindowNode, In):
+	var T = create_tween()
+	WindowNode.pivot_offset = WindowNode.size / 2
+	if In:
+		T.connect("finished", Callable(self, "FinishTween"))
+		WindowNode.position = Vector2.ZERO
+		WindowNode.scale = Vector2(0.5, 0.5)
+		WindowNode.modulate = Color(1, 1, 1, 0)
+		T.tween_property(WindowNode, "scale", Vector2(1, 1), 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		T.tween_property(WindowNode, "modulate", Color(1, 1, 1, 1), 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	else:
+		T.connect("finished", Callable(self, "FinishTweenAndHide").bind(WindowNode))
+		T.tween_property(WindowNode, "modulate", Color(1, 1, 1, 0), 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func FinishTween():
+	pass
+
+func FinishTweenAndHide(NodeToHide):
 	NodeToHide.visible = false
-	NodeToHide.modulate = Color(1,1,1,1)
-	
+	NodeToHide.modulate = Color(1, 1, 1, 1)
+
 func _on_CheckIn_BtnPressed():
 	ShowOnly("TimeScreen")
 
 func _on_Calendar_BtnPressed():
 	ShowOnly("CalendarScreen")
 
-
 func _on_Totals_BtnPressed():
 	ShowOnly("TotalsScreen")
 
-
 func _on_Settings_BtnPressed():
 	ShowOnly("SettingsScreen")
-
-

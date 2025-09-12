@@ -1,35 +1,35 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://dvj1gjas7dvw2"]
 
-[ext_resource path="res://Prefabs/Styles/Panel/SettingPanel.tres" type="StyleBox" id=1]
-[ext_resource path="res://Prefabs/Styles/Fonts/Size30Bold.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Prefabs/Elements/AppSettings.gd" type="Script" id=4]
-[ext_resource path="res://Prefabs/Elements/ToggleBetween.tscn" type="PackedScene" id=5]
+[ext_resource type="StyleBox" path="res://Prefabs/Styles/Panel/SettingPanel.tres" id="1"]
+[ext_resource type="FontFile" path="res://Prefabs/Styles/Fonts/Size30Bold.tres" id="2"]
+[ext_resource type="Script" uid="uid://cgj05h5xxpypb" path="res://Prefabs/Elements/AppSettings.gd" id="4"]
+[ext_resource type="PackedScene" path="res://Prefabs/Elements/ToggleBetween.tscn" id="5"]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.14902, 0.6, 0.984314, 1 )
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.14902, 0.6, 0.984314, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color( 0.737255, 0.878431, 0.992157, 1 )
+border_color = Color(0.737255, 0.878431, 0.992157, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [node name="AppSettings" type="Panel"]
-margin_right = 710.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 100 )
+offset_right = 710.0
+offset_bottom = 100.0
+custom_minimum_size = Vector2(0, 100)
 mouse_filter = 2
-custom_styles/panel = ExtResource( 1 )
-script = ExtResource( 4 )
+theme_override_styles/panel = ExtResource("1")
+script = ExtResource("4")
 
 [node name="Label" type="Label" parent="."]
-margin_right = 710.0
-margin_bottom = 42.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 2 )
+offset_right = 710.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.498039, 0.768627, 0.992157, 1)
+theme_override_fonts/font = ExtResource("2")
 text = "Dark mode"
 align = 1
 __meta__ = {
@@ -38,14 +38,14 @@ __meta__ = {
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
-[node name="ToggleBetween" parent="." instance=ExtResource( 5 )]
-margin_left = -81.0
-margin_top = 51.0
-margin_right = 69.0
-margin_bottom = 87.0
-custom_styles/panel = SubResource( 1 )
+[node name="ToggleBetween" parent="." instance=ExtResource("5")]
+offset_left = -81.0
+offset_top = 51.0
+offset_right = 69.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("1")
 LeftText = "Enable"
 RightText = "Disable"
-FontColor = Color( 0.14902, 0.6, 0.984314, 1 )
+FontColor = Color(0.14902, 0.6, 0.984314, 1)
 
 [connection signal="OnToggle" from="ToggleBetween" to="." method="_on_ToggleBetween_OnToggle"]

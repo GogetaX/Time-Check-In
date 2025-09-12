@@ -3,7 +3,7 @@ extends RichTextLabel
 var HebrewDB = "קראטוןםפשדגכעיחלךףזסבהנמצתץ"
 
 func _ready():
-	bbcode_text = TranslationServer.translate(bbcode_text)
+	text = TranslationServer.translate(text)
 	#connect("draw",self,"SyncLang")
 
 func SyncLang():
@@ -44,15 +44,15 @@ func SyncLang():
 	print("After:")
 	#print(output)
 	res = ""
-	bbcode_text = "[right]"
+	text = "[right]"
 	var tot_lines = 0
 	for Line in range(t.size()):
 		for x in output:
 			if x[0] == Line:
-				bbcode_text = x[1] + bbcode_text
+				text = x[1] + text
 				tot_lines += x[1].length()
 				if tot_lines >= MaxLineWidth:
-					bbcode_text += "\n"
+					text += "\n"
 					tot_lines = 0
 	return
 

@@ -8,7 +8,7 @@ func _ready():
 func InitLanguangeButton():
 	for x in $Lang.get_children():
 		if not x is Timer:
-			x.connect("index_pressed",self,"SelectLang",[x])
+			x.connect("index_pressed", Callable(self, "SelectLang").bind(x))
 
 func FindItemIndexByLang(Lang):
 	for x in $Lang.get_popup().get_item_count():

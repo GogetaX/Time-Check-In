@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://jybkian6n2yp"]
 
-[ext_resource path="res://Prefabs/Styles/Fonts/Size40Bold.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Prefabs/Elements/PopupBtn.gd" type="Script" id=3]
+[ext_resource type="FontFile" path="res://Prefabs/Styles/Fonts/Size40Bold.tres" id="1"]
+[ext_resource type="Script" uid="uid://mskvegqbtu1v" path="res://Prefabs/Elements/PopupBtn.gd" id="3"]
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id="2"]
 code = "shader_type canvas_item;
 
-uniform vec4 u_color_key : hint_color;
-uniform vec4 u_replacement_color : hint_color;
+uniform vec4 u_color_key : source_color;
+uniform vec4 u_replacement_color : source_color;
 
 void fragment() {
     vec4 col = texture(TEXTURE, UV);
@@ -22,30 +22,30 @@ void fragment() {
 	COLOR.a = alpha;
 }"
 
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
-shader_param/u_color_key = Color( 0, 0, 0, 1 )
-shader_param/u_replacement_color = Color( 0.498039, 0.768627, 0.992157, 1 )
+[sub_resource type="ShaderMaterial" id="3"]
+shader = SubResource("2")
+shader_parameter/u_color_key = Color(0, 0, 0, 1)
+shader_parameter/u_replacement_color = Color(0.498039, 0.768627, 0.992157, 1)
 
 [node name="NoBtn" type="Button"]
-margin_right = 300.0
-margin_bottom = 100.0
+offset_right = 300.0
+offset_bottom = 100.0
 size_flags_horizontal = 3
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
+theme_override_colors/font_color = Color(0.498039, 0.768627, 0.992157, 1)
+theme_override_fonts/font = ExtResource("1")
 text = "No"
 flat = true
-script = ExtResource( 3 )
+script = ExtResource("3")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Icon" type="TextureRect" parent="."]
-material = SubResource( 3 )
+material = SubResource("3")
 anchor_bottom = 1.0
-margin_left = 24.0
-margin_right = 64.0
-rect_min_size = Vector2( 40, 40 )
+offset_left = 24.0
+offset_right = 64.0
+custom_minimum_size = Vector2(40, 40)
 expand = true
 stretch_mode = 6
 __meta__ = {

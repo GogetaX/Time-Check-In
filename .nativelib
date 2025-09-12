@@ -13,48 +13,6 @@
             ],
             "dependencies": []
         },
-        "applovinmax": {
-            "version": "0.1.2",
-            "platforms": [
-                "all",
-                "ios",
-                "android"
-            ],
-            "dependencies": [
-                "nativelib-export@0.2.0"
-            ],
-            "variables": {
-                "AppLovin/SdkKey": {
-                    "info": "Set your SDK key here"
-                }
-            },
-            "autoload": {
-                "applovin_max": "*res://scripts/applovin_max.gd"
-            }
-        },
-        "ios-att": {
-            "version": "1.0.1",
-            "platforms": [
-                "all",
-                "ios"
-            ],
-            "dependencies": [
-                "nativelib-export@0.2.0"
-            ],
-            "autoload": {
-                "ATT": "*res://scripts/att.gd"
-            }
-        },
-        "applovinmax-facebook": {
-            "version": "0.1.1",
-            "platforms": [
-                "android",
-                "ios"
-            ],
-            "dependencies": [
-                "applovinmax@0.1.1"
-            ]
-        },
         "local-notification": {
             "version": "0.2.2",
             "platforms": [

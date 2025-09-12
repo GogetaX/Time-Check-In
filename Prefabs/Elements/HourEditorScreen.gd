@@ -7,7 +7,7 @@ var CustomShowScreen = "CalendarScreen"
 
 func _ready():
 # warning-ignore:return_value_discarded
-	connect("visibility_changed",self,"visibility_changed")
+	connect("visibility_changed", Callable(self, "visibility_changed"))
 	
 func visibility_changed():
 	if visible:
@@ -28,7 +28,7 @@ func SyncDate(EditingDate,CloseToScreen = "CalendarScreen"):
 		if x == CurDate["day"]:
 			var Checks = 1
 			while DateToEdit[x].has("check_in"+String(Checks)):
-				var CheckInEditor = CheckInEditorInstance.instance()
+				var CheckInEditor = CheckInEditorInstance.instantiate()
 				$VBoxContainer.add_child(CheckInEditor)
 				CheckInEditor.ShowDate(Delay,x,DateToEdit[x],Checks)
 				Delay+=0.1
@@ -68,7 +68,7 @@ func _on_Accept_pressed():
 	_on_Decline_pressed()
 
 func CheckIfToday(Date):
-	var CurDay = OS.get_datetime()
+	var CurDay = Time.get_datetime_dict_from_system()
 	if CurDay["day"] == Date["day"] && CurDay["month"] == Date["month"] && CurDay["year"] == Date["year"]:
 		return true
 	return false

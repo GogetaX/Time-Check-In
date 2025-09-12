@@ -1,8 +1,8 @@
-[gd_resource type="DynamicFont" load_steps=4 format=2]
+[gd_resource type="FontFile" load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Fonts/OpenSans-Medium.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Fonts/coolvetica rg it.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Fonts/LateefRegOT.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/OpenSans-Medium.ttf" type="FontFile" id=1]
+[ext_resource path="res://Assets/Fonts/coolvetica rg it.otf" type="FontFile" id=2]
+[ext_resource path="res://Assets/Fonts/LateefRegOT.ttf" type="FontFile" id=3]
 
 [resource]
 size = 40

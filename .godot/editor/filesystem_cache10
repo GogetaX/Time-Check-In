@@ -1,0 +1,517 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1750271194
+default_env.tres::Environment/Environment::6812466248915789433::1745610547::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile/TextFile::-1::1737054039::0::1::::<><><>0<>0<><>::
+icon.png::CompressedTexture2D/CompressedTexture2D::3067895830586928879::1654533908::1750271171::1::::<><><>0<>0<>ec2e644866016cd4b54cfde0339600db<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+MACAPPSTORE.md::TextFile/TextFile::-1::1697147309::0::1::::<><><>0<>0<><>::
+README.md::TextFile/TextFile::-1::1697147309::0::1::::<><><>0<>0<><>::
+::res://android/::1736925858
+::res://android/plugins/::1736928012
+::res://Assets/::1669062691
+::res://Assets/ExportIcons/::1750271172
+64Transparent.png::CompressedTexture2D/CompressedTexture2D::4769233732350865276::1655302369::1750271172::1::::<><><>0<>0<>c5e233f9795b9ee01848b2492b9fbf40<>res://.godot/imported/64Transparent.png-913b35b6e62f23b6bfe5421b73c42d81.ctex::
+76.png::CompressedTexture2D/CompressedTexture2D::3869592577070691595::1655302341::1750271172::1::::<><><>0<>0<>f08b7c96326e16b3699c950afd954c90<>res://.godot/imported/76.png-deb46d68391c52a65adf83e42c671069.ctex::
+120.png::CompressedTexture2D/CompressedTexture2D::2989208914931406511::1655302355::1750271172::1::::<><><>0<>0<>b33f4d5fe4f031ce6229a9929a78b6e8<>res://.godot/imported/120.png-ea33b962044c962ab46e8ecbdc3ef905.ctex::
+200Transparent.png::CompressedTexture2D/CompressedTexture2D::419541926565259173::1655302304::1750271172::1::::<><><>0<>0<>10f0d085c5b602be106fe660057eb8b0<>res://.godot/imported/200Transparent.png-c0ac43f3c7419d034961e3c68e9205e8.ctex::
+512.png::CompressedTexture2D/CompressedTexture2D::5434059038122336258::1655392152::1750271172::1::::<><><>0<>0<>c78b814d5d08c9db3708aeeaf29ffaf8<>res://.godot/imported/512.png-60468659668d54b8605f5642d5e4289c.ctex::
+1024.png::CompressedTexture2D/CompressedTexture2D::8411070045555992049::1655302327::1750271172::1::::<><><>0<>0<>968fd2e3fc822b96b4f2d7dbfe87a88a<>res://.godot/imported/1024.png-0303c376ea4f765c43f6b5cf41feddcf.ctex::
+::res://Assets/Flags/::1750271172
+european-union.png::CompressedTexture2D/CompressedTexture2D::7968014546983324237::1655839443::1750271172::1::::<><><>0<>0<>8a6c6488a5d004209df5ddaa93b080d4<>res://.godot/imported/european-union.png-ce5f47bd09a2f77b9250a95795f2f7ed.ctex::
+india.png::CompressedTexture2D/CompressedTexture2D::7772832651628638778::1667165594::1750271172::1::::<><><>0<>0<>4a43165a72d8b5830d6656330a75f0b6<>res://.godot/imported/india.png-6363f94160754cd0602a3166e96aa9d0.ctex::
+israel.png::CompressedTexture2D/CompressedTexture2D::9072049029313969759::1654861592::1750271172::1::::<><><>0<>0<>f1af053d7ad5c85cfbddf3b5b9dcc5a9<>res://.godot/imported/israel.png-fb70848a80ef8a04e8ad24bf3d5f5a26.ctex::
+qatar.png::CompressedTexture2D/CompressedTexture2D::4231524831805160426::1680625100::1750271172::1::::<><><>0<>0<>eff2e8ca067a83a6fce46c2d6d64e396<>res://.godot/imported/qatar.png-d69ac553672275d48bba6997b650d16d.ctex::
+russia.png::CompressedTexture2D/CompressedTexture2D::8657638279249828691::1655566009::1750271172::1::::<><><>0<>0<>338bf54fb7f51aa84a38609192ee5ec2<>res://.godot/imported/russia.png-1c7391f02c6d75c91aa755a0e7e153f3.ctex::
+united-states.png::CompressedTexture2D/CompressedTexture2D::8013708106473296788::1655542154::1750271172::1::::<><><>0<>0<>f60352b97f25bef30ebac077fe62b121<>res://.godot/imported/united-states.png-6631e644dfed36926cb093a92c5701d2.ctex::
+::res://Assets/Fonts/::1750271170
+arial.ttf::FontFile/FontFile::6733225460405633945::1663295677::1750271170::1::::<><><>0<>0<>5cb193b9ff1029598cb88c8eb4efae49<>res://.godot/imported/arial.ttf-c00e8900b16d022b531a53e0d52284a7.fontdata::
+coolvetica rg it.otf::FontFile/FontFile::8309753143438216658::1648594344::1750271170::1::::<><><>0<>0<>3616062eb3a4ce5539f8b7b0d288652e<>res://.godot/imported/coolvetica rg it.otf-026630bbbfea632fbb16ce97ba2cd764.fontdata::
+LateefRegOT.ttf::FontFile/FontFile::4024172104602170011::1680600144::1750271170::1::::<><><>0<>0<>6994ccb78bfa2c7b15e3c044759ed35b<>res://.godot/imported/LateefRegOT.ttf-d612006ef55ced4cfa0ba5c88c81abc3.fontdata::
+OpenSans-Bold.ttf::FontFile/FontFile::3583699676030208691::1296594000::1750271170::1::::<><><>0<>0<>1498b52e3acb1ff48659ac2415422904<>res://.godot/imported/OpenSans-Bold.ttf-1bf98c3af61f7b2453b5a633611022f1.fontdata::
+OpenSans-Medium.ttf::FontFile/FontFile::2219227180995651578::1296594000::1750271170::1::::<><><>0<>0<>e7ef5f59219e7a31d9608f5a444d2ac9<>res://.godot/imported/OpenSans-Medium.ttf-b2d2ca6f70d8c2ac59c12e1f77e9119f.fontdata::
+Roboto-Bold.ttf::FontFile/FontFile::7786763949879301457::1322561816::1750271170::1::::<><><>0<>0<>f1ec33c624323160f420abc2ca0b4bff<>res://.godot/imported/Roboto-Bold.ttf-527056a85f739f06eee65781de64b7c7.fontdata::
+Roboto-Medium.ttf::FontFile/FontFile::2659447273245428093::1322561818::1750271170::1::::<><><>0<>0<>dd520aad02519bd59ab494191f94f79a<>res://.godot/imported/Roboto-Medium.ttf-bd9a980b534560b5b7fa1543e7ba466c.fontdata::
+::res://Assets/Icons/::1750271172
+applause.png::CompressedTexture2D/CompressedTexture2D::548608532864857549::1663010130::1750271172::1::::<><><>0<>0<>e12577c83df0e5aba5eac9b1c8b1f380<>res://.godot/imported/applause.png-a7d4472c0ad38a45883c6375a501253f.ctex::
+backspace.png::CompressedTexture2D/CompressedTexture2D::4291544365383113414::1664543824::1750271172::1::::<><><>0<>0<>8f18d63a871fbc79a76ec2ef27929cb0<>res://.godot/imported/backspace.png-7e11a223999f6753e970d5ad91d11444.ctex::
+bag.png::CompressedTexture2D/CompressedTexture2D::6306283917139584182::1669364505::1750271172::1::::<><><>0<>0<>58900454cae70a71e4ba9b1674402575<>res://.godot/imported/bag.png-32bf3c0cd22a81187a88aad6d622433f.ctex::
+check-mark.png::CompressedTexture2D/CompressedTexture2D::6511123723495663629::1655142412::1750271172::1::::<><><>0<>0<>123a8cf42519260de56b3fd870cd84ea<>res://.godot/imported/check-mark.png-980ee38758c9dc68fb5d88ec8fc24374.ctex::
+choice.png::CompressedTexture2D/CompressedTexture2D::3470049710097477566::1669453318::1750271172::1::::<><><>0<>0<>685a0d0cfc0ede2b32e80094fbd44be6<>res://.godot/imported/choice.png-827b91702703b90307297aa466effc9f.ctex::
+clapping.png::CompressedTexture2D/CompressedTexture2D::2838962620401914641::1663008980::1750271172::1::::<><><>0<>0<>e2c3e694a927be7332d714b46bfae8b0<>res://.godot/imported/clapping.png-d64fc9fda402d2eddaf9b92d4295de89.ctex::
+confusion.png::CompressedTexture2D/CompressedTexture2D::8957192572487910071::1675271455::1750271172::1::::<><><>0<>0<>09c5c1f8a865c1055c88946b5b852345<>res://.godot/imported/confusion.png-a86c9d32c683b8920520d393c57ac7c8.ctex::
+day.png::CompressedTexture2D/CompressedTexture2D::4905320732160418922::1654934957::1750271172::1::::<><><>0<>0<>c4774cb6e228cf9721302db5dd3d67c7<>res://.godot/imported/day.png-a88f38967411a3f2c4e12b879d8f6cfb.ctex::
+down-arrow.png::CompressedTexture2D/CompressedTexture2D::1953592620629177578::1654811802::1750271172::1::::<><><>0<>0<>6e6fce48adf30947ba9d0de8d99ac2ac<>res://.godot/imported/down-arrow.png-2ab4320041de76f7c7b47636c6e32bce.ctex::
+editing.png::CompressedTexture2D/CompressedTexture2D::6168884512032296181::1662393331::1750271172::1::::<><><>0<>0<>71a29ebdfd7773c14bb9d0e0dfdc1b5d<>res://.godot/imported/editing.png-bbabc08108661cdee8c51fc44c40d984.ctex::
+Ellipse 1.png::CompressedTexture2D/CompressedTexture2D::1248563346652846192::1662477009::1750271172::1::::<><><>0<>0<>db6ad629b458efd53156301c21b38ea1<>res://.godot/imported/Ellipse 1.png-86b5df7b9af3577bac4f2eb88c6ba686.ctex::
+email.png::CompressedTexture2D/CompressedTexture2D::4724573327438477196::1667652800::1750271172::1::::<><><>0<>0<>bf370632fde26015a64172655a25768d<>res://.godot/imported/email.png-ff6063d8413e7eab5be75c234b7a7f3a.ctex::
+enter.png::CompressedTexture2D/CompressedTexture2D::1592488479180722343::1664543913::1750271172::1::::<><><>0<>0<>4620c49d37e33e371ed8850f0a4a0a2c<>res://.godot/imported/enter.png-d69b3d93819f955a57040d525082552b.ctex::
+export.png::CompressedTexture2D/CompressedTexture2D::6737346185942984762::1667646100::1750271172::1::::<><><>0<>0<>954353e8e177e0eedda2603195c72988<>res://.godot/imported/export.png-b5a85ee6a39c667e999431e4fc4b3fb9.ctex::
+fast-backward-double-left-arrow-symbol.png::CompressedTexture2D/CompressedTexture2D::2450661053361421669::1654615999::1750271172::1::::<><><>0<>0<>786c7c94901526936425973dbd41930f<>res://.godot/imported/fast-backward-double-left-arrow-symbol.png-a99d9d1da6cf7916e75a7d99b1800022.ctex::
+fast-backward.png::CompressedTexture2D/CompressedTexture2D::6665672786773746672::1654616020::1750271172::1::::<><><>0<>0<>2f40c295f0aa3976ef7798db7caf094d<>res://.godot/imported/fast-backward.png-7a8606f1b0d1b74a2d048af1e41dcd0e.ctex::
+fast-forward-button.png::CompressedTexture2D/CompressedTexture2D::2580296545427547416::1654617276::1750271172::1::::<><><>0<>0<>6c1925ae0219e55a81359ba64f3359e4<>res://.godot/imported/fast-forward-button.png-af056260f9ce97a6ffd807fc386bb994.ctex::
+fast-forward.png::CompressedTexture2D/CompressedTexture2D::8445463977838171840::1654615837::1750271172::1::::<><><>0<>0<>6ebedca95ceeb772152be74bd8ffe4c4<>res://.godot/imported/fast-forward.png-e164e7c4c38fe20a8637593b1aaa489c.ctex::
+female.png::CompressedTexture2D/CompressedTexture2D::5055860521792242368::1659086794::1750271172::1::::<><><>0<>0<>1402f45d58c71382196e155aa964916d<>res://.godot/imported/female.png-051443bbe32b61bcb289f9956c003326.ctex::
+hard-work.png::CompressedTexture2D/CompressedTexture2D::210227000103347399::1654935194::1750271172::1::::<><><>0<>0<>e1289a17b6f1127b1cdbdc2ad0e1020a<>res://.godot/imported/hard-work.png-9c232b3fa8d3f9dcb910cb333e7897eb.ctex::
+holidays.png::CompressedTexture2D/CompressedTexture2D::7096070465793666674::1654935152::1750271172::1::::<><><>0<>0<>bb711c87249c55e46ca0828848cc4361<>res://.godot/imported/holidays.png-fad8bf33e13d5be0e868c321a1694704.ctex::
+info (1).png::CompressedTexture2D/CompressedTexture2D::3008502724894306448::1659098826::1750271172::1::::<><><>0<>0<>936e70f745c54dd73a517064c1356dc7<>res://.godot/imported/info (1).png-cf425214b1af8b73056331969a39d758.ctex::
+info.png::CompressedTexture2D/CompressedTexture2D::5543481605438885196::1659098763::1750271172::1::::<><><>0<>0<>ada946b9575d158dbc2fde595d378505<>res://.godot/imported/info.png-d12c8b9e33822d8eecb8f89406eb3a3b.ctex::
+information.png::CompressedTexture2D/CompressedTexture2D::6195747673367792947::1659098641::1750271172::1::::<><><>0<>0<>2ea33846538b49b59a67b3f813023c86<>res://.godot/imported/information.png-e8973c980258f11d1506b014495c5bd7.ctex::
+left-arrow.png::CompressedTexture2D/CompressedTexture2D::601324925547505737::1654616054::1750271172::1::::<><><>0<>0<>ff705f37807d75fdc31a0c6b674b7c0d<>res://.godot/imported/left-arrow.png-3e2c5bdeda9b9e59ed1d1c625c0701cb.ctex::
+login.png::CompressedTexture2D/CompressedTexture2D::3631302310634951240::1664544226::1750271172::1::::<><><>0<>0<>58857392a58a8f1d48c5682a80e10bd1<>res://.godot/imported/login.png-395b59ce188b7f15f6f047f8000cab9a.ctex::
+LoveDay.png::CompressedTexture2D/CompressedTexture2D::4473424926900675328::1708018145::1750271172::1::::<><><>0<>0<>9c9f4bcd7bc1d2726b7587ecd02e5c85<>res://.godot/imported/LoveDay.png-635bcd08e79045262202fcd7fa0fde3e.ctex::
+male.png::CompressedTexture2D/CompressedTexture2D::126926429023101448::1659086783::1750271172::1::::<><><>0<>0<>34affce11eb5ab2b1c7a79b15070a587<>res://.godot/imported/male.png-377c4b6192dbea06bea3fecff25cc0d4.ctex::
+multiselect.png::CompressedTexture2D/CompressedTexture2D::8630709660914025438::1672601369::1750271172::1::::<><><>0<>0<>08b739412ff173bac283f55593c74587<>res://.godot/imported/multiselect.png-c751a836972b11ce2727f4983031031b.ctex::
+next.png::CompressedTexture2D/CompressedTexture2D::7176353620349232583::1662393097::1750271172::1::::<><><>0<>0<>277d91bbc14b0322a8a9f7463a316a88<>res://.godot/imported/next.png-4557e35a67141bfa9678f2f738a18ee3.ctex::
+no-tax.png::CompressedTexture2D/CompressedTexture2D::6486996327429933746::1669364427::1750271172::1::::<><><>0<>0<>39ad7718621b851c57fb22c1a1524522<>res://.godot/imported/no-tax.png-3969cbb4af025fbd457b014a03c96978.ctex::
+pause-button.png::CompressedTexture2D/CompressedTexture2D::361467962601016388::1655223929::1750271172::1::::<><><>0<>0<>da0c5a8084b6e6e5cdcc28f08b78e1b1<>res://.godot/imported/pause-button.png-58ca370e934595d781e5b4a99e4677fe.ctex::
+play.png::CompressedTexture2D/CompressedTexture2D::6352931971725540884::1655223968::1750271172::1::::<><><>0<>0<>63f433484a6f2b8375a3752b52b11883<>res://.godot/imported/play.png-86710d0ffade04de9f53b494b486d452.ctex::
+rating.png::CompressedTexture2D/CompressedTexture2D::5437748706623190871::1675270392::1750271172::1::::<><><>0<>0<>755125f6e724b9b19136041d4340918e<>res://.godot/imported/rating.png-e14b43eae8a83460f71337324797dc4b.ctex::
+right-arrow.png::CompressedTexture2D/CompressedTexture2D::5357130582029439079::1654615559::1750271172::1::::<><><>0<>0<>cd040f8d7b8eb258b33631fa7a95390c<>res://.godot/imported/right-arrow.png-fb683552dad92f92bf2ce1e78d3c7b24.ctex::
+sales.png::CompressedTexture2D/CompressedTexture2D::81675185129707697::1654546898::1750271172::1::::<><><>0<>0<>2f7b35ae3c28943a6b6847a85c7a9625<>res://.godot/imported/sales.png-4010a56ff8e27db389199402cd652f98.ctex::
+settings.png::CompressedTexture2D/CompressedTexture2D::5220656396567905000::1654546915::1750271172::1::::<><><>0<>0<>d19b278a8f1f3b1a4d9ebe24353017d1<>res://.godot/imported/settings.png-43d088617bb068ceb77791e792abf7e6.ctex::
+star.png::CompressedTexture2D/CompressedTexture2D::7971441543364265811::1697138663::1750271172::1::::<><><>0<>0<>daffcfcc5b4b0d4357b9a6ecae7dc1c2<>res://.godot/imported/star.png-23974196aad989f5f8781e45f16dec1b.ctex::
+stop.png::CompressedTexture2D/CompressedTexture2D::5592832785907245944::1655223789::1750271172::1::::<><><>0<>0<>d3ef07453380a0dff59dadf11a6eb212<>res://.godot/imported/stop.png-80f1fe59e830de63a08b84ec957e996e.ctex::
+surpise-box.png::CompressedTexture2D/CompressedTexture2D::8937501383651803071::1680624068::1750271172::1::::<><><>0<>0<>ea33eaca3c7e18a07a5f8a0261f5d671<>res://.godot/imported/surpise-box.png-cce2edfded67f50bb67c176ed3bbae03.ctex::
+tax-free.png::CompressedTexture2D/CompressedTexture2D::2647489692932384901::1669364536::1750271172::1::::<><><>0<>0<>06d1c811bb72eaac262b122c16f53240<>res://.godot/imported/tax-free.png-bacde4fde2dd9c4bd845804a8c86d1ed.ctex::
+time-management.png::CompressedTexture2D/CompressedTexture2D::8563780981671923646::1663967676::1750271172::1::::<><><>0<>0<>62583dbbc9b4d9cad04be47d6ba9e438<>res://.godot/imported/time-management.png-c89fc54263fe35e0124dfea564258f83.ctex::
+time.png::CompressedTexture2D/CompressedTexture2D::881401701735457110::1654543917::1750271172::1::::<><><>0<>0<>3622772e856208e5bc26a9d5df265f3b<>res://.godot/imported/time.png-674946629ff30b46fcf6f7dcff514646.ctex::
+to-do-list.png::CompressedTexture2D/CompressedTexture2D::3054390235471358385::1654544602::1750271172::1::::<><><>0<>0<>04167eed1fbc439ec3b86a44dbfc91b9<>res://.godot/imported/to-do-list.png-fcec7ee7b3b680ba621a956aa1c9e37b.ctex::
+Today.png::CompressedTexture2D/CompressedTexture2D::5217420042152192204::1664555626::1750271172::1::::<><><>0<>0<>b93a461e3ffa96e6626948d436913d11<>res://.godot/imported/Today.png-d3c4ee8d467f22bdf6730c3376ebad1d.ctex::
+transfer-data.png::CompressedTexture2D/CompressedTexture2D::6353878514570462101::1667646049::1750271172::1::::<><><>0<>0<>ac2b9eae236a65bedbb16ae1a8c3212b<>res://.godot/imported/transfer-data.png-fb8c933ef64440507d35019a4f148b3a.ctex::
+translate.png::CompressedTexture2D/CompressedTexture2D::1945597601478223936::1669364803::1750271172::1::::<><><>0<>0<>dfb29aa770bd5299d920000b9bc8dff1<>res://.godot/imported/translate.png-42e1b832c937183cafb6d62c0d9f0efe.ctex::
+trash-can.png::CompressedTexture2D/CompressedTexture2D::5353550256500152806::1656259347::1750271172::1::::<><><>0<>0<>a282e39dc8457f08a027626fc3c14130<>res://.godot/imported/trash-can.png-e409e012a329157d581f10803d988aa8.ctex::
+ukraine.png::CompressedTexture2D/CompressedTexture2D::5898939936734263986::1697137848::1750271172::1::::<><><>0<>0<>81eb7b499a0d81a101f845f5a3e5559f<>res://.godot/imported/ukraine.png-75d7afaffa4accc58b5035d0f1a08c76.ctex::
+unchecked.png::CompressedTexture2D/CompressedTexture2D::3441156874940823446::1655142496::1750271172::1::::<><><>0<>0<>a96d6b79be287d0e2ae9131cb43d09bd<>res://.godot/imported/unchecked.png-52638a037114ef09b41c735eaf3c098c.ctex::
+up-arrow.png::CompressedTexture2D/CompressedTexture2D::6688802472551704690::1654811804::1750271172::1::::<><><>0<>0<>d277d57cbc3fa2fdc197181a9f603002<>res://.godot/imported/up-arrow.png-390e47588015b6247c590c2c768bbbae.ctex::
+whats-new.png::CompressedTexture2D/CompressedTexture2D::408326434543440988::1663961628::1750271172::1::::<><><>0<>0<>75af9a7c21026d28d704c2deeadb950e<>res://.godot/imported/whats-new.png-ae7be89532f31923a7874fc6b88e9c7d.ctex::
+WomansDay.png::CompressedTexture2D/CompressedTexture2D::1722763712997222306::1680624767::1750271171::1::::<><><>0<>0<>ea898e14c5c49feb9f38f1fa8b8071b2<>res://.godot/imported/WomansDay.png-010963793c6452d527887c96cda6e1d4.ctex::
+::res://Assets/lang/::1750271170
+Languanges.csv::Translation/Translation::8880089536200959398::1708018290::1750271170::1::::<><><>0<>0<>8dacf44ebb4c2122a02d5768e7eb900e<>res://Assets/lang/Languanges.en.translation<*>res://Assets/lang/Languanges.he.translation<*>res://Assets/lang/Languanges.ru.translation::
+Languanges.en.translation::OptimizedTranslation::3097542116267618950::1750271170::0::1::::<><><>0<>0<><>::
+Languanges.he.translation::OptimizedTranslation::7388286213776563867::1750271170::0::1::::<><><>0<>0<><>::
+Languanges.ru.translation::OptimizedTranslation::2571740967350692122::1750271170::0::1::::<><><>0<>0<><>::
+::res://Assets/Particles/::1750271171
+christmas-tree.png::CompressedTexture2D/CompressedTexture2D::8483279387085581055::1669062999::1750271171::1::::<><><>0<>0<>a1124be52f787b6754de17dce7237bbc<>res://.godot/imported/christmas-tree.png-0d72a182dd996be258fca51136d292a7.ctex::
+cold.png::CompressedTexture2D/CompressedTexture2D::5911377346078522839::1669062684::1750271171::1::::<><><>0<>0<>6311fe21f6b1f334c64aabc8d897e73b<>res://.godot/imported/cold.png-01a0b883acb934bf66a971d5017868aa.ctex::
+santa-claus.png::CompressedTexture2D/CompressedTexture2D::2266645506282119294::1669062990::1750271171::1::::<><><>0<>0<>868596a4fcb68bb4fc5f34868291cb06<>res://.godot/imported/santa-claus.png-e2c35641ece38f0b960b495177f15033.ctex::
+snowflake.png::CompressedTexture2D/CompressedTexture2D::3443970403782626005::1669062659::1750271171::1::::<><><>0<>0<>6af0759cdfe52767165f542e308925f3<>res://.godot/imported/snowflake.png-22277d53f4887cd31ccd441a3d2df424.ctex::
+::res://Exports/::1736513684
+::res://Exports/Android/::1655391336
+::res://Exports/icons/::1750271171
+icon192.png::CompressedTexture2D/CompressedTexture2D::7015968971599780038::1686517808::1750271171::1::::<><><>0<>0<>0c3fbb1f7c654b07a5154a775930ec27<>res://.godot/imported/icon192.png-d1f7f988f417ce8faf4b7ff0ac213662.ctex::
+::res://Exports/iOS/::1736513694
+::res://Exports/iOS/Time Check In/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Headers/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Headers/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Headers/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Headers/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Headers/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Headers/::1736513694
+::res://Exports/iOS/Time Check In/dylibs/ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Modules/::1736513694
+::res://Exports/iOS/Time Check In/ios/::1736513694
+::res://Exports/iOS/Time Check In/ios/plugins/::1736513694
+::res://Exports/iOS/Time Check In/ios/plugins/admob/::1736513694
+::res://Exports/iOS/Time Check In/ios/plugins/admob/bin/::1736513694
+::res://Exports/iOS/Time Check In.xcframework/::1736513220
+::res://Exports/iOS/Time Check In.xcframework/ios-arm64/::1736513220
+::res://Exports/iOS/Time Check In.xcframework/ios-arm64_x86_64-simulator/::1736513219
+::res://Exports/iOS/Time Check In.xcodeproj/::1736513632
+::res://Exports/iOSScreenshots/::1655388985
+::res://Exports/iOSScreenshots/iphone5.5/::1750271172
+5.5-inch Screenshot 1.png::CompressedTexture2D/CompressedTexture2D::5818756310552686325::1655403779::1750271172::1::::<><><>0<>0<>c11a095f70b3f6fe826e08ae9002cfae<>res://.godot/imported/5.5-inch Screenshot 1.png-44678d06d41d8f6545d053c3f9f5c08d.ctex::
+5.5-inch Screenshot 2.png::CompressedTexture2D/CompressedTexture2D::5635257566442884668::1655403779::1750271172::1::::<><><>0<>0<>ccc94314e846e68a0dae6b723abaf1a0<>res://.godot/imported/5.5-inch Screenshot 2.png-a14e6e3584fdc6596c6f3a5a44ed9262.ctex::
+5.5-inch Screenshot 3.png::CompressedTexture2D/CompressedTexture2D::4785201770563040341::1655403779::1750271172::1::::<><><>0<>0<>9ecd2b86f6e7bf583b63469491e88cfd<>res://.godot/imported/5.5-inch Screenshot 3.png-b748dd833a569dea5541a5ace3159cfb.ctex::
+5.5-inch Screenshot 4.png::CompressedTexture2D/CompressedTexture2D::2586636621869933589::1655403779::1750271172::1::::<><><>0<>0<>511d81d47fc3ef4960d1710661154d9a<>res://.godot/imported/5.5-inch Screenshot 4.png-516913ba1565f4e7a1b4a13659c226c4.ctex::
+5.5-inch Screenshot 5.png::CompressedTexture2D/CompressedTexture2D::4171989214091504236::1655403779::1750271171::1::::<><><>0<>0<>3e7d9344edaab7454dba809a18138ba8<>res://.godot/imported/5.5-inch Screenshot 5.png-ca26b1d81b9f988043d9db63f2f95421.ctex::
+5.5-inch Screenshot 6.png::CompressedTexture2D/CompressedTexture2D::1475317875182771018::1655403779::1750271171::1::::<><><>0<>0<>dc7b8f8d87d6967849f576c34fe7dbd1<>res://.godot/imported/5.5-inch Screenshot 6.png-e861c19d19d149efb4d02c6a33b790e0.ctex::
+5.5-inch Screenshot 7.png::CompressedTexture2D/CompressedTexture2D::7375560045227162383::1655403779::1750271171::1::::<><><>0<>0<>7e8880f06c29e7061f8970d74ad0a037<>res://.godot/imported/5.5-inch Screenshot 7.png-8c5838d188101cc49fa53a95f56934fd.ctex::
+200Transparent.png::CompressedTexture2D/CompressedTexture2D::6947118396243708590::1655403779::1750271171::1::::<><><>0<>0<>37b5ca24e4146e699ec000622eeb3dfe<>res://.godot/imported/200Transparent.png-958a12effb0a8395b3c5196703b429c5.ctex::
+custom – 1.png::CompressedTexture2D/CompressedTexture2D::5367316579259091435::1655403873::1750271171::1::::<><><>0<>0<>55aebf139619f4ed6d2f88f796549442<>res://.godot/imported/custom – 1.png-cc3ae89a03e573d9359c64f220ab81a5.ctex::
+custom – 2.png::CompressedTexture2D/CompressedTexture2D::1614732784632622319::1655403873::1750271171::1::::<><><>0<>0<>53ac9c42c10b71d7d24dac8529962fdb<>res://.godot/imported/custom – 2.png-3656431a5251d44411d69b597b17db60.ctex::
+custom – 3.png::CompressedTexture2D/CompressedTexture2D::6441138283460400201::1655403873::1750271171::1::::<><><>0<>0<>d959681c02464efb004322da213e7cfd<>res://.godot/imported/custom – 3.png-ea19cfc3ada09274fd3ebda923dcd676.ctex::
+custom – 4.png::CompressedTexture2D/CompressedTexture2D::8670199195342000126::1655403873::1750271171::1::::<><><>0<>0<>02ad724452faaa302369ed8d6e333372<>res://.godot/imported/custom – 4.png-dde8bf1cb69a4492eff0e7e9929a4d46.ctex::
+custom – 5.png::CompressedTexture2D/CompressedTexture2D::2293127903173852965::1655403873::1750271171::1::::<><><>0<>0<>00e6c1e9545d662289ee44a05831325c<>res://.godot/imported/custom – 5.png-01789f4c364f20788fbe32dfc8b3a3c1.ctex::
+custom – 6.png::CompressedTexture2D/CompressedTexture2D::7925545948194500393::1655403873::1750271171::1::::<><><>0<>0<>660925e5b8b31f01e955fe9d2e82bd60<>res://.godot/imported/custom – 6.png-d45bb5a2d5b5ad3a851bd4c6aaf9dec2.ctex::
+custom – 7.png::CompressedTexture2D/CompressedTexture2D::6667187231984177642::1655403873::1750271171::1::::<><><>0<>0<>f8a7ab00c70b75cbc6023bccf5dc15c8<>res://.godot/imported/custom – 7.png-2bb06ef7664875a46f51152c4e38c5ad.ctex::
+dlf.pt-mobile-frame-png-4056740.png::CompressedTexture2D/CompressedTexture2D::8101745715275268642::1655403779::1750271171::1::::<><><>0<>0<>20822ab3bad38f6d8972294fe830850b<>res://.godot/imported/dlf.pt-mobile-frame-png-4056740.png-2b0d9d1580aebe33fe310b9013ed1e0e.ctex::
+Feature Graphic.png::CompressedTexture2D/CompressedTexture2D::5104833141185517990::1655403873::1750271171::1::::<><><>0<>0<>3dfb27a7799cd80eef63699af4bb4631<>res://.godot/imported/Feature Graphic.png-8b1487ad7cf9a156c197649e4774c2bb.ctex::
+Headline.png::CompressedTexture2D/CompressedTexture2D::6478959141677630897::1655403749::1750271170::1::::<><><>0<>0<>2b33d9de0cfe2c872e53ca9b0b7dfed6<>res://.godot/imported/Headline.png-321c28431073f67f778a310820639198.ctex::
+Image1.png::CompressedTexture2D/CompressedTexture2D::82973629674292820::1655403873::1750271171::1::::<><><>0<>0<>11133e52b06f7a86e58ec22ae3414562<>res://.godot/imported/Image1.png-bd40477320d66b0f2118b29a9265cf9d.ctex::
+Image2.png::CompressedTexture2D/CompressedTexture2D::6367984762351407154::1655403873::1750271171::1::::<><><>0<>0<>45a128c4edde3814c9c7bd882bad8f55<>res://.godot/imported/Image2.png-f75f9066f84952c402f33920e582d96a.ctex::
+Image3.png::CompressedTexture2D/CompressedTexture2D::5484509870250758100::1655403873::1750271171::1::::<><><>0<>0<>63b737c54b58d898914da52414dd78b3<>res://.godot/imported/Image3.png-d978bda375da314e58bb76fb4aafb698.ctex::
+Image4.png::CompressedTexture2D/CompressedTexture2D::4973861621044533452::1655403873::1750271171::1::::<><><>0<>0<>371547884aa0e4573461b706380110f0<>res://.godot/imported/Image4.png-4a180d0da3c47371302d56b5021f4379.ctex::
+Image5.png::CompressedTexture2D/CompressedTexture2D::2379402902331472871::1655403873::1750271171::1::::<><><>0<>0<>466951bb2cce41d90b3ad88da3885067<>res://.godot/imported/Image5.png-b9dfebe88ccb7213bd17769dea1befee.ctex::
+Image6.png::CompressedTexture2D/CompressedTexture2D::5148031542909064948::1655403873::1750271171::1::::<><><>0<>0<>23889f816dccfc124c0b0fceebb71a22<>res://.godot/imported/Image6.png-bc0bc5e2cc48d347ae84922c51747bc5.ctex::
+Image7.png::CompressedTexture2D/CompressedTexture2D::6534619255098673092::1655403873::1750271171::1::::<><><>0<>0<>a23eef708e2971f5b91d9e237c265fd8<>res://.godot/imported/Image7.png-b3d12fb831f25833c0fd1dc92587652a.ctex::
+Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.24.47.png::CompressedTexture2D/CompressedTexture2D::3413687066480906019::1655403779::1750271172::1::::<><><>0<>0<>fd78ebcdaa3f7c12a7756e0ac0a6239f<>res://.godot/imported/Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.24.47.png-ab4adebcd28416c8049b5b0ee8f229df.ctex::
+Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.24.52.png::CompressedTexture2D/CompressedTexture2D::7915308888386032131::1655403779::1750271172::1::::<><><>0<>0<>247543c908dcad49b6f7d98614b1e7e2<>res://.godot/imported/Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.24.52.png-6be73bdc18dd3ef0319933bf73bd966d.ctex::
+Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.16.png::CompressedTexture2D/CompressedTexture2D::5323306884205398234::1655403779::1750271172::1::::<><><>0<>0<>48270ae5a560a732beed5a2049108a0f<>res://.godot/imported/Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.16.png-f6e8bf29a45965291ac03d321bec7ae9.ctex::
+Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.25.png::CompressedTexture2D/CompressedTexture2D::9158359178037456264::1655403779::1750271172::1::::<><><>0<>0<>a12e3a45ffcefa599b1e7a4a2fce409d<>res://.godot/imported/Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.25.png-9d88733267b6759483381fed1579f49b.ctex::
+Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.28.png::CompressedTexture2D/CompressedTexture2D::4461167257626164279::1655403779::1750271172::1::::<><><>0<>0<>38e08651f423ab45ea7f6cec66e3e427<>res://.godot/imported/Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.28.png-d85d183272a373a3d80ad08060b50b99.ctex::
+Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.35.png::CompressedTexture2D/CompressedTexture2D::9029442579552387879::1655403779::1750271172::1::::<><><>0<>0<>50ddbcc49ece01754728ee9e0e3e93e6<>res://.godot/imported/Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.35.png-f6b55692a788ad26608dd06990bfe83f.ctex::
+Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.39.png::CompressedTexture2D/CompressedTexture2D::3621169293486001245::1655403779::1750271172::1::::<><><>0<>0<>254f6fb3486037fd158db7c3ad363951<>res://.godot/imported/Simulator Screen Shot - iPad Pro (12.9-inch) (5th generation) - 2022-06-16 at 07.25.39.png-d190cc6be53dd8482c22d3100a438b73.ctex::
+Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.44.53.png::CompressedTexture2D/CompressedTexture2D::5347494529271358786::1655403779::1750271172::1::::<><><>0<>0<>102bed6bf539d13135feced9c09a40e1<>res://.godot/imported/Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.44.53.png-1693f370843e65bb9d413ac651bf6b8a.ctex::
+Track your working hoursanytime and any job!.png::CompressedTexture2D/CompressedTexture2D::1409234089526199878::1655403749::1750271172::1::::<><><>0<>0<>df30503de1d52beb767bec003d68c159<>res://.godot/imported/Track your working hoursanytime and any job!.png-71bc6c26ff76bb9ab14ab697142a4bfd.ctex::
+::res://Exports/iOSScreenshots/iphone 8/::1750271172
+Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.35.png::CompressedTexture2D/CompressedTexture2D::1480840342337568629::1655324015::1750271172::1::::<><><>0<>0<>d8f8eb64174cb05af7043308feda8e4c<>res://.godot/imported/Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.35.png-d529aca9928637bcd13047cbf58a36ce.ctex::
+Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.40.png::CompressedTexture2D/CompressedTexture2D::7078054963630870476::1655324020::1750271172::1::::<><><>0<>0<>238bbd1b7c1f60d1b660a77e761b0ee3<>res://.godot/imported/Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.40.png-d5f225c4143f4fd30142e8397fbb38fc.ctex::
+Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.48.png::CompressedTexture2D/CompressedTexture2D::8517170348784856265::1655324028::1750271172::1::::<><><>0<>0<>315a37043c176b6e8ce7c524d22d5a0d<>res://.godot/imported/Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.48.png-ff8ca7ae0f8ee9bf03449ecda869959b.ctex::
+Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.56.png::CompressedTexture2D/CompressedTexture2D::8088736924513550873::1655324036::1750271172::1::::<><><>0<>0<>aa21441cbcea887318c0e2c20e6c0de4<>res://.godot/imported/Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.13.56.png-15e129dbd18cabf10c05250696a81f8c.ctex::
+Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.02.png::CompressedTexture2D/CompressedTexture2D::8674140800403366962::1655324042::1750271172::1::::<><><>0<>0<>f12209595ac19bcf9bdcf8582ed59562<>res://.godot/imported/Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.02.png-8b556095b90682380941b6f2065a2276.ctex::
+Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.06.png::CompressedTexture2D/CompressedTexture2D::7756215289765833345::1655324046::1750271172::1::::<><><>0<>0<>e78950f021ebc1e152e5e67c72f1d8f6<>res://.godot/imported/Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.06.png-102419ccba75be3ff02c664a460649e4.ctex::
+Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.20.png::CompressedTexture2D/CompressedTexture2D::8688415132995583092::1655324060::1750271172::1::::<><><>0<>0<>ae7971045ca306fbd7bfecbb87a05f5b<>res://.godot/imported/Simulator Screen Shot - iPhone 8 - 2022-06-15 at 13.14.20.png-b26c17da4adcc8a30a44281ac257a9a4.ctex::
+::res://Exports/iOSScreenshots/iphone 12/::1750271172
+Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.44.53.png::CompressedTexture2D/CompressedTexture2D::2741332706122834825::1655322293::1750271172::1::::<><><>0<>0<>29d9d29645c50784e35fa03b1b5ccc68<>res://.godot/imported/Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.44.53.png-3acb32161ca59682965639e4e72b046b.ctex::
+Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.46.33.png::CompressedTexture2D/CompressedTexture2D::6273380651371068473::1655322393::1750271172::1::::<><><>0<>0<>20036ae6b769abffd4273ea1106f5349<>res://.godot/imported/Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.46.33.png-ef4fe2801d358fa7492cbe960958afd6.ctex::
+Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.46.49.png::CompressedTexture2D/CompressedTexture2D::2960822326987118149::1655322409::1750271172::1::::<><><>0<>0<>58c0130ddbac5e1c5f8ce02dcfadb9d3<>res://.godot/imported/Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.46.49.png-1034f38e72cfad5f6ca75932700f2b0a.ctex::
+Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.47.32.png::CompressedTexture2D/CompressedTexture2D::623761029709905031::1655322452::1750271172::1::::<><><>0<>0<>6e34f8171de1b6311d8b4f937de13975<>res://.godot/imported/Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.47.32.png-cb22efb9976058d861d38982fb1a550f.ctex::
+Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.47.42.png::CompressedTexture2D/CompressedTexture2D::4867157685631536428::1655322462::1750271172::1::::<><><>0<>0<>3c2f3a031ec7649b20654f52f1057000<>res://.godot/imported/Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.47.42.png-7949d30229ddf3cdaaf38723ede2d4c0.ctex::
+Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.48.00.png::CompressedTexture2D/CompressedTexture2D::6647426363873273148::1655322480::1750271172::1::::<><><>0<>0<>14cd97a0de8084ed5fbe5973344bd9bc<>res://.godot/imported/Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.48.00.png-bb65fbf772c9ca08059427ceb0ff9a3d.ctex::
+Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.48.40.png::CompressedTexture2D/CompressedTexture2D::7523926278677350351::1655322520::1750271172::1::::<><><>0<>0<>9dbb5af2631c40be6844b2148f3c8b08<>res://.godot/imported/Simulator Screen Shot - iPhone 12 - 2022-06-15 at 12.48.40.png-c9cc435c11b28a160610788be0d1d008.ctex::
+::res://Exports/iOSScreenshots/iPhone Pro/::1750271171
+Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.17.17.png::CompressedTexture2D/CompressedTexture2D::6290992580900073763::1655324237::1750271171::1::::<><><>0<>0<>b3e13cf332e856f75c74d3b2a9bbec0c<>res://.godot/imported/Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.17.17.png-7fd1cf4bde9245087b9067b948fa9e15.ctex::
+Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.18.23.png::CompressedTexture2D/CompressedTexture2D::3640630818499526055::1655324303::1750271171::1::::<><><>0<>0<>3489d855b4ec00223acb5992ebc29bfb<>res://.godot/imported/Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.18.23.png-d2676af64104c722c23e68e7cbb45031.ctex::
+Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.04.png::CompressedTexture2D/CompressedTexture2D::8086117338435399826::1655324344::1750271171::1::::<><><>0<>0<>8bf13e93e9b7ebae1cbaa8b30e02566c<>res://.godot/imported/Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.04.png-d12a3b5443a39a84904796ca24f34de9.ctex::
+Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.12.png::CompressedTexture2D/CompressedTexture2D::4015882916860411159::1655324352::1750271171::1::::<><><>0<>0<>eb7593a4803abc2134c6bda1fcf3914a<>res://.godot/imported/Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.12.png-d2c6f6c4c81abeda1dab6fb000d9bcbc.ctex::
+Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.23.png::CompressedTexture2D/CompressedTexture2D::5975835656097925327::1655324363::1750271171::1::::<><><>0<>0<>ad4fd6aedc93ef7e3c76d973298f6a5b<>res://.godot/imported/Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.23.png-76e6f8cecb73cd82e049a40888ba45de.ctex::
+Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.26.png::CompressedTexture2D/CompressedTexture2D::6985799876118015520::1655324366::1750271171::1::::<><><>0<>0<>9de2230741a3f0050ea8393db855b54c<>res://.godot/imported/Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.26.png-78f169728464598581abd193d0d4a2e6.ctex::
+Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.39.png::CompressedTexture2D/CompressedTexture2D::9026257886017277697::1655324379::1750271171::1::::<><><>0<>0<>840c0655184268e2584c4333d3c7a5bd<>res://.godot/imported/Simulator Screen Shot - iPhone 12 Pro Max - 2022-06-15 at 13.19.39.png-a5982ad3c889bc15f25f98b2d4a8d883.ctex::
+::res://Exports/keystore/::1655391228
+::res://ios/::1736513615
+::res://ios/plugins/::1736513615
+::res://ios/plugins/admob/::1736513440
+::res://ios/plugins/admob/bin/::1736513400
+::res://ios/plugins/admob/lib/::1736513413
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_armv7/GoogleAppMeasurement.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/::1736513409
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/::1736513409
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1736513409
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurement.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/macos-arm64_x86_64/GoogleAppMeasurement.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/::1736513409
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/::1736513409
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64/GoogleAppMeasurement.framework/Modules/::1736513409
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/::1736513409
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurement.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurement.framework/Modules/::1736513409
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_armv7/GoogleAppMeasurementIdentitySupport.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_i386_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/ios-arm64_x86_64-maccatalyst/GoogleAppMeasurementIdentitySupport.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/macos-arm64_x86_64/GoogleAppMeasurementIdentitySupport.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64/GoogleAppMeasurementIdentitySupport.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleAppMeasurementIdentitySupport.xcframework/tvos-arm64_x86_64-simulator/GoogleAppMeasurementIdentitySupport.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/::1736513410
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/::1736513410
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/::1736513413
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/Mediation/::1736513413
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Headers/RTBMediation/::1736513413
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/::1736513410
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/::1736513410
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/::1736513410
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/Mediation/::1736513410
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Headers/RTBMediation/::1736513410
+::res://ios/plugins/admob/lib/GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator/GoogleMobileAds.framework/Modules/::1736513410
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64/GoogleUtilities.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-maccatalyst/GoogleUtilities.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/ios-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/macos-arm64_x86_64/GoogleUtilities.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64/GoogleUtilities.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/GoogleUtilities.xcframework/tvos-arm64_x86_64-simulator/GoogleUtilities.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/Licenses/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64/nanopb.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-maccatalyst/nanopb.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/ios-arm64_x86_64-simulator/nanopb.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/macos-arm64_x86_64/nanopb.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64/nanopb.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/nanopb.xcframework/tvos-arm64_x86_64-simulator/nanopb.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64/PromisesObjC.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-maccatalyst/PromisesObjC.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/ios-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/macos-arm64_x86_64/PromisesObjC.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64/PromisesObjC.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/PromisesObjC.xcframework/tvos-arm64_x86_64-simulator/PromisesObjC.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_armv7/UserMessagingPlatform.framework/Modules/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Headers/::1736513413
+::res://ios/plugins/admob/lib/UserMessagingPlatform.xcframework/ios-arm64_x86_64-simulator/UserMessagingPlatform.framework/Modules/::1736513413
+::res://Prefabs/::1745608686
+::res://Prefabs/Elements/::1750271170
+AnimatedDate.gd::GDScript/GDScript::3375133566886766273::1745510549::0::1::::<>Control<><>0<>0<><>::
+AnimatedDate.tscn::PackedScene::4889474631775853899::1750271194::0::1::::<><><>0<>0<><>::uid://boc67r8plqo3b::::res://Prefabs/Elements/AnimatedDate.gd<>res://Prefabs/Elements/AnimatedLabel.tscn
+AnimatedLabel.gd::GDScript/GDScript::2434230175421587136::1745510549::0::1::::<>Label<><>0<>0<><>::
+AnimatedLabel.tscn::PackedScene::2110313559220275341::1750271194::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>uid://baxfoeew00s4g::::res://Prefabs/Elements/AnimatedLabel.gd
+AppSettings.gd::GDScript/GDScript::5214125742721194663::1745597974::0::1::::<>Panel<><>0<>0<><>::
+AppSettings.tscn::PackedScene::8653396997410773299::1750271194::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>uid://cgj05h5xxpypb::::res://Prefabs/Elements/AppSettings.gd<>res://Prefabs/Elements/ToggleBetween.tscn
+CalDay.gd::GDScript/GDScript::6436000836085147194::1745510549::0::1::::<>Label<><>0<>0<><>::
+CalDay.tscn::PackedScene::1245197131847947741::1750271194::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres<>uid://cxxv81o52jek5::::res://Prefabs/Elements/CalDay.gd<>res://Prefabs/Styles/CalDay.tres
+CalendarButton.gd::GDScript/GDScript::3207451739489288092::1745596803::0::1::::<>Button<><>0<>0<><>::
+CalendarButton.tscn::PackedScene::1200930270632775060::1750271194::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres<>uid://cilbfmwamcn0r::::res://Assets/Icons/right-arrow.png<>uid://blxyi5lmnwfyy::::res://Prefabs/Elements/CalendarButton.gd
+CalendarSettings.gd::GDScript/GDScript::8261309656611379194::1745597466::0::1::::<>Panel<><>0<>0<><>::
+CalendarSettings.tscn::PackedScene::415506936292453691::1750271194::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Styles/Panel/SettingPanel.tres<>uid://dpx3te5gt1dbm::::res://Prefabs/Elements/CalendarSettings.gd<>res://Prefabs/Elements/PressTimer.tscn
+CategoryPanel.gd::GDScript/GDScript::8696645713739763554::1745510549::0::1::::<>Panel<><>0<>1<><>::
+CategoryPanel.tscn::PackedScene::4892679440483287875::1750271194::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>uid://dv5yqp4kfmwkg::::res://Prefabs/Elements/CategoryPanel.gd<>uid://bi4lun8ojl1yq::::res://Assets/Icons/info (1).png<>res://Prefabs/Styles/Panel/SettingTitle.tres
+CheckBox.gd::GDScript/GDScript::5719181327369892961::1745597018::0::1::::<>Label<><>0<>0<><>::
+CheckBox.tscn::PackedScene::815696129237723169::1750271194::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size30.tres<>uid://cnqoc0q4ouxg0::::res://Prefabs/Elements/CheckBox.gd<>res://Prefabs/Elements/PressTimer.tscn
+CheckinControl.gd::GDScript/GDScript::4775722239286187045::1745610418::0::1::::<>Control<><>0<>0<><>::
+CheckinControl.tscn::PackedScene::6636959143391860141::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres<>uid://cabnphmc4q1fd::::res://Prefabs/Elements/CheckinControl.gd<>uid://ffdlbfpake7e::::res://Assets/Icons/pause-button.png<>uid://dwfbg4ruqrf7t::::res://Prefabs/Elements/StartStopBtn.gd<>uid://c4snu4up7q1i4::::res://Prefabs/Shaders/MenuBtn.tres<>uid://cwrn4j1o7mgvs::::res://Assets/Icons/play.png<>uid://c8dnij4hedtx7::::res://Assets/Icons/holidays.png<>uid://r12wkhto1c2c::::res://Assets/Icons/Ellipse 1.png<>res://Prefabs/Elements/OptionBox.tscn<>uid://6val2vxyaenq::::res://Assets/Fonts/OpenSans-Medium.ttf<>uid://oblyncv5otvt::::res://Prefabs/Shaders/FlappingShader.tres
+CheckInOutEditor.gd::GDScript/GDScript::1461703298565538946::1745510549::0::1::::<>Panel<><>0<>0<><>::
+CheckInOutEditor.tscn::PackedScene::2229774736124596427::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres<>res://Prefabs/Styles/Fonts/Size100.tres<>res://Prefabs/Styles/Panel/TotalItem.tres<>uid://u3cbl8d48v6y::::res://Prefabs/Elements/CheckInOutEditor.gd<>res://Prefabs/Elements/InteractiveButton.tscn<>res://Prefabs/Styles/Fonts/Size30.tres<>uid://cijkgqj2vkel7::::res://Assets/Icons/trash-can.png
+CurDay.gd::GDScript/GDScript::2988257921885544818::1745596958::0::1::::<>Label<><>0<>0<><>::
+CurMonth.gd::GDScript/GDScript::8403735910027441992::1745595397::0::1::::<>Label<><>0<>0<><>::
+CurrentDateInfo.gd::GDScript/GDScript::5718777707905699781::1745510549::0::1::::<>VBoxContainer<><>0<>0<><>::
+CurrentScreen.gd::GDScript/GDScript::3574304529812075763::1745510549::0::1::::<>Panel<><>0<>0<><>::
+CurTime.gd::GDScript/GDScript::5604484758380070236::1745610142::0::1::::<>Control<><>0<>0<><>::
+DayInfo.gd::GDScript/GDScript::5393135429065505917::1745512816::0::1::::<>Panel<><>0<>0<><>::
+DayInfo.tscn::PackedScene::4605893624848244147::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres<>uid://ci3qfgmup2ms8::::res://Prefabs/Elements/DayInfo.gd<>res://Prefabs/Elements/OptionBox.tscn<>uid://cb5f6ev56so23::::res://Assets/Icons/day.png<>uid://c8dnij4hedtx7::::res://Assets/Icons/holidays.png<>uid://c83n4ves6va2::::res://Assets/Icons/hard-work.png
+EffectHandler.gd::GDScript/GDScript::2916618919115990711::1745510549::0::1::::<>Node<><>0<>1<><>::
+HebrewLabel.gd::GDScript/GDScript::4085338659890943006::1745510549::0::1::::<>Label<><>0<>1<><>::
+HebrewLabel.tscn::PackedScene::806043539720144872::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size30.tres<>uid://byg76wcikyv8i::::res://Prefabs/Elements/HebrewLabel.gd
+HebrewReachLabel.gd::GDScript/GDScript::2990224304678892189::1745510549::0::1::::<>RichTextLabel<><>0<>0<><>::
+HebrewReachLabel.tscn::PackedScene::3897642420790391777::1750271195::0::1::::<><><>0<>0<><>::uid://biuqs7m4ro214::::res://Prefabs/Elements/HebrewReachLabel.gd<>res://Prefabs/Styles/Fonts/Size30.tres
+HourEditorScreen.gd::GDScript/GDScript::392326045907449078::1745510549::0::1::::<>Control<><>0<>0<><>::
+IconContainer.gd::GDScript/GDScript::7174867818158616178::1745594561::0::1::::<>HBoxContainer<><>0<>0<><>::
+IconContainer.tscn::PackedScene::2815496099273650670::1750271195::0::1::::<><><>0<>0<><>::uid://dahta3s7sbspe::::res://Prefabs/Elements/IconContainer.gd
+InteractiveButton.gd::GDScript/GDScript::1443553607185011915::1745510549::0::1::::<>Button<><>0<>0<><>::
+InteractiveButton.tscn::PackedScene::449052509650935809::1750271195::0::1::::<><><>0<>0<><>::uid://23lnddss2pyg::::res://Assets/Icons/down-arrow.png<>uid://utjd8i0l1p4v::::res://Prefabs/Elements/InteractiveButton.gd
+Keypad.gd::GDScript/GDScript::3540079567893329917::1745510549::0::1::::<>Button<><>0<>0<><>::
+Keypad.tscn::PackedScene::4479465391776269200::1750271195::0::1::::<><><>0<>0<><>::uid://brb8alwfedm5p::::res://Assets/Fonts/OpenSans-Bold.ttf<>uid://bqo3uf26shpjx::::res://Prefabs/Elements/Keypad.gd
+LanguangeControl.gd::GDScript/GDScript::1524765370614009999::1745510549::0::1::::<>Panel<><>0<>0<><>::
+LanguangeControl.tscn::PackedScene::6106483498116634214::1750271195::0::1::::<><><>0<>0<><>::uid://vyuwsj7omb1x::::res://Prefabs/Elements/LanguangeControl.gd<>uid://d2itk7kvsgrbj::::res://Assets/Flags/israel.png<>uid://dmf5uptcklkdo::::res://Assets/Flags/united-states.png<>res://Prefabs/Elements/OptionBox.tscn<>res://Prefabs/Styles/Panel/SettingPanel.tres<>uid://dvl3bjomcnaf8::::res://Assets/Flags/russia.png
+ListItem.gd::GDScript/GDScript::9220305871179721713::1745512863::0::1::::<>Panel<><>0<>0<><>::
+ListItem.tscn::PackedScene::5836054668649527829::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Panel/TotalItem.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/Fonts/Size40.tres<>uid://d4mndcy0cng22::::res://Prefabs/Elements/ListItem.gd<>res://Prefabs/Elements/OptionBox.tscn
+LoaderScreen.gd::GDScript/GDScript::2146424603377934194::1745510549::0::1::::<>Control<><>0<>0<><>::
+MenuBtn2.gd::GDScript/GDScript::5632695694718631273::1745597621::0::1::::<>TextureRect<><>0<>0<><>::
+MenuBtn2.tscn::PackedScene::5334108088700145661::1750271195::0::1::::<><><>0<>0<><>::uid://ms7s7gjqvscc::::res://Assets/Icons/time.png<>uid://c4snu4up7q1i4::::res://Prefabs/Shaders/MenuBtn.tres<>uid://cmirw7p5nxm22::::res://Prefabs/Elements/MenuBtn2.gd
+MenuBtn.gd::GDScript/GDScript::625302590525570451::1745510549::0::1::::<>Button<><>0<>0<><>::
+MenuBtn.tscn::PackedScene::1253836879992349492::1750271195::0::1::::<><><>0<>0<><>::uid://ms7s7gjqvscc::::res://Assets/Icons/time.png<>res://Prefabs/Styles/Fonts/Size40.tres<>uid://i55v3rjpb828::::res://Prefabs/Elements/MenuBtn.gd<>uid://c4snu4up7q1i4::::res://Prefabs/Shaders/MenuBtn.tres
+ModulatePopupScreen.gd::GDScript/GDScript::4377921588062037847::1745510549::0::1::::<>Control<><>0<>0<><>::
+ModulatePopupScreen.tscn::PackedScene::2862864666683873775::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>uid://b3mxy1v8pofad::::res://Prefabs/Elements/ModulatePopupScreen.gd<>uid://h20rc0xiyk7f::::res://Assets/Icons/applause.png<>res://Prefabs/Styles/Background_LightBlue.tres<>uid://lqpoi0seos8o::::res://Prefabs/Elements/HebrewLabel.tscn<>res://Prefabs/Elements/PopupBtn.tscn<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/ModulatePopupScreen.tres<>uid://dltoqicxmum8b::::res://Assets/Icons/star.png<>uid://sc8lt6a4oolu::::res://Prefabs/Elements/StarBox.gd
+NumpadKeyboard.gd::GDScript/GDScript::6525474024834343900::1745510549::0::1::::<>Control<><>0<>0<><>::
+NumpadKeyboard.tscn::PackedScene::272019290584680657::1750271195::0::1::::<><><>0<>0<><>::uid://b425e1p7vvijg::::res://Prefabs/Elements/Keypad.tscn<>uid://cy78ur872n61u::::res://Prefabs/Elements/NumpadKeyboard.gd
+OptionBox.gd::GDScript/GDScript::8380208207969241320::1745510549::0::1::::<>MenuButton<><>0<>0<><>::
+OptionBox.tscn::PackedScene::8933428166146204810::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>uid://d2itk7kvsgrbj::::res://Assets/Flags/israel.png<>uid://bf4qu6jnaeace::::res://Prefabs/Styles/OptionBox/OptionBox.tres<>uid://drno2mmx7u0s7::::res://Prefabs/Elements/OptionBox.gd<>res://Prefabs/Elements/PressTimer.tscn
+OvertimeTotalItem.tscn::PackedScene::9030446293890748755::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres<>uid://c5bkgkk6k8l6m::::res://Prefabs/Elements/TotalItem.gd<>res://Prefabs/Styles/Panel/TotalItem.tres<>uid://duamhsfe1qa4e::::res://Assets/Icons/time-management.png<>uid://vf05jctvc1li::::res://Prefabs/Shaders/IconContainer.tres
+PopupBtn.gd::GDScript/GDScript::880069814920433025::1745510549::0::1::::<>Button<><>0<>1<><>::
+PopupBtn.tscn::PackedScene::681323654590972579::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>uid://mskvegqbtu1v::::res://Prefabs/Elements/PopupBtn.gd
+PressTimer.tscn::PackedScene::4512679816322601195::1750271195::0::1::::<><><>0<>0<><>::
+ReportPanel.gd::GDScript/GDScript::3168130482457725960::1745510549::0::1::::<>Panel<><>0<>0<><>::
+ReportPanel.tscn::PackedScene::6663455667127894138::1750271195::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>uid://blewv78k2y52k::::res://Prefabs/Elements/ReportPanel.gd
+SalarySimulatorScreen.gd::GDScript/GDScript::7620279445457464113::1745510549::0::1::::<>Control<><>0<>0<><>::
+SaloryCalculation.gd::GDScript/GDScript::4930660457847877530::1745597135::0::1::::<>Panel<><>0<>0<><>::
+SaloryCalculation.tscn::PackedScene::3179633070849978668::1750271195::0::1::::<><><>0<>0<><>::uid://lvenp4j0jse0::::res://Prefabs/Elements/CheckBox.tscn<>uid://ccipi0rmo1klm::::res://Prefabs/Elements/SaloryCalculation.gd<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/ValueBox.tscn<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>uid://d0joiy0t111xe::::res://Prefabs/Elements/OptionBox.tscn<>uid://d2itk7kvsgrbj::::res://Assets/Flags/israel.png<>uid://dmf5uptcklkdo::::res://Assets/Flags/united-states.png<>uid://dvl3bjomcnaf8::::res://Assets/Flags/russia.png
+SmartDeductionSalary.gd::GDScript/GDScript::6665399132171417885::1745597834::0::1::::<>Panel<><>0<>0<><>::
+SmartDeductionSalary.tscn::PackedScene::8475655146742223573::1750271196::0::1::::<><><>0<>0<><>::uid://c171fdi44durd::::res://Prefabs/Elements/SmartDeductionSalary.gd<>uid://d2itk7kvsgrbj::::res://Assets/Flags/israel.png<>uid://ch848l6hidi2p::::res://Prefabs/Elements/MenuBtn2.tscn<>uid://d0joiy0t111xe::::res://Prefabs/Elements/OptionBox.tscn<>res://Prefabs/Styles/Panel/SettingPanel.tres<>res://Prefabs/Elements/ValueBox.tscn<>uid://lvenp4j0jse0::::res://Prefabs/Elements/CheckBox.tscn<>uid://cebdjwpgnqva3::::res://Assets/Icons/female.png<>uid://b2qpvpxs30wy::::res://Assets/Icons/male.png<>uid://cyol48kljay8a::::res://Assets/Icons/no-tax.png
+StarBox.gd::GDScript/GDScript::1269552291358859842::1745510549::0::1::::<>HBoxContainer<><>0<>0<><>::
+StartStopBtn.gd::GDScript/GDScript::8713811482012104495::1745610606::0::1::::<>Button<><>0<>0<><>::
+Status.gd::GDScript/GDScript::3625878980771184739::1745510549::0::1::::<>Label<><>0<>0<><>::
+SwipeDetector.gd::GDScript/GDScript::7683135817069373716::1745510549::0::1::::<>Node<><>0<>0<><>::
+ToggleBetween.gd::GDScript/GDScript::7330416174150685278::1745596881::0::1::::<>Panel<><>0<>1<><>::
+ToggleBetween.tscn::PackedScene::9064302245202173152::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>uid://dco55bhgvrm35::::res://Prefabs/Elements/ToggleBetween.gd<>uid://b5j8ga6gl06lb::::res://Prefabs/Elements/PressTimer.tscn
+ToolBtn.gd::GDScript/GDScript::6206727118555305705::1745608395::0::1::::<>Button<><>0<>0<><>::
+ToolBtn.tscn::PackedScene::7265078989832949888::1750271196::0::1::::<><><>0<>0<><>::uid://brb8alwfedm5p::::res://Assets/Fonts/OpenSans-Bold.ttf<>uid://cuot5hqromeo4::::res://Prefabs/Elements/ToolBtn.gd<>uid://c4snu4up7q1i4::::res://Prefabs/Shaders/MenuBtn.tres<>uid://b5j8ga6gl06lb::::res://Prefabs/Elements/PressTimer.tscn
+TopMenuCalendar.gd::GDScript/GDScript::8149916111872028770::1745510549::0::1::::<>Panel<><>0<>0<><>::
+TopScreenPermanent.gd::GDScript/GDScript::6116823488061512022::1745598485::0::1::::<>Control<><>0<>0<><>::
+TopTools.gd::GDScript/GDScript::2267951574644841438::1745594669::0::1::::<>Panel<><>0<>0<><>::
+TopTools.tscn::PackedScene::4880859974819083336::1750271196::0::1::::<><><>0<>0<><>::uid://7ku3iy4rci5c::::res://Prefabs/Elements/TopTools.gd<>res://Prefabs/Styles/Fonts/Size30.tres<>uid://1pc7q1evdyfd::::res://Prefabs/Styles/Scroll.tres<>res://Prefabs/Styles/Panel/BottomScreen.tres
+TotalCurMonth.gd::GDScript/GDScript::6503169981329289646::1745599477::0::1::::<>Label<><>0<>0<><>::
+TotalItem.gd::GDScript/GDScript::6881189481077045342::1745599671::0::1::::<>Panel<><>0<>0<><>::
+TotalItem.tscn::PackedScene::7688798868147811317::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres<>uid://c5bkgkk6k8l6m::::res://Prefabs/Elements/TotalItem.gd<>res://Prefabs/Styles/Panel/TotalItem.tres<>res://Prefabs/Styles/ProgressBar.tres<>res://Prefabs/Styles/Fonts/Size30Bold.tres
+ValueBox.gd::GDScript/GDScript::6728488091332120229::1745512844::0::1::::<>Label<><>0<>1<><>::
+ValueBox.tscn::PackedScene::8527673052794795642::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres<>uid://c24lhlqt2l6jp::::res://Prefabs/Elements/ValueBox.gd<>uid://gnr3gt6ki61r::::res://Prefabs/Elements/InteractiveButton.tscn<>uid://c2kdum83iacx3::::res://Assets/Icons/up-arrow.png<>res://Prefabs/Styles/Fonts/Size40Bold.tres<>uid://b5j8ga6gl06lb::::res://Prefabs/Elements/PressTimer.tscn
+VMonth.gd::GDScript/GDScript::7966012036450001489::1745512808::0::1::::<>GridContainer<><>0<>0<><>::
+WorkingHours.gd::GDScript/GDScript::6315107005642577378::1745598702::0::1::::<>Panel<><>0<>0<><>::
+WorkingHours.tscn::PackedScene::3579171490276745487::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Panel/SettingPanel.tres<>uid://cv8c5isd6a0qo::::res://Prefabs/Elements/WorkingHours.gd<>uid://dtq4r83p074tq::::res://Prefabs/Elements/ValueBox.tscn<>uid://lvenp4j0jse0::::res://Prefabs/Elements/CheckBox.tscn<>res://Prefabs/Styles/Fonts/Size40.tres
+::res://Prefabs/ExporterScreen/::1750271170
+CustomVars.gd::GDScript/GDScript::729840814532149131::1745510549::0::1::::<>Control<><>0<>1<><>::
+CustomVars.tscn::PackedScene::2496498827815250052::1750271196::0::1::::<><><>0<>0<><>::uid://knsmvs0oyt5d::::res://Prefabs/ExporterScreen/CustomVars.gd
+ExportFormat.gd::GDScript/GDScript::8297471688628284728::1745510549::0::1::::<>Control<><>0<>0<><>::
+ExportFormat.tscn::PackedScene::4695788942679584081::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size30.tres<>uid://dqhme8jruh0lg::::res://Prefabs/ExporterScreen/ExportFormat.gd
+TimePeriodSelector.gd::GDScript/GDScript::2818739962049804374::1745510549::0::1::::<>Control<><>0<>0<><>::
+TimePeriodSelector.tscn::PackedScene::1318084168354938919::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size30.tres<>uid://bgfoiacjhjedi::::res://Prefabs/ExporterScreen/TimePeriodSelector.gd<>uid://dslbs73pj70ky::::res://Assets/Icons/fast-forward.png<>uid://d0joiy0t111xe::::res://Prefabs/Elements/OptionBox.tscn<>uid://vf05jctvc1li::::res://Prefabs/Shaders/IconContainer.tres
+::res://Prefabs/Global/::1750271170
+facebook_ads.gd::GDScript/GDScript::6916899239303328188::1745510548::0::1::::<>Node<><>0<>0<><>::
+GlobalAds.gd::GDScript/GDScript::3219183202238562223::1745510548::0::1::::<>Node<><>0<>0<><>::
+GlobalExport.gd::GDScript/GDScript::1340557718394095917::1745512702::0::1::::<>Node<><>0<>0<><>::
+GlobalHebrew.gd::GDScript/GDScript::5927448278262452156::1745510548::0::1::::<>Node<><>0<>0<><>::
+GlobalIOSArrange.gd::GDScript/GDScript::5305522223179447590::1745511404::0::1::::<>Node<><>0<>0<><>::
+GlobalNotif.gd::GDScript/GDScript::1247139970519002528::1745610495::0::1::::<>Node<><>0<>0<><>::
+GlobalSave.gd::GDScript/GDScript::129540471571178180::1745610546::0::1::::<>Node<><>0<>0<><>::
+GlobalTheme.gd::GDScript/GDScript::2415258734601448138::1745510549::0::1::::<>Node<><>0<>0<><>::
+GlobalTime.gd::GDScript/GDScript::4428486773839065273::1745610546::0::1::::<>Control<><>0<>0<><>::
+::res://Prefabs/label_sets/::1745608700
+start_btn_started.tres::LabelSettings/LabelSettings::1828110503442458697::1745608700::0::1::::<><><>0<>0<><>::uid://brb8alwfedm5p::::res://Assets/Fonts/OpenSans-Bold.ttf
+::res://Prefabs/Screens/::1750271170
+ExporterScreen.gd::GDScript/GDScript::1663879732316660987::1745510548::0::1::::<>Control<><>0<>0<><>::
+ExporterScreen.tscn::PackedScene::7491182438856874614::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Styles/Background_LightBlue.tres<>uid://xx84dv8c08mx::::res://Prefabs/Screens/ExporterScreen.gd<>uid://jybkian6n2yp::::res://Prefabs/Elements/PopupBtn.tscn<>uid://s1qwhwf3wuf4::::res://Prefabs/ExporterScreen/TimePeriodSelector.tscn<>uid://gnr3gt6ki61r::::res://Prefabs/Elements/InteractiveButton.tscn<>uid://bbtk8aoi4yky3::::res://Prefabs/ExporterScreen/CustomVars.tscn<>uid://cy1biypcr2el6::::res://Assets/Icons/check-mark.png<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>res://Prefabs/Styles/Panel/BottomScreen.tres
+HourEditorScreen.tscn::PackedScene::74445614293985689::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40Bold.tres<>res://Prefabs/Styles/Background_LightBlue.tres<>uid://fubs14u3mgws::::res://Prefabs/Elements/HourEditorScreen.gd<>uid://gnr3gt6ki61r::::res://Prefabs/Elements/InteractiveButton.tscn<>uid://61ecges76v68::::res://Prefabs/Elements/CheckInOutEditor.tscn<>uid://cy1biypcr2el6::::res://Assets/Icons/check-mark.png<>uid://bpa6l6ytes6g5::::res://Assets/Icons/unchecked.png<>res://Prefabs/Styles/Panel/BottomScreen.tres
+IsarelSalaryScreen.gd::GDScript/GDScript::7329591946714070273::1745510548::0::1::::<>Control<><>0<>0<><>::
+MainScreen.gd::GDScript/GDScript::2290851952156851520::1745609745::0::1::::<>Control<><>0<>0<><>::
+MainScreen.tscn::PackedScene::296947060023064570::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Styles/Fonts/Size100.tres<>res://Prefabs/Styles/Fonts/Size40.tres<>uid://cl34bsgm7o8om::::res://Prefabs/Elements/CurTime.gd<>uid://c1s80oat8n87r::::res://Prefabs/Elements/CheckinControl.tscn<>uid://cywgi27dyo38m::::res://Prefabs/Elements/TotalCurMonth.gd<>uid://bjrtmjh3xu242::::res://Assets/Icons/to-do-list.png<>uid://cgm6piajsrng7::::res://Assets/Icons/settings.png<>uid://bftgcgrftxgb::::res://Assets/Icons/sales.png<>uid://dhp1eh150okx5::::res://Prefabs/Elements/SwipeDetector.gd<>uid://7vx85qkaiwse::::res://Prefabs/Screens/MainScreen.gd<>res://Prefabs/Styles/Panel/BottomScreen.tres<>uid://c4snu4up7q1i4::::res://Prefabs/Shaders/MenuBtn.tres<>uid://rd0e75jvybr5::::res://Prefabs/Elements/CalendarButton.tscn<>uid://bc06dv3erb61q::::res://Assets/Icons/fast-forward-button.png<>uid://c175wloa11g8g::::res://Assets/Icons/fast-backward.png<>uid://itjy7eeop3s4::::res://Assets/Icons/left-arrow.png<>uid://dry3kj33xbbvc::::res://Prefabs/Elements/CurMonth.gd<>uid://dlq2b342gwm8p::::res://Prefabs/Elements/VMonth.gd<>uid://b6venox5vnmf8::::res://Prefabs/Elements/DayInfo.tscn<>uid://bitsf3eb7m6wk::::res://Prefabs/Elements/CurDay.gd<>uid://cnqhoy6oh777v::::res://Prefabs/Elements/CurrentDateInfo.gd<>uid://cbybylggmutct::::res://Prefabs/Elements/CategoryPanel.tscn<>uid://blkideq7hngfs::::res://Prefabs/Elements/SaloryCalculation.tscn<>uid://ch848l6hidi2p::::res://Prefabs/Elements/MenuBtn2.tscn<>uid://dhsrnnqg3yn86::::res://Prefabs/Elements/TotalItem.tscn<>uid://bq6ojkbpxd77l::::res://Prefabs/Elements/CurrentScreen.gd<>res://Prefabs/Styles/Fonts/Size30.tres<>res://Prefabs/Styles/CurScreenIndicator.tres<>uid://d0lnlvmdr2uqh::::res://Assets/Icons/surpise-box.png<>uid://ysrwwwf6k47o::::res://Assets/Icons/WomansDay.png<>uid://bq81ow3rr52ad::::res://Prefabs/Elements/WorkingHours.tscn<>uid://ctaa5kbwjtjp3::::res://Prefabs/Elements/LanguangeControl.tscn<>res://Prefabs/Styles/Fonts/Size40Bold.tres<>uid://f6jlrl0yvci2::::res://Prefabs/Elements/CalendarSettings.tscn<>uid://ds0w2jcfrw0ej::::res://Prefabs/Elements/SmartDeductionSalary.tscn<>uid://d2e2y7ecdbcvw::::res://Prefabs/Elements/ToggleBetween.tscn<>uid://dod46smfi0gvy::::res://Prefabs/Elements/TopMenuCalendar.gd<>res://Prefabs/Styles/Fonts/Size30Bold.tres<>uid://cpfa75x3k1bgv::::res://Prefabs/Elements/ListItem.tscn<>uid://1pc7q1evdyfd::::res://Prefabs/Styles/Scroll.tres<>uid://c163e2lo8kwni::::res://Prefabs/Elements/ReportPanel.tscn<>uid://bgd32rw5iwncg::::res://Prefabs/Elements/IconContainer.tscn<>uid://d1woepst4etyh::::res://Prefabs/Elements/OvertimeTotalItem.tscn<>uid://brb8alwfedm5p::::res://Assets/Fonts/OpenSans-Bold.ttf<>uid://cbslbyubeegfg::::res://Prefabs/Elements/TopTools.tscn<>uid://ctfbgoxdykvtm::::res://Prefabs/Elements/TopScreenPermanent.gd<>uid://d2itk7kvsgrbj::::res://Assets/Flags/israel.png<>uid://cqbqxc27xiebq::::res://Assets/Icons/ukraine.png<>uid://b4y7wje7wbvnk::::res://Assets/Icons/LoveDay.png<>uid://dvj1gjas7dvw2::::res://Prefabs/Elements/AppSettings.tscn<>uid://bhs3j1k5rbmmx::::res://Prefabs/Elements/EffectHandler.gd<>uid://cqhrryskibdln::::res://Assets/Particles/cold.png<>uid://bpcjxo6nhjbfp::::res://Assets/Particles/snowflake.png<>uid://7j8k5kfb4a4m::::res://Assets/Particles/santa-claus.png<>uid://ds4mmwelp4iqh::::res://Assets/Particles/christmas-tree.png<>uid://oblyncv5otvt::::res://Prefabs/Shaders/FlappingShader.tres<>uid://b8kvbdq14se73::::res://Assets/Icons/email.png<>uid://ms7s7gjqvscc::::res://Assets/Icons/time.png<>uid://cglme7tkbdu33::::res://Assets/Icons/Today.png<>uid://bdyp1ek0navyr::::res://Assets/Icons/tax-free.png<>uid://2ypycyx6go5m::::res://Assets/Icons/translate.png
+SalarySimulatorScreen.tscn::PackedScene::7115414800824980411::1750271196::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Background_LightBlue.tres<>res://Prefabs/Styles/Fonts/Size30.tres<>uid://gnr3gt6ki61r::::res://Prefabs/Elements/InteractiveButton.tscn<>uid://dtq4r83p074tq::::res://Prefabs/Elements/ValueBox.tscn<>uid://d2itk7kvsgrbj::::res://Assets/Flags/israel.png<>uid://dgtk5h3mldb0t::::res://Prefabs/Elements/SalarySimulatorScreen.gd<>uid://1pc7q1evdyfd::::res://Prefabs/Styles/Scroll.tres<>uid://bpa6l6ytes6g5::::res://Assets/Icons/unchecked.png<>res://Prefabs/Styles/Panel/BottomScreen.tres
+Tools.gd::GDScript/GDScript::1717571074726993817::1745510548::0::1::::<>Node<><>0<>0<><>::
+::res://Prefabs/Shaders/::1745609745
+FlappingShader.tres::ShaderMaterial/ShaderMaterial::985419621548629401::1745609745::0::1::::<><><>0<>0<><>::
+IconContainer.tres::ShaderMaterial/ShaderMaterial::1485859580496492710::1745609745::0::1::::<><><>0<>0<><>::
+MenuBtn.tres::ShaderMaterial/ShaderMaterial::6846303224044474997::1745609745::0::1::::<><><>0<>0<><>::
+::res://Prefabs/Styles/::1745609745
+Background_LightBlue.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+CalDay.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+CurScreenIndicator.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+ModulatePopupScreen.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+ProgressBar.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+Scroll.tres::Theme/Theme::1856055061038695925::1745609745::0::1::::<><><>0<>0<><>::
+::res://Prefabs/Styles/CheckinBtn/::1684585245
+Normal.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+::res://Prefabs/Styles/Fonts/::1736934960
+Size30.tres::FontFile/FontFile::-1::1745510548::0::1::::<><><>0<>0<><>::res://Assets/Fonts/OpenSans-Bold.ttf
+Size30Bold.tres::FontFile/FontFile::-1::1745510548::0::1::::<><><>0<>0<><>::res://Assets/Fonts/OpenSans-Bold.ttf
+Size40.tres::FontFile/FontFile::-1::1745510548::0::1::::<><><>0<>0<><>::res://Assets/Fonts/OpenSans-Medium.ttf<>res://Assets/Fonts/coolvetica rg it.otf<>res://Assets/Fonts/LateefRegOT.ttf
+Size40Bold.tres::FontFile/FontFile::-1::1745510548::0::1::::<><><>0<>0<><>::res://Assets/Fonts/OpenSans-Bold.ttf
+Size100.tres::FontFile/FontFile::-1::1745510548::0::1::::<><><>0<>0<><>::res://Assets/Fonts/Roboto-Bold.ttf
+::res://Prefabs/Styles/OptionBox/::1745609745
+OptionBox.tres::Theme/Theme::2798240687231269832::1745609745::0::1::::<><><>0<>0<><>::res://Prefabs/Styles/Fonts/Size40.tres
+::res://Prefabs/Styles/Panel/::1687629098
+BottomScreen.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+SettingPanel.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+SettingTitle.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+TotalItem.tres::StyleBoxFlat/StyleBoxFlat::-1::1745510548::0::1::::<><><>0<>0<><>::
+::res://scripts/::1750271170
+LocalNotification.gd::GDScript/GDScript::1627129359188917927::1745610547::0::1::::<>Node<><>0<>0<><>::
+::res://Source/::1736936860
+app-ads.txt::TextFile/TextFile::-1::1708019813::0::1::::<><><>0<>0<><>::
+::res://Source/XD/::1750271171
+Ellipse 1.png::CompressedTexture2D/CompressedTexture2D::4340541822708179675::1662476972::1750271171::1::::<><><>0<>0<>13128816a9bb584606347f9b64b724ca<>res://.godot/imported/Ellipse 1.png-16e656b23bfa0d7c3a291176192455bd.ctex::
+::res://ToDoList/::1708076046
+Ios_Android_Template_Instructions.ini::TextFile/TextFile::-1::1697195836::0::1::::<><><>0<>0<><>::
+NextTodo.ini::TextFile/TextFile::-1::1666390660::0::1::::<><><>0<>0<><>::

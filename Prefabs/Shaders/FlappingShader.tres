@@ -1,10 +1,10 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://oblyncv5otvt"]
 
-[sub_resource type="Shader" id=7]
+[sub_resource type="Shader" id="7"]
 code = "shader_type canvas_item;
 void vertex(){
 	VERTEX.x += sin(TIME) * 30.0 * (UV.y-1.0);
 }"
 
 [resource]
-shader = SubResource( 7 )
+shader = SubResource("7")

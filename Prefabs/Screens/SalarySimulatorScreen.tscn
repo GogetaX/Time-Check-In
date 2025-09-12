@@ -1,20 +1,20 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://c8m03vtu2byc6"]
 
-[ext_resource path="res://Prefabs/Styles/Background_LightBlue.tres" type="StyleBox" id=1]
-[ext_resource path="res://Prefabs/Styles/Fonts/Size30.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Prefabs/Elements/InteractiveButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Prefabs/Elements/ValueBox.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Flags/israel.png" type="Texture" id=7]
-[ext_resource path="res://Prefabs/Elements/SalarySimulatorScreen.gd" type="Script" id=8]
-[ext_resource path="res://Prefabs/Styles/Scroll.tres" type="Theme" id=9]
-[ext_resource path="res://Assets/Icons/unchecked.png" type="Texture" id=11]
-[ext_resource path="res://Prefabs/Styles/Panel/BottomScreen.tres" type="StyleBox" id=12]
+[ext_resource type="StyleBox" path="res://Prefabs/Styles/Background_LightBlue.tres" id="1"]
+[ext_resource type="FontFile" path="res://Prefabs/Styles/Fonts/Size30.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://gnr3gt6ki61r" path="res://Prefabs/Elements/InteractiveButton.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://dtq4r83p074tq" path="res://Prefabs/Elements/ValueBox.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://d2itk7kvsgrbj" path="res://Assets/Flags/israel.png" id="7"]
+[ext_resource type="Script" uid="uid://dgtk5h3mldb0t" path="res://Prefabs/Elements/SalarySimulatorScreen.gd" id="8"]
+[ext_resource type="Theme" uid="uid://1pc7q1evdyfd" path="res://Prefabs/Styles/Scroll.tres" id="9"]
+[ext_resource type="Texture2D" uid="uid://bpa6l6ytes6g5" path="res://Assets/Icons/unchecked.png" id="11"]
+[ext_resource type="StyleBox" path="res://Prefabs/Styles/Panel/BottomScreen.tres" id="12"]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
 
-uniform vec4 u_color_key : hint_color;
-uniform vec4 u_replacement_color : hint_color;
+uniform vec4 u_color_key : source_color;
+uniform vec4 u_replacement_color : source_color;
 
 void fragment() {
     vec4 col = texture(TEXTURE, UV);
@@ -29,16 +29,16 @@ void fragment() {
 	COLOR.a = alpha;
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/u_color_key = null
-shader_param/u_replacement_color = Color( 1, 1, 1, 1 )
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
+shader_parameter/u_color_key = Color(0, 0, 0, 1)
+shader_parameter/u_replacement_color = Color(1, 1, 1, 1)
 
 [node name="SalarySimulatorScreen" type="Control"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 8 )
+script = ExtResource("8")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,27 +46,27 @@ __meta__ = {
 [node name="BG" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = ExtResource( 1 )
+theme_override_styles/panel = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TopScreen" type="Panel" parent="."]
 anchor_right = 1.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 0, 200 )
-custom_styles/panel = ExtResource( 12 )
+offset_bottom = 200.0
+custom_minimum_size = Vector2(0, 200)
+theme_override_styles/panel = ExtResource("12")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="Label" parent="TopScreen"]
 anchor_right = 1.0
-margin_left = 28.0
-margin_top = 56.0
-margin_right = -128.0
-margin_bottom = 98.0
-custom_fonts/font = ExtResource( 3 )
+offset_left = 28.0
+offset_top = 56.0
+offset_right = -128.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("3")
 text = "Salary simulator for Israel"
 align = 1
 __meta__ = {
@@ -76,55 +76,55 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="TopScreen"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -112.0
-margin_top = 32.0
-margin_right = -20.0
-margin_bottom = 124.0
-texture = ExtResource( 7 )
+offset_left = -112.0
+offset_top = 32.0
+offset_right = -20.0
+offset_bottom = 124.0
+texture = ExtResource("7")
 expand = true
 stretch_mode = 6
 
-[node name="ValueBox" parent="TopScreen" instance=ExtResource( 6 )]
+[node name="ValueBox" parent="TopScreen" instance=ExtResource("6")]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -123.0
-margin_top = 121.0
-margin_right = 155.0
-margin_bottom = 176.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+offset_left = -123.0
+offset_top = 121.0
+offset_right = 155.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "5000"
 align = 1
-MinMax = Vector2( 0, 1e+07 )
+MinMax = Vector2(0, 1e+07)
 InisialValue = 5000.0
 HasArrows = false
-FontColor = Color( 1, 1, 1, 1 )
+FontColor = Color(1, 1, 1, 1)
 
-[node name="CloseBtn" parent="TopScreen" instance=ExtResource( 5 )]
-material = SubResource( 2 )
+[node name="CloseBtn" parent="TopScreen" instance=ExtResource("5")]
+material = SubResource("2")
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -89.0
-margin_top = 112.0
-margin_right = -24.0
-margin_bottom = 192.0
-icon = ExtResource( 11 )
+offset_left = -89.0
+offset_top = 112.0
+offset_right = -24.0
+offset_bottom = 192.0
+icon = ExtResource("11")
 
 [node name="Scroll" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 201.0
-margin_right = -10.0
-margin_bottom = -20.0
-theme = ExtResource( 9 )
+offset_left = 10.0
+offset_top = 201.0
+offset_right = -10.0
+offset_bottom = -20.0
+theme = ExtResource("9")
 scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Scroll"]
-margin_right = 700.0
-margin_bottom = 1059.0
+offset_right = 700.0
+offset_bottom = 1059.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

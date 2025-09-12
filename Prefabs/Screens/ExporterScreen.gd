@@ -4,7 +4,7 @@ extends Control
 
 func _ready():
 # warning-ignore:return_value_discarded
-	connect("visibility_changed",self,"visibility_changed")
+	connect("visibility_changed", Callable(self, "visibility_changed"))
 	
 func visibility_changed():
 	if visible:
@@ -27,7 +27,7 @@ func _on_ExportBtn_pressed():
 	GlobalExport.ExportModule({"CurYear":CurYear,"CurMonth":CurMonth,"FirstMonth":GetFirstMonth,"LastMonth":GetLastMonth})
 
 func _on_ReportToDev_pressed():
-	var date = OS.get_datetime()
+	var date = Time.get_datetime_dict_from_system()
 	match OS.get_name():
 		"Android","Windows":
 # warning-ignore:return_value_discarded

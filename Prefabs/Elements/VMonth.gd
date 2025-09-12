@@ -1,13 +1,13 @@
 extends GridContainer
 
-onready var MonthSelector = get_parent().get_parent().get_node("TopMenu/CurMonth")
+@onready var MonthSelector = get_parent().get_parent().get_node("TopMenu/CurMonth")
 
 var CalDay = preload("res://Prefabs/Elements/CalDay.tscn")
 var CurDateInfo = {}
 
 func _ready():
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("UpdateSpecificDayInfo",self,"ShowInfoOnDay")
+	GlobalTime.connect("UpdateSpecificDayInfo", Callable(self, "ShowInfoOnDay"))
 	
 	
 func SyncMonth():
@@ -31,7 +31,7 @@ func InitWeekDays():
 			
 func ShowInfoOnDay(Day,InfoData):
 	for x in get_children():
-		if String(Day) == x.text:
+		if str(Day) == x.text:
 			x.AddInfo(InfoData) 
 	
 func InitDays():
@@ -44,7 +44,7 @@ func InitDays():
 			x.queue_free()
 		
 	
-	var CurDate = OS.get_datetime()
+	var CurDate = Time.get_datetime_dict_from_system()
 	var OffsetDay = 0
 	var S = GlobalSave.GetValueFromSettingCategory("CalendarSettings")
 	if S != null:
@@ -56,17 +56,17 @@ func InitDays():
 		PlusSeven = 7
 		
 	for x in range(1,CurDateInfo["tot_days"]+StartFrom-OffsetDay+PlusSeven,1):
-		var Day = CalDay.instance()
+		var Day = CalDay.instantiate()
 		add_child(Day)
 		#Day.name = "CurDay"+String(x)
 		
 		#Day.name = "CurDay"+String(x)
 		if x < CurDateInfo["start_from"]-OffsetDay+PlusSeven:
-			Day.name = "EmptyDay"+String(x)
+			Day.name = "EmptyDay"+str(x)
 			Day.text = " "
 		else:
-			Day.name = "CurDay"+String(x-PlusSeven+1)
-			Day.text = String(x-CurDateInfo["start_from"]+1+OffsetDay-PlusSeven)
+			Day.name = "CurDay"+str(x-PlusSeven+1)
+			Day.text = str(x-CurDateInfo["start_from"]+1+OffsetDay-PlusSeven)
 		
 		if MonthSelector.CurMonth == CurDate["month"] && MonthSelector.CurYear == CurDate["year"]:
 			if CurDate["day"] == x-CurDateInfo["start_from"]+1+OffsetDay-PlusSeven:

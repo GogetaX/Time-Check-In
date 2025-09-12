@@ -32,7 +32,7 @@ func AddEmptyDate(date):
 	$HBoxContainer/Salary/Report.visible = true
 	GlobalSave.AddReportOptionsToNode($HBoxContainer/Salary/Report)
 	
-	$HBoxContainer/Salary/Report.get_popup().connect("index_pressed",self,"SelectedReport")
+	$HBoxContainer/Salary/Report.get_popup().connect("index_pressed", Callable(self, "SelectedReport"))
 	
 func SelectedReport(index):
 	var report = ""
@@ -76,8 +76,8 @@ func InitInfo(date,data):
 	CurData = date
 	CurItem = data
 	ClearAll()
-	BGStyle = get_stylebox("panel").duplicate()
-	set("custom_styles/panel",BGStyle)
+	BGStyle = get_theme_stylebox("panel").duplicate()
+	set("theme_override_styles/panel",BGStyle)
 	
 	
 	var WeekDayNum = 0
@@ -108,14 +108,14 @@ func InitInfo(date,data):
 		
 	if data.has("report"):
 		GlobalSave.AddReportOptionsToNode($Change)
-		if !$Change.get_popup().is_connected("index_pressed",self,"SelectedReport"):
-			$Change.get_popup().connect("index_pressed",self,"SelectedReport")
+		if !$Change.get_popup().is_connected("index_pressed", Callable(self, "SelectedReport")):
+			$Change.get_popup().connect("index_pressed", Callable(self, "SelectedReport"))
 		$HBoxContainer/CheckIns.text = data["report"]
 		$HBoxContainer/Time/Holiday.texture = GlobalSave.ReportToImage(data["report"])
 		var C = GlobalTime.GetColorFromReport(data["report"])
 		var CircleStyle = $HBoxContainer/Circle.get_stylebox("panel").duplicate()
 		CircleStyle.bg_color = C
-		$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
+		$HBoxContainer/Circle.set("theme_override_styles/panel",CircleStyle)
 	
 	#Check if this is current day:
 	CheckIfToday(date)
@@ -140,20 +140,20 @@ func InitInfo(date,data):
 func CheckIfToday(date):
 	var is_today = false
 	if date.has("day"):
-		var CurDay = OS.get_datetime()
+		var CurDay = Time.get_datetime_dict_from_system()
 		if CurDay["day"] == date["day"] && CurDay["month"] == date["month"] && CurDay["year"] == date["year"]:
 			var CircleStyle = $HBoxContainer/Circle.get_stylebox("panel").duplicate()
 			GlobalTime.emit_signal("ScrollToCurrentDay",self)
 			CircleStyle.bg_color = GlobalTime.CURRENTDAY_COLOR
-			$HBoxContainer/Circle.set("custom_styles/panel",CircleStyle)
+			$HBoxContainer/Circle.set("theme_override_styles/panel",CircleStyle)
 			is_today = true
 	return is_today
 	
 func SetupBtnPressEvent():
 # warning-ignore:return_value_discarded
-	$BG.connect("gui_input",self,"BGPress")
+	$BG.connect("gui_input", Callable(self, "BGPress"))
 # warning-ignore:return_value_discarded
-	$EditWorkingHours.connect("pressed",self,"EditWorkinfHoursPressed")
+	$EditWorkingHours.connect("pressed", Callable(self, "EditWorkinfHoursPressed"))
 	ClickTimer = Timer.new()
 	add_child(ClickTimer)
 	ClickTimer.one_shot = true
@@ -177,7 +177,7 @@ func BGPress(event):
 func AnimOpenCloseHints():
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishTween",[T])
+	T.connect("tween_all_completed", Callable(self, "FinishTween").bind(T))
 	if !HintShown:
 		if !CurItem.has("report"):
 			$EditWorkingHours.modulate = Color(1,1,1,0)
@@ -189,7 +189,7 @@ func AnimOpenCloseHints():
 			T.interpolate_property($Change,"modulate",$Change.modulate,Color(1,1,1,1),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		
 		T.interpolate_property(BGStyle,"bg_color:a",0,1,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
-		T.interpolate_property(self,"rect_min_size:y",MinMaxHeight.x,MinMaxHeight.y,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		T.interpolate_property(self,"custom_minimum_size:y",MinMaxHeight.x,MinMaxHeight.y,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		
 	else:
 		if !CurItem.has("report"):
@@ -198,7 +198,7 @@ func AnimOpenCloseHints():
 		else:
 			$Change.modulate = Color(1,1,1,1)
 			T.interpolate_property($Change,"modulate",$Change.modulate,Color(1,1,1,0),0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
-		T.interpolate_property(self,"rect_min_size:y",MinMaxHeight.y,MinMaxHeight.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
+		T.interpolate_property(self,"custom_minimum_size:y",MinMaxHeight.y,MinMaxHeight.x,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		T.interpolate_property(BGStyle,"bg_color:a",1,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
 	T.start()
 	HintShown = !HintShown

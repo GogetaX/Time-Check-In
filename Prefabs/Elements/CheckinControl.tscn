@@ -1,263 +1,251 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=16 format=3 uid="uid://c1s80oat8n87r"]
 
-[ext_resource path="res://Prefabs/Styles/Fonts/Size40.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Prefabs/Elements/CheckinControl.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Icons/pause-button.png" type="Texture" id=3]
-[ext_resource path="res://Prefabs/Elements/StartStopBtn.gd" type="Script" id=4]
-[ext_resource path="res://Prefabs/Shaders/MenuBtn.tres" type="Material" id=5]
-[ext_resource path="res://Assets/Icons/play.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Icons/holidays.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Icons/Ellipse 1.png" type="Texture" id=8]
-[ext_resource path="res://Prefabs/Elements/OptionBox.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Fonts/OpenSans-Medium.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://Prefabs/Shaders/FlappingShader.tres" type="Material" id=11]
+[ext_resource type="FontFile" path="res://Prefabs/Styles/Fonts/Size40.tres" id="1"]
+[ext_resource type="Script" uid="uid://cabnphmc4q1fd" path="res://Prefabs/Elements/CheckinControl.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://ffdlbfpake7e" path="res://Assets/Icons/pause-button.png" id="3"]
+[ext_resource type="Script" uid="uid://dwfbg4ruqrf7t" path="res://Prefabs/Elements/StartStopBtn.gd" id="4"]
+[ext_resource type="Material" uid="uid://c4snu4up7q1i4" path="res://Prefabs/Shaders/MenuBtn.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://cwrn4j1o7mgvs" path="res://Assets/Icons/play.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c8dnij4hedtx7" path="res://Assets/Icons/holidays.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://r12wkhto1c2c" path="res://Assets/Icons/Ellipse 1.png" id="8"]
+[ext_resource type="PackedScene" uid="uid://d0joiy0t111xe" path="res://Prefabs/Elements/OptionBox.tscn" id="9"]
+[ext_resource type="FontFile" uid="uid://6val2vxyaenq" path="res://Assets/Fonts/OpenSans-Medium.ttf" id="10"]
+[ext_resource type="Material" uid="uid://oblyncv5otvt" path="res://Prefabs/Shaders/FlappingShader.tres" id="11"]
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.498039, 0.768627, 0.984314, 0.992157 )
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(0.498039, 0.768627, 0.984314, 0.992157)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
-border_color = Color( 1, 0.619608, 0.14902, 0.984314 )
+border_color = Color(0.14902, 0.6, 1, 0.984314)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 corner_detail = 10
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 1, 0.619608, 0.14902, 0.984314 )
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.498039, 0.768627, 0.984314, 0.992157)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
-border_color = Color( 0.14902, 0.6, 1, 0.984314 )
+border_color = Color(1, 0.619608, 0.14902, 0.984314)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 corner_detail = 10
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.498039, 0.768627, 0.984314, 0.992157 )
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(1, 0.619608, 0.14902, 0.984314)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
-border_color = Color( 0.14902, 0.6, 1, 0.984314 )
+border_color = Color(0.14902, 0.6, 1, 0.984314)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 corner_detail = 10
 
-[sub_resource type="DynamicFont" id=9]
-size = 30
-use_filter = true
-font_data = ExtResource( 10 )
+[sub_resource type="FontFile" id="9"]
+fallbacks = Array[Font]([ExtResource("10"), ExtResource("10")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
 
 [node name="CheckinControl" type="Control"]
+custom_minimum_size = Vector2(0, 571)
+layout_mode = 3
+anchors_preset = 10
 anchor_right = 1.0
-margin_top = 496.0
-margin_bottom = 703.0
-rect_min_size = Vector2( 0, 207 )
-script = ExtResource( 2 )
+offset_top = 314.0
+offset_bottom = 885.0
+grow_horizontal = 2
+script = ExtResource("2")
 
-[node name="IdleOptions" parent="." instance=ExtResource( 9 )]
+[node name="IdleOptions" parent="." instance=ExtResource("9")]
 visible = false
-margin_left = -112.0
-margin_top = 0.0
-margin_right = -14.0
-margin_bottom = 61.0
+layout_mode = 0
+offset_left = -112.0
+offset_top = 0.0
+offset_right = -14.0
+offset_bottom = 61.0
 mouse_filter = 2
 toggle_mode = false
 text = ""
-items = [  ]
 
-[node name="CheckedInText" type="Label" parent="."]
-anchor_top = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 10.0
-margin_bottom = 24.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
-text = "Checked In Today"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="PassedTime" type="Label" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 50.0
-margin_bottom = 98.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
-text = "Time Passed"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
 
-[node name="Nosafot125Info" type="Label" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 122.0
-margin_bottom = 177.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
-text = "Nosafot 125%"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Nosafot150Info" type="Label" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 170.0
-margin_bottom = 225.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
-text = "Nosafot 150%"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StartStopBtn" type="Button" parent="."]
+[node name="StartStopBtn" type="Button" parent="VBoxContainer/Control"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -100.0
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 200, 200 )
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
 focus_mode = 0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_styles/disabled = SubResource("6")
+theme_override_styles/hover = SubResource("4")
+theme_override_styles/pressed = SubResource("5")
+theme_override_styles/normal = SubResource("6")
+script = ExtResource("4")
 
-[node name="IdleText" type="Label" parent="StartStopBtn"]
+[node name="IdleText" type="Label" parent="VBoxContainer/Control/StartStopBtn"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
-custom_fonts/font = ExtResource( 1 )
+theme_override_colors/font_color = Color(0.14902, 0.6, 0.984314, 1)
+theme_override_fonts/font = ExtResource("1")
 text = "check_in"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ShaderedTexture" type="TextureRect" parent="StartStopBtn/IdleText"]
-modulate = Color( 0.14902, 0.6, 0.984314, 1 )
-material = ExtResource( 5 )
+[node name="ShaderedTexture" type="TextureRect" parent="VBoxContainer/Control/StartStopBtn/IdleText"]
+modulate = Color(0.14902, 0.6, 0.984314, 1)
+material = ExtResource("5")
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -20.0
-margin_top = -64.0
-margin_right = 20.0
-margin_bottom = -24.0
-texture = ExtResource( 6 )
-expand = true
+offset_left = -20.0
+offset_top = -64.0
+offset_right = 20.0
+offset_bottom = -24.0
+texture = ExtResource("6")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="StartText" type="Label" parent="StartStopBtn"]
+[node name="StartText" type="Label" parent="VBoxContainer/Control/StartStopBtn"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_colors/font_color = Color( 0.14902, 0.6, 0.984314, 1 )
-custom_fonts/font = SubResource( 9 )
+theme_override_colors/font_color = Color(0.14902, 0.6, 0.984314, 1)
+theme_override_fonts/font = SubResource("9")
 text = "Started"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ShaderedTexture" type="TextureRect" parent="StartStopBtn/StartText"]
-modulate = Color( 0.14902, 0.6, 0.984314, 1 )
-material = ExtResource( 5 )
+[node name="ShaderedTexture" type="TextureRect" parent="VBoxContainer/Control/StartStopBtn/StartText"]
+modulate = Color(0.14902, 0.6, 0.984314, 1)
+material = ExtResource("5")
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -20.0
-margin_top = -64.0
-margin_right = 20.0
-margin_bottom = -24.0
-texture = ExtResource( 3 )
-expand = true
+offset_left = -20.0
+offset_top = -64.0
+offset_right = 20.0
+offset_bottom = -24.0
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="TextureProgress" type="TextureProgress" parent="StartStopBtn"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer/Control/StartStopBtn"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -3.0
-margin_top = -3.0
-margin_right = 3.0
-margin_bottom = 3.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
 mouse_filter = 2
 value = 100.0
-texture_progress = ExtResource( 8 )
 fill_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_progress = ExtResource("8")
 
-[node name="HolidayToday" type="Control" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -287.0
-margin_top = 213.5
-margin_right = 287.0
-margin_bottom = 343.5
+[node name="CheckedInText" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.498039, 0.768627, 0.992157, 1)
+theme_override_fonts/font = ExtResource("1")
+text = "Checked In Today"
+horizontal_alignment = 1
 
-[node name="TextureButton" type="TextureRect" parent="HolidayToday"]
-material = ExtResource( 11 )
+[node name="PassedTime" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.498039, 0.768627, 0.992157, 1)
+theme_override_fonts/font = ExtResource("1")
+text = "Time Passed"
+horizontal_alignment = 1
+
+[node name="Nosafot125Info" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.498039, 0.768627, 0.992157, 1)
+theme_override_fonts/font = ExtResource("1")
+text = "Nosafot 125%"
+horizontal_alignment = 1
+
+[node name="Nosafot150Info" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.498039, 0.768627, 0.992157, 1)
+theme_override_fonts/font = ExtResource("1")
+text = "Nosafot 150%"
+horizontal_alignment = 1
+
+[node name="HolidayToday" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="TextureButton" type="TextureRect" parent="VBoxContainer/HolidayToday"]
+material = ExtResource("11")
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -60.0
-margin_right = 60.0
-margin_bottom = 120.0
-texture = ExtResource( 7 )
-expand = true
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 120.0
+texture = ExtResource("7")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="Holiday" type="Label" parent="HolidayToday"]
+[node name="Holiday" type="Label" parent="VBoxContainer/HolidayToday"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -353.0
-margin_top = 1.0
-margin_right = 353.0
-margin_bottom = 56.0
-custom_colors/font_color = Color( 0.498039, 0.768627, 0.992157, 1 )
-custom_fonts/font = ExtResource( 1 )
+offset_left = -353.0
+offset_top = 1.0
+offset_right = 353.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.498039, 0.768627, 0.992157, 1)
+theme_override_fonts/font = ExtResource("1")
 text = "Today is my %s"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
 
-[connection signal="Toggled" from="StartStopBtn" to="." method="_on_StartStopBtn_Toggled"]
-[connection signal="button_down" from="StartStopBtn" to="." method="_on_StartStopBtn_button_down"]
-[connection signal="button_up" from="StartStopBtn" to="." method="_on_StartStopBtn_button_up"]
-[connection signal="pressed" from="StartStopBtn" to="." method="_on_StartStopBtn_pressed"]
+[connection signal="Toggled" from="VBoxContainer/Control/StartStopBtn" to="." method="_on_StartStopBtn_Toggled"]
+[connection signal="button_down" from="VBoxContainer/Control/StartStopBtn" to="." method="_on_StartStopBtn_button_down"]
+[connection signal="button_up" from="VBoxContainer/Control/StartStopBtn" to="." method="_on_StartStopBtn_button_up"]
+[connection signal="pressed" from="VBoxContainer/Control/StartStopBtn" to="." method="_on_StartStopBtn_pressed"]

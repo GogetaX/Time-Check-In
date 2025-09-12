@@ -1,34 +1,50 @@
 extends Label
 
-onready var CurMonth = get_parent().get_parent().get_parent().get_parent().get_node("TopMenu/CurMonth")
-
+# Reference to CurMonth node; adjust the path based on your scene structure
+@onready var CurMonth = get_node_or_null("/root/MainScene/TopMenu/CurMonth")
 
 func _ready():
-	var CurDate = OS.get_datetime()
-# warning-ignore:return_value_discarded
-	GlobalTime.connect("SelectDay",self,"SelectedDay")
-	text = TranslationServer.translate("Today")+" "+String(CurDate["day"])+" "+GlobalTime.GetMonthName(CurDate["month"])[0]+" "+String(CurDate["year"])
+	# Check if CurMonth was found
+	if CurMonth == null:
+		print("Warning: CurMonth node not found.")
 	
+	var CurDate = Time.get_datetime_dict_from_system()
+	GlobalTime.connect("SelectDay", Callable(self, "SelectedDay"))
+	# Set initial text using str() for string conversion
+	text = TranslationServer.translate("Today") + " " + str(CurDate["day"]) + " " + GlobalTime.GetMonthName(CurDate["month"])[0] + " " + str(CurDate["year"])
+
 func SelectedDay(_DayNode):
 	var DayDescription = ""
-	var CurDate = OS.get_datetime()
-	if CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"] && CurDate["day"] == GlobalTime.CurSelectedDate["day"]:
-		DayDescription = TranslationServer.translate("Today")+" "
-	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"] && CurDate["day"] == GlobalTime.CurSelectedDate["day"]-1:
-		DayDescription = TranslationServer.translate("Tomorrow")+" "
-	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"] && CurDate["day"] == GlobalTime.CurSelectedDate["day"]+1:
-		DayDescription = TranslationServer.translate("Yesterday")+" "
-	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]:
-		DayDescription = TranslationServer.translate("This month")+" "
-	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]-1:
-		DayDescription = TranslationServer.translate("Next month")+" "
-	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"] && CurDate["month"] == GlobalTime.CurSelectedDate["month"]+1:
-		DayDescription = TranslationServer.translate("Last month")+" "
-	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"]:
-		DayDescription = TranslationServer.translate("This year")+" "
-	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"]-1:
-		DayDescription = TranslationServer.translate("Next year")+" "
-	elif CurDate["year"] == GlobalTime.CurSelectedDate["year"]+1:
-		DayDescription = TranslationServer.translate("Last year")+" "
-	
-	text = DayDescription+String(GlobalTime.CurSelectedDate["day"])+" "+GlobalTime.GetMonthName(GlobalTime.CurSelectedDate["month"])[0]+" "+String(GlobalTime.CurSelectedDate["year"])
+	var CurDate = Time.get_datetime_dict_from_system()
+	var selected = GlobalTime.CurSelectedDate
+	var today = CurDate
+
+	# Calculate differences for cleaner logic
+	var day_diff = selected["day"] - today["day"]
+	var month_diff = selected["month"] - today["month"]
+	var year_diff = selected["year"] - today["year"]
+
+	# Determine relative description based on differences
+	if year_diff == 0 and month_diff == 0 and day_diff == 0:
+		DayDescription = TranslationServer.translate("Today") + " "
+	elif year_diff == 0 and month_diff == 0 and day_diff == 1:
+		DayDescription = TranslationServer.translate("Tomorrow") + " "
+	elif year_diff == 0 and month_diff == 0 and day_diff == -1:
+		DayDescription = TranslationServer.translate("Yesterday") + " "
+	elif year_diff == 0 and month_diff == 0:
+		DayDescription = TranslationServer.translate("This month") + " "
+	elif year_diff == 0 and month_diff == 1:
+		DayDescription = TranslationServer.translate("Next month") + " "
+	elif year_diff == 0 and month_diff == -1:
+		DayDescription = TranslationServer.translate("Last month") + " "
+	elif year_diff == 0:
+		DayDescription = TranslationServer.translate("This year") + " "
+	elif year_diff == 1:
+		DayDescription = TranslationServer.translate("Next year") + " "
+	elif year_diff == -1:
+		DayDescription = TranslationServer.translate("Last year") + " "
+	else:
+		DayDescription = ""  # Default for dates more than a year apart
+
+	# Update label text with selected date
+	text = DayDescription + str(selected["day"]) + " " + GlobalTime.GetMonthName(selected["month"])[0] + " " + str(selected["year"])

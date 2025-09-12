@@ -26,21 +26,21 @@ func InitAllBtns():
 					for c in b.get_children():
 						if c is Button:
 							c.focus_mode = Control.FOCUS_NONE
-							c.connect("pressed",self,"PressedButton",[c])
+							c.connect("pressed", Callable(self, "PressedButton").bind(c))
 						
 func ShowModulate(Data):
 	InitWindowFromData(Data)
 	visible = true
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishShow",[T])
+	T.connect("tween_all_completed", Callable(self, "FinishShow").bind(T))
 	var S = $Background.material
 	S.set("shader_param/blur_amount",0)
 	T.interpolate_property(S,"shader_param/blur_amount",0,3.5,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 	for x in get_children():
 		if "Panel" in x.name:
 			if x.visible:
-				x.set("custom_styles/panel",GlobalTheme.LoadResource("res://Prefabs/Styles/ModulatePopupScreen.tres"))
+				x.set("theme_override_styles/panel",GlobalTheme.LoadResource("res://Prefabs/Styles/ModulatePopupScreen.tres"))
 				CurrentlyOpenNode = x
 				x.modulate = Color(1,1,1,0)
 				T.interpolate_property(x,"modulate",x.modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.3)
@@ -73,14 +73,14 @@ func AdjustPanelByTextSize(PanelName,txt):
 	var PSize = 0
 	if txt.length() >60:
 		PSize = txt.length()
-	get_node(PanelName).rect_position.y -= PSize
-	get_node(PanelName).rect_size.y += PSize
+	get_node(PanelName).position.y -= PSize
+	get_node(PanelName).size.y += PSize
 	
 func HideModulate():
 	var T = Tween.new()
 	add_child(T)
 	var S = $Background.material
-	T.connect("tween_all_completed",self,"FinishShowAndHide",[T])
+	T.connect("tween_all_completed", Callable(self, "FinishShowAndHide").bind(T))
 	T.interpolate_property(S,"shader_param/blur_amount",3.5,0,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT,0.3)
 	for x in get_children():
 		if "Panel" in x.name:

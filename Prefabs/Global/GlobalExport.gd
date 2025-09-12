@@ -2,12 +2,12 @@ extends Node
 
 	
 func CreateFile(path,fname):
-	var D = Directory.new()
-	if !D.dir_exists(path):
+	
+	if !DirAccess.dir_exists_absolute(path):
+		var D = DirAccess.open(path)
 		D.make_dir_recursive(path)
-	var F = File.new()
-	F.open(path+fname,File.WRITE)
-	F.store_line("Path: "+path)
+	var F = FileAccess.open(path+fname,FileAccess.WRITE)
+	F.store_line("Path3D: "+path)
 	F.close()
 	
 func ExportModule(info):
@@ -26,18 +26,17 @@ func ExportModule(info):
 		if info["CurMonth"] > 12:
 			info["CurYear"] += 1
 			info["CurMonth"] = 1
-	var F = File.new()
-	var Cur_Date = OS.get_datetime()
+	var Cur_Date = Time.get_datetime_dict_from_system()
 	var f_name = "ExportCSV-"+String(Cur_Date["day"])+"-"+String(Cur_Date["month"])+"-"+String(Cur_Date["year"])+".csv"
 	#F.open("user://exports/"+f_name,File.WRITE)
+	var F = null
 	match OS.get_name():
 		"iOS":
-			var D = Directory.new()
-			if !D.dir_exists("user://exports/"):
-				D.make_dir("user://exports/")
-			F.open("user://exports/"+f_name,File.WRITE)
+			if !DirAccess.dir_exists_absolute("user://exports/"):
+				DirAccess.make_dir_absolute("user://exports/")
+			F = FileAccess.open("user://exports/"+f_name,FileAccess.WRITE)
 		"Windows","Android","MacOS":
-			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),File.WRITE)
+			F.open(ProjectSettings.globalize_path(OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)+"/"+f_name),FileAccess.WRITE)
 	F.store_string("Date,Worked hours,Details\n")
 	for Year in ExportData:
 		for Month in ExportData[Year]:
@@ -60,10 +59,10 @@ func ExportModule(info):
 	match OS.get_name():
 		"Android","Windows","MacOS":
 			var PopupData = {"type": "export","Title":"Export","FName":f_name,"Desc1":TranslationServer.translate("finished_export_android"),"Desc2":TranslationServer.translate("finished_export_android_path")}
-			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+			var _Answer = await GlobalTime.ShowPopup(PopupData)
 		"iOS":
 			var PopupData = {"type": "export","Title":"Export","FName":f_name,"Desc1":TranslationServer.translate("finished_export_ios"),"Desc2":TranslationServer.translate("finished_export_ios_path")}
-			var _Answer = yield(GlobalTime.ShowPopup(PopupData),"completed")
+			var _Answer = await GlobalTime.ShowPopup(PopupData)
 			
 			return
 

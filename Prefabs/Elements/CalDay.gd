@@ -1,7 +1,7 @@
 extends Label
 
 var NormalColor = Color("2699fb")
-var InfoColor = Color.purple
+var InfoColor = Color.PURPLE
 
 
 var is_Selected = false
@@ -13,11 +13,11 @@ func _ready():
 	$CurrentDay.visible = false
 	mouse_filter = Control.MOUSE_FILTER_PASS
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("SelectDay",self,"AnimateSelectedDay")
+	GlobalTime.connect("SelectDay", Callable(self, "AnimateSelectedDay"))
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("MultiSelect",self,"MultiSelect")
+	GlobalTime.connect("MultiSelect", Callable(self, "MultiSelect"))
 # warning-ignore:return_value_discarded
-	connect("gui_input",self,"DaySelect")
+	connect("gui_input", Callable(self, "DaySelect"))
 	
 func MultiSelect(Enabled):
 	MultiSelectEnabled = Enabled
@@ -29,15 +29,15 @@ func AddInfo(DayInfo):
 	if is_Selected:
 		UpdateInfo = true
 	CurDayInfo = DayInfo
-	if !DayInfo.empty():
+	if !DayInfo.is_empty():
 		if DayInfo.has("check_in1"):
-			add_color_override("font_color",InfoColor)
+			add_theme_color_override("font_color",InfoColor)
 		elif DayInfo.has("report"):
 			match DayInfo["report"]:
 				"Day Off":
-					add_color_override("font_color",GlobalTime.DAY_OFF_COLOR)
+					add_theme_color_override("font_color",GlobalTime.DAY_OFF_COLOR)
 				"Holiday":
-					add_color_override("font_color",GlobalTime.HOLIDAY_COLOR)
+					add_theme_color_override("font_color",GlobalTime.HOLIDAY_COLOR)
 				_:
 					print("Report Uknown: ")
 					print(DayInfo)
@@ -45,7 +45,7 @@ func AddInfo(DayInfo):
 			print("Week day unknown!")
 			print(DayInfo)
 	else:
-		add_color_override("font_color",NormalColor)
+		add_theme_color_override("font_color",NormalColor)
 		
 	if UpdateInfo:
 		if !MultiSelectEnabled:
@@ -78,7 +78,7 @@ func AnimateSelectedDay(DayNode):
 func AnimateCantSelect():
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishAnim",[T])
+	T.connect("tween_all_completed", Callable(self, "FinishAnim").bind(T))
 	$Selected.modulate = Color(1,0,0,1)
 	$Selected.visible = true
 	T.interpolate_property($Selected,"modulate",$Selected.modulate,Color(1,1,1,1),0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT)
@@ -89,7 +89,7 @@ func AnimateSelected(AnimIn):
 		return
 	var T = Tween.new()
 	add_child(T)
-	T.connect("tween_all_completed",self,"FinishAnim",[T])
+	T.connect("tween_all_completed", Callable(self, "FinishAnim").bind(T))
 	is_Selected = AnimIn
 	if AnimIn:
 		$Selected.modulate = Color(1,1,1,0)

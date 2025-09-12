@@ -8,14 +8,14 @@ signal FinishedReport()
 func _ready():
 	
 # warning-ignore:return_value_discarded
-	GlobalTime.connect("UpdateDayInfo",self,"UpdateDayInfo")
+	GlobalTime.connect("UpdateDayInfo", Callable(self, "UpdateDayInfo"))
 	$CheckInData.visible = false
 	$NoInfo.visible = true
 	RemoveAllExcept("NoInfo")
 	GlobalSave.AddReportOptionsToNode($NoInfo/Report)
 	
-	$NoInfo/Report.get_popup().connect("index_pressed",self,"SelectReport",[$NoInfo/Report])
-	$MultiSelect/Report.get_popup().connect("index_pressed",self,"SelectReport",[$MultiSelect/Report,true])
+	$NoInfo/Report.get_popup().connect("index_pressed", Callable(self, "SelectReport").bind($NoInfo/Report))
+	$MultiSelect/Report.get_popup().connect("index_pressed", Callable(self, "SelectReport").bind($MultiSelect/Report,true))
 	
 	
 func SetInfo(Info):
@@ -50,15 +50,15 @@ func RemoveAllExcept(ControlName):
 func InitDayOff(_Info):
 	RemoveAllExcept("DayOffReport")
 	GlobalSave.AddReportOptionsToNode($DayOffReport/Report)
-	if !$DayOffReport/Report.get_popup().is_connected("index_pressed",self,"SelectReport"):
-		$DayOffReport/Report.get_popup().connect("index_pressed",self,"SelectReport",[$DayOffReport/Report])
+	if !$DayOffReport/Report.get_popup().is_connected("index_pressed", Callable(self, "SelectReport")):
+		$DayOffReport/Report.get_popup().connect("index_pressed", Callable(self, "SelectReport").bind($DayOffReport/Report))
 	$DayOffReport/Icon.texture = load("res://Assets/Icons/day.png")
 	
 func InitHoliday(_Info):
 	RemoveAllExcept("HolidayReport")
 	GlobalSave.AddReportOptionsToNode($HolidayReport/Report)
-	if !$HolidayReport/Report.get_popup().is_connected("index_pressed",self,"SelectReport"):
-		$HolidayReport/Report.get_popup().connect("index_pressed",self,"SelectReport",[$HolidayReport/Report])
+	if !$HolidayReport/Report.get_popup().is_connected("index_pressed", Callable(self, "SelectReport")):
+		$HolidayReport/Report.get_popup().connect("index_pressed", Callable(self, "SelectReport").bind($HolidayReport/Report))
 	$HolidayReport/Icon.texture = load("res://Assets/Icons/holidays.png")
 	
 func ReleaseAllSelected():
@@ -79,7 +79,7 @@ func MultiSelect(Info):
 			Info.AnimateSelected(false)
 			MultiSelectedInfo.erase(Info)
 		else:
-			if Info.CurDayInfo.empty():
+			if Info.CurDayInfo.is_empty():
 				MultiSelectedInfo.append(Info)
 				Info.AnimateSelected(true)
 			else:
@@ -89,7 +89,7 @@ func MultiSelect(Info):
 	else:
 		$MultiSelect/Report.visible = true
 		
-	$MultiSelect/HBoxContainer/DayNum.text = String(MultiSelectedInfo.size())
+	$MultiSelect/HBoxContainer/DayNum.text = str(MultiSelectedInfo.size())
 		
 	
 func InfoForCheckInData(Info):
@@ -113,8 +113,8 @@ func InfoForCheckInData(Info):
 		
 		$CheckInData/EditWorkdays.visible = true
 		GlobalSave.AddCustomListOptionsToNode($CheckInData/EditWorkdays,["Edit working hours"])
-		if !$CheckInData/EditWorkdays.get_popup().is_connected("index_pressed",self,"SelectReport"):
-			$CheckInData/EditWorkdays.get_popup().connect("index_pressed",self,"SelectReport",[$CheckInData/EditWorkdays])
+		if !$CheckInData/EditWorkdays.get_popup().is_connected("index_pressed", Callable(self, "SelectReport")):
+			$CheckInData/EditWorkdays.get_popup().connect("index_pressed", Callable(self, "SelectReport").bind($CheckInData/EditWorkdays))
 	
 	if SalorySettings != null:
 		if SalorySettings.has("enabled"):
@@ -135,7 +135,7 @@ func InfoForCheckInData(Info):
 
 
 func UpdateDayInfo():
-	if CurInfo.empty():
+	if CurInfo.is_empty():
 		return
 	SetInfo(CurInfo)
 	
@@ -235,5 +235,3 @@ func SelectReport(Index,Btn,multi_select = false):
 
 func _on_OnGoingTimer_timeout():
 	UpdateDayInfo()
-
-

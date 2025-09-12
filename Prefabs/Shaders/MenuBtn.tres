@@ -1,10 +1,10 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c4snu4up7q1i4"]
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id="2"]
 code = "shader_type canvas_item;
 
-uniform vec4 u_color_key : hint_color;
-uniform vec4 u_replacement_color : hint_color;
+uniform vec4 u_color_key : source_color;
+uniform vec4 u_replacement_color : source_color;
 
 void fragment() {
     vec4 col = texture(TEXTURE, UV);
@@ -15,11 +15,10 @@ void fragment() {
     if(d < 0.01) {
         col = u_replacement_color;
     }
-    COLOR = col;
-	COLOR.a = alpha;
+    COLOR.rgb = col.rgb;
 }"
 
 [resource]
-shader = SubResource( 2 )
-shader_param/u_color_key = Color( 0, 0, 0, 1 )
-shader_param/u_replacement_color = Color( 1, 1, 1, 1 )
+shader = SubResource("2")
+shader_parameter/u_color_key = Color(0, 0, 0, 1)
+shader_parameter/u_replacement_color = Color(1, 1, 1, 1)

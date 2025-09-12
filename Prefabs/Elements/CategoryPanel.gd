@@ -1,11 +1,11 @@
-tool
+@tool
 extends Panel
 var InfoIsPressed = false
 var LastMousePos = Vector2()
 
-export (String) var CategoryText = "Category" setget SetCategoryText
-export (String,MULTILINE) var PanelInfo = "" setget SetPanelInfo
-export (Texture) var Icon = null setget SetTexture
+@export var CategoryText: String = "Category": set = SetCategoryText
+@export var PanelInfo = "": set = SetPanelInfo
+@export var Icon: Texture2D = null: set = SetTexture
 
 func _ready():
 	if PanelInfo == "":
